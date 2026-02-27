@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iglisi Watch & Key | Master Watchmakers & Key Specialists Since 2002</title>
+
+  <!-- Tailwind + Font Awesome + Google Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Lightbox2 CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
+
+  <style>
+    /* Base */
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fcfcfc;
+      background-image: radial-gradient(rgba(30,58,95,0.02) 1px, transparent 1px);
+      background-size: 30px 30px;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .lang { display: none; }
+    .lang.active { display: block; }
+    .gold { color: #b4945c; }
+    .bg-gold { background-color: #b4945c; }
+    .border-gold { border-color: #b4945c; }
+
+    /* Italian specific adjustments */
+    #it-version .hero-title {
+      font-size: clamp(2.2rem, 7vw, 3.8rem);
+    }
+    @media (min-width: 768px) {
+      #it-version .hero-title {
+        font-size: clamp(2.8rem, 6vw, 4.2rem);
+      }
+    }
+
+    /* Section title underline - full width */
+    .section-title {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
+      cursor: default;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #b4945c;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+      transform-origin: left;
+    }
+    .section-title:hover::after {
+      transform: scaleX(1);
+    }
+
+    /* Cards with gradient border on hover */
+    .service-card, .equipment-card {
+      background: white;
+      border: 1px solid #eaeaea;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before, .equipment-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 1.5rem;
+      padding: 2px;
+      background: linear-gradient(135deg, #b4945c, transparent, #b4945c);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .service-card:hover::before, .equipment-card:hover::before {
+      opacity: 1;
+    }
+    .service-card:hover, .equipment-card:hover {
+      border-color: transparent;
+    }
+    /* Icon animation */
+    .service-card i, .equipment-card i {
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    .service-card:hover i, .equipment-card:hover i {
+      transform: scale(1.1);
+      color: #b4945c;
+    }
+
+    /* Gallery thumbnails */
+    .gallery-thumb {
+      border-radius: 1.5rem;
+      border: 1px solid #eaeaea;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery-thumb:hover {
+      transform: scale(1.02);
+      box-shadow: 0 25px 30px -10px rgba(0,0,0,0.15);
+      filter: drop-shadow(0 0 5px rgba(180,148,92,0.3));
+    }
+
+    /* Hero with parallax */
+    .hero-bg {
+      background-image: url('https://i.postimg.cc/XqTkpvHm/bc00c411-3cfc-41e7-96ed-da34c9246e1f.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+    }
+    .hero-overlay {
+      background: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      min-height: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Stats background with subtle depth */
+    .stats-bg {
+      background: linear-gradient(135deg, #1e3a5f 0%, #143047 100%);
+      position: relative;
+      isolation: isolate;
+    }
+    .stats-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.05), transparent 60%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* Timeline */
+    .timeline-item {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      align-items: flex-start;
+    }
+    .timeline-icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      background: #b4945c;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      box-shadow: 0 10px 15px -3px rgba(180,148,92,0.2);
+      transition: transform 0.3s ease;
+    }
+    .timeline-item:hover .timeline-icon {
+      transform: scale(1.05);
+    }
+
+    /* Header */
+    .solid-header {
+      background: white;
+      border-bottom: 2px solid #f0f0f0;
+    }
+
+    /* Footer */
+    .footer {
+      background: #0f1a24;
+      color: #aaa;
+    }
+
+    /* Equipment icons */
+    .equipment-icon {
+      font-size: 2.5rem;
+      color: #b4945c;
+      margin-bottom: 1rem;
+    }
+
+    /* Star rating */
+    .star {
+      color: #fbbf24;
+      margin-right: 2px;
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(145deg, #25D366, #20b859);
+      color: white;
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 32px;
+      line-height: 65px;
+      box-shadow: 0 15px 20px -8px rgba(37,211,102,0.4);
+      z-index: 100;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1) translateY(-3px);
+      box-shadow: 0 20px 25px -8px rgba(37,211,102,0.6);
+    }
+    @media (max-width: 640px) {
+      .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        font-size: 28px;
+        line-height: 55px;
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 110px;
+      right: 30px;
+      background: #1e3a5f;
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      z-index: 99;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: 1px solid #b4945c;
+    }
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    .back-to-top:hover {
+      background: #143047;
+      transform: translateY(-3px);
+    }
+    @media (max-width: 640px) {
+      .back-to-top {
+        bottom: 90px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+      }
+    }
+
+    /* Button polish */
+    .btn-primary {
+      background: #1e3a5f;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 9999px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+      display: inline-block;
+    }
+    .btn-primary:hover {
+      background: #143047;
+      box-shadow: 0 0 15px rgba(180,148,92,0.5);
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      border: 1px solid #b4945c;
+      color: #b4945c;
+      padding: 1rem 2rem;
+      border-radius: 9999px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: inline-block;
+      background: transparent;
+    }
+    .btn-secondary:hover {
+      background: #b4945c;
+      color: white;
+      border-color: #b4945c;
+    }
+
+    /* Trust badges with floating animation */
+    .trust-badge {
+      background: white;
+      border: 1px solid #eaeaea;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .trust-badge:hover {
+      border-color: #b4945c;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px -5px rgba(0,0,0,0.1);
+    }
+
+    /* Masonry grid */
+    .masonry-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-auto-rows: 280px;
+      grid-auto-flow: dense;
+      gap: 1.5rem;
+    }
+    .masonry-grid .wide {
+      grid-column: span 2;
+    }
+    .masonry-grid .tall {
+      grid-row: span 2;
+    }
+
+    /* Lightbox custom styles */
+    .lb-loader .lb-cancel {
+      border-color: #b4945c;
+    }
+    .lb-nav a.lb-prev, .lb-nav a.lb-next {
+      opacity: 0.8;
+      background-size: 30px 30px;
+    }
+    .lb-nav a.lb-prev:hover, .lb-nav a.lb-next:hover {
+      opacity: 1;
+    }
+    .lb-data .lb-close {
+      background-size: 20px;
+      opacity: 0.7;
+    }
+    .lb-data .lb-close:hover {
+      opacity: 1;
+    }
+    .lb-data .lb-number {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: #ccc;
+    }
+    .lb-data .lb-caption {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+    }
+    .lb-dataContainer {
+      background: rgba(0,0,0,0.8) !important;
+      border-radius: 0 0 10px 10px;
+    }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="text-gray-800 antialiased">
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/355676360510" class="whatsapp-float" target="_blank" title="Message us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Back to Top Button -->
+  <div class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <i class="fas fa-chevron-up"></i>
+  </div>
+
+  <!-- Header -->
+  <header class="solid-header sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="https://i.postimg.cc/tCgW3FQK/Logo-removebg-preview.png" alt="Iglisi Watch & Key Logo" class="h-14 w-auto">
+        <div>
+          <p class="text-xs text-gray-500">Master Craftsmen Since 2002</p>
+        </div>
+      </div>
+      <button onclick="toggleLang()" class="flex items-center space-x-2 border border-gray-300 px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition">
+        <i class="fas fa-globe"></i>
+        <span id="langBtnText">EN / AL / IT</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========== ENGLISH VERSION ========== -->
+  <div class="lang active" id="en-version">
+
+    <!-- HERO -->
+    <section class="hero-bg relative py-32 border-b border-gray-200">
+      <div class="hero-overlay"></div>
+      <div class="hero-content max-w-7xl mx-auto px-6 text-center text-white">
+        <span class="gold uppercase tracking-widest text-sm font-semibold">Two decades of precision</span>
+        <h2 class="text-5xl md:text-6xl font-bold mt-4 mb-6 leading-tight hero-title">Watch Repair & <span class="gold">Key Copy</span> Excellence in Durres</h2>
+        <p class="text-xl text-gray-200 max-w-3xl mx-auto mb-8">Family‑owned since 2002, we combine traditional craftsmanship with modern technology. Over 350,000 watches repaired and 700,000 keys copied – each with meticulous attention.</p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="#contact-en" class="btn-primary">Visit Our Workshop</a>
+          <a href="#services-en" class="btn-secondary">Discover Services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST BADGES -->
+    <section class="py-16 bg-white/70">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="trust-badge"><i class="fas fa-calendar-alt text-3xl gold mb-2"></i><h3 class="font-bold text-xl">Since 2002</h3><p class="text-gray-500 text-sm">23+ years</p></div>
+          <div class="trust-badge"><i class="fas fa-clock text-3xl gold mb-2"></i><h3 class="font-bold text-xl">350K+</h3><p class="text-gray-500 text-sm">Watches repaired</p></div>
+          <div class="trust-badge"><i class="fas fa-key text-3xl gold mb-2"></i><h3 class="font-bold text-xl">700K+</h3><p class="text-gray-500 text-sm">Keys copied</p></div>
+          <div class="trust-badge"><i class="fas fa-smile text-3xl gold mb-2"></i><h3 class="font-bold text-xl">15K+</h3><p class="text-gray-500 text-sm">Happy customers</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Why <span class="gold">Choose Us</span></h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="service-card"><i class="fas fa-gem text-4xl gold mb-6"></i><h3 class="text-2xl font-bold mb-3">Heritage Craftsmanship</h3><p class="text-gray-600">Third‑generation skills passed down, ensuring every watch and key receives the care it deserves.</p></div>
+          <div class="service-card"><i class="fas fa-microscope text-4xl gold mb-6"></i><h3 class="text-2xl font-bold mb-3">Precision Equipment</h3><p class="text-gray-600">State‑of‑the‑art machinery for key cutting and watch diagnostics – accuracy to the micron.</p></div>
+          <div class="service-card"><i class="fas fa-hand-holding-heart text-4xl gold mb-6"></i><h3 class="text-2xl font-bold mb-3">Personal Attention</h3><p class="text-gray-600">We treat your items as if they were our own. No job is too small or complex.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE CRAFTSMAN'S WORKSHOP -->
+    <section class="py-24 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">The <span class="gold">Craftsman's Workshop</span></h2>
+        <div class="flex flex-col md:flex-row gap-12 items-center">
+          <div class="md:w-1/3">
+            <img src="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.jpg" alt="Workbench with watch repair tools" class="rounded-2xl shadow-xl border border-gray-200">
+          </div>
+          <div class="md:w-2/3">
+            <p class="text-2xl font-bold mb-4">Where Precision Meets Passion</p>
+            <p class="text-gray-600 text-lg leading-relaxed">Step into the heart of our workshop – a space filled with the hum of machinery, the gleam of polished tools, and decades of dedication. Every surface tells a story of watches revived and keys crafted. This is where your timepieces and security are entrusted to hands that have honed their skill for over twenty years.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services-en" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Our <span class="gold">Services</span></h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="service-card"><div class="w-14 h-14 bg-[#1e3a5f]/10 rounded-full flex items-center justify-center mb-6"><i class="fas fa-battery-three-quarters text-2xl gold"></i></div><h3 class="text-2xl font-bold mb-3">Watch Battery Replacement</h3><p class="text-gray-500">Quick, careful replacement for quartz watches of all brands. We test and guarantee.</p></div>
+          <div class="service-card"><div class="w-14 h-14 bg-[#1e3a5f]/10 rounded-full flex items-center justify-center mb-6"><i class="fas fa-clock text-2xl gold"></i></div><h3 class="text-2xl font-bold mb-3">Strap & Bracelet Fitting</h3><p class="text-gray-500">Leather, metal, nylon – we fit and adjust any strap. Wide selection available.</p></div>
+          <div class="service-card"><div class="w-14 h-14 bg-[#1e3a5f]/10 rounded-full flex items-center justify-center mb-6"><i class="fas fa-cogs text-2xl gold"></i></div><h3 class="text-2xl font-bold mb-3">Full Watch Servicing</h3><p class="text-gray-500">Complete overhaul, cleaning, and regulation for mechanical and quartz movements.</p></div>
+          <div class="service-card"><div class="w-14 h-14 bg-[#1e3a5f]/10 rounded-full flex items-center justify-center mb-6"><i class="fas fa-hourglass-half text-2xl gold"></i></div><h3 class="text-2xl font-bold mb-3">Clock Repair</h3><p class="text-gray-500">Wall clocks, mantel clocks, grandfather clocks – we restore timepieces of all sizes.</p></div>
+          <div class="service-card"><div class="w-14 h-14 bg-[#1e3a5f]/10 rounded-full flex items-center justify-center mb-6"><i class="fas fa-key text-2xl gold"></i></div><h3 class="text-2xl font-bold mb-3">Key Copy Services</h3><p class="text-gray-500">Standard, security, and restricted keys – duplicated with precision using original blanks.</p></div>
+          <div class="service-card"><div class="w-14 h-14 bg-[#1e3a5f]/10 rounded-full flex items-center justify-center mb-6"><i class="fas fa-shield-alt text-2xl gold"></i></div><h3 class="text-2xl font-bold mb-3">High‑Security Keys</h3><p class="text-gray-500">Advanced cutting for laser, dimple, and tubular keys (excluding transponder car keys).</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR EQUIPMENT -->
+    <section class="py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Our <span class="gold">Equipment</span></h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="equipment-card text-center"><i class="fas fa-cog equipment-icon"></i><h3 class="text-2xl font-bold mb-3">Precision Key Cutting</h3><p class="text-gray-600">Professional key cutting machines for all types of keys – standard, security, and laser.</p></div>
+          <div class="equipment-card text-center"><i class="fas fa-microscope equipment-icon"></i><h3 class="text-2xl font-bold mb-3">Watch Inspection Microscopes</h3><p class="text-gray-600">High‑magnification digital microscopes for detailed diagnostics.</p></div>
+          <div class="equipment-card text-center"><i class="fas fa-tachometer-alt equipment-icon"></i><h3 class="text-2xl font-bold mb-3">Timing Machines</h3><p class="text-gray-600">Advanced timegraphers to regulate mechanical watches with extreme accuracy.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR PROCESS -->
+    <section class="py-24 bg-white">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Our <span class="gold">Process</span></h2>
+        <div class="space-y-8">
+          <div class="timeline-item"><div class="timeline-icon"><i class="fas fa-search"></i></div><div><h3 class="text-2xl font-bold mb-2">1. Diagnosis</h3><p class="text-gray-600">We inspect your watch or key with professional tools to identify the exact requirement.</p></div></div>
+          <div class="timeline-item"><div class="timeline-icon"><i class="fas fa-tools"></i></div><div><h3 class="text-2xl font-bold mb-2">2. Precision Work</h3><p class="text-gray-600">Using specialized machinery, we perform the repair or duplication with micron accuracy.</p></div></div>
+          <div class="timeline-item"><div class="timeline-icon"><i class="fas fa-check-circle"></i></div><div><h3 class="text-2xl font-bold mb-2">3. Quality Check</h3><p class="text-gray-600">Every piece is tested thoroughly before being returned to you.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Our <span class="gold">Workshop in Real Life</span></h2>
+        <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">Step inside our family workshop – every image is a real, unedited moment.</p>
+        <div class="masonry-grid">
+          <a href="https://i.postimg.cc/XqTkpvHm/bc00c411-3cfc-41e7-96ed-da34c9246e1f.jpg" data-lightbox="workshop" data-title="Shop sign" class="wide"><img class="gallery-thumb h-full w-full" src="https://i.postimg.cc/XqTkpvHm/bc00c411-3cfc-41e7-96ed-da34c9246e1f.jpg" alt="Shop sign"></a>
+          <a href="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.jpg" data-lightbox="workshop" data-title="Workbench"><img class="gallery-thumb h-full w-full" src="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.jpg" alt="Workbench"></a>
+          <a href="https://i.postimg.cc/LsCCmmpv/4321b2b5-af19-4888-980f-c95829f43af2.jpg" data-lightbox="workshop" data-title="Key machines" class="tall"><img class="gallery-thumb h-full w-full" src="https://i.postimg.cc/LsCCmmpv/4321b2b5-af19-4888-980f-c95829f43af2.jpg" alt="Key machines"></a>
+          <a href="https://i.postimg.cc/wv1WvnxR/639d7b56-b8fb-4627-9405-0ec70ad24985.jpg" data-lightbox="workshop" data-title="Watch repair equipment"><img class="gallery-thumb h-full w-full" src="https://i.postimg.cc/wv1WvnxR/639d7b56-b8fb-4627-9405-0ec70ad24985.jpg" alt="Equipment"></a>
+          <a href="https://i.postimg.cc/d3d4RdyL/3807368a-ccf3-42ab-bf49-bffea24d52df.jpg" data-lightbox="workshop" data-title="Workshop interior"><img class="gallery-thumb h-full w-full" src="https://i.postimg.cc/d3d4RdyL/3807368a-ccf3-42ab-bf49-bffea24d52df.jpg" alt="Interior"></a>
+          <a href="https://i.postimg.cc/4N6Wm6G2/baeedd7f-fd23-4141-b683-fad2b4ee32ce.jpg" data-lightbox="workshop" data-title="Key blanks"><img class="gallery-thumb h-full w-full" src="https://i.postimg.cc/4N6Wm6G2/baeedd7f-fd23-4141-b683-fad2b4ee32ce.jpg" alt="Key blanks"></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="py-24 bg-white">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">What Our <span class="gold">Customers Say</span></h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200"><div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div><p class="text-gray-600 italic">"I'd recommend him to everyone living in Durres. Really appreciate the work and professionalism he shows. 10/10 👍"</p><p class="font-bold mt-4">– Feta Dosti</p></div>
+          <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200"><div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div><p class="text-gray-600 italic">"Took my watch in for repair and he fixed it perfectly. Fast, reliable, and really knows his craft. Very satisfied."</p><p class="font-bold mt-4">– Kristian Pando</p></div>
+          <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200"><div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div><p class="text-gray-600 italic">"Sent my watch to get it fixed. Got it back in a day. Amazing work"</p><p class="font-bold mt-4">– Deni Tabaku</p></div>
+          <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200"><div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div><p class="text-gray-600 italic">"I had a very good experience with this service. The repair was done with care and within the time frame I was told. Communication was clear throughout the process. I would recommend it to anyone looking for watch repair in Durres."</p><p class="font-bold mt-4">– Elis Xhaferaj</p></div>
+        </div>
+        <div class="text-center mt-12"><a href="https://search.google.com/local/reviews?placeid=ChIJU3JyAljB0RMRdoAB2vYR5oo" target="_blank" class="btn-primary"><i class="fab fa-google mr-2"></i>Leave a Review on Google</a></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact-en" class="py-24 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Get In <span class="gold">Touch</span></h2>
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <div>
+            <h3 class="text-2xl font-bold mb-6">Visit our workshop</h3>
+            <div class="space-y-5 text-gray-600">
+              <p class="flex items-start space-x-4"><i class="fas fa-map-pin gold text-xl mt-1 w-6"></i><span>Rruga Aleksander Goga, Durres 2001, Albania</span></p>
+              <p class="flex items-center space-x-4"><i class="fas fa-phone-alt gold w-6"></i><span><strong>Primary:</strong> +355 67 636 0510</span></p>
+              <p class="flex items-center space-x-4"><i class="fas fa-phone-alt gold w-6"></i><span><strong>Secondary:</strong> +355 67 571 6090</span></p>
+              <p class="flex items-center space-x-4"><i class="fas fa-envelope gold w-6"></i><span>iglisiwatchandkey@gmail.com</span></p>
+              <p class="flex items-center space-x-4"><i class="fas fa-clock gold w-6"></i><span>Mon–Sat: 8:30 AM – 8:30 PM<br>Sunday: Closed</span></p>
+            </div>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href="https://www.google.com/maps/place/Orendreqes+%26+Kopje+Celsash+Igli/@41.3201564,19.4453564,17z" target="_blank" class="btn-primary"><i class="fab fa-google mr-2"></i>Open in Google Maps</a>
+              <a href="https://wa.me/355676360510" target="_blank" class="btn-secondary"><i class="fab fa-whatsapp mr-2"></i>WhatsApp</a>
+            </div>
+          </div>
+          <div><iframe class="w-full h-80 rounded-2xl border border-gray-200" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2991.418269398786!2d19.4431676!3d41.3201564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134fd18602527253%3A0x8ae611f6da018076!2sOrendreqes%20%26%20Kopje%20Celsash%20Igli!5e0!3m2!1sen!2s!4v1700000000000" allowfullscreen="" loading="lazy"></iframe></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ========== ALBANIAN VERSION ========== -->
+  <div class="lang" id="al-version">
+    <!-- Hero -->
+    <section class="hero-bg relative py-32 border-b border-gray-200">
+      <div class="hero-overlay"></div>
+      <div class="hero-content max-w-7xl mx-auto px-6 text-center text-white">
+        <span class="gold uppercase tracking-widest text-sm font-semibold">Dy dekada precizion</span>
+        <h2 class="text-5xl md:text-6xl font-bold mt-4 mb-6 leading-tight hero-title">Riparim Orash & <span class="gold">Kopje Çelësash</span> në Durrës</h2>
+        <p class="text-xl text-gray-200 max-w-3xl mx-auto mb-8">Biznes familjar që nga viti 2002, ndërthurim mjeshtërinë tradicionale me teknologjinë moderne. Mbi 350,000 ora të riparuara dhe 700,000 çelësa të kopjuar – secili me vëmendje të përpiktë.</p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="#contact-al" class="btn-primary">Vizitoni Punishten</a>
+          <a href="#services-al" class="btn-secondary">Shërbimet Tona</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="py-16 bg-white/70">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="trust-badge"><i class="fas fa-calendar-alt text-3xl gold mb-2"></i><h3 class="font-bold text-xl">Që nga 2002</h3><p class="text-gray-500 text-sm">23+ vjet</p></div>
+          <div class="trust-badge"><i class="fas fa-clock text-3xl gold mb-2"></i><h3 class="font-bold text-xl">350K+</h3><p class="text-gray-500 text-sm">Ora të riparuara</p></div>
+          <div class="trust-badge"><i class="fas fa-key text-3xl gold mb-2"></i><h3 class="font-bold text-xl">700K+</h3><p class="text-gray-500 text-sm">Çelësa të kopjuar</p></div>
+          <div class="trust-badge"><i class="fas fa-smile text-3xl gold mb-2"></i><h3 class="font-bold text-xl">15K+</h3><p class="text-gray-500 text-sm">Klientë të kënaqur</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Pse <span class="gold">Ne</span></h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="service-card"><i class="fas fa-gem text-4xl gold mb-6"></i><h3 class="text-2xl font-bold mb-3">Mjeshtëri Tradicionale</h3><p class="text-gray-600">Aftësi të trashëguara brez pas brezi, duke siguruar kujdesin maksimal për çdo orë dhe çelës.</p></div>
+          <div class="service-card"><i class="fas fa-microscope text-4xl gold mb-6"></i><h3 class="text-2xl font-bold mb-3">Pajisje Precize</h3><p class="text-gray-600">Makineri moderne për diagnostikim dhe kopjim – saktësi në mikron.</p></div>
+          <div class="service-card"><i class="fas fa-hand-holding-heart text-4xl gold mb-6"></i><h3 class="text-2xl font-bold mb-3">Kujdes Personal</h3><p class="text-gray-600">Trajtojmë sendet tuaja sikur të ishin tonat. Asnjë punë nuk është e vogël.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Craftsman's Workshop (Albanian) -->
+    <section class="py-24 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Punishtja e <span class="gold">Mjeshtrit</span></h2>
+        <div class="flex flex-col md:flex-row gap-12 items-center">
+          <div class="md:w-1/3">
+            <img src="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.jpg" alt="Banka e punës me mjete riparimi" class="rounded-2xl shadow-xl border border-gray-200">
+          </div>
+          <div class="md:w-2/3">
+            <p class="text-2xl font-bold mb-4">Ku Precisioni Takon Pasionin</p>
+            <p class="text-gray-600 text-lg leading-relaxed">Hyni në zemrën e punishtes sonë – një hapësirë e mbushur me zhurmën e makinerive, shkëlqimin e mjeteve të lëmuara dhe dekada përkushtim. Çdo sipërfaqe tregon një histori orësh të ringjallura dhe çelësash të punuar. Këtu, koha dhe siguria juaj i besohen duarve që e kanë përsosur këtë mjeshtëri për më shumë se njëzet vjet.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services-al" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Shërbimet <span class="gold">Tona</span></h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="service-card"><div class="w-14 h-14 bg-[#1e3a5f]/10 rounded-full flex items-center justify-center mb-6"><i class="fas fa-battery-three-quarters text-2xl gold"></i></div><h3 class="text-2xl font-bold mb-3">Ndërrim Baterie Ore</h3><p class="text-gray-500">Zëvendësim i shpejtë dhe i kujdesshëm për ora kuarci të të gjitha markave. Testim dhe garanci.</p></div>
+          <div class="service-card"><div class="w-14 h-14 bg-[#1e3a5f]/10 rounded-full flex items-center justify-center mb-6"><i class="fas fa-clock text-2xl gold"></i></div><h3 class="text-2xl font-bold mb-3">Vendosje Rripash</h3><p class="text-gray-500">Lëkurë, metal, najlon – vendosim dhe rregullojmë çdo lloj rripi. Gama të ndryshme në dispozicion.</p></div>
+          <div class="service-card"><div class="w-14 h-14 bg-[#1e3a5f]/10 rounded-full flex items-center justify-center mb-6"><i class="fas fa-cogs text-2xl gold"></i></div><h3 class="text-2xl font-bold mb-3">Servis i Plotë i Orëve</h3><p class="text-gray-500">Riparim i përgjithshëm, pastrim dhe rregullim për mekanizma kuarci dhe automatikë.</p></div>
+          <div class="service-card"><div class="w-14 h-14 bg-[#1e3a5f]/10 rounded-full flex items-center justify-center mb-6"><i class="fas fa-hourglass-half text-2xl gold"></i></div><h3 class="text-2xl font-bold mb-3">Riparim Orësh Muri</h3><p class="text-gray-500">Ora muri, oxhaku, orët e gjyshërve – restaurimi i të gjitha llojeve.</p></div>
+          <div class="service-card"><div class="w-14 h-14 bg-[#1e3a5f]/10 rounded-full flex items-center justify-center mb-6"><i class="fas fa-key text-2xl gold"></i></div><h3 class="text-2xl font-bold mb-3">Kopje Çelësash</h3><p class="text-gray-500">Standard, sigurie dhe të kufizuar – kopjuar me saktësi duke përdorur blanka origjinale.</p></div>
+          <div class="service-card"><div class="w-14 h-14 bg-[#1e3a5f]/10 rounded-full flex items-center justify-center mb-6"><i class="fas fa-shield-alt text-2xl gold"></i></div><h3 class="text-2xl font-bold mb-3">Çelësa Sigurie të Lartë</h3><p class="text-gray-500">Prerje e avancuar për çelësa lazer, dimple dhe tubular (përveç makinave).</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Equipment -->
+    <section class="py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Pajisjet <span class="gold">Tona</span></h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="equipment-card text-center"><i class="fas fa-cog equipment-icon"></i><h3 class="text-2xl font-bold mb-3">Prerje Precize e Çelësave</h3><p class="text-gray-600">Makineri profesionale për të gjitha llojet e çelësave – standard, sigurie dhe lazer.</p></div>
+          <div class="equipment-card text-center"><i class="fas fa-microscope equipment-icon"></i><h3 class="text-2xl font-bold mb-3">Mikroskopë Inspektimi</h3><p class="text-gray-600">Mikroskopë dixhitalë me zmadhim të lartë për diagnostikim të detajuar.</p></div>
+          <div class="equipment-card text-center"><i class="fas fa-tachometer-alt equipment-icon"></i><h3 class="text-2xl font-bold mb-3">Makina Matëse të Kohës</h3><p class="text-gray-600">Timegrapher të avancuar për rregullimin e orëve mekanike me saktësi ekstreme.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="py-24 bg-white">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Procesi <span class="gold">Ynë</span></h2>
+        <div class="space-y-8">
+          <div class="timeline-item"><div class="timeline-icon"><i class="fas fa-search"></i></div><div><h3 class="text-2xl font-bold mb-2">1. Diagnostikimi</h3><p class="text-gray-600">Inspektojmë orën ose çelësin me mjete profesionale për të identifikuar nevojën e saktë.</p></div></div>
+          <div class="timeline-item"><div class="timeline-icon"><i class="fas fa-tools"></i></div><div><h3 class="text-2xl font-bold mb-2">2. Puna Precize</h3><p class="text-gray-600">Duke përdorur makineri të specializuara, kryejmë riparimin ose kopjimin me saktësi mikronike.</p></div></div>
+          <div class="timeline-item"><div class="timeline-icon"><i class="fas fa-check-circle"></i></div><div><h3 class="text-2xl font-bold mb-2">3. Kontrolli i Cilësisë</h3><p class="text-gray-600">Çdo pjesë testohet tërësisht para se t'ju kthehet.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Punishtja <span class="gold">Jonë në Jetë Reale</span></h2>
+        <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">Hyni në punishten tonë familjare – çdo foto është një moment i vërtetë, i paprekur.</p>
+        <div class="masonry-grid">
+          <a href="https://i.postimg.cc/XqTkpvHm/bc00c411-3cfc-41e7-96ed-da34c9246e1f.jpg" data-lightbox="workshop-al" data-title="Tabela e dyqanit" class="wide"><img class="gallery-thumb h-full w-full" src="https://i.postimg.cc/XqTkpvHm/bc00c411-3cfc-41e7-96ed-da34c9246e1f.jpg" alt="Tabela"></a>
+          <a href="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.jpg" data-lightbox="workshop-al" data-title="Banka e punës"><img class="gallery-thumb h-full w-full" src="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.jpg" alt="Banka"></a>
+          <a href="https://i.postimg.cc/LsCCmmpv/4321b2b5-af19-4888-980f-c95829f43af2.jpg" data-lightbox="workshop-al" data-title="Makineri për çelësa" class="tall"><img class="gallery-thumb h-full w-full" src="https://i.postimg.cc/LsCCmmpv/4321b2b5-af19-4888-980f-c95829f43af2.jpg" alt="Makineri"></a>
+          <a href="https://i.postimg.cc/wv1WvnxR/639d7b56-b8fb-4627-9405-0ec70ad24985.jpg" data-lightbox="workshop-al" data-title="Pajisje për orë"><img class="gallery-thumb h-full w-full" src="https://i.postimg.cc/wv1WvnxR/639d7b56-b8fb-4627-9405-0ec70ad24985.jpg" alt="Pajisje"></a>
+          <a href="https://i.postimg.cc/d3d4RdyL/3807368a-ccf3-42ab-bf49-bffea24d52df.jpg" data-lightbox="workshop-al" data-title="Brendësia e punishtes"><img class="gallery-thumb h-full w-full" src="https://i.postimg.cc/d3d4RdyL/3807368a-ccf3-42ab-bf49-bffea24d52df.jpg" alt="Brendësia"></a>
+          <a href="https://i.postimg.cc/4N6Wm6G2/baeedd7f-fd23-4141-b683-fad2b4ee32ce.jpg" data-lightbox="workshop-al" data-title="Çelësa të ndryshëm"><img class="gallery-thumb h-full w-full" src="https://i.postimg.cc/4N6Wm6G2/baeedd7f-fd23-4141-b683-fad2b4ee32ce.jpg" alt="Çelësa"></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="py-24 bg-white">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Çfarë <span class="gold">Thonë Klientët</span></h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200"><div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div><p class="text-gray-600 italic">"I'd recommend him to everyone living in Durres. Really appreciate the work and professionalism he shows. 10/10 👍"</p><p class="font-bold mt-4">– Feta Dosti</p></div>
+          <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200"><div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div><p class="text-gray-600 italic">"Took my watch in for repair and he fixed it perfectly. Fast, reliable, and really knows his craft. Very satisfied."</p><p class="font-bold mt-4">– Kristian Pando</p></div>
+          <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200"><div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div><p class="text-gray-600 italic">"Sent my watch to get it fixed. Got it back in a day. Amazing work"</p><p class="font-bold mt-4">– Deni Tabaku</p></div>
+          <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200"><div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div><p class="text-gray-600 italic">"I had a very good experience with this service. The repair was done with care and within the time frame I was told. Communication was clear throughout the process. I would recommend it to anyone looking for watch repair in Durres."</p><p class="font-bold mt-4">– Elis Xhaferaj</p></div>
+        </div>
+        <div class="text-center mt-12"><a href="https://search.google.com/local/reviews?placeid=ChIJU3JyAljB0RMRdoAB2vYR5oo" target="_blank" class="btn-primary"><i class="fab fa-google mr-2"></i>Shkruaj një Koment në Google</a></div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact-al" class="py-24 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Na <span class="gold">Kontaktoni</span></h2>
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <div>
+            <h3 class="text-2xl font-bold mb-6">Vizitoni punishten tonë</h3>
+            <div class="space-y-5 text-gray-600">
+              <p class="flex items-start space-x-4"><i class="fas fa-map-pin gold text-xl mt-1 w-6"></i><span>Rruga Aleksandër Goga, Durrës 2001, Shqipëri</span></p>
+              <p class="flex items-center space-x-4"><i class="fas fa-phone-alt gold w-6"></i><span><strong>Kryesor:</strong> +355 67 636 0510</span></p>
+              <p class="flex items-center space-x-4"><i class="fas fa-phone-alt gold w-6"></i><span><strong>Sekondar:</strong> +355 67 571 6090</span></p>
+              <p class="flex items-center space-x-4"><i class="fas fa-envelope gold w-6"></i><span>iglisiwatchandkey@gmail.com</span></p>
+              <p class="flex items-center space-x-4"><i class="fas fa-clock gold w-6"></i><span>Hën–Sht: 8:30 – 20:30<br>Die: Mbyllur</span></p>
+            </div>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href="https://www.google.com/maps/place/Orendreqes+%26+Kopje+Celsash+Igli/@41.3201564,19.4453564,17z" target="_blank" class="btn-primary"><i class="fab fa-google mr-2"></i>Hap në Google Maps</a>
+              <a href="https://wa.me/355676360510" target="_blank" class="btn-secondary"><i class="fab fa-whatsapp mr-2"></i>WhatsApp</a>
+            </div>
+          </div>
+          <div><iframe class="w-full h-80 rounded-2xl border border-gray-200" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2991.418269398786!2d19.4431676!3d41.3201564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134fd18602527253%3A0x8ae611f6da018076!2sOrendreqes%20%26%20Kopje%20Celsash%20Igli!5e0!3m2!1sen!2s!4v1700000000000" allowfullscreen="" loading="lazy"></iframe></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ========== ITALIAN VERSION ========== -->
+  <div class="lang" id="it-version">
+    <!-- Hero -->
+    <section class="hero-bg relative py-32 border-b border-gray-200">
+      <div class="hero-overlay"></div>
+      <div class="hero-content max-w-7xl mx-auto px-6 text-center text-white">
+        <span class="gold uppercase tracking-widest text-sm font-semibold">Due decenni di precisione</span>
+        <h2 class="text-5xl md:text-6xl font-bold mt-4 mb-6 leading-tight hero-title">Riparazione Orologi & <span class="gold">Duplicazione Chiavi</span> a Durazzo</h2>
+        <p class="text-xl text-gray-200 max-w-3xl mx-auto mb-8">Azienda familiare dal 2002, uniamo artigianato tradizionale e tecnologia moderna. Oltre 350.000 orologi riparati e 700.000 chiavi duplicate – ognuna con cura meticolosa.</p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="#contact-it" class="btn-primary">Visita il Laboratorio</a>
+          <a href="#services-it" class="btn-secondary">Scopri i Servizi</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="py-16 bg-white/70">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="trust-badge"><i class="fas fa-calendar-alt text-3xl gold mb-2"></i><h3 class="font-bold text-xl">Dal 2002</h3><p class="text-gray-500 text-sm">23+ anni</p></div>
+          <div class="trust-badge"><i class="fas fa-clock text-3xl gold mb-2"></i><h3 class="font-bold text-xl">350K+</h3><p class="text-gray-500 text-sm">Orologi riparati</p></div>
+          <div class="trust-badge"><i class="fas fa-key text-3xl gold mb-2"></i><h3 class="font-bold text-xl">700K+</h3><p class="text-gray-500 text-sm">Chiavi duplicate</p></div>
+          <div class="trust-badge"><i class="fas fa-smile text-3xl gold mb-2"></i><h3 class="font-bold text-xl">15K+</h3><p class="text-gray-500 text-sm">Clienti soddisfatti</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Perché <span class="gold">Scegliere Noi</span></h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="service-card"><i class="fas fa-gem text-4xl gold mb-6"></i><h3 class="text-2xl font-bold mb-3">Artigianato Tradizionale</h3><p class="text-gray-600">Competenze tramandate di generazione in generazione, garantendo la massima cura per ogni orologio e chiave.</p></div>
+          <div class="service-card"><i class="fas fa-microscope text-4xl gold mb-6"></i><h3 class="text-2xl font-bold mb-3">Attrezzature di Precisione</h3><p class="text-gray-600">Macchinari all'avanguardia per il taglio delle chiavi e la diagnostica degli orologi – precisione al micron.</p></div>
+          <div class="service-card"><i class="fas fa-hand-holding-heart text-4xl gold mb-6"></i><h3 class="text-2xl font-bold mb-3">Attenzione Personale</h3><p class="text-gray-600">Trattiamo i vostri oggetti come fossero nostri. Nessun lavoro è troppo piccolo o complesso.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Craftsman's Workshop (Italian) -->
+    <section class="py-24 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">L'Officina del <span class="gold">Maestro</span></h2>
+        <div class="flex flex-col md:flex-row gap-12 items-center">
+          <div class="md:w-1/3">
+            <img src="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.jpg" alt="Banco da lavoro con attrezzi" class="rounded-2xl shadow-xl border border-gray-200">
+          </div>
+          <div class="md:w-2/3">
+            <p class="text-2xl font-bold mb-4">Dove la Precisione Incontra la Passione</p>
+            <p class="text-gray-600 text-lg leading-relaxed">Entrate nel cuore del nostro laboratorio – uno spazio pieno del ronzio dei macchinari, del luccichio degli attrezzi lucidati e di decenni di dedizione. Ogni superficie racconta una storia di orologi riportati in vita e chiavi realizzate. Qui, il vostro tempo e la vostra sicurezza sono affidati a mani che hanno affinato la loro abilità per oltre vent'anni.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services-it" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">I Nostri <span class="gold">Servizi</span></h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="service-card"><div class="w-14 h-14 bg-[#1e3a5f]/10 rounded-full flex items-center justify-center mb-6"><i class="fas fa-battery-three-quarters text-2xl gold"></i></div><h3 class="text-2xl font-bold mb-3">Sostituzione Batteria Orologio</h3><p class="text-gray-500">Sostituzione rapida e attenta per orologi al quarzo di tutte le marche. Testiamo e garantiamo.</p></div>
+          <div class="service-card"><div class="w-14 h-14 bg-[#1e3a5f]/10 rounded-full flex items-center justify-center mb-6"><i class="fas fa-clock text-2xl gold"></i></div><h3 class="text-2xl font-bold mb-3">Montaggio Cinturini e Bracciali</h3><p class="text-gray-500">Pelle, metallo, nylon – montiamo e regoliamo qualsiasi cinturino. Ampia selezione disponibile.</p></div>
+          <div class="service-card"><div class="w-14 h-14 bg-[#1e3a5f]/10 rounded-full flex items-center justify-center mb-6"><i class="fas fa-cogs text-2xl gold"></i></div><h3 class="text-2xl font-bold mb-3">Revisione Completa Orologi</h3><p class="text-gray-500">Manutenzione completa, pulizia e regolazione per movimenti meccanici e al quarzo.</p></div>
+          <div class="service-card"><div class="w-14 h-14 bg-[#1e3a5f]/10 rounded-full flex items-center justify-center mb-6"><i class="fas fa-hourglass-half text-2xl gold"></i></div><h3 class="text-2xl font-bold mb-3">Riparazione Orologi da Parete</h3><p class="text-gray-500">Orologi da parete, da camino, a pendolo – restauriamo tutti i tipi.</p></div>
+          <div class="service-card"><div class="w-14 h-14 bg-[#1e3a5f]/10 rounded-full flex items-center justify-center mb-6"><i class="fas fa-key text-2xl gold"></i></div><h3 class="text-2xl font-bold mb-3">Duplicazione Chiavi</h3><p class="text-gray-500">Chiavi standard, di sicurezza e limitate – duplicate con precisione utilizzando grezzi originali.</p></div>
+          <div class="service-card"><div class="w-14 h-14 bg-[#1e3a5f]/10 rounded-full flex items-center justify-center mb-6"><i class="fas fa-shield-alt text-2xl gold"></i></div><h3 class="text-2xl font-bold mb-3">Chiavi ad Alta Sicurezza</h3><p class="text-gray-500">Taglio avanzato per chiavi laser, dimple e tubolari (escluse chiavi auto transponder).</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Equipment -->
+    <section class="py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Le Nostre <span class="gold">Attrezzature</span></h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="equipment-card text-center"><i class="fas fa-cog equipment-icon"></i><h3 class="text-2xl font-bold mb-3">Taglio Chiavi di Precisione</h3><p class="text-gray-600">Macchine professionali per tutti i tipi di chiavi – standard, di sicurezza e laser.</p></div>
+          <div class="equipment-card text-center"><i class="fas fa-microscope equipment-icon"></i><h3 class="text-2xl font-bold mb-3">Microscopi per Ispezione</h3><p class="text-gray-600">Microscopi digitali ad alto ingrandimento per una diagnostica dettagliata.</p></div>
+          <div class="equipment-card text-center"><i class="fas fa-tachometer-alt equipment-icon"></i><h3 class="text-2xl font-bold mb-3">Macchine per la Misura del Tempo</h3><p class="text-gray-600">Timegrapher avanzati per regolare gli orologi meccanici con precisione assoluta.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="py-24 bg-white">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Il Nostro <span class="gold">Processo</span></h2>
+        <div class="space-y-8">
+          <div class="timeline-item"><div class="timeline-icon"><i class="fas fa-search"></i></div><div><h3 class="text-2xl font-bold mb-2">1. Diagnosi</h3><p class="text-gray-600">Ispezioniamo il vostro orologio o chiave con strumenti professionali per identificare l'esatta necessità.</p></div></div>
+          <div class="timeline-item"><div class="timeline-icon"><i class="fas fa-tools"></i></div><div><h3 class="text-2xl font-bold mb-2">2. Lavoro di Precisione</h3><p class="text-gray-600">Utilizzando macchinari specializzati, eseguiamo la riparazione o duplicazione con precisione al micron.</p></div></div>
+          <div class="timeline-item"><div class="timeline-icon"><i class="fas fa-check-circle"></i></div><div><h3 class="text-2xl font-bold mb-2">3. Controllo Qualità</h3><p class="text-gray-600">Ogni pezzo viene testato accuratamente prima di essere restituito.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Il Nostro <span class="gold">Laboratorio dal Vivo</span></h2>
+        <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">Entrate nel nostro laboratorio di famiglia – ogni immagine è un momento reale, non ritoccato.</p>
+        <div class="masonry-grid">
+          <a href="https://i.postimg.cc/XqTkpvHm/bc00c411-3cfc-41e7-96ed-da34c9246e1f.jpg" data-lightbox="workshop-it" data-title="Insegna del negozio" class="wide"><img class="gallery-thumb h-full w-full" src="https://i.postimg.cc/XqTkpvHm/bc00c411-3cfc-41e7-96ed-da34c9246e1f.jpg" alt="Insegna"></a>
+          <a href="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.jpg" data-lightbox="workshop-it" data-title="Banco da lavoro"><img class="gallery-thumb h-full w-full" src="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.jpg" alt="Banco"></a>
+          <a href="https://i.postimg.cc/LsCCmmpv/4321b2b5-af19-4888-980f-c95829f43af2.jpg" data-lightbox="workshop-it" data-title="Macchine per chiavi" class="tall"><img class="gallery-thumb h-full w-full" src="https://i.postimg.cc/LsCCmmpv/4321b2b5-af19-4888-980f-c95829f43af2.jpg" alt="Macchine"></a>
+          <a href="https://i.postimg.cc/wv1WvnxR/639d7b56-b8fb-4627-9405-0ec70ad24985.jpg" data-lightbox="workshop-it" data-title="Attrezzature per orologi"><img class="gallery-thumb h-full w-full" src="https://i.postimg.cc/wv1WvnxR/639d7b56-b8fb-4627-9405-0ec70ad24985.jpg" alt="Attrezzature"></a>
+          <a href="https://i.postimg.cc/d3d4RdyL/3807368a-ccf3-42ab-bf49-bffea24d52df.jpg" data-lightbox="workshop-it" data-title="Interno del laboratorio"><img class="gallery-thumb h-full w-full" src="https://i.postimg.cc/d3d4RdyL/3807368a-ccf3-42ab-bf49-bffea24d52df.jpg" alt="Interno"></a>
+          <a href="https://i.postimg.cc/4N6Wm6G2/baeedd7f-fd23-4141-b683-fad2b4ee32ce.jpg" data-lightbox="workshop-it" data-title="Esposizione chiavi"><img class="gallery-thumb h-full w-full" src="https://i.postimg.cc/4N6Wm6G2/baeedd7f-fd23-4141-b683-fad2b4ee32ce.jpg" alt="Chiavi"></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="py-24 bg-white">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Cosa Dicono i <span class="gold">Nostri Clienti</span></h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200"><div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div><p class="text-gray-600 italic">"Lo consiglio a tutti quelli che vivono a Durazzo. Apprezzo davvero il lavoro e la professionalità che mostra. 10/10 👍"</p><p class="font-bold mt-4">– Feta Dosti</p></div>
+          <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200"><div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div><p class="text-gray-600 italic">"Ho portato il mio orologio per una riparazione e l'ha riparato perfettamente. Veloce, affidabile e conosce davvero il suo mestiere. Molto soddisfatto."</p><p class="font-bold mt-4">– Kristian Pando</p></div>
+          <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200"><div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div><p class="text-gray-600 italic">"Ho mandato il mio orologio per farlo riparare. Me lo hanno restituito in un giorno. Lavoro fantastico."</p><p class="font-bold mt-4">– Deni Tabaku</p></div>
+          <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200"><div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div><p class="text-gray-600 italic">"Ho avuto un'esperienza molto positiva con questo servizio. La riparazione è stata eseguita con cura e nei tempi concordati. La comunicazione è stata chiara durante tutto il processo. Lo consiglierei a chiunque cerchi riparazioni di orologi a Durazzo."</p><p class="font-bold mt-4">– Elis Xhaferaj</p></div>
+        </div>
+        <div class="text-center mt-12"><a href="https://search.google.com/local/reviews?placeid=ChIJU3JyAljB0RMRdoAB2vYR5oo" target="_blank" class="btn-primary"><i class="fab fa-google mr-2"></i>Lascia una Recensione su Google</a></div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact-it" class="py-24 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Mettiti in <span class="gold">Contatto</span></h2>
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <div>
+            <h3 class="text-2xl font-bold mb-6">Visita il nostro laboratorio</h3>
+            <div class="space-y-5 text-gray-600">
+              <p class="flex items-start space-x-4"><i class="fas fa-map-pin gold text-xl mt-1 w-6"></i><span>Rruga Aleksander Goga, Durazzo 2001, Albania</span></p>
+              <p class="flex items-center space-x-4"><i class="fas fa-phone-alt gold w-6"></i><span><strong>Principale:</strong> +355 67 636 0510</span></p>
+              <p class="flex items-center space-x-4"><i class="fas fa-phone-alt gold w-6"></i><span><strong>Secondario:</strong> +355 67 571 6090</span></p>
+              <p class="flex items-center space-x-4"><i class="fas fa-envelope gold w-6"></i><span>iglisiwatchandkey@gmail.com</span></p>
+              <p class="flex items-center space-x-4"><i class="fas fa-clock gold w-6"></i><span>Lun–Sab: 8:30 – 20:30<br>Dom: Chiuso</span></p>
+            </div>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href="https://www.google.com/maps/place/Orendreqes+%26+Kopje+Celsash+Igli/@41.3201564,19.4453564,17z" target="_blank" class="btn-primary"><i class="fab fa-google mr-2"></i>Apri in Google Maps</a>
+              <a href="https://wa.me/355676360510" target="_blank" class="btn-secondary"><i class="fab fa-whatsapp mr-2"></i>WhatsApp</a>
+            </div>
+          </div>
+          <div><iframe class="w-full h-80 rounded-2xl border border-gray-200" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2991.418269398786!2d19.4431676!3d41.3201564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134fd18602527253%3A0x8ae611f6da018076!2sOrendreqes%20%26%20Kopje%20Celsash%20Igli!5e0!3m2!1sen!2s!4v1700000000000" allowfullscreen="" loading="lazy"></iframe></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer py-12">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <div class="flex justify-center space-x-8 mb-6">
+        <a href="#" class="hover:text-[#b4945c] transition"><i class="fab fa-facebook-f text-2xl"></i></a>
+        <a href="https://instagram.com/iglisiwk" target="_blank" class="hover:text-[#b4945c] transition"><i class="fab fa-instagram text-2xl"></i></a>
+        <a href="#" class="hover:text-[#b4945c] transition"><i class="fab fa-whatsapp text-2xl"></i></a>
+      </div>
+      <p class="text-sm text-gray-400">© 2026 Iglisi Watch & Key. Të gjitha të drejtat e rezervuara.</p>
+      <p class="text-xs text-gray-500 mt-2">Precision • Trust • Since 2002</p>
+      <p class="text-xs text-gray-500 mt-1">Follow us on Instagram <a href="https://instagram.com/iglisiwk" target="_blank" class="gold hover:underline">@iglisiwk</a></p>
+    </div>
+  </footer>
+
+  <!-- Lightbox2 JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+  <script>
+    // Language toggle (cycles through EN, AL, IT)
+    let langIndex = 0;
+    const langIds = ['en-version', 'al-version', 'it-version'];
+    const langBtnText = document.getElementById('langBtnText');
+
+    function toggleLang() {
+      // Remove active from all
+      document.querySelectorAll('.lang').forEach(el => el.classList.remove('active'));
+      // Cycle index
+      langIndex = (langIndex + 1) % langIds.length;
+      // Activate current
+      document.getElementById(langIds[langIndex]).classList.add('active');
+      // Update button text (optional)
+      if (langIndex === 0) langBtnText.innerText = 'EN / AL / IT';
+      else if (langIndex === 1) langBtnText.innerText = 'AL / IT / EN';
+      else langBtnText.innerText = 'IT / EN / AL';
+    }
+
+    // Lightbox options
+    lightbox.option({
+      resizeDuration: 200,
+      wrapAround: true,
+      albumLabel: 'Image %1 of %2'
+    });
+
+    // Back to top button visibility
+    window.addEventListener('scroll', function() {
+      const backToTop = document.getElementById('backToTop');
+      if (window.scrollY > 400) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>
