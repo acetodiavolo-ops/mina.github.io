@@ -154,13 +154,39 @@
   </script>
 
   <style>
+    /* CSS Variables for Light/Dark Mode */
+    :root {
+      --bg-warm: #fcfcfc;
+      --bg-soft: #faf7f2;
+      --text-primary: #2a2a2a;
+      --text-secondary: #4a4a4a;
+      --card-bg: #ffffff;
+      --border-light: #eaeaea;
+      --header-bg: rgba(255, 255, 255, 0.9);
+      --footer-bg: #0f1a24;
+      --footer-text: #aaa;
+    }
+    body.dark {
+      --bg-warm: #1a1a1a;
+      --bg-soft: #222222;
+      --text-primary: #e0e0e0;
+      --text-secondary: #b0b0b0;
+      --card-bg: #2a2a2a;
+      --border-light: #3a3a3a;
+      --header-bg: rgba(30, 30, 30, 0.95);
+      --footer-bg: #0a0a0a;
+      --footer-text: #888;
+    }
+
     /* Base */
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #fcfcfc;
+      background-color: var(--bg-warm);
+      color: var(--text-primary);
       background-image: radial-gradient(rgba(30,58,95,0.02) 1px, transparent 1px);
       background-size: 30px 30px;
       animation: fadeIn 0.8s ease-in-out;
+      transition: background-color 0.3s, color 0.3s;
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
@@ -215,8 +241,8 @@
 
     /* Cards with gradient border on hover */
     .service-card, .equipment-card {
-      background: white;
-      border: 1px solid #eaeaea;
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
       border-radius: 1.5rem;
       padding: 2rem;
       transition: all 0.3s ease;
@@ -258,7 +284,7 @@
     /* Gallery thumbnails */
     .gallery-thumb {
       border-radius: 1.5rem;
-      border: 1px solid #eaeaea;
+      border: 1px solid var(--border-light);
       object-fit: cover;
       width: 100%;
       height: 100%;
@@ -357,15 +383,15 @@
       transform: scale(1.05);
     }
 
-    /* Header with blur */
+    /* Header with blur – now shorter */
     .solid-header {
-      background: rgba(255, 255, 255, 0.9);
+      background: var(--header-bg);
       backdrop-filter: blur(10px);
       border-bottom: 2px solid rgba(180,148,92,0.2);
       position: sticky;
       top: 0;
       z-index: 50;
-      padding: 1rem 0;
+      padding: 0.5rem 0;
     }
     .header-content {
       display: flex;
@@ -375,10 +401,10 @@
     .logo-area {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.75rem;
     }
     .logo-area img {
-      height: 112px; /* Even bigger logo: h-28 */
+      height: 80px;
       width: auto;
       filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
       transition: transform 0.3s ease;
@@ -388,14 +414,18 @@
     }
     @media (max-width: 768px) {
       .logo-area img {
-        height: 80px; /* h-20 on mobile */
+        height: 60px;
       }
+    }
+    .logo-area p {
+      font-size: 0.7rem;
     }
 
     /* Footer */
     .footer {
-      background: #0f1a24;
-      color: #aaa;
+      background: var(--footer-bg);
+      color: var(--footer-text);
+      transition: background-color 0.3s, color 0.3s;
     }
 
     /* Equipment icons */
@@ -442,7 +472,7 @@
         height: 55px;
         font-size: 28px;
         line-height: 55px;
-        bottom: 20px;
+        bottom: 80px;
         right: 20px;
       }
     }
@@ -479,7 +509,7 @@
     }
     @media (max-width: 640px) {
       .back-to-top {
-        bottom: 90px;
+        bottom: 140px;
         right: 20px;
         width: 45px;
         height: 45px;
@@ -503,13 +533,14 @@
     .btn-primary {
       background: linear-gradient(145deg, #1e3a5f, #143047);
       color: white;
-      padding: 1rem 2rem;
+      padding: 0.75rem 1.5rem;
       border-radius: 9999px;
       font-weight: 600;
       transition: all 0.3s ease;
       box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
       display: inline-block;
       border: none;
+      font-size: 0.9rem;
     }
     .btn-primary:hover {
       background: linear-gradient(145deg, #143047, #0f2938);
@@ -519,12 +550,13 @@
     .btn-secondary {
       border: 1px solid #b4945c;
       color: #b4945c;
-      padding: 1rem 2rem;
+      padding: 0.75rem 1.5rem;
       border-radius: 9999px;
       font-weight: 600;
       transition: all 0.3s ease;
       display: inline-block;
       background: transparent;
+      font-size: 0.9rem;
     }
     .btn-secondary:hover {
       background: #b4945c;
@@ -535,8 +567,8 @@
 
     /* Trust badges with floating animation */
     .trust-badge {
-      background: white;
-      border: 1px solid #eaeaea;
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
       border-radius: 1rem;
       padding: 1.5rem;
       text-align: center;
@@ -556,8 +588,8 @@
 
     /* Promise cards */
     .promise-card {
-      background: white;
-      border: 1px solid #eaeaea;
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
       border-radius: 1rem;
       padding: 1.5rem;
       text-align: center;
@@ -630,8 +662,8 @@
       background: #b4945c;
       color: white;
       text-align: center;
-      padding: 8px 0;
-      font-size: 0.95rem;
+      padding: 6px 0;
+      font-size: 0.9rem;
       font-weight: 500;
     }
     .urgent-banner i {
@@ -642,28 +674,28 @@
     .hours-badge {
       background: #f0f0f0;
       color: #1e3a5f;
-      padding: 4px 10px;
+      padding: 3px 8px;
       border-radius: 20px;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 600;
       display: inline-flex;
       align-items: center;
-      gap: 5px;
+      gap: 4px;
     }
     .hours-badge i {
       color: #b4945c;
     }
 
-    /* Google review badge (only stars, no count) */
+    /* Google review badge (only stars) */
     .review-badge {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 4px;
       background: #f9f9f9;
-      padding: 5px 12px;
+      padding: 3px 8px;
       border-radius: 30px;
       border: 1px solid #eaeaea;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       transition: all 0.3s ease;
     }
     .review-badge:hover {
@@ -675,21 +707,73 @@
       letter-spacing: 2px;
     }
 
+    /* Mobile call bar */
+    .call-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #1e3a5f;
+      color: white;
+      padding: 10px 16px;
+      text-align: center;
+      z-index: 1000;
+      font-size: 1rem;
+      font-weight: 600;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    }
+    .call-bar a {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .call-bar i {
+      font-size: 1.2rem;
+    }
+    @media (max-width: 768px) {
+      .call-bar {
+        display: block;
+      }
+      body {
+        padding-bottom: 56px;
+      }
+    }
+
     /* Mobile menu */
     .mobile-menu {
       display: none;
-      position: fixed;
-      top: 128px; /* adjusted for taller header */
+      position: absolute;
+      top: 100%;
       left: 0;
       width: 100%;
-      background: white;
-      padding: 1.5rem;
+      background: var(--card-bg);
+      padding: 1rem;
       box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
       z-index: 40;
       border-bottom: 2px solid #b4945c;
+      transition: all 0.3s ease;
     }
     .mobile-menu.show {
       display: block;
+    }
+    .mobile-menu a {
+      display: block;
+      padding: 0.6rem 0;
+      color: var(--text-primary);
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid var(--border-light);
+      transition: color 0.2s;
+    }
+    .mobile-menu a:hover {
+      color: #b4945c;
+    }
+    .mobile-menu a:last-child {
+      border-bottom: none;
     }
     .hamburger {
       display: none;
@@ -697,9 +781,9 @@
       cursor: pointer;
     }
     .hamburger span {
-      width: 25px;
+      width: 22px;
       height: 3px;
-      background: #1e3a5f;
+      background: var(--text-primary);
       margin: 3px 0;
       transition: 0.4s;
     }
@@ -710,9 +794,114 @@
       .hamburger {
         display: flex;
       }
-      .mobile-menu {
-        top: 120px; /* adjust for smaller header height on mobile */
-      }
+    }
+
+    /* Dark mode toggle button */
+    .dark-mode-toggle {
+      background: transparent;
+      border: 1px solid #b4945c;
+      color: #b4945c;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .dark-mode-toggle:hover {
+      background: #b4945c;
+      color: white;
+    }
+
+    /* Carousel */
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.4s ease;
+    }
+    .carousel-slide {
+      flex: 0 0 100%;
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+    }
+    .carousel-btn:hover {
+      background: rgba(0,0,0,0.8);
+    }
+    .carousel-btn.prev {
+      left: 10px;
+    }
+    .carousel-btn.next {
+      right: 10px;
+    }
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 1rem;
+    }
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ccc;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .carousel-dot.active {
+      background: #b4945c;
+    }
+
+    /* FAQ Accordion */
+    .faq-item {
+      border-bottom: 1px solid var(--border-light);
+      padding: 0.8rem 0;
+    }
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    .faq-question i {
+      transition: transform 0.3s;
+    }
+    .faq-question.open i {
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding-top: 0;
+      color: var(--text-secondary);
+    }
+    .faq-answer.open {
+      max-height: 200px;
+      padding-top: 0.5rem;
     }
   </style>
 </head>
@@ -736,9 +925,14 @@
     <i class="fas fa-chevron-up"></i>
   </div>
 
-  <!-- Header with blur, even bigger logo, and hamburger -->
+  <!-- Mobile Call Bar -->
+  <div class="call-bar">
+    <a href="tel:+355676360510"><i class="fas fa-phone-alt"></i> Call us: +355 67 636 0510</a>
+  </div>
+
+  <!-- Header with blur, shorter, bigger logo, dark mode toggle, and hamburger -->
   <header class="solid-header sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-6 py-4">
+    <div class="max-w-7xl mx-auto px-6 py-2">
       <div class="flex flex-wrap items-center justify-between gap-4">
         <div class="logo-area flex items-center space-x-3">
           <img src="https://i.postimg.cc/tCgW3FQK/Logo-removebg-preview.png" alt="Iglisi Watch & Key logo - watch repair and key copy in Durres since 2002" class="h-16 w-auto">
@@ -758,7 +952,10 @@
             <span class="font-medium">+355 67 636 0510</span>
           </a>
           <a href="https://wa.me/355676360510" class="btn-primary text-sm px-4 py-2 hidden md:inline-block" target="_blank">Book via WhatsApp</a>
-          <button onclick="toggleLang()" class="flex items-center space-x-2 border border-gray-300 px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition">
+          <button class="dark-mode-toggle" id="darkModeToggle" title="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+          <button onclick="toggleLang()" class="flex items-center space-x-2 border border-gray-300 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition">
             <i class="fas fa-globe"></i>
             <span id="langBtnText">EN / AL / IT</span>
           </button>
@@ -772,7 +969,7 @@
     </div>
   </header>
 
-  <!-- Mobile Menu -->
+  <!-- Mobile Menu (links will be updated by JS) -->
   <div class="mobile-menu" id="mobileMenu">
     <div class="flex flex-col gap-4">
       <a href="tel:+355676360510" class="flex items-center gap-2 text-gray-700 hover:text-[#b4945c] transition">
@@ -780,6 +977,8 @@
         <span class="font-medium">+355 67 636 0510</span>
       </a>
       <a href="https://wa.me/355676360510" class="btn-primary text-center" target="_blank">Book via WhatsApp</a>
+      <!-- Language-specific navigation links will be inserted here by JavaScript -->
+      <div id="mobile-nav-links"></div>
       <button onclick="toggleLang()" class="flex items-center justify-center space-x-2 border border-gray-300 px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition">
         <i class="fas fa-globe"></i>
         <span>EN / AL / IT</span>
@@ -934,42 +1133,86 @@
       </div>
     </section>
 
-    <!-- REVIEWS -->
+    <!-- REVIEWS CAROUSEL -->
     <section id="reviews-en" class="py-24 bg-white" data-aos="fade-up">
       <div class="max-w-5xl mx-auto px-6">
         <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">What Our <span class="gold">Customers Say</span></h2>
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200"><div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div><p class="text-gray-600 italic">"I'd recommend him to everyone living in Durres. Really appreciate the work and professionalism he shows. 10/10 👍"</p><p class="font-bold mt-4">– Feta Dosti</p></div>
-          <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200"><div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div><p class="text-gray-600 italic">"Took my watch in for repair and he fixed it perfectly. Fast, reliable, and really knows his craft. Very satisfied."</p><p class="font-bold mt-4">– Kristian Pando</p></div>
-          <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200"><div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div><p class="text-gray-600 italic">"Sent my watch to get it fixed. Got it back in a day. Amazing work"</p><p class="font-bold mt-4">– Deni Tabaku</p></div>
-          <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200"><div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div><p class="text-gray-600 italic">"I had a very good experience with this service. The repair was done with care and within the time frame I was told. Communication was clear throughout the process. I would recommend it to anyone looking for watch repair in Durres."</p><p class="font-bold mt-4">– Elis Xhaferaj</p></div>
+        <div class="carousel-container relative">
+          <div class="carousel-track" id="carousel-en">
+            <div class="carousel-slide">
+              <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200 h-full">
+                <div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div>
+                <p class="text-gray-600 italic">"I'd recommend him to everyone living in Durres. Really appreciate the work and professionalism he shows. 10/10 👍"</p>
+                <p class="font-bold mt-4">– Feta Dosti</p>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200 h-full">
+                <div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div>
+                <p class="text-gray-600 italic">"Took my watch in for repair and he fixed it perfectly. Fast, reliable, and really knows his craft. Very satisfied."</p>
+                <p class="font-bold mt-4">– Kristian Pando</p>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200 h-full">
+                <div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div>
+                <p class="text-gray-600 italic">"Sent my watch to get it fixed. Got it back in a day. Amazing work"</p>
+                <p class="font-bold mt-4">– Deni Tabaku</p>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200 h-full">
+                <div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div>
+                <p class="text-gray-600 italic">"I had a very good experience with this service. The repair was done with care and within the time frame I was told. Communication was clear throughout the process. I would recommend it to anyone looking for watch repair in Durres."</p>
+                <p class="font-bold mt-4">– Elis Xhaferaj</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-btn prev" onclick="moveCarousel('en', -1)"><i class="fas fa-chevron-left"></i></button>
+          <button class="carousel-btn next" onclick="moveCarousel('en', 1)"><i class="fas fa-chevron-right"></i></button>
+          <div class="carousel-dots" id="dots-en"></div>
         </div>
         <div class="text-center mt-12"><a href="https://search.google.com/local/reviews?placeid=ChIJU3JyAljB0RMRdoAB2vYR5oo" target="_blank" class="btn-primary"><i class="fab fa-google mr-2"></i>Leave a Review on Google</a></div>
       </div>
     </section>
 
-    <!-- FAQ (ENGLISH) -->
+    <!-- FAQ ACCORDION -->
     <section class="py-24 bg-gray-50" data-aos="fade-up">
       <div class="max-w-5xl mx-auto px-6">
         <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Frequently Asked <span class="gold">Questions</span></h2>
-        <div class="space-y-6">
-          <div class="border-b border-gray-200 pb-4">
-            <h3 class="text-xl font-bold mb-2">How long does a watch battery replacement take?</h3>
-            <p class="text-gray-600">Usually <span class="font-bold gold">under 2 minutes</span> while you wait.</p>
+        <div class="space-y-2">
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>How long does a watch battery replacement take?</span>
+              <i class="fas fa-chevron-down gold"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Usually <span class="font-bold gold">under 2 minutes</span> while you wait.</p>
+            </div>
           </div>
-          <div class="border-b border-gray-200 pb-4">
-            <h3 class="text-xl font-bold mb-2">Do you repair all types of watches?</h3>
-            <p class="text-gray-600">We specialize in quartz watches, and we can also service mechanical and automatic watches depending on the repair needed.</p>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Do you repair all types of watches?</span>
+              <i class="fas fa-chevron-down gold"></i>
+            </div>
+            <div class="faq-answer">
+              <p>We specialize in quartz watches, and we can also service mechanical and automatic watches depending on the repair needed.</p>
+            </div>
           </div>
-          <div class="border-b border-gray-200 pb-4">
-            <h3 class="text-xl font-bold mb-2">What types of keys can you copy?</h3>
-            <p class="text-gray-600">We copy standard house keys, office keys, and high‑security keys. We do not copy car keys.</p>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>What types of keys can you copy?</span>
+              <i class="fas fa-chevron-down gold"></i>
+            </div>
+            <div class="faq-answer">
+              <p>We copy standard house keys, office keys, and high‑security keys. We do not copy car keys.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- CONTACT with "Get Directions" link -->
     <section id="contact-en" class="py-24 bg-gray-50" data-aos="fade-up">
       <div class="max-w-6xl mx-auto px-6">
         <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Get In <span class="gold">Touch</span></h2>
@@ -986,6 +1229,7 @@
             <div class="mt-8 flex flex-wrap gap-4">
               <a href="https://www.google.com/maps/place/Orendreqes+%26+Kopje+Celsash+Igli/@41.3201564,19.4453564,17z" target="_blank" class="btn-primary"><i class="fab fa-google mr-2"></i>Open in Google Maps</a>
               <a href="https://wa.me/355676360510" target="_blank" class="btn-secondary"><i class="fab fa-whatsapp mr-2"></i>WhatsApp</a>
+              <a href="https://www.google.com/maps/dir/?api=1&destination=41.3201564,19.4453564" target="_blank" class="btn-secondary"><i class="fas fa-directions mr-2"></i>Get Directions</a>
             </div>
           </div>
           <div>
@@ -1119,28 +1363,81 @@
       </div>
     </section>
 
-    <!-- Reviews -->
+    <!-- Reviews Carousel -->
     <section id="reviews-al" class="py-24 bg-white" data-aos="fade-up">
       <div class="max-w-5xl mx-auto px-6">
         <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Çfarë <span class="gold">Thonë Klientët</span></h2>
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200"><div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div><p class="text-gray-600 italic">"I'd recommend him to everyone living in Durres. Really appreciate the work and professionalism he shows. 10/10 👍"</p><p class="font-bold mt-4">– Feta Dosti</p></div>
-          <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200"><div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div><p class="text-gray-600 italic">"Took my watch in for repair and he fixed it perfectly. Fast, reliable, and really knows his craft. Very satisfied."</p><p class="font-bold mt-4">– Kristian Pando</p></div>
-          <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200"><div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div><p class="text-gray-600 italic">"Sent my watch to get it fixed. Got it back in a day. Amazing work"</p><p class="font-bold mt-4">– Deni Tabaku</p></div>
-          <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200"><div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div><p class="text-gray-600 italic">"I had a very good experience with this service. The repair was done with care and within the time frame I was told. Communication was clear throughout the process. I would recommend it to anyone looking for watch repair in Durres."</p><p class="font-bold mt-4">– Elis Xhaferaj</p></div>
+        <div class="carousel-container relative">
+          <div class="carousel-track" id="carousel-al">
+            <div class="carousel-slide">
+              <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200 h-full">
+                <div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div>
+                <p class="text-gray-600 italic">"I'd recommend him to everyone living in Durres. Really appreciate the work and professionalism he shows. 10/10 👍"</p>
+                <p class="font-bold mt-4">– Feta Dosti</p>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200 h-full">
+                <div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div>
+                <p class="text-gray-600 italic">"Took my watch in for repair and he fixed it perfectly. Fast, reliable, and really knows his craft. Very satisfied."</p>
+                <p class="font-bold mt-4">– Kristian Pando</p>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200 h-full">
+                <div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div>
+                <p class="text-gray-600 italic">"Sent my watch to get it fixed. Got it back in a day. Amazing work"</p>
+                <p class="font-bold mt-4">– Deni Tabaku</p>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200 h-full">
+                <div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div>
+                <p class="text-gray-600 italic">"I had a very good experience with this service. The repair was done with care and within the time frame I was told. Communication was clear throughout the process. I would recommend it to anyone looking for watch repair in Durres."</p>
+                <p class="font-bold mt-4">– Elis Xhaferaj</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-btn prev" onclick="moveCarousel('al', -1)"><i class="fas fa-chevron-left"></i></button>
+          <button class="carousel-btn next" onclick="moveCarousel('al', 1)"><i class="fas fa-chevron-right"></i></button>
+          <div class="carousel-dots" id="dots-al"></div>
         </div>
         <div class="text-center mt-12"><a href="https://search.google.com/local/reviews?placeid=ChIJU3JyAljB0RMRdoAB2vYR5oo" target="_blank" class="btn-primary"><i class="fab fa-google mr-2"></i>Shkruaj një Koment në Google</a></div>
       </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- FAQ Accordion -->
     <section class="py-24 bg-gray-50" data-aos="fade-up">
       <div class="max-w-5xl mx-auto px-6">
         <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Pyetje të <span class="gold">Shpeshta</span></h2>
-        <div class="space-y-6">
-          <div class="border-b border-gray-200 pb-4"><h3 class="text-xl font-bold mb-2">Sa kohë duhet për të ndërruar baterinë e orës?</h3><p class="text-gray-600">Zakonisht <span class="font-bold gold">nën 2 minuta</span>, ndërsa prisni.</p></div>
-          <div class="border-b border-gray-200 pb-4"><h3 class="text-xl font-bold mb-2">A riparoni të gjitha llojet e orëve?</h3><p class="text-gray-600">Specializohemi në ora kuarci, por mund të riparojmë edhe orë mekanike/automatike në varësi të nevojës.</p></div>
-          <div class="border-b border-gray-200 pb-4"><h3 class="text-xl font-bold mb-2">Çfarë lloj çelësash kopjoni?</h3><p class="text-gray-600">Kopjojmë çelësa standard shtëpie, zyre dhe çelësa sigurie. Nuk kopjojmë çelësa makine.</p></div>
+        <div class="space-y-2">
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Sa kohë duhet për të ndërruar baterinë e orës?</span>
+              <i class="fas fa-chevron-down gold"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Zakonisht <span class="font-bold gold">nën 2 minuta</span>, ndërsa prisni.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>A riparoni të gjitha llojet e orëve?</span>
+              <i class="fas fa-chevron-down gold"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Specializohemi në ora kuarci, por mund të riparojmë edhe orë mekanike/automatike në varësi të nevojës.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Çfarë lloj çelësash kopjoni?</span>
+              <i class="fas fa-chevron-down gold"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Kopjojmë çelësa standard shtëpie, zyre dhe çelësa sigurie. Nuk kopjojmë çelësa makine.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1162,6 +1459,7 @@
             <div class="mt-8 flex flex-wrap gap-4">
               <a href="https://www.google.com/maps/place/Orendreqes+%26+Kopje+Celsash+Igli/@41.3201564,19.4453564,17z" target="_blank" class="btn-primary"><i class="fab fa-google mr-2"></i>Hap në Google Maps</a>
               <a href="https://wa.me/355676360510" target="_blank" class="btn-secondary"><i class="fab fa-whatsapp mr-2"></i>WhatsApp</a>
+              <a href="https://www.google.com/maps/dir/?api=1&destination=41.3201564,19.4453564" target="_blank" class="btn-secondary"><i class="fas fa-directions mr-2"></i>Merr Drejtime</a>
             </div>
           </div>
           <div><iframe class="w-full h-80 rounded-2xl border border-gray-200" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2991.418269398786!2d19.4431676!3d41.3201564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134fd18602527253%3A0x8ae611f6da018076!2sOrendreqes%20%26%20Kopje%20Celsash%20Igli!5e0!3m2!1sen!2s!4v1700000000000" allowfullscreen="" loading="lazy"></iframe></div>
@@ -1293,28 +1591,81 @@
       </div>
     </section>
 
-    <!-- Reviews -->
+    <!-- Reviews Carousel -->
     <section id="reviews-it" class="py-24 bg-white" data-aos="fade-up">
       <div class="max-w-5xl mx-auto px-6">
         <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Cosa Dicono i <span class="gold">Nostri Clienti</span></h2>
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200"><div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div><p class="text-gray-600 italic">"Lo consiglio a tutti quelli che vivono a Durazzo. Apprezzo davvero il lavoro e la professionalità che mostra. 10/10 👍"</p><p class="font-bold mt-4">– Feta Dosti</p></div>
-          <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200"><div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div><p class="text-gray-600 italic">"Ho portato il mio orologio per una riparazione e l'ha riparato perfettamente. Veloce, affidabile e conosce davvero il suo mestiere."</p><p class="font-bold mt-4">– Kristian Pando</p></div>
-          <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200"><div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div><p class="text-gray-600 italic">"Ho mandato il mio orologio per farlo riparare. Me lo hanno restituito in un giorno. Lavoro fantastico."</p><p class="font-bold mt-4">– Deni Tabaku</p></div>
-          <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200"><div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div><p class="text-gray-600 italic">"Ho avuto un'esperienza molto positiva con questo servizio. La riparazione è stata eseguita con cura e nei tempi concordati. Lo consiglierei a chiunque."</p><p class="font-bold mt-4">– Elis Xhaferaj</p></div>
+        <div class="carousel-container relative">
+          <div class="carousel-track" id="carousel-it">
+            <div class="carousel-slide">
+              <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200 h-full">
+                <div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div>
+                <p class="text-gray-600 italic">"Lo consiglio a tutti quelli che vivono a Durazzo. Apprezzo davvero il lavoro e la professionalità che mostra. 10/10 👍"</p>
+                <p class="font-bold mt-4">– Feta Dosti</p>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200 h-full">
+                <div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div>
+                <p class="text-gray-600 italic">"Ho portato il mio orologio per una riparazione e l'ha riparato perfettamente. Veloce, affidabile e conosce davvero il suo mestiere."</p>
+                <p class="font-bold mt-4">– Kristian Pando</p>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200 h-full">
+                <div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div>
+                <p class="text-gray-600 italic">"Ho mandato il mio orologio per farlo riparare. Me lo hanno restituito in un giorno. Lavoro fantastico."</p>
+                <p class="font-bold mt-4">– Deni Tabaku</p>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200 h-full">
+                <div class="flex items-center mb-4"><div class="flex text-xl star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="ml-2 text-gray-600">5.0</span></div>
+                <p class="text-gray-600 italic">"Ho avuto un'esperienza molto positiva con questo servizio. La riparazione è stata eseguita con cura e nei tempi concordati. Lo consiglierei a chiunque."</p>
+                <p class="font-bold mt-4">– Elis Xhaferaj</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-btn prev" onclick="moveCarousel('it', -1)"><i class="fas fa-chevron-left"></i></button>
+          <button class="carousel-btn next" onclick="moveCarousel('it', 1)"><i class="fas fa-chevron-right"></i></button>
+          <div class="carousel-dots" id="dots-it"></div>
         </div>
         <div class="text-center mt-12"><a href="https://search.google.com/local/reviews?placeid=ChIJU3JyAljB0RMRdoAB2vYR5oo" target="_blank" class="btn-primary"><i class="fab fa-google mr-2"></i>Lascia una Recensione su Google</a></div>
       </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- FAQ Accordion -->
     <section class="py-24 bg-gray-50" data-aos="fade-up">
       <div class="max-w-5xl mx-auto px-6">
         <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Domande <span class="gold">Frequenti</span></h2>
-        <div class="space-y-6">
-          <div class="border-b border-gray-200 pb-4"><h3 class="text-xl font-bold mb-2">Quanto tempo per sostituire la batteria?</h3><p class="text-gray-600"><span class="font-bold gold">Meno di 2 minuti</span> mentre aspetti.</p></div>
-          <div class="border-b border-gray-200 pb-4"><h3 class="text-xl font-bold mb-2">Riparate tutti i tipi di orologi?</h3><p class="text-gray-600">Specializzati in orologi al quarzo, ma possiamo riparare anche orologi meccanici/automatici.</p></div>
-          <div class="border-b border-gray-200 pb-4"><h3 class="text-xl font-bold mb-2">Che tipi di chiavi copiate?</h3><p class="text-gray-600">Copiamo chiavi standard per casa, ufficio e chiavi di sicurezza. Non copiamo chiavi auto.</p></div>
+        <div class="space-y-2">
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Quanto tempo per sostituire la batteria?</span>
+              <i class="fas fa-chevron-down gold"></i>
+            </div>
+            <div class="faq-answer">
+              <p><span class="font-bold gold">Meno di 2 minuti</span> mentre aspetti.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Riparate tutti i tipi di orologi?</span>
+              <i class="fas fa-chevron-down gold"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Specializzati in orologi al quarzo, ma possiamo riparare anche orologi meccanici/automatici.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Che tipi di chiavi copiate?</span>
+              <i class="fas fa-chevron-down gold"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Copiamo chiavi standard per casa, ufficio e chiavi di sicurezza. Non copiamo chiavi auto.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1336,6 +1687,7 @@
             <div class="mt-8 flex flex-wrap gap-4">
               <a href="https://www.google.com/maps/place/Orendreqes+%26+Kopje+Celsash+Igli/@41.3201564,19.4453564,17z" target="_blank" class="btn-primary"><i class="fab fa-google mr-2"></i>Apri in Google Maps</a>
               <a href="https://wa.me/355676360510" target="_blank" class="btn-secondary"><i class="fab fa-whatsapp mr-2"></i>WhatsApp</a>
+              <a href="https://www.google.com/maps/dir/?api=1&destination=41.3201564,19.4453564" target="_blank" class="btn-secondary"><i class="fas fa-directions mr-2"></i>Indicazioni</a>
             </div>
           </div>
           <div><iframe class="w-full h-80 rounded-2xl border border-gray-200" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2991.418269398786!2d19.4431676!3d41.3201564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134fd18602527253%3A0x8ae611f6da018076!2sOrendreqes%20%26%20Kopje%20Celsash%20Igli!5e0!3m2!1sen!2s!4v1700000000000" allowfullscreen="" loading="lazy"></iframe></div>
@@ -1374,14 +1726,48 @@
     let langIndex = 0;
     const langIds = ['en-version', 'al-version', 'it-version'];
     const langBtnText = document.getElementById('langBtnText');
+    const mobileNavLinks = document.getElementById('mobile-nav-links');
+
+    // Define navigation links for each language
+    const navLinks = {
+      en: [
+        { text: 'Services', url: '#services-en' },
+        { text: 'Reviews', url: '#reviews-en' },
+        { text: 'Contact', url: '#contact-en' }
+      ],
+      al: [
+        { text: 'Shërbimet', url: '#services-al' },
+        { text: 'Komentet', url: '#reviews-al' },
+        { text: 'Kontakti', url: '#contact-al' }
+      ],
+      it: [
+        { text: 'Servizi', url: '#services-it' },
+        { text: 'Recensioni', url: '#reviews-it' },
+        { text: 'Contatto', url: '#contact-it' }
+      ]
+    };
+
+    function updateMobileNavLinks(lang) {
+      const links = navLinks[lang];
+      mobileNavLinks.innerHTML = links.map(link => 
+        `<a href="${link.url}" onclick="toggleMobileMenu()">${link.text}</a>`
+      ).join('');
+    }
 
     function toggleLang() {
+      // Remove active from all
       document.querySelectorAll('.lang').forEach(el => el.classList.remove('active'));
+      // Cycle index
       langIndex = (langIndex + 1) % langIds.length;
+      // Activate current
       document.getElementById(langIds[langIndex]).classList.add('active');
+      // Update button text
       if (langIndex === 0) langBtnText.innerText = 'EN / AL / IT';
       else if (langIndex === 1) langBtnText.innerText = 'AL / IT / EN';
       else langBtnText.innerText = 'IT / EN / AL';
+      // Update mobile nav links
+      const langCode = langIds[langIndex].split('-')[0];
+      updateMobileNavLinks(langCode);
     }
 
     // Lightbox options
@@ -1425,6 +1811,76 @@
       const menu = document.getElementById('mobileMenu');
       menu.classList.toggle('show');
     }
+
+    // Dark mode toggle
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const darkModeIcon = darkModeToggle.querySelector('i');
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      document.body.classList.add('dark');
+      darkModeIcon.classList.remove('fa-moon');
+      darkModeIcon.classList.add('fa-sun');
+    }
+    darkModeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      if (document.body.classList.contains('dark')) {
+        localStorage.setItem('darkMode', 'enabled');
+        darkModeIcon.classList.remove('fa-moon');
+        darkModeIcon.classList.add('fa-sun');
+      } else {
+        localStorage.setItem('darkMode', 'disabled');
+        darkModeIcon.classList.remove('fa-sun');
+        darkModeIcon.classList.add('fa-moon');
+      }
+    });
+
+    // Carousel variables and functions
+    let carouselIndices = { en: 0, al: 0, it: 0 };
+    const carouselSlidesCount = 4;
+
+    function updateCarousel(lang) {
+      const track = document.getElementById(`carousel-${lang}`);
+      const index = carouselIndices[lang];
+      if (track) {
+        track.style.transform = `translateX(-${index * 100}%)`;
+      }
+      // Update dots
+      const dotsContainer = document.getElementById(`dots-${lang}`);
+      if (dotsContainer) {
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < carouselSlidesCount; i++) {
+          const dot = document.createElement('span');
+          dot.className = `carousel-dot ${i === index ? 'active' : ''}`;
+          dot.onclick = (function(i) {
+            return function() {
+              carouselIndices[lang] = i;
+              updateCarousel(lang);
+            };
+          })(i);
+          dotsContainer.appendChild(dot);
+        }
+      }
+    }
+
+    window.moveCarousel = function(lang, direction) {
+      carouselIndices[lang] = (carouselIndices[lang] + direction + carouselSlidesCount) % carouselSlidesCount;
+      updateCarousel(lang);
+    };
+
+    // FAQ accordion
+    window.toggleFaq = function(element) {
+      const answer = element.nextElementSibling;
+      const icon = element.querySelector('i');
+      element.classList.toggle('open');
+      answer.classList.toggle('open');
+    };
+
+    // Initialize carousels and mobile nav after DOM load
+    document.addEventListener('DOMContentLoaded', function() {
+      updateCarousel('en');
+      updateCarousel('al');
+      updateCarousel('it');
+      updateMobileNavLinks('en');
+    });
   </script>
 </body>
 </html>
