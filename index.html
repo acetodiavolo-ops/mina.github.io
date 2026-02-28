@@ -650,7 +650,7 @@
       margin-right: 6px;
     }
 
-    /* Hours badge – now a clean single line */
+    /* Hours badge – now only used outside header if needed */
     .hours-badge {
       background: #f0f0f0;
       color: var(--accent-teal);
@@ -667,7 +667,7 @@
       color: var(--accent-gold);
     }
 
-    /* Google review badge (only stars) */
+    /* Google review badge – hidden on mobile */
     .review-badge {
       display: inline-flex;
       align-items: center;
@@ -687,6 +687,11 @@
       color: #fbbf24;
       letter-spacing: 2px;
     }
+    @media (max-width: 768px) {
+      .review-badge {
+        display: none;
+      }
+    }
 
     /* Mobile call bar – reduced height */
     .call-bar {
@@ -697,10 +702,10 @@
       width: 100%;
       background: var(--accent-teal);
       color: white;
-      padding: 8px 16px;
+      padding: 4px 12px;  /* reduced padding */
       text-align: center;
       z-index: 1000;
-      font-size: 1rem;
+      font-size: 0.9rem;   /* slightly smaller */
       font-weight: 600;
       box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
     }
@@ -713,14 +718,14 @@
       gap: 8px;
     }
     .call-bar i {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
     @media (max-width: 768px) {
       .call-bar {
         display: block;
       }
       body {
-        padding-bottom: 48px;
+        padding-bottom: 40px;  /* adjusted to match bar height */
       }
     }
 
@@ -904,6 +909,13 @@
         font-size: 0.7rem;
       }
     }
+
+    /* Hide "Family-owned · Since 2002" text on mobile */
+    @media (max-width: 768px) {
+      .desktop-only-text {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body class="text-gray-800 antialiased">
@@ -931,21 +943,13 @@
     <a href="tel:+355676360510"><i class="fas fa-phone-alt"></i> Call us: +355 67 636 0510</a>
   </div>
 
-  <!-- Header – compact, bigger logo -->
+  <!-- Header – clean, no extra badges -->
   <header class="solid-header sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-2">
       <div class="flex items-center justify-between">
         <div class="logo-area flex items-center space-x-2">
           <img src="https://i.postimg.cc/tCgW3FQK/Logo-removebg-preview.png" alt="Iglisi Watch & Key logo - watch repair and key copy in Durres since 2002" class="h-16 w-auto">
-          <div>
-            <p class="text-xs text-gray-500">Family-owned · Since 2002</p>
-            <div class="flex items-center gap-2 mt-1">
-              <span class="hours-badge"><i class="far fa-clock"></i> Open today until 8:30 PM</span>
-              <span class="review-badge">
-                <span class="stars">★★★★★</span>
-              </span>
-            </div>
-          </div>
+          <p class="desktop-only-text text-xs text-gray-500">Family-owned · Since 2002</p>
         </div>
 
         <!-- Desktop navigation -->
@@ -957,7 +961,7 @@
           <a href="https://wa.me/355676360510" class="btn-primary text-sm px-4 py-2" target="_blank">Book via WhatsApp</a>
           <button onclick="toggleLang()" class="flex items-center space-x-2 border border-gray-300 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition">
             <i class="fas fa-globe"></i>
-            <span id="langBtnText">EN / AL / IT</span>
+            <span id="langBtnText">EN</span>
           </button>
         </div>
 
@@ -1021,14 +1025,14 @@
       </div>
     </section>
 
-    <!-- TRUST BADGES (clickable) -->
+    <!-- TRUST BADGES (now as divs, not links) -->
     <section class="py-16 bg-white/70" data-aos="fade-up">
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <a href="#about" class="trust-badge block"><i class="fas fa-calendar-alt text-3xl gold mb-2"></i><h3 class="font-bold text-xl">Since 2002</h3><p class="text-gray-500 text-sm">23+ years</p></a>
-          <a href="#services-en" class="trust-badge block"><i class="fas fa-clock text-3xl gold mb-2"></i><h3 class="font-bold text-xl">350K+</h3><p class="text-gray-500 text-sm">Watches repaired</p></a>
-          <a href="#services-en" class="trust-badge block"><i class="fas fa-key text-3xl gold mb-2"></i><h3 class="font-bold text-xl">700K+</h3><p class="text-gray-500 text-sm">Keys copied</p></a>
-          <a href="#reviews-en" class="trust-badge block"><i class="fas fa-smile text-3xl gold mb-2"></i><h3 class="font-bold text-xl">15K+</h3><p class="text-gray-500 text-sm">Happy customers</p></a>
+          <div class="trust-badge block"><i class="fas fa-calendar-alt text-3xl gold mb-2"></i><h3 class="font-bold text-xl">Since 2002</h3><p class="text-gray-500 text-sm">23+ years</p></div>
+          <div class="trust-badge block"><i class="fas fa-clock text-3xl gold mb-2"></i><h3 class="font-bold text-xl">350K+</h3><p class="text-gray-500 text-sm">Watches repaired</p></div>
+          <div class="trust-badge block"><i class="fas fa-key text-3xl gold mb-2"></i><h3 class="font-bold text-xl">700K+</h3><p class="text-gray-500 text-sm">Keys copied</p></div>
+          <div class="trust-badge block"><i class="fas fa-smile text-3xl gold mb-2"></i><h3 class="font-bold text-xl">15K+</h3><p class="text-gray-500 text-sm">Happy customers</p></div>
         </div>
         <div class="mt-6 text-center">
           <span class="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full border border-gold shadow-sm">
@@ -1280,10 +1284,10 @@
     <section class="py-16 bg-white/70" data-aos="fade-up">
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <a href="#about" class="trust-badge block"><i class="fas fa-calendar-alt text-3xl gold mb-2"></i><h3 class="font-bold text-xl">Që nga 2002</h3><p class="text-gray-500 text-sm">23+ vjet</p></a>
-          <a href="#services-al" class="trust-badge block"><i class="fas fa-clock text-3xl gold mb-2"></i><h3 class="font-bold text-xl">350K+</h3><p class="text-gray-500 text-sm">Ora të riparuara</p></a>
-          <a href="#services-al" class="trust-badge block"><i class="fas fa-key text-3xl gold mb-2"></i><h3 class="font-bold text-xl">700K+</h3><p class="text-gray-500 text-sm">Çelësa të kopjuar</p></a>
-          <a href="#reviews-al" class="trust-badge block"><i class="fas fa-smile text-3xl gold mb-2"></i><h3 class="font-bold text-xl">15K+</h3><p class="text-gray-500 text-sm">Klientë të kënaqur</p></a>
+          <div class="trust-badge block"><i class="fas fa-calendar-alt text-3xl gold mb-2"></i><h3 class="font-bold text-xl">Që nga 2002</h3><p class="text-gray-500 text-sm">23+ vjet</p></div>
+          <div class="trust-badge block"><i class="fas fa-clock text-3xl gold mb-2"></i><h3 class="font-bold text-xl">350K+</h3><p class="text-gray-500 text-sm">Ora të riparuara</p></div>
+          <div class="trust-badge block"><i class="fas fa-key text-3xl gold mb-2"></i><h3 class="font-bold text-xl">700K+</h3><p class="text-gray-500 text-sm">Çelësa të kopjuar</p></div>
+          <div class="trust-badge block"><i class="fas fa-smile text-3xl gold mb-2"></i><h3 class="font-bold text-xl">15K+</h3><p class="text-gray-500 text-sm">Klientë të kënaqur</p></div>
         </div>
         <div class="mt-6 text-center">
           <span class="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full border border-gold shadow-sm">
@@ -1454,10 +1458,10 @@
     <section class="py-16 bg-white/70" data-aos="fade-up">
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <a href="#about" class="trust-badge block"><i class="fas fa-calendar-alt text-3xl gold mb-2"></i><h3 class="font-bold text-xl">Dal 2002</h3><p class="text-gray-500 text-sm">23+ anni</p></a>
-          <a href="#services-it" class="trust-badge block"><i class="fas fa-clock text-3xl gold mb-2"></i><h3 class="font-bold text-xl">350K+</h3><p class="text-gray-500 text-sm">Orologi riparati</p></a>
-          <a href="#services-it" class="trust-badge block"><i class="fas fa-key text-3xl gold mb-2"></i><h3 class="font-bold text-xl">700K+</h3><p class="text-gray-500 text-sm">Chiavi duplicate</p></a>
-          <a href="#reviews-it" class="trust-badge block"><i class="fas fa-smile text-3xl gold mb-2"></i><h3 class="font-bold text-xl">15K+</h3><p class="text-gray-500 text-sm">Clienti soddisfatti</p></a>
+          <div class="trust-badge block"><i class="fas fa-calendar-alt text-3xl gold mb-2"></i><h3 class="font-bold text-xl">Dal 2002</h3><p class="text-gray-500 text-sm">23+ anni</p></div>
+          <div class="trust-badge block"><i class="fas fa-clock text-3xl gold mb-2"></i><h3 class="font-bold text-xl">350K+</h3><p class="text-gray-500 text-sm">Orologi riparati</p></div>
+          <div class="trust-badge block"><i class="fas fa-key text-3xl gold mb-2"></i><h3 class="font-bold text-xl">700K+</h3><p class="text-gray-500 text-sm">Chiavi duplicate</p></div>
+          <div class="trust-badge block"><i class="fas fa-smile text-3xl gold mb-2"></i><h3 class="font-bold text-xl">15K+</h3><p class="text-gray-500 text-sm">Clienti soddisfatti</p></div>
         </div>
         <div class="mt-6 text-center">
           <span class="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full border border-gold shadow-sm">
@@ -1595,11 +1599,12 @@
   <footer class="footer py-12">
     <div class="max-w-7xl mx-auto px-6 text-center">
       <div class="flex justify-center space-x-8 mb-6">
-        <a href="#" class="hover:text-[#b4945c] transition"><i class="fab fa-facebook-f text-2xl"></i></a>
-        <a href="https://instagram.com/iglisiwk" target="_blank" class="hover:text-[#b4945c] transition"><i class="fab fa-instagram text-2xl"></i></a>
-        <a href="#" class="hover:text-[#b4945c] transition"><i class="fab fa-whatsapp text-2xl"></i></a>
+        <!-- Facebook placeholder – update when you create the page -->
+        <a href="#" class="hover:text-[#b4945c] transition" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f text-2xl"></i></a>
+        <a href="https://instagram.com/iglisiwk" target="_blank" class="hover:text-[#b4945c] transition" rel="noopener noreferrer"><i class="fab fa-instagram text-2xl"></i></a>
+        <a href="https://wa.me/355676360510" class="hover:text-[#b4945c] transition" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp text-2xl"></i></a>
       </div>
-      <p class="text-sm text-gray-400">© 2026 Iglisi Watch & Key. Të gjitha të drejtat e rezervuara.</p>
+      <p class="text-sm text-gray-400">© <span id="currentYear"></span> Iglisi Watch & Key. Të gjitha të drejtat e rezervuara.</p>
       <p class="text-xs text-gray-500 mt-2">Family-owned · Precision · Since 2002</p>
       <p class="text-xs text-gray-500 mt-1">Follow us on Instagram <a href="https://instagram.com/iglisiwk" target="_blank" class="gold hover:underline">@iglisiwk</a></p>
     </div>
@@ -1626,9 +1631,10 @@
       document.querySelectorAll('.lang').forEach(el => el.classList.remove('active'));
       langIndex = (langIndex + 1) % langIds.length;
       document.getElementById(langIds[langIndex]).classList.add('active');
-      if (langIndex === 0) langBtnText.innerText = 'EN / AL / IT';
-      else if (langIndex === 1) langBtnText.innerText = 'AL / IT / EN';
-      else langBtnText.innerText = 'IT / EN / AL';
+      // Update button text to current language abbreviation
+      if (langIndex === 0) langBtnText.innerText = 'EN';
+      else if (langIndex === 1) langBtnText.innerText = 'AL';
+      else langBtnText.innerText = 'IT';
     };
 
     // Lightbox options
@@ -1658,20 +1664,21 @@
       document.getElementById('progressBar').style.width = scrolled + '%';
     });
 
-    // Carousel variables and functions
+    // Carousel variables and functions – dynamic slide count
     let carouselIndices = { en: 0, al: 0, it: 0 };
-    const carouselSlidesCount = 4;
 
     function updateCarousel(lang) {
       const track = document.getElementById(`carousel-${lang}`);
-      const index = carouselIndices[lang];
-      if (track) {
-        track.style.transform = `translateX(-${index * 100}%)`;
-      }
+      if (!track) return;
+      const slides = track.children;
+      const slideCount = slides.length;
+      const index = carouselIndices[lang] % slideCount; // ensure within bounds
+      track.style.transform = `translateX(-${index * 100}%)`;
+
       const dotsContainer = document.getElementById(`dots-${lang}`);
       if (dotsContainer) {
         dotsContainer.innerHTML = '';
-        for (let i = 0; i < carouselSlidesCount; i++) {
+        for (let i = 0; i < slideCount; i++) {
           const dot = document.createElement('span');
           dot.className = `carousel-dot ${i === index ? 'active' : ''}`;
           dot.onclick = (function(i) {
@@ -1686,7 +1693,10 @@
     }
 
     window.moveCarousel = function(lang, direction) {
-      carouselIndices[lang] = (carouselIndices[lang] + direction + carouselSlidesCount) % carouselSlidesCount;
+      const track = document.getElementById(`carousel-${lang}`);
+      if (!track) return;
+      const slideCount = track.children.length;
+      carouselIndices[lang] = (carouselIndices[lang] + direction + slideCount) % slideCount;
       updateCarousel(lang);
     };
 
@@ -1703,6 +1713,9 @@
       updateCarousel('en');
       updateCarousel('al');
       updateCarousel('it');
+
+      // Set current year in footer
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
     });
   </script>
 </body>
