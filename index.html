@@ -42,7 +42,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Lightbox2 CSS -->
+  <!-- Lightbox2 CSS – no integrity to avoid blocking -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/css/lightbox.min.css">
 
   <!-- AOS (Animate on Scroll) CSS -->
@@ -154,7 +154,7 @@
   </script>
 
   <style>
-    /* Base – no dark mode, clean and simple */
+    /* Base */
     :root {
       --bg-warm: #fcfcfc;
       --bg-soft: #faf7f2;
@@ -272,7 +272,7 @@
       color: var(--accent-gold);
     }
 
-    /* Gallery thumbnails – now just a grid, Lightbox handles the rest */
+    /* Gallery thumbnails */
     .gallery-thumb {
       border-radius: 1.5rem;
       border: 1px solid var(--border-light);
@@ -358,7 +358,7 @@
       transform: scale(1.05);
     }
 
-    /* Header – simplified, no hamburger */
+    /* Header – compact, bigger logo */
     .solid-header {
       background: var(--header-bg);
       backdrop-filter: blur(10px);
@@ -366,15 +366,15 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      padding: 0.75rem 0;
+      padding: 0.5rem 0; /* reduced padding */
     }
     .logo-area {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.5rem;
     }
     .logo-area img {
-      height: 90px;
+      height: 100px; /* bigger logo */
       width: auto;
       filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
       transition: transform 0.3s ease;
@@ -384,7 +384,7 @@
     }
     @media (max-width: 768px) {
       .logo-area img {
-        height: 70px;
+        height: 80px;
       }
     }
     .logo-area p {
@@ -398,7 +398,7 @@
     }
     .mobile-icons a, .mobile-icons button {
       color: var(--text-primary);
-      font-size: 1.3rem;
+      font-size: 1.5rem; /* larger icons */
       transition: color 0.2s;
     }
     .mobile-icons a:hover, .mobile-icons button:hover {
@@ -593,7 +593,7 @@
       margin-bottom: 1rem;
     }
 
-    /* Gallery grid – simple and clean */
+    /* Gallery grid */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -746,6 +746,11 @@
       box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
       position: relative;
       overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .review-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.1);
     }
     .review-card::before {
       content: '"';
@@ -758,6 +763,12 @@
       opacity: 0.1;
       line-height: 1;
       pointer-events: none;
+    }
+    .star-large {
+      font-size: 1.3rem;
+    }
+    .star-large i {
+      text-shadow: 0 0 2px rgba(180,148,92,0.3);
     }
     .carousel-btn {
       position: absolute;
@@ -809,9 +820,6 @@
     .carousel-dot.active {
       background: var(--accent-gold);
       transform: scale(1.2);
-    }
-    .star-large {
-      font-size: 1.3rem;
     }
 
     /* FAQ Accordion */
@@ -880,6 +888,13 @@
         width: 38px;
         height: 38px;
       }
+      .carousel-dots {
+        gap: 8px;
+      }
+      .carousel-dot {
+        width: 10px;
+        height: 10px;
+      }
     }
   </style>
 </head>
@@ -908,11 +923,11 @@
     <a href="tel:+355676360510"><i class="fas fa-phone-alt"></i> Call us: +355 67 636 0510</a>
   </div>
 
-  <!-- Header -->
+  <!-- Header – compact, bigger logo -->
   <header class="solid-header sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-6 py-3">
+    <div class="max-w-7xl mx-auto px-4 py-2">
       <div class="flex items-center justify-between">
-        <div class="logo-area flex items-center space-x-3">
+        <div class="logo-area flex items-center space-x-2">
           <img src="https://i.postimg.cc/tCgW3FQK/Logo-removebg-preview.png" alt="Iglisi Watch & Key logo - watch repair and key copy in Durres since 2002" class="h-16 w-auto">
           <div>
             <p class="text-xs text-gray-500">Family-owned · Since 2002</p>
@@ -938,7 +953,7 @@
           </button>
         </div>
 
-        <!-- Mobile icons -->
+        <!-- Mobile icons (bigger) -->
         <div class="mobile-icons md:hidden">
           <a href="tel:+355676360510" class="text-gray-700"><i class="fas fa-phone-alt"></i></a>
           <a href="https://wa.me/355676360510" class="text-gray-700" target="_blank"><i class="fab fa-whatsapp"></i></a>
@@ -1007,7 +1022,6 @@
           <a href="#services-en" class="trust-badge block"><i class="fas fa-key text-3xl gold mb-2"></i><h3 class="font-bold text-xl">700K+</h3><p class="text-gray-500 text-sm">Keys copied</p></a>
           <a href="#reviews-en" class="trust-badge block"><i class="fas fa-smile text-3xl gold mb-2"></i><h3 class="font-bold text-xl">15K+</h3><p class="text-gray-500 text-sm">Happy customers</p></a>
         </div>
-        <!-- New "Over 24 Years of Experience" badge -->
         <div class="mt-6 text-center">
           <span class="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full border border-gold shadow-sm">
             <i class="fas fa-star text-gold"></i>
@@ -1084,7 +1098,7 @@
       </div>
     </section>
 
-    <!-- GALLERY – now a clean grid with Lightbox -->
+    <!-- GALLERY – clean grid with Lightbox -->
     <section class="py-24 bg-gray-50" data-aos="fade-up">
       <div class="max-w-7xl mx-auto px-6">
         <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Our <span class="gold">Workshop in Real Life</span></h2>
@@ -1100,7 +1114,7 @@
       </div>
     </section>
 
-    <!-- REVIEWS CAROUSEL – modern, with buttons inside the card -->
+    <!-- REVIEWS CAROUSEL – modern, with buttons inside -->
     <section id="reviews-en" class="py-24 bg-white" data-aos="fade-up">
       <div class="max-w-5xl mx-auto px-6">
         <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">What Our <span class="gold">Customers Say</span></h2>
