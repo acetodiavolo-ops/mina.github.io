@@ -42,7 +42,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Lightbox2 CSS – no integrity to avoid blocking -->
+  <!-- Lightbox2 CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/css/lightbox.min.css">
 
   <!-- AOS (Animate on Scroll) CSS -->
@@ -366,7 +366,7 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      padding: 0.5rem 0; /* reduced padding */
+      padding: 0.5rem 0;
     }
     .logo-area {
       display: flex;
@@ -374,7 +374,7 @@
       gap: 0.5rem;
     }
     .logo-area img {
-      height: 100px; /* bigger logo */
+      height: 100px;
       width: auto;
       filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
       transition: transform 0.3s ease;
@@ -398,7 +398,7 @@
     }
     .mobile-icons a, .mobile-icons button {
       color: var(--text-primary);
-      font-size: 1.5rem; /* larger icons */
+      font-size: 1.5rem;
       transition: color 0.2s;
     }
     .mobile-icons a:hover, .mobile-icons button:hover {
@@ -460,7 +460,7 @@
         height: 55px;
         font-size: 28px;
         line-height: 55px;
-        bottom: 80px;
+        bottom: 70px;
         right: 20px;
       }
     }
@@ -497,7 +497,7 @@
     }
     @media (max-width: 640px) {
       .back-to-top {
-        bottom: 140px;
+        bottom: 130px;
         right: 20px;
         width: 45px;
         height: 45px;
@@ -650,17 +650,18 @@
       margin-right: 6px;
     }
 
-    /* Hours badge */
+    /* Hours badge – now a clean single line */
     .hours-badge {
       background: #f0f0f0;
       color: var(--accent-teal);
-      padding: 3px 8px;
-      border-radius: 20px;
-      font-size: 0.75rem;
+      padding: 3px 10px;
+      border-radius: 30px;
+      font-size: 0.8rem;
       font-weight: 600;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      gap: 5px;
+      white-space: nowrap;
     }
     .hours-badge i {
       color: var(--accent-gold);
@@ -672,7 +673,7 @@
       align-items: center;
       gap: 4px;
       background: #f9f9f9;
-      padding: 3px 8px;
+      padding: 3px 10px;
       border-radius: 30px;
       border: 1px solid #eaeaea;
       font-size: 0.8rem;
@@ -687,7 +688,7 @@
       letter-spacing: 2px;
     }
 
-    /* Mobile call bar */
+    /* Mobile call bar – reduced height */
     .call-bar {
       display: none;
       position: fixed;
@@ -696,10 +697,10 @@
       width: 100%;
       background: var(--accent-teal);
       color: white;
-      padding: 12px 16px;
+      padding: 8px 16px;
       text-align: center;
       z-index: 1000;
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 600;
       box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
     }
@@ -712,22 +713,22 @@
       gap: 8px;
     }
     .call-bar i {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
     }
     @media (max-width: 768px) {
       .call-bar {
         display: block;
       }
       body {
-        padding-bottom: 64px;
+        padding-bottom: 48px;
       }
     }
 
-    /* Carousel – modern, with buttons inside the card */
+    /* Carousel – modern, with buttons inside */
     .carousel-container {
       position: relative;
       overflow: hidden;
-      padding: 0 30px; /* space for buttons */
+      padding: 0 30px;
     }
     .carousel-track {
       display: flex;
@@ -742,7 +743,7 @@
       background: var(--card-bg);
       border: 1px solid var(--border-light);
       border-radius: 1.5rem;
-      padding: 2.5rem 2rem;
+      padding: 2rem;
       box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
       position: relative;
       overflow: hidden;
@@ -804,6 +805,7 @@
       justify-content: center;
       gap: 12px;
       margin-top: 2rem;
+      margin-bottom: 2rem; /* space before button */
     }
     .carousel-dot {
       width: 12px;
@@ -890,10 +892,16 @@
       }
       .carousel-dots {
         gap: 8px;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
       }
       .carousel-dot {
         width: 10px;
         height: 10px;
+      }
+      .hours-badge {
+        white-space: normal; /* allow wrap on very small screens */
+        font-size: 0.7rem;
       }
     }
   </style>
@@ -918,7 +926,7 @@
     <i class="fas fa-chevron-up"></i>
   </div>
 
-  <!-- Mobile Call Bar -->
+  <!-- Mobile Call Bar – reduced height -->
   <div class="call-bar">
     <a href="tel:+355676360510"><i class="fas fa-phone-alt"></i> Call us: +355 67 636 0510</a>
   </div>
@@ -1114,7 +1122,7 @@
       </div>
     </section>
 
-    <!-- REVIEWS CAROUSEL – modern, with buttons inside -->
+    <!-- REVIEWS CAROUSEL – with proper dots and spacing -->
     <section id="reviews-en" class="py-24 bg-white" data-aos="fade-up">
       <div class="max-w-5xl mx-auto px-6">
         <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">What Our <span class="gold">Customers Say</span></h2>
@@ -1165,7 +1173,9 @@
           <button class="carousel-btn next" onclick="moveCarousel('en', 1)"><i class="fas fa-chevron-right"></i></button>
           <div class="carousel-dots" id="dots-en"></div>
         </div>
-        <div class="text-center mt-12"><a href="https://search.google.com/local/reviews?placeid=ChIJU3JyAljB0RMRdoAB2vYR5oo" target="_blank" class="btn-primary"><i class="fab fa-google mr-2"></i>Leave a Review on Google</a></div>
+        <div class="text-center mt-8"> <!-- extra top margin to separate from dots -->
+          <a href="https://search.google.com/local/reviews?placeid=ChIJU3JyAljB0RMRdoAB2vYR5oo" target="_blank" class="btn-primary"><i class="fab fa-google mr-2"></i>Leave a Review on Google</a>
+        </div>
       </div>
     </section>
 
@@ -1377,7 +1387,9 @@
           <button class="carousel-btn next" onclick="moveCarousel('al', 1)"><i class="fas fa-chevron-right"></i></button>
           <div class="carousel-dots" id="dots-al"></div>
         </div>
-        <div class="text-center mt-12"><a href="https://search.google.com/local/reviews?placeid=ChIJU3JyAljB0RMRdoAB2vYR5oo" target="_blank" class="btn-primary"><i class="fab fa-google mr-2"></i>Shkruaj një Koment në Google</a></div>
+        <div class="text-center mt-8">
+          <a href="https://search.google.com/local/reviews?placeid=ChIJU3JyAljB0RMRdoAB2vYR5oo" target="_blank" class="btn-primary"><i class="fab fa-google mr-2"></i>Shkruaj një Koment në Google</a>
+        </div>
       </div>
     </section>
 
@@ -1549,7 +1561,9 @@
           <button class="carousel-btn next" onclick="moveCarousel('it', 1)"><i class="fas fa-chevron-right"></i></button>
           <div class="carousel-dots" id="dots-it"></div>
         </div>
-        <div class="text-center mt-12"><a href="https://search.google.com/local/reviews?placeid=ChIJU3JyAljB0RMRdoAB2vYR5oo" target="_blank" class="btn-primary"><i class="fab fa-google mr-2"></i>Lascia una Recensione su Google</a></div>
+        <div class="text-center mt-8">
+          <a href="https://search.google.com/local/reviews?placeid=ChIJU3JyAljB0RMRdoAB2vYR5oo" target="_blank" class="btn-primary"><i class="fab fa-google mr-2"></i>Lascia una Recensione su Google</a>
+        </div>
       </div>
     </section>
 
