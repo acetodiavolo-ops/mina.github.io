@@ -1754,7 +1754,7 @@
       ).join('');
     }
 
-    function toggleLang() {
+    window.toggleLang = function() {
       // Remove active from all
       document.querySelectorAll('.lang').forEach(el => el.classList.remove('active'));
       // Cycle index
@@ -1768,14 +1768,18 @@
       // Update mobile nav links
       const langCode = langIds[langIndex].split('-')[0];
       updateMobileNavLinks(langCode);
-    }
+    };
 
     // Lightbox options
-    lightbox.option({
-      resizeDuration: 200,
-      wrapAround: true,
-      albumLabel: 'Image %1 of %2'
-    });
+    if (typeof lightbox !== 'undefined') {
+      lightbox.option({
+        resizeDuration: 200,
+        wrapAround: true,
+        albumLabel: 'Image %1 of %2'
+      });
+    } else {
+      console.warn('Lightbox2 not loaded – gallery may not work.');
+    }
 
     // Back to top button visibility
     window.addEventListener('scroll', function() {
@@ -1807,10 +1811,10 @@
     }, 3000);
 
     // Mobile menu toggle
-    function toggleMobileMenu() {
+    window.toggleMobileMenu = function() {
       const menu = document.getElementById('mobileMenu');
       menu.classList.toggle('show');
-    }
+    };
 
     // Dark mode toggle
     const darkModeToggle = document.getElementById('darkModeToggle');
