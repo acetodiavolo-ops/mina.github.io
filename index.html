@@ -1036,15 +1036,15 @@
     <section class="pb-16 pt-8 bg-white/70" data-aos="fade-up">
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div class="trust-badge block"><i class="fas fa-calendar-alt text-3xl gold mb-2"></i><h3 class="font-bold text-xl">Since 2002</h3><p class="text-gray-500 text-sm">23+ years</p></div>
+          <div class="trust-badge block"><i class="fas fa-calendar-alt text-3xl gold mb-2"></i><h3 class="font-bold text-xl">Since 2002</h3><p class="text-gray-500 text-sm" id="years-exp-en">23+ years</p></div>
           <div class="trust-badge block"><i class="fas fa-clock text-3xl gold mb-2"></i><h3 class="font-bold text-xl">350K+</h3><p class="text-gray-500 text-sm">Watches repaired</p></div>
           <div class="trust-badge block"><i class="fas fa-key text-3xl gold mb-2"></i><h3 class="font-bold text-xl">700K+</h3><p class="text-gray-500 text-sm">Keys copied</p></div>
           <div class="trust-badge block"><i class="fas fa-smile text-3xl gold mb-2"></i><h3 class="font-bold text-xl">15K+</h3><p class="text-gray-500 text-sm">Happy customers</p></div>
         </div>
-        <div class="mt-6 text-center">
+        <div class="mt-6 pt-16 text-center">
           <span class="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full border border-gold shadow-sm">
             <i class="fas fa-star text-gold"></i>
-            <span class="font-semibold">Over 24 Years of Experience</span>
+            <span class="font-semibold" id="badge-years-en">Over 24 Years of Experience</span>
           </span>
         </div>
       </div>
@@ -1292,15 +1292,15 @@
     <section class="py-16 bg-white/70" data-aos="fade-up">
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div class="trust-badge block"><i class="fas fa-calendar-alt text-3xl gold mb-2"></i><h3 class="font-bold text-xl">Që nga 2002</h3><p class="text-gray-500 text-sm">23+ vjet</p></div>
+          <div class="trust-badge block"><i class="fas fa-calendar-alt text-3xl gold mb-2"></i><h3 class="font-bold text-xl">Që nga 2002</h3><p class="text-gray-500 text-sm" id="years-exp-al">23+ vjet</p></div>
           <div class="trust-badge block"><i class="fas fa-clock text-3xl gold mb-2"></i><h3 class="font-bold text-xl">350K+</h3><p class="text-gray-500 text-sm">Ora të riparuara</p></div>
           <div class="trust-badge block"><i class="fas fa-key text-3xl gold mb-2"></i><h3 class="font-bold text-xl">700K+</h3><p class="text-gray-500 text-sm">Çelësa të kopjuar</p></div>
           <div class="trust-badge block"><i class="fas fa-smile text-3xl gold mb-2"></i><h3 class="font-bold text-xl">15K+</h3><p class="text-gray-500 text-sm">Klientë të kënaqur</p></div>
         </div>
-        <div class="mt-6 text-center">
+        <div class="mt-6 pt-16 text-center">
           <span class="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full border border-gold shadow-sm">
             <i class="fas fa-star text-gold"></i>
-            <span class="font-semibold">Mbi 24 Vjet Përvojë</span>
+            <span class="font-semibold" id="badge-years-al">Mbi 24 Vjet Përvojë</span>
           </span>
         </div>
       </div>
@@ -1466,15 +1466,15 @@
     <section class="py-16 bg-white/70" data-aos="fade-up">
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div class="trust-badge block"><i class="fas fa-calendar-alt text-3xl gold mb-2"></i><h3 class="font-bold text-xl">Dal 2002</h3><p class="text-gray-500 text-sm">23+ anni</p></div>
+          <div class="trust-badge block"><i class="fas fa-calendar-alt text-3xl gold mb-2"></i><h3 class="font-bold text-xl">Dal 2002</h3><p class="text-gray-500 text-sm" id="years-exp-it">23+ anni</p></div>
           <div class="trust-badge block"><i class="fas fa-clock text-3xl gold mb-2"></i><h3 class="font-bold text-xl">350K+</h3><p class="text-gray-500 text-sm">Orologi riparati</p></div>
           <div class="trust-badge block"><i class="fas fa-key text-3xl gold mb-2"></i><h3 class="font-bold text-xl">700K+</h3><p class="text-gray-500 text-sm">Chiavi duplicate</p></div>
           <div class="trust-badge block"><i class="fas fa-smile text-3xl gold mb-2"></i><h3 class="font-bold text-xl">15K+</h3><p class="text-gray-500 text-sm">Clienti soddisfatti</p></div>
         </div>
-        <div class="mt-6 text-center">
+        <div class="mt-6 pt-16 text-center">
           <span class="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full border border-gold shadow-sm">
             <i class="fas fa-star text-gold"></i>
-            <span class="font-semibold">Oltre 24 Anni di Esperienza</span>
+            <span class="font-semibold" id="badge-years-it">Oltre 24 Anni di Esperienza</span>
           </span>
         </div>
       </div>
@@ -1630,10 +1630,33 @@
       offset: 100
     });
 
+    // ========== DYNAMIC YEARS CALCULATION ==========
+    (function updateYears() {
+      const startYear = 2002;
+      const currentYear = new Date().getFullYear();
+      const years = currentYear - startYear; // e.g., 24 in 2026
+
+      // Update English
+      const yearsExpEn = document.getElementById('years-exp-en');
+      if (yearsExpEn) yearsExpEn.textContent = `${years}+ years`;
+      const badgeEn = document.getElementById('badge-years-en');
+      if (badgeEn) badgeEn.textContent = `Over ${years} Years of Experience`;
+
+      // Update Albanian
+      const yearsExpAl = document.getElementById('years-exp-al');
+      if (yearsExpAl) yearsExpAl.textContent = `${years}+ vjet`;
+      const badgeAl = document.getElementById('badge-years-al');
+      if (badgeAl) badgeAl.textContent = `Mbi ${years} Vjet Përvojë`;
+
+      // Update Italian
+      const yearsExpIt = document.getElementById('years-exp-it');
+      if (yearsExpIt) yearsExpIt.textContent = `${years}+ anni`;
+      const badgeIt = document.getElementById('badge-years-it');
+      if (badgeIt) badgeIt.textContent = `Oltre ${years} Anni di Esperienza`;
+    })();
+
     // ========== GEO LANGUAGE SWITCHING ==========
     (function() {
-      // Only run if not already set (e.g., by user toggle)
-      // We'll use a cookie/session flag? For simplicity, we'll just run once.
       fetch('https://ipapi.co/json/')
         .then(response => response.json())
         .then(data => {
@@ -1651,7 +1674,6 @@
             document.getElementById(langIds[targetIndex]).classList.add('active');
             const btn = document.getElementById('langBtnText');
             if (btn) btn.innerText = targetLang.toUpperCase();
-            // Update global langIndex for toggleLang
             window.langIndex = targetIndex;
           }
         })
