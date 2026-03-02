@@ -373,6 +373,9 @@
       align-items: center;
       gap: 0.5rem;
     }
+    .logo-area picture {
+      display: flex;
+    }
     .logo-area img {
       height: 100px;
       width: auto;
@@ -955,7 +958,10 @@
     <div class="max-w-7xl mx-auto px-4 py-2">
       <div class="flex items-center justify-between">
         <div class="logo-area flex items-center space-x-2">
-          <img src="https://i.postimg.cc/tCgW3FQK/Logo-removebg-preview.png" alt="Iglisi Watch & Key logo - watch repair and key copy in Durres since 2002" class="h-16 w-auto">
+          <picture>
+            <source srcset="https://i.postimg.cc/tCgW3FQK/Logo-removebg-preview.webp" type="image/webp">
+            <img src="https://i.postimg.cc/tCgW3FQK/Logo-removebg-preview.png" alt="Iglisi Watch & Key logo - watch repair and key copy in Durres since 2002" class="h-16 w-auto">
+          </picture>
           <p class="desktop-only-text text-xs text-gray-500">Family-owned · Since 2002</p>
         </div>
 
@@ -1036,7 +1042,7 @@
     <section class="pb-16 pt-8 bg-white/70" data-aos="fade-up">
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div class="trust-badge block"><i class="fas fa-calendar-alt text-3xl gold mb-2"></i><h3 class="font-bold text-xl">Since 2002</h3><p class="text-gray-500 text-sm" id="years-exp-en">23+ years</p></div>
+          <div class="trust-badge block"><i class="fas fa-calendar-alt text-3xl gold mb-2"></i><h3 class="font-bold text-xl">Since 2002</h3><p class="text-gray-500 text-sm years-exp" data-lang="en">23+ years</p></div>
           <div class="trust-badge block"><i class="fas fa-clock text-3xl gold mb-2"></i><h3 class="font-bold text-xl">350K+</h3><p class="text-gray-500 text-sm">Watches repaired</p></div>
           <div class="trust-badge block"><i class="fas fa-key text-3xl gold mb-2"></i><h3 class="font-bold text-xl">700K+</h3><p class="text-gray-500 text-sm">Keys copied</p></div>
           <div class="trust-badge block"><i class="fas fa-smile text-3xl gold mb-2"></i><h3 class="font-bold text-xl">15K+</h3><p class="text-gray-500 text-sm">Happy customers</p></div>
@@ -1044,7 +1050,7 @@
         <div class="mt-6 pt-16 text-center">
           <span class="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full border border-gold shadow-sm">
             <i class="fas fa-star text-gold"></i>
-            <span class="font-semibold" id="badge-years-en">Over 24 Years of Experience</span>
+            <span class="font-semibold badge-years" data-lang="en">Over 24 Years of Experience</span>
           </span>
         </div>
       </div>
@@ -1068,7 +1074,10 @@
         <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">The <span class="gold">Craftsman's Workshop</span></h2>
         <div class="flex flex-col md:flex-row gap-12 items-center">
           <div class="md:w-1/3">
-            <img src="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.jpg" alt="Workbench with watch repair tools at Iglisi workshop in Durres" class="rounded-2xl shadow-xl border border-gray-200" loading="lazy">
+            <picture>
+              <source srcset="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.webp" type="image/webp">
+              <img src="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.jpg" alt="Workbench with watch repair tools at Iglisi workshop in Durres" class="rounded-2xl shadow-xl border border-gray-200" loading="lazy">
+            </picture>
           </div>
           <div class="md:w-2/3">
             <p class="text-2xl font-bold mb-4">Where Precision Meets Passion</p>
@@ -1123,12 +1132,42 @@
         <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Our <span class="gold">Workshop in Real Life</span></h2>
         <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">Step inside our family workshop – every image is a real, unedited moment.</p>
         <div class="gallery-grid">
-          <a href="https://i.postimg.cc/XqTkpvHm/bc00c411-3cfc-41e7-96ed-da34c9246e1f.jpg" data-lightbox="workshop" data-title="Shop sign"><img class="gallery-thumb" src="https://i.postimg.cc/XqTkpvHm/bc00c411-3cfc-41e7-96ed-da34c9246e1f.jpg" alt="Iglisi Watch & Key shop sign in Durres" loading="lazy"></a>
-          <a href="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.jpg" data-lightbox="workshop" data-title="Workbench"><img class="gallery-thumb" src="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.jpg" alt="Watch repair workbench at Iglisi workshop" loading="lazy"></a>
-          <a href="https://i.postimg.cc/LsCCmmpv/4321b2b5-af19-4888-980f-c95829f43af2.jpg" data-lightbox="workshop" data-title="Key machines"><img class="gallery-thumb" src="https://i.postimg.cc/LsCCmmpv/4321b2b5-af19-4888-980f-c95829f43af2.jpg" alt="Key cutting machines at Iglisi in Durres" loading="lazy"></a>
-          <a href="https://i.postimg.cc/wv1WvnxR/639d7b56-b8fb-4627-9405-0ec70ad24985.jpg" data-lightbox="workshop" data-title="Watch repair equipment"><img class="gallery-thumb" src="https://i.postimg.cc/wv1WvnxR/639d7b56-b8fb-4627-9405-0ec70ad24985.jpg" alt="Watch repair equipment and tools" loading="lazy"></a>
-          <a href="https://i.postimg.cc/d3d4RdyL/3807368a-ccf3-42ab-bf49-bffea24d52df.jpg" data-lightbox="workshop" data-title="Workshop interior"><img class="gallery-thumb" src="https://i.postimg.cc/d3d4RdyL/3807368a-ccf3-42ab-bf49-bffea24d52df.jpg" alt="Interior of Iglisi watch repair workshop" loading="lazy"></a>
-          <a href="https://i.postimg.cc/4N6Wm6G2/baeedd7f-fd23-4141-b683-fad2b4ee32ce.jpg" data-lightbox="workshop" data-title="Key blanks"><img class="gallery-thumb" src="https://i.postimg.cc/4N6Wm6G2/baeedd7f-fd23-4141-b683-fad2b4ee32ce.jpg" alt="Key blanks display at Iglisi key copy service" loading="lazy"></a>
+          <a href="https://i.postimg.cc/XqTkpvHm/bc00c411-3cfc-41e7-96ed-da34c9246e1f.jpg" data-lightbox="workshop" data-title="Shop sign">
+            <picture>
+              <source srcset="https://i.postimg.cc/XqTkpvHm/bc00c411-3cfc-41e7-96ed-da34c9246e1f.webp" type="image/webp">
+              <img class="gallery-thumb" src="https://i.postimg.cc/XqTkpvHm/bc00c411-3cfc-41e7-96ed-da34c9246e1f.jpg" alt="Iglisi Watch & Key shop sign in Durres" loading="lazy">
+            </picture>
+          </a>
+          <a href="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.jpg" data-lightbox="workshop" data-title="Workbench">
+            <picture>
+              <source srcset="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.webp" type="image/webp">
+              <img class="gallery-thumb" src="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.jpg" alt="Watch repair workbench at Iglisi workshop" loading="lazy">
+            </picture>
+          </a>
+          <a href="https://i.postimg.cc/LsCCmmpv/4321b2b5-af19-4888-980f-c95829f43af2.jpg" data-lightbox="workshop" data-title="Key machines">
+            <picture>
+              <source srcset="https://i.postimg.cc/LsCCmmpv/4321b2b5-af19-4888-980f-c95829f43af2.webp" type="image/webp">
+              <img class="gallery-thumb" src="https://i.postimg.cc/LsCCmmpv/4321b2b5-af19-4888-980f-c95829f43af2.jpg" alt="Key cutting machines at Iglisi in Durres" loading="lazy">
+            </picture>
+          </a>
+          <a href="https://i.postimg.cc/wv1WvnxR/639d7b56-b8fb-4627-9405-0ec70ad24985.jpg" data-lightbox="workshop" data-title="Watch repair equipment">
+            <picture>
+              <source srcset="https://i.postimg.cc/wv1WvnxR/639d7b56-b8fb-4627-9405-0ec70ad24985.webp" type="image/webp">
+              <img class="gallery-thumb" src="https://i.postimg.cc/wv1WvnxR/639d7b56-b8fb-4627-9405-0ec70ad24985.jpg" alt="Watch repair equipment and tools" loading="lazy">
+            </picture>
+          </a>
+          <a href="https://i.postimg.cc/d3d4RdyL/3807368a-ccf3-42ab-bf49-bffea24d52df.jpg" data-lightbox="workshop" data-title="Workshop interior">
+            <picture>
+              <source srcset="https://i.postimg.cc/d3d4RdyL/3807368a-ccf3-42ab-bf49-bffea24d52df.webp" type="image/webp">
+              <img class="gallery-thumb" src="https://i.postimg.cc/d3d4RdyL/3807368a-ccf3-42ab-bf49-bffea24d52df.jpg" alt="Interior of Iglisi watch repair workshop" loading="lazy">
+            </picture>
+          </a>
+          <a href="https://i.postimg.cc/4N6Wm6G2/baeedd7f-fd23-4141-b683-fad2b4ee32ce.jpg" data-lightbox="workshop" data-title="Key blanks">
+            <picture>
+              <source srcset="https://i.postimg.cc/4N6Wm6G2/baeedd7f-fd23-4141-b683-fad2b4ee32ce.webp" type="image/webp">
+              <img class="gallery-thumb" src="https://i.postimg.cc/4N6Wm6G2/baeedd7f-fd23-4141-b683-fad2b4ee32ce.jpg" alt="Key blanks display at Iglisi key copy service" loading="lazy">
+            </picture>
+          </a>
         </div>
       </div>
     </section>
@@ -1181,8 +1220,12 @@
               </div>
             </div>
           </div>
-          <button class="carousel-btn prev" onclick="moveCarousel('en', -1)"><i class="fas fa-chevron-left"></i></button>
-          <button class="carousel-btn next" onclick="moveCarousel('en', 1)"><i class="fas fa-chevron-right"></i></button>
+          <button class="carousel-btn prev" onclick="moveCarousel('en', -1)" aria-label="Previous slide">
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <button class="carousel-btn next" onclick="moveCarousel('en', 1)" aria-label="Next slide">
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+          </button>
           <div class="carousel-dots" id="dots-en"></div>
         </div>
         <div class="text-center mt-8">
@@ -1197,27 +1240,27 @@
         <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Frequently Asked <span class="gold">Questions</span></h2>
         <div class="space-y-2">
           <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">
+            <div class="faq-question" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false">
               <span>How long does a watch battery replacement take?</span>
-              <i class="fas fa-chevron-down gold"></i>
+              <i class="fas fa-chevron-down gold" aria-hidden="true"></i>
             </div>
             <div class="faq-answer">
               <p>Usually <span class="font-bold gold">under 2 minutes</span> while you wait.</p>
             </div>
           </div>
           <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">
+            <div class="faq-question" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false">
               <span>Do you repair all types of watches?</span>
-              <i class="fas fa-chevron-down gold"></i>
+              <i class="fas fa-chevron-down gold" aria-hidden="true"></i>
             </div>
             <div class="faq-answer">
               <p>We specialize in quartz watches, and we can also service mechanical and automatic watches depending on the repair needed.</p>
             </div>
           </div>
           <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">
+            <div class="faq-question" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false">
               <span>What types of keys can you copy?</span>
-              <i class="fas fa-chevron-down gold"></i>
+              <i class="fas fa-chevron-down gold" aria-hidden="true"></i>
             </div>
             <div class="faq-answer">
               <p>We copy standard house keys, office keys, and high‑security keys. We do not copy car keys.</p>
@@ -1292,7 +1335,7 @@
     <section class="py-16 bg-white/70" data-aos="fade-up">
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div class="trust-badge block"><i class="fas fa-calendar-alt text-3xl gold mb-2"></i><h3 class="font-bold text-xl">Që nga 2002</h3><p class="text-gray-500 text-sm" id="years-exp-al">23+ vjet</p></div>
+          <div class="trust-badge block"><i class="fas fa-calendar-alt text-3xl gold mb-2"></i><h3 class="font-bold text-xl">Që nga 2002</h3><p class="text-gray-500 text-sm years-exp" data-lang="al">23+ vjet</p></div>
           <div class="trust-badge block"><i class="fas fa-clock text-3xl gold mb-2"></i><h3 class="font-bold text-xl">350K+</h3><p class="text-gray-500 text-sm">Ora të riparuara</p></div>
           <div class="trust-badge block"><i class="fas fa-key text-3xl gold mb-2"></i><h3 class="font-bold text-xl">700K+</h3><p class="text-gray-500 text-sm">Çelësa të kopjuar</p></div>
           <div class="trust-badge block"><i class="fas fa-smile text-3xl gold mb-2"></i><h3 class="font-bold text-xl">15K+</h3><p class="text-gray-500 text-sm">Klientë të kënaqur</p></div>
@@ -1300,7 +1343,7 @@
         <div class="mt-6 pt-16 text-center">
           <span class="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full border border-gold shadow-sm">
             <i class="fas fa-star text-gold"></i>
-            <span class="font-semibold" id="badge-years-al">Mbi 24 Vjet Përvojë</span>
+            <span class="font-semibold badge-years" data-lang="al">Mbi 24 Vjet Përvojë</span>
           </span>
         </div>
       </div>
@@ -1323,7 +1366,12 @@
       <div class="max-w-6xl mx-auto px-6">
         <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Punishtja e <span class="gold">Mjeshtrit</span></h2>
         <div class="flex flex-col md:flex-row gap-12 items-center">
-          <div class="md:w-1/3"><img src="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.jpg" alt="Banka e punës me mjete riparimi në punishten Iglisi Durrës" class="rounded-2xl shadow-xl border border-gray-200" loading="lazy"></div>
+          <div class="md:w-1/3">
+            <picture>
+              <source srcset="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.webp" type="image/webp">
+              <img src="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.jpg" alt="Banka e punës me mjete riparimi në punishten Iglisi Durrës" class="rounded-2xl shadow-xl border border-gray-200" loading="lazy">
+            </picture>
+          </div>
           <div class="md:w-2/3"><p class="text-2xl font-bold mb-4">Ku Precisioni Takon Pasionin</p><p class="text-gray-600 text-lg leading-relaxed">Hyni në punishten tonë familjare – një hapësirë e mbushur me zhurmën e makinerive, shkëlqimin e mjeteve të lëmuara dhe mbi njëzet vjet përkushtim. Çdo sipërfaqe tregon një histori orësh të ringjallura dhe çelësash të punuar. Këtu, koha dhe siguria juaj i besohen duarve që kujdesen vërtet.</p></div>
         </div>
       </div>
@@ -1374,12 +1422,42 @@
         <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Punishtja <span class="gold">Jonë në Jetë Reale</span></h2>
         <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">Hyni në punishten tonë familjare – çdo foto është një moment i vërtetë, i paprekur.</p>
         <div class="gallery-grid">
-          <a href="https://i.postimg.cc/XqTkpvHm/bc00c411-3cfc-41e7-96ed-da34c9246e1f.jpg" data-lightbox="workshop-al" data-title="Tabela e dyqanit"><img class="gallery-thumb" src="https://i.postimg.cc/XqTkpvHm/bc00c411-3cfc-41e7-96ed-da34c9246e1f.jpg" alt="Tabela e dyqanit Iglisi në Durrës" loading="lazy"></a>
-          <a href="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.jpg" data-lightbox="workshop-al" data-title="Banka e punës"><img class="gallery-thumb" src="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.jpg" alt="Banka e punës për riparim orash" loading="lazy"></a>
-          <a href="https://i.postimg.cc/LsCCmmpv/4321b2b5-af19-4888-980f-c95829f43af2.jpg" data-lightbox="workshop-al" data-title="Makineri për çelësa"><img class="gallery-thumb" src="https://i.postimg.cc/LsCCmmpv/4321b2b5-af19-4888-980f-c95829f43af2.jpg" alt="Makineri për kopje çelësash" loading="lazy"></a>
-          <a href="https://i.postimg.cc/wv1WvnxR/639d7b56-b8fb-4627-9405-0ec70ad24985.jpg" data-lightbox="workshop-al" data-title="Pajisje për orë"><img class="gallery-thumb" src="https://i.postimg.cc/wv1WvnxR/639d7b56-b8fb-4627-9405-0ec70ad24985.jpg" alt="Pajisje për riparim orash" loading="lazy"></a>
-          <a href="https://i.postimg.cc/d3d4RdyL/3807368a-ccf3-42ab-bf49-bffea24d52df.jpg" data-lightbox="workshop-al" data-title="Brendësia e punishtes"><img class="gallery-thumb" src="https://i.postimg.cc/d3d4RdyL/3807368a-ccf3-42ab-bf49-bffea24d52df.jpg" alt="Brendësia e punishtes Iglisi" loading="lazy"></a>
-          <a href="https://i.postimg.cc/4N6Wm6G2/baeedd7f-fd23-4141-b683-fad2b4ee32ce.jpg" data-lightbox="workshop-al" data-title="Çelësa të ndryshëm"><img class="gallery-thumb" src="https://i.postimg.cc/4N6Wm6G2/baeedd7f-fd23-4141-b683-fad2b4ee32ce.jpg" alt="Çelësa të ndryshëm në punishte" loading="lazy"></a>
+          <a href="https://i.postimg.cc/XqTkpvHm/bc00c411-3cfc-41e7-96ed-da34c9246e1f.jpg" data-lightbox="workshop-al" data-title="Tabela e dyqanit">
+            <picture>
+              <source srcset="https://i.postimg.cc/XqTkpvHm/bc00c411-3cfc-41e7-96ed-da34c9246e1f.webp" type="image/webp">
+              <img class="gallery-thumb" src="https://i.postimg.cc/XqTkpvHm/bc00c411-3cfc-41e7-96ed-da34c9246e1f.jpg" alt="Tabela e dyqanit Iglisi në Durrës" loading="lazy">
+            </picture>
+          </a>
+          <a href="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.jpg" data-lightbox="workshop-al" data-title="Banka e punës">
+            <picture>
+              <source srcset="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.webp" type="image/webp">
+              <img class="gallery-thumb" src="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.jpg" alt="Banka e punës për riparim orash" loading="lazy">
+            </picture>
+          </a>
+          <a href="https://i.postimg.cc/LsCCmmpv/4321b2b5-af19-4888-980f-c95829f43af2.jpg" data-lightbox="workshop-al" data-title="Makineri për çelësa">
+            <picture>
+              <source srcset="https://i.postimg.cc/LsCCmmpv/4321b2b5-af19-4888-980f-c95829f43af2.webp" type="image/webp">
+              <img class="gallery-thumb" src="https://i.postimg.cc/LsCCmmpv/4321b2b5-af19-4888-980f-c95829f43af2.jpg" alt="Makineri për kopje çelësash" loading="lazy">
+            </picture>
+          </a>
+          <a href="https://i.postimg.cc/wv1WvnxR/639d7b56-b8fb-4627-9405-0ec70ad24985.jpg" data-lightbox="workshop-al" data-title="Pajisje për orë">
+            <picture>
+              <source srcset="https://i.postimg.cc/wv1WvnxR/639d7b56-b8fb-4627-9405-0ec70ad24985.webp" type="image/webp">
+              <img class="gallery-thumb" src="https://i.postimg.cc/wv1WvnxR/639d7b56-b8fb-4627-9405-0ec70ad24985.jpg" alt="Pajisje për riparim orash" loading="lazy">
+            </picture>
+          </a>
+          <a href="https://i.postimg.cc/d3d4RdyL/3807368a-ccf3-42ab-bf49-bffea24d52df.jpg" data-lightbox="workshop-al" data-title="Brendësia e punishtes">
+            <picture>
+              <source srcset="https://i.postimg.cc/d3d4RdyL/3807368a-ccf3-42ab-bf49-bffea24d52df.webp" type="image/webp">
+              <img class="gallery-thumb" src="https://i.postimg.cc/d3d4RdyL/3807368a-ccf3-42ab-bf49-bffea24d52df.jpg" alt="Brendësia e punishtes Iglisi" loading="lazy">
+            </picture>
+          </a>
+          <a href="https://i.postimg.cc/4N6Wm6G2/baeedd7f-fd23-4141-b683-fad2b4ee32ce.jpg" data-lightbox="workshop-al" data-title="Çelësa të ndryshëm">
+            <picture>
+              <source srcset="https://i.postimg.cc/4N6Wm6G2/baeedd7f-fd23-4141-b683-fad2b4ee32ce.webp" type="image/webp">
+              <img class="gallery-thumb" src="https://i.postimg.cc/4N6Wm6G2/baeedd7f-fd23-4141-b683-fad2b4ee32ce.jpg" alt="Çelësa të ndryshëm në punishte" loading="lazy">
+            </picture>
+          </a>
         </div>
       </div>
     </section>
@@ -1395,8 +1473,12 @@
             <div class="carousel-slide"><div class="review-card"><div class="flex items-center mb-4 star-large"><i class="fas fa-star gold"></i><i class="fas fa-star gold"></i><i class="fas fa-star gold"></i><i class="fas fa-star gold"></i><i class="fas fa-star gold"></i><span class="ml-2 text-gray-500 text-sm">5.0</span></div><p class="text-gray-700 text-lg italic mb-6">"Sent my watch to get it fixed. Got it back in a day. Amazing work"</p><p class="font-bold text-gold">– Deni Tabaku</p></div></div>
             <div class="carousel-slide"><div class="review-card"><div class="flex items-center mb-4 star-large"><i class="fas fa-star gold"></i><i class="fas fa-star gold"></i><i class="fas fa-star gold"></i><i class="fas fa-star gold"></i><i class="fas fa-star gold"></i><span class="ml-2 text-gray-500 text-sm">5.0</span></div><p class="text-gray-700 text-lg italic mb-6">"I had a very good experience with this service. The repair was done with care and within the time frame I was told. Communication was clear throughout the process. I would recommend it to anyone looking for watch repair in Durres."</p><p class="font-bold text-gold">– Elis Xhaferaj</p></div></div>
           </div>
-          <button class="carousel-btn prev" onclick="moveCarousel('al', -1)"><i class="fas fa-chevron-left"></i></button>
-          <button class="carousel-btn next" onclick="moveCarousel('al', 1)"><i class="fas fa-chevron-right"></i></button>
+          <button class="carousel-btn prev" onclick="moveCarousel('al', -1)" aria-label="Previous slide">
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <button class="carousel-btn next" onclick="moveCarousel('al', 1)" aria-label="Next slide">
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+          </button>
           <div class="carousel-dots" id="dots-al"></div>
         </div>
         <div class="text-center mt-8">
@@ -1410,9 +1492,33 @@
       <div class="max-w-5xl mx-auto px-6">
         <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Pyetje të <span class="gold">Shpeshta</span></h2>
         <div class="space-y-2">
-          <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Sa kohë duhet për të ndërruar baterinë e orës?</span><i class="fas fa-chevron-down gold"></i></div><div class="faq-answer"><p>Zakonisht <span class="font-bold gold">nën 2 minuta</span>, ndërsa prisni.</p></div></div>
-          <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>A riparoni të gjitha llojet e orëve?</span><i class="fas fa-chevron-down gold"></i></div><div class="faq-answer"><p>Specializohemi në ora kuarci, por mund të riparojmë edhe orë mekanike/automatike në varësi të nevojës.</p></div></div>
-          <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Çfarë lloj çelësash kopjoni?</span><i class="fas fa-chevron-down gold"></i></div><div class="faq-answer"><p>Kopjojmë çelësa standard shtëpie, zyre dhe çelësa sigurie. Nuk kopjojmë çelësa makine.</p></div></div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false">
+              <span>Sa kohë duhet për të ndërruar baterinë e orës?</span>
+              <i class="fas fa-chevron-down gold" aria-hidden="true"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Zakonisht <span class="font-bold gold">nën 2 minuta</span>, ndërsa prisni.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false">
+              <span>A riparoni të gjitha llojet e orëve?</span>
+              <i class="fas fa-chevron-down gold" aria-hidden="true"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Specializohemi në ora kuarci, por mund të riparojmë edhe orë mekanike/automatike në varësi të nevojës.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false">
+              <span>Çfarë lloj çelësash kopjoni?</span>
+              <i class="fas fa-chevron-down gold" aria-hidden="true"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Kopjojmë çelësa standard shtëpie, zyre dhe çelësa sigurie. Nuk kopjojmë çelësa makine.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1466,7 +1572,7 @@
     <section class="py-16 bg-white/70" data-aos="fade-up">
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div class="trust-badge block"><i class="fas fa-calendar-alt text-3xl gold mb-2"></i><h3 class="font-bold text-xl">Dal 2002</h3><p class="text-gray-500 text-sm" id="years-exp-it">23+ anni</p></div>
+          <div class="trust-badge block"><i class="fas fa-calendar-alt text-3xl gold mb-2"></i><h3 class="font-bold text-xl">Dal 2002</h3><p class="text-gray-500 text-sm years-exp" data-lang="it">23+ anni</p></div>
           <div class="trust-badge block"><i class="fas fa-clock text-3xl gold mb-2"></i><h3 class="font-bold text-xl">350K+</h3><p class="text-gray-500 text-sm">Orologi riparati</p></div>
           <div class="trust-badge block"><i class="fas fa-key text-3xl gold mb-2"></i><h3 class="font-bold text-xl">700K+</h3><p class="text-gray-500 text-sm">Chiavi duplicate</p></div>
           <div class="trust-badge block"><i class="fas fa-smile text-3xl gold mb-2"></i><h3 class="font-bold text-xl">15K+</h3><p class="text-gray-500 text-sm">Clienti soddisfatti</p></div>
@@ -1474,7 +1580,7 @@
         <div class="mt-6 pt-16 text-center">
           <span class="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full border border-gold shadow-sm">
             <i class="fas fa-star text-gold"></i>
-            <span class="font-semibold" id="badge-years-it">Oltre 24 Anni di Esperienza</span>
+            <span class="font-semibold badge-years" data-lang="it">Oltre 24 Anni di Esperienza</span>
           </span>
         </div>
       </div>
@@ -1497,7 +1603,12 @@
       <div class="max-w-6xl mx-auto px-6">
         <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">L'Officina del <span class="gold">Maestro</span></h2>
         <div class="flex flex-col md:flex-row gap-12 items-center">
-          <div class="md:w-1/3"><img src="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.jpg" alt="Banco da lavoro con attrezzi nell'officina Iglisi a Durazzo" class="rounded-2xl shadow-xl border border-gray-200" loading="lazy"></div>
+          <div class="md:w-1/3">
+            <picture>
+              <source srcset="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.webp" type="image/webp">
+              <img src="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.jpg" alt="Banco da lavoro con attrezzi nell'officina Iglisi a Durazzo" class="rounded-2xl shadow-xl border border-gray-200" loading="lazy">
+            </picture>
+          </div>
           <div class="md:w-2/3"><p class="text-2xl font-bold mb-4">Dove la Precisione Incontra la Passione</p><p class="text-gray-600 text-lg leading-relaxed">Entrate nel nostro laboratorio di famiglia – uno spazio pieno del ronzio dei macchinari, del luccichio degli attrezzi lucidati e di oltre vent'anni di dedizione. Ogni superficie racconta una storia di orologi riportati in vita e chiavi realizzate. Qui, il vostro tempo e la vostra sicurezza sono affidati a mani che si prendono cura davvero.</p></div>
         </div>
       </div>
@@ -1548,12 +1659,42 @@
         <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Il Nostro <span class="gold">Laboratorio dal Vivo</span></h2>
         <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">Entrate nel nostro laboratorio di famiglia – ogni immagine è un momento reale.</p>
         <div class="gallery-grid">
-          <a href="https://i.postimg.cc/XqTkpvHm/bc00c411-3cfc-41e7-96ed-da34c9246e1f.jpg" data-lightbox="workshop-it" data-title="Insegna del negozio"><img class="gallery-thumb" src="https://i.postimg.cc/XqTkpvHm/bc00c411-3cfc-41e7-96ed-da34c9246e1f.jpg" alt="Insegna del negozio Iglisi a Durazzo" loading="lazy"></a>
-          <a href="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.jpg" data-lightbox="workshop-it" data-title="Banco da lavoro"><img class="gallery-thumb" src="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.jpg" alt="Banco da lavoro per riparazione orologi" loading="lazy"></a>
-          <a href="https://i.postimg.cc/LsCCmmpv/4321b2b5-af19-4888-980f-c95829f43af2.jpg" data-lightbox="workshop-it" data-title="Macchine per chiavi"><img class="gallery-thumb" src="https://i.postimg.cc/LsCCmmpv/4321b2b5-af19-4888-980f-c95829f43af2.jpg" alt="Macchine per duplicazione chiavi" loading="lazy"></a>
-          <a href="https://i.postimg.cc/wv1WvnxR/639d7b56-b8fb-4627-9405-0ec70ad24985.jpg" data-lightbox="workshop-it" data-title="Attrezzature per orologi"><img class="gallery-thumb" src="https://i.postimg.cc/wv1WvnxR/639d7b56-b8fb-4627-9405-0ec70ad24985.jpg" alt="Attrezzature per riparazione orologi" loading="lazy"></a>
-          <a href="https://i.postimg.cc/d3d4RdyL/3807368a-ccf3-42ab-bf49-bffea24d52df.jpg" data-lightbox="workshop-it" data-title="Interno del laboratorio"><img class="gallery-thumb" src="https://i.postimg.cc/d3d4RdyL/3807368a-ccf3-42ab-bf49-bffea24d52df.jpg" alt="Interno del laboratorio Iglisi" loading="lazy"></a>
-          <a href="https://i.postimg.cc/4N6Wm6G2/baeedd7f-fd23-4141-b683-fad2b4ee32ce.jpg" data-lightbox="workshop-it" data-title="Esposizione chiavi"><img class="gallery-thumb" src="https://i.postimg.cc/4N6Wm6G2/baeedd7f-fd23-4141-b683-fad2b4ee32ce.jpg" alt="Esposizione di chiavi nel laboratorio" loading="lazy"></a>
+          <a href="https://i.postimg.cc/XqTkpvHm/bc00c411-3cfc-41e7-96ed-da34c9246e1f.jpg" data-lightbox="workshop-it" data-title="Insegna del negozio">
+            <picture>
+              <source srcset="https://i.postimg.cc/XqTkpvHm/bc00c411-3cfc-41e7-96ed-da34c9246e1f.webp" type="image/webp">
+              <img class="gallery-thumb" src="https://i.postimg.cc/XqTkpvHm/bc00c411-3cfc-41e7-96ed-da34c9246e1f.jpg" alt="Insegna del negozio Iglisi a Durazzo" loading="lazy">
+            </picture>
+          </a>
+          <a href="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.jpg" data-lightbox="workshop-it" data-title="Banco da lavoro">
+            <picture>
+              <source srcset="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.webp" type="image/webp">
+              <img class="gallery-thumb" src="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.jpg" alt="Banco da lavoro per riparazione orologi" loading="lazy">
+            </picture>
+          </a>
+          <a href="https://i.postimg.cc/LsCCmmpv/4321b2b5-af19-4888-980f-c95829f43af2.jpg" data-lightbox="workshop-it" data-title="Macchine per chiavi">
+            <picture>
+              <source srcset="https://i.postimg.cc/LsCCmmpv/4321b2b5-af19-4888-980f-c95829f43af2.webp" type="image/webp">
+              <img class="gallery-thumb" src="https://i.postimg.cc/LsCCmmpv/4321b2b5-af19-4888-980f-c95829f43af2.jpg" alt="Macchine per duplicazione chiavi" loading="lazy">
+            </picture>
+          </a>
+          <a href="https://i.postimg.cc/wv1WvnxR/639d7b56-b8fb-4627-9405-0ec70ad24985.jpg" data-lightbox="workshop-it" data-title="Attrezzature per orologi">
+            <picture>
+              <source srcset="https://i.postimg.cc/wv1WvnxR/639d7b56-b8fb-4627-9405-0ec70ad24985.webp" type="image/webp">
+              <img class="gallery-thumb" src="https://i.postimg.cc/wv1WvnxR/639d7b56-b8fb-4627-9405-0ec70ad24985.jpg" alt="Attrezzature per riparazione orologi" loading="lazy">
+            </picture>
+          </a>
+          <a href="https://i.postimg.cc/d3d4RdyL/3807368a-ccf3-42ab-bf49-bffea24d52df.jpg" data-lightbox="workshop-it" data-title="Interno del laboratorio">
+            <picture>
+              <source srcset="https://i.postimg.cc/d3d4RdyL/3807368a-ccf3-42ab-bf49-bffea24d52df.webp" type="image/webp">
+              <img class="gallery-thumb" src="https://i.postimg.cc/d3d4RdyL/3807368a-ccf3-42ab-bf49-bffea24d52df.jpg" alt="Interno del laboratorio Iglisi" loading="lazy">
+            </picture>
+          </a>
+          <a href="https://i.postimg.cc/4N6Wm6G2/baeedd7f-fd23-4141-b683-fad2b4ee32ce.jpg" data-lightbox="workshop-it" data-title="Esposizione chiavi">
+            <picture>
+              <source srcset="https://i.postimg.cc/4N6Wm6G2/baeedd7f-fd23-4141-b683-fad2b4ee32ce.webp" type="image/webp">
+              <img class="gallery-thumb" src="https://i.postimg.cc/4N6Wm6G2/baeedd7f-fd23-4141-b683-fad2b4ee32ce.jpg" alt="Esposizione di chiavi nel laboratorio" loading="lazy">
+            </picture>
+          </a>
         </div>
       </div>
     </section>
@@ -1569,8 +1710,12 @@
             <div class="carousel-slide"><div class="review-card"><div class="flex items-center mb-4 star-large"><i class="fas fa-star gold"></i><i class="fas fa-star gold"></i><i class="fas fa-star gold"></i><i class="fas fa-star gold"></i><i class="fas fa-star gold"></i><span class="ml-2 text-gray-500 text-sm">5.0</span></div><p class="text-gray-700 text-lg italic mb-6">"Ho mandato il mio orologio per farlo riparare. Me lo hanno restituito in un giorno. Lavoro fantastico."</p><p class="font-bold text-gold">– Deni Tabaku</p></div></div>
             <div class="carousel-slide"><div class="review-card"><div class="flex items-center mb-4 star-large"><i class="fas fa-star gold"></i><i class="fas fa-star gold"></i><i class="fas fa-star gold"></i><i class="fas fa-star gold"></i><i class="fas fa-star gold"></i><span class="ml-2 text-gray-500 text-sm">5.0</span></div><p class="text-gray-700 text-lg italic mb-6">"Ho avuto un'esperienza molto positiva con questo servizio. La riparazione è stata eseguita con cura e nei tempi concordati. Lo consiglierei a chiunque."</p><p class="font-bold text-gold">– Elis Xhaferaj</p></div></div>
           </div>
-          <button class="carousel-btn prev" onclick="moveCarousel('it', -1)"><i class="fas fa-chevron-left"></i></button>
-          <button class="carousel-btn next" onclick="moveCarousel('it', 1)"><i class="fas fa-chevron-right"></i></button>
+          <button class="carousel-btn prev" onclick="moveCarousel('it', -1)" aria-label="Previous slide">
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <button class="carousel-btn next" onclick="moveCarousel('it', 1)" aria-label="Next slide">
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+          </button>
           <div class="carousel-dots" id="dots-it"></div>
         </div>
         <div class="text-center mt-8">
@@ -1584,9 +1729,33 @@
       <div class="max-w-5xl mx-auto px-6">
         <h2 class="text-4xl md:text-5xl text-center mb-16 section-title">Domande <span class="gold">Frequenti</span></h2>
         <div class="space-y-2">
-          <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Quanto tempo per sostituire la batteria?</span><i class="fas fa-chevron-down gold"></i></div><div class="faq-answer"><p><span class="font-bold gold">Meno di 2 minuti</span> mentre aspetti.</p></div></div>
-          <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Riparate tutti i tipi di orologi?</span><i class="fas fa-chevron-down gold"></i></div><div class="faq-answer"><p>Specializzati in orologi al quarzo, ma possiamo riparare anche orologi meccanici/automatici.</p></div></div>
-          <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Che tipi di chiavi copiate?</span><i class="fas fa-chevron-down gold"></i></div><div class="faq-answer"><p>Copiamo chiavi standard per casa, ufficio e chiavi di sicurezza. Non copiamo chiavi auto.</p></div></div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false">
+              <span>Quanto tempo per sostituire la batteria?</span>
+              <i class="fas fa-chevron-down gold" aria-hidden="true"></i>
+            </div>
+            <div class="faq-answer">
+              <p><span class="font-bold gold">Meno di 2 minuti</span> mentre aspetti.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false">
+              <span>Riparate tutti i tipi di orologi?</span>
+              <i class="fas fa-chevron-down gold" aria-hidden="true"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Specializzati in orologi al quarzo, ma possiamo riparare anche orologi meccanici/automatici.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false">
+              <span>Che tipi di chiavi copiate?</span>
+              <i class="fas fa-chevron-down gold" aria-hidden="true"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Copiamo chiavi standard per casa, ufficio e chiavi di sicurezza. Non copiamo chiavi auto.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1636,23 +1805,21 @@
       const currentYear = new Date().getFullYear();
       const years = currentYear - startYear; // e.g., 24 in 2026
 
-      // Update English
-      const yearsExpEn = document.getElementById('years-exp-en');
-      if (yearsExpEn) yearsExpEn.textContent = `${years}+ years`;
-      const badgeEn = document.getElementById('badge-years-en');
-      if (badgeEn) badgeEn.textContent = `Over ${years} Years of Experience`;
+      // Update years-exp elements
+      document.querySelectorAll('.years-exp').forEach(el => {
+        const lang = el.dataset.lang;
+        if (lang === 'en') el.textContent = `${years}+ years`;
+        else if (lang === 'al') el.textContent = `${years}+ vjet`;
+        else if (lang === 'it') el.textContent = `${years}+ anni`;
+      });
 
-      // Update Albanian
-      const yearsExpAl = document.getElementById('years-exp-al');
-      if (yearsExpAl) yearsExpAl.textContent = `${years}+ vjet`;
-      const badgeAl = document.getElementById('badge-years-al');
-      if (badgeAl) badgeAl.textContent = `Mbi ${years} Vjet Përvojë`;
-
-      // Update Italian
-      const yearsExpIt = document.getElementById('years-exp-it');
-      if (yearsExpIt) yearsExpIt.textContent = `${years}+ anni`;
-      const badgeIt = document.getElementById('badge-years-it');
-      if (badgeIt) badgeIt.textContent = `Oltre ${years} Anni di Esperienza`;
+      // Update badge-years elements
+      document.querySelectorAll('.badge-years').forEach(el => {
+        const lang = el.dataset.lang;
+        if (lang === 'en') el.textContent = `Over ${years} Years of Experience`;
+        else if (lang === 'al') el.textContent = `Mbi ${years} Vjet Përvojë`;
+        else if (lang === 'it') el.textContent = `Oltre ${years} Anni di Esperienza`;
+      });
     })();
 
     // ========== GEO LANGUAGE SWITCHING ==========
@@ -1801,13 +1968,30 @@
       document.getElementById('currentYear').textContent = new Date().getFullYear();
     });
 
-    // ========== FAQ ACCORDION ==========
+    // ========== FAQ ACCORDION (updated for accessibility) ==========
     window.toggleFaq = function(element) {
       const answer = element.nextElementSibling;
       const icon = element.querySelector('i');
       element.classList.toggle('open');
       answer.classList.toggle('open');
+      
+      // Toggle aria-expanded attribute for accessibility
+      const expanded = element.classList.contains('open');
+      element.setAttribute('aria-expanded', expanded);
     };
+
+    // Add keyboard support to FAQ questions
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('keydown', function(e) {
+          // Activate on Enter or Space
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault(); // Prevent page scroll on Space
+            toggleFaq(this);
+          }
+        });
+      });
+    });
   </script>
 </body>
 </html>
