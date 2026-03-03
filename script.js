@@ -1,4 +1,4 @@
-// ==================== GLOBAL VARIABLES (hoisted to top) ====================
+// ==================== GLOBAL VARIABLES ====================
 let carouselIndices = { en: 0, al: 0, it: 0 };
 let autoPlayIntervals = { en: null, al: null, it: null };
 let langIndex = 0;
@@ -7,6 +7,10 @@ const langBtnText = document.getElementById('langBtnText');
 // ==================== LANGUAGE CONTENT ====================
 const content = {
   en: {
+    urgentBanner: "Most repairs done while you wait. Walk‑ins welcome!",
+    header: {
+      bookBtn: "Book via WhatsApp"
+    },
     hero: {
       preTitle: "Two decades of precision",
       title: "<h1 class=\"text-5xl md:text-6xl font-bold mt-4 mb-6 leading-tight hero-title\">Watch Repair & <span class=\"gold\">Key Copy</span> in Durres</h1>",
@@ -96,6 +100,10 @@ const content = {
     }
   },
   al: {
+    urgentBanner: "Shumica e riparimeve bëhen ndërsa prisni. Mirëse vini!",
+    header: {
+      bookBtn: "Rezervo në WhatsApp"
+    },
     hero: {
       preTitle: "Dy dekada precizion",
       title: "<h1 class=\"text-5xl md:text-6xl font-bold mt-4 mb-6 leading-tight hero-title\">Riparim Orash & <span class=\"gold\">Kopje Çelësash</span> në Durrës</h1>",
@@ -185,6 +193,10 @@ const content = {
     }
   },
   it: {
+    urgentBanner: "La maggior parte delle riparazioni vengono eseguite mentre aspetti. Entrate senza prenotazione!",
+    header: {
+      bookBtn: "Prenota su WhatsApp"
+    },
     hero: {
       preTitle: "Due decenni di precisione",
       title: "<h1 class=\"text-5xl md:text-6xl font-bold mt-4 mb-6 leading-tight hero-title\">Riparazione Orologi & <span class=\"gold\">Duplicazione Chiavi</span> a Durazzo</h1>",
@@ -286,6 +298,44 @@ function renderLang(lang) {
   const years = currentYear - startYear;
 
   let html = `
+    <!-- URGENT BANNER -->
+    <div class="urgent-banner">
+      <i class="fas fa-bolt"></i> ${c.urgentBanner}
+    </div>
+
+    <!-- HEADER -->
+    <header class="solid-header sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 py-2">
+        <div class="flex items-center justify-between">
+          <div class="logo-area flex items-center space-x-2">
+            <picture>
+              <source srcset="https://i.postimg.cc/tCgW3FQK/Logo-removebg-preview.webp" type="image/webp">
+              <img src="https://i.postimg.cc/tCgW3FQK/Logo-removebg-preview.png" alt="Iglisi Watch & Key logo" class="h-16 w-auto">
+            </picture>
+            <p class="desktop-only-text text-xs text-gray-500">Family-owned · Since 2002</p>
+          </div>
+
+          <div class="hidden md:flex items-center gap-4">
+            <a href="tel:+355676360510" class="flex items-center gap-2 text-gray-700 hover:text-[#b4945c] transition">
+              <i class="fas fa-phone-alt text-xl gold"></i>
+              <span class="font-medium">+355 67 636 0510</span>
+            </a>
+            <a href="https://wa.me/355676360510" class="btn-primary text-sm px-4 py-2" target="_blank">${c.header.bookBtn}</a>
+            <button onclick="toggleLang()" class="flex items-center space-x-2 border border-gray-300 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition">
+              <i class="fas fa-globe"></i>
+              <span id="langBtnText">EN</span>
+            </button>
+          </div>
+
+          <div class="mobile-icons md:hidden">
+            <a href="tel:+355676360510" class="text-gray-700"><i class="fas fa-phone-alt"></i></a>
+            <a href="https://wa.me/355676360510" class="text-gray-700" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <button onclick="toggleLang()" class="text-gray-700"><i class="fas fa-globe"></i></button>
+          </div>
+        </div>
+      </div>
+    </header>
+
     <!-- HERO -->
     <section class="hero-bg relative py-16 border-b border-gray-200">
       <div class="hero-overlay"></div>
@@ -642,16 +692,18 @@ AOS.init({
   offset: 100
 });
 
-// ==================== LIGHTBOX OPTIONS (safe check) ====================
-if (typeof lightbox !== 'undefined' && lightbox.option) {
-  lightbox.option({
-    resizeDuration: 200,
-    wrapAround: true,
-    albumLabel: 'Image %1 of %2',
-    alwaysShowNavOnTouchDevices: true,
-    showImageNumberLabel: true
-  });
-}
+// ==================== LIGHTBOX OPTIONS (safe, inside DOMContentLoaded) ====================
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof lightbox !== 'undefined' && lightbox.option) {
+    lightbox.option({
+      resizeDuration: 200,
+      wrapAround: true,
+      albumLabel: 'Image %1 of %2',
+      alwaysShowNavOnTouchDevices: true,
+      showImageNumberLabel: true
+    });
+  }
+});
 
 // ==================== BACK TO TOP ====================
 window.addEventListener('scroll', function() {
