@@ -45,16 +45,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-  <!-- Tailwind (purged, local) -->
-  <link rel="stylesheet" href="css/tailwind.css">
+  <!-- Tailwind (CDN – you may replace with local css/tailwind.css later) -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Async CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/css/lightbox.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" media="print" onload="this.media='all'">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
 
-  <!-- INLINED CRITICAL CSS (full, as previously working) -->
+  <!-- INLINED CRITICAL CSS (full) -->
   <style>
     /* === CRITICAL STYLES – same as last working version, no empty .faq-answer.open === */
     :root {
@@ -950,11 +950,8 @@
   <!-- Scroll Progress Bar -->
   <div class="progress-bar" id="progressBar"></div>
 
-  <!-- Urgent Banner -->
-  <div class="urgent-banner">
-    <i class="fas fa-bolt"></i> Most repairs done while you wait. Walk‑ins welcome!
-  </div>
-
+  <!-- Urgent banner will be injected by JavaScript inside #content-container -->
+  
   <!-- Floating WhatsApp Button -->
   <a href="https://wa.me/355676360510" class="whatsapp-float" target="_blank" title="Message us on WhatsApp">
     <i class="fab fa-whatsapp"></i>
@@ -970,40 +967,7 @@
     <a href="tel:+355676360510"><i class="fas fa-phone-alt"></i> Call us: +355 67 636 0510</a>
   </div>
 
-  <!-- Header (static) -->
-  <header class="solid-header sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-2">
-      <div class="flex items-center justify-between">
-        <div class="logo-area flex items-center space-x-2">
-          <picture>
-            <source srcset="https://i.postimg.cc/tCgW3FQK/Logo-removebg-preview.webp" type="image/webp">
-            <img src="https://i.postimg.cc/tCgW3FQK/Logo-removebg-preview.png" alt="Iglisi Watch & Key logo" class="h-16 w-auto">
-          </picture>
-          <p class="desktop-only-text text-xs text-gray-500">Family-owned · Since 2002</p>
-        </div>
-
-        <div class="hidden md:flex items-center gap-4">
-          <a href="tel:+355676360510" class="flex items-center gap-2 text-gray-700 hover:text-[#b4945c] transition">
-            <i class="fas fa-phone-alt text-xl gold"></i>
-            <span class="font-medium">+355 67 636 0510</span>
-          </a>
-          <a href="https://wa.me/355676360510" class="btn-primary text-sm px-4 py-2" target="_blank">Book via WhatsApp</a>
-          <button onclick="toggleLang()" class="flex items-center space-x-2 border border-gray-300 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition">
-            <i class="fas fa-globe"></i>
-            <span id="langBtnText">EN</span>
-          </button>
-        </div>
-
-        <div class="mobile-icons md:hidden">
-          <a href="tel:+355676360510" class="text-gray-700"><i class="fas fa-phone-alt"></i></a>
-          <a href="https://wa.me/355676360510" class="text-gray-700" target="_blank"><i class="fab fa-whatsapp"></i></a>
-          <button onclick="toggleLang()" class="text-gray-700"><i class="fas fa-globe"></i></button>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Dynamic content will be injected here -->
+  <!-- Dynamic content will be injected here (includes urgent banner, header, and all sections) -->
   <div id="content-container"></div>
 
   <!-- Footer (static) -->
@@ -1020,8 +984,8 @@
     </div>
   </footer>
 
-  <!-- Deferred scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/js/lightbox.min.js" defer></script>
+  <!-- Deferred scripts (Lightbox no longer deferred) -->
+  <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/js/lightbox.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
   <script src="script.js" defer></script>
 </body>
