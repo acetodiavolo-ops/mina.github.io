@@ -1,93 +1,75 @@
 /**
  * Iglisi Watch & Key — shared.js
- * Handles: language switching, carousel, FAQ, scroll progress,
- *          back-to-top, lightbox init, scroll animations, geo-detection.
- *
- * Architecture: Pure IIFE — zero global pollution except the two symbols
- * that Lightbox2 needs (lightbox) which is a third-party global.
+ * Fixed: lang toggle, years-since calculation, geo-redirect, carousel, FAQ.
  */
 (function () {
   'use strict';
 
-  // ─── CENTRALISED CONFIG ──────────────────────────────────────────────────
-  const CONFIG = Object.freeze({
-    phone: { primary: '+355676360510', secondary: '+355675716090' },
-    email: 'iglisi@watch.al',
-    social: {
-      instagram: 'https://instagram.com/iglisiwk',
-      facebook: 'https://www.facebook.com/share/14UY9nkU9EH/',
-      whatsapp: 'https://wa.me/355676360510',
-    },
-    startYear: 2002,
-    placeId: 'ChIJU3JyAljB0RMRdoAB2vYR5oo',
-    mapCoords: '41.3201564,19.4453564',
+  var CONFIG = {
     langs: ['en', 'sq', 'it'],
+    startYear: 2002,
     geoTimeout: 3000,
-  });
+  };
 
-  // ─── LANGUAGE DETECTION & SWITCHING ─────────────────────────────────────
-  /**
-   * Returns the current language derived from the pathname.
-   * /en/ → 'en', /sq/ → 'sq', /it/ → 'it', anything else → null
-   */
+  // ── LANGUAGE ──────────────────────────────────────────────────────────────
+
   function currentLang() {
-    const match = window.location.pathname.match(/^\/(en|sq|it)(\/|$)/);
+    var match = window.location.pathname.match(/\/(en|sq|it)(\/|$)/);
     return match ? match[1] : null;
   }
 
+  function nextLang() {
+    var lang = currentLang() || 'en';
+    var idx = CONFIG.langs.indexOf(lang);
+    return CONFIG.langs[(idx + 1) % CONFIG.langs.length];
+  }
+
   function navigateTo(lang) {
-    if (!CONFIG.langs.includes(lang)) return;
-    // Preserve any hash/anchor the user was on
-    const hash = window.location.hash || '';
-    // Replace the current lang segment if present, else go to root lang path
-    const current = currentLang();
-    let newPath;
+    if (CONFIG.langs.indexOf(lang) === -1) return;
+    try { localStorage.setItem('preferredLang', lang); } catch (e) {}
+    var current = currentLang();
+    var path;
     if (current) {
-      newPath = window.location.pathname.replace('/' + current + '/', '/' + lang + '/');
+      // Replace the lang segment in the current path
+      path = window.location.pathname.replace(
+        new RegExp('/' + current + '(/|$)'),
+        '/' + lang + '/'
+      );
     } else {
-      newPath = '/' + lang + '/';
+      path = '/' + lang + '/';
     }
-    localStorage.setItem('preferredLang', lang);
-    window.location.href = newPath + hash;
+    window.location.href = path + (window.location.search || '') + (window.location.hash || '');
   }
 
-  /** Cycle: en → sq → it → en */
   function cycleLanguage() {
-    const lang = currentLang() || 'en';
-    const idx = CONFIG.langs.indexOf(lang);
-    const next = CONFIG.langs[(idx + 1) % CONFIG.langs.length];
-    navigateTo(next);
+    navigateTo(nextLang());
   }
 
-  /** Returns the current language code in uppercase (EN, SQ, IT) */
-  function currentLangLabel() {
-    const lang = currentLang() || 'en';
-    return lang.toUpperCase();
-  }
+  // ── GEO DETECT ────────────────────────────────────────────────────────────
 
-  // ─── GEO DETECTION (fetch + AbortController, no JSONP) ──────────────────
   function geoDetect() {
-    // Only run on the root page (not inside a lang subfolder)
-    if (currentLang()) return;
-
-    const saved = localStorage.getItem('preferredLang');
-    if (saved && CONFIG.langs.includes(saved)) {
+    if (currentLang()) return; // already on a lang page
+    var saved;
+    try { saved = localStorage.getItem('preferredLang'); } catch (e) {}
+    if (saved && CONFIG.langs.indexOf(saved) !== -1) {
       navigateTo(saved);
       return;
     }
+    var controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    var timer = setTimeout(function () {
+      if (controller) controller.abort();
+      navigateTo('en');
+    }, CONFIG.geoTimeout);
 
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), CONFIG.geoTimeout);
-
-    fetch('https://ipapi.co/json/', { signal: controller.signal })
+    var opts = controller ? { signal: controller.signal } : {};
+    fetch('https://ipapi.co/json/', opts)
       .then(function (r) { return r.json(); })
       .then(function (data) {
         clearTimeout(timer);
-        const cc = data.country_code;
-        let lang = 'en';
-        if (cc === 'IT') lang = 'it';
-        else if (cc === 'AL' || cc === 'XK') lang = 'sq';
-        navigateTo(lang);
+        var cc = data.country_code;
+        if (cc === 'IT') navigateTo('it');
+        else if (cc === 'AL' || cc === 'XK') navigateTo('sq');
+        else navigateTo('en');
       })
       .catch(function () {
         clearTimeout(timer);
@@ -95,32 +77,53 @@
       });
   }
 
-  // ─── DYNAMIC YEAR ────────────────────────────────────────────────────────
+  // ── YEAR / EXPERIENCE ─────────────────────────────────────────────────────
+  // FIX: was sometimes running before DOM ready — now always safe via DOMContentLoaded.
+
   function fillYear() {
-    const yr = new Date().getFullYear();
-    document.querySelectorAll('[data-year]').forEach(function (el) {
-      el.textContent = yr;
-    });
-    document.querySelectorAll('[data-years-since]').forEach(function (el) {
-      const since = parseInt(el.dataset.yearsSince, 10) || CONFIG.startYear;
-      el.textContent = yr - since + '+';
-    });
+    var yr = new Date().getFullYear();
+
+    // Copyright year
+    var yearEls = document.querySelectorAll('[data-year]');
+    for (var i = 0; i < yearEls.length; i++) {
+      yearEls[i].textContent = yr;
+    }
+
+    // "24+ years since 2002" badges
+    var sinceEls = document.querySelectorAll('[data-years-since]');
+    for (var j = 0; j < sinceEls.length; j++) {
+      var since = parseInt(sinceEls[j].getAttribute('data-years-since'), 10) || CONFIG.startYear;
+      var diff = yr - since;
+      sinceEls[j].textContent = diff > 0 ? diff + '+' : '1+';
+    }
   }
 
-  // ─── SCROLL PROGRESS BAR ─────────────────────────────────────────────────
+  // ── LANG BUTTON LABEL ─────────────────────────────────────────────────────
+  // Shows the CURRENT language so the button acts as a language indicator.
+
+  function updateLangLabel() {
+    var current = (currentLang() || 'en').toUpperCase();
+    var els = document.querySelectorAll('[data-lang-label]');
+    for (var i = 0; i < els.length; i++) {
+      els[i].textContent = current;
+    }
+  }
+
+  // ── SCROLL PROGRESS ───────────────────────────────────────────────────────
+
   function initProgressBar() {
-    const bar = document.getElementById('progressBar');
+    var bar = document.getElementById('progressBar');
     if (!bar) return;
     window.addEventListener('scroll', function () {
-      const total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      if (total <= 0) return;
-      bar.style.width = ((window.scrollY / total) * 100) + '%';
+      var total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      if (total > 0) bar.style.width = ((window.scrollY / total) * 100) + '%';
     }, { passive: true });
   }
 
-  // ─── BACK TO TOP ─────────────────────────────────────────────────────────
+  // ── BACK TO TOP ───────────────────────────────────────────────────────────
+
   function initBackToTop() {
-    const btn = document.getElementById('backToTop');
+    var btn = document.getElementById('backToTop');
     if (!btn) return;
     window.addEventListener('scroll', function () {
       btn.classList.toggle('show', window.scrollY > 400);
@@ -130,21 +133,27 @@
     });
   }
 
-  // ─── SCROLL ANIMATIONS (replaces AOS) ───────────────────────────────────
+  // ── SCROLL ANIMATIONS ─────────────────────────────────────────────────────
+
   function initScrollAnimations() {
-    const els = document.querySelectorAll('[data-animate]');
-    if (!els.length) return;
-
-    // Add base styles so elements start invisible
-    els.forEach(function (el) {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(24px)';
-      el.style.transition = 'opacity 0.65s ease, transform 0.65s ease';
-      const delay = el.dataset.animateDelay;
-      if (delay) el.style.transitionDelay = delay;
-    });
-
-    const observer = new IntersectionObserver(function (entries) {
+    var els = document.querySelectorAll('[data-animate]');
+    if (!els.length || typeof IntersectionObserver === 'undefined') {
+      // Fallback: just show everything
+      for (var k = 0; k < els.length; k++) {
+        els[k].style.opacity = '1';
+        els[k].style.transform = 'none';
+      }
+      return;
+    }
+    for (var i = 0; i < els.length; i++) {
+      els[i].style.opacity = '0';
+      els[i].style.transform = 'translateY(24px)';
+      els[i].style.transition = 'opacity 0.65s ease, transform 0.65s ease';
+      if (els[i].dataset.animateDelay) {
+        els[i].style.transitionDelay = els[i].dataset.animateDelay;
+      }
+    }
+    var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.style.opacity = '1';
@@ -153,52 +162,41 @@
         }
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-    els.forEach(function (el) { observer.observe(el); });
+    for (var j = 0; j < els.length; j++) observer.observe(els[j]);
   }
 
-  // ─── CAROUSEL ────────────────────────────────────────────────────────────
-  const _carousels = {}; // { id: { index, timer } }
+  // ── CAROUSEL ──────────────────────────────────────────────────────────────
 
-  function getSlideCount(id) {
-    const track = document.getElementById('carousel-track-' + id);
-    return track ? track.children.length : 0;
-  }
+  var _carousels = {};
 
   function updateCarouselUI(id) {
-    const track = document.getElementById('carousel-track-' + id);
-    const dotsContainer = document.getElementById('carousel-dots-' + id);
+    var track = document.getElementById('carousel-track-' + id);
+    var dotsContainer = document.getElementById('carousel-dots-' + id);
+    var live = document.getElementById('carousel-live-' + id);
     if (!track) return;
-
-    const state = _carousels[id];
-    const count = track.children.length;
-    const idx = ((state.index % count) + count) % count;
+    var state = _carousels[id];
+    var count = track.children.length;
+    if (count === 0) return;
+    var idx = ((state.index % count) + count) % count;
     state.index = idx;
-
     track.style.transform = 'translateX(-' + (idx * 100) + '%)';
-
-    // Update live region for screen readers
-    const live = document.getElementById('carousel-live-' + id);
-    if (live) live.textContent = 'Review ' + (idx + 1) + ' of ' + count;
-
-    // Update dots
+    if (live) live.textContent = (idx + 1) + ' / ' + count;
     if (dotsContainer) {
-      Array.from(dotsContainer.children).forEach(function (dot, i) {
-        const active = i === idx;
-        dot.classList.toggle('active', active);
-        dot.setAttribute('aria-current', active ? 'true' : 'false');
-      });
+      var dots = dotsContainer.children;
+      for (var i = 0; i < dots.length; i++) {
+        dots[i].classList.toggle('active', i === idx);
+        dots[i].setAttribute('aria-current', i === idx ? 'true' : 'false');
+      }
     }
-
-    // Update slide aria-hidden
-    Array.from(track.children).forEach(function (slide, i) {
-      slide.setAttribute('aria-hidden', i !== idx ? 'true' : 'false');
-    });
+    var slides = track.children;
+    for (var j = 0; j < slides.length; j++) {
+      slides[j].setAttribute('aria-hidden', j !== idx ? 'true' : 'false');
+    }
   }
 
-  function moveCarousel(id, direction) {
+  function moveCarousel(id, dir) {
     if (!_carousels[id]) _carousels[id] = { index: 0, timer: null };
-    _carousels[id].index += direction;
+    _carousels[id].index += dir;
     updateCarouselUI(id);
     restartAutoPlay(id);
   }
@@ -206,9 +204,8 @@
   function startAutoPlay(id) {
     stopAutoPlay(id);
     _carousels[id].timer = setInterval(function () {
-      const container = document.querySelector('[data-carousel="' + id + '"]');
-      // Pause if user is hovering
-      if (container && container.matches(':hover')) return;
+      var c = document.querySelector('[data-carousel="' + id + '"]');
+      if (c && c.matches(':hover')) return;
       moveCarousel(id, 1);
     }, 5000);
   }
@@ -220,95 +217,129 @@
     }
   }
 
-  function restartAutoPlay(id) {
-    stopAutoPlay(id);
-    startAutoPlay(id);
-  }
+  function restartAutoPlay(id) { stopAutoPlay(id); startAutoPlay(id); }
 
   function initCarousels() {
-    document.querySelectorAll('[data-carousel]').forEach(function (container) {
-      const id = container.dataset.carousel;
-      _carousels[id] = { index: 0, timer: null };
-
-      // Build dots from existing slides
-      const track = document.getElementById('carousel-track-' + id);
-      const dotsContainer = document.getElementById('carousel-dots-' + id);
-      if (track && dotsContainer) {
-        const count = track.children.length;
-        dotsContainer.innerHTML = '';
-        for (let i = 0; i < count; i++) {
-          const btn = document.createElement('button');
-          btn.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-          btn.setAttribute('aria-label', 'Go to review ' + (i + 1));
-          btn.setAttribute('aria-current', i === 0 ? 'true' : 'false');
-          btn.dataset.slide = i;
-          btn.dataset.carouselTarget = id;
-          dotsContainer.appendChild(btn);
+    var containers = document.querySelectorAll('[data-carousel]');
+    for (var c = 0; c < containers.length; c++) {
+      (function (container) {
+        var id = container.dataset.carousel;
+        _carousels[id] = { index: 0, timer: null };
+        var track = document.getElementById('carousel-track-' + id);
+        var dotsContainer = document.getElementById('carousel-dots-' + id);
+        if (track && dotsContainer) {
+          var count = track.children.length;
+          dotsContainer.innerHTML = '';
+          for (var i = 0; i < count; i++) {
+            var btn = document.createElement('button');
+            btn.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+            btn.setAttribute('aria-label', 'Slide ' + (i + 1));
+            btn.setAttribute('aria-current', i === 0 ? 'true' : 'false');
+            btn.dataset.slide = i;
+            btn.dataset.carouselTarget = id;
+            dotsContainer.appendChild(btn);
+          }
         }
-      }
-
-      updateCarouselUI(id);
-      startAutoPlay(id);
-
-      container.addEventListener('mouseenter', function () { stopAutoPlay(id); });
-      container.addEventListener('mouseleave', function () { startAutoPlay(id); });
-      container.addEventListener('touchstart', function () { stopAutoPlay(id); }, { passive: true });
-      container.addEventListener('touchend', function () { restartAutoPlay(id); }, { passive: true });
-    });
-  }
-
-  // ─── FAQ ACCORDION ───────────────────────────────────────────────────────
-  function toggleFaq(questionEl) {
-    const answer = questionEl.nextElementSibling;
-    if (!answer || !answer.classList.contains('faq-answer')) return;
-    const isOpen = answer.classList.contains('open');
-
-    // Close all others first (accordion behaviour)
-    document.querySelectorAll('.faq-answer.open').forEach(function (a) {
-      a.style.maxHeight = '0';
-      a.classList.remove('open');
-      if (a.previousElementSibling) {
-        a.previousElementSibling.classList.remove('open');
-        a.previousElementSibling.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    if (!isOpen) {
-      answer.style.maxHeight = answer.scrollHeight + 'px';
-      answer.classList.add('open');
-      questionEl.classList.add('open');
-      questionEl.setAttribute('aria-expanded', 'true');
+        updateCarouselUI(id);
+        startAutoPlay(id);
+        container.addEventListener('mouseenter', function () { stopAutoPlay(id); });
+        container.addEventListener('mouseleave', function () { startAutoPlay(id); });
+        container.addEventListener('touchstart', function () { stopAutoPlay(id); }, { passive: true });
+        container.addEventListener('touchend', function () { restartAutoPlay(id); }, { passive: true });
+      })(containers[c]);
     }
   }
 
-  // ─── EVENT DELEGATION ────────────────────────────────────────────────────
-  function initEventDelegation() {
+  // ── FAQ ───────────────────────────────────────────────────────────────────
+
+  function toggleFaq(q) {
+    var a = q.nextElementSibling;
+    if (!a || !a.classList.contains('faq-answer')) return;
+    var isOpen = a.classList.contains('open');
+    // Close all open answers first
+    var openAnswers = document.querySelectorAll('.faq-answer.open');
+    for (var i = 0; i < openAnswers.length; i++) {
+      openAnswers[i].style.maxHeight = '0';
+      openAnswers[i].classList.remove('open');
+      var prevQ = openAnswers[i].previousElementSibling;
+      if (prevQ) {
+        prevQ.classList.remove('open');
+        prevQ.setAttribute('aria-expanded', 'false');
+      }
+    }
+    if (!isOpen) {
+      a.style.maxHeight = a.scrollHeight + 'px';
+      a.classList.add('open');
+      q.classList.add('open');
+      q.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  // ── GALLERY / LIGHTBOX ────────────────────────────────────────────────────
+
+  var _lightboxLoaded = false;
+  var _lightboxLoading = false;
+
+  function loadLightbox(callback) {
+    if (_lightboxLoaded) { callback(); return; }
+    if (_lightboxLoading) {
+      var wait = setInterval(function () {
+        if (_lightboxLoaded) { clearInterval(wait); callback(); }
+      }, 50);
+      return;
+    }
+    _lightboxLoading = true;
+    var script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/js/lightbox.min.js';
+    script.onload = function () {
+      _lightboxLoaded = true;
+      if (typeof lightbox !== 'undefined' && lightbox.option) {
+        lightbox.option({ resizeDuration: 200, wrapAround: true, alwaysShowNavOnTouchDevices: true });
+      }
+      callback();
+    };
+    script.onerror = function () {
+      _lightboxLoading = false;
+      callback();
+    };
+    document.head.appendChild(script);
+  }
+
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('[data-lightbox]');
+    if (!link) return;
+    e.preventDefault();
+    e.stopPropagation();
+    loadLightbox(function () {
+      if (_lightboxLoaded && typeof lightbox !== 'undefined') {
+        lightbox.start(link);
+      } else {
+        window.open(link.getAttribute('href'), '_blank', 'noopener,noreferrer');
+      }
+    });
+  }, true);
+
+  // ── EVENT DELEGATION ──────────────────────────────────────────────────────
+
+  function initEvents() {
     document.addEventListener('click', function (e) {
-      // Language toggle
-      if (e.target.closest('[data-action="toggle-lang"]')) {
+      // Lang toggle — FIX: was not preventing default on button correctly
+      var langBtn = e.target.closest('[data-action="toggle-lang"]');
+      if (langBtn) {
         e.preventDefault();
+        e.stopPropagation();
         cycleLanguage();
         return;
       }
-
       // Carousel prev/next
-      const prevBtn = e.target.closest('[data-action="carousel-prev"]');
-      if (prevBtn) {
-        const id = prevBtn.dataset.carouselId;
-        moveCarousel(id, -1);
-        return;
-      }
-      const nextBtn = e.target.closest('[data-action="carousel-next"]');
-      if (nextBtn) {
-        const id = nextBtn.dataset.carouselId;
-        moveCarousel(id, 1);
-        return;
-      }
-
+      var prev = e.target.closest('[data-action="carousel-prev"]');
+      if (prev) { moveCarousel(prev.dataset.carouselId, -1); return; }
+      var next = e.target.closest('[data-action="carousel-next"]');
+      if (next) { moveCarousel(next.dataset.carouselId, 1); return; }
       // Carousel dot
-      const dot = e.target.closest('[data-carousel-target]');
+      var dot = e.target.closest('[data-carousel-target]');
       if (dot && dot.dataset.slide !== undefined) {
-        const id = dot.dataset.carouselTarget;
+        var id = dot.dataset.carouselTarget;
         if (_carousels[id]) {
           _carousels[id].index = parseInt(dot.dataset.slide, 10);
           updateCarouselUI(id);
@@ -316,32 +347,22 @@
         }
         return;
       }
-
-      // FAQ question
-      const faqQ = e.target.closest('.faq-question');
-      if (faqQ) {
-        toggleFaq(faqQ);
-        return;
-      }
+      // FAQ
+      var faqQ = e.target.closest('.faq-question');
+      if (faqQ) { toggleFaq(faqQ); return; }
     });
 
-    // Keyboard: FAQ and carousel dot
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' || e.key === ' ') {
-        const faqQ = e.target.closest('.faq-question');
-        if (faqQ) {
-          e.preventDefault();
-          toggleFaq(faqQ);
-        }
-        const dot = e.target.closest('[data-carousel-target]');
-        if (dot) {
-          e.preventDefault();
-          dot.click();
-        }
+        var faqQ = e.target.closest('.faq-question');
+        if (faqQ) { e.preventDefault(); toggleFaq(faqQ); }
+        var dot = e.target.closest('[data-carousel-target]');
+        if (dot) { e.preventDefault(); dot.click(); }
+        var langBtn = e.target.closest('[data-action="toggle-lang"]');
+        if (langBtn) { e.preventDefault(); cycleLanguage(); }
       }
-      // Arrow keys for carousel when focused inside
       if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
-        const container = e.target.closest('[data-carousel]');
+        var container = e.target.closest('[data-carousel]');
         if (container) {
           e.preventDefault();
           moveCarousel(container.dataset.carousel, e.key === 'ArrowLeft' ? -1 : 1);
@@ -350,27 +371,8 @@
     });
   }
 
-  // ─── LIGHTBOX ────────────────────────────────────────────────────────────
-  function initLightbox() {
-    if (typeof lightbox !== 'undefined' && lightbox.option) {
-      lightbox.option({
-        resizeDuration: 200,
-        wrapAround: true,
-        alwaysShowNavOnTouchDevices: true,
-        showImageNumberLabel: true,
-        albumLabel: 'Image %1 of %2',
-      });
-    }
-  }
+  // ── BOOT ──────────────────────────────────────────────────────────────────
 
-  // ─── LANG BUTTON LABEL ──────────────────────────────────────────────────
-  function updateLangLabel() {
-    document.querySelectorAll('[data-lang-label]').forEach(function (el) {
-      el.textContent = currentLangLabel();
-    });
-  }
-
-  // ─── BOOT ────────────────────────────────────────────────────────────────
   function boot() {
     geoDetect();
     fillYear();
@@ -379,10 +381,11 @@
     initBackToTop();
     initScrollAnimations();
     initCarousels();
-    initEventDelegation();
-    initLightbox();
+    initEvents();
   }
 
+  // FIX: Always wait for DOMContentLoaded to ensure all [data-years-since]
+  // and [data-lang-label] elements exist before trying to fill them.
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', boot);
   } else {
