@@ -275,50 +275,6 @@
     }
   }
 
-  // ── GALLERY / LIGHTBOX ────────────────────────────────────────────────────
-
-  var _lightboxLoaded = false;
-  var _lightboxLoading = false;
-
-  function loadLightbox(callback) {
-    if (_lightboxLoaded) { callback(); return; }
-    if (_lightboxLoading) {
-      var wait = setInterval(function () {
-        if (_lightboxLoaded) { clearInterval(wait); callback(); }
-      }, 50);
-      return;
-    }
-    _lightboxLoading = true;
-    var script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/js/lightbox.min.js';
-    script.onload = function () {
-      _lightboxLoaded = true;
-      if (typeof lightbox !== 'undefined' && lightbox.option) {
-        lightbox.option({ resizeDuration: 200, wrapAround: true, alwaysShowNavOnTouchDevices: true });
-      }
-      callback();
-    };
-    script.onerror = function () {
-      _lightboxLoading = false;
-      callback();
-    };
-    document.head.appendChild(script);
-  }
-
-  document.addEventListener('click', function (e) {
-    var link = e.target.closest('[data-lightbox]');
-    if (!link) return;
-    e.preventDefault();
-    e.stopPropagation();
-    loadLightbox(function () {
-      if (_lightboxLoaded && typeof lightbox !== 'undefined') {
-        lightbox.start(link);
-      } else {
-        window.open(link.getAttribute('href'), '_blank', 'noopener,noreferrer');
-      }
-    });
-  }, true);
-
   // ── EVENT DELEGATION ──────────────────────────────────────────────────────
 
   function initEvents() {
@@ -347,6 +303,9 @@
         }
         return;
       }
+      // Gallery — block all clicks, do nothing
+      var galleryLink = e.target.closest('.gallery-grid a');
+      if (galleryLink) { e.preventDefault(); return; }
       // FAQ
       var faqQ = e.target.closest('.faq-question');
       if (faqQ) { toggleFaq(faqQ); return; }
