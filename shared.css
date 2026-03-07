@@ -1,6 +1,6 @@
 /* ============================================================
-   Iglisi Watch & Key — shared.css  (OPTIMISED BUILD)
-   Changes vs previous version are marked with  ← FIX
+   Iglisi Watch & Key — shared.css  (FIXED BUILD)
+   ALL CHANGES MARKED WITH  ← FIX
    ============================================================ */
 
 /* ── CSS CUSTOM PROPERTIES ─────────────────────────────────── */
@@ -53,16 +53,17 @@ h1, h2, h3, h4 {
 }
 
 /* ── COLOUR UTILITIES ───────────────────────────────────────── */
-/* ← FIX: .gold now uses accessible colour for text elements.
-   Large decorative display text keeps the original warmer tone
-   via .gold-display (used only on h1/h2 span highlights). */
 .gold          { color: var(--accent-gold-accessible); }
-.gold-display  { color: var(--accent-gold); }          /* ← NEW: decorative only */
+.gold-display  { color: var(--accent-gold); }
 .bg-gold       { background-color: var(--accent-gold); }
 .border-gold   { border-color: var(--accent-gold); }
 .teal          { color: var(--accent-teal); }
 .bg-teal       { background-color: var(--accent-teal); }
 .border-teal   { border-color: var(--accent-teal); }
+
+/* ← FIX: Footer context — .gold reverts to #b4945c on dark background
+   because #7a6240 fails contrast on dark bg (3.06:1) while #b4945c passes (6.14:1) */
+.footer .gold  { color: var(--accent-gold); }
 
 /* ── FOCUS VISIBLE (accessibility) ─────────────────────────── */
 :focus-visible {
@@ -77,16 +78,10 @@ h1, h2, h3, h4 {
   top: 0; left: 0;
   height: 4px;
   background: linear-gradient(90deg, var(--accent-gold), var(--accent-teal));
-
-  /* ← FIX: replaced `width` transition with transform: scaleX().
-     `width` is a non-composited property — it triggers layout on every
-     scroll event (Lighthouse "Avoid non-composited animations" warning).
-     scaleX() runs on the GPU compositor thread, zero layout cost. */
   width: 100%;
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform 0.1s linear;
-
   z-index: 1000;
   pointer-events: none;
 }
@@ -171,7 +166,6 @@ h1, h2, h3, h4 {
   background: #e4e4e4;
   border-color: var(--accent-gold);
 }
-/* Stars use accessible dark-gold — contrast ~4.7:1 on #efefef */
 .review-badge .stars {
   color: #8c6d3f;
   letter-spacing: 2px;
@@ -184,7 +178,6 @@ h1, h2, h3, h4 {
   overflow: hidden;
 }
 
-/* Hero background as inline <img> for LCP optimization */
 .hero-bg-img {
   position: absolute;
   inset: 0;
@@ -200,9 +193,6 @@ h1, h2, h3, h4 {
   background-image: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.03) 1px, transparent 1px);
   background-size: 40px 40px;
   z-index: 1;
-}
-@media (max-width: 768px) {
-  /* Hero image handled by inline <img> element — no background needed */
 }
 .hero-overlay {
   background: rgba(0,0,0,0.6);
@@ -226,7 +216,6 @@ h1, h2, h3, h4 {
   .hero-title { font-size: 2.5rem; }
 }
 
-/* Italian hero title — slightly smaller to prevent overflow */
 .lang-it .hero-title { font-size: clamp(2.2rem, 7vw, 3.8rem); }
 @media (min-width: 768px) {
   .lang-it .hero-title { font-size: clamp(2.8rem, 6vw, 4.2rem); }
@@ -389,9 +378,8 @@ h1, h2, h3, h4 {
   box-shadow: 0 10px 20px -5px rgba(180,148,92,0.5);
 }
 .btn-secondary {
-  border: 2px solid var(--accent-gold);        /* ← FIX: 2px so links are distinguishable
-                                                   by shape/weight, not colour alone */
-  color: var(--accent-gold-accessible);         /* ← FIX: accessible contrast */
+  border: 2px solid var(--accent-gold);
+  color: var(--accent-gold-accessible);
   padding: 0.75rem 1.5rem;
   border-radius: 9999px;
   font-weight: 600;
@@ -636,8 +624,6 @@ h1, h2, h3, h4 {
 }
 
 /* ── MAP LAZY WRAPPER ───────────────────────────────────────── */
-/* ← FIX: The Maps iframe is deferred until user interaction.
-   The wrapper shows a styled placeholder until the iframe loads. */
 .map-wrapper {
   position: relative;
   width: 100%;
@@ -676,13 +662,25 @@ h1, h2, h3, h4 {
   color: var(--footer-text);
 }
 
-/* ← FIX: Footer language links use underline to be distinguishable
-   without relying on colour alone (WCAG 1.4.1 Use of Colour) */
 .footer nav a {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 .footer nav a:hover { color: var(--accent-gold); }
+
+/* ← FIX: Contact section inline links need underline for WCAG 1.4.1
+   "Links rely on color to be distinguishable" — links inside <address>
+   and contact section need a non-color indicator */
+address a,
+#contact a:not(.btn-primary):not(.btn-secondary) {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--accent-gold);
+}
+address a:hover,
+#contact a:not(.btn-primary):not(.btn-secondary):hover {
+  color: var(--accent-gold);
+}
 
 /* ── LIGHTBOX OVERRIDES ─────────────────────────────────────── */
 .lb-dataContainer { background: rgba(0,0,0,0.8) !important; border-radius: 0 0 10px 10px; }
