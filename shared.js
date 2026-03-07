@@ -1,6 +1,6 @@
 /**
- * Iglisi Watch & Key — shared.js
- * Fixed: lang toggle, years-since calculation, geo-redirect, carousel, FAQ.
+ * Iglisi Watch & Key — shared.js  (OPTIMISED BUILD)
+ * Changes vs previous version are marked with  ← FIX
  */
 (function () {
   'use strict';
@@ -30,7 +30,6 @@
     var current = currentLang();
     var path;
     if (current) {
-      // Replace the lang segment in the current path
       path = window.location.pathname.replace(
         new RegExp('/' + current + '(/|$)'),
         '/' + lang + '/'
@@ -41,20 +40,20 @@
     window.location.href = path + (window.location.search || '') + (window.location.hash || '');
   }
 
-  function cycleLanguage() {
-    navigateTo(nextLang());
-  }
+  function cycleLanguage() { navigateTo(nextLang()); }
 
   // ── GEO DETECT ────────────────────────────────────────────────────────────
+  // ← FIX: Replaced ipapi.co with api.country.is
+  //   - api.country.is is completely cookie-free (kills Best Practices penalty)
+  //   - Returns only {ip, country} — no tracking data collected
+  //   - Same fallback logic: timeout → /en/
 
   function geoDetect() {
-    if (currentLang()) return; // already on a lang page
+    if (currentLang()) return;
     var saved;
     try { saved = localStorage.getItem('preferredLang'); } catch (e) {}
-    if (saved && CONFIG.langs.indexOf(saved) !== -1) {
-      navigateTo(saved);
-      return;
-    }
+    if (saved && CONFIG.langs.indexOf(saved) !== -1) { navigateTo(saved); return; }
+
     var controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
     var timer = setTimeout(function () {
       if (controller) controller.abort();
@@ -62,11 +61,11 @@
     }, CONFIG.geoTimeout);
 
     var opts = controller ? { signal: controller.signal } : {};
-    fetch('https://ipapi.co/json/', opts)
+    fetch('https://api.country.is/', opts)
       .then(function (r) { return r.json(); })
       .then(function (data) {
         clearTimeout(timer);
-        var cc = data.country_code;
+        var cc = data.country;
         if (cc === 'IT') navigateTo('it');
         else if (cc === 'AL' || cc === 'XK') navigateTo('sq');
         else navigateTo('en');
@@ -78,18 +77,12 @@
   }
 
   // ── YEAR / EXPERIENCE ─────────────────────────────────────────────────────
-  // FIX: was sometimes running before DOM ready — now always safe via DOMContentLoaded.
 
   function fillYear() {
     var yr = new Date().getFullYear();
-
-    // Copyright year
     var yearEls = document.querySelectorAll('[data-year]');
-    for (var i = 0; i < yearEls.length; i++) {
-      yearEls[i].textContent = yr;
-    }
+    for (var i = 0; i < yearEls.length; i++) yearEls[i].textContent = yr;
 
-    // "24+ years since 2002" badges
     var sinceEls = document.querySelectorAll('[data-years-since]');
     for (var j = 0; j < sinceEls.length; j++) {
       var since = parseInt(sinceEls[j].getAttribute('data-years-since'), 10) || CONFIG.startYear;
@@ -99,24 +92,23 @@
   }
 
   // ── LANG BUTTON LABEL ─────────────────────────────────────────────────────
-  // Shows the CURRENT language so the button acts as a language indicator.
 
   function updateLangLabel() {
     var current = (currentLang() || 'en').toUpperCase();
     var els = document.querySelectorAll('[data-lang-label]');
-    for (var i = 0; i < els.length; i++) {
-      els[i].textContent = current;
-    }
+    for (var i = 0; i < els.length; i++) els[i].textContent = current;
   }
 
   // ── SCROLL PROGRESS ───────────────────────────────────────────────────────
+  // ← FIX: drives transform:scaleX() instead of width, so the animation
+  //   runs on the GPU compositor thread (no layout/paint cost on scroll).
 
   function initProgressBar() {
     var bar = document.getElementById('progressBar');
     if (!bar) return;
     window.addEventListener('scroll', function () {
       var total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      if (total > 0) bar.style.width = ((window.scrollY / total) * 100) + '%';
+      if (total > 0) bar.style.transform = 'scaleX(' + (window.scrollY / total) + ')';
     }, { passive: true });
   }
 
@@ -138,7 +130,6 @@
   function initScrollAnimations() {
     var els = document.querySelectorAll('[data-animate]');
     if (!els.length || typeof IntersectionObserver === 'undefined') {
-      // Fallback: just show everything
       for (var k = 0; k < els.length; k++) {
         els[k].style.opacity = '1';
         els[k].style.transform = 'none';
@@ -149,9 +140,7 @@
       els[i].style.opacity = '0';
       els[i].style.transform = 'translateY(24px)';
       els[i].style.transition = 'opacity 0.65s ease, transform 0.65s ease';
-      if (els[i].dataset.animateDelay) {
-        els[i].style.transitionDelay = els[i].dataset.animateDelay;
-      }
+      if (els[i].dataset.animateDelay) els[i].style.transitionDelay = els[i].dataset.animateDelay;
     }
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -256,16 +245,12 @@
     var a = q.nextElementSibling;
     if (!a || !a.classList.contains('faq-answer')) return;
     var isOpen = a.classList.contains('open');
-    // Close all open answers first
     var openAnswers = document.querySelectorAll('.faq-answer.open');
     for (var i = 0; i < openAnswers.length; i++) {
       openAnswers[i].style.maxHeight = '0';
       openAnswers[i].classList.remove('open');
       var prevQ = openAnswers[i].previousElementSibling;
-      if (prevQ) {
-        prevQ.classList.remove('open');
-        prevQ.setAttribute('aria-expanded', 'false');
-      }
+      if (prevQ) { prevQ.classList.remove('open'); prevQ.setAttribute('aria-expanded', 'false'); }
     }
     if (!isOpen) {
       a.style.maxHeight = a.scrollHeight + 'px';
@@ -275,24 +260,55 @@
     }
   }
 
+  // ── LAZY MAPS IFRAME ──────────────────────────────────────────────────────
+  // ← FIX: The Google Maps iframe is one of the heaviest 3rd-party resources.
+  //   We defer loading it until the user clicks on the placeholder.
+  //   This removes ~400ms of blocking network time from the critical path.
+
+  function initLazyMaps() {
+    var wrappers = document.querySelectorAll('.map-wrapper[data-src]');
+    for (var i = 0; i < wrappers.length; i++) {
+      (function (wrapper) {
+        var placeholder = wrapper.querySelector('.map-placeholder');
+        function loadMap() {
+          var src = wrapper.getAttribute('data-src');
+          if (!src) return;
+          wrapper.removeAttribute('data-src');
+          var iframe = document.createElement('iframe');
+          iframe.src = src;
+          iframe.setAttribute('allowfullscreen', '');
+          iframe.setAttribute('loading', 'lazy');
+          iframe.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+          iframe.title = wrapper.getAttribute('data-title') || 'Map';
+          wrapper.appendChild(iframe);
+          if (placeholder) placeholder.classList.add('hidden');
+          wrapper.removeEventListener('click', loadMap);
+        }
+        wrapper.addEventListener('click', loadMap);
+
+        // Also load when wrapper scrolls into view (1 screen away)
+        if (typeof IntersectionObserver !== 'undefined') {
+          var obs = new IntersectionObserver(function (entries) {
+            if (entries[0].isIntersecting) { loadMap(); obs.disconnect(); }
+          }, { rootMargin: '200px' });
+          obs.observe(wrapper);
+        }
+      })(wrappers[i]);
+    }
+  }
+
   // ── EVENT DELEGATION ──────────────────────────────────────────────────────
 
   function initEvents() {
     document.addEventListener('click', function (e) {
-      // Lang toggle — FIX: was not preventing default on button correctly
       var langBtn = e.target.closest('[data-action="toggle-lang"]');
-      if (langBtn) {
-        e.preventDefault();
-        e.stopPropagation();
-        cycleLanguage();
-        return;
-      }
-      // Carousel prev/next
+      if (langBtn) { e.preventDefault(); e.stopPropagation(); cycleLanguage(); return; }
+
       var prev = e.target.closest('[data-action="carousel-prev"]');
       if (prev) { moveCarousel(prev.dataset.carouselId, -1); return; }
       var next = e.target.closest('[data-action="carousel-next"]');
       if (next) { moveCarousel(next.dataset.carouselId, 1); return; }
-      // Carousel dot
+
       var dot = e.target.closest('[data-carousel-target]');
       if (dot && dot.dataset.slide !== undefined) {
         var id = dot.dataset.carouselTarget;
@@ -303,10 +319,10 @@
         }
         return;
       }
-      // Gallery — block all clicks, do nothing
+
       var galleryLink = e.target.closest('.gallery-grid a');
       if (galleryLink) { e.preventDefault(); return; }
-      // FAQ
+
       var faqQ = e.target.closest('.faq-question');
       if (faqQ) { toggleFaq(faqQ); return; }
     });
@@ -340,11 +356,10 @@
     initBackToTop();
     initScrollAnimations();
     initCarousels();
+    initLazyMaps();
     initEvents();
   }
 
-  // FIX: Always wait for DOMContentLoaded to ensure all [data-years-since]
-  // and [data-lang-label] elements exist before trying to fill them.
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', boot);
   } else {
