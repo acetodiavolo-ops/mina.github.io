@@ -48,10 +48,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
-  <!-- PRELOAD LCP hero image -->
-  <link rel="preload" as="image" fetchpriority="high"
-        href="https://watch.al/0.raw.githubusercontent.com.webp" type="image/webp">
-
   <!-- FONTS & ICONS (async) -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet" media="print" onload="this.media='all'">
@@ -60,6 +56,9 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
+  <!-- Preload Font Awesome fonts to eliminate render block -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- TAILWIND (self-hosted purged build) -->
   <link rel="stylesheet" href="../tailwind-purged.css">
@@ -131,15 +130,7 @@
       }
     ]
   }
-  </script>
-  <style>
-  /* Force font-display:swap on Font Awesome to eliminate render block */
-  @font-face { font-family: "Font Awesome 5 Free"; font-display: swap; }
-  @font-face { font-family: "Font Awesome 5 Brands"; font-display: swap; }
-  @font-face { font-family: "Font Awesome 6 Free"; font-display: swap; }
-  @font-face { font-family: "Font Awesome 6 Brands"; font-display: swap; }
-  </style>
-</head>
+  </script></head>
 <body class="text-gray-800 antialiased lang-it">
 
   <!-- Scroll Progress -->
@@ -236,6 +227,10 @@
     <!-- ── HERO ── -->
     <section class="hero-bg relative py-16 border-b border-gray-200" aria-labelledby="hero-heading">
       <div class="hero-overlay" aria-hidden="true"></div>
+      <img src="https://watch.al/0.raw.githubusercontent.com.webp" 
+           alt="" role="presentation" fetchpriority="high" decoding="async"
+           class="hero-bg-img"
+           width="890" height="785">
       <div class="hero-content max-w-7xl mx-auto px-6 text-center text-white">
         <span class="gold-display uppercase tracking-widest text-sm font-semibold">Due decenni di precisione</span>
         <h1 id="hero-heading"
