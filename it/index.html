@@ -50,7 +50,7 @@
 
   <!-- PRELOAD LCP hero image -->
   <link rel="preload" as="image" fetchpriority="high"
-        href="https://watch.al/0.raw.githubusercontent.com.jpg">
+        href="https://watch.al/0.raw.githubusercontent.com.webp" type="image/webp">
 
   <!-- FONTS & ICONS (async) -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap"
@@ -132,6 +132,13 @@
     ]
   }
   </script>
+  <style>
+  /* Force font-display:swap on Font Awesome to eliminate render block */
+  @font-face { font-family: "Font Awesome 5 Free"; font-display: swap; }
+  @font-face { font-family: "Font Awesome 5 Brands"; font-display: swap; }
+  @font-face { font-family: "Font Awesome 6 Free"; font-display: swap; }
+  @font-face { font-family: "Font Awesome 6 Brands"; font-display: swap; }
+  </style>
 </head>
 <body class="text-gray-800 antialiased lang-it">
 
@@ -170,9 +177,12 @@
 
         <div class="logo-area">
           <a href="/it/" aria-label="Iglisi Watch &amp; Key — pagina principale">
-            <img src="https://watch.al/favicon.png"
+            <picture>
+              <source srcset="https://watch.al/favicon.webp" type="image/webp">
+              <img src="https://watch.al/favicon.png"
                  alt="Iglisi Watch &amp; Key logo" width="100" height="100"
                  fetchpriority="high">
+            </picture>
           </a>
           <p class="desktop-only-text text-xs text-gray-500">Azienda familiare · Dal 2002</p>
         </div>
@@ -342,10 +352,13 @@
         </h2>
         <div class="flex flex-col md:flex-row gap-12 items-center">
           <div class="md:w-1/3">
-            <img src="https://watch.al/1.raw.githubusercontent.com.jpg"
+            <picture>
+              <source srcset="https://watch.al/1.raw.githubusercontent.com.webp" type="image/webp">
+              <img src="https://watch.al/1.raw.githubusercontent.com.jpg"
                  alt="Banco da lavoro per riparazione orologi nel laboratorio Iglisi a Durazzo"
                  class="rounded-2xl shadow-xl border border-gray-200" loading="lazy"
                  width="600" height="450">
+            </picture>
           </div>
           <div class="md:w-2/3">
             <p class="text-2xl font-bold mb-4">Dove la Precisione Incontra la Passione</p>
@@ -482,34 +495,52 @@
         </p>
         <div class="gallery-grid" role="list">
           <div role="listitem">
-            <img class="gallery-thumb" loading="lazy"
+            <picture>
+                 <source srcset="https://watch.al/0.raw.githubusercontent.com.webp" type="image/webp">
+                 <img class="gallery-thumb" loading="lazy"
                  src="https://watch.al/0.raw.githubusercontent.com.jpg"
                  alt="Insegna del negozio Iglisi a Durazzo, Albania" width="600" height="280">
+               </picture>
           </div>
           <div role="listitem">
-            <img class="gallery-thumb" loading="lazy"
+            <picture>
+                 <source srcset="https://watch.al/1.raw.githubusercontent.com.webp" type="image/webp">
+                 <img class="gallery-thumb" loading="lazy"
                  src="https://watch.al/1.raw.githubusercontent.com.jpg"
                  alt="Banco da lavoro per riparazione orologi a Durazzo" width="600" height="280">
+               </picture>
           </div>
           <div role="listitem">
-            <img class="gallery-thumb" loading="lazy"
+            <picture>
+                 <source srcset="https://watch.al/2.raw.githubusercontent.com.webp" type="image/webp">
+                 <img class="gallery-thumb" loading="lazy"
                  src="https://watch.al/2.raw.githubusercontent.com.jpg"
                  alt="Macchine per duplicazione chiavi a Durazzo" width="600" height="280">
+               </picture>
           </div>
           <div role="listitem">
-            <img class="gallery-thumb" loading="lazy"
+            <picture>
+                 <source srcset="https://watch.al/3.raw.githubusercontent.com.webp" type="image/webp">
+                 <img class="gallery-thumb" loading="lazy"
                  src="https://watch.al/3.raw.githubusercontent.com.jpg"
                  alt="Attrezzature per riparazione orologi" width="600" height="280">
+               </picture>
           </div>
           <div role="listitem">
-            <img class="gallery-thumb" loading="lazy"
+            <picture>
+                 <source srcset="https://watch.al/4.raw.githubusercontent.com.webp" type="image/webp">
+                 <img class="gallery-thumb" loading="lazy"
                  src="https://watch.al/4.raw.githubusercontent.com.jpg"
                  alt="Interno del laboratorio Iglisi a Durazzo" width="600" height="280">
+               </picture>
           </div>
           <div role="listitem">
-            <img class="gallery-thumb" loading="lazy"
+            <picture>
+                 <source srcset="https://watch.al/5.raw.githubusercontent.com.webp" type="image/webp">
+                 <img class="gallery-thumb" loading="lazy"
                  src="https://watch.al/5.raw.githubusercontent.com.jpg"
                  alt="Esposizione di chiavi nel laboratorio Iglisi" width="600" height="280">
+               </picture>
           </div>
         </div>
       </div>
