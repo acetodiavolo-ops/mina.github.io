@@ -12,6 +12,12 @@
   <meta name="author" content="Iglisi Watch &amp; Key">
   <meta name="robots" content="index, follow">
 
+  <!-- LOCAL SEO GEO TAGS -->
+  <meta name="geo.region" content="AL-DR">
+  <meta name="geo.placename" content="Durrës, Albania">
+  <meta name="geo.position" content="41.3201564;19.4453564">
+  <meta name="ICBM" content="41.3201564, 19.4453564">
+
   <!-- OPEN GRAPH -->
   <meta property="og:title" content="Iglisi Watch &amp; Key — Riparim Orash &amp; Kopje Çelësash Durrës">
   <meta property="og:description" content="Biznes familjar që nga 2002. Bateria nën 2 minuta. 5 yje Google. Mirëse vini!">
@@ -37,9 +43,20 @@
   <!-- FAVICON -->
   <link rel="icon" type="image/png" href="https://i.postimg.cc/tCgW3FQK/Logo-removebg-preview.png">
 
-  <!-- FONTS & ICONS (async) -->
+  <!-- PRECONNECTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+  <!-- PRELOAD LCP hero image -->
+  <link rel="preload" as="image" fetchpriority="high"
+        href="https://i.postimg.cc/XqTkpvHm/bc00c411-3cfc-41e7-96ed-da34c9246e1f.jpg">
+
+  <!-- PRELOAD logo WebP (eliminates double PNG+WebP download) -->
+  <link rel="preload" as="image" type="image/webp" fetchpriority="high"
+        href="https://i.postimg.cc/tCgW3FQK/Logo-removebg-preview.webp">
+
+  <!-- FONTS & ICONS (async) -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
@@ -47,6 +64,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
+
   <!-- TAILWIND (self-hosted purged build) -->
   <link rel="stylesheet" href="../tailwind-purged.css">
   <!-- SHARED CSS -->
@@ -159,7 +177,8 @@
             <picture>
               <source srcset="https://i.postimg.cc/tCgW3FQK/Logo-removebg-preview.webp" type="image/webp">
               <img src="https://i.postimg.cc/tCgW3FQK/Logo-removebg-preview.png"
-                   alt="Iglisi Watch &amp; Key logo" width="100" height="100">
+                   alt="Iglisi Watch &amp; Key logo" width="100" height="100"
+                   fetchpriority="high">
             </picture>
           </a>
           <p class="desktop-only-text text-xs text-gray-500">Biznes familjar · Që nga 2002</p>
@@ -215,10 +234,10 @@
     <section class="hero-bg relative py-16 border-b border-gray-200" aria-labelledby="hero-heading">
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-content max-w-7xl mx-auto px-6 text-center text-white">
-        <span class="gold uppercase tracking-widest text-sm font-semibold">Dy dekada precizion</span>
+        <span class="gold-display uppercase tracking-widest text-sm font-semibold">Dy dekada precizion</span>
         <h1 id="hero-heading"
             class="text-5xl md:text-6xl font-bold mt-4 mb-6 leading-tight hero-title">
-          Riparim Orash &amp; <span class="gold">Kopje Çelësash</span> në Durrës
+          Riparim Orash &amp; <span class="gold-display">Kopje Çelësash</span> në Durrës
         </h1>
         <p class="text-xl text-gray-200 max-w-3xl mx-auto mb-8">
           Biznes familjar që nga 2002. Specializohemi në ora kuarci dhe të gjitha llojet e çelësave.
@@ -240,22 +259,22 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
           <div class="promise-card">
             <i class="fas fa-bolt promise-icon" aria-hidden="true"></i>
-            <h3 class="font-bold text-lg">Shërbim i Shpejtë</h3>
+            <h2 class="font-bold text-lg">Shërbim i Shpejtë</h2>
             <p class="text-gray-500 text-sm">Bateria nën 2 min</p>
           </div>
           <div class="promise-card">
             <i class="fas fa-cogs promise-icon" aria-hidden="true"></i>
-            <h3 class="font-bold text-lg">Mjeshtëri Eksperte</h3>
+            <h2 class="font-bold text-lg">Mjeshtëri Eksperte</h2>
             <p class="text-gray-500 text-sm">Mbi 20 vjet përvojë</p>
           </div>
           <div class="promise-card">
             <i class="fas fa-euro-sign promise-icon" aria-hidden="true"></i>
-            <h3 class="font-bold text-lg">Çmime të Drejta</h3>
+            <h2 class="font-bold text-lg">Çmime të Drejta</h2>
             <p class="text-gray-500 text-sm">Pa kosto të fshehura</p>
           </div>
           <div class="promise-card">
             <i class="fas fa-check-circle promise-icon" aria-hidden="true"></i>
-            <h3 class="font-bold text-lg">Punë e Garantuar</h3>
+            <h2 class="font-bold text-lg">Punë e Garantuar</h2>
             <p class="text-gray-500 text-sm">Cilësi e besueshme</p>
           </div>
         </div>
@@ -268,22 +287,22 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
           <div class="trust-badge">
             <i class="fas fa-calendar-alt text-3xl gold mb-2" aria-hidden="true"></i>
-            <h3 class="font-bold text-xl">Që nga 2002</h3>
+            <p class="font-bold text-xl">Që nga 2002</p>
             <p class="text-gray-500 text-sm"><span data-years-since="2002"></span> vjet përvojë</p>
           </div>
           <div class="trust-badge">
             <i class="fas fa-clock text-3xl gold mb-2" aria-hidden="true"></i>
-            <h3 class="font-bold text-xl">350K+</h3>
+            <p class="font-bold text-xl">350K+</p>
             <p class="text-gray-500 text-sm">Ora të riparuara</p>
           </div>
           <div class="trust-badge">
             <i class="fas fa-key text-3xl gold mb-2" aria-hidden="true"></i>
-            <h3 class="font-bold text-xl">700K+</h3>
+            <p class="font-bold text-xl">700K+</p>
             <p class="text-gray-500 text-sm">Çelësa të kopjuar</p>
           </div>
           <div class="trust-badge">
             <i class="fas fa-smile text-3xl gold mb-2" aria-hidden="true"></i>
-            <h3 class="font-bold text-xl">15K+</h3>
+            <p class="font-bold text-xl">15K+</p>
             <p class="text-gray-500 text-sm">Klientë të kënaqur</p>
           </div>
         </div>
@@ -300,7 +319,7 @@
     <section class="py-24 bg-white" aria-labelledby="why-heading" data-animate>
       <div class="max-w-7xl mx-auto px-6">
         <h2 id="why-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">
-          Pse të <span class="gold">Zgjidhni Ne</span>
+          Pse të <span class="gold-display">Zgjidhni Ne</span>
         </h2>
         <div class="grid md:grid-cols-3 gap-8">
           <div class="service-card">
@@ -326,7 +345,7 @@
     <section class="py-24 bg-gray-50" aria-labelledby="workshop-heading" data-animate>
       <div class="max-w-6xl mx-auto px-6">
         <h2 id="workshop-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">
-          Punishtja <span class="gold">e Mjeshtrit</span>
+          Punishtja <span class="gold-display">e Mjeshtrit</span>
         </h2>
         <div class="flex flex-col md:flex-row gap-12 items-center">
           <div class="md:w-1/3">
@@ -355,7 +374,7 @@
     <section id="services" class="py-24 bg-white" aria-labelledby="services-heading" data-animate>
       <div class="max-w-7xl mx-auto px-6">
         <h2 id="services-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">
-          Shërbimet <span class="gold">Tona</span>
+          Shërbimet <span class="gold-display">Tona</span>
         </h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div class="service-card">
@@ -408,7 +427,7 @@
     <section class="py-24 bg-gray-50" aria-labelledby="equipment-heading" data-animate>
       <div class="max-w-7xl mx-auto px-6">
         <h2 id="equipment-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">
-          Pajisjet <span class="gold">Tona</span>
+          Pajisjet <span class="gold-display">Tona</span>
         </h2>
         <div class="grid md:grid-cols-3 gap-8">
           <div class="equipment-card text-center">
@@ -434,7 +453,7 @@
     <section class="py-24 bg-white" aria-labelledby="process-heading" data-animate>
       <div class="max-w-4xl mx-auto px-6">
         <h2 id="process-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">
-          Procesi <span class="gold">Ynë</span>
+          Procesi <span class="gold-display">Ynë</span>
         </h2>
         <div class="space-y-8">
           <div class="timeline-item" data-animate data-animate-delay="0s">
@@ -466,60 +485,60 @@
     <section class="py-24 bg-gray-50" aria-labelledby="gallery-heading" data-animate>
       <div class="max-w-7xl mx-auto px-6">
         <h2 id="gallery-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">
-          Punishtja Jonë <span class="gold">në Realitet</span>
+          Punishtja Jonë <span class="gold-display">në Realitet</span>
         </h2>
         <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
           Hyni në punishten tonë familjare – çdo foto është një moment i vërtetë, i paprekur.
         </p>
         <div class="gallery-grid" role="list">
-          <a role="listitem" style="cursor:default">
+          <div role="listitem" style="cursor:default">
             <picture>
               <source srcset="https://i.postimg.cc/XqTkpvHm/bc00c411-3cfc-41e7-96ed-da34c9246e1f.webp" type="image/webp">
               <img class="gallery-thumb" loading="lazy"
                    src="https://i.postimg.cc/XqTkpvHm/bc00c411-3cfc-41e7-96ed-da34c9246e1f.jpg"
                    alt="Tabela e dyqanit Iglisi në Durrës" width="600" height="280">
             </picture>
-          </a>
-          <a role="listitem" style="cursor:default">
+          </div>
+          <div role="listitem" style="cursor:default">
             <picture>
               <source srcset="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.webp" type="image/webp">
               <img class="gallery-thumb" loading="lazy"
                    src="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.jpg"
                    alt="Banka e punës për riparim orash" width="600" height="280">
             </picture>
-          </a>
-          <a role="listitem" style="cursor:default">
+          </div>
+          <div role="listitem" style="cursor:default">
             <picture>
               <source srcset="https://i.postimg.cc/LsCCmmpv/4321b2b5-af19-4888-980f-c95829f43af2.webp" type="image/webp">
               <img class="gallery-thumb" loading="lazy"
                    src="https://i.postimg.cc/LsCCmmpv/4321b2b5-af19-4888-980f-c95829f43af2.jpg"
                    alt="Makineri për kopje çelësash" width="600" height="280">
             </picture>
-          </a>
-          <a role="listitem" style="cursor:default">
+          </div>
+          <div role="listitem" style="cursor:default">
             <picture>
               <source srcset="https://i.postimg.cc/wv1WvnxR/639d7b56-b8fb-4627-9405-0ec70ad24985.webp" type="image/webp">
               <img class="gallery-thumb" loading="lazy"
                    src="https://i.postimg.cc/wv1WvnxR/639d7b56-b8fb-4627-9405-0ec70ad24985.jpg"
                    alt="Pajisje për riparim orash" width="600" height="280">
             </picture>
-          </a>
-          <a role="listitem" style="cursor:default">
+          </div>
+          <div role="listitem" style="cursor:default">
             <picture>
               <source srcset="https://i.postimg.cc/d3d4RdyL/3807368a-ccf3-42ab-bf49-bffea24d52df.webp" type="image/webp">
               <img class="gallery-thumb" loading="lazy"
                    src="https://i.postimg.cc/d3d4RdyL/3807368a-ccf3-42ab-bf49-bffea24d52df.jpg"
                    alt="Brendësia e punishtes Iglisi" width="600" height="280">
             </picture>
-          </a>
-          <a role="listitem" style="cursor:default">
+          </div>
+          <div role="listitem" style="cursor:default">
             <picture>
               <source srcset="https://i.postimg.cc/4N6Wm6G2/baeedd7f-fd23-4141-b683-fad2b4ee32ce.webp" type="image/webp">
               <img class="gallery-thumb" loading="lazy"
                    src="https://i.postimg.cc/4N6Wm6G2/baeedd7f-fd23-4141-b683-fad2b4ee32ce.jpg"
                    alt="Çelësa të ndryshëm në punishte" width="600" height="280">
             </picture>
-          </a>
+          </div>
         </div>
       </div>
     </section>
@@ -528,7 +547,7 @@
     <section class="py-24 bg-white" aria-labelledby="reviews-heading" data-animate>
       <div class="max-w-5xl mx-auto px-6">
         <h2 id="reviews-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">
-          Çfarë <span class="gold">Thonë Klientët</span>
+          Çfarë <span class="gold-display">Thonë Klientët</span>
         </h2>
         <div class="carousel-container relative" data-carousel="main"
              aria-roledescription="carousel" role="region" aria-label="Komentet e klientëve">
@@ -596,7 +615,7 @@
     <section class="py-24 bg-gray-50" aria-labelledby="faq-heading" data-animate>
       <div class="max-w-5xl mx-auto px-6">
         <h2 id="faq-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">
-          Pyetjet <span class="gold">e Shpeshta</span>
+          Pyetjet <span class="gold-display">e Shpeshta</span>
         </h2>
         <div class="space-y-2">
           <div class="faq-item">
@@ -634,7 +653,7 @@
     <section id="contact" class="py-24 bg-gray-50" aria-labelledby="contact-heading" data-animate>
       <div class="max-w-6xl mx-auto px-6">
         <h2 id="contact-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">
-          Na <span class="gold">Kontaktoni</span>
+          Na <span class="gold-display">Kontaktoni</span>
         </h2>
         <div class="grid md:grid-cols-2 gap-12 items-start">
           <div>
@@ -676,12 +695,16 @@
             </div>
           </div>
           <div>
-            <iframe
-              title="Vendndodhja e Iglisi Watch &amp; Key në Google Maps"
-              class="w-full h-80 rounded-2xl border border-gray-200"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2991.418269398786!2d19.4431676!3d41.3201564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134fd18602527253%3A0x8ae611f6da018076!2sOrendreqes%20%26%20Kopje%20Celsash%20Igli!5e0!3m2!1sen!2s!4v1700000000000"
-              allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+            <div class="map-wrapper"
+                 data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2991.418269398786!2d19.4431676!3d41.3201564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134fd18602527253%3A0x8ae611f6da018076!2sOrendreqes%20%26%20Kopje%20Celsash%20Igli!5e0!3m2!1sen!2s!4v1700000000000"
+                 data-title="Vendndodhja e Iglisi Watch &amp; Key në Google Maps"
+                 role="button" tabindex="0"
+                 aria-label="Klikoni për të ngarkuar hartën interaktive">
+              <div class="map-placeholder">
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                <p>Klikoni për të ngarkuar hartën</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -713,9 +736,9 @@
         <a href="https://instagram.com/iglisiwk" target="_blank" rel="noopener noreferrer" class="gold hover:underline">@iglisiwk</a>
       </p>
       <nav aria-label="Ndrysho gjuhën" class="mt-4 flex justify-center gap-4 text-sm">
-        <a href="/en/" class="hover:text-[#b4945c] transition">EN</a>
+        <a href="/en/" class="hover:text-[#b4945c] transition" style="text-decoration:underline">EN</a>
         <span aria-current="page" class="gold font-semibold">SQ</span>
-        <a href="/it/" class="hover:text-[#b4945c] transition">IT</a>
+        <a href="/it/" class="hover:text-[#b4945c] transition" style="text-decoration:underline">IT</a>
       </nav>
     </div>
   </footer>
