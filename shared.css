@@ -181,6 +181,10 @@ h1, h2, h3, h4 {
 /* ── HERO ───────────────────────────────────────────────────── */
 .hero-bg {
   background-image: url('https://watch.al/0.raw.githubusercontent.com.jpg');
+  background-image: image-set(
+    url('https://watch.al/0.raw.githubusercontent.com.webp') type('image/webp'),
+    url('https://watch.al/0.raw.githubusercontent.com.jpg') type('image/jpeg')
+  );
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
