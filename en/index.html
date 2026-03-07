@@ -12,6 +12,12 @@
   <meta name="author" content="Iglisi Watch &amp; Key">
   <meta name="robots" content="index, follow">
 
+  <!-- ← FIX: Local SEO geo meta tags — improve local search signals -->
+  <meta name="geo.region" content="AL-DR">
+  <meta name="geo.placename" content="Durrës, Albania">
+  <meta name="geo.position" content="41.3201564;19.4453564">
+  <meta name="ICBM" content="41.3201564, 19.4453564">
+
   <!-- OPEN GRAPH -->
   <meta property="og:title" content="Iglisi Watch &amp; Key — Watch Repair &amp; Key Copy in Durrës">
   <meta property="og:description" content="Family-owned since 2002. Battery replaced in under 2 minutes. Walk-ins welcome. 5.0 ★ on Google.">
@@ -37,22 +43,43 @@
   <!-- FAVICON -->
   <link rel="icon" type="image/png" href="https://i.postimg.cc/tCgW3FQK/Logo-removebg-preview.png">
 
-  <!-- FONTS & ICONS (async) -->
+  <!-- ← FIX: preconnect to Font Awesome CDN — saves ~240ms on first font request -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- ← FIX: Preload the LCP hero image so the browser discovers it immediately
+       from the HTML, instead of waiting for CSS to be parsed first.
+       fetchpriority=high tells the browser this is the most important resource. -->
+  <link rel="preload" as="image" fetchpriority="high"
+        href="https://i.postimg.cc/XqTkpvHm/bc00c411-3cfc-41e7-96ed-da34c9246e1f.jpg">
+
+  <!-- ← FIX: Preload the logo WebP — it's 263 KiB and above the fold.
+       We only preload the WebP; the PNG fallback loads via <picture> only
+       if WebP is unsupported, eliminating the double-download. -->
+  <link rel="preload" as="image" type="image/webp" fetchpriority="high"
+        href="https://i.postimg.cc/tCgW3FQK/Logo-removebg-preview.webp">
+
+  <!-- FONTS — async load with font-display=swap already in URL -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+
+  <!-- ← FIX: Font Awesome — add font-display:swap via CDN URL param is not possible,
+       but loading it async (media=print trick) is the correct approach and is already
+       done. The remaining Lighthouse flag is about the woff2 files themselves;
+       we can't set font-display on a CDN. This is the best we can do without self-hosting. -->
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
+
   <!-- TAILWIND (self-hosted purged build) -->
   <link rel="stylesheet" href="../tailwind-purged.css">
   <!-- SHARED CSS -->
   <link rel="stylesheet" href="../shared.css">
 
-  <!-- STRUCTURED DATA -->
+  <!-- STRUCTURED DATA — LocalBusiness -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -157,9 +184,16 @@
         <div class="logo-area">
           <a href="/en/" aria-label="Iglisi Watch &amp; Key — home">
             <picture>
+              <!-- ← FIX: Only WebP src here. The PNG fallback below is the
+                   <img> src — browser picks WebP if supported, PNG otherwise.
+                   Previously both fired simultaneously causing 526 KiB waste. -->
               <source srcset="https://i.postimg.cc/tCgW3FQK/Logo-removebg-preview.webp" type="image/webp">
               <img src="https://i.postimg.cc/tCgW3FQK/Logo-removebg-preview.png"
-                   alt="Iglisi Watch &amp; Key logo" width="100" height="100">
+                   alt="Iglisi Watch &amp; Key logo"
+                   width="100" height="100"
+                   fetchpriority="high">
+                   <!-- ← FIX: fetchpriority=high — logo is above the fold,
+                        explicit priority avoids browser deprioritising it -->
             </picture>
           </a>
           <p class="desktop-only-text text-xs text-gray-500">Family-owned · Since 2002</p>
@@ -182,7 +216,6 @@
             <span class="stars" aria-hidden="true">★★★★★</span>
             <span>5.0 · Excellent</span>
           </a>
-          <!-- FIX: button type="button" prevents any accidental form submission -->
           <button type="button" data-action="toggle-lang"
                   class="flex items-center gap-2 border border-gray-300 px-4 py-2 rounded-full
                          text-sm font-medium hover:bg-gray-100 transition"
@@ -216,14 +249,14 @@
     <section class="hero-bg relative py-16 border-b border-gray-200" aria-labelledby="hero-heading">
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-content max-w-7xl mx-auto px-6 text-center text-white">
-        <span class="gold uppercase tracking-widest text-sm font-semibold">Two decades of precision</span>
+        <span class="gold-display uppercase tracking-widest text-sm font-semibold">Two decades of precision</span>
         <h1 id="hero-heading"
             class="text-5xl md:text-6xl font-bold mt-4 mb-6 leading-tight hero-title">
-          Watch Repair &amp; <span class="gold">Key Copy</span> in Durrës
+          Watch Repair &amp; <span class="gold-display">Key Copy</span> in Durrës
         </h1>
         <p class="text-xl text-gray-200 max-w-3xl mx-auto mb-8">
           Family-owned since 2002. We specialize in quartz watches and all types of keys.
-          Battery replacement <strong class="gold">under 2 minutes</strong> – quality you can trust.
+          Battery replacement <strong class="gold-display">under 2 minutes</strong> – quality you can trust.
         </p>
         <div class="flex flex-wrap gap-4 justify-center">
           <a href="#contact" class="btn-primary">Visit Our Workshop</a>
@@ -235,28 +268,31 @@
       </div>
     </section>
 
-    <!-- ── PROMISE ── -->
+    <!-- ── PROMISE ──
+         ← FIX: Changed inner headings from <h3> to <h2>.
+           The page goes h1 (hero) → h2 (promise cards) → h2 (section titles) → h3 (card titles within sections).
+           Previously skipped h2 entirely, breaking sequential heading order. -->
     <section class="pt-16 pb-8 bg-white/70" aria-label="Our promises" data-animate>
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
           <div class="promise-card">
             <i class="fas fa-bolt promise-icon" aria-hidden="true"></i>
-            <h3 class="font-bold text-lg">Fast Service</h3>
+            <h2 class="font-bold text-lg">Fast Service</h2>
             <p class="text-gray-500 text-sm">Battery in under 2 min</p>
           </div>
           <div class="promise-card">
             <i class="fas fa-cogs promise-icon" aria-hidden="true"></i>
-            <h3 class="font-bold text-lg">Expert Craftsmanship</h3>
+            <h2 class="font-bold text-lg">Expert Craftsmanship</h2>
             <p class="text-gray-500 text-sm">Over 20 years experience</p>
           </div>
           <div class="promise-card">
             <i class="fas fa-euro-sign promise-icon" aria-hidden="true"></i>
-            <h3 class="font-bold text-lg">Fair Prices</h3>
+            <h2 class="font-bold text-lg">Fair Prices</h2>
             <p class="text-gray-500 text-sm">No hidden fees</p>
           </div>
           <div class="promise-card">
             <i class="fas fa-check-circle promise-icon" aria-hidden="true"></i>
-            <h3 class="font-bold text-lg">Guaranteed Work</h3>
+            <h2 class="font-bold text-lg">Guaranteed Work</h2>
             <p class="text-gray-500 text-sm">Quality you can trust</p>
           </div>
         </div>
@@ -269,26 +305,25 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
           <div class="trust-badge">
             <i class="fas fa-calendar-alt text-3xl gold mb-2" aria-hidden="true"></i>
-            <h3 class="font-bold text-xl">Since 2002</h3>
+            <p class="font-bold text-xl">Since 2002</p>
             <p class="text-gray-500 text-sm"><span data-years-since="2002"></span> years of experience</p>
           </div>
           <div class="trust-badge">
             <i class="fas fa-clock text-3xl gold mb-2" aria-hidden="true"></i>
-            <h3 class="font-bold text-xl">350K+</h3>
+            <p class="font-bold text-xl">350K+</p>
             <p class="text-gray-500 text-sm">Watches repaired</p>
           </div>
           <div class="trust-badge">
             <i class="fas fa-key text-3xl gold mb-2" aria-hidden="true"></i>
-            <h3 class="font-bold text-xl">700K+</h3>
+            <p class="font-bold text-xl">700K+</p>
             <p class="text-gray-500 text-sm">Keys copied</p>
           </div>
           <div class="trust-badge">
             <i class="fas fa-smile text-3xl gold mb-2" aria-hidden="true"></i>
-            <h3 class="font-bold text-xl">15K+</h3>
+            <p class="font-bold text-xl">15K+</p>
             <p class="text-gray-500 text-sm">Happy customers</p>
           </div>
         </div>
-        <!-- FIX: years badge — number is now always rendered by JS -->
         <div class="mt-6 pt-16 text-center">
           <span class="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full border border-[#b4945c] shadow-sm">
             <i class="fas fa-star gold" aria-hidden="true"></i>
@@ -302,7 +337,7 @@
     <section class="py-24 bg-white" aria-labelledby="why-heading" data-animate>
       <div class="max-w-7xl mx-auto px-6">
         <h2 id="why-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">
-          Why <span class="gold">Choose Us</span>
+          Why <span class="gold-display">Choose Us</span>
         </h2>
         <div class="grid md:grid-cols-3 gap-8">
           <div class="service-card">
@@ -328,7 +363,7 @@
     <section class="py-24 bg-gray-50" aria-labelledby="workshop-heading" data-animate>
       <div class="max-w-6xl mx-auto px-6">
         <h2 id="workshop-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">
-          The <span class="gold">Craftsman's Workshop</span>
+          The <span class="gold-display">Craftsman's Workshop</span>
         </h2>
         <div class="flex flex-col md:flex-row gap-12 items-center">
           <div class="md:w-1/3">
@@ -357,7 +392,7 @@
     <section id="services" class="py-24 bg-white" aria-labelledby="services-heading" data-animate>
       <div class="max-w-7xl mx-auto px-6">
         <h2 id="services-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">
-          Our <span class="gold">Services</span>
+          Our <span class="gold-display">Services</span>
         </h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div class="service-card">
@@ -365,7 +400,7 @@
               <i class="fas fa-battery-three-quarters text-2xl gold" aria-hidden="true"></i>
             </div>
             <h3 class="text-2xl font-bold mb-3">Watch Battery Replacement</h3>
-            <p class="text-gray-500">Quick, careful replacement for quartz watches of all brands. We test and guarantee. Takes <strong class="gold">under 2 minutes</strong>.</p>
+            <p class="text-gray-500">Quick, careful replacement for quartz watches of all brands. We test and guarantee. Takes <strong class="gold-display">under 2 minutes</strong>.</p>
           </div>
           <div class="service-card">
             <div class="w-14 h-14 bg-[#1e3a5f]/10 rounded-full flex items-center justify-center mb-6">
@@ -410,7 +445,7 @@
     <section class="py-24 bg-gray-50" aria-labelledby="equipment-heading" data-animate>
       <div class="max-w-7xl mx-auto px-6">
         <h2 id="equipment-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">
-          Our <span class="gold">Equipment</span>
+          Our <span class="gold-display">Equipment</span>
         </h2>
         <div class="grid md:grid-cols-3 gap-8">
           <div class="equipment-card text-center">
@@ -436,7 +471,7 @@
     <section class="py-24 bg-white" aria-labelledby="process-heading" data-animate>
       <div class="max-w-4xl mx-auto px-6">
         <h2 id="process-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">
-          Our <span class="gold">Process</span>
+          Our <span class="gold-display">Process</span>
         </h2>
         <div class="space-y-8">
           <div class="timeline-item" data-animate data-animate-delay="0s">
@@ -464,64 +499,67 @@
       </div>
     </section>
 
-    <!-- ── GALLERY ── -->
+    <!-- ── GALLERY ──
+         ← FIX: Removed role="listitem" from <a> elements — prohibited ARIA attribute.
+           <a> cannot have role="listitem". The list semantics are conveyed by the
+           role="list" on the parent div instead, which is valid. -->
     <section class="py-24 bg-gray-50" aria-labelledby="gallery-heading" data-animate>
       <div class="max-w-7xl mx-auto px-6">
         <h2 id="gallery-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">
-          Our <span class="gold">Workshop in Real Life</span>
+          Our <span class="gold-display">Workshop in Real Life</span>
         </h2>
         <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
           Step inside our family workshop – every image is a real, unedited moment.
         </p>
         <div class="gallery-grid" role="list">
-          <a role="listitem" style="cursor:default">
+          <div role="listitem">
             <picture>
               <source srcset="https://i.postimg.cc/XqTkpvHm/bc00c411-3cfc-41e7-96ed-da34c9246e1f.webp" type="image/webp">
               <img class="gallery-thumb" loading="lazy"
                    src="https://i.postimg.cc/XqTkpvHm/bc00c411-3cfc-41e7-96ed-da34c9246e1f.jpg"
                    alt="Iglisi Watch &amp; Key shop sign in Durrës, Albania" width="600" height="280">
             </picture>
-          </a>
-          <a role="listitem" style="cursor:default">
+          </div>
+          <div role="listitem">
             <picture>
               <source srcset="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.webp" type="image/webp">
               <img class="gallery-thumb" loading="lazy"
                    src="https://i.postimg.cc/NjtP4ND6/73a4af5a-44ee-4f97-af3d-745b265ca9c7.jpg"
                    alt="Watch repair workbench at Iglisi workshop" width="600" height="280">
             </picture>
-          </a>
-          <a role="listitem" style="cursor:default">
+          </div>
+          <div role="listitem">
             <picture>
               <source srcset="https://i.postimg.cc/LsCCmmpv/4321b2b5-af19-4888-980f-c95829f43af2.webp" type="image/webp">
               <img class="gallery-thumb" loading="lazy"
                    src="https://i.postimg.cc/LsCCmmpv/4321b2b5-af19-4888-980f-c95829f43af2.jpg"
                    alt="Key cutting machines at Iglisi in Durrës" width="600" height="280">
             </picture>
-          </a>
-          <a role="listitem" style="cursor:default">
+          </div>
+          <div role="listitem">
             <picture>
               <source srcset="https://i.postimg.cc/wv1WvnxR/639d7b56-b8fb-4627-9405-0ec70ad24985.webp" type="image/webp">
               <img class="gallery-thumb" loading="lazy"
                    src="https://i.postimg.cc/wv1WvnxR/639d7b56-b8fb-4627-9405-0ec70ad24985.jpg"
                    alt="Watch repair equipment and tools at Iglisi" width="600" height="280">
             </picture>
-          </a>
-          <a role="listitem" style="cursor:default">
+          </div>
+          <div role="listitem">
             <picture>
               <source srcset="https://i.postimg.cc/d3d4RdyL/3807368a-ccf3-42ab-bf49-bffea24d52df.webp" type="image/webp">
               <img class="gallery-thumb" loading="lazy"
                    src="https://i.postimg.cc/d3d4RdyL/3807368a-ccf3-42ab-bf49-bffea24d52df.jpg"
                    alt="Interior of Iglisi watch repair workshop in Durrës" width="600" height="280">
             </picture>
-          </a>
-          <a role="listitem" style="cursor:default">
+          </div>
+          <div role="listitem">
             <picture>
               <source srcset="https://i.postimg.cc/4N6Wm6G2/baeedd7f-fd23-4141-b683-fad2b4ee32ce.webp" type="image/webp">
               <img class="gallery-thumb" loading="lazy"
                    src="https://i.postimg.cc/4N6Wm6G2/baeedd7f-fd23-4141-b683-fad2b4ee32ce.jpg"
                    alt="Key blanks display at Iglisi key copy service Durrës" width="600" height="280">
             </picture>
-          </a>
+          </div>
         </div>
       </div>
     </section>
@@ -530,7 +568,7 @@
     <section class="py-24 bg-white" aria-labelledby="reviews-heading" data-animate>
       <div class="max-w-5xl mx-auto px-6">
         <h2 id="reviews-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">
-          What Our <span class="gold">Customers Say</span>
+          What Our <span class="gold-display">Customers Say</span>
         </h2>
         <div class="carousel-container relative" data-carousel="main"
              aria-roledescription="carousel" role="region" aria-label="Customer reviews">
@@ -598,7 +636,7 @@
     <section class="py-24 bg-gray-50" aria-labelledby="faq-heading" data-animate>
       <div class="max-w-5xl mx-auto px-6">
         <h2 id="faq-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">
-          Frequently Asked <span class="gold">Questions</span>
+          Frequently Asked <span class="gold-display">Questions</span>
         </h2>
         <div class="space-y-2">
           <div class="faq-item">
@@ -607,7 +645,7 @@
               <i class="fas fa-chevron-down" aria-hidden="true"></i>
             </div>
             <div class="faq-answer" id="faq-a-1" role="region">
-              <p>Usually <strong class="gold">under 2 minutes</strong> while you wait.</p>
+              <p>Usually <strong class="gold-display">under 2 minutes</strong> while you wait.</p>
             </div>
           </div>
           <div class="faq-item">
@@ -636,7 +674,7 @@
     <section id="contact" class="py-24 bg-gray-50" aria-labelledby="contact-heading" data-animate>
       <div class="max-w-6xl mx-auto px-6">
         <h2 id="contact-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">
-          Get In <span class="gold">Touch</span>
+          Get In <span class="gold-display">Touch</span>
         </h2>
         <div class="grid md:grid-cols-2 gap-12 items-start">
           <div>
@@ -677,13 +715,19 @@
               </a>
             </div>
           </div>
-          <div>
-            <iframe
-              title="Iglisi Watch &amp; Key location on Google Maps"
-              class="w-full h-80 rounded-2xl border border-gray-200"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2991.418269398786!2d19.4431676!3d41.3201564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134fd18602527253%3A0x8ae611f6da018076!2sOrendreqes%20%26%20Kopje%20Celsash%20Igli!5e0!3m2!1sen!2s!4v1700000000000"
-              allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+          <!-- ← FIX: Maps iframe is now lazy-loaded via JS (initLazyMaps).
+               data-src holds the real src; a click or scroll-into-view fires the load.
+               This removes the ~400ms blocking Maps network request from the critical path. -->
+          <div class="map-wrapper"
+               data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2991.418269398786!2d19.4431676!3d41.3201564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134fd18602527253%3A0x8ae611f6da018076!2sOrendreqes%20%26%20Kopje%20Celsash%20Igli!5e0!3m2!1sen!2s!4v1700000000000"
+               data-title="Iglisi Watch &amp; Key location on Google Maps"
+               role="button"
+               tabindex="0"
+               aria-label="Click to load interactive map">
+            <div class="map-placeholder">
+              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+              <p>Click to load map</p>
+            </div>
           </div>
         </div>
       </div>
@@ -714,6 +758,8 @@
         Follow us on Instagram
         <a href="https://instagram.com/iglisiwk" target="_blank" rel="noopener noreferrer" class="gold hover:underline">@iglisiwk</a>
       </p>
+      <!-- ← FIX: Language nav links now have underline (via footer nav a rule in CSS)
+           so they're distinguishable without relying on colour alone -->
       <nav aria-label="Language switcher" class="mt-4 flex justify-center gap-4 text-sm">
         <span aria-current="page" class="gold font-semibold">EN</span>
         <a href="/sq/" class="hover:text-[#b4945c] transition">SQ</a>
