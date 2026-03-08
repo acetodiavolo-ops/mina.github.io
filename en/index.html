@@ -437,11 +437,12 @@ h1, h2, h3, h4 {
 }
 .promise-card:hover {
   border-color: var(--accent-gold);
-  transform: translateY(-5px);
+  transform: translateY(-5px) !important;
+  box-shadow: 0 10px 20px -5px rgba(180,148,92,0.3);
 }
 .promise-icon {
   font-size: 2rem;
-  color: var(--accent-gold);
+  color: var(--accent-gold-accessible);
   margin-bottom: 1rem;
 }
 .trust-badge {
@@ -802,6 +803,37 @@ address a,
 address a:hover,
 #contact a:not(.btn-primary):not(.btn-secondary):hover {
   color: var(--accent-gold);
+}
+/* Trust badge icon hover */
+.trust-badge:hover i {
+  color: var(--accent-gold);
+  transform: scale(1.1);
+}
+
+/* Star and reviewer name hover in reviews */
+.review-card:hover .star-large i {
+  color: var(--accent-gold);
+}
+.review-card:hover .font-bold.gold {
+  color: var(--accent-gold);
+}
+
+/* Keep review card border visible on hover */
+.review-card:hover {
+  border-color: var(--border-light) !important;
+  box-shadow: 0 20px 30px -10px rgba(0,0,0,0.1);
+}
+
+/* Promise card icon hover */
+.promise-card:hover i {
+  color: var(--accent-gold);
+  transform: scale(1.1);
+}
+
+/* Experience badge star hover */
+.inline-flex:hover i {
+  color: var(--accent-gold);
+  transform: scale(1.1);
 }
   </style>
 
