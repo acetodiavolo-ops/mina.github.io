@@ -62,8 +62,9 @@ h1, h2, h3, h4 {
 .border-teal   { border-color: var(--accent-teal); }
 
 /* ← FIX: Footer context — .gold reverts to #b4945c on dark background
-   because #7a6240 fails contrast on dark bg (3.06:1) while #b4945c passes (6.14:1) */
-.footer .gold  { color: var(--accent-gold); }
+   because #7a6240 fails contrast on dark bg (3.06:1) while #b4945c passes (6.14:1)
+   ← FIX: Added underline so links don't rely on color alone (WCAG 1.4.1) */
+.footer .gold  { color: var(--accent-gold); text-decoration: underline; text-underline-offset: 2px; }
 
 /* ── FOCUS VISIBLE (accessibility) ─────────────────────────── */
 :focus-visible {
@@ -87,8 +88,11 @@ h1, h2, h3, h4 {
 }
 
 /* ── URGENT BANNER ──────────────────────────────────────────── */
+/* ← FIX: Changed from var(--accent-gold) (#b4945c) to #8a6f3f
+   Old contrast: white on #b4945c = 2.95:1 (FAIL)
+   New contrast: white on #8a6f3f = 4.58:1 (PASS AA) */
 .urgent-banner {
-  background: var(--accent-gold);
+  background: #8a6f3f;
   color: #fff;
   text-align: center;
   padding: 6px 0;
@@ -681,8 +685,3 @@ address a:hover,
 #contact a:not(.btn-primary):not(.btn-secondary):hover {
   color: var(--accent-gold);
 }
-
-/* ── LIGHTBOX OVERRIDES ─────────────────────────────────────── */
-.lb-dataContainer { background: rgba(0,0,0,0.8) !important; border-radius: 0 0 10px 10px; }
-.lb-data .lb-number { font-family: 'Inter', sans-serif; font-size: 14px; color: #ccc; }
-.lb-data .lb-caption { font-family: 'Inter', sans-serif; font-size: 16px; }
