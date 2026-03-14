@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S8014DB6F6"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-S8014DB6F6');
-  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Iglisi Watch &amp; Key — Redirecting…</title>
@@ -31,7 +23,6 @@
       gap: 1rem;
     }
     p { color: #888; font-size: 0.9rem; margin: 0; }
-    /* Spinner — provides visual feedback during geo-detection */
     .loader {
       border: 4px solid #f3f3f3;
       border-top: 4px solid #b4945c;
@@ -49,16 +40,6 @@
 <body>
   <div class="loader" aria-hidden="true"></div>
   <p>Redirecting…</p>
-  <!--
-    FIX: The old hard-coded setTimeout(() => navigateTo('en'), 2000) has been
-    removed. It caused a race condition where slow networks would redirect to
-    English before geo-detection finished, ignoring the user's actual locale.
-
-    shared.js geoDetect() is now the sole redirect controller:
-      1. If localStorage has a preferredLang → navigate immediately.
-      2. Otherwise fetch ipapi.co → redirect to correct language.
-      3. AbortController fires after 3 s → fallback to /en/.
-  -->
   <script src="shared.js"></script>
 </body>
 </html>
