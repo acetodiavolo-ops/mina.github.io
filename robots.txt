@@ -1,7 +1,4 @@
 User-agent: *
-Allow: /en/
-Allow: /sq/
-Allow: /it/
-Disallow: /
+Disallow:
 
 Sitemap: https://watch.al/sitemap.xml
