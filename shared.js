@@ -151,13 +151,7 @@
       }
       return;
     }
-    for (var i = 0; i < els.length; i++) {
-      els[i].style.opacity = '0';
-      els[i].style.transform = 'translateY(24px)';
-      els[i].style.transition = 'opacity 0.65s ease, transform 0.65s ease';
-      if (els[i].dataset.animateDelay) els[i].style.transitionDelay = els[i].dataset.animateDelay;
-    }
-    var observer = new IntersectionObserver(function (entries) {
+      var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.style.opacity = '1';
@@ -166,7 +160,16 @@
         }
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    for (var j = 0; j < els.length; j++) observer.observe(els[j]);
+    for (var i = 0; i < els.length; i++) {
+      var rect = els[i].getBoundingClientRect();
+      // Skip elements in viewport or already scrolled past — avoid hiding then re-showing
+      if (rect.bottom <= 0 || (rect.top < window.innerHeight && rect.bottom > 0)) continue;
+      els[i].style.opacity = '0';
+      els[i].style.transform = 'translateY(24px)';
+      els[i].style.transition = 'opacity 0.65s ease, transform 0.65s ease';
+      if (els[i].dataset.animateDelay) els[i].style.transitionDelay = els[i].dataset.animateDelay;
+      observer.observe(els[i]);
+    }
   }
 
   // ── ANIMATED COUNTERS ─────────────────────────────────────────────────────

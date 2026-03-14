@@ -303,9 +303,7 @@ body {
   color: var(--text-primary);
   background-image: radial-gradient(rgba(30,58,95,0.02) 1px, transparent 1px);
   background-size: 30px 30px;
-  animation: pageIn 0.7s ease-in-out;
 }
-@keyframes pageIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 800; letter-spacing: 0.02em; }
 .gold          { color: var(--accent-gold-accessible); }
 .gold-display  { color: var(--accent-gold); }
@@ -358,8 +356,7 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 800; let
 .promise-card:hover { border-color: var(--accent-gold); transform: translateY(-5px) !important; box-shadow: 0 10px 20px -5px rgba(180,148,92,0.3); }
 .promise-icon { font-size: 2rem; color: var(--accent-gold-accessible); margin-bottom: 1rem; }
 .trust-badge { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 1rem; padding: 1.5rem; text-align: center; transition: all var(--transition-base); }
-.trust-badge:hover { border-color: var(--accent-gold); transform: translateY(-5px); animation: pulseBorder 1s infinite; }
-@keyframes pulseBorder { 0% { box-shadow: 0 0 0 0 rgba(180,148,92,0.4); } 70% { box-shadow: 0 0 0 10px rgba(180,148,92,0); } 100% { box-shadow: 0 0 0 0 rgba(180,148,92,0); } }
+.trust-badge:hover { border-color: var(--accent-gold); transform: translateY(-5px); box-shadow: 0 10px 20px -5px rgba(180,148,92,0.3); }
 .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
 .gallery-thumb { border-radius: var(--radius-card); border: 1px solid var(--border-light); object-fit: cover; width: 100%; height: 280px; transition: transform var(--transition-base), box-shadow var(--transition-base); cursor: pointer; display: block; }
 .gallery-thumb:hover { transform: scale(1.02); box-shadow: 0 25px 30px -10px rgba(0,0,0,0.15); }
@@ -522,7 +519,7 @@ address a:hover, #contact a:not(.btn-primary):not(.btn-secondary):hover { color:
           <a href="/sq/" aria-label="Iglisi Watch &amp; Key — ballina">
             <picture>
               <source srcset="https://watch.al/favicon.webp" type="image/webp">
-              <img src="https://watch.al/favicon.png" alt="Iglisi Watch &amp; Key logo" width="100" height="100" fetchpriority="high">
+              <img src="https://watch.al/favicon.png" alt="Iglisi Watch &amp; Key logo" width="100" height="100" fetchpriority="low">
             </picture>
           </a>
           <p class="desktop-only-text text-xs text-gray-500">Biznes familjar · Që nga 2002</p>
