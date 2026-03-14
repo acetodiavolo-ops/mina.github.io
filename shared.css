@@ -65,8 +65,7 @@ h1, h2, h3, h4 {
 }
 
 /* ── SCROLL PROGRESS BAR ────────────────────────────────────── */
-/* FIX: transition removed — RAF loop in shared.js handles smoothness.
-   CSS transition was fighting JS updates causing mobile lag.
+/* transition removed — RAF loop in shared.js handles smoothness.
    will-change promotes element to GPU compositor layer. */
 .progress-bar {
   position: fixed;
@@ -295,6 +294,9 @@ h1, h2, h3, h4 {
 }
 
 /* ── TRUST BADGES ───────────────────────────────────────────── */
+/* FIX: pulseBorder animation removed — used box-shadow keyframes which
+   forced CPU repaints on every frame causing non-composited animation
+   warnings on mobile. Simple hover lift + shadow is GPU composited. */
 .trust-badge {
   background: var(--card-bg);
   border: 1px solid var(--border-light);
@@ -306,16 +308,11 @@ h1, h2, h3, h4 {
 .trust-badge:hover {
   border-color: var(--accent-gold);
   transform: translateY(-5px);
-  animation: pulseBorder 1s infinite;
+  box-shadow: 0 10px 20px -5px rgba(180,148,92,0.3);
 }
 .trust-badge:hover i {
   color: var(--accent-gold);
   transform: scale(1.1);
-}
-@keyframes pulseBorder {
-  0%   { box-shadow: 0 0 0 0   rgba(180,148,92,0.4); }
-  70%  { box-shadow: 0 0 0 10px rgba(180,148,92,0); }
-  100% { box-shadow: 0 0 0 0   rgba(180,148,92,0); }
 }
 
 /* ── GALLERY ────────────────────────────────────────────────── */
@@ -691,3 +688,40 @@ address a:hover,
   color: var(--accent-gold);
   transform: scale(1.1);
 }
+
+/* ── FONTAWESOME SELF-HOSTED ICON MAPPINGS ──────────────────── */
+/* Required when using self-hosted FA fonts instead of CDN CSS.
+   Unicode values match FontAwesome 6.5.1 solid + brands sets. */
+.fa-whatsapp::before        { content: "\f232"; }
+.fa-phone-alt::before       { content: "\f879"; }
+.fa-globe::before           { content: "\f0ac"; }
+.fa-bolt::before            { content: "\f0e7"; }
+.fa-cogs::before            { content: "\f085"; }
+.fa-euro-sign::before       { content: "\f153"; }
+.fa-check-circle::before    { content: "\f058"; }
+.fa-calendar-alt::before    { content: "\f073"; }
+.fa-clock::before           { content: "\f017"; }
+.fa-key::before             { content: "\f084"; }
+.fa-smile::before           { content: "\f118"; }
+.fa-star::before            { content: "\f005"; }
+.fa-gem::before             { content: "\f3a5"; }
+.fa-microscope::before      { content: "\f610"; }
+.fa-hand-holding-heart::before { content: "\f4be"; }
+.fa-battery-three-quarters::before { content: "\f241"; }
+.fa-hourglass-half::before  { content: "\f252"; }
+.fa-shield-alt::before      { content: "\f3ed"; }
+.fa-cog::before             { content: "\f013"; }
+.fa-tachometer-alt::before  { content: "\f3fd"; }
+.fa-search::before          { content: "\f002"; }
+.fa-tools::before           { content: "\f7d9"; }
+.fa-map-pin::before         { content: "\f276"; }
+.fa-map-marker-alt::before  { content: "\f3c5"; }
+.fa-envelope::before        { content: "\f0e0"; }
+.fa-directions::before      { content: "\f5eb"; }
+.fa-chevron-up::before      { content: "\f077"; }
+.fa-chevron-down::before    { content: "\f078"; }
+.fa-chevron-left::before    { content: "\f053"; }
+.fa-chevron-right::before   { content: "\f054"; }
+.fa-google::before          { content: "\f1a0"; }
+.fa-facebook-f::before      { content: "\f39e"; }
+.fa-instagram::before       { content: "\f16d"; }
