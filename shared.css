@@ -739,54 +739,17 @@ address a:hover,
 @font-face {
   font-family: 'Cormorant Garamond';
   font-style:  normal;
-  font-weight: 600;
+  font-weight: 600 800;
   font-display: swap;
-  src: url('/webfonts/cormorant-garamond-600.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Cormorant Garamond';
-  font-style:  normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('/webfonts/cormorant-garamond-700.woff2') format('woff2');
-}
-@font-face {
-  /* Google Fonts silently maps weight 800 → 700 for Cormorant Garamond.
-     We replicate that mapping so h1-h4 (font-weight:800) render identically. */
-  font-family: 'Cormorant Garamond';
-  font-style:  normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url('/webfonts/cormorant-garamond-700.woff2') format('woff2');
+  src: url('/webfonts/cormorant-garamond.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Inter';
   font-style:  normal;
-  font-weight: 300;
+  font-weight: 100 900;
   font-display: swap;
-  src: url('/webfonts/inter-300.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Inter';
-  font-style:  normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/webfonts/inter-400.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Inter';
-  font-style:  normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('/webfonts/inter-500.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Inter';
-  font-style:  normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('/webfonts/inter-600.woff2') format('woff2');
+  src: url('/webfonts/inter.woff2') format('woff2');
 }
 
 /* ── PROMISE CARD CONTRAST FIX (IGLISI-PROMISE-CONTRAST) ───────────────────
