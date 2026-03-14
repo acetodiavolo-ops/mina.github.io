@@ -1,6 +1,10 @@
 /**
- * Iglisi Watch & Key — shared.js  (OPTIMISED BUILD)
- * Changes vs previous version are marked with  ← FIX
+ * Iglisi Watch & Key — shared.js
+ * Fixes applied:
+ *  - initCounters: scroll-triggered animated counters for trust badges
+ *  - initProgressBar: requestAnimationFrame throttle for smooth mobile rendering
+ *  - geoDetect: api.country.is (cookie-free, no tracking)
+ *  - initLazyMaps: deferred Google Maps iframe load
  */
 (function () {
   'use strict';
@@ -43,10 +47,7 @@
   function cycleLanguage() { navigateTo(nextLang()); }
 
   // ── GEO DETECT ────────────────────────────────────────────────────────────
-  // ← FIX: Replaced ipapi.co with api.country.is
-  //   - api.country.is is completely cookie-free (kills Best Practices penalty)
-  //   - Returns only {ip, country} — no tracking data collected
-  //   - Same fallback logic: timeout → /en/
+  // api.country.is — completely cookie-free, returns only {ip, country}
 
   function geoDetect() {
     if (currentLang()) return;
@@ -99,16 +100,24 @@
     for (var i = 0; i < els.length; i++) els[i].textContent = current;
   }
 
-  // ── SCROLL PROGRESS ───────────────────────────────────────────────────────
-  // ← FIX: drives transform:scaleX() instead of width, so the animation
-  //   runs on the GPU compositor thread (no layout/paint cost on scroll).
+  // ── SCROLL PROGRESS BAR ───────────────────────────────────────────────────
+  // FIX: requestAnimationFrame throttle prevents layout thrash on mobile.
+  // The bar uses transform:scaleX() which runs on the GPU compositor thread
+  // with will-change:transform — zero paint cost on scroll.
 
   function initProgressBar() {
     var bar = document.getElementById('progressBar');
     if (!bar) return;
+    var ticking = false;
     window.addEventListener('scroll', function () {
-      var total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      if (total > 0) bar.style.transform = 'scaleX(' + (window.scrollY / total) + ')';
+      if (!ticking) {
+        requestAnimationFrame(function () {
+          var total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          if (total > 0) bar.style.transform = 'scaleX(' + (window.scrollY / total) + ')';
+          ticking = false;
+        });
+        ticking = true;
+      }
     }, { passive: true });
   }
 
@@ -152,6 +161,67 @@
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     for (var j = 0; j < els.length; j++) observer.observe(els[j]);
+  }
+
+  // ── ANIMATED COUNTERS ─────────────────────────────────────────────────────
+  // Fires when the trust badges section scrolls into view (30% visible).
+  // Targets: <p class="counter" data-target="350000" data-suffix="K+">
+  // Counts 0 → target with cubic ease-out over 2 seconds.
+  // Runs once per page load — IntersectionObserver disconnects after trigger.
+
+  function initCounters() {
+    if (typeof IntersectionObserver === 'undefined') return;
+
+    var counters = document.querySelectorAll('.counter[data-target]');
+    if (!counters.length) return;
+
+    // Observe the containing section so all three counters fire together
+    var section = counters[0].closest('section') || counters[0].parentElement;
+    if (!section) return;
+
+    var animated = false;
+
+    function easeOut(t) {
+      return 1 - Math.pow(1 - t, 3);
+    }
+
+    function animateCounter(el) {
+      var target  = parseInt(el.getAttribute('data-target'), 10);
+      var suffix  = el.getAttribute('data-suffix') || '';
+      var duration = 2000;
+      var startTime = performance.now();
+
+      // Format: raw target value (e.g. 350000) → display "350K+"
+      function format(val) {
+        return Math.round(val / 1000) + suffix;
+      }
+
+      function tick(now) {
+        var elapsed  = now - startTime;
+        var progress = Math.min(elapsed / duration, 1);
+        el.textContent = format(easeOut(progress) * target);
+        if (progress < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          // Snap to exact value — no floating-point drift
+          el.textContent = Math.round(target / 1000) + suffix;
+        }
+      }
+
+      requestAnimationFrame(tick);
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting && !animated) {
+        animated = true;
+        for (var i = 0; i < counters.length; i++) {
+          animateCounter(counters[i]);
+        }
+        observer.disconnect();
+      }
+    }, { threshold: 0.3 });
+
+    observer.observe(section);
   }
 
   // ── CAROUSEL ──────────────────────────────────────────────────────────────
@@ -261,9 +331,9 @@
   }
 
   // ── LAZY MAPS IFRAME ──────────────────────────────────────────────────────
-  // ← FIX: The Google Maps iframe is one of the heaviest 3rd-party resources.
-  //   We defer loading it until the user clicks on the placeholder.
-  //   This removes ~400ms of blocking network time from the critical path.
+  // Defers the Google Maps iframe until the user clicks the placeholder
+  // OR the section scrolls within 200px of the viewport.
+  // Removes ~400ms of blocking network time from the critical path.
 
   function initLazyMaps() {
     var wrappers = document.querySelectorAll('.map-wrapper[data-src]');
@@ -286,7 +356,6 @@
         }
         wrapper.addEventListener('click', loadMap);
 
-        // Also load when wrapper scrolls into view (1 screen away)
         if (typeof IntersectionObserver !== 'undefined') {
           var obs = new IntersectionObserver(function (entries) {
             if (entries[0].isIntersecting) { loadMap(); obs.disconnect(); }
@@ -355,6 +424,7 @@
     initProgressBar();
     initBackToTop();
     initScrollAnimations();
+    initCounters();
     initCarousels();
     initLazyMaps();
     initEvents();
