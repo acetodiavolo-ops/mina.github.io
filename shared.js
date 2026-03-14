@@ -108,11 +108,17 @@
   function initProgressBar() {
     var bar = document.getElementById('progressBar');
     if (!bar) return;
+    // Cache total once — reading scrollHeight inside RAF forces a synchronous
+    // layout recalculation on every scroll tick (65 ms forced reflow on desktop).
+    // Recalculate only on resize when the page height actually changes.
+    var total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    window.addEventListener('resize', function () {
+      total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    }, { passive: true });
     var ticking = false;
     window.addEventListener('scroll', function () {
       if (!ticking) {
         requestAnimationFrame(function () {
-          var total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
           if (total > 0) bar.style.transform = 'scaleX(' + (window.scrollY / total) + ')';
           ticking = false;
         });
@@ -418,16 +424,29 @@
   // ── BOOT ──────────────────────────────────────────────────────────────────
 
   function boot() {
+    // Phase 1 — critical path: runs immediately at DOMContentLoaded.
+    // These functions affect first paint, user interaction, or geo redirect.
     geoDetect();
     fillYear();
     updateLangLabel();
     initProgressBar();
     initBackToTop();
-    initScrollAnimations();
-    initCounters();
-    initCarousels();
     initLazyMaps();
     initEvents();
+
+    // Phase 2 — deferred: visual enhancements that do not affect first paint.
+    // Pushed to browser idle time to avoid extending the boot long task and
+    // reduce TBT (the main cause of 6 long tasks on mobile Lighthouse).
+    function deferred() {
+      initScrollAnimations();
+      initCounters();
+      initCarousels();
+    }
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(deferred, { timeout: 2000 });
+    } else {
+      setTimeout(deferred, 300); // Safari / older browser fallback
+    }
   }
 
   if (document.readyState === 'loading') {

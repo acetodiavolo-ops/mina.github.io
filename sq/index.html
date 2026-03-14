@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html lang="sq">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-S8014DB6F6"></script>
+  <!-- Google tag — loaded on idle to keep TBT low -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-S8014DB6F6');
+    (function(){
+      function loadGTM(){
+        if(window.__gtmLoaded) return;
+        window.__gtmLoaded = 1;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-S8014DB6F6';
+        document.head.appendChild(s);
+      }
+      if('requestIdleCallback' in window){
+        requestIdleCallback(loadGTM, {timeout: 4000});
+      } else {
+        window.addEventListener('load', function(){ setTimeout(loadGTM, 2500); });
+      }
+    })();
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,16 +66,11 @@
   <link rel="icon" type="image/png" href="https://watch.al/favicon.png">
 
   <!-- PRELOAD HERO IMAGE (LCP optimisation) -->
-  <link rel="preload" as="image" type="image/webp" href="https://watch.al/0.raw.githubusercontent.com.webp">
+  <link rel="preload" as="image" type="image/webp" href="https://watch.al/0.raw.githubusercontent.com.webp" fetchpriority="high">
 
-  <!-- PRECONNECTS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- FONTS (async) -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap"
-        rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+  <!-- FONTS (self-hosted — @font-face in shared.css) -->
+  <link rel="preload" href="/webfonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/webfonts/cormorant-garamond-600.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- FONTAWESOME — self-hosted, no CDN round-trip -->
   <link rel="preload" href="/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
@@ -101,6 +110,39 @@
   -webkit-font-smoothing: antialiased;
   display: inline-block;
 }
+.fa-whatsapp::before        { content: "\f232"; }
+.fa-phone-alt::before       { content: "\f879"; }
+.fa-globe::before           { content: "\f0ac"; }
+.fa-bolt::before            { content: "\f0e7"; }
+.fa-cogs::before            { content: "\f085"; }
+.fa-euro-sign::before       { content: "\f153"; }
+.fa-check-circle::before    { content: "\f058"; }
+.fa-calendar-alt::before    { content: "\f073"; }
+.fa-clock::before           { content: "\f017"; }
+.fa-key::before             { content: "\f084"; }
+.fa-smile::before           { content: "\f118"; }
+.fa-star::before            { content: "\f005"; }
+.fa-gem::before             { content: "\f3a5"; }
+.fa-microscope::before      { content: "\f610"; }
+.fa-hand-holding-heart::before { content: "\f4be"; }
+.fa-battery-three-quarters::before { content: "\f241"; }
+.fa-hourglass-half::before  { content: "\f252"; }
+.fa-shield-alt::before      { content: "\f3ed"; }
+.fa-cog::before             { content: "\f013"; }
+.fa-tachometer-alt::before  { content: "\f3fd"; }
+.fa-search::before          { content: "\f002"; }
+.fa-tools::before           { content: "\f7d9"; }
+.fa-map-pin::before         { content: "\f276"; }
+.fa-map-marker-alt::before  { content: "\f3c5"; }
+.fa-envelope::before        { content: "\f0e0"; }
+.fa-directions::before      { content: "\f5eb"; }
+.fa-chevron-up::before      { content: "\f077"; }
+.fa-chevron-down::before    { content: "\f078"; }
+.fa-chevron-left::before    { content: "\f053"; }
+.fa-chevron-right::before   { content: "\f054"; }
+.fa-google::before          { content: "\f1a0"; }
+.fa-facebook-f::before      { content: "\f39e"; }
+.fa-instagram::before       { content: "\f16d"; }
   </style>
 
   <!-- CRITICAL CSS -->
@@ -278,7 +320,7 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 800; let
   position: fixed; top: 0; left: 0; height: 4px;
   background: linear-gradient(90deg, var(--accent-gold), var(--accent-teal));
   width: 100%; transform: scaleX(0); transform-origin: left center;
-  transition: transform 0.1s linear; z-index: 1000; pointer-events: none; will-change: transform;
+  z-index: 1000; pointer-events: none; will-change: transform;
 }
 .urgent-banner { background: #8a6f3f; color: #fff; text-align: center; padding: 6px 0; font-size: 0.875rem; font-weight: 500; }
 .urgent-banner i { margin-right: 6px; }
@@ -528,7 +570,7 @@ address a:hover, #contact a:not(.btn-primary):not(.btn-secondary):hover { color:
           <a href="#contact" class="btn-primary">Vizitoni Punishten</a>
           <a href="#services" class="btn-secondary">Shërbimet Tona</a>
         </div>
-        <p class="mt-6 text-white/80 text-sm">💰 Cilësi e përballueshme &nbsp;•&nbsp; ⚡ Shumica nën 15 min</p>
+        <div class="mt-6 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-6 text-white/80 text-sm"><span>💰 Cilësi e përballueshme</span><span>⚡ Shumica nën 15 min</span></div>
       </div>
     </section>
 
@@ -930,7 +972,8 @@ address a:hover, #contact a:not(.btn-primary):not(.btn-secondary):hover { color:
     </div>
   </footer>
 
-  <link rel="stylesheet" href="../shared.css">
+  <link rel="stylesheet" href="../shared.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="../shared.css"></noscript>
   <script src="../shared.js" defer></script>
 </body>
 </html>
