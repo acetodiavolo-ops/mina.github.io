@@ -1,6 +1,5 @@
 /* ============================================================
-   Iglisi Watch & Key — shared.css  (FIXED BUILD)
-   ALL CHANGES MARKED WITH  ← FIX
+   Iglisi Watch & Key — shared.css
    ============================================================ */
 
 /* ── CSS CUSTOM PROPERTIES ─────────────────────────────────── */
@@ -15,13 +14,7 @@
   --footer-bg: #0f1a24;
   --footer-text: #aaa;
   --accent-gold: #b4945c;
-
-  /* ← FIX: --accent-gold-accessible replaces bare #b4945c for ALL body text
-     and small UI text. Contrast ratio vs white: 4.6:1 — passes WCAG AA.
-     #b4945c only stays for large decorative headings (≥18pt/24px bold)
-     where the AA large-text threshold of 3:1 is met. */
   --accent-gold-accessible: #7a6240;
-
   --accent-teal: #1e5f5f;
   --btn-start: #1e3a5f;
   --btn-end: #143047;
@@ -61,12 +54,10 @@ h1, h2, h3, h4 {
 .bg-teal       { background-color: var(--accent-teal); }
 .border-teal   { border-color: var(--accent-teal); }
 
-/* ← FIX: Footer context — .gold reverts to #b4945c on dark background
-   because #7a6240 fails contrast on dark bg (3.06:1) while #b4945c passes (6.14:1)
-   ← FIX: Added underline so links don't rely on color alone (WCAG 1.4.1) */
+/* Footer: .gold reverts to #b4945c on dark background — passes contrast */
 .footer .gold  { color: var(--accent-gold); text-decoration: underline; text-underline-offset: 2px; }
 
-/* ── FOCUS VISIBLE (accessibility) ─────────────────────────── */
+/* ── FOCUS VISIBLE ──────────────────────────────────────────── */
 :focus-visible {
   outline: 3px solid var(--accent-gold);
   outline-offset: 3px;
@@ -74,6 +65,9 @@ h1, h2, h3, h4 {
 }
 
 /* ── SCROLL PROGRESS BAR ────────────────────────────────────── */
+/* FIX: transition removed — RAF loop in shared.js handles smoothness.
+   CSS transition was fighting JS updates causing mobile lag.
+   will-change promotes element to GPU compositor layer. */
 .progress-bar {
   position: fixed;
   top: 0; left: 0;
@@ -82,15 +76,13 @@ h1, h2, h3, h4 {
   width: 100%;
   transform: scaleX(0);
   transform-origin: left center;
-  transition: transform 0.1s linear;
   z-index: 1000;
   pointer-events: none;
+  will-change: transform;
 }
 
 /* ── URGENT BANNER ──────────────────────────────────────────── */
-/* ← FIX: Changed from var(--accent-gold) (#b4945c) to #8a6f3f
-   Old contrast: white on #b4945c = 2.95:1 (FAIL)
-   New contrast: white on #8a6f3f = 4.58:1 (PASS AA) */
+/* #8a6f3f: white contrast = 4.58:1 — passes WCAG AA */
 .urgent-banner {
   background: #8a6f3f;
   color: #fff;
@@ -113,7 +105,7 @@ h1, h2, h3, h4 {
   padding: 0.5rem 0;
 }
 
-/* Logo */
+/* ── LOGO ───────────────────────────────────────────────────── */
 .logo-area { display: flex; align-items: center; gap: 0.5rem; }
 .logo-area img {
   height: 100px;
@@ -129,7 +121,7 @@ h1, h2, h3, h4 {
   .desktop-only-text { display: none; }
 }
 
-/* Mobile header icons */
+/* ── MOBILE HEADER ICONS ────────────────────────────────────── */
 .mobile-icons {
   display: none;
   align-items: center;
@@ -181,7 +173,6 @@ h1, h2, h3, h4 {
   position: relative;
   overflow: hidden;
 }
-
 .hero-bg-img {
   position: absolute;
   inset: 0;
@@ -220,12 +211,13 @@ h1, h2, h3, h4 {
   .hero-title { font-size: 2.5rem; }
 }
 
+/* Italian hero title — longer text needs clamped sizing */
 .lang-it .hero-title { font-size: clamp(2.2rem, 7vw, 3.8rem); }
 @media (min-width: 768px) {
   .lang-it .hero-title { font-size: clamp(2.8rem, 6vw, 4.2rem); }
 }
 
-/* ── SECTION TITLE UNDERLINE ────────────────────────────────── */
+/* ── SECTION TITLE ──────────────────────────────────────────── */
 .section-title {
   position: relative;
   display: inline-block;
@@ -244,7 +236,7 @@ h1, h2, h3, h4 {
 }
 .section-title:hover::after { transform: scaleX(1); }
 
-/* ── CARDS ──────────────────────────────────────────────────── */
+/* ── SERVICE & EQUIPMENT CARDS ──────────────────────────────── */
 .service-card, .equipment-card {
   background: var(--card-bg);
   border: 1px solid var(--border-light);
@@ -297,6 +289,10 @@ h1, h2, h3, h4 {
   color: var(--accent-gold-accessible);
   margin-bottom: 1rem;
 }
+.promise-card:hover i {
+  color: var(--accent-gold);
+  transform: scale(1.1);
+}
 
 /* ── TRUST BADGES ───────────────────────────────────────────── */
 .trust-badge {
@@ -309,8 +305,12 @@ h1, h2, h3, h4 {
 }
 .trust-badge:hover {
   border-color: var(--accent-gold);
-  transform: translateY(-5px) !important;
-  box-shadow: 0 10px 20px -5px rgba(180,148,92,0.3);
+  transform: translateY(-5px);
+  animation: pulseBorder 1s infinite;
+}
+.trust-badge:hover i {
+  color: var(--accent-gold);
+  transform: scale(1.1);
 }
 @keyframes pulseBorder {
   0%   { box-shadow: 0 0 0 0   rgba(180,148,92,0.4); }
@@ -400,7 +400,6 @@ h1, h2, h3, h4 {
   color: #fff;
   transform: scale(1.05) translateY(-2px);
 }
-
 @media (max-width: 768px) {
   .btn-primary,
   .btn-secondary {
@@ -445,6 +444,7 @@ h1, h2, h3, h4 {
 }
 .review-card:hover {
   transform: translateY(-4px);
+  border-color: var(--border-light) !important;
   box-shadow: 0 20px 30px -10px rgba(0,0,0,0.1);
 }
 .review-card::before {
@@ -460,6 +460,8 @@ h1, h2, h3, h4 {
   user-select: none;
 }
 .star-large i { font-size: 1.3rem; text-shadow: 0 0 2px rgba(180,148,92,0.3); }
+.review-card:hover .star-large i { color: var(--accent-gold); }
+.review-card:hover .font-bold.gold { color: var(--accent-gold); }
 
 .carousel-btn {
   position: absolute;
@@ -666,16 +668,13 @@ h1, h2, h3, h4 {
   background: var(--footer-bg);
   color: var(--footer-text);
 }
-
 .footer nav a {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 .footer nav a:hover { color: var(--accent-gold); }
 
-/* ← FIX: Contact section inline links need underline for WCAG 1.4.1
-   "Links rely on color to be distinguishable" — links inside <address>
-   and contact section need a non-color indicator */
+/* Contact links: underline for WCAG 1.4.1 (non-color indicator) */
 address a,
 #contact a:not(.btn-primary):not(.btn-secondary) {
   text-decoration: underline;
@@ -685,4 +684,10 @@ address a,
 address a:hover,
 #contact a:not(.btn-primary):not(.btn-secondary):hover {
   color: var(--accent-gold);
+}
+
+/* ── MISC HOVER INTERACTIONS ────────────────────────────────── */
+.inline-flex:hover i {
+  color: var(--accent-gold);
+  transform: scale(1.1);
 }
