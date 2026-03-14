@@ -323,7 +323,7 @@
       if (prevQ) { prevQ.classList.remove('open'); prevQ.setAttribute('aria-expanded', 'false'); }
     }
     if (!isOpen) {
-      a.style.maxHeight = a.scrollHeight + 'px';
+      a.style.maxHeight = '600px';
       a.classList.add('open');
       q.classList.add('open');
       q.setAttribute('aria-expanded', 'true');
