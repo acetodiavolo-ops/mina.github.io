@@ -55,7 +55,6 @@
   <link rel="preload" as="image" type="image/webp" href="https://watch.al/0.raw.githubusercontent.com.webp">
 
   <!-- PRECONNECTS -->
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -64,23 +63,45 @@
         rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
 
-  <!-- FONTAWESOME — solid + brands only (saves ~60 KiB vs all.min.css) -->
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/fontawesome.min.css"
-        media="print" onload="this.media='all'">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/solid.min.css"
-        media="print" onload="this.media='all'">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/brands.min.css"
-        media="print" onload="this.media='all'">
-  <noscript>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/fontawesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/solid.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/brands.min.css">
-  </noscript>
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- FONTAWESOME — self-hosted, no CDN round-trip -->
+  <link rel="preload" href="/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url('/webfonts/fa-solid-900.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Font Awesome 6 Brands';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url('/webfonts/fa-brands-400.woff2') format('woff2');
+}
+.fas, .fa-solid {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+}
+.fab, .fa-brands {
+  font-family: 'Font Awesome 6 Brands';
+  font-weight: 400;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+}
+  </style>
 
   <!-- CRITICAL CSS -->
   <style>
@@ -573,7 +594,7 @@ address a:hover, #contact a:not(.btn-primary):not(.btn-secondary):hover { color:
       </div>
     </section>
 
-    <!-- WHY CHOOSE US — FIX: "Pse të Zgjidhni Ne" → "Pse Ne" -->
+    <!-- WHY CHOOSE US -->
     <section class="py-24 bg-white" aria-labelledby="why-heading" data-animate>
       <div class="max-w-7xl mx-auto px-6">
         <h2 id="why-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">
@@ -862,7 +883,6 @@ address a:hover, #contact a:not(.btn-primary):not(.btn-secondary):hover { color:
               </p>
             </address>
             <div class="mt-8 flex flex-wrap gap-4">
-              <!-- FIX: coords URL works on all browsers including Safari iOS -->
               <a href="https://maps.google.com/?q=41.3201564,19.4453564" target="_blank" rel="noopener noreferrer" class="btn-primary">
                 <i class="fab fa-google mr-2" aria-hidden="true"></i>Hap në Google Maps
               </a>
