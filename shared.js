@@ -427,6 +427,18 @@
   // ── BOOT ──────────────────────────────────────────────────────────────────
 
   function boot() {
+    // Async CSS: replace the inline onload handler (blocked by strict CSP).
+    // shared.css is fetched with media="print" so it doesn't block rendering;
+    // once the script runs we switch it to media="all" to apply the styles.
+    var asyncCss = document.getElementById('shared-css-async');
+    if (asyncCss) {
+      if (asyncCss.sheet) {
+        asyncCss.media = 'all';
+      } else {
+        asyncCss.addEventListener('load', function () { asyncCss.media = 'all'; });
+      }
+    }
+
     // Phase 1 — critical path: runs immediately at DOMContentLoaded.
     // These functions affect first paint, user interaction, or geo redirect.
     geoDetect();
