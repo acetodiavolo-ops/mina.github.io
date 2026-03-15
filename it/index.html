@@ -382,8 +382,8 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 800; let
 @media (max-width: 768px) { .carousel-btn { width: 38px; height: 38px; } .carousel-dots { gap: 8px; margin-top: 1.5rem; margin-bottom: 1.5rem; } .carousel-dot { width: 10px; height: 10px; } .review-card { padding: 1.5rem; } }
 .faq-item { border-bottom: 1px solid var(--border-light); padding: 0.8rem 0; }
 .faq-question { display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 600; font-size: 1.1rem; user-select: none; padding: 4px 0; }
-.faq-question i { transition: transform var(--transition-base); color: var(--accent-gold); flex-shrink: 0; margin-left: 1rem; }
-.faq-question.open i { transform: rotate(180deg); }
+.faq-question > i { transition: transform var(--transition-base); color: var(--accent-gold); flex-shrink: 0; margin-left: 1rem; }
+.faq-question.open > i { transform: rotate(180deg); }
 .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; color: var(--text-secondary); }
 .faq-answer p { padding: 0.75rem 0 0.25rem; }
 .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: linear-gradient(145deg, #25D366, #20b859); color: #fff; width: 65px; height: 65px; border-radius: 50%; font-size: 32px; box-shadow: 0 15px 20px -8px rgba(37,211,102,0.4); z-index: 100; transition: all var(--transition-base); display: flex; align-items: center; justify-content: center; text-decoration: none; }
@@ -862,7 +862,7 @@ span.inline-flex > span > strong { color: #2a2a2a; }
         <div class="space-y-2">
           <div class="faq-item">
             <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-a-1">
-              <span>Quanto tempo ci vuole per sostituire la batteria dell'orologio?</span>
+              <span class="faq-q-label"><i class="fas fa-battery-three-quarters faq-icon" aria-hidden="true"></i>Quanto tempo ci vuole per sostituire la batteria dell'orologio?</span>
               <i class="fas fa-chevron-down" aria-hidden="true"></i>
             </div>
             <div class="faq-answer" id="faq-a-1" role="region">
@@ -871,7 +871,7 @@ span.inline-flex > span > strong { color: #2a2a2a; }
           </div>
           <div class="faq-item">
             <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-a-2">
-              <span>Riparate tutti i tipi di orologi?</span>
+              <span class="faq-q-label"><i class="fas fa-cogs faq-icon" aria-hidden="true"></i>Riparate tutti i tipi di orologi?</span>
               <i class="fas fa-chevron-down" aria-hidden="true"></i>
             </div>
             <div class="faq-answer" id="faq-a-2" role="region">
@@ -880,7 +880,7 @@ span.inline-flex > span > strong { color: #2a2a2a; }
           </div>
           <div class="faq-item">
             <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-a-3">
-              <span>Che tipi di chiavi copiate?</span>
+              <span class="faq-q-label"><i class="fas fa-key faq-icon" aria-hidden="true"></i>Che tipi di chiavi copiate?</span>
               <i class="fas fa-chevron-down" aria-hidden="true"></i>
             </div>
             <div class="faq-answer" id="faq-a-3" role="region">
