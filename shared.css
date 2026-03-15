@@ -131,6 +131,12 @@ h1, h2, h3, h4 {
   transition: color 0.2s;
   padding: 4px;
 }
+/* Reserve space so FA font swap doesn't shift layout (CLS fix) */
+.mobile-icons i {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
 .mobile-icons a:hover,
 .mobile-icons button:hover { color: var(--accent-gold); }
 
