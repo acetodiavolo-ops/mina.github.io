@@ -297,7 +297,7 @@
         var dotsContainer = document.getElementById('carousel-dots-' + id);
         if (track && dotsContainer) {
           var count = track.children.length;
-          dotsContainer.innerHTML = '';
+          while (dotsContainer.firstChild) dotsContainer.removeChild(dotsContainer.firstChild);
           for (var i = 0; i < count; i++) {
             var btn = document.createElement('button');
             btn.className = 'carousel-dot' + (i === 0 ? ' active' : '');
