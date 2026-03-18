@@ -317,10 +317,10 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 800; let
 .urgent-banner i { margin-right: 6px; }
 .solid-header { background: var(--header-bg); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 2px solid rgba(180,148,92,0.2); position: sticky; top: 0; z-index: 50; padding: 0.5rem 0; }
 .logo-area { display: flex; align-items: center; gap: 0.5rem; }
-.logo-area img { height: 100px; width: auto; filter: drop-shadow(0 2px 10px rgba(180,148,92,0.3)); transition: transform var(--transition-base); }
+.logo-area img { height: 130px; width: auto; filter: drop-shadow(0 2px 10px rgba(180,148,92,0.3)); transition: transform var(--transition-base); }
 .logo-area img:hover { transform: rotate(3deg) scale(1.02); }
 .logo-area p { font-size: 0.7rem; }
-@media (max-width: 768px) { .logo-area img { height: 80px; } .desktop-only-text { display: none; } }
+@media (max-width: 768px) { .logo-area img { height: 100px; } .desktop-only-text { display: none; } }
 .mobile-icons { display: none; align-items: center; gap: 1rem; }
 .mobile-icons a, .mobile-icons button { color: var(--text-primary); font-size: 1.5rem; background: none; border: none; cursor: pointer; transition: color 0.2s; padding: 4px; }
 .mobile-icons a:hover, .mobile-icons button:hover { color: var(--accent-gold); }
@@ -517,8 +517,8 @@ span.inline-flex > span > strong { color: #2a2a2a; }
         <div class="logo-area">
           <a href="/sq/" aria-label="Iglisi Watch &amp; Key — ballina">
             <picture>
-              <source srcset="https://watch.al/favicon.webp" type="image/webp">
-              <img src="https://watch.al/favicon.png" alt="Iglisi Watch &amp; Key logo" width="100" height="100" fetchpriority="low">
+              <source srcset="https://watch.al/favicon.webp?v=2" type="image/webp">
+              <img src="https://watch.al/favicon.png?v=2" alt="Iglisi Watch &amp; Key logo" width="130" height="130" fetchpriority="high">
             </picture>
           </a>
           <p class="desktop-only-text text-xs text-gray-500">Biznes familjar · Që nga 2002</p>
