@@ -53,6 +53,7 @@
   <!-- FONTAWESOME — self-hosted, no CDN round-trip -->
   <link rel="preload" href="/webfonts/fa-solid-900.woff2?v=2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/webfonts/fa-brands-400.woff2?v=2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="https://watch.al/0.raw.githubusercontent.com.webp" type="image/webp" fetchpriority="high">
   <style>
 @font-face {
   font-family: 'Font Awesome 6 Free';
@@ -317,10 +318,11 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 800; let
 .urgent-banner i { margin-right: 6px; }
 .solid-header { background: var(--header-bg); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 2px solid rgba(180,148,92,0.2); position: sticky; top: 0; z-index: 50; padding: 0.5rem 0; }
 .logo-area { display: flex; align-items: center; gap: 0.5rem; }
-.logo-area img { height: 105px; width: auto; filter: drop-shadow(0 2px 10px rgba(180,148,92,0.3)); transition: transform var(--transition-base); }
-.logo-area img:hover { transform: rotate(3deg) scale(1.02); }
+.logo-area a { display: block; overflow: hidden; height: 105px; flex-shrink: 0; transition: transform var(--transition-base); }
+.logo-area a:hover { transform: scale(1.04); }
+.logo-area img { height: 220px; width: auto; margin-top: -57px; filter: drop-shadow(0 2px 10px rgba(180,148,92,0.3)); }
 .logo-area p { font-size: 0.7rem; }
-@media (max-width: 768px) { .logo-area img { height: 80px; } .desktop-only-text { display: none; } }
+@media (max-width: 768px) { .logo-area a { height: 80px; } .logo-area img { height: 165px; margin-top: -42px; } .desktop-only-text { display: none; } }
 .mobile-icons { display: none; align-items: center; gap: 1rem; }
 .mobile-icons a, .mobile-icons button { color: var(--text-primary); font-size: 1.5rem; background: none; border: none; cursor: pointer; transition: color 0.2s; padding: 4px; }
 .mobile-icons a:hover, .mobile-icons button:hover { color: var(--accent-gold); }
@@ -517,7 +519,7 @@ span.inline-flex > span > strong { color: #2a2a2a; }
           <a href="/en/" aria-label="Iglisi Watch &amp; Key — home">
             <picture>
               <source srcset="https://watch.al/favicon.webp?v=2" type="image/webp">
-              <img src="https://watch.al/favicon.png?v=2" alt="Iglisi Watch &amp; Key logo" width="130" height="130" fetchpriority="high">
+              <img src="https://watch.al/favicon.png?v=2" alt="Iglisi Watch &amp; Key logo" width="220" height="220" fetchpriority="high">
             </picture>
           </a>
           <p class="desktop-only-text text-xs text-gray-500">Family-owned · Since 2002</p>
@@ -988,8 +990,8 @@ span.inline-flex > span > strong { color: #2a2a2a; }
     </div>
   </footer>
 
-  <link rel="stylesheet" href="../shared.css?v=9" media="print" id="shared-css-async">
-  <noscript><link rel="stylesheet" href="../shared.css?v=9"></noscript>
+  <link rel="stylesheet" href="../shared.css?v=10" media="print" id="shared-css-async">
+  <noscript><link rel="stylesheet" href="../shared.css?v=10"></noscript>
   <script src="../shared.js?v=5" defer></script>
 </body>
 </html>
