@@ -474,11 +474,6 @@ span.inline-flex > span > strong { color: #2a2a2a; }
 .cookie-toggle-input:checked + .cookie-toggle-track .cookie-toggle-thumb { transform: translateX(20px); }
 .cookie-toggle-always { font-size: 0.72rem; color: #888; font-style: italic; flex-shrink: 0; }
 .cookie-modal-footer { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid #eaeaea; }
-/* Cookie settings floating trigger */
-.cookie-settings-trigger { position: fixed; bottom: 30px; left: 18px; z-index: 1100; background: rgba(6,21,59,0.85); color: rgba(255,255,255,0.75); border: 1px solid rgba(180,148,92,0.3); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, color 0.2s; backdrop-filter: blur(4px); }
-.cookie-settings-trigger:hover { background: var(--btn-start); color: var(--accent-gold); border-color: var(--accent-gold); }
-.cookie-settings-trigger svg { width: 20px; height: 20px; }
-@media (max-width: 640px) { .cookie-settings-trigger { bottom: 55px; } }
   </style>
 
   <!-- STRUCTURED DATA -->
@@ -617,17 +612,6 @@ span.inline-flex > span > strong { color: #2a2a2a; }
     </div>
   </div>
 
-  <!-- COOKIE SETTINGS FLOATING TRIGGER (shown after consent given) -->
-  <button id="cookie-settings-trigger" class="cookie-settings-trigger" aria-label="Manage cookie preferences" title="Cookie settings" hidden>
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
-      <circle cx="8.5" cy="9.5" r="1.8" fill="currentColor"/>
-      <circle cx="15.5" cy="8" r="1.2" fill="currentColor"/>
-      <circle cx="12" cy="15.5" r="1.8" fill="currentColor"/>
-      <circle cx="6" cy="14.5" r="1.2" fill="currentColor"/>
-      <circle cx="17" cy="14" r="1.2" fill="currentColor"/>
-    </svg>
-  </button>
 
   <div class="urgent-banner" role="status">
     <i class="fas fa-bolt" aria-hidden="true"></i>
@@ -1136,22 +1120,19 @@ span.inline-flex > span > strong { color: #2a2a2a; }
     }
     function el(id) { return document.getElementById(id); }
 
-    function showTrigger() { var t = el('cookie-settings-trigger'); if (t) { t.removeAttribute('hidden'); t.style.display = 'flex'; } }
-    function hideTrigger() { var t = el('cookie-settings-trigger'); if (t) { t.hidden = true; t.style.display = ''; } }
-    function showBanner() { var b = el('cookie-banner'); if (b) { b.hidden = false; b.removeAttribute('hidden'); } hideTrigger(); }
+    function showBanner() { var b = el('cookie-banner'); if (b) { b.hidden = false; b.removeAttribute('hidden'); } }
     function hideBanner() { var b = el('cookie-banner'); if (b) b.hidden = true; }
     function openModal() { var m = el('cookie-modal-overlay'); if (!m) return; m.hidden = false; m.removeAttribute('hidden'); var cb = el('cookie-toggle-analytics'); var consent = getConsent(); if (cb) cb.checked = !consent || consent.analytics !== false; }
     function closeModal() { var m = el('cookie-modal-overlay'); if (m) m.hidden = true; }
 
-    function acceptAll() { saveConsent({ analytics: true }); hideBanner(); closeModal(); showTrigger(); }
-    function rejectAll() { saveConsent({ analytics: false }); hideBanner(); closeModal(); showTrigger(); }
-    function savePrefs() { var cb = el('cookie-toggle-analytics'); saveConsent({ analytics: cb ? cb.checked : false }); hideBanner(); closeModal(); showTrigger(); }
+    function acceptAll() { saveConsent({ analytics: true }); hideBanner(); closeModal(); }
+    function rejectAll() { saveConsent({ analytics: false }); hideBanner(); closeModal(); }
+    function savePrefs() { var cb = el('cookie-toggle-analytics'); saveConsent({ analytics: cb ? cb.checked : false }); hideBanner(); closeModal(); }
 
     function init() {
-      /* Always wire all event listeners so banner buttons work after re-opening */
       var b1 = el('cookie-accept-all'), b2 = el('cookie-reject-non-essential'), b3 = el('cookie-customize');
       var mc = el('cookie-modal-close'), ms = el('cookie-save-preferences');
-      var trig = el('cookie-settings-trigger'), ftrig = el('footer-cookie-settings');
+      var ftrig = el('footer-cookie-settings');
       var overlay = el('cookie-modal-overlay');
 
       if (b1) b1.addEventListener('click', acceptAll);
@@ -1159,16 +1140,14 @@ span.inline-flex > span > strong { color: #2a2a2a; }
       if (b3) b3.addEventListener('click', function () { hideBanner(); openModal(); });
       if (mc) mc.addEventListener('click', function () { closeModal(); if (!getConsent()) showBanner(); });
       if (ms) ms.addEventListener('click', savePrefs);
-      if (trig) trig.addEventListener('click', function () { showBanner(); });
-      if (ftrig) ftrig.addEventListener('click', function () { showBanner(); });
+      if (ftrig) ftrig.addEventListener('click', showBanner);
       if (overlay) overlay.addEventListener('click', function (e) { if (e.target === overlay) { closeModal(); if (!getConsent()) showBanner(); } });
 
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') { closeModal(); if (!getConsent()) showBanner(); }
       });
 
-      /* Show trigger or banner based on consent state */
-      if (getConsent()) { showTrigger(); } else { showBanner(); }
+      if (!getConsent()) showBanner();
     }
 
     if (document.readyState === 'loading') {
