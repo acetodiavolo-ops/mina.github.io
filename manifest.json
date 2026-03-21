@@ -1,0 +1,39 @@
+{
+  "name": "Iglisi Watch",
+  "short_name": "Iglisi Watch",
+  "description": "Watch repair & key cutting in Durrës, Albania. Family-owned since 2002.",
+  "start_url": "/en/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#06153b",
+  "background_color": "#fcfcfc",
+  "lang": "en",
+  "categories": ["shopping", "local"],
+  "icons": [
+    {
+      "src": "https://watch.al/favicon.png",
+      "sizes": "220x220",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://watch.al/favicon.webp",
+      "sizes": "220x220",
+      "type": "image/webp",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Call Us",
+      "url": "tel:+355676360510",
+      "description": "Call Iglisi Watch directly"
+    },
+    {
+      "name": "WhatsApp",
+      "url": "https://wa.me/355676360510",
+      "description": "Book via WhatsApp"
+    }
+  ]
+}

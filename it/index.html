@@ -21,7 +21,9 @@
   <!-- OPEN GRAPH -->
   <meta property="og:title" content="Iglisi Watch — Riparazione Orologi &amp; Duplicazione Chiavi Durazzo">
   <meta property="og:description" content="Azienda familiare dal 2002. Batteria in meno di 2 minuti. 5 stelle Google. Entrate senza prenotazione!">
-  <meta property="og:image" content="https://watch.al/favicon.png">
+  <meta property="og:image" content="https://watch.al/0.raw.githubusercontent.com.webp">
+  <meta property="og:image:width" content="1920">
+  <meta property="og:image:height" content="1080">
   <meta property="og:url" content="https://watch.al/it/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="it_IT">
@@ -31,7 +33,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Iglisi Watch — Riparazione Orologi &amp; Duplicazione Chiavi Durazzo">
   <meta name="twitter:description" content="Azienda familiare dal 2002. Batteria in meno di 2 minuti. Entrate senza prenotazione!">
-  <meta name="twitter:image" content="https://watch.al/favicon.png">
+  <meta name="twitter:image" content="https://watch.al/0.raw.githubusercontent.com.webp">
 
   <!-- CANONICAL & HREFLANG -->
   <link rel="canonical" href="https://watch.al/it/">
@@ -42,6 +44,8 @@
 
   <!-- FAVICON -->
   <link rel="icon" type="image/png" href="https://watch.al/favicon.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="https://watch.al/favicon.png">
 
   <!-- PRELOAD HERO IMAGE (LCP optimisation) -->
   <link rel="preload" as="image" type="image/webp" href="https://watch.al/0.raw.githubusercontent.com.webp" fetchpriority="high">
@@ -1005,5 +1009,10 @@ span.inline-flex > span > strong { color: #2a2a2a; }
   <link rel="stylesheet" href="../shared.css?v=13" media="print" id="shared-css-async">
   <noscript><link rel="stylesheet" href="../shared.css?v=13"></noscript>
   <script src="../shared.js?v=5" defer></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(function() {});
+    }
+  </script>
 </body>
 </html>
