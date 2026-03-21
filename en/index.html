@@ -435,6 +435,50 @@ address a:hover, #contact a:not(.btn-primary):not(.btn-secondary):hover { color:
 .trust-badge .text-gray-500 { color: #4b5563; }
 span.inline-flex > span { color: #2a2a2a; }
 span.inline-flex > span > strong { color: #2a2a2a; }
+/* ── COOKIE BANNER ──────────────────────────────────────────────────────── */
+.cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; z-index: 9000; background: var(--btn-start); color: #e8e8e8; padding: 1rem 1.5rem; box-shadow: 0 -4px 24px rgba(0,0,0,0.25); border-top: 2px solid rgba(180,148,92,0.35); }
+.cookie-banner-inner { max-width: 80rem; margin: 0 auto; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+.cookie-banner-text { flex: 1; min-width: 220px; }
+.cookie-banner-heading { font-weight: 700; font-size: 0.95rem; color: #fff; margin: 0 0 0.25rem; }
+.cookie-banner-body { font-size: 0.83rem; line-height: 1.55; color: rgba(255,255,255,0.75); margin: 0; }
+.cookie-banner-body a { color: var(--accent-gold); text-decoration: underline; }
+.cookie-banner-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center; flex-shrink: 0; }
+.cookie-btn { padding: 0.5rem 1.1rem; border-radius: 9999px; font-weight: 600; font-size: 0.82rem; cursor: pointer; border: none; transition: background 0.2s, transform 0.15s; white-space: nowrap; }
+.cookie-btn-accept { background: var(--accent-gold); color: #fff; }
+.cookie-btn-accept:hover { background: #c8a870; transform: scale(1.03); }
+.cookie-btn-reject { background: transparent; color: rgba(255,255,255,0.82); border: 1px solid rgba(255,255,255,0.3); }
+.cookie-btn-reject:hover { background: rgba(255,255,255,0.1); color: #fff; }
+.cookie-btn-customize { background: transparent; color: rgba(255,255,255,0.55); border: none; font-size: 0.78rem; text-decoration: underline; padding: 0.4rem 0.6rem; }
+.cookie-btn-customize:hover { color: var(--accent-gold); }
+@media (max-width: 640px) { .cookie-banner { padding: 0.9rem 1rem 1.4rem; } .cookie-banner-inner { gap: 0.75rem; } .cookie-btn { font-size: 0.8rem; padding: 0.45rem 0.9rem; } }
+/* Cookie modal */
+.cookie-modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 9100; display: flex; align-items: flex-end; justify-content: center; }
+.cookie-modal-overlay[hidden] { display: none; }
+.cookie-modal-sheet { background: #fff; width: 100%; max-width: 520px; border-radius: 1.25rem 1.25rem 0 0; padding: 1.5rem 1.5rem 2rem; box-shadow: 0 -8px 40px rgba(0,0,0,0.2); max-height: 90vh; overflow-y: auto; }
+@media (min-width: 600px) { .cookie-modal-overlay { align-items: center; } .cookie-modal-sheet { border-radius: 1.25rem; margin: 1rem; } }
+.cookie-modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; border-bottom: 1px solid #eaeaea; padding-bottom: 0.75rem; }
+.cookie-modal-heading { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 800; color: var(--btn-start); margin: 0; }
+.cookie-modal-close { background: none; border: none; font-size: 1.5rem; line-height: 1; color: #888; cursor: pointer; padding: 0.2rem 0.4rem; border-radius: 4px; }
+.cookie-modal-close:hover { color: #333; }
+.cookie-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; padding: 0.85rem 0; }
+.cookie-row-info { flex: 1; }
+.cookie-row-label { display: block; font-weight: 700; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.2rem; }
+.cookie-row-desc { display: block; font-size: 0.8rem; color: var(--text-secondary); line-height: 1.45; }
+.cookie-divider { border: none; border-top: 1px solid #eaeaea; margin: 0; }
+/* Toggle switch */
+.cookie-toggle-wrap { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
+.cookie-toggle-input { position: absolute; opacity: 0; width: 0; height: 0; }
+.cookie-toggle-track { position: relative; width: 44px; height: 24px; border-radius: 12px; background: #ccc; cursor: pointer; transition: background 0.25s; flex-shrink: 0; }
+.cookie-toggle-input:checked + .cookie-toggle-track { background: var(--accent-gold); }
+.cookie-toggle-thumb { position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.25); transition: transform 0.25s; }
+.cookie-toggle-input:checked + .cookie-toggle-track .cookie-toggle-thumb { transform: translateX(20px); }
+.cookie-toggle-always { font-size: 0.72rem; color: #888; font-style: italic; flex-shrink: 0; }
+.cookie-modal-footer { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid #eaeaea; }
+/* Cookie settings floating trigger */
+.cookie-settings-trigger { position: fixed; bottom: 30px; left: 18px; z-index: 200; background: rgba(6,21,59,0.85); color: rgba(255,255,255,0.75); border: 1px solid rgba(180,148,92,0.3); border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, color 0.2s; backdrop-filter: blur(4px); }
+.cookie-settings-trigger:hover { background: var(--btn-start); color: var(--accent-gold); border-color: var(--accent-gold); }
+.cookie-settings-trigger svg { width: 18px; height: 18px; }
+@media (max-width: 640px) { .cookie-settings-trigger { bottom: 55px; } }
   </style>
 
   <!-- STRUCTURED DATA -->
@@ -522,6 +566,68 @@ span.inline-flex > span > strong { color: #2a2a2a; }
       Call us: +355 67 636 0510
     </a>
   </div>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-banner-title" hidden>
+    <div class="cookie-banner-inner">
+      <div class="cookie-banner-text">
+        <p class="cookie-banner-heading" id="cookie-banner-title">We use cookies</p>
+        <p class="cookie-banner-body">We use essential cookies to keep our site working. With your consent, we also use analytics cookies (Cloudflare Web Analytics) to understand how visitors use our site — no personal data is stored. <a href="/en/legal/cookies.html">Cookie Policy</a></p>
+      </div>
+      <div class="cookie-banner-actions">
+        <button id="cookie-accept-all" class="cookie-btn cookie-btn-accept">Accept All</button>
+        <button id="cookie-reject-non-essential" class="cookie-btn cookie-btn-reject">Reject Non-Essential</button>
+        <button id="cookie-customize" class="cookie-btn cookie-btn-customize">Customize</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- COOKIE PREFERENCES MODAL -->
+  <div id="cookie-modal-overlay" class="cookie-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title" hidden>
+    <div class="cookie-modal-sheet">
+      <div class="cookie-modal-header">
+        <h2 class="cookie-modal-heading" id="cookie-modal-title">Cookie Preferences</h2>
+        <button id="cookie-modal-close" class="cookie-modal-close" aria-label="Close cookie preferences">&#x2715;</button>
+      </div>
+      <div class="cookie-modal-body">
+        <div class="cookie-row">
+          <div class="cookie-row-info">
+            <span class="cookie-row-label">Essential Cookies</span>
+            <span class="cookie-row-desc">Required for the website to function correctly. These cannot be disabled. Includes storing your cookie consent choice.</span>
+          </div>
+          <span class="cookie-toggle-always">Always on</span>
+        </div>
+        <hr class="cookie-divider">
+        <div class="cookie-row">
+          <div class="cookie-row-info">
+            <span class="cookie-row-label">Analytics Cookies</span>
+            <span class="cookie-row-desc">Cloudflare Web Analytics helps us understand site traffic. It does not use cookies or store personal data — only aggregated, anonymous statistics.</span>
+          </div>
+          <div class="cookie-toggle-wrap">
+            <label aria-label="Toggle analytics cookies">
+              <input type="checkbox" id="cookie-toggle-analytics" class="cookie-toggle-input" checked>
+              <div class="cookie-toggle-track"><div class="cookie-toggle-thumb"></div></div>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="cookie-modal-footer">
+        <button id="cookie-save-preferences" class="cookie-btn cookie-btn-accept" style="width:100%;padding:.7rem 1.5rem;font-size:.9rem;border-radius:.6rem">Save Preferences</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- COOKIE SETTINGS FLOATING TRIGGER (shown after consent given) -->
+  <button id="cookie-settings-trigger" class="cookie-settings-trigger" aria-label="Manage cookie preferences" title="Cookie settings" hidden>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+      <circle cx="8.5" cy="9.5" r="1.8" fill="currentColor"/>
+      <circle cx="15.5" cy="8" r="1.2" fill="currentColor"/>
+      <circle cx="12" cy="15.5" r="1.8" fill="currentColor"/>
+      <circle cx="6" cy="14.5" r="1.2" fill="currentColor"/>
+      <circle cx="17" cy="14" r="1.2" fill="currentColor"/>
+    </svg>
+  </button>
 
   <div class="urgent-banner" role="status">
     <i class="fas fa-bolt" aria-hidden="true"></i>
@@ -1003,11 +1109,83 @@ span.inline-flex > span > strong { color: #2a2a2a; }
         <a href="/sq/" class="hover:text-[#b4945c] transition" style="text-decoration:underline">SQ</a>
         <a href="/it/" class="hover:text-[#b4945c] transition" style="text-decoration:underline">IT</a>
       </nav>
+      <nav aria-label="Legal" class="mt-4 flex justify-center flex-wrap gap-x-5 gap-y-1 text-xs" style="color:#666">
+        <a href="/en/legal/imprint.html" class="hover:text-[#b4945c] transition" style="text-decoration:underline;color:inherit">Imprint</a>
+        <a href="/en/legal/privacy.html" class="hover:text-[#b4945c] transition" style="text-decoration:underline;color:inherit">Privacy Policy</a>
+        <a href="/en/legal/terms.html" class="hover:text-[#b4945c] transition" style="text-decoration:underline;color:inherit">Terms &amp; Conditions</a>
+        <a href="/en/legal/cookies.html" class="hover:text-[#b4945c] transition" style="text-decoration:underline;color:inherit">Cookie Policy</a>
+        <button id="footer-cookie-settings" style="background:none;border:none;cursor:pointer;text-decoration:underline;color:inherit;font-size:inherit;padding:0" class="hover:text-[#b4945c] transition">Cookie Settings</button>
+      </nav>
     </div>
   </footer>
 
   <link rel="stylesheet" href="../shared.css?v=13" media="print" id="shared-css-async">
   <noscript><link rel="stylesheet" href="../shared.css?v=13"></noscript>
   <script src="../shared.js?v=5" defer></script>
+  <script>
+  /* Cookie consent manager */
+  (function () {
+    'use strict';
+    var KEY = 'iglisi_consent', VER = '1';
+
+    function getConsent() {
+      try { var d = JSON.parse(localStorage.getItem(KEY) || 'null'); return d && d.v === VER ? d : null; } catch (e) { return null; }
+    }
+    function saveConsent(prefs) {
+      try { localStorage.setItem(KEY, JSON.stringify({ v: VER, ts: Date.now(), analytics: prefs.analytics })); } catch (e) {}
+    }
+    function el(id) { return document.getElementById(id); }
+
+    function showTrigger() { var t = el('cookie-settings-trigger'); if (t) t.hidden = false; }
+    function hideTrigger() { var t = el('cookie-settings-trigger'); if (t) t.hidden = true; }
+    function showBanner() { var b = el('cookie-banner'); if (b) { b.hidden = false; b.removeAttribute('hidden'); } hideTrigger(); }
+    function hideBanner() { var b = el('cookie-banner'); if (b) b.hidden = true; }
+    function openModal() { var m = el('cookie-modal-overlay'); if (!m) return; m.hidden = false; m.removeAttribute('hidden'); var cb = el('cookie-toggle-analytics'); var consent = getConsent(); if (cb) cb.checked = !consent || consent.analytics !== false; }
+    function closeModal() { var m = el('cookie-modal-overlay'); if (m) m.hidden = true; }
+
+    function acceptAll() { saveConsent({ analytics: true }); hideBanner(); closeModal(); showTrigger(); }
+    function rejectAll() { saveConsent({ analytics: false }); hideBanner(); closeModal(); showTrigger(); }
+    function savePrefs() { var cb = el('cookie-toggle-analytics'); saveConsent({ analytics: cb ? cb.checked : false }); hideBanner(); closeModal(); showTrigger(); }
+
+    function init() {
+      var consent = getConsent();
+      if (consent) { showTrigger(); return; }
+      showBanner();
+
+      var b1 = el('cookie-accept-all'), b2 = el('cookie-reject-non-essential'), b3 = el('cookie-customize');
+      var mc = el('cookie-modal-close'), ms = el('cookie-save-preferences');
+      var trig = el('cookie-settings-trigger'), ftrig = el('footer-cookie-settings');
+      var overlay = el('cookie-modal-overlay');
+
+      if (b1) b1.addEventListener('click', acceptAll);
+      if (b2) b2.addEventListener('click', rejectAll);
+      if (b3) b3.addEventListener('click', function () { hideBanner(); openModal(); });
+      if (mc) mc.addEventListener('click', function () { closeModal(); if (!getConsent()) showBanner(); });
+      if (ms) ms.addEventListener('click', savePrefs);
+      if (trig) trig.addEventListener('click', function () { showBanner(); hideTrigger(); });
+      if (ftrig) ftrig.addEventListener('click', function () { showBanner(); hideTrigger(); });
+      if (overlay) overlay.addEventListener('click', function (e) { if (e.target === overlay) { closeModal(); if (!getConsent()) showBanner(); } });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { closeModal(); if (!getConsent()) showBanner(); }
+      });
+    }
+
+    /* Also wire footer link if consent already given */
+    function initFooterLink() {
+      var ftrig = el('footer-cookie-settings');
+      if (ftrig) ftrig.addEventListener('click', function () { showBanner(); hideTrigger(); });
+      var trig = el('cookie-settings-trigger');
+      if (trig) trig.addEventListener('click', function () { showBanner(); hideTrigger(); });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function () { init(); if (getConsent()) initFooterLink(); });
+    } else {
+      init();
+      if (getConsent()) initFooterLink();
+    }
+  })();
+  </script>
 </body>
 </html>
