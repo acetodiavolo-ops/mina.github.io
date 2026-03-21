@@ -35,4 +35,14 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/"/>
   </url>
 
+
+  <url>
+    <loc>https://watch.al/en/blog/watch-battery-guide.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-battery-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-battery-guide.html"/>
+  </url>
+
 </urlset>
