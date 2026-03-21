@@ -1136,8 +1136,8 @@ span.inline-flex > span > strong { color: #2a2a2a; }
     }
     function el(id) { return document.getElementById(id); }
 
-    function showTrigger() { var t = el('cookie-settings-trigger'); if (t) t.hidden = false; }
-    function hideTrigger() { var t = el('cookie-settings-trigger'); if (t) t.hidden = true; }
+    function showTrigger() { var t = el('cookie-settings-trigger'); if (t) { t.removeAttribute('hidden'); t.style.display = 'flex'; } }
+    function hideTrigger() { var t = el('cookie-settings-trigger'); if (t) { t.hidden = true; t.style.display = ''; } }
     function showBanner() { var b = el('cookie-banner'); if (b) { b.hidden = false; b.removeAttribute('hidden'); } hideTrigger(); }
     function hideBanner() { var b = el('cookie-banner'); if (b) b.hidden = true; }
     function openModal() { var m = el('cookie-modal-overlay'); if (!m) return; m.hidden = false; m.removeAttribute('hidden'); var cb = el('cookie-toggle-analytics'); var consent = getConsent(); if (cb) cb.checked = !consent || consent.analytics !== false; }
@@ -1148,10 +1148,7 @@ span.inline-flex > span > strong { color: #2a2a2a; }
     function savePrefs() { var cb = el('cookie-toggle-analytics'); saveConsent({ analytics: cb ? cb.checked : false }); hideBanner(); closeModal(); showTrigger(); }
 
     function init() {
-      var consent = getConsent();
-      if (consent) { showTrigger(); return; }
-      showBanner();
-
+      /* Always wire all event listeners so banner buttons work after re-opening */
       var b1 = el('cookie-accept-all'), b2 = el('cookie-reject-non-essential'), b3 = el('cookie-customize');
       var mc = el('cookie-modal-close'), ms = el('cookie-save-preferences');
       var trig = el('cookie-settings-trigger'), ftrig = el('footer-cookie-settings');
@@ -1162,28 +1159,22 @@ span.inline-flex > span > strong { color: #2a2a2a; }
       if (b3) b3.addEventListener('click', function () { hideBanner(); openModal(); });
       if (mc) mc.addEventListener('click', function () { closeModal(); if (!getConsent()) showBanner(); });
       if (ms) ms.addEventListener('click', savePrefs);
-      if (trig) trig.addEventListener('click', function () { showBanner(); hideTrigger(); });
-      if (ftrig) ftrig.addEventListener('click', function () { showBanner(); hideTrigger(); });
+      if (trig) trig.addEventListener('click', function () { showBanner(); });
+      if (ftrig) ftrig.addEventListener('click', function () { showBanner(); });
       if (overlay) overlay.addEventListener('click', function (e) { if (e.target === overlay) { closeModal(); if (!getConsent()) showBanner(); } });
 
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') { closeModal(); if (!getConsent()) showBanner(); }
       });
-    }
 
-    /* Also wire footer link if consent already given */
-    function initFooterLink() {
-      var ftrig = el('footer-cookie-settings');
-      if (ftrig) ftrig.addEventListener('click', function () { showBanner(); hideTrigger(); });
-      var trig = el('cookie-settings-trigger');
-      if (trig) trig.addEventListener('click', function () { showBanner(); hideTrigger(); });
+      /* Show trigger or banner based on consent state */
+      if (getConsent()) { showTrigger(); } else { showBanner(); }
     }
 
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function () { init(); if (getConsent()) initFooterLink(); });
+      document.addEventListener('DOMContentLoaded', init);
     } else {
       init();
-      if (getConsent()) initFooterLink();
     }
   })();
   </script>
