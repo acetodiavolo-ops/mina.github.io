@@ -475,9 +475,9 @@ span.inline-flex > span > strong { color: #2a2a2a; }
 .cookie-toggle-always { font-size: 0.72rem; color: #888; font-style: italic; flex-shrink: 0; }
 .cookie-modal-footer { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid #eaeaea; }
 /* Cookie settings floating trigger */
-.cookie-settings-trigger { position: fixed; bottom: 30px; left: 18px; z-index: 200; background: rgba(6,21,59,0.85); color: rgba(255,255,255,0.75); border: 1px solid rgba(180,148,92,0.3); border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, color 0.2s; backdrop-filter: blur(4px); }
+.cookie-settings-trigger { position: fixed; bottom: 30px; left: 18px; z-index: 1100; background: rgba(6,21,59,0.85); color: rgba(255,255,255,0.75); border: 1px solid rgba(180,148,92,0.3); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, color 0.2s; backdrop-filter: blur(4px); }
 .cookie-settings-trigger:hover { background: var(--btn-start); color: var(--accent-gold); border-color: var(--accent-gold); }
-.cookie-settings-trigger svg { width: 18px; height: 18px; }
+.cookie-settings-trigger svg { width: 20px; height: 20px; }
 @media (max-width: 640px) { .cookie-settings-trigger { bottom: 55px; } }
   </style>
 
@@ -1109,7 +1109,7 @@ span.inline-flex > span > strong { color: #2a2a2a; }
         <a href="/sq/" class="hover:text-[#b4945c] transition" style="text-decoration:underline">SQ</a>
         <a href="/it/" class="hover:text-[#b4945c] transition" style="text-decoration:underline">IT</a>
       </nav>
-      <nav aria-label="Legal" class="mt-4 flex justify-center flex-wrap gap-x-5 gap-y-1 text-xs" style="color:#666">
+      <nav aria-label="Legal" class="mt-4 flex justify-center flex-wrap text-xs" style="color:#666;gap:0.4rem 1.25rem">
         <a href="/en/legal/imprint.html" class="hover:text-[#b4945c] transition" style="text-decoration:underline;color:inherit">Imprint</a>
         <a href="/en/legal/privacy.html" class="hover:text-[#b4945c] transition" style="text-decoration:underline;color:inherit">Privacy Policy</a>
         <a href="/en/legal/terms.html" class="hover:text-[#b4945c] transition" style="text-decoration:underline;color:inherit">Terms &amp; Conditions</a>
