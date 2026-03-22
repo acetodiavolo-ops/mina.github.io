@@ -28,15 +28,15 @@
 
 /* Battery → charging pulse */
 @keyframes icon-battery-pulse{0%,100%{transform:scale(1.05);opacity:1}50%{transform:scale(1.2);opacity:.75}}
-.service-card:hover .fa-battery-three-quarters{animation:icon-battery-pulse .8s ease-in-out infinite}
+.service-card:hover .fa-battery-three-quarters,.service-card:active .fa-battery-three-quarters{animation:icon-battery-pulse .8s ease-in-out infinite}
 
 /* Clock → pendulum swing */
 @keyframes icon-clock-tick{0%,100%{transform:rotate(-10deg)}50%{transform:rotate(10deg)}}
-.service-card:hover .fa-clock{animation:icon-clock-tick .5s ease-in-out infinite;transform-origin:top center}
+.service-card:hover .fa-clock,.service-card:active .fa-clock{animation:icon-clock-tick .5s ease-in-out infinite;transform-origin:top center}
 
 /* Single cog → continuous spin */
 @keyframes icon-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-.equipment-card:hover .fa-cog{animation:icon-spin 1.2s linear infinite}
+.equipment-card:hover .fa-cog,.equipment-card:active .fa-cog{animation:icon-spin 1.2s linear infinite}
 
 /* Dual counter-rotating gears: big gear CW, small gear CCW at the correct gear ratio */
 @keyframes icon-spin-ccw{from{transform:rotate(0deg)}to{transform:rotate(-360deg)}}
@@ -44,8 +44,8 @@
 .dual-gear i:first-child{font-size:1em}
 .dual-gear i:last-child{font-size:.65em;margin-left:-.2em}
 /* Big gear: CW 2s; small gear: CCW 1.3s — ratio matches 1/0.65 ≈ 1.54× faster */
-.service-card:hover .dual-gear i:first-child,.promise-card:hover .dual-gear i:first-child{animation:icon-spin 2s linear infinite;color:var(--accent-gold)}
-.service-card:hover .dual-gear i:last-child,.promise-card:hover .dual-gear i:last-child{animation:icon-spin-ccw 1.3s linear infinite;color:var(--accent-gold)}
+.service-card:hover .dual-gear i:first-child,.promise-card:hover .dual-gear i:first-child,.service-card:active .dual-gear i:first-child,.promise-card:active .dual-gear i:first-child{animation:icon-spin 2s linear infinite;color:var(--accent-gold)}
+.service-card:hover .dual-gear i:last-child,.promise-card:hover .dual-gear i:last-child,.service-card:active .dual-gear i:last-child,.promise-card:active .dual-gear i:last-child{animation:icon-spin-ccw 1.3s linear infinite;color:var(--accent-gold)}
 
 /* FAQ topic icons & row polish */
 .faq-q-label{display:flex;align-items:center;flex:1;min-width:0}
@@ -64,59 +64,60 @@
 
 /* Hourglass → flip over */
 @keyframes icon-hourglass-flip{0%,25%{transform:rotate(0deg) scale(1.05)}75%,100%{transform:rotate(180deg) scale(1.05)}}
-.service-card:hover .fa-hourglass-half{animation:icon-hourglass-flip 1.8s ease-in-out infinite}
+.service-card:hover .fa-hourglass-half,.service-card:active .fa-hourglass-half{animation:icon-hourglass-flip 1.8s ease-in-out infinite}
 
 /* Key → jiggle like turning in a lock */
 @keyframes icon-key-jiggle{0%,100%{transform:rotate(-20deg) scale(1.1)}25%{transform:rotate(-32deg) scale(1.1)}75%{transform:rotate(-8deg) scale(1.1)}}
-.service-card:hover .fa-key{animation:icon-key-jiggle .6s ease-in-out infinite}
+.service-card:hover .fa-key,.service-card:active .fa-key{animation:icon-key-jiggle .6s ease-in-out infinite}
 
 /* Shield → protective glow pulse */
 @keyframes icon-shield-pulse{0%,100%{transform:scale(1.05)}50%{transform:scale(1.2);filter:drop-shadow(0 0 7px var(--accent-gold))}}
-.service-card:hover .fa-shield-alt{animation:icon-shield-pulse 1s ease-in-out infinite}
+.service-card:hover .fa-shield-alt,.service-card:active .fa-shield-alt{animation:icon-shield-pulse 1s ease-in-out infinite}
 
 /* Gem → sparkle rotate */
 @keyframes icon-gem-sparkle{0%,100%{transform:scale(1.05) rotate(0deg)}33%{transform:scale(1.18) rotate(-8deg)}66%{transform:scale(1.1) rotate(8deg)}}
-.service-card:hover .fa-gem{animation:icon-gem-sparkle 1.2s ease-in-out infinite}
+.service-card:hover .fa-gem,.service-card:active .fa-gem{animation:icon-gem-sparkle 1.2s ease-in-out infinite}
 
 /* Microscope → focus bob */
 @keyframes icon-scope-bob{0%,100%{transform:translateY(0) scale(1.1)}50%{transform:translateY(-5px) scale(1.18)}}
-.service-card:hover .fa-microscope{animation:icon-scope-bob .9s ease-in-out infinite}
+.service-card:hover .fa-microscope,.service-card:active .fa-microscope{animation:icon-scope-bob .9s ease-in-out infinite}
 
 /* Hand-holding-heart → double heartbeat */
 @keyframes icon-heartbeat{0%,100%{transform:scale(1.05)}14%{transform:scale(1.22)}28%{transform:scale(1.08)}42%{transform:scale(1.2)}65%{transform:scale(1.05)}}
-.service-card:hover .fa-hand-holding-heart{animation:icon-heartbeat 1s ease-in-out infinite}
+.service-card:hover .fa-hand-holding-heart,.service-card:active .fa-hand-holding-heart{animation:icon-heartbeat 1s ease-in-out infinite}
 
 /* Tachometer → needle twitch */
 @keyframes icon-tachometer{0%,100%{transform:scale(1.05) rotate(0deg)}50%{transform:scale(1.1) rotate(20deg)}}
-.equipment-card:hover .fa-tachometer-alt{animation:icon-tachometer .7s ease-in-out infinite}
+.equipment-card:hover .fa-tachometer-alt,.equipment-card:active .fa-tachometer-alt{animation:icon-tachometer .7s ease-in-out infinite}
 
 /* Search → zoom in */
 @keyframes icon-search-zoom{0%,100%{transform:scale(1.05)}50%{transform:scale(1.25)}}
-.equipment-card:hover .fa-search{animation:icon-search-zoom .8s ease-in-out infinite}
+.equipment-card:hover .fa-search,.equipment-card:active .fa-search{animation:icon-search-zoom .8s ease-in-out infinite}
 
 /* Bolt → electric zap */
 @keyframes icon-bolt-zap{0%,100%{transform:scale(1.05) rotate(0deg);opacity:1}25%{transform:scale(1.25) rotate(-6deg);opacity:.8}75%{transform:scale(1.15) rotate(6deg);opacity:.9}}
-.promise-card:hover .fa-bolt{animation:icon-bolt-zap .4s ease-in-out infinite}
+.promise-card:hover .fa-bolt,.promise-card:active .fa-bolt{animation:icon-bolt-zap .4s ease-in-out infinite}
 
 /* Euro-sign → coin bounce */
 @keyframes icon-coin-bounce{0%,100%{transform:translateY(0) scale(1.05)}50%{transform:translateY(-6px) scale(1.12)}}
-.promise-card:hover .fa-euro-sign{animation:icon-coin-bounce .6s ease-in-out infinite}
+.promise-card:hover .fa-euro-sign,.promise-card:active .fa-euro-sign{animation:icon-coin-bounce .6s ease-in-out infinite}
 
 /* Check-circle → pop & settle (one-shot) */
 @keyframes icon-check-pop{0%{transform:scale(1.05)}40%{transform:scale(1.3) rotate(10deg)}70%{transform:scale(1.1) rotate(-4deg)}100%{transform:scale(1.15) rotate(0deg)}}
-.promise-card:hover .fa-check-circle{animation:icon-check-pop .5s ease-out forwards}
+.promise-card:hover .fa-check-circle,.promise-card:active .fa-check-circle{animation:icon-check-pop .5s ease-out forwards}
 
 /* Smile → happy bounce */
 @keyframes icon-smile-bounce{0%,100%{transform:scale(1.05) rotate(0deg)}25%{transform:scale(1.22) rotate(-6deg)}75%{transform:scale(1.15) rotate(6deg)}}
-.trust-badge:hover .fa-smile{animation:icon-smile-bounce .8s ease-in-out infinite}
+.trust-badge:hover .fa-smile,.trust-badge:active .fa-smile{animation:icon-smile-bounce .8s ease-in-out infinite}
 
 /* Tools → wiggle */
 @keyframes icon-tools-wiggle{0%,100%{transform:rotate(0deg) scale(1.05)}25%{transform:rotate(-12deg) scale(1.1)}75%{transform:rotate(12deg) scale(1.1)}}
-.equipment-card:hover .fa-tools,.service-card:hover .fa-tools{animation:icon-tools-wiggle .6s ease-in-out infinite}
+.equipment-card:hover .fa-tools,.service-card:hover .fa-tools,.equipment-card:active .fa-tools,.service-card:active .fa-tools{animation:icon-tools-wiggle .6s ease-in-out infinite}
 
 /* Respect prefers-reduced-motion */
 @media(prefers-reduced-motion:reduce){
-  .service-card:hover i,.equipment-card:hover i,.promise-card:hover i,.trust-badge:hover i{animation:none!important;transform:scale(1.1)!important}
+  .service-card:hover i,.equipment-card:hover i,.promise-card:hover i,.trust-badge:hover i,
+  .service-card:active i,.equipment-card:active i,.promise-card:active i,.trust-badge:active i{animation:none!important;transform:scale(1.1)!important}
 }
 
 /* ── GOOGLE REVIEW CTA (after FAQ) ─────────────────────────────────────── */
@@ -151,7 +152,7 @@
 /* Skip layout/paint for below-fold sections until they near the viewport.
    contain-intrinsic-size gives the browser a placeholder height so the
    scrollbar stays stable before the section is rendered. */
-section[data-animate]{content-visibility:auto;contain-intrinsic-size:0 800px}
+/* content-visibility removed — it conflicts with the IntersectionObserver scroll-reveal animation */
 
 /* The gradient-border mask technique is only visible on hover-capable devices.
    On touch screens it never fires, so skip the expensive compositing entirely. */
@@ -347,11 +348,45 @@ i.promise-icon,i.faq-icon{display:inline-flex;align-items:center;justify-content
 @keyframes svc-spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
 @keyframes svc-bounce{0%,100%{transform:translateY(0)}45%{transform:translateY(-5px)}65%{transform:translateY(-2px)}}
 @keyframes svc-wiggle{0%,100%{transform:rotate(0deg)}25%{transform:rotate(-12deg)}75%{transform:rotate(12deg)}}
-.svc-card:nth-child(1):hover .svc-icon i{animation:svc-pulse .55s ease}
-.svc-card:nth-child(2):hover .svc-icon i{animation:svc-spin .6s linear}
-.svc-card:nth-child(3):hover .svc-icon i{animation:svc-bounce .55s ease}
-.svc-card:nth-child(4):hover .svc-icon i{animation:svc-wiggle .5s ease}
-.about-card:hover .about-card-icon i{animation:svc-pulse .55s ease}
+.svc-card:nth-child(1):hover .svc-icon i,.svc-card:nth-child(1):active .svc-icon i{animation:svc-pulse .55s ease}
+.svc-card:nth-child(2):hover .svc-icon i,.svc-card:nth-child(2):active .svc-icon i{animation:svc-spin .6s linear}
+.svc-card:nth-child(3):hover .svc-icon i,.svc-card:nth-child(3):active .svc-icon i{animation:svc-bounce .55s ease}
+.svc-card:nth-child(4):hover .svc-icon i,.svc-card:nth-child(4):active .svc-icon i{animation:svc-wiggle .5s ease}
+.about-card:hover .about-card-icon i,.about-card:active .about-card-icon i{animation:svc-pulse .55s ease}
 /* ── HEADER CROWDING FIX ─────────────────────────────────────────────────── */
 @media(max-width:1200px){.solid-header .review-badge{display:none}}
 @media(max-width:900px){.solid-header a[href^="tel"]{display:none!important}}
+
+/* ── MOBILE TOUCH ACTIVATION — card lift & icon colour on tap ────────────── */
+/* On iOS/Android :active fires on touch, enabling the same feedback as :hover */
+.service-card:active,.equipment-card:active{border-color:transparent;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.service-card:active i,.equipment-card:active i{transform:scale(1.1);color:var(--accent-gold)}
+.promise-card:active{border-color:var(--accent-gold);transform:translateY(-5px)!important;box-shadow:0 10px 20px -5px rgba(180,148,92,.3)}
+.promise-card:active i{color:var(--accent-gold);transform:scale(1.1)}
+.trust-badge:active{border-color:var(--accent-gold);transform:translateY(-5px);box-shadow:0 10px 20px -5px rgba(180,148,92,.3)}
+.trust-badge:active i{color:var(--accent-gold);transform:scale(1.1)}
+.svc-card:active{box-shadow:0 8px 28px rgba(0,0,0,.1);transform:translateY(-3px)}
+.about-card:active{box-shadow:0 6px 24px rgba(0,0,0,.09)}
+/* iOS requires at least one touchstart listener for :active to fire on divs — added via shared.js body listener */
+
+/* ── MOBILE LAYOUT IMPROVEMENTS ──────────────────────────────────────────── */
+@media(max-width:768px){
+  /* Reduce excessive section padding on mobile */
+  .py-24{padding-top:2.5rem!important;padding-bottom:2.5rem!important}
+  .py-16{padding-top:1.5rem!important;padding-bottom:1.5rem!important}
+  .pt-16{padding-top:1.5rem!important}
+  .pb-16{padding-bottom:1.5rem!important}
+  /* Reduce section title bottom margin */
+  .mb-16{margin-bottom:2rem!important}
+  /* Tighten large gaps */
+  .gap-12{gap:1.5rem!important}
+  /* Make gallery 2-column instead of 1 on mobile */
+  .gallery-grid{grid-template-columns:1fr 1fr}
+  .gallery-thumb{height:160px}
+  /* Workshop section — stack image on top with less margin */
+  .flex.flex-col.md\:flex-row{gap:1.5rem!important}
+  /* Timeline: tighter gap */
+  .space-y-8>*+*{margin-top:1.25rem!important}
+  /* Blog grid: ensure 1-col on narrow mobile */
+  .blog-grid{grid-template-columns:1fr}
+}

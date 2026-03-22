@@ -1043,9 +1043,9 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
               <a href="https://wa.me/355676360510" target="_blank" rel="noopener noreferrer" class="btn-secondary">
                 <i class="fab fa-whatsapp mr-2" aria-hidden="true"></i>WhatsApp
               </a>
-              <a href="https://www.google.com/maps/dir/?api=1&destination=41.3201564,19.4453564" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+              <button type="button" onclick="openDirections()" class="btn-secondary" style="cursor:pointer">
                 <i class="fas fa-directions mr-2" aria-hidden="true"></i>Get Directions
-              </a>
+              </button>
             </div>
           </div>
           <div>
@@ -1091,8 +1091,8 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
     </div>
   </footer>
 
-  <link rel="stylesheet" href="../shared.css?v=20" media="print" onload="this.media='all'" id="shared-css-async">
-  <noscript><link rel="stylesheet" href="../shared.css?v=20"></noscript>
+  <link rel="stylesheet" href="../shared.css?v=21" media="print" onload="this.media='all'" id="shared-css-async">
+  <noscript><link rel="stylesheet" href="../shared.css?v=21"></noscript>
   <script src="../shared.js?v=5" defer></script>
   <script>
   /* Cookie consent manager */
@@ -1153,6 +1153,21 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
   <script>
   function iglisiToggleNav(btn,e){e.stopPropagation();var d=document.getElementById('navDrawer');if(!d)return;var o=d.style.display==='block';d.style.display=o?'none':'block';btn.classList.toggle('open',!o);btn.setAttribute('aria-expanded',o?'false':'true')}
   document.addEventListener('click',function(e){var d=document.getElementById('navDrawer'),b=document.getElementById('hamburgerBtn');if(!d||d.style.display!=='block')return;if(b&&b.contains(e.target))return;if(d.contains(e.target)){if(e.target.closest&&e.target.closest('a[href]')){d.style.display='none';if(b){b.classList.remove('open');b.setAttribute('aria-expanded','false')}}return}d.style.display='none';if(b){b.classList.remove('open');b.setAttribute('aria-expanded','false')}});
+  </script>
+  <script>
+  function openDirections(){
+    var dest='41.3201564,19.4453564';
+    var fallback='https://www.google.com/maps/dir/?api=1&destination='+dest;
+    if(!navigator.geolocation){window.open(fallback,'_blank');return;}
+    navigator.geolocation.getCurrentPosition(
+      function(pos){
+        var url='https://www.google.com/maps/dir/?api=1&origin='+pos.coords.latitude+','+pos.coords.longitude+'&destination='+dest;
+        window.open(url,'_blank');
+      },
+      function(){window.open(fallback,'_blank');},
+      {timeout:6000,maximumAge:60000,enableHighAccuracy:false}
+    );
+  }
   </script>
 </body>
 </html>
