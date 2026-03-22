@@ -18,7 +18,7 @@
   <link rel="preload" href="/webfonts/cormorant-garamond.woff2?v=2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/webfonts/fa-solid-900.woff2?v=2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/webfonts/fa-brands-400.woff2?v=2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/shared.css?v=15">
+  <link rel="stylesheet" href="/shared.css?v=16">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
     {"@type":"ListItem","position":1,"name":"Home","item":"https://watch.al/en/"},
@@ -38,9 +38,9 @@
   <header class="solid-header" role="banner">
     <div class="max-w-7xl mx-auto px-4 py-2">
       <div class="flex items-center gap-3">
-        <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+        <label for="nav-toggle" class="hamburger-btn" aria-label="Toggle menu">
           <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        </button>
+        </label>
         <div class="logo-area" style="flex:1;min-width:0">
           <a href="/sq/" aria-label="Iglisi Watch home">
             <picture>
@@ -94,32 +94,45 @@
     </div>
   </div>
 
+  <style>
+    .svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:1.5rem;max-width:900px;margin:0 auto}
+    .svc-card{background:#fff;border-radius:1.25rem;padding:2rem;border:1px solid #eaeaea;transition:box-shadow .2s,transform .2s;display:flex;flex-direction:column;gap:.75rem}
+    .svc-card:hover{box-shadow:0 8px 28px rgba(0,0,0,.10);transform:translateY(-3px)}
+    .svc-icon{width:3rem;height:3rem;border-radius:.75rem;background:linear-gradient(135deg,rgba(180,148,92,.15),rgba(180,148,92,.05));display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:var(--accent-gold);flex-shrink:0}
+    .svc-title{font-size:1.1rem;font-weight:700;color:var(--text-primary);margin:0}
+    .svc-desc{font-size:.875rem;color:var(--text-secondary);line-height:1.6;margin:0}
+    .svc-badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent-gold);background:rgba(180,148,92,.1);padding:.25rem .65rem;border-radius:999px;width:fit-content}
+  </style>
   <main id="main-content">
-    <section class="py-16 px-6" style="background:var(--bg-soft)">
-      <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+    <section style="background:var(--bg-soft);padding:3rem 1.5rem 4rem">
+      <div class="svc-grid">
 
-        <div class="service-card">
-          <i class="fas fa-battery-three-quarters text-3xl gold mb-4" aria-hidden="true"></i>
-          <h2 class="text-xl font-bold mb-2">Battery Replacement</h2>
-          <p class="text-gray-600 text-sm">Replaced in under 2 minutes for most watches. Gasket checked at every swap. Walk-ins welcome, no appointment needed.</p>
+        <div class="svc-card">
+          <div class="svc-icon"><i class="fas fa-battery-three-quarters" aria-hidden="true"></i></div>
+          <h2 class="svc-title">Battery Replacement</h2>
+          <p class="svc-desc">Replaced in under 2 minutes for most watches. Gasket checked at every swap. Walk-ins welcome, no appointment needed.</p>
+          <span class="svc-badge"><i class="fas fa-bolt" aria-hidden="true"></i> Under 2 minutes</span>
         </div>
 
-        <div class="service-card">
-          <i class="fas fa-cog text-3xl gold mb-4" aria-hidden="true"></i>
-          <h2 class="text-xl font-bold mb-2">Watch Repair &amp; Service</h2>
-          <p class="text-gray-600 text-sm">Quartz movement diagnosis, cleaning and adjustment. Mechanical and automatic watch servicing available.</p>
+        <div class="svc-card">
+          <div class="svc-icon"><i class="fas fa-cogs" aria-hidden="true"></i></div>
+          <h2 class="svc-title">Watch Repair &amp; Service</h2>
+          <p class="svc-desc">Quartz movement diagnosis, cleaning and adjustment. Mechanical and automatic watch servicing available.</p>
+          <span class="svc-badge"><i class="fas fa-tools" aria-hidden="true"></i> All watch types</span>
         </div>
 
-        <div class="service-card">
-          <i class="fas fa-hourglass-half text-3xl gold mb-4" aria-hidden="true"></i>
-          <h2 class="text-xl font-bold mb-2">Strap &amp; Crown Fitting</h2>
-          <p class="text-gray-600 text-sm">Leather, metal, and rubber strap fitting. Crown and stem replacement. Crystal polishing on request.</p>
+        <div class="svc-card">
+          <div class="svc-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+          <h2 class="svc-title">Strap &amp; Crown Fitting</h2>
+          <p class="svc-desc">Leather, metal, and rubber strap fitting. Crown and stem replacement. Crystal polishing on request.</p>
+          <span class="svc-badge"><i class="fas fa-gem" aria-hidden="true"></i> All materials</span>
         </div>
 
-        <div class="service-card">
-          <i class="fas fa-key text-3xl gold mb-4" aria-hidden="true"></i>
-          <h2 class="text-xl font-bold mb-2">Key Cutting</h2>
-          <p class="text-gray-600 text-sm">Precision duplicates for standard, office, and high-security keys. Fast turnaround while you wait. Car keys not available.</p>
+        <div class="svc-card">
+          <div class="svc-icon"><i class="fas fa-key" aria-hidden="true"></i></div>
+          <h2 class="svc-title">Key Cutting</h2>
+          <p class="svc-desc">Precision duplicates for standard, office, and high-security keys. Fast turnaround while you wait. Car keys not available.</p>
+          <span class="svc-badge"><i class="fas fa-tachometer-alt" aria-hidden="true"></i> Fast turnaround</span>
         </div>
 
       </div>
