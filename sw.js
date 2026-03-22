@@ -1,6 +1,6 @@
 'use strict';
 
-var CACHE = 'iglisi-v3';
+var CACHE = 'iglisi-v4';
 
 var PRECACHE = [
   '/en/',

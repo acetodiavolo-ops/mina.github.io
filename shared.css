@@ -311,6 +311,9 @@ button{text-transform:none;-webkit-appearance:button;background-color:transparen
 .hamburger-btn.open .bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 
+/* ── STICKY HEADER WRAP ─────────────────────────────────────────────────── */
+.site-header-wrap{position:sticky;top:0;z-index:50}
+
 /* ── MOBILE NAV DRAWER ──────────────────────────────────────────────────── */
 .nav-drawer{background:var(--header-bg);border-top:1px solid transparent;max-height:0;overflow:hidden;transition:max-height .3s ease,border-top-color .3s ease}
 .nav-drawer.open{max-height:400px;border-top-color:rgba(180,148,92,.18)}
