@@ -1,6 +1,6 @@
 'use strict';
 
-var CACHE = 'iglisi-v25';
+var CACHE = 'iglisi-v26';
 
 var PRECACHE = [
   '/offline.html',
@@ -36,15 +36,19 @@ var PRECACHE = [
   '/webfonts/fa-solid-900.woff2?v=2',
   '/webfonts/fa-brands-400.woff2?v=2',
   'https://watch.al/favicon.png',
-  'https://watch.al/favicon.webp',
-  'https://watch.al/0.raw.githubusercontent.com.webp'
+  'https://watch.al/favicon.webp'
 ];
 
 self.addEventListener('install', function(e) {
   e.waitUntil(
-    caches.open(CACHE)
-      .then(function(c) { return c.addAll(PRECACHE); })
-      .then(function() { return self.skipWaiting(); })
+    caches.open(CACHE).then(function(c) {
+      /* Cache each item individually so one failure can't break the whole install */
+      return Promise.all(
+        PRECACHE.map(function(url) {
+          return c.add(url).catch(function() {});
+        })
+      );
+    }).then(function() { return self.skipWaiting(); })
   );
 });
 
@@ -68,29 +72,37 @@ self.addEventListener('fetch', function(e) {
 
   var isNav = e.request.mode === 'navigate';
 
-  e.respondWith(
-    caches.match(e.request).then(function(cached) {
-      var networkFetch = fetch(e.request).then(function(response) {
+  if (isNav) {
+    /* Navigation: network-first so users always get fresh HTML after a deploy */
+    e.respondWith(
+      fetch(e.request).then(function(response) {
         if (response && response.status === 200 && response.type !== 'error') {
           var clone = response.clone();
           caches.open(CACHE).then(function(c) { c.put(e.request, clone); }).catch(function() {});
         }
         return response;
       }).catch(function() {
-        /* Offline fallback by request type */
-        if (isNav) return caches.match('/offline.html');
+        return caches.match(e.request).then(function(cached) {
+          return cached || caches.match('/offline.html');
+        });
+      })
+    );
+    return;
+  }
+
+  /* Assets: cache-first, fetch only if missing */
+  e.respondWith(
+    caches.match(e.request).then(function(cached) {
+      return cached || fetch(e.request).then(function(response) {
+        if (response && response.status === 200 && response.type !== 'error') {
+          var clone = response.clone();
+          caches.open(CACHE).then(function(c) { c.put(e.request, clone); }).catch(function() {});
+        }
+        return response;
+      }).catch(function() {
         var dest = e.request.destination;
         if (dest === 'style') return new Response('', {headers:{'Content-Type':'text/css','Cache-Control':'no-store'}});
       });
-
-      /* Navigation: serve cached immediately, revalidate in background (stale-while-revalidate) */
-      if (cached && isNav) {
-        e.waitUntil(networkFetch);
-        return cached;
-      }
-
-      /* Assets: cache-first, fetch only if missing */
-      return cached || networkFetch;
     })
   );
 });
