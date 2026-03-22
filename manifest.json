@@ -24,16 +24,4 @@
       "purpose": "any"
     }
   ],
-  "shortcuts": [
-    {
-      "name": "Call Us",
-      "url": "tel:+355676360510",
-      "description": "Call Iglisi Watch directly"
-    },
-    {
-      "name": "WhatsApp",
-      "url": "https://wa.me/355676360510",
-      "description": "Book via WhatsApp"
-    }
-  ]
 }
