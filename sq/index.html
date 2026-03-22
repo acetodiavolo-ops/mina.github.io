@@ -162,8 +162,8 @@ iframe { border: 0; }
 .grid { display: grid; }
 .hidden { display: none; }
 .site-header-wrap{position:sticky;top:0;z-index:50}
-.nav-drawer{position:absolute;top:100%;left:0;right:0;background:rgba(6,21,59,.98);opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-6px);transition:opacity .25s ease,visibility .25s ease,transform .25s ease;border-top:2px solid rgba(180,148,92,.18);box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:49}
-.nav-drawer.open{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
+.nav-drawer{display:none;background:rgba(6,21,59,.98);border-top:2px solid rgba(180,148,92,.18);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nav-drawer.open{display:block}
 .hamburger-btn{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.45);border-radius:8px;cursor:pointer;padding:8px;flex-shrink:0}
 .hamburger-btn .bar{display:block;width:20px;height:2px;background:#fff;border-radius:1px;transition:transform .25s,opacity .25s}
 .hamburger-btn.open .bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -182,6 +182,7 @@ iframe { border: 0; }
 .justify-between { justify-content: space-between; }
 .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 0.75rem; }
 .gap-4 { gap: 1rem; }
 .gap-6 { gap: 1.5rem; }
 .gap-8 { gap: 2rem; }
@@ -546,7 +547,7 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
   <header class="solid-header" role="banner">
     <div class="max-w-7xl mx-auto px-4 py-2">
       <div class="flex items-center gap-3">
-        <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Hap menune" aria-expanded="false">
+        <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Hap menune" aria-expanded="false" onclick="iglisiToggleNav(this,event)">
           <span class="bar"></span><span class="bar"></span><span class="bar"></span>
         </button>
         <div class="logo-area" style="flex:1;min-width:0">
@@ -964,8 +965,8 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
     </div>
   </footer>
 
-  <link rel="stylesheet" href="../shared.css?v=14" media="print" onload="this.media='all'" id="shared-css-async">
-  <noscript><link rel="stylesheet" href="../shared.css?v=14"></noscript>
+  <link rel="stylesheet" href="../shared.css?v=15" media="print" onload="this.media='all'" id="shared-css-async">
+  <noscript><link rel="stylesheet" href="../shared.css?v=15"></noscript>
   <script src="../shared.js?v=5" defer></script>
   <script>
     if ('serviceWorker' in navigator) {
@@ -973,27 +974,8 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
     }
   </script>
   <script>
-  (function(){
-    var btn=document.getElementById('hamburgerBtn');
-    var drawer=document.getElementById('navDrawer');
-    if(!btn||!drawer)return;
-    btn.addEventListener('click',function(e){
-      e.stopPropagation();
-      var open=btn.classList.toggle('open');
-      btn.setAttribute('aria-expanded',open);
-      drawer.classList.toggle('open',open);
-    });
-    document.addEventListener('click',function(e){
-      if(btn.classList.contains('open')&&!drawer.contains(e.target)&&!btn.contains(e.target)){
-        btn.classList.remove('open');btn.setAttribute('aria-expanded','false');drawer.classList.remove('open');
-      }
-    });
-    drawer.addEventListener('click',function(e){
-      if(e.target.closest('a[href]')){
-        btn.classList.remove('open');btn.setAttribute('aria-expanded','false');drawer.classList.remove('open');
-      }
-    });
-  })();
+  function iglisiToggleNav(btn,e){e.stopPropagation();var d=document.getElementById('navDrawer');if(!d)return;var o=!d.classList.contains('open');d.classList.toggle('open',o);btn.classList.toggle('open',o);btn.setAttribute('aria-expanded',o?'true':'false')}
+  document.addEventListener('click',function(e){var d=document.getElementById('navDrawer'),b=document.getElementById('hamburgerBtn');if(!d||!d.classList.contains('open'))return;if(b&&b.contains(e.target))return;if(d.contains(e.target)){if(e.target.closest&&e.target.closest('a[href]')){d.classList.remove('open');if(b){b.classList.remove('open');b.setAttribute('aria-expanded','false')}}return}d.classList.remove('open');if(b){b.classList.remove('open');b.setAttribute('aria-expanded','false')}});
   </script>
 </body>
 </html>
