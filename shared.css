@@ -16,6 +16,7 @@
 [data-action="toggle-lang"] i.fas{font-size:.8rem;line-height:1;flex-shrink:0}
 .solid-header [data-action="toggle-lang"]{border-color:rgba(255,255,255,0.28);color:rgba(255,255,255,0.88)}
 .solid-header [data-action="toggle-lang"]:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.45)}
+@media(max-width:768px){[data-action="toggle-lang"]{min-height:44px;padding:.65rem 1rem}}
 /* Mobile icons */
 .solid-header .mobile-icons a,.solid-header .mobile-icons button{color:rgba(255,255,255,0.88)}
 .solid-header .mobile-icons a:hover,.solid-header .mobile-icons button:hover{color:var(--accent-gold)}
@@ -167,6 +168,9 @@
 .fas,.fa-solid{font-family:'Font Awesome 6 Free';font-weight:900;font-style:normal;text-rendering:auto;line-height:1;-webkit-font-smoothing:antialiased;display:inline-block}
 .fab,.fa-brands{font-family:'Font Awesome 6 Brands';font-weight:400;font-style:normal;text-rendering:auto;line-height:1;-webkit-font-smoothing:antialiased;display:inline-block}
 .fa-times-circle::before{content:"\f057"}
+.fa-tint::before{content:"\f043"}
+.fa-exclamation-circle::before{content:"\f06a"}
+.fa-wrench::before{content:"\f0ad"}
 
 /* ── RESETS ──────────────────────────────────────────────────────────────── */
 *,::before,::after{box-sizing:border-box;border-width:0;border-style:solid}
