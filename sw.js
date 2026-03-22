@@ -1,6 +1,6 @@
 'use strict';
 
-var CACHE = 'iglisi-v13';
+var CACHE = 'iglisi-v14';
 
 var PRECACHE = [
   '/en/',
@@ -11,10 +11,16 @@ var PRECACHE = [
   '/sq/blog/',
   '/en/blog/watch-battery-guide.html',
   '/en/blog/watch-service-signs.html',
+  '/en/blog/watch-strap-care.html',
+  '/en/blog/key-duplication-guide.html',
   '/it/blog/guida-batteria-orologio.html',
   '/it/blog/segni-revisione-orologio.html',
+  '/it/blog/cura-cinturino-orologio.html',
+  '/it/blog/guida-duplicato-chiavi.html',
   '/sq/blog/guide-bateria-ores.html',
   '/sq/blog/shenjat-riparimit-ores.html',
+  '/sq/blog/kujdesi-brezit-ores.html',
+  '/sq/blog/guide-kopjim-celesi.html',
   '/shared.css?v=20',
   '/shared.js?v=5',
   '/webfonts/inter.woff2?v=2',
