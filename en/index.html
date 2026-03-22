@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -177,6 +177,7 @@ iframe { border: 0; }
 .inline-flex { display: inline-flex; }
 .grid { display: grid; }
 .hidden { display: none; }
+.nav-drawer{max-height:0;overflow:hidden}
 .relative { position: relative; }
 .flex-col { flex-direction: column; }
 .flex-wrap { flex-wrap: wrap; }
@@ -650,41 +651,34 @@ span.inline-flex > span > strong { color: #2a2a2a; }
 
   <header class="solid-header" role="banner">
     <div class="max-w-7xl mx-auto px-4 py-2">
-      <div class="flex items-center justify-between">
-        <div class="logo-area">
-          <a href="/en/" aria-label="Iglisi Watch — home">
+      <div class="flex items-center gap-3">
+        <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <div class="logo-area" style="flex:1;min-width:0">
+          <a href="/en/" aria-label="Iglisi Watch home">
             <picture>
               <source srcset="https://watch.al/favicon.webp?v=2" type="image/webp">
               <img src="https://watch.al/favicon.png?v=2" alt="Iglisi Watch logo" width="220" height="220" fetchpriority="high">
             </picture>
           </a>
-          <p class="desktop-only-text text-xs text-gray-500">Family-owned · Since 2002</p>
+          <p class="desktop-only-text text-xs text-gray-500">Family-owned &middot; Since 2002</p>
         </div>
-        <nav class="hidden md:flex items-center gap-4" aria-label="Main navigation">
-          <a href="/en/services.html" class="nav-page-link">Services</a>
-          <a href="/en/about.html" class="nav-page-link">About</a>
-          <a href="/en/blog/" class="nav-page-link">Blog</a>
-          <span class="nav-sep" aria-hidden="true"></span>          <a href="tel:+355676360510" class="flex items-center gap-2 text-gray-700 hover:text-[#b4945c] transition">
+        <div class="flex items-center gap-3">
+          <a href="tel:+355676360510" class="hidden md:flex items-center gap-2 text-gray-700 hover:text-[#b4945c] transition" aria-label="Call us">
             <i class="fas fa-phone-alt text-xl gold" aria-hidden="true"></i>
-            <span class="font-medium">+355 67 636 0510</span>
+            <span class="font-medium hidden lg:inline">+355 67 636 0510</span>
           </a>
           <a href="https://wa.me/355676360510" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm px-4 py-2">Book via WhatsApp</a>
-          <a href="https://search.google.com/local/reviews?placeid=ChIJU3JyAljB0RMRdoAB2vYR5oo" target="_blank" rel="noopener noreferrer" class="review-badge" aria-label="Iglisi on Google — 5 stars, Excellent">
-            <span class="stars" aria-hidden="true">★★★★★</span>
-            <span>5.0 · Excellent</span>
+          <a href="https://search.google.com/local/reviews?placeid=ChIJU3JyAljB0RMRdoAB2vYR5oo" target="_blank" rel="noopener noreferrer" class="review-badge" aria-label="Iglisi on Google, 5 stars">
+            <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span>5.0 &middot; Excellent</span>
           </a>
-          <button type="button" data-action="toggle-lang" class="flex items-center gap-2 border border-gray-300 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition" aria-label="Switch language">
+          <button type="button" data-action="toggle-lang" class="flex items-center gap-2 border border-gray-300 px-3 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition" aria-label="Switch language">
             <i class="fas fa-globe" aria-hidden="true"></i>
             <span data-lang-label>EN</span>
           </button>
-        </nav>
-        <div class="mobile-icons" aria-label="Quick actions">
-          <a href="tel:+355676360510" aria-label="Call us"><i class="fas fa-phone-alt" aria-hidden="true"></i></a>
-          <a href="https://wa.me/355676360510" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-          <button type="button" data-action="toggle-lang" aria-label="Switch language"><i class="fas fa-globe" aria-hidden="true"></i></button>
-          <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
-            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-          </button>        </div>
+        </div>
       </div>
     </div>
   </header>
