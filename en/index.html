@@ -183,6 +183,7 @@ iframe { border: 0; }
 .hamburger-btn.open .bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .hamburger-btn.open .bar:nth-child(2){opacity:0}
 .hamburger-btn.open .bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-drawer.open{max-height:400px;border-top-color:rgba(180,148,92,.18)}
 .relative { position: relative; }
 .flex-col { flex-direction: column; }
 .flex-wrap { flex-wrap: wrap; }
@@ -712,7 +713,7 @@ span.inline-flex > span > strong { color: #2a2a2a; }
         </p>
         <div class="flex flex-wrap gap-4 justify-center">
           <a href="#contact" class="btn-primary">Visit Our Workshop</a>
-          <a href="#services" class="btn-secondary">Discover Services</a>
+          <a href="/en/services.html" class="btn-secondary">Discover Services</a>
         </div>
         <div class="hero-trust-strip">
           <a href="https://search.google.com/local/reviews?placeid=ChIJU3JyAljB0RMRdoAB2vYR5oo" target="_blank" rel="noopener noreferrer" class="hero-trust-pill"><span class="pill-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>&nbsp;Google Reviews</a>
@@ -830,54 +831,14 @@ span.inline-flex > span > strong { color: #2a2a2a; }
         </div>
       </div>
     </section>
-    <!-- SERVICES -->
-    <section id="services" class="py-24 bg-white" aria-labelledby="services-heading" data-animate>
-      <div class="max-w-7xl mx-auto px-6">
-        <h2 id="services-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Our <span class="gold-display">Services</span></h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="service-card">
-            <div class="w-14 h-14 bg-[#06153b]/10 rounded-full flex items-center justify-center mb-6">
-              <i class="fas fa-battery-three-quarters text-2xl gold" aria-hidden="true"></i>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">Watch Battery Replacement</h3>
-            <p class="text-gray-500">Quick, careful replacement for quartz watches of all brands. We test and guarantee. Takes <strong class="gold-display">under 2 minutes</strong>.</p>
-          </div>
-          <div class="service-card">
-            <div class="w-14 h-14 bg-[#06153b]/10 rounded-full flex items-center justify-center mb-6">
-              <i class="fas fa-clock text-2xl gold" aria-hidden="true"></i>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">Strap &amp; Bracelet Fitting</h3>
-            <p class="text-gray-500">Leather, metal, nylon – we fit and adjust any strap. Wide selection available while you wait.</p>
-          </div>
-          <div class="service-card">
-            <div class="w-14 h-14 bg-[#06153b]/10 rounded-full flex items-center justify-center mb-6">
-              <span class="dual-gear text-2xl gold" aria-hidden="true"><i class="fas fa-cog"></i><i class="fas fa-cog"></i></span>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">Watch Servicing</h3>
-            <p class="text-gray-500">We specialize in quartz movements, and can also service mechanical and automatic watches depending on the repair needed.</p>
-          </div>
-          <div class="service-card">
-            <div class="w-14 h-14 bg-[#06153b]/10 rounded-full flex items-center justify-center mb-6">
-              <i class="fas fa-hourglass-half text-2xl gold" aria-hidden="true"></i>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">Clock Repair</h3>
-            <p class="text-gray-500">Wall clocks, mantel clocks, grandfather clocks – we restore timepieces of all sizes.</p>
-          </div>
-          <div class="service-card">
-            <div class="w-14 h-14 bg-[#06153b]/10 rounded-full flex items-center justify-center mb-6">
-              <i class="fas fa-key text-2xl gold" aria-hidden="true"></i>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">Key Copy Services</h3>
-            <p class="text-gray-500">Standard, security, and restricted keys – duplicated with precision using original blanks. (No car keys)</p>
-          </div>
-          <div class="service-card">
-            <div class="w-14 h-14 bg-[#06153b]/10 rounded-full flex items-center justify-center mb-6">
-              <i class="fas fa-shield-alt text-2xl gold" aria-hidden="true"></i>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">High‑Security Keys</h3>
-            <p class="text-gray-500">Advanced cutting for dimple and tubular keys. We do not copy car keys or laser keys.</p>
-          </div>
-        </div>
+    <!-- SERVICES CTA -->
+    <section class="py-16 bg-white" aria-label="Services" data-animate>
+      <div class="max-w-3xl mx-auto px-6 text-center">
+        <h2 class="text-4xl md:text-5xl mb-6 section-title">Our <span class="gold-display">Services</span></h2>
+        <p class="text-gray-600 text-lg mb-8">Battery replacement in under 2 minutes, watch repair, strap fitting, and precision key cutting — all done while you wait. Walk-ins welcome.</p>
+        <a href="/en/services.html" class="btn-primary inline-flex items-center gap-2">
+          <i class="fas fa-tools" aria-hidden="true"></i> View All Services
+        </a>
       </div>
     </section>
     <!-- EQUIPMENT -->
@@ -991,41 +952,6 @@ span.inline-flex > span > strong { color: #2a2a2a; }
           <a href="https://search.google.com/local/reviews?placeid=ChIJU3JyAljB0RMRdoAB2vYR5oo" target="_blank" rel="noopener noreferrer" class="btn-primary">
             <i class="fab fa-google mr-2" aria-hidden="true"></i>Leave a Review on Google
           </a>
-        </div>
-      </div>
-    </section>
-    <!-- BLOG -->
-    <section class="py-24 bg-white" aria-labelledby="blog-heading" data-animate>
-      <div class="max-w-5xl mx-auto px-6">
-        <h2 id="blog-heading" class="text-4xl md:text-5xl text-center mb-4 section-title">From Our <span class="gold-display">Blog</span></h2>
-        <p class="text-center text-gray-500 mb-12" style="font-size:1.05rem">Practical watch care tips from the workshop floor.</p>
-        <div class="blog-grid">
-          <div class="blog-card">
-            <div class="blog-card-accent"></div>
-            <div class="blog-card-body">
-              <span class="blog-card-category"><i class="fas fa-battery-three-quarters" aria-hidden="true"></i> Watch Care</span>
-              <a href="/en/blog/watch-battery-guide.html" class="blog-card-title">How Long Does a Watch Battery Last? Signs It's Dying &amp; What To Do</a>
-              <p class="blog-card-excerpt">The second hand jumping every 4 seconds isn't a malfunction — it's your watch warning you. Learn the 5 signs your battery is on its way out, whether you should DIY it, and what a professional replacement actually involves.</p>
-              <div class="blog-card-meta">
-                <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min read</span>
-                <span>March 2026</span>
-              </div>
-              <a href="/en/blog/watch-battery-guide.html" class="blog-card-read">Read article <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
-            </div>
-          </div>
-          <div class="blog-card">
-            <div class="blog-card-accent"></div>
-            <div class="blog-card-body">
-              <span class="blog-card-category"><i class="fas fa-cogs" aria-hidden="true"></i> Watch Repair</span>
-              <a href="/en/blog/watch-service-signs.html" class="blog-card-title">5 Signs Your Watch Needs a Service, Not Just a New Battery</a>
-              <p class="blog-card-excerpt">A fresh battery didn't fix it? Losing time, gritty crown, or moisture history? These are the signs your watch needs a full mechanical service — and what that service actually involves.</p>
-              <div class="blog-card-meta">
-                <span><i class="fas fa-clock" aria-hidden="true"></i> 6 min read</span>
-                <span>March 2026</span>
-              </div>
-              <a href="/en/blog/watch-service-signs.html" class="blog-card-read">Read article <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
-            </div>
-          </div>
         </div>
       </div>
     </section>

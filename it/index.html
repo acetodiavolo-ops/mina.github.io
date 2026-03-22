@@ -167,6 +167,7 @@ iframe { border: 0; }
 .hamburger-btn.open .bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .hamburger-btn.open .bar:nth-child(2){opacity:0}
 .hamburger-btn.open .bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-drawer.open{max-height:400px;border-top-color:rgba(180,148,92,.18)}
 .relative { position: relative; }
 .flex-col { flex-direction: column; }
 .flex-wrap { flex-wrap: wrap; }
@@ -594,7 +595,7 @@ span.inline-flex > span > strong { color: #2a2a2a; }
         </p>
         <div class="flex flex-wrap gap-4 justify-center">
           <a href="#contact" class="btn-primary">Visita il Laboratorio</a>
-          <a href="#services" class="btn-secondary">Scopri i Servizi</a>
+          <a href="/it/services.html" class="btn-secondary">Scopri i Servizi</a>
         </div>
         <div class="hero-trust-strip">
           <a href="https://search.google.com/local/reviews?placeid=ChIJU3JyAljB0RMRdoAB2vYR5oo" target="_blank" rel="noopener noreferrer" class="hero-trust-pill"><span class="pill-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>&nbsp;Recensioni Google</a>
@@ -714,54 +715,14 @@ span.inline-flex > span > strong { color: #2a2a2a; }
         </div>
       </div>
     </section>
-    <!-- SERVICES -->
-    <section id="services" class="py-24 bg-white" aria-labelledby="services-heading" data-animate>
-      <div class="max-w-7xl mx-auto px-6">
-        <h2 id="services-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">I Nostri <span class="gold-display">Servizi</span></h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="service-card">
-            <div class="w-14 h-14 bg-[#06153b]/10 rounded-full flex items-center justify-center mb-6">
-              <i class="fas fa-battery-three-quarters text-2xl gold" aria-hidden="true"></i>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">Sostituzione Batteria</h3>
-            <p class="text-gray-500">Sostituzione rapida per orologi al quarzo di tutte le marche. Testiamo e garantiamo. <strong class="gold">In meno di 2 minuti</strong>.</p>
-          </div>
-          <div class="service-card">
-            <div class="w-14 h-14 bg-[#06153b]/10 rounded-full flex items-center justify-center mb-6">
-              <i class="fas fa-clock text-2xl gold" aria-hidden="true"></i>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">Montaggio Cinturini</h3>
-            <p class="text-gray-500">Pelle, metallo, nylon – montiamo e regoliamo qualsiasi cinturino. Ampia selezione disponibile.</p>
-          </div>
-          <div class="service-card">
-            <div class="w-14 h-14 bg-[#06153b]/10 rounded-full flex items-center justify-center mb-6">
-              <span class="dual-gear text-2xl gold" aria-hidden="true"><i class="fas fa-cog"></i><i class="fas fa-cog"></i></span>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">Manutenzione Orologi</h3>
-            <p class="text-gray-500">Specializzati in movimenti al quarzo, ma possiamo riparare anche orologi meccanici/automatici a seconda della riparazione.</p>
-          </div>
-          <div class="service-card">
-            <div class="w-14 h-14 bg-[#06153b]/10 rounded-full flex items-center justify-center mb-6">
-              <i class="fas fa-hourglass-half text-2xl gold" aria-hidden="true"></i>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">Riparazione Orologi da Parete</h3>
-            <p class="text-gray-500">Orologi da parete, da camino, a pendolo – restauriamo tutti i tipi di orologi.</p>
-          </div>
-          <div class="service-card">
-            <div class="w-14 h-14 bg-[#06153b]/10 rounded-full flex items-center justify-center mb-6">
-              <i class="fas fa-key text-2xl gold" aria-hidden="true"></i>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">Duplicazione Chiavi</h3>
-            <p class="text-gray-500">Chiavi standard, di sicurezza e limitate – duplicate con precisione con bozzetti originali. (Non chiavi auto)</p>
-          </div>
-          <div class="service-card">
-            <div class="w-14 h-14 bg-[#06153b]/10 rounded-full flex items-center justify-center mb-6">
-              <i class="fas fa-shield-alt text-2xl gold" aria-hidden="true"></i>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">Chiavi ad Alta Sicurezza</h3>
-            <p class="text-gray-500">Taglio avanzato per chiavi dimple e tubolari. Non copiamo chiavi auto o laser.</p>
-          </div>
-        </div>
+    <!-- SERVICES CTA -->
+    <section class="py-16 bg-white" aria-label="Servizi" data-animate>
+      <div class="max-w-3xl mx-auto px-6 text-center">
+        <h2 class="text-4xl md:text-5xl mb-6 section-title">I Nostri <span class="gold-display">Servizi</span></h2>
+        <p class="text-gray-600 text-lg mb-8">Sostituzione batteria in meno di 2 minuti, riparazione orologi, cambio cinturino e copia chiavi — tutto mentre aspetti. Accettiamo senza appuntamento.</p>
+        <a href="/it/services.html" class="btn-primary inline-flex items-center gap-2">
+          <i class="fas fa-tools" aria-hidden="true"></i> Vedi Tutti i Servizi
+        </a>
       </div>
     </section>
     <!-- EQUIPMENT -->
@@ -875,41 +836,6 @@ span.inline-flex > span > strong { color: #2a2a2a; }
           <a href="https://search.google.com/local/reviews?placeid=ChIJU3JyAljB0RMRdoAB2vYR5oo" target="_blank" rel="noopener noreferrer" class="btn-primary">
             <i class="fab fa-google mr-2" aria-hidden="true"></i>Lascia una Recensione su Google
           </a>
-        </div>
-      </div>
-    </section>
-    <!-- BLOG -->
-    <section class="py-24 bg-white" aria-labelledby="blog-heading" data-animate>
-      <div class="max-w-5xl mx-auto px-6">
-        <h2 id="blog-heading" class="text-4xl md:text-5xl text-center mb-4 section-title">Dal Nostro <span class="gold-display">Blog</span></h2>
-        <p class="text-center text-gray-500 mb-12" style="font-size:1.05rem">Consigli pratici sulla cura degli orologi direttamente dal laboratorio.</p>
-        <div class="blog-grid">
-          <div class="blog-card">
-            <div class="blog-card-accent"></div>
-            <div class="blog-card-body">
-              <span class="blog-card-category"><i class="fas fa-battery-three-quarters" aria-hidden="true"></i> Cura dell'Orologio</span>
-              <a href="/it/blog/guida-batteria-orologio.html" class="blog-card-title">Quanto Dura la Batteria di un Orologio? Segnali di Scarica &amp; Cosa Fare</a>
-              <p class="blog-card-excerpt">La lancetta che salta ogni 4 secondi non è un guasto — è il tuo orologio che ti avvisa. Scopri i 5 segnali che la batteria sta per scaricarsi, se conviene farlo da soli, e cosa comporta la sostituzione professionale.</p>
-              <div class="blog-card-meta">
-                <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min di lettura</span>
-                <span>Marzo 2026</span>
-              </div>
-              <a href="/it/blog/guida-batteria-orologio.html" class="blog-card-read">Leggi l'articolo <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
-            </div>
-          </div>
-          <div class="blog-card">
-            <div class="blog-card-accent"></div>
-            <div class="blog-card-body">
-              <span class="blog-card-category"><i class="fas fa-cogs" aria-hidden="true"></i> Riparazione Orologi</span>
-              <a href="/it/blog/segni-revisione-orologio.html" class="blog-card-title">5 Segnali che il Tuo Orologio ha Bisogno di una Revisione, Non Solo di una Batteria</a>
-              <p class="blog-card-excerpt">La batteria nuova non ha risolto? Perde tempo, corona grattante o umidità in passato? Questi sono i segnali che il tuo orologio ha bisogno di una revisione completa — e cosa comporta davvero.</p>
-              <div class="blog-card-meta">
-                <span><i class="fas fa-clock" aria-hidden="true"></i> 6 min di lettura</span>
-                <span>Marzo 2026</span>
-              </div>
-              <a href="/it/blog/segni-revisione-orologio.html" class="blog-card-read">Leggi l'articolo <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
-            </div>
-          </div>
         </div>
       </div>
     </section>

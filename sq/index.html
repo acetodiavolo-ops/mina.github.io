@@ -167,6 +167,7 @@ iframe { border: 0; }
 .hamburger-btn.open .bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .hamburger-btn.open .bar:nth-child(2){opacity:0}
 .hamburger-btn.open .bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-drawer.open{max-height:400px;border-top-color:rgba(180,148,92,.18)}
 .relative { position: relative; }
 .flex-col { flex-direction: column; }
 .flex-wrap { flex-wrap: wrap; }
@@ -592,7 +593,7 @@ span.inline-flex > span > strong { color: #2a2a2a; }
         </p>
         <div class="flex flex-wrap gap-4 justify-center">
           <a href="#contact" class="btn-primary">Vizitoni Punishten</a>
-          <a href="#services" class="btn-secondary">Shërbimet Tona</a>
+          <a href="/sq/services.html" class="btn-secondary">Shërbimet Tona</a>
         </div>
         <div class="hero-trust-strip">
           <a href="https://search.google.com/local/reviews?placeid=ChIJU3JyAljB0RMRdoAB2vYR5oo" target="_blank" rel="noopener noreferrer" class="hero-trust-pill"><span class="pill-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>&nbsp;Vler&#235;sime Google</a>
@@ -712,54 +713,14 @@ span.inline-flex > span > strong { color: #2a2a2a; }
         </div>
       </div>
     </section>
-    <!-- SERVICES -->
-    <section id="services" class="py-24 bg-white" aria-labelledby="services-heading" data-animate>
-      <div class="max-w-7xl mx-auto px-6">
-        <h2 id="services-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Shërbimet <span class="gold-display">Tona</span></h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="service-card">
-            <div class="w-14 h-14 bg-[#06153b]/10 rounded-full flex items-center justify-center mb-6">
-              <i class="fas fa-battery-three-quarters text-2xl gold" aria-hidden="true"></i>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">Ndërrim Baterie Ore</h3>
-            <p class="text-gray-500">Zëvendësim i shpejtë për ora kuarci. Testim dhe garanci. <strong class="gold">Nën 2 minuta</strong>.</p>
-          </div>
-          <div class="service-card">
-            <div class="w-14 h-14 bg-[#06153b]/10 rounded-full flex items-center justify-center mb-6">
-              <i class="fas fa-clock text-2xl gold" aria-hidden="true"></i>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">Vendosje Rripash</h3>
-            <p class="text-gray-500">Lëkurë, metal, najlon – vendosim çdo lloj rripi. Gama të ndryshme në dispozicion.</p>
-          </div>
-          <div class="service-card">
-            <div class="w-14 h-14 bg-[#06153b]/10 rounded-full flex items-center justify-center mb-6">
-              <span class="dual-gear text-2xl gold" aria-hidden="true"><i class="fas fa-cog"></i><i class="fas fa-cog"></i></span>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">Servis Orësh</h3>
-            <p class="text-gray-500">Specializohemi në mekanizma kuarci, por mund të servisojmë edhe orë mekanike/automatike.</p>
-          </div>
-          <div class="service-card">
-            <div class="w-14 h-14 bg-[#06153b]/10 rounded-full flex items-center justify-center mb-6">
-              <i class="fas fa-hourglass-half text-2xl gold" aria-hidden="true"></i>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">Riparim Orësh Muri</h3>
-            <p class="text-gray-500">Ora muri, oxhaku, orët e gjyshërve – restaurimi i të gjitha llojeve.</p>
-          </div>
-          <div class="service-card">
-            <div class="w-14 h-14 bg-[#06153b]/10 rounded-full flex items-center justify-center mb-6">
-              <i class="fas fa-key text-2xl gold" aria-hidden="true"></i>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">Kopje Çelësash</h3>
-            <p class="text-gray-500">Standard, sigurie dhe të kufizuar – kopjuar me saktësi. (Jo çelësa makine)</p>
-          </div>
-          <div class="service-card">
-            <div class="w-14 h-14 bg-[#06153b]/10 rounded-full flex items-center justify-center mb-6">
-              <i class="fas fa-shield-alt text-2xl gold" aria-hidden="true"></i>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">Çelësa Sigurie të Lartë</h3>
-            <p class="text-gray-500">Prerje e avancuar për çelësa dimple dhe tubular. Nuk bëjmë kopje të çelësave të makinave.</p>
-          </div>
-        </div>
+    <!-- SERVICES CTA -->
+    <section class="py-16 bg-white" aria-label="Sherbimet" data-animate>
+      <div class="max-w-3xl mx-auto px-6 text-center">
+        <h2 class="text-4xl md:text-5xl mb-6 section-title">Shërbimet <span class="gold-display">Tona</span></h2>
+        <p class="text-gray-600 text-lg mb-8">Ndërrim baterie nën 2 minuta, riparim orësh, vendosje rripash dhe kopje çelësash me precizion — të gjitha ndërsa prisni. Mirëpresim pa takim paraprak.</p>
+        <a href="/sq/services.html" class="btn-primary inline-flex items-center gap-2">
+          <i class="fas fa-tools" aria-hidden="true"></i> Shiko të Gjitha Shërbimet
+        </a>
       </div>
     </section>
     <!-- EQUIPMENT -->
@@ -873,41 +834,6 @@ span.inline-flex > span > strong { color: #2a2a2a; }
           <a href="https://search.google.com/local/reviews?placeid=ChIJU3JyAljB0RMRdoAB2vYR5oo" target="_blank" rel="noopener noreferrer" class="btn-primary">
             <i class="fab fa-google mr-2" aria-hidden="true"></i>Lini një Koment në Google
           </a>
-        </div>
-      </div>
-    </section>
-    <!-- BLOG -->
-    <section class="py-24 bg-white" aria-labelledby="blog-heading" data-animate>
-      <div class="max-w-5xl mx-auto px-6">
-        <h2 id="blog-heading" class="text-4xl md:text-5xl text-center mb-4 section-title">Nga <span class="gold-display">Blogu Ynë</span></h2>
-        <p class="text-center text-gray-500 mb-12" style="font-size:1.05rem">Këshilla praktike për kujdesin e orëve nga dyshemeja e punishtes.</p>
-        <div class="blog-grid">
-          <div class="blog-card">
-            <div class="blog-card-accent"></div>
-            <div class="blog-card-body">
-              <span class="blog-card-category"><i class="fas fa-battery-three-quarters" aria-hidden="true"></i> Kujdesi i Orës</span>
-              <a href="/sq/blog/guide-bateria-ores.html" class="blog-card-title">Sa Zgjat Bateria e Orës? Shenjat që Po Dështon &amp; Çfarë të Bëni</a>
-              <p class="blog-card-excerpt">Sekondari që hidhet çdo 4 sekonda nuk është defekt — është ora juaj që ju paralajmëron. Mësoni 5 shenjat që bateria po mbaron, nëse duhet ta bëni vetë, dhe çfarë përfshin ndërrimi profesional.</p>
-              <div class="blog-card-meta">
-                <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min lexim</span>
-                <span>Mars 2026</span>
-              </div>
-              <a href="/sq/blog/guide-bateria-ores.html" class="blog-card-read">Lexo artikullin <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
-            </div>
-          </div>
-          <div class="blog-card">
-            <div class="blog-card-accent"></div>
-            <div class="blog-card-body">
-              <span class="blog-card-category"><i class="fas fa-cogs" aria-hidden="true"></i> Riparim Orësh</span>
-              <a href="/sq/blog/shenjat-riparimit-ores.html" class="blog-card-title">5 Shenja që Ora Juaj Ka Nevojë për Riparim, Jo Vetëm Bateri të Re</a>
-              <p class="blog-card-excerpt">Bateria e re nuk e zgjidhi problemin? Humb kohë, kurora e vrazhdë ose lagështi? Këto janë shenjat që ora juaj ka nevojë për riparim të plotë — dhe çfarë përfshin ai riparim.</p>
-              <div class="blog-card-meta">
-                <span><i class="fas fa-clock" aria-hidden="true"></i> 6 min lexim</span>
-                <span>Mars 2026</span>
-              </div>
-              <a href="/sq/blog/shenjat-riparimit-ores.html" class="blog-card-read">Lexo artikullin <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
-            </div>
-          </div>
         </div>
       </div>
     </section>
