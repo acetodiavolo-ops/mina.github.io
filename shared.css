@@ -440,3 +440,5 @@ input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px soli
 
 /* ── BUTTON LOADING STATE (directions geolocation wait) ──────────────────── */
 .btn-primary[aria-busy="true"],.btn-secondary[aria-busy="true"]{opacity:.7;cursor:wait;pointer-events:none}
+/* ── INLINE SVG ICONS — ensure correct sizing inside icon containers ─────── */
+.sign-icon>svg,.article-category>svg{display:inline-block;width:1em;height:1em;fill:currentColor;flex-shrink:0;vertical-align:-.125em}
