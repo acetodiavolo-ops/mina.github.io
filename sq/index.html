@@ -164,6 +164,10 @@ iframe { border: 0; }
 .site-header-wrap{position:sticky;top:0;z-index:50}
 .nav-drawer{display:none;background:rgba(6,21,59,.98);border-top:2px solid rgba(180,148,92,.18);box-shadow:0 8px 24px rgba(0,0,0,.3)}
 .nav-drawer.open{display:block}
+#nav-toggle:checked~.nav-drawer{display:block!important}
+#nav-toggle:checked~header .bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
+#nav-toggle:checked~header .bar:nth-child(2){opacity:0}
+#nav-toggle:checked~header .bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .hamburger-btn{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.45);border-radius:8px;cursor:pointer;padding:8px;flex-shrink:0}
 .hamburger-btn .bar{display:block;width:20px;height:2px;background:#fff;border-radius:1px;transition:transform .25s,opacity .25s}
 .hamburger-btn.open .bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -544,12 +548,13 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
   </div>
 
   <div class="site-header-wrap">
+  <input type="checkbox" id="nav-toggle" style="position:absolute;width:0;height:0;opacity:0;pointer-events:none">
   <header class="solid-header" role="banner">
     <div class="max-w-7xl mx-auto px-4 py-2">
       <div class="flex items-center gap-3">
-        <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Hap menune" aria-expanded="false" onclick="iglisiToggleNav(this,event)">
+        <label for="nav-toggle" class="hamburger-btn" aria-label="Toggle menu">
           <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        </button>
+        </label>
         <div class="logo-area" style="flex:1;min-width:0">
           <a href="/sq/" aria-label="Iglisi Watch home">
             <picture>
@@ -577,7 +582,7 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
       </div>
     </div>
   </header>
-<nav class="nav-drawer" id="navDrawer" style="display:none" aria-label="Navigimi">
+<nav class="nav-drawer" id="navDrawer" aria-label="Navigimi">
   <div class="nav-drawer-inner">
     <a href="/sq/" class="nav-drawer-link">Kryefaqja</a>
     <a href="/sq/services.html" class="nav-drawer-link">Sherbime</a>

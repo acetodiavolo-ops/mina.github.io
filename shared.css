@@ -317,6 +317,11 @@ button{text-transform:none;-webkit-appearance:button;background-color:transparen
 /* ── MOBILE NAV DRAWER ──────────────────────────────────────────────────── */
 .nav-drawer{display:none;background:var(--header-bg);border-top:2px solid rgba(180,148,92,.18);box-shadow:0 8px 24px rgba(0,0,0,.3)}
 .nav-drawer.open{display:block}
+/* CSS-only toggle via hidden checkbox */
+#nav-toggle:checked~.nav-drawer{display:block!important}
+#nav-toggle:checked~header .bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
+#nav-toggle:checked~header .bar:nth-child(2){opacity:0}
+#nav-toggle:checked~header .bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .nav-drawer-inner{padding:.5rem 1.5rem 1rem}
 .nav-drawer-link{display:block;color:rgba(255,255,255,.82);text-decoration:none;font-weight:500;font-size:.95rem;padding:.7rem 0;border-bottom:1px solid rgba(255,255,255,.07);transition:color .2s,padding-left .2s}
 .nav-drawer-link:last-child{border-bottom:none}
