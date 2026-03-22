@@ -18,7 +18,7 @@
   <link rel="preload" href="/webfonts/cormorant-garamond.woff2?v=2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/webfonts/fa-solid-900.woff2?v=2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/webfonts/fa-brands-400.woff2?v=2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/shared.css?v=21">
+  <link rel="stylesheet" href="/shared.css?v=22">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
     {"@type":"ListItem","position":1,"name":"Home","item":"https://watch.al/en/"},
@@ -94,25 +94,11 @@
     </div>
   </div>
 
-  <style>
-    .about-section{background:var(--bg-soft);padding:3rem 1.5rem 4rem}
-    .about-cards{display:flex;flex-direction:column;gap:1.5rem;max-width:700px;margin:0 auto}
-    .about-card{background:#fff;border-radius:1.25rem;padding:2rem 2rem 2rem;border:1px solid #eaeaea;display:flex;gap:1.5rem;align-items:flex-start;transition:box-shadow .2s}
-    .about-card:hover{box-shadow:0 6px 24px rgba(0,0,0,.09)}
-    .about-card-icon{width:3.25rem;height:3.25rem;border-radius:1rem;background:linear-gradient(135deg,rgba(180,148,92,.18),rgba(180,148,92,.06));display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--accent-gold);flex-shrink:0}
-    .about-card-body h2{font-size:1.2rem;font-weight:700;color:var(--text-primary);margin:0 0 .5rem}
-    .about-card-body p{font-size:.9rem;color:var(--text-secondary);line-height:1.65;margin:0 0 1rem}
-    .about-card-body p:last-child{margin-bottom:0}
-    .stat-row{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:2rem;justify-content:center}
-    .stat-box{background:#fff;border:1px solid #eaeaea;border-radius:1rem;padding:1.25rem 1.75rem;text-align:center;flex:1;min-width:130px}
-    .stat-box strong{display:block;font-size:1.75rem;font-weight:800;color:var(--accent-gold);line-height:1}
-    .stat-box span{font-size:.8rem;color:var(--text-secondary);margin-top:.25rem;display:block}
-  </style>
   <main id="main-content">
     <section class="about-section">
       <div class="about-cards">
 
-        <div class="about-card">
+        <div class="about-card" data-animate>
           <div class="about-card-icon"><i class="fas fa-gem" aria-hidden="true"></i></div>
           <div class="about-card-body">
             <h2>Two Decades of Craft</h2>
@@ -120,7 +106,7 @@
           </div>
         </div>
 
-        <div class="about-card">
+        <div class="about-card" data-animate>
           <div class="about-card-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
           <div class="about-card-body">
             <h2>Find Us</h2>
@@ -129,7 +115,7 @@
           </div>
         </div>
 
-        <div class="about-card">
+        <div class="about-card" data-animate>
           <div class="about-card-icon"><i class="fas fa-star" aria-hidden="true"></i></div>
           <div class="about-card-body">
             <h2>What Our Customers Say</h2>

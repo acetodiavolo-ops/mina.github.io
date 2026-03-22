@@ -18,7 +18,7 @@
   <link rel="preload" href="/webfonts/cormorant-garamond.woff2?v=2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/webfonts/fa-solid-900.woff2?v=2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/webfonts/fa-brands-400.woff2?v=2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/shared.css?v=21">
+  <link rel="stylesheet" href="/shared.css?v=22">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
     {"@type":"ListItem","position":1,"name":"Home","item":"https://watch.al/it/"},
@@ -94,41 +94,32 @@
     </div>
   </div>
 
-  <style>
-    .svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:1.5rem;max-width:900px;margin:0 auto}
-    .svc-card{background:#fff;border-radius:1.25rem;padding:2rem;border:1px solid #eaeaea;transition:box-shadow .2s,transform .2s;display:flex;flex-direction:column;gap:.75rem}
-    .svc-card:hover{box-shadow:0 8px 28px rgba(0,0,0,.10);transform:translateY(-3px)}
-    .svc-icon{width:3rem;height:3rem;border-radius:.75rem;background:linear-gradient(135deg,rgba(180,148,92,.15),rgba(180,148,92,.05));display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:var(--accent-gold);flex-shrink:0}
-    .svc-title{font-size:1.1rem;font-weight:700;color:var(--text-primary);margin:0}
-    .svc-desc{font-size:.875rem;color:var(--text-secondary);line-height:1.6;margin:0}
-    .svc-badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent-gold);background:rgba(180,148,92,.1);padding:.25rem .65rem;border-radius:999px;width:fit-content}
-  </style>
   <main id="main-content">
     <section style="background:var(--bg-soft);padding:3rem 1.5rem 4rem">
       <div class="svc-grid">
 
-        <div class="svc-card">
+        <div class="svc-card" data-animate>
           <div class="svc-icon"><i class="fas fa-battery-three-quarters" aria-hidden="true"></i></div>
           <h2 class="svc-title">Sostituzione Batteria</h2>
           <p class="svc-desc">Sostituita in meno di 2 minuti per la maggior parte degli orologi. Guarnizione controllata ad ogni cambio. Benvenuti senza appuntamento.</p>
           <span class="svc-badge"><i class="fas fa-bolt" aria-hidden="true"></i> Meno di 2 minuti</span>
         </div>
 
-        <div class="svc-card">
+        <div class="svc-card" data-animate>
           <div class="svc-icon"><i class="fas fa-cogs" aria-hidden="true"></i></div>
           <h2 class="svc-title">Riparazione e Revisione Orologio</h2>
           <p class="svc-desc">Diagnosi, pulizia e regolazione del movimento al quarzo. Revisione di orologi meccanici e automatici disponibile.</p>
           <span class="svc-badge"><i class="fas fa-tools" aria-hidden="true"></i> Tutti i tipi di orologi</span>
         </div>
 
-        <div class="svc-card">
+        <div class="svc-card" data-animate>
           <div class="svc-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
           <h2 class="svc-title">Montaggio Cinturino e Corona</h2>
           <p class="svc-desc">Montaggio cinturini in pelle, metallo e gomma. Sostituzione corona e asta. Lucidatura cristallo su richiesta.</p>
           <span class="svc-badge"><i class="fas fa-gem" aria-hidden="true"></i> Tutti i materiali</span>
         </div>
 
-        <div class="svc-card">
+        <div class="svc-card" data-animate>
           <div class="svc-icon"><i class="fas fa-key" aria-hidden="true"></i></div>
           <h2 class="svc-title">Taglio Chiavi</h2>
           <p class="svc-desc">Duplicati di precisione per chiavi standard, ufficio e alta sicurezza. Consegna rapida mentre aspetti. Chiavi auto non disponibili.</p>

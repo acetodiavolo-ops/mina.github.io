@@ -15,7 +15,7 @@
       "src": "https://watch.al/favicon.png",
       "sizes": "220x220",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": ["any", "maskable"]
     },
     {
       "src": "https://watch.al/favicon.webp",

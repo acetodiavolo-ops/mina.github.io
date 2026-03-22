@@ -860,28 +860,28 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
         <h2 id="faq-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Pyetjet <span class="gold-display">e Shpeshta</span></h2>
         <div class="space-y-2">
           <div class="faq-item">
-            <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-a-1">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a-1">
               <span class="faq-q-label"><i class="fas fa-battery-three-quarters faq-icon" aria-hidden="true"></i>Sa kohë duhet për të ndërruar baterinë e orës?</span>
               <i class="fas fa-chevron-down" aria-hidden="true"></i>
-            </div>
+            </button>
             <div class="faq-answer" id="faq-a-1" role="region">
               <p>Zakonisht <strong class="gold">nën 2 minuta</strong>, ndërsa prisni.</p>
             </div>
           </div>
           <div class="faq-item">
-            <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-a-2">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a-2">
               <span class="faq-q-label"><i class="fas fa-cogs faq-icon" aria-hidden="true"></i>A riparoni të gjitha llojet e orëve?</span>
               <i class="fas fa-chevron-down" aria-hidden="true"></i>
-            </div>
+            </button>
             <div class="faq-answer" id="faq-a-2" role="region">
               <p>Specializohemi në ora kuarci, por mund të riparojmë edhe orë mekanike/automatike në varësi të nevojës.</p>
             </div>
           </div>
           <div class="faq-item">
-            <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-a-3">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a-3">
               <span class="faq-q-label"><i class="fas fa-key faq-icon" aria-hidden="true"></i>Çfarë lloj çelësash kopjoni?</span>
               <i class="fas fa-chevron-down" aria-hidden="true"></i>
-            </div>
+            </button>
             <div class="faq-answer" id="faq-a-3" role="region">
               <p>Kopjojmë çelësa standard shtëpie, zyre dhe çelësa sigurie. Nuk kopjojmë çelësa makine.</p>
             </div>
@@ -925,7 +925,7 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
               <a href="https://wa.me/355676360510" target="_blank" rel="noopener noreferrer" class="btn-secondary">
                 <i class="fab fa-whatsapp mr-2" aria-hidden="true"></i>WhatsApp
               </a>
-              <button type="button" onclick="openDirections()" class="btn-secondary" style="cursor:pointer">
+              <button type="button" data-action="open-directions" class="btn-secondary">
                 <i class="fas fa-directions mr-2" aria-hidden="true"></i>Merr Drejtimin
               </button>
             </div>
@@ -972,8 +972,8 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
     </div>
   </footer>
 
-  <link rel="stylesheet" href="../shared.css?v=21" media="print" onload="this.media='all'" id="shared-css-async">
-  <noscript><link rel="stylesheet" href="../shared.css?v=21"></noscript>
+  <link rel="stylesheet" href="../shared.css?v=22" media="print" onload="this.media='all'" id="shared-css-async">
+  <noscript><link rel="stylesheet" href="../shared.css?v=22"></noscript>
   <script src="../shared.js?v=5" defer></script>
   <script>
     if ('serviceWorker' in navigator) {
@@ -984,20 +984,6 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
   function iglisiToggleNav(btn,e){e.stopPropagation();var d=document.getElementById('navDrawer');if(!d)return;var o=d.style.display==='block';d.style.display=o?'none':'block';btn.classList.toggle('open',!o);btn.setAttribute('aria-expanded',o?'false':'true')}
   document.addEventListener('click',function(e){var d=document.getElementById('navDrawer'),b=document.getElementById('hamburgerBtn');if(!d||d.style.display!=='block')return;if(b&&b.contains(e.target))return;if(d.contains(e.target)){if(e.target.closest&&e.target.closest('a[href]')){d.style.display='none';if(b){b.classList.remove('open');b.setAttribute('aria-expanded','false')}}return}d.style.display='none';if(b){b.classList.remove('open');b.setAttribute('aria-expanded','false')}});
   </script>
-  <script>
-  function openDirections(){
-    var dest='41.3201564,19.4453564';
-    var fallback='https://www.google.com/maps/dir/?api=1&destination='+dest;
-    if(!navigator.geolocation){window.open(fallback,'_blank');return;}
-    navigator.geolocation.getCurrentPosition(
-      function(pos){
-        var url='https://www.google.com/maps/dir/?api=1&origin='+pos.coords.latitude+','+pos.coords.longitude+'&destination='+dest;
-        window.open(url,'_blank');
-      },
-      function(){window.open(fallback,'_blank');},
-      {timeout:6000,maximumAge:60000,enableHighAccuracy:false}
-    );
-  }
-  </script>
+
 </body>
 </html>

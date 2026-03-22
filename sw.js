@@ -1,6 +1,6 @@
 'use strict';
 
-var CACHE = 'iglisi-v15';
+var CACHE = 'iglisi-v16';
 
 var PRECACHE = [
   '/en/',
@@ -21,7 +21,7 @@ var PRECACHE = [
   '/sq/blog/shenjat-riparimit-ores.html',
   '/sq/blog/kujdesi-brezit-ores.html',
   '/sq/blog/guide-kopjim-celesi.html',
-  '/shared.css?v=21',
+  '/shared.css?v=22',
   '/shared.js?v=5',
   '/webfonts/inter.woff2?v=2',
   '/webfonts/cormorant-garamond.woff2?v=2',
@@ -58,18 +58,29 @@ self.addEventListener('fetch', function(e) {
   var isOurs = url.startsWith(self.location.origin) || url.startsWith('https://watch.al/');
   if (!isOurs) return;
 
+  var isNav = e.request.mode === 'navigate';
+
   e.respondWith(
     caches.match(e.request).then(function(cached) {
-      if (cached) return cached;
-      return fetch(e.request).then(function(response) {
-        if (!response || response.status !== 200 || response.type === 'error') return response;
-        var clone = response.clone();
-        caches.open(CACHE).then(function(c) { c.put(e.request, clone); });
+      var networkFetch = fetch(e.request).then(function(response) {
+        if (response && response.status === 200 && response.type !== 'error') {
+          var clone = response.clone();
+          caches.open(CACHE).then(function(c) { c.put(e.request, clone); }).catch(function() {});
+        }
         return response;
       }).catch(function() {
         /* Offline fallback: return cached homepage for navigation requests */
-        if (e.request.mode === 'navigate') return caches.match('/en/');
+        if (isNav) return caches.match('/en/');
       });
+
+      /* Navigation: serve cached immediately, revalidate in background (stale-while-revalidate) */
+      if (cached && isNav) {
+        e.waitUntil(networkFetch);
+        return cached;
+      }
+
+      /* Assets: cache-first, fetch only if missing */
+      return cached || networkFetch;
     })
   );
 });
