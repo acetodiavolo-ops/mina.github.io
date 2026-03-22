@@ -315,8 +315,8 @@ button{text-transform:none;-webkit-appearance:button;background-color:transparen
 .site-header-wrap{position:sticky;top:0;z-index:50}
 
 /* ── MOBILE NAV DRAWER ──────────────────────────────────────────────────── */
-.nav-drawer{background:var(--header-bg);border-top:1px solid transparent;max-height:0;overflow:hidden;transition:max-height .3s ease,border-top-color .3s ease}
-.nav-drawer.open{max-height:400px;border-top-color:rgba(180,148,92,.18)}
+.nav-drawer{position:absolute;top:100%;left:0;right:0;background:var(--header-bg);opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-6px);transition:opacity .25s ease,visibility .25s ease,transform .25s ease;border-top:2px solid rgba(180,148,92,.18);box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:49}
+.nav-drawer.open{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
 .nav-drawer-inner{padding:.5rem 1.5rem 1rem}
 .nav-drawer-link{display:block;color:rgba(255,255,255,.82);text-decoration:none;font-weight:500;font-size:.95rem;padding:.7rem 0;border-bottom:1px solid rgba(255,255,255,.07);transition:color .2s,padding-left .2s}
 .nav-drawer-link:last-child{border-bottom:none}
@@ -336,5 +336,5 @@ button{text-transform:none;-webkit-appearance:button;background-color:transparen
 i.promise-icon,i.faq-icon{display:inline-flex;align-items:center;justify-content:center}
 
 /* ── HEADER CROWDING FIX ─────────────────────────────────────────────────── */
-/* Hide review badge pill at medium desktop — too cramped with WA btn + lang toggle */
-@media(max-width:1100px){.solid-header .review-badge{display:none}}
+@media(max-width:1200px){.solid-header .review-badge{display:none}}
+@media(max-width:900px){.solid-header a[href^="tel"]{display:none!important}}
