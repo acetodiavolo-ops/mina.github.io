@@ -579,7 +579,7 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
       </div>
     </div>
   </header>
-<nav class="nav-drawer" id="navDrawer" aria-label="Navigazione">
+<nav class="nav-drawer" id="navDrawer" style="display:none" aria-label="Navigazione">
   <div class="nav-drawer-inner">
     <a href="/it/" class="nav-drawer-link">Home</a>
     <a href="/it/services.html" class="nav-drawer-link">Servizi</a>
@@ -976,8 +976,8 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
     }
   </script>
   <script>
-  function iglisiToggleNav(btn,e){e.stopPropagation();var d=document.getElementById('navDrawer');if(!d)return;var o=!d.classList.contains('open');d.classList.toggle('open',o);btn.classList.toggle('open',o);btn.setAttribute('aria-expanded',o?'true':'false')}
-  document.addEventListener('click',function(e){var d=document.getElementById('navDrawer'),b=document.getElementById('hamburgerBtn');if(!d||!d.classList.contains('open'))return;if(b&&b.contains(e.target))return;if(d.contains(e.target)){if(e.target.closest&&e.target.closest('a[href]')){d.classList.remove('open');if(b){b.classList.remove('open');b.setAttribute('aria-expanded','false')}}return}d.classList.remove('open');if(b){b.classList.remove('open');b.setAttribute('aria-expanded','false')}});
+  function iglisiToggleNav(btn,e){e.stopPropagation();var d=document.getElementById('navDrawer');if(!d)return;var o=d.style.display==='block';d.style.display=o?'none':'block';btn.classList.toggle('open',!o);btn.setAttribute('aria-expanded',o?'false':'true')}
+  document.addEventListener('click',function(e){var d=document.getElementById('navDrawer'),b=document.getElementById('hamburgerBtn');if(!d||d.style.display!=='block')return;if(b&&b.contains(e.target))return;if(d.contains(e.target)){if(e.target.closest&&e.target.closest('a[href]')){d.style.display='none';if(b){b.classList.remove('open');b.setAttribute('aria-expanded','false')}}return}d.style.display='none';if(b){b.classList.remove('open');b.setAttribute('aria-expanded','false')}});
   </script>
 </body>
 </html>
