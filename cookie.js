@@ -2,6 +2,7 @@
 (function () {
   'use strict';
   var KEY = 'iglisi_consent', VER = '1';
+  var _prevFocus = null;
 
   function getConsent() {
     try { var d = JSON.parse(localStorage.getItem(KEY) || 'null'); return d && d.v === VER ? d : null; } catch (e) { return null; }
@@ -13,8 +14,26 @@
 
   function showBanner() { var b = el('cookie-banner'); if (b) { b.hidden = false; b.removeAttribute('hidden'); } }
   function hideBanner() { var b = el('cookie-banner'); if (b) b.hidden = true; }
-  function openModal() { var m = el('cookie-modal-overlay'); if (!m) return; m.hidden = false; m.removeAttribute('hidden'); var cb = el('cookie-toggle-analytics'); var consent = getConsent(); if (cb) cb.checked = !consent || consent.analytics !== false; }
-  function closeModal() { var m = el('cookie-modal-overlay'); if (m) m.hidden = true; }
+
+  function openModal() {
+    var m = el('cookie-modal-overlay');
+    if (!m) return;
+    _prevFocus = document.activeElement;
+    m.hidden = false;
+    m.removeAttribute('hidden');
+    var cb = el('cookie-toggle-analytics');
+    var consent = getConsent();
+    if (cb) cb.checked = !consent || consent.analytics !== false;
+    var focusable = m.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    if (focusable.length) focusable[0].focus();
+  }
+
+  function closeModal() {
+    var m = el('cookie-modal-overlay');
+    if (m) m.hidden = true;
+    if (_prevFocus && _prevFocus.focus) { _prevFocus.focus(); }
+    _prevFocus = null;
+  }
 
   function acceptAll() { saveConsent({ analytics: true }); hideBanner(); closeModal(); }
   function rejectAll() { saveConsent({ analytics: false }); hideBanner(); closeModal(); }
@@ -33,6 +52,19 @@
     if (ms) ms.addEventListener('click', savePrefs);
     if (ftrig) ftrig.addEventListener('click', showBanner);
     if (overlay) overlay.addEventListener('click', function (e) { if (e.target === overlay) { closeModal(); if (!getConsent()) showBanner(); } });
+
+    /* Focus trap: keep Tab cycling within the modal while it is open */
+    if (overlay) overlay.addEventListener('keydown', function (e) {
+      if (e.key !== 'Tab') return;
+      var focusable = overlay.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+      if (!focusable.length) return;
+      var first = focusable[0], last = focusable[focusable.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+      } else {
+        if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    });
 
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') { closeModal(); if (!getConsent()) showBanner(); }

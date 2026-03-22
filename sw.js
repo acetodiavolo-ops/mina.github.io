@@ -1,6 +1,6 @@
 'use strict';
 
-var CACHE = 'iglisi-v19';
+var CACHE = 'iglisi-v20';
 
 var PRECACHE = [
   '/en/',
@@ -21,8 +21,8 @@ var PRECACHE = [
   '/sq/blog/shenjat-riparimit-ores.html',
   '/sq/blog/kujdesi-brezit-ores.html',
   '/sq/blog/guide-kopjim-celesi.html',
-  '/shared.css?v=23',
-  '/shared.js?v=8',
+  '/shared.css?v=24',
+  '/shared.js?v=9',
   '/cookie.js',
   '/webfonts/inter.woff2?v=2',
   '/webfonts/cormorant-garamond.woff2?v=2',
@@ -70,8 +70,10 @@ self.addEventListener('fetch', function(e) {
         }
         return response;
       }).catch(function() {
-        /* Offline fallback: return cached homepage for navigation requests */
+        /* Offline fallback by request type */
         if (isNav) return caches.match('/en/');
+        var dest = e.request.destination;
+        if (dest === 'style') return new Response('', {headers:{'Content-Type':'text/css','Cache-Control':'no-store'}});
       });
 
       /* Navigation: serve cached immediately, revalidate in background (stale-while-revalidate) */

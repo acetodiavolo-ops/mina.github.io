@@ -116,6 +116,7 @@
 
 /* Respect prefers-reduced-motion */
 @media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
   .service-card:hover i,.equipment-card:hover i,.promise-card:hover i,.trust-badge:hover i,
   .service-card:active i,.equipment-card:active i,.promise-card:active i,.trust-badge:active i{animation:none!important;transform:scale(1.1)!important}
 }
@@ -389,6 +390,25 @@ i.promise-icon,i.faq-icon{display:inline-flex;align-items:center;justify-content
   .space-y-8>*+*{margin-top:1.25rem!important}
   /* Blog grid: ensure 1-col on narrow mobile */
   .blog-grid{grid-template-columns:1fr}
+}
+
+/* ── FORM FOCUS STYLES ───────────────────────────────────────────────────── */
+input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--accent-gold);outline-offset:2px}
+
+/* ── VISITED LINK COLOUR (blog article body links) ───────────────────────── */
+.article-container a:visited{color:var(--accent-teal)}
+
+/* ── PRINT STYLES ────────────────────────────────────────────────────────── */
+@media print{
+  .progress-bar,.whatsapp-float,.back-to-top,.call-bar,.solid-header,.site-header-wrap,
+  #cookie-banner,#cookie-modal-overlay,.carousel-btn,.carousel-dots,
+  [data-action="open-directions"]{display:none!important}
+  body{background:#fff!important;padding-bottom:0!important;background-image:none!important;color:#000}
+  .footer{background:#fff!important;color:#333!important;border-top:1px solid #ccc}
+  .hero-bg{background:#06153b!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  a[href]::after{content:" (" attr(href) ")";font-size:.8em;color:#555;word-break:break-all}
+  a[href^="tel"]::after,a[href^="https://wa.me"]::after,a[href^="#"]::after,
+  nav a::after,.btn-primary::after,.btn-secondary::after,[data-action]::after{content:""}
 }
 
 /* ── SERVICES PAGE CARDS ──────────────────────────────────────────────────── */
