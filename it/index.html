@@ -448,6 +448,8 @@ span.inline-flex > span > strong { color: #2a2a2a; }
 .blog-card-meta i { color: var(--accent-gold); }
 .blog-card-read { display: inline-flex; align-items: center; gap: .35rem; color: var(--accent-gold-accessible); font-size: .85rem; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; margin-top: .25rem; }
 .blog-card-read:hover { color: var(--accent-gold); }
+/* Icon circle centering — overrides .fas display:inline-block with higher specificity */
+i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justify-content:center}
   </style>
 
   <!-- STRUCTURED DATA -->
@@ -961,7 +963,7 @@ span.inline-flex > span > strong { color: #2a2a2a; }
     </div>
   </footer>
 
-  <link rel="stylesheet" href="../shared.css?v=14" media="print" id="shared-css-async">
+  <link rel="stylesheet" href="../shared.css?v=14" media="print" onload="this.media='all'" id="shared-css-async">
   <noscript><link rel="stylesheet" href="../shared.css?v=14"></noscript>
   <script src="../shared.js?v=5" defer></script>
   <script>
