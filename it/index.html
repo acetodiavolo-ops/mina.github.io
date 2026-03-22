@@ -426,6 +426,19 @@ address a:hover, #contact a:not(.btn-primary):not(.btn-secondary):hover { color:
 .trust-badge .text-gray-500 { color: #4b5563; }
 span.inline-flex > span { color: #2a2a2a; }
 span.inline-flex > span > strong { color: #2a2a2a; }
+/* Blog preview */
+.blog-card { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: var(--radius-card); overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.05); transition: transform var(--transition-base), box-shadow var(--transition-base); display: flex; flex-direction: column; }
+.blog-card:hover { transform: translateY(-5px); box-shadow: 0 16px 32px -8px rgba(0,0,0,0.12); }
+.blog-card-accent { height: 4px; background: linear-gradient(90deg, var(--accent-gold), var(--accent-teal)); }
+.blog-card-body { padding: 1.75rem; flex: 1; display: flex; flex-direction: column; }
+.blog-card-category { display: inline-flex; align-items: center; gap: .4rem; background: rgba(180,148,92,.1); color: var(--accent-gold-accessible); border-radius: 9999px; padding: .2rem .75rem; font-size: .72rem; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; margin-bottom: 1rem; }
+.blog-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 800; line-height: 1.25; color: var(--btn-start); margin-bottom: .75rem; text-decoration: none; display: block; }
+.blog-card-title:hover { color: var(--accent-gold-accessible); }
+.blog-card-excerpt { color: var(--text-secondary); font-size: .93rem; line-height: 1.7; margin-bottom: 1.25rem; flex: 1; }
+.blog-card-meta { display: flex; align-items: center; gap: 1rem; font-size: .78rem; color: #aaa; border-top: 1px solid var(--border-light); padding-top: 1rem; margin-top: auto; }
+.blog-card-meta i { color: var(--accent-gold); }
+.blog-card-read { display: inline-flex; align-items: center; gap: .35rem; color: var(--accent-gold-accessible); font-size: .85rem; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; margin-top: .25rem; }
+.blog-card-read:hover { color: var(--accent-gold); }
   </style>
 
   <!-- STRUCTURED DATA -->
@@ -859,6 +872,29 @@ span.inline-flex > span > strong { color: #2a2a2a; }
           <a href="https://search.google.com/local/reviews?placeid=ChIJU3JyAljB0RMRdoAB2vYR5oo" target="_blank" rel="noopener noreferrer" class="btn-primary">
             <i class="fab fa-google mr-2" aria-hidden="true"></i>Lascia una Recensione su Google
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section class="py-24 bg-white" aria-labelledby="blog-heading" data-animate>
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 id="blog-heading" class="text-4xl md:text-5xl text-center mb-4 section-title">Dal Nostro <span class="gold-display">Blog</span></h2>
+        <p class="text-center text-gray-500 mb-12" style="font-size:1.05rem">Consigli pratici sulla cura degli orologi direttamente dal laboratorio.</p>
+        <div style="max-width:36rem;margin:0 auto">
+          <div class="blog-card">
+            <div class="blog-card-accent"></div>
+            <div class="blog-card-body">
+              <span class="blog-card-category"><i class="fas fa-battery-three-quarters" aria-hidden="true"></i> Cura dell'Orologio</span>
+              <a href="/it/blog/guida-batteria-orologio.html" class="blog-card-title">Quanto Dura la Batteria di un Orologio? Segnali di Scarica &amp; Cosa Fare</a>
+              <p class="blog-card-excerpt">La lancetta che salta ogni 4 secondi non è un guasto — è il tuo orologio che ti avvisa. Scopri i 5 segnali che la batteria sta per scaricarsi, se conviene farlo da soli, e cosa comporta la sostituzione professionale.</p>
+              <div class="blog-card-meta">
+                <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min di lettura</span>
+                <span>Marzo 2026</span>
+              </div>
+              <a href="/it/blog/guida-batteria-orologio.html" class="blog-card-read">Leggi l'articolo <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
