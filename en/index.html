@@ -177,7 +177,12 @@ iframe { border: 0; }
 .inline-flex { display: inline-flex; }
 .grid { display: grid; }
 .hidden { display: none; }
-.nav-drawer{max-height:0;overflow:hidden}
+.nav-drawer{max-height:0;overflow:hidden;border-top:1px solid transparent}
+.hamburger-btn{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.45);border-radius:8px;cursor:pointer;padding:8px;flex-shrink:0}
+.hamburger-btn .bar{display:block;width:20px;height:2px;background:#fff;border-radius:1px;transition:transform .25s,opacity .25s}
+.hamburger-btn.open .bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger-btn.open .bar:nth-child(2){opacity:0}
+.hamburger-btn.open .bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .relative { position: relative; }
 .flex-col { flex-direction: column; }
 .flex-wrap { flex-wrap: wrap; }
