@@ -1,12 +1,18 @@
 'use strict';
 
-var CACHE = 'iglisi-v1';
+var CACHE = 'iglisi-v2';
 
 var PRECACHE = [
   '/en/',
   '/sq/',
   '/it/',
-  '/shared.css?v=13',
+  '/en/blog/watch-battery-guide.html',
+  '/en/blog/watch-service-signs.html',
+  '/it/blog/guida-batteria-orologio.html',
+  '/it/blog/segni-revisione-orologio.html',
+  '/sq/blog/guide-bateria-ores.html',
+  '/sq/blog/shenjat-riparimit-ores.html',
+  '/shared.css?v=14',
   '/shared.js?v=5',
   '/webfonts/inter.woff2?v=2',
   '/webfonts/cormorant-garamond.woff2?v=2',
