@@ -258,4 +258,68 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/key-duplication-guide.html"/>
   </url>
 
+  <!-- ── BLOG: WATCH WATER RESISTANCE ──────────────────────────────────── -->
+  <url>
+    <loc>https://watch.al/en/blog/watch-water-resistance.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-water-resistance.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/rezistenca-ujes-ores.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/impermeabilita-orologio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-water-resistance.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/sq/blog/rezistenca-ujes-ores.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-water-resistance.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/rezistenca-ujes-ores.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/impermeabilita-orologio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-water-resistance.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/it/blog/impermeabilita-orologio.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-water-resistance.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/rezistenca-ujes-ores.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/impermeabilita-orologio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-water-resistance.html"/>
+  </url>
+
+  <!-- ── BLOG: WATCH CLEANING GUIDE ────────────────────────────────────── -->
+  <url>
+    <loc>https://watch.al/en/blog/watch-cleaning-guide.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-cleaning-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/guide-pastrimit-ores.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/guida-pulizia-orologio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-cleaning-guide.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/sq/blog/guide-pastrimit-ores.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-cleaning-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/guide-pastrimit-ores.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/guida-pulizia-orologio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-cleaning-guide.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/it/blog/guida-pulizia-orologio.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-cleaning-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/guide-pastrimit-ores.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/guida-pulizia-orologio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-cleaning-guide.html"/>
+  </url>
+
 </urlset>
