@@ -1,8 +1,9 @@
 'use strict';
 
-var CACHE = 'iglisi-v22';
+var CACHE = 'iglisi-v24';
 
 var PRECACHE = [
+  '/offline.html',
   '/en/',
   '/sq/',
   '/it/',
@@ -28,7 +29,7 @@ var PRECACHE = [
   '/sq/blog/rezistenca-ujes-ores.html',
   '/sq/blog/guide-pastrimit-ores.html',
   '/shared.css?v=24',
-  '/shared.js?v=10',
+  '/shared.js?v=11',
   '/cookie.js',
   '/webfonts/inter.woff2?v=2',
   '/webfonts/cormorant-garamond.woff2?v=2',
@@ -77,7 +78,7 @@ self.addEventListener('fetch', function(e) {
         return response;
       }).catch(function() {
         /* Offline fallback by request type */
-        if (isNav) return caches.match('/en/');
+        if (isNav) return caches.match('/offline.html');
         var dest = e.request.destination;
         if (dest === 'style') return new Response('', {headers:{'Content-Type':'text/css','Cache-Control':'no-store'}});
       });

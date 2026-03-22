@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#b4945c">
+  <title>You're Offline | Iglisi Watch</title>
+  <link rel="icon" type="image/png" href="https://watch.al/favicon.png">
+  <link rel="manifest" href="/manifest.json">
+  <style>
+    :root{--accent-gold:#b4945c;--btn-start:#06153b;--text-primary:#2a2a2a;--text-secondary:#4a4a4a}
+    *,::before,::after{box-sizing:border-box}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Inter',sans-serif;background:var(--btn-start);color:#fff;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem}
+    .icon{font-size:3.5rem;margin-bottom:1.25rem;opacity:.7}
+    h1{font-size:clamp(1.6rem,5vw,2.2rem);font-weight:800;margin:0 0 .75rem;letter-spacing:.02em}
+    p{color:rgba(255,255,255,.65);font-size:1rem;line-height:1.65;max-width:380px;margin:0 0 2rem}
+    .btn{display:inline-block;background:var(--accent-gold);color:#fff;padding:.75rem 1.75rem;border-radius:9999px;font-weight:600;font-size:.95rem;text-decoration:none;transition:opacity .2s}
+    .btn:hover{opacity:.85}
+    .divider{width:48px;height:2px;background:rgba(255,255,255,.15);margin:2.5rem auto}
+    .cached-links{display:flex;flex-direction:column;gap:.5rem}
+    .cached-links a{color:rgba(255,255,255,.65);font-size:.9rem;text-decoration:underline;text-underline-offset:3px}
+    .cached-links a:hover{color:var(--accent-gold)}
+    .label{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.5rem}
+  </style>
+</head>
+<body>
+  <div class="icon">⌚</div>
+  <h1>You're offline</h1>
+  <p>It looks like you've lost your internet connection. Check your connection and try again — or browse a page you've already visited.</p>
+  <a href="/en/" class="btn" onclick="location.reload();return false">Try again</a>
+
+  <div class="divider"></div>
+
+  <p class="label">Cached pages</p>
+  <nav class="cached-links" aria-label="Cached pages">
+    <a href="/en/">Home (EN)</a>
+    <a href="/it/">Home (IT)</a>
+    <a href="/sq/">Home (SQ)</a>
+    <a href="/en/blog/">Blog (EN)</a>
+    <a href="/it/blog/">Blog (IT)</a>
+    <a href="/sq/blog/">Blog (SQ)</a>
+  </nav>
+</body>
+</html>
