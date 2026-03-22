@@ -2,9 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
+  <!-- ── HOME PAGES ─────────────────────────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/</loc>
-    <lastmod>2026-03-15</lastmod>
+    <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/"/>
@@ -12,10 +13,9 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/"/>
   </url>
-
   <url>
     <loc>https://watch.al/sq/</loc>
-    <lastmod>2026-03-15</lastmod>
+    <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/"/>
@@ -23,10 +23,9 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/"/>
   </url>
-
   <url>
     <loc>https://watch.al/it/</loc>
-    <lastmod>2026-03-15</lastmod>
+    <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/"/>
@@ -35,14 +34,228 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/"/>
   </url>
 
+  <!-- ── SERVICES PAGES ─────────────────────────────────────────────────── -->
+  <url>
+    <loc>https://watch.al/en/services.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/services.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/services.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/services.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/services.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/sq/services.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/services.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/services.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/services.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/services.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/it/services.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/services.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/services.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/services.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/services.html"/>
+  </url>
 
+  <!-- ── ABOUT PAGES ────────────────────────────────────────────────────── -->
+  <url>
+    <loc>https://watch.al/en/about.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/about.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/about.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/sq/about.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/about.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/about.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/it/about.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/about.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/about.html"/>
+  </url>
+
+  <!-- ── BLOG INDEX PAGES ───────────────────────────────────────────────── -->
+  <url>
+    <loc>https://watch.al/en/blog/</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/"/>
+  </url>
+  <url>
+    <loc>https://watch.al/sq/blog/</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/"/>
+  </url>
+  <url>
+    <loc>https://watch.al/it/blog/</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/"/>
+  </url>
+
+  <!-- ── BLOG: WATCH BATTERY GUIDE ──────────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/watch-battery-guide.html</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-battery-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/guide-bateria-ores.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/guida-batteria-orologio.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-battery-guide.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/sq/blog/guide-bateria-ores.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-battery-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/guide-bateria-ores.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/guida-batteria-orologio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-battery-guide.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/it/blog/guida-batteria-orologio.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-battery-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/guide-bateria-ores.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/guida-batteria-orologio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-battery-guide.html"/>
+  </url>
+
+  <!-- ── BLOG: WATCH SERVICE SIGNS ──────────────────────────────────────── -->
+  <url>
+    <loc>https://watch.al/en/blog/watch-service-signs.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-service-signs.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/shenjat-riparimit-ores.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/segni-revisione-orologio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-service-signs.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/sq/blog/shenjat-riparimit-ores.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-service-signs.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/shenjat-riparimit-ores.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/segni-revisione-orologio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-service-signs.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/it/blog/segni-revisione-orologio.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-service-signs.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/shenjat-riparimit-ores.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/segni-revisione-orologio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-service-signs.html"/>
+  </url>
+
+  <!-- ── BLOG: WATCH STRAP CARE ─────────────────────────────────────────── -->
+  <url>
+    <loc>https://watch.al/en/blog/watch-strap-care.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-strap-care.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/kujdesi-brezit-ores.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/cura-cinturino-orologio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-strap-care.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/sq/blog/kujdesi-brezit-ores.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-strap-care.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/kujdesi-brezit-ores.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/cura-cinturino-orologio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-strap-care.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/it/blog/cura-cinturino-orologio.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-strap-care.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/kujdesi-brezit-ores.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/cura-cinturino-orologio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-strap-care.html"/>
+  </url>
+
+  <!-- ── BLOG: KEY DUPLICATION GUIDE ───────────────────────────────────── -->
+  <url>
+    <loc>https://watch.al/en/blog/key-duplication-guide.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/key-duplication-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/guide-kopjim-celesi.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/guida-duplicato-chiavi.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/key-duplication-guide.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/sq/blog/guide-kopjim-celesi.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/key-duplication-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/guide-kopjim-celesi.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/guida-duplicato-chiavi.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/key-duplication-guide.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/it/blog/guida-duplicato-chiavi.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/key-duplication-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/guide-kopjim-celesi.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/guida-duplicato-chiavi.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/key-duplication-guide.html"/>
   </url>
 
 </urlset>
