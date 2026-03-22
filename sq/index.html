@@ -332,7 +332,7 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 800; let
 .review-badge:hover { background: #e4e4e4; border-color: var(--accent-gold); }
 .review-badge .stars { color: #8c6d3f; letter-spacing: 2px; }
 @media (max-width: 768px) { .review-badge { display: none; } }
-.hero-bg { position: relative; overflow: hidden; background: linear-gradient(145deg,#020b1e 0%,#06153b 30%,#0c2060 65%,#091d4f 100%); }
+.hero-bg { position: relative; overflow: hidden; background: linear-gradient(145deg,#020b1e 0%,#06153b 30%,#0c2060 65%,#091d4f 100%); border-bottom: 2px solid rgba(180,148,92,0.2); }
 .hero-bg-img { display: none; }
 .hero-bg::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(180,148,92,0.15) 1px, transparent 1px), radial-gradient(circle, rgba(32,178,170,0.08) 1px, transparent 1px); background-size: 40px 40px, 60px 60px; background-position: 0 0, 20px 20px; z-index: 1; pointer-events: none; }
 .hero-bg::after { content: ''; position: absolute; right: 5%; top: 50%; transform: translateY(-50%); width: 380px; height: 380px; background-image: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22%3E%3Ccircle cx=%22100%22 cy=%22100%22 r=%2295%22 fill=%22none%22 stroke=%22white%22 stroke-width=%223%22/%3E%3Ccircle cx=%22100%22 cy=%22100%22 r=%2285%22 fill=%22none%22 stroke=%22white%22 stroke-width=%221%22 opacity=%22.4%22/%3E%3Cline x1=%22100%22 y1=%228%22 x2=%22100%22 y2=%2222%22 stroke=%22white%22 stroke-width=%224%22 stroke-linecap=%22round%22/%3E%3Cline x1=%22100%22 y1=%22178%22 x2=%22100%22 y2=%22192%22 stroke=%22white%22 stroke-width=%224%22 stroke-linecap=%22round%22/%3E%3Cline x1=%228%22 y1=%22100%22 x2=%2222%22 y2=%22100%22 stroke=%22white%22 stroke-width=%224%22 stroke-linecap=%22round%22/%3E%3Cline x1=%22178%22 y1=%22100%22 x2=%22192%22 y2=%22100%22 stroke=%22white%22 stroke-width=%224%22 stroke-linecap=%22round%22/%3E%3Cline x1=%2255.4%22 y1=%2255.4%22 x2=%2265.5%22 y2=%2265.5%22 stroke=%22white%22 stroke-width=%222%22 stroke-linecap=%22round%22/%3E%3Cline x1=%22144.6%22 y1=%2255.4%22 x2=%22134.5%22 y2=%2265.5%22 stroke=%22white%22 stroke-width=%222%22 stroke-linecap=%22round%22/%3E%3Cline x1=%2255.4%22 y1=%22144.6%22 x2=%2265.5%22 y2=%22134.5%22 stroke=%22white%22 stroke-width=%222%22 stroke-linecap=%22round%22/%3E%3Cline x1=%22144.6%22 y1=%22144.6%22 x2=%22134.5%22 y2=%22134.5%22 stroke=%22white%22 stroke-width=%222%22 stroke-linecap=%22round%22/%3E%3Cline x1=%22100%22 y1=%22100%22 x2=%2255%22 y2=%2268%22 stroke=%22white%22 stroke-width=%225%22 stroke-linecap=%22round%22/%3E%3Cline x1=%22100%22 y1=%22100%22 x2=%22165%22 y2=%2262%22 stroke=%22white%22 stroke-width=%223%22 stroke-linecap=%22round%22/%3E%3Ccircle cx=%22100%22 cy=%22100%22 r=%224%22 fill=%22white%22/%3E%3Crect x=%22193%22 y=%2291%22 width=%229%22 height=%2218%22 rx=%223%22 fill=%22none%22 stroke=%22white%22 stroke-width=%222%22/%3E%3C/svg%3E"); background-size: contain; background-repeat: no-repeat; opacity: 0.08; z-index: 1; pointer-events: none; }
@@ -541,7 +541,10 @@ span.inline-flex > span > strong { color: #2a2a2a; }
           <p class="desktop-only-text text-xs text-gray-500">Biznes familjar · Që nga 2002</p>
         </div>
         <nav class="hidden md:flex items-center gap-4" aria-label="Navigimi kryesor">
-          <a href="tel:+355676360510" class="flex items-center gap-2 text-gray-700 hover:text-[#b4945c] transition">
+          <a href="/sq/services.html" class="nav-page-link">ShÃ«rbime</a>
+          <a href="/sq/about.html" class="nav-page-link">Rreth Nesh</a>
+          <a href="/sq/blog/" class="nav-page-link">Blog</a>
+          <span class="nav-sep" aria-hidden="true"></span>          <a href="tel:+355676360510" class="flex items-center gap-2 text-gray-700 hover:text-[#b4945c] transition">
             <i class="fas fa-phone-alt text-xl gold" aria-hidden="true"></i>
             <span class="font-medium">+355 67 636 0510</span>
           </a>
@@ -563,7 +566,15 @@ span.inline-flex > span > strong { color: #2a2a2a; }
       </div>
     </div>
   </header>
-
+<nav class="nav-drawer" id="navDrawer" aria-label="Navigimi">
+  <div class="nav-drawer-inner">
+    <a href="/sq/" class="nav-drawer-link">Kryefaqja</a>
+    <a href="/sq/services.html" class="nav-drawer-link">ShÃ«rbime</a>
+    <a href="/sq/about.html" class="nav-drawer-link">Rreth Nesh</a>
+    <a href="/sq/blog/" class="nav-drawer-link">Blog</a>
+    <a href="tel:+355676360510" class="nav-drawer-link nav-drawer-phone">+355 67 636 0510</a>
+  </div>
+</nav>
   <main id="main-content">
 
     <!-- HERO -->
@@ -583,37 +594,15 @@ span.inline-flex > span > strong { color: #2a2a2a; }
           <a href="#services" class="btn-secondary">Shërbimet Tona</a>
         </div>
         <div class="hero-trust-strip">
-          <span class="hero-trust-pill"><span class="pill-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><strong id="hero-rating">5.0</strong><span aria-hidden="true"> &middot; </span><span id="hero-review-count">87</span> vler&#235;sime</span>
-          <span class="hero-trust-pill"><i class="fas fa-clock" aria-hidden="true"></i> H&#235;n&ndash;Sht &nbsp;<span id="hero-hours">8:30&ndash;20:30</span></span>
+          <a href="https://search.google.com/local/reviews?placeid=ChIJU3JyAljB0RMRdoAB2vYR5oo" target="_blank" rel="noopener noreferrer" class="hero-trust-pill"><span class="pill-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>&nbsp;Vler&#235;sime Google</a>
+          <span class="hero-trust-pill"><i class="fas fa-clock" aria-hidden="true"></i>&nbsp;H&#235;n&ndash;Sht &middot; 8:30&ndash;20:30</span>
         </div>
       </div>
-      <div class="hero-wave" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 Q720,0 1440,40 L1440,56 L0,56 Z" fill="#ffffff"/></svg></div>
     </section>
-    <script>
-    (function(){
-      try{
-        var ss=document.querySelectorAll('script[type="application/ld+json"]');
-        for(var i=0;i<ss.length;i++){
-          var d=JSON.parse(ss[i].textContent);
-          if(d.aggregateRating){
-            var rv=document.getElementById('hero-rating');
-            var rc=document.getElementById('hero-review-count');
-            if(rv)rv.textContent=d.aggregateRating.ratingValue;
-            if(rc)rc.textContent=d.aggregateRating.reviewCount;
-          }
-          if(d.openingHoursSpecification&&d.openingHoursSpecification.length){
-            var spec=d.openingHoursSpecification[0];
-            var h=document.getElementById('hero-hours');
-            if(h&&spec.opens&&spec.closes)h.textContent=spec.opens+'\u2013'+spec.closes;
-          }
-        }
-      }catch(e){}
-    })();
-    </script>
     <!-- PROMISE -->
     <section class="pt-16 pb-8 bg-white/70" aria-label="Premtimet tona" data-animate>
       <div class="max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 promise-grid">
           <div class="promise-card">
             <i class="fas fa-bolt promise-icon" aria-hidden="true"></i>
             <h2 class="font-bold text-lg">Shërbim i Shpejtë</h2>
@@ -636,33 +625,11 @@ span.inline-flex > span > strong { color: #2a2a2a; }
           </div>
         </div>
       </div>
-      <div class="hero-wave" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 Q720,0 1440,40 L1440,56 L0,56 Z" fill="#ffffff"/></svg></div>
     </section>
-    <script>
-    (function(){
-      try{
-        var ss=document.querySelectorAll('script[type="application/ld+json"]');
-        for(var i=0;i<ss.length;i++){
-          var d=JSON.parse(ss[i].textContent);
-          if(d.aggregateRating){
-            var rv=document.getElementById('hero-rating');
-            var rc=document.getElementById('hero-review-count');
-            if(rv)rv.textContent=d.aggregateRating.ratingValue;
-            if(rc)rc.textContent=d.aggregateRating.reviewCount;
-          }
-          if(d.openingHoursSpecification&&d.openingHoursSpecification.length){
-            var spec=d.openingHoursSpecification[0];
-            var h=document.getElementById('hero-hours');
-            if(h&&spec.opens&&spec.closes)h.textContent=spec.opens+'\u2013'+spec.closes;
-          }
-        }
-      }catch(e){}
-    })();
-    </script>
     <!-- TRUST BADGES -->
     <section class="pb-16 pt-8 bg-white/70" aria-label="Numrat tanë" data-animate data-animate-delay="0.1s">
       <div class="max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 promise-grid">
           <div class="trust-badge">
             <i class="fas fa-calendar-alt text-3xl gold mb-2" aria-hidden="true"></i>
             <p class="font-bold text-xl">Që nga 2002</p>
@@ -691,29 +658,7 @@ span.inline-flex > span > strong { color: #2a2a2a; }
           </span>
         </div>
       </div>
-      <div class="hero-wave" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 Q720,0 1440,40 L1440,56 L0,56 Z" fill="#ffffff"/></svg></div>
     </section>
-    <script>
-    (function(){
-      try{
-        var ss=document.querySelectorAll('script[type="application/ld+json"]');
-        for(var i=0;i<ss.length;i++){
-          var d=JSON.parse(ss[i].textContent);
-          if(d.aggregateRating){
-            var rv=document.getElementById('hero-rating');
-            var rc=document.getElementById('hero-review-count');
-            if(rv)rv.textContent=d.aggregateRating.ratingValue;
-            if(rc)rc.textContent=d.aggregateRating.reviewCount;
-          }
-          if(d.openingHoursSpecification&&d.openingHoursSpecification.length){
-            var spec=d.openingHoursSpecification[0];
-            var h=document.getElementById('hero-hours');
-            if(h&&spec.opens&&spec.closes)h.textContent=spec.opens+'\u2013'+spec.closes;
-          }
-        }
-      }catch(e){}
-    })();
-    </script>
     <!-- WHY CHOOSE US -->
     <section class="py-24 bg-white" aria-labelledby="why-heading" data-animate>
       <div class="max-w-7xl mx-auto px-6">
@@ -738,29 +683,7 @@ span.inline-flex > span > strong { color: #2a2a2a; }
           </div>
         </div>
       </div>
-      <div class="hero-wave" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 Q720,0 1440,40 L1440,56 L0,56 Z" fill="#ffffff"/></svg></div>
     </section>
-    <script>
-    (function(){
-      try{
-        var ss=document.querySelectorAll('script[type="application/ld+json"]');
-        for(var i=0;i<ss.length;i++){
-          var d=JSON.parse(ss[i].textContent);
-          if(d.aggregateRating){
-            var rv=document.getElementById('hero-rating');
-            var rc=document.getElementById('hero-review-count');
-            if(rv)rv.textContent=d.aggregateRating.ratingValue;
-            if(rc)rc.textContent=d.aggregateRating.reviewCount;
-          }
-          if(d.openingHoursSpecification&&d.openingHoursSpecification.length){
-            var spec=d.openingHoursSpecification[0];
-            var h=document.getElementById('hero-hours');
-            if(h&&spec.opens&&spec.closes)h.textContent=spec.opens+'\u2013'+spec.closes;
-          }
-        }
-      }catch(e){}
-    })();
-    </script>
     <!-- WORKSHOP -->
     <section class="py-24 bg-gray-50" aria-labelledby="workshop-heading" data-animate>
       <div class="max-w-6xl mx-auto px-6">
@@ -787,29 +710,7 @@ span.inline-flex > span > strong { color: #2a2a2a; }
           </div>
         </div>
       </div>
-      <div class="hero-wave" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 Q720,0 1440,40 L1440,56 L0,56 Z" fill="#ffffff"/></svg></div>
     </section>
-    <script>
-    (function(){
-      try{
-        var ss=document.querySelectorAll('script[type="application/ld+json"]');
-        for(var i=0;i<ss.length;i++){
-          var d=JSON.parse(ss[i].textContent);
-          if(d.aggregateRating){
-            var rv=document.getElementById('hero-rating');
-            var rc=document.getElementById('hero-review-count');
-            if(rv)rv.textContent=d.aggregateRating.ratingValue;
-            if(rc)rc.textContent=d.aggregateRating.reviewCount;
-          }
-          if(d.openingHoursSpecification&&d.openingHoursSpecification.length){
-            var spec=d.openingHoursSpecification[0];
-            var h=document.getElementById('hero-hours');
-            if(h&&spec.opens&&spec.closes)h.textContent=spec.opens+'\u2013'+spec.closes;
-          }
-        }
-      }catch(e){}
-    })();
-    </script>
     <!-- SERVICES -->
     <section id="services" class="py-24 bg-white" aria-labelledby="services-heading" data-animate>
       <div class="max-w-7xl mx-auto px-6">
@@ -859,29 +760,7 @@ span.inline-flex > span > strong { color: #2a2a2a; }
           </div>
         </div>
       </div>
-      <div class="hero-wave" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 Q720,0 1440,40 L1440,56 L0,56 Z" fill="#ffffff"/></svg></div>
     </section>
-    <script>
-    (function(){
-      try{
-        var ss=document.querySelectorAll('script[type="application/ld+json"]');
-        for(var i=0;i<ss.length;i++){
-          var d=JSON.parse(ss[i].textContent);
-          if(d.aggregateRating){
-            var rv=document.getElementById('hero-rating');
-            var rc=document.getElementById('hero-review-count');
-            if(rv)rv.textContent=d.aggregateRating.ratingValue;
-            if(rc)rc.textContent=d.aggregateRating.reviewCount;
-          }
-          if(d.openingHoursSpecification&&d.openingHoursSpecification.length){
-            var spec=d.openingHoursSpecification[0];
-            var h=document.getElementById('hero-hours');
-            if(h&&spec.opens&&spec.closes)h.textContent=spec.opens+'\u2013'+spec.closes;
-          }
-        }
-      }catch(e){}
-    })();
-    </script>
     <!-- EQUIPMENT -->
     <section class="py-24 bg-gray-50" aria-labelledby="equipment-heading" data-animate>
       <div class="max-w-7xl mx-auto px-6">
@@ -904,29 +783,7 @@ span.inline-flex > span > strong { color: #2a2a2a; }
           </div>
         </div>
       </div>
-      <div class="hero-wave" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 Q720,0 1440,40 L1440,56 L0,56 Z" fill="#ffffff"/></svg></div>
     </section>
-    <script>
-    (function(){
-      try{
-        var ss=document.querySelectorAll('script[type="application/ld+json"]');
-        for(var i=0;i<ss.length;i++){
-          var d=JSON.parse(ss[i].textContent);
-          if(d.aggregateRating){
-            var rv=document.getElementById('hero-rating');
-            var rc=document.getElementById('hero-review-count');
-            if(rv)rv.textContent=d.aggregateRating.ratingValue;
-            if(rc)rc.textContent=d.aggregateRating.reviewCount;
-          }
-          if(d.openingHoursSpecification&&d.openingHoursSpecification.length){
-            var spec=d.openingHoursSpecification[0];
-            var h=document.getElementById('hero-hours');
-            if(h&&spec.opens&&spec.closes)h.textContent=spec.opens+'\u2013'+spec.closes;
-          }
-        }
-      }catch(e){}
-    })();
-    </script>
     <!-- PROCESS -->
     <section class="py-24 bg-white" aria-labelledby="process-heading" data-animate>
       <div class="max-w-4xl mx-auto px-6">
@@ -955,29 +812,7 @@ span.inline-flex > span > strong { color: #2a2a2a; }
           </div>
         </div>
       </div>
-      <div class="hero-wave" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 Q720,0 1440,40 L1440,56 L0,56 Z" fill="#ffffff"/></svg></div>
     </section>
-    <script>
-    (function(){
-      try{
-        var ss=document.querySelectorAll('script[type="application/ld+json"]');
-        for(var i=0;i<ss.length;i++){
-          var d=JSON.parse(ss[i].textContent);
-          if(d.aggregateRating){
-            var rv=document.getElementById('hero-rating');
-            var rc=document.getElementById('hero-review-count');
-            if(rv)rv.textContent=d.aggregateRating.ratingValue;
-            if(rc)rc.textContent=d.aggregateRating.reviewCount;
-          }
-          if(d.openingHoursSpecification&&d.openingHoursSpecification.length){
-            var spec=d.openingHoursSpecification[0];
-            var h=document.getElementById('hero-hours');
-            if(h&&spec.opens&&spec.closes)h.textContent=spec.opens+'\u2013'+spec.closes;
-          }
-        }
-      }catch(e){}
-    })();
-    </script>
     <!-- GALLERY -->
     <section class="py-24 bg-gray-50" aria-labelledby="gallery-heading" data-animate>
       <div class="max-w-7xl mx-auto px-6">
@@ -992,29 +827,7 @@ span.inline-flex > span > strong { color: #2a2a2a; }
           <div role="listitem"><picture><source srcset="https://watch.al/5.raw.githubusercontent.com.webp" type="image/webp"><img class="gallery-thumb" loading="lazy" src="https://watch.al/5.raw.githubusercontent.com.jpg" alt="Çelësa të ndryshëm në punishte" width="600" height="280" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"></picture></div>
         </div>
       </div>
-      <div class="hero-wave" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 Q720,0 1440,40 L1440,56 L0,56 Z" fill="#ffffff"/></svg></div>
     </section>
-    <script>
-    (function(){
-      try{
-        var ss=document.querySelectorAll('script[type="application/ld+json"]');
-        for(var i=0;i<ss.length;i++){
-          var d=JSON.parse(ss[i].textContent);
-          if(d.aggregateRating){
-            var rv=document.getElementById('hero-rating');
-            var rc=document.getElementById('hero-review-count');
-            if(rv)rv.textContent=d.aggregateRating.ratingValue;
-            if(rc)rc.textContent=d.aggregateRating.reviewCount;
-          }
-          if(d.openingHoursSpecification&&d.openingHoursSpecification.length){
-            var spec=d.openingHoursSpecification[0];
-            var h=document.getElementById('hero-hours');
-            if(h&&spec.opens&&spec.closes)h.textContent=spec.opens+'\u2013'+spec.closes;
-          }
-        }
-      }catch(e){}
-    })();
-    </script>
     <!-- REVIEWS CAROUSEL -->
     <section class="py-24 bg-white" aria-labelledby="reviews-heading" data-animate>
       <div class="max-w-5xl mx-auto px-6">
@@ -1061,29 +874,7 @@ span.inline-flex > span > strong { color: #2a2a2a; }
           </a>
         </div>
       </div>
-      <div class="hero-wave" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 Q720,0 1440,40 L1440,56 L0,56 Z" fill="#ffffff"/></svg></div>
     </section>
-    <script>
-    (function(){
-      try{
-        var ss=document.querySelectorAll('script[type="application/ld+json"]');
-        for(var i=0;i<ss.length;i++){
-          var d=JSON.parse(ss[i].textContent);
-          if(d.aggregateRating){
-            var rv=document.getElementById('hero-rating');
-            var rc=document.getElementById('hero-review-count');
-            if(rv)rv.textContent=d.aggregateRating.ratingValue;
-            if(rc)rc.textContent=d.aggregateRating.reviewCount;
-          }
-          if(d.openingHoursSpecification&&d.openingHoursSpecification.length){
-            var spec=d.openingHoursSpecification[0];
-            var h=document.getElementById('hero-hours');
-            if(h&&spec.opens&&spec.closes)h.textContent=spec.opens+'\u2013'+spec.closes;
-          }
-        }
-      }catch(e){}
-    })();
-    </script>
     <!-- BLOG -->
     <section class="py-24 bg-white" aria-labelledby="blog-heading" data-animate>
       <div class="max-w-5xl mx-auto px-6">
@@ -1118,29 +909,7 @@ span.inline-flex > span > strong { color: #2a2a2a; }
           </div>
         </div>
       </div>
-      <div class="hero-wave" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 Q720,0 1440,40 L1440,56 L0,56 Z" fill="#ffffff"/></svg></div>
     </section>
-    <script>
-    (function(){
-      try{
-        var ss=document.querySelectorAll('script[type="application/ld+json"]');
-        for(var i=0;i<ss.length;i++){
-          var d=JSON.parse(ss[i].textContent);
-          if(d.aggregateRating){
-            var rv=document.getElementById('hero-rating');
-            var rc=document.getElementById('hero-review-count');
-            if(rv)rv.textContent=d.aggregateRating.ratingValue;
-            if(rc)rc.textContent=d.aggregateRating.reviewCount;
-          }
-          if(d.openingHoursSpecification&&d.openingHoursSpecification.length){
-            var spec=d.openingHoursSpecification[0];
-            var h=document.getElementById('hero-hours');
-            if(h&&spec.opens&&spec.closes)h.textContent=spec.opens+'\u2013'+spec.closes;
-          }
-        }
-      }catch(e){}
-    })();
-    </script>
     <!-- FAQ -->
     <section class="py-24 bg-gray-50" aria-labelledby="faq-heading" data-animate>
       <div class="max-w-5xl mx-auto px-6">
@@ -1174,53 +943,8 @@ span.inline-flex > span > strong { color: #2a2a2a; }
             </div>
           </div>
         </div>
-        <div class="faq-review-cta">
-          <div class="review-cta-card">
-            <div class="review-cta-rating">
-              <span class="review-cta-score" aria-hidden="true">5.0</span>
-              <div class="review-cta-stars-group">
-                <div class="review-cta-stars" role="img" aria-label="5 yje nga 5">
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                </div>
-                <span class="review-cta-platform">në Google</span>
-              </div>
-            </div>
-            <div class="review-cta-divider" aria-hidden="true"></div>
-            <h3 class="review-cta-heading">Ndaj Përvojën Tënde</h3>
-            <p class="review-cta-sub">Keni qenë të kënaqur? Një koment i shpejtë ndihmon të tjerët të na gjejnë.</p>
-            <a href="https://search.google.com/local/reviews?placeid=ChIJU3JyAljB0RMRdoAB2vYR5oo" target="_blank" rel="noopener noreferrer" class="btn-primary" aria-label="Lini një koment në Google">
-              Lini një Koment në Google
-            </a>
-          </div>
-        </div>
       </div>
-      <div class="hero-wave" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 Q720,0 1440,40 L1440,56 L0,56 Z" fill="#ffffff"/></svg></div>
     </section>
-    <script>
-    (function(){
-      try{
-        var ss=document.querySelectorAll('script[type="application/ld+json"]');
-        for(var i=0;i<ss.length;i++){
-          var d=JSON.parse(ss[i].textContent);
-          if(d.aggregateRating){
-            var rv=document.getElementById('hero-rating');
-            var rc=document.getElementById('hero-review-count');
-            if(rv)rv.textContent=d.aggregateRating.ratingValue;
-            if(rc)rc.textContent=d.aggregateRating.reviewCount;
-          }
-          if(d.openingHoursSpecification&&d.openingHoursSpecification.length){
-            var spec=d.openingHoursSpecification[0];
-            var h=document.getElementById('hero-hours');
-            if(h&&spec.opens&&spec.closes)h.textContent=spec.opens+'\u2013'+spec.closes;
-          }
-        }
-      }catch(e){}
-    })();
-    </script>
     <!-- CONTACT -->
     <section id="contact" class="py-24 bg-gray-50" aria-labelledby="contact-heading" data-animate>
       <div class="max-w-6xl mx-auto px-6">
@@ -1311,6 +1035,29 @@ span.inline-flex > span > strong { color: #2a2a2a; }
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js').catch(function() {});
     }
+  </script>
+  <script>
+  (function(){
+    var btn=document.getElementById('hamburgerBtn');
+    var drawer=document.getElementById('navDrawer');
+    if(!btn||!drawer)return;
+    btn.addEventListener('click',function(e){
+      e.stopPropagation();
+      var open=btn.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open);
+      drawer.classList.toggle('open',open);
+    });
+    document.addEventListener('click',function(e){
+      if(btn.classList.contains('open')&&!drawer.contains(e.target)&&!btn.contains(e.target)){
+        btn.classList.remove('open');btn.setAttribute('aria-expanded','false');drawer.classList.remove('open');
+      }
+    });
+    drawer.addEventListener('click',function(e){
+      if(e.target.closest('a[href]')){
+        btn.classList.remove('open');btn.setAttribute('aria-expanded','false');drawer.classList.remove('open');
+      }
+    });
+  })();
   </script>
 </body>
 </html>

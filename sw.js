@@ -1,11 +1,14 @@
 'use strict';
 
-var CACHE = 'iglisi-v2';
+var CACHE = 'iglisi-v3';
 
 var PRECACHE = [
   '/en/',
   '/sq/',
   '/it/',
+  '/en/blog/',
+  '/it/blog/',
+  '/sq/blog/',
   '/en/blog/watch-battery-guide.html',
   '/en/blog/watch-service-signs.html',
   '/it/blog/guida-batteria-orologio.html',
