@@ -1,6 +1,6 @@
 'use strict';
 
-var CACHE = 'iglisi-v17';
+var CACHE = 'iglisi-v18';
 
 var PRECACHE = [
   '/en/',
@@ -22,7 +22,7 @@ var PRECACHE = [
   '/sq/blog/kujdesi-brezit-ores.html',
   '/sq/blog/guide-kopjim-celesi.html',
   '/shared.css?v=23',
-  '/shared.js?v=6',
+  '/shared.js?v=7',
   '/cookie.js',
   '/webfonts/inter.woff2?v=2',
   '/webfonts/cormorant-garamond.woff2?v=2',
