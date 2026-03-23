@@ -1,6 +1,6 @@
 'use strict';
 
-var CACHE = 'iglisi-v28';
+var CACHE = 'iglisi-v29';
 
 var PRECACHE = [
   '/offline.html',
