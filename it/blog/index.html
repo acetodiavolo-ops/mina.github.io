@@ -35,20 +35,38 @@
   <link rel="preload" href="/webfonts/fa-brands-400.woff2?v=2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/shared.css?v=26">
   <style>
-    .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:2rem;max-width:800px;margin:0 auto}
-    .blog-card{background:#fff;border-radius:1.25rem;box-shadow:0 2px 16px rgba(0,0,0,.07);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;text-decoration:none;color:inherit}
-    .blog-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.13)}
-    .blog-card-body{padding:1.5rem;flex:1;display:flex;flex-direction:column}
-    .blog-card-cat{display:inline-flex;align-items:center;gap:.4rem;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-gold);margin-bottom:.75rem}
-    .blog-card-title{font-size:1.15rem;font-weight:800;line-height:1.3;margin-bottom:.6rem;color:var(--text-primary)}
-    .blog-card-desc{font-size:.88rem;color:var(--text-secondary);line-height:1.55;flex:1;margin-bottom:1rem}
-    .blog-card-meta{display:flex;align-items:center;gap:.75rem;font-size:.78rem;color:#888;margin-bottom:1rem}
-    .blog-card-meta i{color:var(--accent-gold)}
-    .blog-card-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.85rem;font-weight:700;color:var(--accent-gold)}
-    .blog-card-link i{font-size:.7rem;transition:transform .2s}
-    .blog-card:hover .blog-card-link i{transform:translateX(3px)}
-    @media(max-width:640px){.blog-grid{gap:1.25rem}}
-    .fa-tint::before{content:"\f043"}
+    /* === Magazine Blog Layout === */
+    .blog-wrap{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:2rem}
+    .b-feat{display:grid;grid-template-columns:5.5rem 1fr;gap:2.5rem;align-items:center;background:linear-gradient(135deg,#18110a 0%,#2c1d0d 60%,#1a1208 100%);border-radius:1.5rem;padding:2.5rem 3rem;text-decoration:none;color:#fff;position:relative;overflow:hidden;transition:transform .22s,box-shadow .22s;box-shadow:0 6px 40px rgba(0,0,0,.22)}
+    .b-feat::before{content:'';position:absolute;top:0;left:0;width:5px;height:100%;background:var(--accent-gold);border-radius:6px 0 0 6px}
+    .b-feat::after{content:'';position:absolute;inset:0;border-radius:1.5rem;border:1px solid rgba(180,148,92,.18);pointer-events:none}
+    .b-feat:hover{transform:translateY(-4px);box-shadow:0 18px 56px rgba(0,0,0,.3)}
+    .b-feat-num{font-size:5.5rem;font-weight:900;color:rgba(180,148,92,.18);font-family:'Cormorant Garamond',serif;line-height:1;user-select:none}
+    .b-feat-cat{display:inline-flex;align-items:center;gap:.4rem;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-gold);margin-bottom:.6rem}
+    .b-feat-title{font-size:1.7rem;font-weight:800;line-height:1.25;margin-bottom:.65rem;color:#fff}
+    .b-feat-desc{font-size:.9rem;color:rgba(255,255,255,.62);line-height:1.6;margin-bottom:1.2rem;max-width:54ch}
+    .b-feat-meta{display:flex;align-items:center;gap:1rem;font-size:.78rem;color:rgba(255,255,255,.4);margin-bottom:1.25rem}
+    .b-feat-meta i{color:rgba(180,148,92,.7)}
+    .b-feat-cta{display:inline-flex;align-items:center;gap:.5rem;font-size:.85rem;font-weight:700;color:var(--accent-gold);border:1.5px solid rgba(180,148,92,.4);padding:.55rem 1.3rem;border-radius:2rem;transition:background .2s,border-color .2s}
+    .b-feat:hover .b-feat-cta{background:rgba(180,148,92,.12);border-color:rgba(180,148,92,.65)}
+    .b-label{display:flex;align-items:center;gap:1rem;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#bbb;margin:0}
+    .b-label::after{content:'';flex:1;height:1px;background:#e5ddd3}
+    .b-row2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+    .b-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+    .b-card{background:#fff;border-radius:1.1rem;box-shadow:0 2px 14px rgba(0,0,0,.07);display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s,border-top-color .2s;border-top:3px solid transparent;overflow:hidden}
+    .b-card:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.12);border-top-color:var(--accent-gold)}
+    .b-card-body{padding:1.4rem 1.5rem;flex:1;display:flex;flex-direction:column}
+    .b-card-num{font-size:1.75rem;font-weight:900;color:rgba(180,148,92,.15);font-family:'Cormorant Garamond',serif;line-height:1;margin-bottom:.25rem}
+    .b-card-cat{display:inline-flex;align-items:center;gap:.4rem;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-gold);margin-bottom:.6rem}
+    .b-card-title{font-size:1.05rem;font-weight:800;line-height:1.3;margin-bottom:.5rem;color:var(--text-primary);flex:1}
+    .b-card-desc{font-size:.83rem;color:var(--text-secondary);line-height:1.55;margin-bottom:.85rem}
+    .b-card-meta{display:flex;align-items:center;gap:.6rem;font-size:.75rem;color:#999;margin-bottom:.75rem}
+    .b-card-meta i{color:var(--accent-gold)}
+    .b-card-link{display:inline-flex;align-items:center;gap:.35rem;font-size:.82rem;font-weight:700;color:var(--accent-gold);margin-top:auto}
+    .b-card-link i{font-size:.65rem;transition:transform .2s}
+    .b-card:hover .b-card-link i{transform:translateX(3px)}
+    @media(max-width:960px){.b-grid3{grid-template-columns:1fr 1fr}.b-feat{grid-template-columns:1fr;padding:2rem}.b-feat-num{display:none}}
+    @media(max-width:640px){.b-row2,.b-grid3{grid-template-columns:1fr}}
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
@@ -150,124 +168,130 @@
 
   <main id="main-content">
     <section class="py-16 px-6" style="background:var(--bg-soft)">
-      <div class="blog-grid">
+      <div class="blog-wrap">
 
-        <a href="/it/blog/guida-batteria-orologio.html" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-cat"><i class="fas fa-battery-three-quarters" aria-hidden="true"></i> Cura Orologio</span>
-            <h2 class="blog-card-title">Quanto Dura la Batteria di un Orologio? Segnali di Scarica e Cosa Fare</h2>
-            <p class="blog-card-desc">Le batterie degli orologi al quarzo durano 1&ndash;3 anni. Scopri i 5 segnali d&rsquo;allarme, se conviene sostituirla da soli e cosa comporta una sostituzione professionale.</p>
-            <div class="blog-card-meta">
+        <!-- ① Featured -->
+        <a href="/it/blog/guida-batteria-orologio.html" class="b-feat">
+          <span class="b-feat-num" aria-hidden="true">01</span>
+          <div>
+            <span class="b-feat-cat"><i class="fas fa-battery-three-quarters" aria-hidden="true"></i> Cura Orologio</span>
+            <h2 class="b-feat-title">Quanto Dura la Batteria di un Orologio? Segnali di Scarica e Cosa Fare</h2>
+            <p class="b-feat-desc">Le batterie degli orologi al quarzo durano 1&ndash;3 anni. Scopri i 5 segnali d&rsquo;allarme, se conviene sostituirla da soli e cosa comporta una sostituzione professionale.</p>
+            <div class="b-feat-meta">
               <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min di lettura</span>
               <span><i class="fas fa-bolt" aria-hidden="true"></i> Aggiornato marzo 2026</span>
             </div>
-            <span class="blog-card-link">Leggi l&rsquo;articolo <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
+            <span class="b-feat-cta">Leggi l&rsquo;articolo <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
           </div>
         </a>
 
-        <a href="/it/blog/segni-revisione-orologio.html" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-cat"><i class="fas fa-cogs" aria-hidden="true"></i> Manutenzione</span>
-            <h2 class="blog-card-title">5 Segnali che il Tuo Orologio ha Bisogno di una Revisione, Non Solo di una Batteria Nuova</h2>
-            <p class="blog-card-desc">Se il tuo orologio perde tempo con una batteria appena installata, la corona &egrave; grattante o ha avuto umidit&agrave; &mdash; ha bisogno di una revisione. Scopri i 5 segnali e cosa comporta una revisione professionale.</p>
-            <div class="blog-card-meta">
-              <span><i class="fas fa-clock" aria-hidden="true"></i> 7 min di lettura</span>
-              <span><i class="fas fa-bolt" aria-hidden="true"></i> Aggiornato marzo 2026</span>
-            </div>
-            <span class="blog-card-link">Leggi l&rsquo;articolo <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
-          </div>
-        </a>
+        <p class="b-label">Articoli Recenti</p>
 
-        <a href="/it/blog/cura-cinturino-orologio.html" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-cat"><i class="fas fa-shield-alt" aria-hidden="true"></i> Cura Orologio</span>
-            <h2 class="blog-card-title">Come Prendersi Cura del Cinturino dell&rsquo;Orologio: Guida per Pelle, Metallo e Gomma</h2>
-            <p class="blog-card-desc">Il cinturino &egrave; la parte pi&ugrave; usurata di qualsiasi orologio. Scopri come pulire e nutrire la pelle, mantenere il bracciale in metallo e quando &egrave; il momento di sostituirlo.</p>
-            <div class="blog-card-meta">
-              <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min di lettura</span>
-              <span><i class="fas fa-bolt" aria-hidden="true"></i> Aggiornato marzo 2026</span>
-            </div>
-            <span class="blog-card-link">Leggi l&rsquo;articolo <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
-          </div>
-        </a>
+        <!-- ②③ Row of 2 -->
+        <div class="b-row2">
 
-        <a href="/it/blog/guida-duplicato-chiavi.html" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-cat"><i class="fas fa-key" aria-hidden="true"></i> Servizi Chiavi</span>
-            <h2 class="blog-card-title">Come Funziona il Duplicato di Chiavi: Tipi, Cosa Portare e Cosa Aspettarsi</h2>
-            <p class="blog-card-desc">Fare un duplicato richiede meno di 5 minuti &mdash; se sai cosa portare. Scopri quali chiavi possiamo duplicare, come funziona il processo di taglio e quante copie dovresti fare.</p>
-            <div class="blog-card-meta">
-              <span><i class="fas fa-clock" aria-hidden="true"></i> 4 min di lettura</span>
-              <span><i class="fas fa-bolt" aria-hidden="true"></i> Aggiornato marzo 2026</span>
+          <a href="/it/blog/segni-revisione-orologio.html" class="b-card">
+            <div class="b-card-body">
+              <span class="b-card-num" aria-hidden="true">02</span>
+              <span class="b-card-cat"><i class="fas fa-cogs" aria-hidden="true"></i> Manutenzione</span>
+              <h2 class="b-card-title">5 Segnali che il Tuo Orologio ha Bisogno di una Revisione, Non Solo di una Batteria Nuova</h2>
+              <p class="b-card-desc">Se il tuo orologio perde tempo con una batteria appena installata, la corona &egrave; grattante o ha avuto umidit&agrave; &mdash; ha bisogno di una revisione. Scopri i 5 segnali.</p>
+              <div class="b-card-meta">
+                <span><i class="fas fa-clock" aria-hidden="true"></i> 7 min di lettura</span>
+                <span><i class="fas fa-bolt" aria-hidden="true"></i> Aggiornato marzo 2026</span>
+              </div>
+              <span class="b-card-link">Leggi l&rsquo;articolo <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
             </div>
-            <span class="blog-card-link">Leggi l&rsquo;articolo <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
-          </div>
-        </a>
+          </a>
 
-        <a href="/it/blog/impermeabilita-orologio.html" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-cat"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" aria-hidden="true" focusable="false" style="width:.75em;height:.875em;display:inline-block;fill:currentColor;vertical-align:-.1em"><path d="M192 512C86 512 0 426 0 320C0 228.8 130.2 57.7 166.6 11.7C172.6 4.2 181.5 0 191 0h2c9.5 0 18.4 4.2 24.5 11.7C253.8 57.7 384 228.8 384 320c0 106-86 192-192 192z"/></svg> Cura Orologio</span>
-            <h2 class="blog-card-title">Impermeabilit&agrave; degli Orologi: Cosa Significano Davvero ATM, BAR e Metri</h2>
-            <p class="blog-card-desc">Il tuo orologio dice &ldquo;impermeabile&rdquo; &mdash; ma puoi nuotarci o farci la doccia? La maggior parte delle persone fraintende queste classificazioni e rovina il proprio orologio. Scopri cosa &egrave; davvero sicuro.</p>
-            <div class="blog-card-meta">
-              <span><i class="fas fa-clock" aria-hidden="true"></i> 6 min di lettura</span>
-              <span><i class="fas fa-bolt" aria-hidden="true"></i> Aggiornato marzo 2026</span>
+          <a href="/it/blog/cura-cinturino-orologio.html" class="b-card">
+            <div class="b-card-body">
+              <span class="b-card-num" aria-hidden="true">03</span>
+              <span class="b-card-cat"><i class="fas fa-shield-alt" aria-hidden="true"></i> Cura Orologio</span>
+              <h2 class="b-card-title">Come Prendersi Cura del Cinturino dell&rsquo;Orologio: Guida per Pelle, Metallo e Gomma</h2>
+              <p class="b-card-desc">Il cinturino &egrave; la parte pi&ugrave; usurata di qualsiasi orologio. Scopri come pulire e nutrire la pelle, mantenere il bracciale in metallo e quando &egrave; il momento di sostituirlo.</p>
+              <div class="b-card-meta">
+                <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min di lettura</span>
+                <span><i class="fas fa-bolt" aria-hidden="true"></i> Aggiornato marzo 2026</span>
+              </div>
+              <span class="b-card-link">Leggi l&rsquo;articolo <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
             </div>
-            <span class="blog-card-link">Leggi l&rsquo;articolo <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
-          </div>
-        </a>
+          </a>
 
-        <a href="/it/blog/guida-pulizia-orologio.html" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-cat"><i class="fas fa-gem" aria-hidden="true"></i> Cura Orologio</span>
-            <h2 class="blog-card-title">Come Pulire il Tuo Orologio in Casa: Metodi Sicuri per Ogni Materiale</h2>
-            <p class="blog-card-desc">Lo sporco, il sudore e il grasso si accumulano su ogni orologio &mdash; anche su quelli costosi. La pulizia regolare richiede meno di cinque minuti. Guida passo per passo per acciaio, pelle, bracciale e gomma.</p>
-            <div class="blog-card-meta">
-              <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min di lettura</span>
-              <span><i class="fas fa-bolt" aria-hidden="true"></i> Aggiornato marzo 2026</span>
-            </div>
-            <span class="blog-card-link">Leggi l&rsquo;articolo <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
-          </div>
-        </a>
+        </div>
 
-        <a href="/it/blog/guida-conservazione-orologio.html" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-cat"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Cura Orologio</span>
-            <h2 class="blog-card-title">Come Conservare il Tuo Orologio Correttamente: Guida Completa</h2>
-            <p class="blog-card-desc">La conservazione sbagliata danneggia i lubrificanti, magn&eacute;tizza i movimenti e fa spellare i cinturini. Scopri le condizioni ottimali &mdash; temperatura, umidit&agrave; e cosa non mettere mai vicino a un orologio.</p>
-            <div class="blog-card-meta">
-              <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min di lettura</span>
-              <span><i class="fas fa-bolt" aria-hidden="true"></i> Aggiornato marzo 2026</span>
-            </div>
-            <span class="blog-card-link">Leggi l&rsquo;articolo <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
-          </div>
-        </a>
+        <p class="b-label">Anche sul Blog</p>
 
-        <a href="/it/blog/meccanico-vs-quarzo.html" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-cat"><i class="fas fa-cogs" aria-hidden="true"></i> Conoscenza Orologi</span>
-            <h2 class="blog-card-title">Orologi Meccanici vs al Quarzo: Qual &egrave; la Differenza e Quale Scegliere?</h2>
-            <p class="blog-card-desc">Il quarzo vince in precisione e bassa manutenzione. Il meccanico vince in artigianalit&agrave; e valore da collezione. Un confronto onesto per aiutarti a scegliere l&rsquo;orologio giusto per le tue esigenze.</p>
-            <div class="blog-card-meta">
-              <span><i class="fas fa-clock" aria-hidden="true"></i> 6 min di lettura</span>
-              <span><i class="fas fa-bolt" aria-hidden="true"></i> Aggiornato marzo 2026</span>
-            </div>
-            <span class="blog-card-link">Leggi l&rsquo;articolo <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
-          </div>
-        </a>
+        <!-- ④–⑨ Grid of 3×2 -->
+        <div class="b-grid3">
 
-        <a href="/it/blog/guida-cristallo-orologio.html" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-cat"><i class="fas fa-gem" aria-hidden="true"></i> Cura Orologio</span>
-            <h2 class="blog-card-title">Cristalli per Orologi: Acrilico, Minerale e Zaffiro &mdash; Qual &egrave; la Differenza?</h2>
-            <p class="blog-card-desc">Tre materiali, tre livelli di protezione. Scopri quali si graffiano facilmente, quali si rompono e cosa fare quando il vetro del tuo orologio &egrave; danneggiato.</p>
-            <div class="blog-card-meta">
-              <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min di lettura</span>
-              <span><i class="fas fa-bolt" aria-hidden="true"></i> Aggiornato marzo 2026</span>
+          <a href="/it/blog/guida-duplicato-chiavi.html" class="b-card">
+            <div class="b-card-body">
+              <span class="b-card-num" aria-hidden="true">04</span>
+              <span class="b-card-cat"><i class="fas fa-key" aria-hidden="true"></i> Servizi Chiavi</span>
+              <h2 class="b-card-title">Come Funziona il Duplicato di Chiavi: Tipi, Cosa Portare e Cosa Aspettarsi</h2>
+              <p class="b-card-desc">Fare un duplicato richiede meno di 5 minuti &mdash; se sai cosa portare. Scopri quali chiavi possiamo duplicare, come funziona il processo di taglio e quante copie dovresti fare.</p>
+              <div class="b-card-meta"><span><i class="fas fa-clock" aria-hidden="true"></i> 4 min di lettura</span></div>
+              <span class="b-card-link">Leggi l&rsquo;articolo <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
             </div>
-            <span class="blog-card-link">Leggi l&rsquo;articolo <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
-          </div>
-        </a>
+          </a>
+
+          <a href="/it/blog/impermeabilita-orologio.html" class="b-card">
+            <div class="b-card-body">
+              <span class="b-card-num" aria-hidden="true">05</span>
+              <span class="b-card-cat"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" aria-hidden="true" focusable="false" style="width:.75em;height:.875em;display:inline-block;fill:currentColor;vertical-align:-.1em"><path d="M192 512C86 512 0 426 0 320C0 228.8 130.2 57.7 166.6 11.7C172.6 4.2 181.5 0 191 0h2c9.5 0 18.4 4.2 24.5 11.7C253.8 57.7 384 228.8 384 320c0 106-86 192-192 192z"/></svg> Cura Orologio</span>
+              <h2 class="b-card-title">Impermeabilit&agrave; degli Orologi: Cosa Significano Davvero ATM, BAR e Metri</h2>
+              <p class="b-card-desc">Il tuo orologio dice &ldquo;impermeabile&rdquo; &mdash; ma puoi nuotarci o farci la doccia? La maggior parte delle persone fraintende queste classificazioni e rovina il proprio orologio.</p>
+              <div class="b-card-meta"><span><i class="fas fa-clock" aria-hidden="true"></i> 6 min di lettura</span></div>
+              <span class="b-card-link">Leggi l&rsquo;articolo <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
+            </div>
+          </a>
+
+          <a href="/it/blog/guida-pulizia-orologio.html" class="b-card">
+            <div class="b-card-body">
+              <span class="b-card-num" aria-hidden="true">06</span>
+              <span class="b-card-cat"><i class="fas fa-gem" aria-hidden="true"></i> Cura Orologio</span>
+              <h2 class="b-card-title">Come Pulire il Tuo Orologio in Casa: Metodi Sicuri per Ogni Materiale</h2>
+              <p class="b-card-desc">Lo sporco, il sudore e il grasso si accumulano su ogni orologio &mdash; anche su quelli costosi. La pulizia regolare richiede meno di cinque minuti. Guida passo per passo.</p>
+              <div class="b-card-meta"><span><i class="fas fa-clock" aria-hidden="true"></i> 5 min di lettura</span></div>
+              <span class="b-card-link">Leggi l&rsquo;articolo <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
+            </div>
+          </a>
+
+          <a href="/it/blog/guida-conservazione-orologio.html" class="b-card">
+            <div class="b-card-body">
+              <span class="b-card-num" aria-hidden="true">07</span>
+              <span class="b-card-cat"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Cura Orologio</span>
+              <h2 class="b-card-title">Come Conservare il Tuo Orologio Correttamente: Guida Completa</h2>
+              <p class="b-card-desc">La conservazione sbagliata danneggia i lubrificanti, magn&eacute;tizza i movimenti e fa spellare i cinturini. Scopri le condizioni ottimali &mdash; temperatura, umidit&agrave; e cosa evitare.</p>
+              <div class="b-card-meta"><span><i class="fas fa-clock" aria-hidden="true"></i> 5 min di lettura</span></div>
+              <span class="b-card-link">Leggi l&rsquo;articolo <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
+            </div>
+          </a>
+
+          <a href="/it/blog/meccanico-vs-quarzo.html" class="b-card">
+            <div class="b-card-body">
+              <span class="b-card-num" aria-hidden="true">08</span>
+              <span class="b-card-cat"><i class="fas fa-cogs" aria-hidden="true"></i> Conoscenza Orologi</span>
+              <h2 class="b-card-title">Orologi Meccanici vs al Quarzo: Qual &egrave; la Differenza e Quale Scegliere?</h2>
+              <p class="b-card-desc">Il quarzo vince in precisione e bassa manutenzione. Il meccanico vince in artigianalit&agrave; e valore da collezione. Un confronto onesto per scegliere l&rsquo;orologio giusto.</p>
+              <div class="b-card-meta"><span><i class="fas fa-clock" aria-hidden="true"></i> 6 min di lettura</span></div>
+              <span class="b-card-link">Leggi l&rsquo;articolo <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
+            </div>
+          </a>
+
+          <a href="/it/blog/guida-cristallo-orologio.html" class="b-card">
+            <div class="b-card-body">
+              <span class="b-card-num" aria-hidden="true">09</span>
+              <span class="b-card-cat"><i class="fas fa-gem" aria-hidden="true"></i> Cura Orologio</span>
+              <h2 class="b-card-title">Cristalli per Orologi: Acrilico, Minerale e Zaffiro &mdash; Qual &egrave; la Differenza?</h2>
+              <p class="b-card-desc">Tre materiali, tre livelli di protezione. Scopri quali si graffiano facilmente, quali si rompono e cosa fare quando il vetro del tuo orologio &egrave; danneggiato.</p>
+              <div class="b-card-meta"><span><i class="fas fa-clock" aria-hidden="true"></i> 5 min di lettura</span></div>
+              <span class="b-card-link">Leggi l&rsquo;articolo <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
+            </div>
+          </a>
+
+        </div>
 
       </div>
     </section>

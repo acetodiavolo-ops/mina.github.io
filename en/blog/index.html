@@ -35,20 +35,44 @@
   <link rel="preload" href="/webfonts/fa-brands-400.woff2?v=2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/shared.css?v=26">
   <style>
-    .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:2rem;max-width:800px;margin:0 auto}
-    .blog-card{background:#fff;border-radius:1.25rem;box-shadow:0 2px 16px rgba(0,0,0,.07);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;text-decoration:none;color:inherit}
-    .blog-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.13)}
-    .blog-card-body{padding:1.5rem;flex:1;display:flex;flex-direction:column}
-    .blog-card-cat{display:inline-flex;align-items:center;gap:.4rem;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-gold);margin-bottom:.75rem}
-    .blog-card-title{font-size:1.15rem;font-weight:800;line-height:1.3;margin-bottom:.6rem;color:var(--text-primary)}
-    .blog-card-desc{font-size:.88rem;color:var(--text-secondary);line-height:1.55;flex:1;margin-bottom:1rem}
-    .blog-card-meta{display:flex;align-items:center;gap:.75rem;font-size:.78rem;color:#888;margin-bottom:1rem}
-    .blog-card-meta i{color:var(--accent-gold)}
-    .blog-card-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.85rem;font-weight:700;color:var(--accent-gold)}
-    .blog-card-link i{font-size:.7rem;transition:transform .2s}
-    .blog-card:hover .blog-card-link i{transform:translateX(3px)}
-    @media(max-width:640px){.blog-grid{gap:1.25rem}}
-    .fa-tint::before{content:"\f043"}
+    /* === Magazine Blog Layout === */
+    .blog-wrap{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:2rem}
+    /* Featured card */
+    .b-feat{display:grid;grid-template-columns:5.5rem 1fr;gap:2.5rem;align-items:center;background:linear-gradient(135deg,#18110a 0%,#2c1d0d 60%,#1a1208 100%);border-radius:1.5rem;padding:2.5rem 3rem;text-decoration:none;color:#fff;position:relative;overflow:hidden;transition:transform .22s,box-shadow .22s;box-shadow:0 6px 40px rgba(0,0,0,.22)}
+    .b-feat::before{content:'';position:absolute;top:0;left:0;width:5px;height:100%;background:var(--accent-gold);border-radius:6px 0 0 6px}
+    .b-feat::after{content:'';position:absolute;inset:0;border-radius:1.5rem;border:1px solid rgba(180,148,92,.18);pointer-events:none}
+    .b-feat:hover{transform:translateY(-4px);box-shadow:0 18px 56px rgba(0,0,0,.3)}
+    .b-feat-num{font-size:5.5rem;font-weight:900;color:rgba(180,148,92,.18);font-family:'Cormorant Garamond',serif;line-height:1;user-select:none}
+    .b-feat-cat{display:inline-flex;align-items:center;gap:.4rem;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-gold);margin-bottom:.6rem}
+    .b-feat-title{font-size:1.7rem;font-weight:800;line-height:1.25;margin-bottom:.65rem;color:#fff}
+    .b-feat-desc{font-size:.9rem;color:rgba(255,255,255,.62);line-height:1.6;margin-bottom:1.2rem;max-width:54ch}
+    .b-feat-meta{display:flex;align-items:center;gap:1rem;font-size:.78rem;color:rgba(255,255,255,.4);margin-bottom:1.25rem}
+    .b-feat-meta i{color:rgba(180,148,92,.7)}
+    .b-feat-cta{display:inline-flex;align-items:center;gap:.5rem;font-size:.85rem;font-weight:700;color:var(--accent-gold);border:1.5px solid rgba(180,148,92,.4);padding:.55rem 1.3rem;border-radius:2rem;transition:background .2s,border-color .2s}
+    .b-feat:hover .b-feat-cta{background:rgba(180,148,92,.12);border-color:rgba(180,148,92,.65)}
+    /* Section label */
+    .b-label{display:flex;align-items:center;gap:1rem;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#bbb;margin:0}
+    .b-label::after{content:'';flex:1;height:1px;background:#e5ddd3}
+    /* Row of 2 */
+    .b-row2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+    /* Grid of 3 */
+    .b-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+    /* Regular card */
+    .b-card{background:#fff;border-radius:1.1rem;box-shadow:0 2px 14px rgba(0,0,0,.07);display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s,border-top-color .2s;border-top:3px solid transparent;overflow:hidden}
+    .b-card:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.12);border-top-color:var(--accent-gold)}
+    .b-card-body{padding:1.4rem 1.5rem;flex:1;display:flex;flex-direction:column}
+    .b-card-num{font-size:1.75rem;font-weight:900;color:rgba(180,148,92,.15);font-family:'Cormorant Garamond',serif;line-height:1;margin-bottom:.25rem}
+    .b-card-cat{display:inline-flex;align-items:center;gap:.4rem;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-gold);margin-bottom:.6rem}
+    .b-card-title{font-size:1.05rem;font-weight:800;line-height:1.3;margin-bottom:.5rem;color:var(--text-primary);flex:1}
+    .b-card-desc{font-size:.83rem;color:var(--text-secondary);line-height:1.55;margin-bottom:.85rem}
+    .b-card-meta{display:flex;align-items:center;gap:.6rem;font-size:.75rem;color:#999;margin-bottom:.75rem}
+    .b-card-meta i{color:var(--accent-gold)}
+    .b-card-link{display:inline-flex;align-items:center;gap:.35rem;font-size:.82rem;font-weight:700;color:var(--accent-gold);margin-top:auto}
+    .b-card-link i{font-size:.65rem;transition:transform .2s}
+    .b-card:hover .b-card-link i{transform:translateX(3px)}
+    /* Responsive */
+    @media(max-width:960px){.b-grid3{grid-template-columns:1fr 1fr}.b-feat{grid-template-columns:1fr;padding:2rem}.b-feat-num{display:none}}
+    @media(max-width:640px){.b-row2,.b-grid3{grid-template-columns:1fr}}
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
@@ -150,124 +174,130 @@
 
   <main id="main-content">
     <section class="py-16 px-6" style="background:var(--bg-soft)">
-      <div class="blog-grid">
+      <div class="blog-wrap">
 
-        <a href="/en/blog/watch-battery-guide.html" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-cat"><i class="fas fa-battery-three-quarters" aria-hidden="true"></i> Watch Care</span>
-            <h2 class="blog-card-title">How Long Does a Watch Battery Last? Signs It&rsquo;s Dying &amp; What To Do</h2>
-            <p class="blog-card-desc">Most quartz watch batteries last 1&ndash;3 years. Learn the 5 warning signs your battery is failing, whether you should replace it yourself, and what a professional swap involves.</p>
-            <div class="blog-card-meta">
+        <!-- ① Featured -->
+        <a href="/en/blog/watch-battery-guide.html" class="b-feat">
+          <span class="b-feat-num" aria-hidden="true">01</span>
+          <div>
+            <span class="b-feat-cat"><i class="fas fa-battery-three-quarters" aria-hidden="true"></i> Watch Care</span>
+            <h2 class="b-feat-title">How Long Does a Watch Battery Last? Signs It&rsquo;s Dying &amp; What To Do</h2>
+            <p class="b-feat-desc">Most quartz watch batteries last 1&ndash;3 years. Learn the 5 warning signs your battery is failing, whether you should replace it yourself, and what a professional swap involves.</p>
+            <div class="b-feat-meta">
               <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min read</span>
               <span><i class="fas fa-bolt" aria-hidden="true"></i> Updated March 2026</span>
             </div>
-            <span class="blog-card-link">Read article <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
+            <span class="b-feat-cta">Read article <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
           </div>
         </a>
 
-        <a href="/en/blog/watch-service-signs.html" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-cat"><i class="fas fa-cogs" aria-hidden="true"></i> Watch Maintenance</span>
-            <h2 class="blog-card-title">5 Signs Your Watch Needs a Service, Not Just a New Battery</h2>
-            <p class="blog-card-desc">If your watch loses time after a fresh battery, feels gritty when wound, or has had moisture inside &mdash; it needs a service. Learn the 5 signs and what a professional overhaul involves.</p>
-            <div class="blog-card-meta">
-              <span><i class="fas fa-clock" aria-hidden="true"></i> 7 min read</span>
-              <span><i class="fas fa-bolt" aria-hidden="true"></i> Updated March 2026</span>
-            </div>
-            <span class="blog-card-link">Read article <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
-          </div>
-        </a>
+        <p class="b-label">Latest Articles</p>
 
-        <a href="/en/blog/watch-strap-care.html" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-cat"><i class="fas fa-shield-alt" aria-hidden="true"></i> Watch Care</span>
-            <h2 class="blog-card-title">How to Care for Your Watch Strap: Leather, Metal &amp; Rubber Guide</h2>
-            <p class="blog-card-desc">The strap is the most worn part of any watch. Learn how to clean and condition leather, maintain metal bracelets, and when it&rsquo;s time to replace &mdash; for any material.</p>
-            <div class="blog-card-meta">
-              <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min read</span>
-              <span><i class="fas fa-bolt" aria-hidden="true"></i> Updated March 2026</span>
-            </div>
-            <span class="blog-card-link">Read article <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
-          </div>
-        </a>
+        <!-- ②③ Row of 2 -->
+        <div class="b-row2">
 
-        <a href="/en/blog/key-duplication-guide.html" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-cat"><i class="fas fa-key" aria-hidden="true"></i> Key Services</span>
-            <h2 class="blog-card-title">How Key Duplication Works: Types, What to Bring &amp; What to Expect</h2>
-            <p class="blog-card-desc">Getting a spare key cut takes under 5 minutes &mdash; if you know what to bring. Learn which keys we can duplicate, how the cutting process works, and how many copies you should make.</p>
-            <div class="blog-card-meta">
-              <span><i class="fas fa-clock" aria-hidden="true"></i> 4 min read</span>
-              <span><i class="fas fa-bolt" aria-hidden="true"></i> Updated March 2026</span>
+          <a href="/en/blog/watch-service-signs.html" class="b-card">
+            <div class="b-card-body">
+              <span class="b-card-num" aria-hidden="true">02</span>
+              <span class="b-card-cat"><i class="fas fa-cogs" aria-hidden="true"></i> Watch Maintenance</span>
+              <h2 class="b-card-title">5 Signs Your Watch Needs a Service, Not Just a New Battery</h2>
+              <p class="b-card-desc">If your watch loses time after a fresh battery, feels gritty when wound, or has had moisture inside &mdash; it needs a service. Learn the 5 signs and what a professional overhaul involves.</p>
+              <div class="b-card-meta">
+                <span><i class="fas fa-clock" aria-hidden="true"></i> 7 min read</span>
+                <span><i class="fas fa-bolt" aria-hidden="true"></i> Updated March 2026</span>
+              </div>
+              <span class="b-card-link">Read article <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
             </div>
-            <span class="blog-card-link">Read article <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
-          </div>
-        </a>
+          </a>
 
-        <a href="/en/blog/watch-water-resistance.html" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-cat"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" aria-hidden="true" focusable="false" style="width:.75em;height:.875em;display:inline-block;fill:currentColor;vertical-align:-.1em"><path d="M192 512C86 512 0 426 0 320C0 228.8 130.2 57.7 166.6 11.7C172.6 4.2 181.5 0 191 0h2c9.5 0 18.4 4.2 24.5 11.7C253.8 57.7 384 228.8 384 320c0 106-86 192-192 192z"/></svg> Watch Care</span>
-            <h2 class="blog-card-title">Watch Water Resistance Ratings Explained: ATM, BAR &amp; What They Really Mean</h2>
-            <p class="blog-card-desc">Your watch says &ldquo;water resistant&rdquo; &mdash; but does that mean you can swim, shower, or dive with it? Most people misread these ratings and damage their watch as a result. Learn what&rsquo;s actually safe.</p>
-            <div class="blog-card-meta">
-              <span><i class="fas fa-clock" aria-hidden="true"></i> 6 min read</span>
-              <span><i class="fas fa-bolt" aria-hidden="true"></i> Updated March 2026</span>
+          <a href="/en/blog/watch-strap-care.html" class="b-card">
+            <div class="b-card-body">
+              <span class="b-card-num" aria-hidden="true">03</span>
+              <span class="b-card-cat"><i class="fas fa-shield-alt" aria-hidden="true"></i> Watch Care</span>
+              <h2 class="b-card-title">How to Care for Your Watch Strap: Leather, Metal &amp; Rubber Guide</h2>
+              <p class="b-card-desc">The strap is the most worn part of any watch. Learn how to clean and condition leather, maintain metal bracelets, and when it&rsquo;s time to replace &mdash; for any material.</p>
+              <div class="b-card-meta">
+                <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min read</span>
+                <span><i class="fas fa-bolt" aria-hidden="true"></i> Updated March 2026</span>
+              </div>
+              <span class="b-card-link">Read article <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
             </div>
-            <span class="blog-card-link">Read article <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
-          </div>
-        </a>
+          </a>
 
-        <a href="/en/blog/watch-cleaning-guide.html" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-cat"><i class="fas fa-gem" aria-hidden="true"></i> Watch Care</span>
-            <h2 class="blog-card-title">How to Clean Your Watch at Home: Safe Methods for Every Material</h2>
-            <p class="blog-card-desc">Dirt, sweat, and grime build up on every watch &mdash; even expensive ones. Regular cleaning takes under five minutes and keeps your watch looking new. Step-by-step guide for steel, leather, metal bracelet, and rubber.</p>
-            <div class="blog-card-meta">
-              <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min read</span>
-              <span><i class="fas fa-bolt" aria-hidden="true"></i> Updated March 2026</span>
-            </div>
-            <span class="blog-card-link">Read article <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
-          </div>
-        </a>
+        </div>
 
-        <a href="/en/blog/watch-storage-guide.html" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-cat"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Watch Care</span>
-            <h2 class="blog-card-title">How to Store Your Watch Properly: A Complete Guide</h2>
-            <p class="blog-card-desc">Wrong storage degrades lubricants, magnetises movements, and cracks straps. Learn the optimal conditions &mdash; temperature, humidity, and what should never sit next to a watch.</p>
-            <div class="blog-card-meta">
-              <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min read</span>
-              <span><i class="fas fa-bolt" aria-hidden="true"></i> Updated March 2026</span>
-            </div>
-            <span class="blog-card-link">Read article <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
-          </div>
-        </a>
+        <p class="b-label">Also on the Blog</p>
 
-        <a href="/en/blog/mechanical-vs-quartz.html" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-cat"><i class="fas fa-cogs" aria-hidden="true"></i> Watch Knowledge</span>
-            <h2 class="blog-card-title">Mechanical vs Quartz Watches: What&rsquo;s the Difference and Which Should You Choose?</h2>
-            <p class="blog-card-desc">Quartz wins on accuracy and low maintenance. Mechanical wins on craftsmanship and collector value. An honest comparison to help you choose the right watch for your needs.</p>
-            <div class="blog-card-meta">
-              <span><i class="fas fa-clock" aria-hidden="true"></i> 6 min read</span>
-              <span><i class="fas fa-bolt" aria-hidden="true"></i> Updated March 2026</span>
-            </div>
-            <span class="blog-card-link">Read article <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
-          </div>
-        </a>
+        <!-- ④–⑨ Grid of 3×2 -->
+        <div class="b-grid3">
 
-        <a href="/en/blog/watch-crystal-guide.html" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-cat"><i class="fas fa-gem" aria-hidden="true"></i> Watch Care</span>
-            <h2 class="blog-card-title">Watch Crystals Explained: Acrylic, Mineral, and Sapphire &mdash; What&rsquo;s the Difference?</h2>
-            <p class="blog-card-desc">Three materials, three levels of protection. Learn which scratch easily, which shatter, and what to do when your watch crystal is damaged.</p>
-            <div class="blog-card-meta">
-              <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min read</span>
-              <span><i class="fas fa-bolt" aria-hidden="true"></i> Updated March 2026</span>
+          <a href="/en/blog/key-duplication-guide.html" class="b-card">
+            <div class="b-card-body">
+              <span class="b-card-num" aria-hidden="true">04</span>
+              <span class="b-card-cat"><i class="fas fa-key" aria-hidden="true"></i> Key Services</span>
+              <h2 class="b-card-title">How Key Duplication Works: Types, What to Bring &amp; What to Expect</h2>
+              <p class="b-card-desc">Getting a spare key cut takes under 5 minutes &mdash; if you know what to bring. Learn which keys we can duplicate, how the cutting process works, and how many copies you should make.</p>
+              <div class="b-card-meta"><span><i class="fas fa-clock" aria-hidden="true"></i> 4 min read</span></div>
+              <span class="b-card-link">Read article <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
             </div>
-            <span class="blog-card-link">Read article <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
-          </div>
-        </a>
+          </a>
+
+          <a href="/en/blog/watch-water-resistance.html" class="b-card">
+            <div class="b-card-body">
+              <span class="b-card-num" aria-hidden="true">05</span>
+              <span class="b-card-cat"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" aria-hidden="true" focusable="false" style="width:.75em;height:.875em;display:inline-block;fill:currentColor;vertical-align:-.1em"><path d="M192 512C86 512 0 426 0 320C0 228.8 130.2 57.7 166.6 11.7C172.6 4.2 181.5 0 191 0h2c9.5 0 18.4 4.2 24.5 11.7C253.8 57.7 384 228.8 384 320c0 106-86 192-192 192z"/></svg> Watch Care</span>
+              <h2 class="b-card-title">Watch Water Resistance Ratings Explained: ATM, BAR &amp; What They Really Mean</h2>
+              <p class="b-card-desc">Your watch says &ldquo;water resistant&rdquo; &mdash; but does that mean you can swim, shower, or dive with it? Most people misread these ratings and damage their watch as a result.</p>
+              <div class="b-card-meta"><span><i class="fas fa-clock" aria-hidden="true"></i> 6 min read</span></div>
+              <span class="b-card-link">Read article <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
+            </div>
+          </a>
+
+          <a href="/en/blog/watch-cleaning-guide.html" class="b-card">
+            <div class="b-card-body">
+              <span class="b-card-num" aria-hidden="true">06</span>
+              <span class="b-card-cat"><i class="fas fa-gem" aria-hidden="true"></i> Watch Care</span>
+              <h2 class="b-card-title">How to Clean Your Watch at Home: Safe Methods for Every Material</h2>
+              <p class="b-card-desc">Dirt, sweat, and grime build up on every watch &mdash; even expensive ones. Regular cleaning takes under five minutes and keeps your watch looking new.</p>
+              <div class="b-card-meta"><span><i class="fas fa-clock" aria-hidden="true"></i> 5 min read</span></div>
+              <span class="b-card-link">Read article <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
+            </div>
+          </a>
+
+          <a href="/en/blog/watch-storage-guide.html" class="b-card">
+            <div class="b-card-body">
+              <span class="b-card-num" aria-hidden="true">07</span>
+              <span class="b-card-cat"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Watch Care</span>
+              <h2 class="b-card-title">How to Store Your Watch Properly: A Complete Guide</h2>
+              <p class="b-card-desc">Wrong storage degrades lubricants, magnetises movements, and cracks straps. Learn the optimal conditions &mdash; temperature, humidity, and what should never sit next to a watch.</p>
+              <div class="b-card-meta"><span><i class="fas fa-clock" aria-hidden="true"></i> 5 min read</span></div>
+              <span class="b-card-link">Read article <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
+            </div>
+          </a>
+
+          <a href="/en/blog/mechanical-vs-quartz.html" class="b-card">
+            <div class="b-card-body">
+              <span class="b-card-num" aria-hidden="true">08</span>
+              <span class="b-card-cat"><i class="fas fa-cogs" aria-hidden="true"></i> Watch Knowledge</span>
+              <h2 class="b-card-title">Mechanical vs Quartz Watches: What&rsquo;s the Difference and Which Should You Choose?</h2>
+              <p class="b-card-desc">Quartz wins on accuracy and low maintenance. Mechanical wins on craftsmanship and collector value. An honest comparison to help you choose the right watch.</p>
+              <div class="b-card-meta"><span><i class="fas fa-clock" aria-hidden="true"></i> 6 min read</span></div>
+              <span class="b-card-link">Read article <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
+            </div>
+          </a>
+
+          <a href="/en/blog/watch-crystal-guide.html" class="b-card">
+            <div class="b-card-body">
+              <span class="b-card-num" aria-hidden="true">09</span>
+              <span class="b-card-cat"><i class="fas fa-gem" aria-hidden="true"></i> Watch Care</span>
+              <h2 class="b-card-title">Watch Crystals Explained: Acrylic, Mineral, and Sapphire &mdash; What&rsquo;s the Difference?</h2>
+              <p class="b-card-desc">Three materials, three levels of protection. Learn which scratch easily, which shatter, and what to do when your watch crystal is damaged.</p>
+              <div class="b-card-meta"><span><i class="fas fa-clock" aria-hidden="true"></i> 5 min read</span></div>
+              <span class="b-card-link">Read article <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
+            </div>
+          </a>
+
+        </div>
 
       </div>
     </section>
