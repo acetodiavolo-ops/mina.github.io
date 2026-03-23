@@ -409,6 +409,9 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 800; let
 .faq-question { display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 600; font-size: 1.1rem; user-select: none; padding: 4px 0; }
 .faq-question > i { transition: transform var(--transition-base); color: var(--accent-gold); flex-shrink: 0; margin-left: 1rem; }
 .faq-question.open > i { transform: rotate(180deg); }
+details.faq-item>summary::-webkit-details-marker{display:none}
+details.faq-item .faq-answer{max-height:none!important;overflow:visible!important}
+details.faq-item[open] .faq-question>i:last-child{transform:rotate(180deg)}
 .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; color: var(--text-secondary); }
 .faq-answer p { padding: 0.75rem 0 0.25rem; }
 .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: linear-gradient(145deg, #25D366, #20b859); color: #fff; width: 65px; height: 65px; border-radius: 50%; font-size: 32px; box-shadow: 0 15px 20px -8px rgba(37,211,102,0.4); z-index: 100; transition: all var(--transition-base); display: flex; align-items: center; justify-content: center; text-decoration: none; }
@@ -541,7 +544,7 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
     }
   }
   </script>
-  <link rel="stylesheet" href="/shared.css?v=25">
+  <link rel="stylesheet" href="/shared.css?v=26">
 </head>
 <body class="text-gray-800 antialiased lang-it">
 
@@ -877,33 +880,33 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
       <div class="max-w-5xl mx-auto px-6">
         <h2 id="faq-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Domande <span class="gold-display">Frequenti</span></h2>
         <div class="space-y-2">
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-a-1">
+          <details class="faq-item">
+            <summary class="faq-question">
               <span class="faq-q-label"><i class="fas fa-battery-three-quarters faq-icon" aria-hidden="true"></i>Quanto tempo ci vuole per sostituire la batteria dell'orologio?</span>
               <i class="fas fa-chevron-down" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer" id="faq-a-1" role="region">
+            </summary>
+            <div class="faq-answer">
               <p><strong class="gold">Meno di 2 minuti</strong> mentre aspetti.</p>
             </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-a-2">
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">
               <span class="faq-q-label"><i class="fas fa-cogs faq-icon" aria-hidden="true"></i>Riparate tutti i tipi di orologi?</span>
               <i class="fas fa-chevron-down" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer" id="faq-a-2" role="region">
+            </summary>
+            <div class="faq-answer">
               <p>Specializzati in orologi al quarzo, ma possiamo riparare anche orologi meccanici/automatici a seconda della riparazione necessaria.</p>
             </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-a-3">
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">
               <span class="faq-q-label"><i class="fas fa-key faq-icon" aria-hidden="true"></i>Che tipi di chiavi copiate?</span>
               <i class="fas fa-chevron-down" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer" id="faq-a-3" role="region">
+            </summary>
+            <div class="faq-answer">
               <p>Copiamo chiavi standard per casa, ufficio e chiavi di sicurezza. Non copiamo chiavi auto.</p>
             </div>
-          </div>
+          </details>
         </div>
       </div>
     </section>
