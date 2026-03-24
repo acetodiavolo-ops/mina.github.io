@@ -580,31 +580,26 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
   to   { transform: translateY(0);     opacity: 1; }
 }
 
-/* ── DUAL GEAR — counter-spinning, always on (cross-device) ─────────────── */
+/* ── DUAL GEAR — spins on hover / touch ─────────────────────────────────── */
 .dual-gear { display: inline-flex; align-items: flex-end; gap: .1rem; }
-.dual-gear i { transition: color var(--transition-base); display: inline-block !important; }
-.dual-gear i:first-child { font-size: 1.65em; color: var(--accent-gold-accessible); animation: gear-cw  3.5s linear infinite; }
-.dual-gear i:last-child  { font-size: .82em;  color: var(--accent-teal);            animation: gear-ccw 2.8s linear infinite; margin-bottom: .08em; }
-/* Pause & highlight on interact (hover = desktop, active = touch) */
-.promise-card:hover .dual-gear i,
-.promise-card:active .dual-gear i { animation-play-state: paused; color: var(--accent-gold); }
+.dual-gear i { display: inline-block !important; }
+.dual-gear i:first-child { font-size: 1.65em; color: var(--accent-gold); transition: color var(--transition-base); }
+.dual-gear i:last-child  { font-size: .82em;  color: rgba(180,148,92,.5); margin-bottom: .08em; transition: color var(--transition-base); }
+.promise-card:hover .dual-gear i:first-child,
+.promise-card:active .dual-gear i:first-child { animation: gear-cw  1.8s linear infinite; color: var(--accent-gold); }
+.promise-card:hover .dual-gear i:last-child,
+.promise-card:active .dual-gear i:last-child  { animation: gear-ccw 1.4s linear infinite; color: rgba(180,148,92,.75); }
 
-/* ── PROMISE CARD ICONS — self-animating (always visible, no hover needed) ─ */
-/* Bolt: periodic zap */
-.promise-card:nth-child(1) i.promise-icon {
-  animation: bolt-zap 3.5s ease-in-out infinite;
-  display: inline-block !important;
-}
-/* Euro: gentle bob */
-.promise-card:nth-child(3) i.promise-icon {
-  animation: icon-bob 3s ease-in-out infinite; animation-delay: .8s;
-  display: inline-block !important;
-}
-/* Check: bob, offset */
-.promise-card:nth-child(4) i.promise-icon {
-  animation: icon-bob 3s ease-in-out infinite; animation-delay: 1.6s;
-  display: inline-block !important;
-}
+/* ── PROMISE CARD ICONS — animate on hover / touch ──────────────────────── */
+.promise-card:nth-child(1) i.promise-icon,
+.promise-card:nth-child(3) i.promise-icon,
+.promise-card:nth-child(4) i.promise-icon { display: inline-block !important; }
+.promise-card:hover:nth-child(1) i.promise-icon,
+.promise-card:active:nth-child(1) i.promise-icon { animation: bolt-zap .55s ease-in-out; }
+.promise-card:hover:nth-child(3) i.promise-icon,
+.promise-card:active:nth-child(3) i.promise-icon { animation: icon-bob 1.2s ease-in-out infinite; }
+.promise-card:hover:nth-child(4) i.promise-icon,
+.promise-card:active:nth-child(4) i.promise-icon { animation: icon-bob 1.2s ease-in-out infinite; }
 
 /* ── TIMELINE ICONS — staggered ring (composited) ───────────────────────── */
 .timeline-icon { position: relative; }
@@ -662,9 +657,6 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
   }
 }
 
-/* ── PROMISE & TRUST CARD — subtle warm gradient ────────────────────────── */
-.promise-card { background: linear-gradient(145deg,#ffffff 0%,#fdfaf5 100%); }
-.trust-badge  { background: linear-gradient(145deg,#ffffff 0%,#fdfaf5 100%); }
 
 /* ── SERVICE / EQUIPMENT CARD — warm base shadow ────────────────────────── */
 .service-card, .equipment-card { box-shadow: 0 4px 20px -8px rgba(180,148,92,.14); }
@@ -1308,7 +1300,7 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
     </div>
   </footer>
 
-  <script src="/shared.js?v=13" defer></script>
+  <script src="/shared.js?v=14" defer></script>
   <script src="/cookie.js" defer></script>
 
 </body>
