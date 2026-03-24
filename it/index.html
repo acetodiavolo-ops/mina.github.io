@@ -507,22 +507,21 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
 @keyframes gear-cw   { to { transform: rotate( 360deg); } }
 @keyframes gear-ccw  { to { transform: rotate(-360deg); } }
 @keyframes bolt-zap {
-  0%,78%,100% { transform: scale(1);    filter: none; }
-  82%  { transform: scale(1.35) rotate(-12deg); filter: drop-shadow(0 0 8px rgba(180,148,92,.85)); }
-  90%  { transform: scale(1.12) rotate(  5deg); filter: drop-shadow(0 0 4px rgba(180,148,92,.4)); }
+  0%,78%,100% { transform: scale(1); }
+  82%          { transform: scale(1.35) rotate(-12deg); }
+  90%          { transform: scale(1.12) rotate(5deg); }
 }
 @keyframes icon-bob {
   0%,100% { transform: translateY(0); }
   50%     { transform: translateY(-6px); }
 }
-@keyframes ring-pulse {
-  0%   { box-shadow: 0 10px 15px -3px rgba(180,148,92,.2), 0 0 0  0   rgba(180,148,92,.55); }
-  70%  { box-shadow: 0 10px 15px -3px rgba(180,148,92,.2), 0 0 0 12px rgba(180,148,92,0);   }
-  100% { box-shadow: 0 10px 15px -3px rgba(180,148,92,.2), 0 0 0  0   rgba(180,148,92,0);   }
+@keyframes ring-expand {
+  0%   { transform: scale(1);   opacity: .65; }
+  100% { transform: scale(2.2); opacity: 0;   }
 }
-@keyframes cta-pulse {
-  0%,100% { box-shadow: 0 4px 6px -1px rgba(0,0,0,.15), 0 0 0  0   rgba(180,148,92,.4); }
-  60%     { box-shadow: 0 4px 6px -1px rgba(0,0,0,.15), 0 0 0 12px rgba(180,148,92,0); }
+@keyframes cta-ring {
+  0%,40% { transform: scale(1);    opacity: .65; }
+  100%   { transform: scale(1.45); opacity: 0;   }
 }
 @keyframes banner-drop {
   from { transform: translateY(-100%); opacity: 0; }
@@ -555,10 +554,16 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
   display: inline-block !important;
 }
 
-/* ── TIMELINE ICONS — staggered pulsing ring ────────────────────────────── */
-.timeline-icon { animation: ring-pulse 2.2s ease-out infinite; }
-.timeline-item:nth-child(2) .timeline-icon { animation-delay: .7s;  }
-.timeline-item:nth-child(3) .timeline-icon { animation-delay: 1.4s; }
+/* ── TIMELINE ICONS — staggered ring (composited) ───────────────────────── */
+.timeline-icon { position: relative; }
+.timeline-icon::after {
+  content: ''; position: absolute; inset: 0; border-radius: 50%;
+  border: 2px solid rgba(180,148,92,.6);
+  animation: ring-expand 2.2s ease-out infinite;
+  pointer-events: none;
+}
+.timeline-item:nth-child(2) .timeline-icon::after { animation-delay: .7s;  }
+.timeline-item:nth-child(3) .timeline-icon::after { animation-delay: 1.4s; }
 
 /* ── HOVER EFFECTS — real-pointer devices only ──────────────────────────── */
 @media (hover: hover) {
@@ -570,7 +575,7 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
     box-shadow: 0 14px 32px -10px rgba(180,148,92,.28);
     transform: translateY(-4px);
   }
-  .hero-content .btn-primary:hover { animation: none; }
+  .hero-content .btn-primary:hover::after { animation: none; }
   .footer nav[aria-label="Social media links"] a:hover { transform: translateY(-3px) scale(1.15); }
 }
 
@@ -612,9 +617,15 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
 /* ── SERVICE / EQUIPMENT CARD — warm base shadow ────────────────────────── */
 .service-card, .equipment-card { box-shadow: 0 4px 20px -8px rgba(180,148,92,.14); }
 
-/* ── HERO PRIMARY CTA — gentle pulse ────────────────────────────────────── */
-.hero-content .btn-primary { animation: cta-pulse 2.8s ease-in-out infinite; }
-.hero-content .btn-primary:active { animation: none; }
+/* ── HERO PRIMARY CTA — ring pulse (composited) ─────────────────────────── */
+.hero-content .btn-primary { position: relative; box-shadow: 0 4px 6px -1px rgba(0,0,0,.15); }
+.hero-content .btn-primary::after {
+  content: ''; position: absolute; inset: -2px; border-radius: 9999px;
+  border: 2px solid rgba(180,148,92,.6);
+  animation: cta-ring 2.8s ease-in-out infinite;
+  pointer-events: none;
+}
+.hero-content .btn-primary:active::after { animation: none; }
 
 /* ── URGENT BANNER — slide-in on load ───────────────────────────────────── */
 .urgent-banner { animation: banner-drop .45s ease-out both; }
@@ -644,8 +655,8 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
 @media (prefers-reduced-motion: reduce) {
   .dual-gear i,
   i.promise-icon,
-  .timeline-icon,
-  .hero-content .btn-primary,
+  .timeline-icon::after,
+  .hero-content .btn-primary::after,
   .urgent-banner { animation: none !important; }
   .promise-card:hover .dual-gear i,
   .promise-card:active .dual-gear i { color: var(--accent-gold); }
@@ -732,7 +743,7 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
     }
   }
   </script>
-  <link rel="stylesheet" href="/shared.css?v=26">
+  <link rel="preload" href="/shared.css?v=26" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/shared.css?v=26"></noscript>
 </head>
 <body class="text-gray-800 antialiased lang-it">
 
