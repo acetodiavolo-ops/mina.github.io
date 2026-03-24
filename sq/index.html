@@ -460,6 +460,194 @@ span.inline-flex > span > strong { color: #2a2a2a; }
 .blog-card-read:hover { color: var(--accent-gold); }
 /* Icon circle centering — overrides .fas display:inline-block with higher specificity */
 i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justify-content:center}
+
+/* ── SM BREAKPOINTS (640px) — missing from utility block ────────────────── */
+@media (min-width: 640px) {
+  .sm\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sm\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+/* ── HERO KICKER SEPARATOR LINE ─────────────────────────────────────────── */
+.hero-kicker-line {
+  width: 48px; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+  margin: .85rem auto 0;
+}
+
+/* ── HERO TRUST STRIP & PILLS ───────────────────────────────────────────── */
+.hero-trust-strip {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: .65rem; margin-top: 2rem;
+}
+.hero-trust-pill {
+  display: inline-flex; align-items: center; gap: .4rem;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.22);
+  color: rgba(255,255,255,.9);
+  padding: .35rem .95rem;
+  border-radius: 9999px; font-size: .82rem;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  transition: background var(--transition-base), border-color var(--transition-base);
+  text-decoration: none;
+}
+.hero-trust-pill:hover { background: rgba(255,255,255,.18); border-color: rgba(255,255,255,.38); }
+.pill-stars { color: #f5c842; letter-spacing: 1px; font-size: .9rem; }
+
+/* ── FAQ LABEL — icon + text alignment ──────────────────────────────────── */
+.faq-q-label {
+  display: inline-flex; align-items: center; gap: .55rem;
+}
+
+/* ── SECTION TITLE underline — centre-origin for centred headings ────────── */
+.text-center .section-title::after { transform-origin: center; }
+
+/* ── ICON ANIMATION KEYFRAMES ───────────────────────────────────────────── */
+@keyframes gear-cw   { to { transform: rotate( 360deg); } }
+@keyframes gear-ccw  { to { transform: rotate(-360deg); } }
+@keyframes bolt-zap {
+  0%,78%,100% { transform: scale(1);    filter: none; }
+  82%  { transform: scale(1.35) rotate(-12deg); filter: drop-shadow(0 0 8px rgba(180,148,92,.85)); }
+  90%  { transform: scale(1.12) rotate(  5deg); filter: drop-shadow(0 0 4px rgba(180,148,92,.4)); }
+}
+@keyframes icon-bob {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-6px); }
+}
+@keyframes ring-pulse {
+  0%   { box-shadow: 0 10px 15px -3px rgba(180,148,92,.2), 0 0 0  0   rgba(180,148,92,.55); }
+  70%  { box-shadow: 0 10px 15px -3px rgba(180,148,92,.2), 0 0 0 12px rgba(180,148,92,0);   }
+  100% { box-shadow: 0 10px 15px -3px rgba(180,148,92,.2), 0 0 0  0   rgba(180,148,92,0);   }
+}
+@keyframes cta-pulse {
+  0%,100% { box-shadow: 0 4px 6px -1px rgba(0,0,0,.15), 0 0 0  0   rgba(180,148,92,.4); }
+  60%     { box-shadow: 0 4px 6px -1px rgba(0,0,0,.15), 0 0 0 12px rgba(180,148,92,0); }
+}
+@keyframes banner-drop {
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+
+/* ── DUAL GEAR — counter-spinning, always on (cross-device) ─────────────── */
+.dual-gear { display: inline-flex; align-items: flex-end; gap: .1rem; }
+.dual-gear i { transition: color var(--transition-base); display: inline-block !important; }
+.dual-gear i:first-child { font-size: 1.65em; color: var(--accent-gold-accessible); animation: gear-cw  3.5s linear infinite; }
+.dual-gear i:last-child  { font-size: .82em;  color: var(--accent-teal);            animation: gear-ccw 2.8s linear infinite; margin-bottom: .08em; }
+/* Pause & highlight on interact (hover = desktop, active = touch) */
+.promise-card:hover .dual-gear i,
+.promise-card:active .dual-gear i { animation-play-state: paused; color: var(--accent-gold); }
+
+/* ── PROMISE CARD ICONS — self-animating (always visible, no hover needed) ─ */
+/* Bolt: periodic zap */
+.promise-card:nth-child(1) i.promise-icon {
+  animation: bolt-zap 3.5s ease-in-out infinite;
+  display: inline-block !important;
+}
+/* Euro: gentle bob */
+.promise-card:nth-child(3) i.promise-icon {
+  animation: icon-bob 3s ease-in-out infinite; animation-delay: .8s;
+  display: inline-block !important;
+}
+/* Check: bob, offset */
+.promise-card:nth-child(4) i.promise-icon {
+  animation: icon-bob 3s ease-in-out infinite; animation-delay: 1.6s;
+  display: inline-block !important;
+}
+
+/* ── TIMELINE ICONS — staggered pulsing ring ────────────────────────────── */
+.timeline-icon { animation: ring-pulse 2.2s ease-out infinite; }
+.timeline-item:nth-child(2) .timeline-icon { animation-delay: .7s;  }
+.timeline-item:nth-child(3) .timeline-icon { animation-delay: 1.4s; }
+
+/* ── HOVER EFFECTS — real-pointer devices only ──────────────────────────── */
+@media (hover: hover) {
+  .service-card:hover i,
+  .equipment-card:hover i { transform: scale(1.12); color: var(--accent-gold); }
+  .promise-card:hover i.promise-icon { color: var(--accent-gold); transform: scale(1.12); }
+  .trust-badge:hover i    { color: var(--accent-gold); transform: scale(1.12); }
+  .service-card:hover, .equipment-card:hover {
+    box-shadow: 0 14px 32px -10px rgba(180,148,92,.28);
+    transform: translateY(-4px);
+  }
+  .hero-content .btn-primary:hover { animation: none; }
+  .footer nav[aria-label="Social media links"] a:hover { transform: translateY(-3px) scale(1.15); }
+}
+
+/* ── TOUCH / ACTIVE — mobile & touch devices ────────────────────────────── */
+.service-card, .equipment-card, .promise-card, .trust-badge {
+  cursor: pointer; -webkit-tap-highlight-color: transparent;
+}
+@media (hover: none) {
+  /* Icon pop on tap */
+  .service-card:active i   { transform: scale(1.18) !important; color: var(--accent-gold) !important; }
+  .equipment-card:active i { transform: scale(1.18) !important; color: var(--accent-gold) !important; }
+  .trust-badge:active i    { transform: scale(1.18) !important; color: var(--accent-gold) !important; }
+  /* Card lift on tap */
+  .service-card:active, .equipment-card:active {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px -8px rgba(180,148,92,.28);
+  }
+  .promise-card:active {
+    border-color: var(--accent-gold);
+    transform: translateY(-3px) !important;
+    box-shadow: 0 10px 20px -5px rgba(180,148,92,.3);
+  }
+  .trust-badge:active {
+    border-color: var(--accent-gold);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -5px rgba(180,148,92,.3);
+  }
+  /* Footer social tap */
+  .footer nav[aria-label="Social media links"] a:active {
+    transform: translateY(-3px) scale(1.15);
+    color: var(--accent-gold);
+  }
+}
+
+/* ── PROMISE & TRUST CARD — subtle warm gradient ────────────────────────── */
+.promise-card { background: linear-gradient(145deg,#ffffff 0%,#fdfaf5 100%); }
+.trust-badge  { background: linear-gradient(145deg,#ffffff 0%,#fdfaf5 100%); }
+
+/* ── SERVICE / EQUIPMENT CARD — warm base shadow ────────────────────────── */
+.service-card, .equipment-card { box-shadow: 0 4px 20px -8px rgba(180,148,92,.14); }
+
+/* ── HERO PRIMARY CTA — gentle pulse ────────────────────────────────────── */
+.hero-content .btn-primary { animation: cta-pulse 2.8s ease-in-out infinite; }
+.hero-content .btn-primary:active { animation: none; }
+
+/* ── URGENT BANNER — slide-in on load ───────────────────────────────────── */
+.urgent-banner { animation: banner-drop .45s ease-out both; }
+
+/* ── REVIEW STARS — warmer gold ─────────────────────────────────────────── */
+.star-large i.gold, .review-card .gold.fa-star { color: #c8973e !important; }
+
+/* ── TIMELINE — connector line between steps ────────────────────────────── */
+.timeline-item { position: relative; }
+.timeline-item:not(:last-child)::after {
+  content: ''; position: absolute;
+  left: 1.75rem; top: 3.5rem; bottom: -1.75rem; width: 2px;
+  background: linear-gradient(to bottom, rgba(180,148,92,.55), transparent);
+  pointer-events: none;
+}
+
+/* ── REVIEW CARD — quote mark ───────────────────────────────────────────── */
+.review-card::before { opacity: 0.065; font-size: 13rem; top: -28px; }
+
+/* ── FOOTER SOCIAL ICONS ────────────────────────────────────────────────── */
+.footer nav[aria-label="Social media links"] a {
+  transition: color var(--transition-base), transform var(--transition-base);
+  display: inline-block;
+}
+
+/* ── REDUCED MOTION — disable all custom animations ─────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .dual-gear i,
+  i.promise-icon,
+  .timeline-icon,
+  .hero-content .btn-primary,
+  .urgent-banner { animation: none !important; }
+  .promise-card:hover .dual-gear i,
+  .promise-card:active .dual-gear i { color: var(--accent-gold); }
+}
   </style>
 
   <!-- STRUCTURED DATA -->
