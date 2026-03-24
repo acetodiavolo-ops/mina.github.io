@@ -6,10 +6,13 @@
   <meta name="theme-color" content="#b4945c">
   <meta name="robots" content="index, follow">
   <title>Riparim Or&euml;sh dhe Kopjim &Ccedil;el&euml;sash | Iglisi Watch Durr&euml;s</title>
-  <meta name="description" content="Z&euml;vend&euml;sim baterie brenda 2 minutave, riparim kuarc dhe mekanik, montim rripe dhe kopjim &ccedil;el&euml;sash me precizion. Mir&euml; se vini pa takim te Iglisi Watch, Durr&euml;s.">
-  <meta property="og:title" content="Riparim Or&euml;sh dhe Kopjim &Ccedil;el&euml;sash | Iglisi Watch">
-  <meta property="og:description" content="Z&euml;vend&euml;sim baterie brenda 2 minutave. Riparim kuarc dhe mekanik, montim rripe, kopjim &ccedil;el&euml;sash. Mir&euml; se vini pa takim n&euml; Durr&euml;s.">
+  <meta name="description" content="Z&euml;vend&euml;sim baterie brenda 2 minutave. Riparim kuarc dhe mekanik, montim rripe, z&euml;vend&euml;sim kurore dhe kopjim &ccedil;el&euml;sash me precizion. Mir&euml; se vini pa takim te Iglisi Watch, Durr&euml;s.">
+  <meta property="og:title" content="Riparim Or&euml;sh dhe Kopjim &Ccedil;el&euml;sash | Iglisi Watch Durr&euml;s">
+  <meta property="og:description" content="Bateri brenda 2 minutave. Riparim kuarc dhe mekanik, montim rripe, kopjim &ccedil;el&euml;sash. Mir&euml; se vini pa takim n&euml; Durr&euml;s.">
   <meta property="og:image" content="https://watch.al/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Iglisi Watch &mdash; riparim or&euml;sh n&euml; Durr&euml;s, Shqip&euml;ri">
   <meta property="og:url" content="https://watch.al/sq/services.html">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="sq_AL">
@@ -25,16 +28,144 @@
   <link rel="alternate" hreflang="x-default" href="https://watch.al/en/services.html">
   <link rel="icon" type="image/png" href="https://watch.al/favicon.png">
   <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="https://watch.al/favicon.png">
   <link rel="preload" href="/webfonts/inter.woff2?v=2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/webfonts/cormorant-garamond.woff2?v=2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/webfonts/fa-solid-900.woff2?v=2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/webfonts/fa-brands-400.woff2?v=2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/shared.css?v=26">
+  <style>
+    /* === Services Page Layout === */
+    .svp-wrap{max-width:1100px;margin:0 auto;padding:2.5rem 1.5rem 4rem;display:flex;flex-direction:column;gap:2.5rem}
+
+    /* Trust strip */
+    .svp-trust{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-radius:1.1rem;box-shadow:0 2px 14px rgba(0,0,0,.07);overflow:hidden}
+    .svp-trust-item{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.5rem 1rem;border-right:1px solid #f0ebe4;text-align:center;gap:.3rem}
+    .svp-trust-item:last-child{border-right:none}
+    .svp-trust-num{font-size:1.9rem;font-weight:900;color:var(--accent-gold);font-family:'Cormorant Garamond',serif;line-height:1}
+    .svp-trust-label{font-size:.69rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--text-secondary)}
+
+    /* Featured service */
+    .svp-feat{display:grid;grid-template-columns:5.5rem 1fr;gap:2.5rem;align-items:start;background:linear-gradient(135deg,#18110a 0%,#2c1d0d 60%,#1a1208 100%);border-radius:1.5rem;padding:2.5rem 3rem;color:#fff;position:relative;overflow:hidden;box-shadow:0 6px 40px rgba(0,0,0,.22)}
+    .svp-feat::before{content:'';position:absolute;top:0;left:0;width:5px;height:100%;background:var(--accent-gold);border-radius:6px 0 0 6px}
+    .svp-feat::after{content:'';position:absolute;inset:0;border-radius:1.5rem;border:1px solid rgba(180,148,92,.18);pointer-events:none}
+    .svp-feat-num{font-size:6rem;font-weight:900;color:rgba(180,148,92,.13);font-family:'Cormorant Garamond',serif;line-height:1;user-select:none;padding-top:.5rem}
+    .svp-feat-cat{display:inline-flex;align-items:center;gap:.4rem;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-gold);margin-bottom:.65rem}
+    .svp-feat-title{font-size:1.85rem;font-weight:800;line-height:1.2;margin-bottom:.75rem;color:#fff}
+    .svp-feat-desc{font-size:.9rem;color:rgba(255,255,255,.63);line-height:1.65;margin-bottom:1.1rem;max-width:54ch}
+    .svp-feat-list{list-style:none;padding:0;margin:0 0 1.4rem;display:flex;flex-direction:column;gap:.45rem}
+    .svp-feat-list li{font-size:.84rem;color:rgba(255,255,255,.52);display:flex;align-items:center;gap:.6rem}
+    .svp-feat-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent-gold);flex-shrink:0;opacity:.75}
+    .svp-feat-badge{display:inline-flex;align-items:center;gap:.4rem;font-size:.75rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#18110a;background:var(--accent-gold);padding:.45rem 1.1rem;border-radius:2rem}
+
+    /* Section label */
+    .svp-label{display:flex;align-items:center;gap:1rem;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#bbb;margin:0}
+    .svp-label::after{content:'';flex:1;height:1px;background:#e5ddd3}
+
+    /* Service cards */
+    .svp-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+    .svp-card{background:#fff;border-radius:1.1rem;box-shadow:0 2px 14px rgba(0,0,0,.07);display:flex;flex-direction:column;padding:1.75rem;border-top:3px solid transparent;transition:transform .2s,box-shadow .2s,border-top-color .2s}
+    .svp-card:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.12);border-top-color:var(--accent-gold)}
+    .svp-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.9rem}
+    .svp-card-icon{width:3rem;height:3rem;border-radius:.75rem;background:linear-gradient(135deg,rgba(180,148,92,.15),rgba(180,148,92,.04));display:flex;align-items:center;justify-content:center;font-size:1.35rem;color:var(--accent-gold)}
+    .svp-card-num{font-size:2.5rem;font-weight:900;color:rgba(180,148,92,.12);font-family:'Cormorant Garamond',serif;line-height:1}
+    .svp-card-title{font-size:1.05rem;font-weight:800;color:var(--text-primary);margin:0 0 .5rem}
+    .svp-card-desc{font-size:.855rem;color:var(--text-secondary);line-height:1.6;margin:0 0 .9rem}
+    .svp-card-list{list-style:none;padding:0;margin:0 0 1rem;flex:1;display:flex;flex-direction:column;gap:.38rem}
+    .svp-card-list li{font-size:.8rem;color:var(--text-secondary);display:flex;align-items:flex-start;gap:.5rem;line-height:1.5}
+    .svp-card-list li i{font-size:.58rem;color:var(--accent-gold);margin-top:.3rem;flex-shrink:0}
+    .svp-card-badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.69rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent-gold);background:rgba(180,148,92,.1);padding:.3rem .7rem;border-radius:999px;width:fit-content;margin-top:auto}
+
+    /* Process section */
+    .svp-process{background:#fff;border-radius:1.5rem;padding:2.75rem 3rem;box-shadow:0 2px 20px rgba(0,0,0,.06)}
+    .svp-process-hd{text-align:center;margin-bottom:2.5rem}
+    .svp-process-hd h2{font-size:1.55rem;font-weight:800;margin-bottom:.35rem}
+    .svp-process-hd p{color:var(--text-secondary);font-size:.88rem;margin:0}
+    .svp-steps{display:grid;grid-template-columns:1fr 1.5rem 1fr 1.5rem 1fr;align-items:start;gap:0}
+    .svp-step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 .75rem}
+    .svp-step-num{width:4.5rem;height:4.5rem;border-radius:50%;background:linear-gradient(135deg,#18110a,#2c1d0d);display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:900;color:var(--accent-gold);font-family:'Cormorant Garamond',serif;margin-bottom:1rem;box-shadow:0 4px 18px rgba(0,0,0,.14)}
+    .svp-step h3{font-size:.95rem;font-weight:800;margin-bottom:.4rem;color:var(--text-primary)}
+    .svp-step p{font-size:.82rem;color:var(--text-secondary);line-height:1.55;margin:0}
+    .svp-step-arr{display:flex;align-items:center;justify-content:center;padding-top:2.2rem;color:rgba(180,148,92,.32);font-size:1.2rem}
+
+    /* From the blog */
+    .svp-reads-hd{margin-bottom:.85rem}
+    .svp-reads-hd h2{font-size:1.2rem;font-weight:800;margin-bottom:.2rem}
+    .svp-reads-hd p{font-size:.83rem;color:var(--text-secondary);margin:0}
+    .svp-reads{display:flex;flex-direction:column;border:1px solid var(--border-light);border-radius:1.1rem;overflow:hidden;background:#fff}
+    .svp-read{display:flex;align-items:center;gap:1.1rem;padding:1rem 1.5rem;border-bottom:1px solid var(--border-light);text-decoration:none;color:inherit;transition:background .15s}
+    .svp-read:last-child{border-bottom:none}
+    .svp-read:hover{background:var(--bg-soft)}
+    .svp-read-icon{width:2.25rem;height:2.25rem;border-radius:.5rem;background:rgba(180,148,92,.1);display:flex;align-items:center;justify-content:center;font-size:.9rem;color:var(--accent-gold);flex-shrink:0}
+    .svp-read-body{flex:1;min-width:0}
+    .svp-read-title{font-size:.875rem;font-weight:700;color:var(--text-primary)}
+    .svp-read-sub{font-size:.76rem;color:var(--text-secondary);margin-top:.1rem}
+    .svp-read-arr{color:rgba(180,148,92,.38);font-size:.85rem;flex-shrink:0;transition:color .15s,transform .15s}
+    .svp-read:hover .svp-read-arr{color:var(--accent-gold);transform:translateX(3px)}
+
+    /* FAQ */
+    .svp-faq{background:var(--bg-soft);border-radius:1.5rem;padding:2.75rem 3rem}
+    .svp-faq-hd{text-align:center;margin-bottom:2rem}
+    .svp-faq-hd h2{font-size:1.45rem;font-weight:800;margin-bottom:.3rem}
+    .svp-faq-hd p{font-size:.87rem;color:var(--text-secondary);margin:0}
+    .svp-faq-body{max-width:720px;margin:0 auto}
+
+    /* CTA */
+    .svp-cta{background:linear-gradient(135deg,#18110a 0%,#2c1d0d 60%,#1a1208 100%);border-radius:1.5rem;padding:3rem;text-align:center;position:relative;overflow:hidden}
+    .svp-cta::after{content:'';position:absolute;inset:0;border-radius:1.5rem;border:1px solid rgba(180,148,92,.18);pointer-events:none}
+    .svp-cta-inner{position:relative;z-index:1}
+    .svp-cta h2{font-size:1.7rem;font-weight:800;color:#fff;margin-bottom:.55rem}
+    .svp-cta p{font-size:.9rem;color:rgba(255,255,255,.58);margin-bottom:1.75rem;max-width:44ch;margin-left:auto;margin-right:auto}
+    .svp-cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+    .svp-cta-a{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent-gold);color:#18110a;font-weight:800;font-size:.9rem;padding:.8rem 1.75rem;border-radius:2rem;text-decoration:none;transition:transform .2s,box-shadow .2s}
+    .svp-cta-a:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(180,148,92,.38)}
+    .svp-cta-b{display:inline-flex;align-items:center;gap:.5rem;border:1.5px solid rgba(180,148,92,.4);color:rgba(255,255,255,.82);font-weight:700;font-size:.9rem;padding:.8rem 1.75rem;border-radius:2rem;text-decoration:none;transition:border-color .2s,background .2s}
+    .svp-cta-b:hover{border-color:var(--accent-gold);background:rgba(180,148,92,.1)}
+
+    /* Responsive */
+    @media(max-width:960px){
+      .svp-cards{grid-template-columns:1fr 1fr}
+      .svp-feat{grid-template-columns:1fr;padding:2rem}
+      .svp-feat-num{display:none}
+      .svp-process{padding:2rem 1.75rem}
+      .svp-faq{padding:2rem 1.75rem}
+    }
+    @media(max-width:640px){
+      .svp-cards{grid-template-columns:1fr}
+      .svp-trust{grid-template-columns:repeat(2,1fr)}
+      .svp-trust-item:nth-child(2){border-right:none}
+      .svp-trust-item{border-bottom:1px solid #f0ebe4}
+      .svp-trust-item:nth-child(3),.svp-trust-item:nth-child(4){border-bottom:none}
+      .svp-steps{grid-template-columns:1fr;gap:1.5rem}
+      .svp-step-arr{display:none}
+      .svp-wrap{padding:1.5rem 1rem 3rem;gap:1.75rem}
+      .svp-cta{padding:2rem 1.5rem}
+    }
+  </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Kreu","item":"https://watch.al/sq/"},
+    {"@type":"ListItem","position":1,"name":"Kryefaqja","item":"https://watch.al/sq/"},
     {"@type":"ListItem","position":2,"name":"Sh&euml;rbime","item":"https://watch.al/sq/services.html"}
   ]}</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Riparim Or\u00ebsh dhe Kopjim \u00c7el\u00ebsash",
+    "provider": { "@type": "LocalBusiness", "name": "Iglisi Watch", "url": "https://watch.al" },
+    "areaServed": { "@type": "City", "name": "Durr\u00ebs" },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Sh\u00ebrbime Or\u00ebsh dhe \u00c7el\u00ebsash",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Z\u00ebvend\u00ebsim Baterie Or\u00ebsh" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Riparim dhe Servisim i Or\u00ebs" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Montim Rripe dhe Kurore" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Kopjim \u00c7el\u00ebsash" } }
+      ]
+    }
+  }
+  </script>
 </head>
 <body class="antialiased">
   <a href="#main-content" class="skip-link">Kalo te p&euml;rmbajtja kryesore</a>
@@ -71,7 +202,7 @@
             <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
             <span>5.0 &middot; Shk&euml;lqyer</span>
           </a>
-          <a href="/it/" data-action="toggle-lang" class="flex items-center gap-2 border border-gray-300 px-3 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition" aria-label="Ndrysho gj&euml;n&euml;">
+          <a href="/it/services.html" data-action="toggle-lang" class="flex items-center gap-2 border border-gray-300 px-3 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition" aria-label="Ndrysho gj&euml;n&euml;">
             <i class="fas fa-globe" aria-hidden="true"></i>
             <span data-lang-label>SQ</span>
           </a>
@@ -91,7 +222,7 @@
 
   <nav class="breadcrumb" aria-label="Shtigjet e navigimit">
     <div class="breadcrumb-inner">
-      <a href="/sq/">Kreu</a>
+      <a href="/sq/">Kryefaqja</a>
       <i class="fas fa-chevron-right" aria-hidden="true"></i>
       <span aria-current="page">Sh&euml;rbime</span>
     </div>
@@ -101,49 +232,240 @@
     <div class="max-w-3xl mx-auto px-6">
       <p class="kicker"><i class="fas fa-tools" aria-hidden="true"></i>&ensp;&Ccedil;far&euml; B&euml;jm&euml;</p>
       <h1>Sh&euml;rbimet Tona</h1>
-      <p>Nga z&euml;vend&euml;simi i bateris&euml; brenda 2 minutave deri te rishikimet e plota t&euml; mekanizmit dhe kopjimi i &ccedil;el&euml;save me precizion &mdash; t&euml; gjitha nd&euml;rsa prisni.</p>
+      <p>Nga z&euml;vend&euml;simi i bateris&euml; brenda 2 minutave deri te rishikimet e plota t&euml; mekanizmit dhe kopjimi i &ccedil;el&euml;save me precizion &mdash; t&euml; gjitha nd&euml;rsa prisni, pa k&euml;rku&euml; takim.</p>
     </div>
   </div>
 
   <main id="main-content">
-    <section style="background:var(--bg-soft);padding:3rem 1.5rem 4rem">
-      <div class="svc-grid">
+    <div class="svp-wrap">
 
-        <div class="svc-card" data-animate>
-          <div class="svc-icon"><i class="fas fa-battery-three-quarters" aria-hidden="true"></i></div>
-          <h2 class="svc-title">Z&euml;vend&euml;sim Baterie</h2>
-          <p class="svc-desc">Z&euml;vend&euml;sohet brenda 2 minutave p&euml;r shumicën e or&euml;ve. Rripi i sigurisë kontrollohet me &ccedil;do nd&euml;rrim. Mirë se vini pa takim.</p>
-          <span class="svc-badge"><i class="fas fa-bolt" aria-hidden="true"></i> Brenda 2 minutave</span>
+      <!-- Trust strip -->
+      <div class="svp-trust" role="list" aria-label="Pikat kryesore t&euml; sh&euml;rbimit">
+        <div class="svp-trust-item" role="listitem">
+          <span class="svp-trust-num">22+</span>
+          <span class="svp-trust-label">Vjet n&euml; Durr&euml;s</span>
+        </div>
+        <div class="svp-trust-item" role="listitem">
+          <span class="svp-trust-num">5.0</span>
+          <span class="svp-trust-label">Vler&euml;sim Google</span>
+        </div>
+        <div class="svp-trust-item" role="listitem">
+          <span class="svp-trust-num">&lt;&thinsp;2 min</span>
+          <span class="svp-trust-label">Nd&euml;rrim baterisë</span>
+        </div>
+        <div class="svp-trust-item" role="listitem">
+          <span class="svp-trust-num">0</span>
+          <span class="svp-trust-label">Takime t&euml; nevojshme</span>
+        </div>
+      </div>
+
+      <!-- Featured service: Battery Replacement -->
+      <div class="svp-feat" data-animate>
+        <div class="svp-feat-num" aria-hidden="true">01</div>
+        <div>
+          <div class="svp-feat-cat"><i class="fas fa-bolt" aria-hidden="true"></i>&ensp;Sh&euml;rbim i Shpejt&euml;</div>
+          <h2 class="svp-feat-title">Z&euml;vend&euml;sim Baterisë</h2>
+          <p class="svp-feat-desc">Sh&euml;rbimi yn&euml; m&euml; i k&euml;rkuar &mdash; dhe ai q&euml; e kryejm&euml; m&euml; shpejt. Shumica e nd&euml;rrimeve p&euml;rfundojn&euml; para se t&euml; kenë mbaruar t&euml; shikoni vitrinën. P&euml;rdorim bateri cil&euml;sore dhe kontrollojm&euml; r&euml;zorbit me &ccedil;do nd&euml;rrim p&euml;r t&euml; mbrojtur orën nga lagështia.</p>
+          <ul class="svp-feat-list" aria-label="Çfarë përfshin">
+            <li>T&euml; gjitha markat kuarc &mdash; mode, elegante, sport dhe vintage</li>
+            <li>Kontroll r&euml;zorbi dhe rezistenc&euml; ndaj ujit me &ccedil;do nd&euml;rrim</li>
+            <li>Bateri e re montuar, resetuar dhe testuar para dor&euml;zimit</li>
+            <li>Pa takim &mdash; hyni, gati brenda minutave, dilni</li>
+          </ul>
+          <span class="svp-feat-badge"><i class="fas fa-bolt" aria-hidden="true"></i>&ensp;Brenda 2 minutave</span>
+        </div>
+      </div>
+
+      <!-- Section label -->
+      <p class="svp-label" aria-hidden="true">Edhe n&euml; pun&euml;tori&euml;n ton&euml;</p>
+
+      <!-- 3 service cards -->
+      <div class="svp-cards">
+
+        <div class="svp-card" data-animate>
+          <div class="svp-card-top">
+            <div class="svp-card-icon"><i class="fas fa-cogs" aria-hidden="true"></i></div>
+            <span class="svp-card-num" aria-hidden="true">02</span>
+          </div>
+          <h2 class="svp-card-title">Riparim dhe Servisim i Orës</h2>
+          <p class="svp-card-desc">Kur bateri e re nuk e zgjidh problem&euml;n, l&euml;vizja ka nevoj&euml; p&euml;r v&euml;mendje. Diagnostikojm&euml; dhe servisojm&euml; or&euml; kuarc dhe mekanike t&euml; t&euml; gjitha markave.</p>
+          <ul class="svp-card-list" aria-label="Përfshihet në këtë shërbim">
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Diagnostikim dhe rregullim l&euml;vzjeje kuarc</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Rishikim i plot&euml; mekanik dhe automatik</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Pastrim dhe lyerje e l&euml;vizjes</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Z&euml;vend&euml;sim r&euml;zorbi t&euml; rezistencës ndaj ujit</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Riparim ndalimesh dhe defektesh kohor&euml;sh</li>
+          </ul>
+          <span class="svp-card-badge"><i class="fas fa-cogs" aria-hidden="true"></i>&ensp;T&euml; gjitha llojet</span>
         </div>
 
-        <div class="svc-card" data-animate>
-          <div class="svc-icon"><i class="fas fa-cogs" aria-hidden="true"></i></div>
-          <h2 class="svc-title">Riparim dhe Servisim i Or&euml;s</h2>
-          <p class="svc-desc">Diagnostikim, pastrim dhe rregullim i l&euml;vizjes kuarc. Servisim i or&euml;ve mekanike dhe automatike i disponuesh&euml;m.</p>
-          <span class="svc-badge"><i class="fas fa-tools" aria-hidden="true"></i> T&euml; gjitha llojet</span>
+        <div class="svp-card" data-animate data-animate-delay=".1s">
+          <div class="svp-card-top">
+            <div class="svp-card-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+            <span class="svp-card-num" aria-hidden="true">03</span>
+          </div>
+          <h2 class="svp-card-title">Montim Rripe dhe Kurore</h2>
+          <p class="svp-card-desc">Pjes&euml;t q&euml; p&euml;sos&euml;n m&euml; shum&euml; nga p&euml;rdorimi p&euml;r dit&euml;. Montojm&euml;, z&euml;vend&euml;sojm&euml; dhe lustrojm&euml; q&euml; ora juaj t&euml; duket dhe t&euml; ndihet si&ccedil; duhet.</p>
+          <ul class="svp-card-list" aria-label="Përfshihet në këtë shërbim">
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Montim rripe l&euml;kure, metali dhe gome</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Z&euml;vend&euml;sim sustash</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Riparim ose z&euml;vend&euml;sim kurore dhe shtangu</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Rregullim madhesie bracelete</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Lustrim kristali me k&euml;rkes&euml;</li>
+          </ul>
+          <span class="svp-card-badge"><i class="fas fa-gem" aria-hidden="true"></i>&ensp;T&euml; gjitha materialet</span>
         </div>
 
-        <div class="svc-card" data-animate>
-          <div class="svc-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
-          <h2 class="svc-title">Montim Rripe dhe Kurore</h2>
-          <p class="svc-desc">Montim rripe l&euml;kure, metali dhe gome. Z&euml;vend&euml;sim kurore dhe shtangu. Lustrim kristali me k&euml;rkes&euml;.</p>
-          <span class="svc-badge"><i class="fas fa-gem" aria-hidden="true"></i> T&euml; gjitha materialet</span>
-        </div>
-
-        <div class="svc-card" data-animate>
-          <div class="svc-icon"><i class="fas fa-key" aria-hidden="true"></i></div>
-          <h2 class="svc-title">Kopjim &Ccedil;el&euml;sash</h2>
-          <p class="svc-desc">Kopje me precizion p&euml;r &ccedil;el&euml;sa standard, zyrë dhe siguri t&euml; lart&euml;. Dor&euml;zim i shpejt&euml; nd&euml;rsa prisni. &Ccedil;el&euml;sat e makinave nuk jan&euml; t&euml; disponuesh&euml;m.</p>
-          <span class="svc-badge"><i class="fas fa-tachometer-alt" aria-hidden="true"></i> Dor&euml;zim i shpejt&euml;</span>
+        <div class="svp-card" data-animate data-animate-delay=".2s">
+          <div class="svp-card-top">
+            <div class="svp-card-icon"><i class="fas fa-key" aria-hidden="true"></i></div>
+            <span class="svp-card-num" aria-hidden="true">04</span>
+          </div>
+          <h2 class="svp-card-title">Kopjim &Ccedil;el&euml;sash</h2>
+          <p class="svp-card-desc">Kopje me precizion nd&euml;rsa prisni. Sillni &ccedil;elësin origjinal dhe kopja &euml;sht&euml; gati brenda minutave. Nuk k&euml;rkohet rezervim.</p>
+          <ul class="svp-card-list" aria-label="Përfshihet në këtë shërbim">
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> &Ccedil;el&euml;sa standard shtëpie dhe dere</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> &Ccedil;el&euml;sa zyre, kasafortash dhe drynash</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Profile t&euml; siguris&euml; s&euml; lart&euml;</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Testohet para dor&euml;zimit</li>
+            <li style="opacity:.55"><i class="fas fa-check-circle" aria-hidden="true"></i> &Ccedil;el&euml;sat e makinave nuk jan&euml; t&euml; disponuesh&euml;m</li>
+          </ul>
+          <span class="svp-card-badge"><i class="fas fa-tachometer-alt" aria-hidden="true"></i>&ensp;Dor&euml;zim i shpejt&euml;</span>
         </div>
 
       </div>
-      <div class="text-center mt-12">
-        <a href="https://wa.me/355676360510" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center gap-2">
-          <i class="fab fa-whatsapp" aria-hidden="true"></i> Na Pyesni &Ccedil;do Gj&euml; n&euml; WhatsApp
-        </a>
+
+      <!-- How it works -->
+      <div class="svp-process" data-animate>
+        <div class="svp-process-hd">
+          <h2>Si Funksionon</h2>
+          <p>E mbajm&euml; t&euml; thjesht&euml;. Shumica e riparimeve kryhen t&euml; njëjt&euml;n dit&euml; &mdash; shum&euml; nd&euml;rsa jeni k&euml;tu.</p>
+        </div>
+        <div class="svp-steps" role="list">
+          <div class="svp-step" role="listitem">
+            <div class="svp-step-num" aria-hidden="true">1</div>
+            <h3>Hyni &mdash; pa rezervim</h3>
+            <p>Sillni thjesht orën ose &ccedil;elësin. Ju vler&euml;sojm&euml; m&euml;nj&euml;her&euml; me ndershmëri para se t&euml; fillojm&euml; gjë.</p>
+          </div>
+          <div class="svp-step-arr" aria-hidden="true"><i class="fas fa-chevron-right"></i></div>
+          <div class="svp-step" role="listitem">
+            <div class="svp-step-num" aria-hidden="true">2</div>
+            <h3>Fillojm&euml; pun&euml;n</h3>
+            <p>Baterit&euml; dhe rripat zgjatin minuta. Servizimet mekanike t&euml; plota zgjatin pak m&euml; shum&euml; &mdash; ju tregojm&euml; sakt&euml;sisht sa para se t&euml; fillojm&euml;.</p>
+          </div>
+          <div class="svp-step-arr" aria-hidden="true"><i class="fas fa-chevron-right"></i></div>
+          <div class="svp-step" role="listitem">
+            <div class="svp-step-num" aria-hidden="true">3</div>
+            <h3>Gati &mdash; testuar dhe dor&euml;zuar</h3>
+            <p>Merreni n&euml; vend ose ju njoftojm&euml; kur &euml;sht&euml; gati. &Ccedil;do riparim testohet para se t&euml; largohet nga pun&euml;torja.</p>
+          </div>
+        </div>
       </div>
-    </section>
+
+      <!-- From the blog -->
+      <div data-animate>
+        <div class="svp-reads-hd">
+          <h2>Lexo Para se t&euml; Vish</h2>
+          <p>Guid&euml; falas nga pun&euml;torja jon&euml; &mdash; q&euml; t&euml; arrini t&euml; informuar mbi &ccedil;far&euml; t&euml; prisni.</p>
+        </div>
+        <div class="svp-reads" role="list">
+          <a href="/sq/blog/guide-bateria-ores.html" class="svp-read" role="listitem">
+            <div class="svp-read-icon" aria-hidden="true"><i class="fas fa-battery-three-quarters"></i></div>
+            <div class="svp-read-body">
+              <div class="svp-read-title">Sa kohë zgjat bateria e një ore?</div>
+              <div class="svp-read-sub">Shenjat e dobës dhe kur ta ndërroni</div>
+            </div>
+            <i class="fas fa-chevron-right svp-read-arr" aria-hidden="true"></i>
+          </a>
+          <a href="/sq/blog/shenjat-riparimit-ores.html" class="svp-read" role="listitem">
+            <div class="svp-read-icon" aria-hidden="true"><i class="fas fa-cogs"></i></div>
+            <div class="svp-read-body">
+              <div class="svp-read-title">5 Shenja që Ora Juaj ka Nevojë për Servisim</div>
+              <div class="svp-read-sub">Humb kohë me bateri të re? Nuk është bateria problemi</div>
+            </div>
+            <i class="fas fa-chevron-right svp-read-arr" aria-hidden="true"></i>
+          </a>
+          <a href="/sq/blog/kujdesi-brezit-ores.html" class="svp-read" role="listitem">
+            <div class="svp-read-icon" aria-hidden="true"><i class="fas fa-shield-alt"></i></div>
+            <div class="svp-read-body">
+              <div class="svp-read-title">Si të Kujdeseni për Rripin e Orës</div>
+              <div class="svp-read-sub">Lëkurë, metal dhe gomë &mdash; pastrim, kondicionim dhe kur të zëvendësohet</div>
+            </div>
+            <i class="fas fa-chevron-right svp-read-arr" aria-hidden="true"></i>
+          </a>
+          <a href="/sq/blog/guide-kopjim-celesi.html" class="svp-read" role="listitem">
+            <div class="svp-read-icon" aria-hidden="true"><i class="fas fa-key"></i></div>
+            <div class="svp-read-body">
+              <div class="svp-read-title">Si Funksionon Kopjimi i Çelësave</div>
+              <div class="svp-read-sub">Llojet, çfarë të sillni dhe çfarë të prisni</div>
+            </div>
+            <i class="fas fa-chevron-right svp-read-arr" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="svp-faq" data-animate>
+        <div class="svp-faq-hd">
+          <h2>Pyetje t&euml; Shpeshta</h2>
+          <p>Gjithçka që mund të doni të dini para se të hyni te ne.</p>
+        </div>
+        <div class="svp-faq-body">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-q-label"><i class="fas fa-bolt faq-icon" aria-hidden="true"></i>Sa koh&euml; z&euml;n z&euml;vend&euml;simi i baterisë?</span>
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer"><p>Brenda 2 minutave p&euml;r shumicën e or&euml;ve. Hyni, dor&euml;zoni or&euml;n dhe &euml;sht&euml; gati para se t&euml; kenë mbaruar t&euml; shikoni vitrinën. Testojm&euml; or&euml;n dhe rregullojm&euml; or&euml;rin para dor&euml;zimit.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-q-label"><i class="fas fa-calendar-alt faq-icon" aria-hidden="true"></i>A k&euml;rkohet takim paraprak?</span>
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer"><p>Jo &mdash; klient&euml;t pa takim jan&euml; gjithmon&euml; t&euml; mir&euml;pritur. Punojm&euml; sipas radhes s&euml; mbëritjes. Baterit&euml;, nd&euml;rrimet e rripave dhe kopjimet e &ccedil;el&euml;save kryhen m&euml;nj&euml;her&euml;. Servizimet mekanike t&euml; plota mund t&euml; k&euml;rkojn&euml; l&euml;nien e or&euml;s p&euml;r 1&ndash;3 dit&euml;.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-q-label"><i class="fas fa-star faq-icon" aria-hidden="true"></i>Cilat marka or&euml;sh trajtoni?</span>
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer"><p>T&euml; gjitha markat &mdash; kuarc dhe mekanike, mode dhe zvicerane, vintage dhe moderne. N&euml;se ka bateri, l&euml;vizje ose rrip, mund ta trajtojm&euml;. Silleni dhe ju jepim v&euml;lersim t&euml; ndershëm n&euml; vend.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-q-label"><i class="fas fa-key faq-icon" aria-hidden="true"></i>A mund t&euml; kopjoni t&euml; gjitha llojet e &ccedil;el&euml;save?</span>
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer"><p>Kopjojm&euml; &ccedil;el&euml;sa standard shtëpie dhe dere, &ccedil;el&euml;sa zyre dhe kasafortash, dhe profile t&euml; sigurisë s&euml; lartë. &Ccedil;el&euml;sat e makinave dhe transponder nuk jan&euml; t&euml; disponuesh&euml;m &mdash; k&euml;rkojn&euml; pajisje t&euml; specializuara automobilistike q&euml; ne nuk i kemi.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-q-label"><i class="fas fa-hourglass-half faq-icon" aria-hidden="true"></i>Sa koh&euml; z&euml;n servisimi i plot&euml; i ores?</span>
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer"><p>Diagnostikimi dhe riparimi i l&euml;vizjes kuarc zakonisht kryhet t&euml; njëjt&euml;n dit&euml;. Rishikimet mekanike dhe automatike zgjatin 1&ndash;3 dit&euml; varësisht nga disponueshmëria e pjes&euml;ve. Ju jepim afat t&euml; qartë para se t&euml; fillojm&euml; &mdash; asnjë surprizë.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="svp-cta" data-animate>
+        <div class="svp-cta-inner">
+          <h2>Gati? Hyni Drejtpërdrejt.</h2>
+          <p>Asnjë takim, asnjë pritje p&euml;r nj&euml; slot. Jemi n&euml; pun&euml;torinë ton&euml; n&euml; Durr&euml;s gjashtë dit&euml; n&euml; javë.</p>
+          <div class="svp-cta-btns">
+            <a href="https://wa.me/355676360510" target="_blank" rel="noopener noreferrer" class="svp-cta-a">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i> Na Shkruani n&euml; WhatsApp
+            </a>
+            <a href="tel:+355676360510" class="svp-cta-b">
+              <i class="fas fa-phone-alt" aria-hidden="true"></i> +355 67 636 0510
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /svp-wrap -->
   </main>
 
   <footer class="footer py-12" role="contentinfo">
@@ -162,8 +484,8 @@
       </nav>
       <nav aria-label="Juridike" class="mt-4 flex justify-center flex-wrap text-xs" style="color:#999;gap:0.4rem 1.25rem">
         <a href="/sq/legal/imprint.html" class="hover:text-[#b4945c] transition" style="text-decoration:underline;color:inherit">Imprint</a>
-        <a href="/sq/legal/privacy.html" class="hover:text-[#b4945c] transition" style="text-decoration:underline;color:inherit">Politika e Privatës isë</a>
-        <a href="/sq/legal/terms.html" class="hover:text-[#b4945c] transition" style="text-decoration:underline;color:inherit">Kushtet e Shërbimit</a>
+        <a href="/sq/legal/privacy.html" class="hover:text-[#b4945c] transition" style="text-decoration:underline;color:inherit">Politika e Privates&#x00EB;is&#x00EB;</a>
+        <a href="/sq/legal/terms.html" class="hover:text-[#b4945c] transition" style="text-decoration:underline;color:inherit">Kushtet e Sh&euml;rbimit</a>
         <a href="/sq/legal/cookies.html" class="hover:text-[#b4945c] transition" style="text-decoration:underline;color:inherit">Politika e Cookie-ve</a>
       </nav>
     </div>
