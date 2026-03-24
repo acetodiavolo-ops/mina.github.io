@@ -517,17 +517,6 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
 .promise-card:hover .dual-gear i:last-child,
 .promise-card:active .dual-gear i:last-child  { animation: gear-ccw 1.4s linear infinite; color: rgba(180,148,92,.75); }
 
-/* ── PROMISE CARD ICONS — animate on hover / touch ──────────────────────── */
-.promise-card:nth-child(1) i.promise-icon,
-.promise-card:nth-child(3) i.promise-icon,
-.promise-card:nth-child(4) i
-.promise-card:hover:nth-child(1) i.promise-icon,
-.promise-card:active:nth-child(1) i
-.promise-card:hover:nth-child(3) i.promise-icon,
-.promise-card:active:nth-child(3) i
-.promise-card:hover:nth-child(4) i.promise-icon,
-.promise-card:active:nth-child(4) i
-
 /* ── TIMELINE ICONS — staggered ring (composited) ───────────────────────── */
 
 .timeline-icon::after {
@@ -542,7 +531,7 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
 /* ── HOVER EFFECTS — real-pointer devices only ──────────────────────────── */
 @media (hover: hover) {
   
-  .promise-card:hover i
+  .promise-card:hover i,
   .trust-badge:hover i    { color: var(--accent-gold); transform: scale(1.12); }
   
   .hero-content .btn-primary:hover::after { animation: none; }
@@ -550,7 +539,6 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
 }
 
 /* ── TOUCH / ACTIVE — mobile & touch devices ────────────────────────────── */
-.service-card, .equipment-card, .promise-card, 
 @media (hover: none) {
   /* Icon pop on tap */
   .service-card:active i   { transform: scale(1.18) !important; color: var(--accent-gold) !important; }
@@ -581,7 +569,6 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
 /* ── SERVICE / EQUIPMENT CARD — warm base shadow ────────────────────────── */
 
 /* ── HERO PRIMARY CTA — ring pulse (composited) ─────────────────────────── */
-.hero-content 
 .hero-content .btn-primary::after {
   content: ''; position: absolute; inset: -2px; border-radius: 9999px;
   border: 2px solid rgba(180,148,92,.6);
