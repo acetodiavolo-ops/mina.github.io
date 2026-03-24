@@ -48,9 +48,6 @@
 .service-card:hover .dual-gear i:first-child,.promise-card:hover .dual-gear i:first-child,.service-card:active .dual-gear i:first-child,.promise-card:active .dual-gear i:first-child{animation:icon-spin 2s linear infinite;color:var(--accent-gold)}
 .service-card:hover .dual-gear i:last-child,.promise-card:hover .dual-gear i:last-child,.service-card:active .dual-gear i:last-child,.promise-card:active .dual-gear i:last-child{animation:icon-spin-ccw 1.3s linear infinite;color:var(--accent-gold)}
 
-/* Check-circle promise icon: scale down so the solid disc reads as a badge inside the beige wrapper */
-.promise-icon.fa-check-circle{font-size:1.05rem;color:rgba(180,148,92,.8)}
-.promise-card:hover .promise-icon.fa-check-circle,.promise-card:active .promise-icon.fa-check-circle{color:var(--accent-gold)}
 
 /* FAQ topic icons & row polish */
 .faq-q-label{display:flex;align-items:center;flex:1;min-width:0}
@@ -107,9 +104,9 @@
 @keyframes icon-coin-bounce{0%,100%{transform:translateY(0) scale(1.05)}50%{transform:translateY(-6px) scale(1.12)}}
 .promise-card:hover .fa-euro-sign,.promise-card:active .fa-euro-sign{animation:icon-coin-bounce .6s ease-in-out infinite}
 
-/* Check-circle → pop & settle (one-shot) */
+/* Shield → pop & settle (one-shot) */
 @keyframes icon-check-pop{0%{transform:scale(1.05)}40%{transform:scale(1.3) rotate(10deg)}70%{transform:scale(1.1) rotate(-4deg)}100%{transform:scale(1.15) rotate(0deg)}}
-.promise-card:hover .fa-check-circle,.promise-card:active .fa-check-circle{animation:icon-check-pop .5s ease-out forwards}
+.promise-card:hover .fa-shield-alt,.promise-card:active .fa-shield-alt{animation:icon-check-pop .5s ease-out forwards}
 
 /* Smile → happy bounce */
 @keyframes icon-smile-bounce{0%,100%{transform:scale(1.05) rotate(0deg)}25%{transform:scale(1.22) rotate(-6deg)}75%{transform:scale(1.15) rotate(6deg)}}
