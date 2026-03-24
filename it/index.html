@@ -398,12 +398,7 @@ details.faq-item .faq-answer{max-height:none!important;overflow:visible!importan
 details.faq-item[open] .faq-question>i:last-child{transform:rotate(180deg)}
 .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; color: var(--text-secondary); }
 .faq-answer p { padding: 0.75rem 0 0.25rem; }
-.whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: linear-gradient(145deg, #25D366, #20b859); color: #fff; width: 65px; height: 65px; border-radius: 50%; font-size: 32px; box-shadow: 0 15px 20px -8px rgba(37,211,102,0.4); z-index: 100; transition: all var(--transition-base); display: flex; align-items: center; justify-content: center; text-decoration: none; }
-.whatsapp-float:hover { transform: scale(1.1) translateY(-3px); box-shadow: 0 20px 25px -8px rgba(37,211,102,0.6); }
 @media (max-width: 640px) { .whatsapp-float { width: 55px; height: 55px; font-size: 28px; bottom: 70px; right: 20px; } }
-.back-to-top { position: fixed; bottom: 110px; right: 30px; background: var(--accent-teal); color: #fff; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 99; opacity: 0; pointer-events: none; transition: opacity var(--transition-base), transform var(--transition-base); cursor: pointer; border: 1px solid var(--accent-gold); }
-.back-to-top.show { opacity: 1; pointer-events: auto; }
-.back-to-top:hover { background: #04102e; transform: translateY(-3px); }
 @media (max-width: 640px) { .back-to-top { bottom: 130px; right: 20px; width: 45px; height: 45px; font-size: 22px; } }
 .call-bar { display: none; position: fixed; bottom: 0; left: 0; width: 100%; background: var(--accent-teal); color: #fff; padding: 4px 12px; text-align: center; z-index: 1000; font-size: 0.9rem; font-weight: 600; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); }
 .call-bar a { color: #fff; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; }
@@ -711,7 +706,7 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
     }
   }
   </script>
-  <link rel="stylesheet" href="/shared.css?v=27">
+  <link rel="stylesheet" href="/shared.css?v=28">
 </head>
 <body class="text-gray-800 antialiased lang-it">
 
