@@ -101,7 +101,7 @@
   <!-- ── BLOG INDEX PAGES ───────────────────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/"/>
@@ -111,7 +111,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/"/>
@@ -121,7 +121,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/"/>
@@ -288,6 +288,102 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/rezistenca-ujes-ores.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/impermeabilita-orologio.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-water-resistance.html"/>
+  </url>
+
+  <!-- ── BLOG: WATCH STORAGE GUIDE ────────────────────────────────────── -->
+  <url>
+    <loc>https://watch.al/en/blog/watch-storage-guide.html</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-storage-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/guide-ruajtjes-ores.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/guida-conservazione-orologio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-storage-guide.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/sq/blog/guide-ruajtjes-ores.html</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-storage-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/guide-ruajtjes-ores.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/guida-conservazione-orologio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-storage-guide.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/it/blog/guida-conservazione-orologio.html</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-storage-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/guide-ruajtjes-ores.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/guida-conservazione-orologio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-storage-guide.html"/>
+  </url>
+
+  <!-- ── BLOG: MECHANICAL VS QUARTZ ────────────────────────────────────── -->
+  <url>
+    <loc>https://watch.al/en/blog/mechanical-vs-quartz.html</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/mechanical-vs-quartz.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/mekanik-vs-kuarc.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/meccanico-vs-quarzo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/mechanical-vs-quartz.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/sq/blog/mekanik-vs-kuarc.html</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/mechanical-vs-quartz.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/mekanik-vs-kuarc.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/meccanico-vs-quarzo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/mechanical-vs-quartz.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/it/blog/meccanico-vs-quarzo.html</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/mechanical-vs-quartz.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/mekanik-vs-kuarc.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/meccanico-vs-quarzo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/mechanical-vs-quartz.html"/>
+  </url>
+
+  <!-- ── BLOG: WATCH CRYSTAL GUIDE ─────────────────────────────────────── -->
+  <url>
+    <loc>https://watch.al/en/blog/watch-crystal-guide.html</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-crystal-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/guide-xhamit-ores.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/guida-cristallo-orologio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-crystal-guide.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/sq/blog/guide-xhamit-ores.html</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-crystal-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/guide-xhamit-ores.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/guida-cristallo-orologio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-crystal-guide.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/it/blog/guida-cristallo-orologio.html</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-crystal-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/guide-xhamit-ores.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/guida-cristallo-orologio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-crystal-guide.html"/>
   </url>
 
   <!-- ── BLOG: WATCH CLEANING GUIDE ────────────────────────────────────── -->
