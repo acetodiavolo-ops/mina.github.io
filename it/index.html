@@ -605,10 +605,11 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
   .promise-card:active .dual-gear i { color: var(--accent-gold); }
 }
 
-/* ── PAGE FADE-IN (inlined so it runs before shared.css loads) ───────────── */
-@keyframes pageFadeIn{from{opacity:0}to{opacity:1}}
-body{animation:pageFadeIn .32s ease-out both}
-@media(prefers-reduced-motion:reduce){body{animation:none}}
+/* ── PAGE TRANSITION (inlined so it runs before shared.css loads) ────────── */
+/* Overlay on body::before — body stays opacity:1, no stacking context glitch */
+@keyframes veilOut{to{opacity:0;visibility:hidden}}
+body::before{content:'';position:fixed;inset:0;background:#fcfcfc;z-index:99999;pointer-events:none;animation:veilOut .32s ease-out forwards}
+@media(prefers-reduced-motion:reduce){body::before{display:none}}
   </style>
 
   <!-- STRUCTURED DATA -->
@@ -691,8 +692,8 @@ body{animation:pageFadeIn .32s ease-out both}
     }
   }
   </script>
-  <link rel="preload" href="/shared.css?v=30" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/shared.css?v=30"></noscript>
+  <link rel="preload" href="/shared.css?v=31" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/shared.css?v=31"></noscript>
 </head>
 <body class="text-gray-800 antialiased lang-it">
 
