@@ -1,6 +1,6 @@
 'use strict';
 
-var CACHE = 'iglisi-v45';
+var CACHE = 'iglisi-v46';
 
 var PRECACHE = [
   '/offline.html',
@@ -10,6 +10,9 @@ var PRECACHE = [
   '/en/blog/',
   '/it/blog/',
   '/sq/blog/',
+  '/en/blog/watch-winding-guide.html',
+  '/en/blog/spot-fake-watch.html',
+  '/en/blog/watch-occasion-guide.html',
   '/en/blog/watch-battery-guide.html',
   '/en/blog/watch-service-signs.html',
   '/en/blog/watch-strap-care.html',

@@ -418,4 +418,34 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-cleaning-guide.html"/>
   </url>
 
+  <!-- ── BLOG: WATCH WINDING GUIDE ─────────────────────────────────────── -->
+  <url>
+    <loc>https://watch.al/en/blog/watch-winding-guide.html</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-winding-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-winding-guide.html"/>
+  </url>
+
+  <!-- ── BLOG: SPOT FAKE WATCH ─────────────────────────────────────────── -->
+  <url>
+    <loc>https://watch.al/en/blog/spot-fake-watch.html</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/spot-fake-watch.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/spot-fake-watch.html"/>
+  </url>
+
+  <!-- ── BLOG: WATCH OCCASION GUIDE ───────────────────────────────────── -->
+  <url>
+    <loc>https://watch.al/en/blog/watch-occasion-guide.html</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-occasion-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-occasion-guide.html"/>
+  </url>
+
 </urlset>
