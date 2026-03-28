@@ -29,7 +29,7 @@
 /* Veil fades OUT (not body in) — body opacity stays 1 at all times, so no
    stacking context is ever created and fixed/sticky elements stay put. */
 @keyframes veilOut{to{opacity:0;visibility:hidden}}
-body::before{content:'';position:fixed;inset:0;background:#06153b;z-index:99999;pointer-events:none;animation:veilOut .35s ease-out forwards}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100%;background:#06153b;z-index:99999;pointer-events:none;animation:veilOut .35s ease-out forwards}
 @media(prefers-reduced-motion:reduce){body::before{animation:none;opacity:0;visibility:hidden}}
 
 /* ── MICRO-ANIMATIONS ─────────────────────────────────────────────────────── */
