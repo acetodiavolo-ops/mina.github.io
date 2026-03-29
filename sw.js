@@ -1,6 +1,6 @@
 'use strict';
 
-var CACHE = 'iglisi-v47';
+var CACHE = 'iglisi-v48';
 
 var PRECACHE = [
   '/offline.html',
@@ -32,7 +32,7 @@ var PRECACHE = [
   '/sq/blog/rezistenca-ujes-ores.html',
   '/sq/blog/guide-pastrimit-ores.html',
   '/shared.css?v=35',
-  '/shared.js?v=16',
+  '/shared.js?v=17',
   '/cookie.js',
   '/webfonts/inter.woff2?v=2',
   '/webfonts/cormorant-garamond.woff2?v=2',
