@@ -1,6 +1,6 @@
 'use strict';
 
-var CACHE = 'iglisi-v50';
+var CACHE = 'iglisi-v51';
 
 var PRECACHE = [
   '/offline.html',
@@ -76,18 +76,10 @@ self.addEventListener('fetch', function(e) {
   var isNav = e.request.mode === 'navigate';
 
   if (isNav) {
-    /* Navigation: network-first so users always get fresh HTML after a deploy */
+    /* Navigation: always network — never cache HTML so deploys take effect immediately */
     e.respondWith(
-      fetch(e.request).then(function(response) {
-        if (response && response.status === 200 && response.type !== 'error') {
-          var clone = response.clone();
-          caches.open(CACHE).then(function(c) { c.put(e.request, clone); }).catch(function() {});
-        }
-        return response;
-      }).catch(function() {
-        return caches.match(e.request).then(function(cached) {
-          return cached || caches.match('/offline.html');
-        });
+      fetch(e.request).catch(function() {
+        return caches.match('/offline.html');
       })
     );
     return;
