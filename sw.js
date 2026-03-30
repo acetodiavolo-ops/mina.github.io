@@ -1,37 +1,10 @@
 'use strict';
 
-var CACHE = 'iglisi-v51';
+var CACHE = 'iglisi-v52';
 
 var PRECACHE = [
   '/offline.html',
-  '/en/',
-  '/sq/',
-  '/it/',
-  '/en/blog/',
-  '/it/blog/',
-  '/sq/blog/',
-  '/en/blog/watch-winding-guide.html',
-  '/en/blog/spot-fake-watch.html',
-  '/en/blog/watch-occasion-guide.html',
-  '/en/blog/watch-battery-guide.html',
-  '/en/blog/watch-service-signs.html',
-  '/en/blog/watch-strap-care.html',
-  '/en/blog/key-duplication-guide.html',
-  '/en/blog/watch-water-resistance.html',
-  '/en/blog/watch-cleaning-guide.html',
-  '/it/blog/guida-batteria-orologio.html',
-  '/it/blog/segni-revisione-orologio.html',
-  '/it/blog/cura-cinturino-orologio.html',
-  '/it/blog/guida-duplicato-chiavi.html',
-  '/it/blog/impermeabilita-orologio.html',
-  '/it/blog/guida-pulizia-orologio.html',
-  '/sq/blog/guide-bateria-ores.html',
-  '/sq/blog/shenjat-riparimit-ores.html',
-  '/sq/blog/kujdesi-brezit-ores.html',
-  '/sq/blog/guide-kopjim-celesi.html',
-  '/sq/blog/rezistenca-ujes-ores.html',
-  '/sq/blog/guide-pastrimit-ores.html',
-  '/shared.css?v=35',
+  '/shared.css?v=36',
   '/shared.js?v=17',
   '/cookie.js',
   '/webfonts/inter.woff2?v=2',
@@ -85,7 +58,8 @@ self.addEventListener('fetch', function(e) {
     return;
   }
 
-  /* Assets: cache-first, fetch only if missing */
+  /* Assets: cache-first, fetch only if missing — no fallback for CSS so the
+     browser handles the error natively rather than receiving a blank stylesheet */
   e.respondWith(
     caches.match(e.request).then(function(cached) {
       return cached || fetch(e.request).then(function(response) {
@@ -94,9 +68,6 @@ self.addEventListener('fetch', function(e) {
           caches.open(CACHE).then(function(c) { c.put(e.request, clone); }).catch(function() {});
         }
         return response;
-      }).catch(function() {
-        var dest = e.request.destination;
-        if (dest === 'style') return new Response('', {headers:{'Content-Type':'text/css','Cache-Control':'no-store'}});
       });
     })
   );
