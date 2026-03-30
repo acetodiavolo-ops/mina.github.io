@@ -332,7 +332,7 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 800; let
   position: fixed; top: 0; left: 0; height: 4px;
   background: linear-gradient(90deg, var(--accent-gold), var(--accent-teal));
   width: 100%; transform: scaleX(0); transform-origin: left center;
-  z-index: 1000; pointer-events: none; will-change: transform;
+  z-index: 1000; pointer-events: none; opacity: 0;
 }
 .urgent-banner { background: #8a6f3f; color: #fff; text-align: center; padding: 6px 0; font-size: 0.875rem; font-weight: 500; }
 .urgent-banner i { margin-right: 6px; }
@@ -685,7 +685,8 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
     }
   }
   </script>
-  <link rel="stylesheet" href="/shared.css?v=36">
+  <link rel="preload" href="/shared.css?v=36" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/shared.css?v=36"></noscript>
 </head>
 <body class="text-gray-800 antialiased lang-sq">
 
