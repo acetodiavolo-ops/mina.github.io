@@ -344,12 +344,6 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', 'Cormorant Garamond Fallback
 .border-teal   { border-color: var(--accent-teal); }
 .footer .gold  { color: var(--accent-gold); text-decoration: underline; text-underline-offset: 2px; }
 :focus-visible { outline: 3px solid var(--accent-gold); outline-offset: 3px; border-radius: 4px; }
-.progress-bar {
-  position: fixed; top: 0; left: 0; height: 4px;
-  background: linear-gradient(90deg, var(--accent-gold), var(--accent-teal));
-  width: 100%; transform: scaleX(0); transform-origin: left center;
-  z-index: 1000; pointer-events: none; opacity: 0;
-}
 .call-bar { display: none; }
 .urgent-banner { background: #8a6f3f; color: #fff; text-align: center; padding: 6px 0; font-size: 0.875rem; font-weight: 500; }
 .urgent-banner i { margin-right: 6px; }
@@ -759,7 +753,7 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
 </head>
 <body class="text-gray-800 antialiased lang-en">
 
-  <div class="progress-bar" id="progressBar" style="display:none" aria-hidden="true"></div>
+
 
   <a href="https://api.whatsapp.com/send?phone=355676360510" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Message us on WhatsApp">
     <i class="fab fa-whatsapp" aria-hidden="true"></i>
@@ -1253,7 +1247,7 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
     </div>
   </footer>
 
-  <script src="/shared.js?v=19" defer></script>
+  <script src="/shared.js?v=20" defer></script>
   <script src="/cookie.js" defer></script>
 
 </body>
