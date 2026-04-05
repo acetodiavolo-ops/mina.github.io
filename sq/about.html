@@ -29,7 +29,98 @@
   <link rel="preload" href="/webfonts/cormorant-garamond.woff2?v=2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/webfonts/fa-solid-900.woff2?v=2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/webfonts/fa-brands-400.woff2?v=2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/shared.css?v=38">
+  <link rel="stylesheet" href="/shared.css?v=37">
+  <style>
+    /* ── Utility classes missing from shared.css ── */
+    .py-24{padding-top:6rem;padding-bottom:6rem}
+    .max-w-5xl{max-width:64rem}
+    .max-w-6xl{max-width:72rem}
+    .mb-16{margin-bottom:4rem}
+    .gap-12{gap:3rem}
+    .space-y-8>*+*{margin-top:2rem}
+    .text-5xl{font-size:3rem;line-height:1}
+    @media(min-width:768px){
+      .md\:flex-row{flex-direction:row}
+      .md\:w-1\/3{width:33.333333%;flex-shrink:0}
+      .md\:w-2\/3{width:66.666667%}
+      .md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .md\:text-5xl{font-size:3rem;line-height:1}
+    }
+    /* ── About section backgrounds ── */
+    .about-section{background:#f5f0e8;padding:4rem 1.5rem 3rem}
+    @media(min-width:768px){
+      .about-cards{display:grid;grid-template-columns:repeat(3,1fr);max-width:none}
+    }
+    .about-stats-section{background:#fff;padding:2.5rem 1.5rem 3.5rem}
+    /* ── Stat enhancements ── */
+    .stat-box{border-top:3px solid #8B6914!important;box-shadow:0 2px 12px rgba(0,0,0,.06)!important}
+    .stat-box strong{font-size:clamp(2.8rem,4.5vw,3.5rem)!important;color:#0d1b3e!important;display:block;line-height:1}
+    .stat-box span{color:#8B6914!important}
+    @media(max-width:640px){
+      .stat-row{display:grid!important;grid-template-columns:1fr 1fr}
+      .stat-box{flex:unset}
+    }
+    /* ── Typography ── */
+    .text-gray-600{color:#3d3830!important}
+    /* ── Workshop gold rule ── */
+    .workshop-subheading-rule{display:block;width:40px;height:3px;background:#8B6914;margin-bottom:1rem;border:none}
+    /* ── Process connector ── */
+    .process-steps .timeline-item:not(:last-child) .timeline-icon::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);width:2px;height:2rem;background:rgba(139,105,20,0.3)}
+    /* ── Gallery dark navy ── */
+    .section-gallery-navy{background:#0d1b3e!important}
+    .section-gallery-navy h2,.section-gallery-navy .section-title{color:#fff!important}
+    .section-gallery-navy .gold-display{color:#b4945c!important}
+    .section-gallery-navy p{color:rgba(255,255,255,.72)!important}
+    .section-gallery-navy .gallery-thumb{border-radius:12px;border:1px solid rgba(255,255,255,0.1)}
+    /* ── Key cutting intro ── */
+    .section-intro-para{color:#3d3830;font-size:1.05rem;line-height:1.75;max-width:640px;margin:0 auto 2.5rem;text-align:center}
+    /* ── Timeline strip ── */
+    .about-timeline-strip{background:#fff;padding:2.25rem 1.5rem;border-top:1px solid #e8e0d5;border-bottom:1px solid #e8e0d5}
+    .timeline-strip-inner{max-width:860px;margin:0 auto}
+    .timeline-strip-track{display:flex;align-items:flex-start;justify-content:space-between;position:relative}
+    .timeline-strip-track::before{content:'';position:absolute;top:10px;left:11px;right:11px;height:2px;background:#8B6914;opacity:.35;z-index:0}
+    .ts-item{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:1;flex:1;padding:0 .5rem}
+    .ts-dot{width:22px;height:22px;border-radius:50%;background:#8B6914;margin-bottom:.6rem;box-shadow:0 0 0 5px rgba(139,105,20,.14);flex-shrink:0}
+    .ts-year{font-size:.95rem;font-weight:800;color:#0d1b3e;font-family:'Cormorant Garamond',serif;line-height:1;margin-bottom:.3rem}
+    .ts-label{font-size:.7rem;color:#3d3830;line-height:1.45;max-width:95px}
+    @media(max-width:600px){
+      .timeline-strip-track{flex-direction:column;gap:1.25rem}
+      .timeline-strip-track::before{display:none}
+      .ts-item{flex-direction:row;text-align:left;gap:.875rem;padding:0}
+      .ts-dot{flex-shrink:0;margin-bottom:0}
+      .ts-label{max-width:none}
+    }
+    /* ── Meet the Family ── */
+    .about-family-section{background:#f5f0e8;padding:5rem 1.5rem}
+    .family-split{display:flex;flex-direction:column;gap:2.5rem;align-items:center;max-width:64rem;margin:0 auto}
+    .family-photo{width:100%}
+    .family-photo img{border-radius:1.5rem;box-shadow:0 20px 40px rgba(0,0,0,.12);width:100%;height:360px;object-fit:cover}
+    .family-text h2{font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 1.25rem;line-height:1.2}
+    .family-text p{color:#3d3830;font-size:1.05rem;line-height:1.75;margin:0 0 1rem}
+    .family-text p:last-child{margin:0}
+    @media(min-width:768px){
+      .family-split{flex-direction:row;gap:3.5rem}
+      .family-photo{flex:0 0 42%;max-width:420px}
+      .family-photo img{height:420px}
+      .family-text{flex:1}
+    }
+    /* ── Trust banner ── */
+    .trust-banner-section{background:#0d1b3e;padding:4rem 1.5rem;text-align:center}
+    .trust-banner-section p{color:#fff;font-size:clamp(1.1rem,2.5vw,1.4rem);font-weight:600;max-width:680px;margin:0 auto 1.75rem;line-height:1.5;font-family:'Cormorant Garamond',serif}
+    .trust-banner-cta{display:inline-flex;align-items:center;gap:.5rem;border:2px solid #8B6914;color:#fff;padding:.8rem 2rem;border-radius:9999px;font-weight:600;font-size:.95rem;text-decoration:none;transition:background .25s,transform .2s}
+    .trust-banner-cta:hover{background:rgba(139,105,20,.25);transform:scale(1.04)}
+    /* ── Mobile overrides ── */
+    @media(max-width:768px){
+      .py-24{padding-top:2.5rem!important;padding-bottom:2.5rem!important}
+      .mb-16{margin-bottom:2rem!important}
+      .gap-12{gap:1.5rem!important}
+      .space-y-8>*+*{margin-top:1.25rem!important}
+      .about-family-section{padding:2.5rem 1.5rem!important}
+      .about-timeline-strip{padding:1.75rem 1.5rem}
+      .trust-banner-section{padding:3rem 1.5rem}
+      .family-photo img{height:260px}
+    }
+  </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
     {"@type":"ListItem","position":1,"name":"Kreu","item":"https://watch.al/sq/"},
