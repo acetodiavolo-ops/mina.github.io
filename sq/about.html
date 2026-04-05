@@ -96,20 +96,34 @@
       .reviews-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem}
       .reviews-carousel-wrap{display:none!important}
     }
-    /* ── Meet the Family ── */
-    .about-family-section{background:#f5f0e8;padding:5rem 1.5rem}
-    .family-split{display:flex;flex-direction:column;gap:2.5rem;align-items:center;max-width:64rem;margin:0 auto}
-    .family-photo{width:100%}
-    .family-photo img{border-radius:1.5rem;box-shadow:0 20px 40px rgba(0,0,0,.12);width:100%;height:360px;object-fit:cover}
-    .family-text h2{font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 1.25rem;line-height:1.2}
-    .family-text p{color:#3d3830;font-size:1.05rem;line-height:1.75;margin:0 0 1rem}
-    .family-text p:last-child{margin:0}
+    /* ── Story sections (unified Workshop + Family layout) ── */
+    .about-family-section{background:#f5f0e8}
+    .story-split-outer{max-width:1080px;margin:0 auto;padding:0 1.5rem}
+    .story-split{display:flex;flex-direction:column;gap:2.5rem;align-items:center}
+    .story-img{width:100%}
+    .story-img img,.story-img picture>img{width:100%;height:340px;object-fit:cover;border-radius:1.5rem;box-shadow:0 20px 40px rgba(0,0,0,.12);display:block}
+    .story-heading{font-size:clamp(2rem,4.5vw,3rem);margin:0 0 .65rem;line-height:1.15}
+    .story-lead{font-size:1.05rem;font-weight:700;color:#0d1b3e;margin:0 0 1.25rem}
+    .story-copy p{color:#3d3830;font-size:1.05rem;line-height:1.75;margin:0 0 1rem}
+    .story-copy p:last-child{margin:0}
     @media(min-width:768px){
-      .family-split{flex-direction:row;gap:3.5rem}
-      .family-photo{flex:0 0 42%;max-width:420px}
-      .family-photo img{height:420px}
-      .family-text{flex:1}
+      .story-split{flex-direction:row;gap:4rem;align-items:center}
+      .story-split--reverse{flex-direction:row-reverse}
+      .story-img{flex:0 0 44%;max-width:44%}
+      .story-img img,.story-img picture>img{height:440px}
+      .story-copy{flex:1}
     }
+    @media(max-width:767px){
+      .story-img img,.story-img picture>img{height:260px}
+    }
+    /* ── Process: connected icon column ── */
+    .process-list{display:flex;flex-direction:column}
+    .process-step{display:flex;gap:1.75rem;align-items:stretch}
+    .process-track{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:3.5rem}
+    .process-circle{width:3.5rem;height:3.5rem;background:#b4945c;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5rem;flex-shrink:0;box-shadow:0 10px 15px -3px rgba(180,148,92,.2),0 0 0 5px rgba(180,148,92,.12)}
+    .process-connector{flex:1;width:2px;background:rgba(139,105,20,.25);margin:4px auto;min-height:2rem}
+    .process-body{padding:.375rem 0 2.5rem;flex:1}
+    .process-step:last-child .process-body{padding-bottom:0}
     /* ── Trust banner ── */
     .trust-banner-section{background:#0d1b3e;padding:4rem 1.5rem;text-align:center}
     .trust-banner-section p{color:#fff;font-size:clamp(1.1rem,2.5vw,1.4rem);font-weight:600;max-width:680px;margin:0 auto 1.75rem;line-height:1.5;font-family:'Cormorant Garamond',serif}
@@ -121,10 +135,8 @@
       .mb-16{margin-bottom:2rem!important}
       .gap-12{gap:1.5rem!important}
       .space-y-8>*+*{margin-top:1.25rem!important}
-      .about-family-section{padding:2.5rem 1.5rem!important}
       .about-timeline-strip{padding:1.75rem 1.5rem}
       .trust-banner-section{padding:3rem 1.5rem}
-      .family-photo img{height:260px}
     }
   </style>
   <script type="application/ld+json">
@@ -280,49 +292,46 @@
 
     <!-- WORKSHOP -->
     <section class="py-24" style="background:#faf8f4" aria-labelledby="workshop-heading" data-animate>
-      <div class="max-w-6xl mx-auto px-6">
-        <h2 id="workshop-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Punishtja <span class="gold-display">Jon&euml;</span></h2>
-        <div class="flex flex-col md:flex-row gap-12 items-center">
-          <div class="md:w-1/3">
+      <div class="story-split-outer">
+        <div class="story-split">
+          <div class="story-img">
             <picture>
               <source srcset="https://watch.al/1.raw.githubusercontent.com.webp?v=2" type="image/webp">
               <img src="https://watch.al/1.raw.githubusercontent.com.jpg?v=2"
                    alt="Banka e pun&euml;s p&euml;r riparim orash n&euml; punishten Iglisi"
-                   class="rounded-2xl shadow-xl border border-gray-200" loading="lazy" decoding="async"
-                   width="600" height="560" style="min-height:380px;object-fit:cover;width:100%;display:block"
-                   sizes="(max-width: 768px) calc(100vw - 3rem), 33vw">
+                   loading="lazy" decoding="async" width="600" height="560">
             </picture>
           </div>
-          <div class="md:w-2/3">
+          <div class="story-copy">
             <span class="workshop-subheading-rule" aria-hidden="true"></span>
-            <p class="text-2xl font-bold mb-4">Ku Precisioni Takon Pasionin</p>
-            <p class="text-gray-600 text-lg leading-relaxed mb-6">
-              Hyni n&euml; punishten ton&euml; familjare &mdash; nj&euml; hap&euml;sir&euml; e mbushur me zhurm&euml;n e makinerive, shk&euml;lqimin e mjeteve t&euml; l&euml;muara dhe mbi njëzet vjet p&euml;rkushtim. &Ccedil;do sip&euml;rfaqe tregon nj&euml; histori or&euml;sh t&euml; ringjallura dhe &ccedil;el&euml;sash t&euml; punuar me kujdes. K&euml;tu, koha dhe siguria juaj i besohen duarve q&euml; kujdesen v&euml;rtet.
-            </p>
-            <p class="text-gray-600 text-lg leading-relaxed">
-              T&euml; njëjtat duar q&euml; riparojn&euml; or&euml;n tuaj jan&euml; ato q&euml; zgjedhin, inspektojn&euml; dhe sh&euml;rbejn&euml; &ccedil;do or&euml; t&euml; p&euml;rdorur q&euml; listojm&euml; p&euml;r shitje. Kur themi se nj&euml; or&euml; &euml;sht&euml; kontrolluar, e kuptojm&euml; seriozisht.
-            </p>
+            <h2 id="workshop-heading" class="story-heading">Punishtja <span class="gold-display">Jon&euml;</span></h2>
+            <p class="story-lead">Ku Precisioni Takon Pasionin</p>
+            <p>Hyni n&euml; punishten ton&euml; familjare &mdash; nj&euml; hap&euml;sir&euml; e mbushur me zhurm&euml;n e makinerive, shk&euml;lqimin e mjeteve t&euml; l&euml;muara dhe mbi njëzet vjet p&euml;rkushtim. &Ccedil;do sip&euml;rfaqe tregon nj&euml; histori or&euml;sh t&euml; ringjallura dhe &ccedil;el&euml;sash t&euml; punuar me kujdes. K&euml;tu, koha dhe siguria juaj i besohen duarve q&euml; kujdesen v&euml;rtet.</p>
+            <p>T&euml; njëjtat duar q&euml; riparojn&euml; or&euml;n tuaj jan&euml; ato q&euml; zgjedhin, inspektojn&euml; dhe sh&euml;rbejn&euml; &ccedil;do or&euml; t&euml; p&euml;rdorur q&euml; listojm&euml; p&euml;r shitje. Kur themi se nj&euml; or&euml; &euml;sht&euml; kontrolluar, e kuptojm&euml; seriozisht.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- MEET THE FAMILY -->
-    <section class="about-family-section" aria-labelledby="family-heading" data-animate>
-      <div class="family-split">
-        <div class="family-photo">
-          <picture>
-            <source srcset="https://watch.al/4.raw.githubusercontent.com.webp" type="image/webp">
-            <img src="https://watch.al/4.raw.githubusercontent.com.jpg"
-                 alt="Br&euml;nd&euml;sia e punishtes Iglisi Watch &mdash; Durr&euml;s"
-                 loading="lazy" decoding="async" width="600" height="560">
-          </picture>
-        </div>
-        <div class="family-text">
-          <h2 id="family-heading">Familja <span class="gold-display">Jon&euml;</span></h2>
-          <p>Pas &ccedil;do ore t&euml; riparuar dhe &ccedil;do &ccedil;el&euml;si t&euml; kopjuar qëndrojn&euml; t&euml; njëjtat duar &mdash; familja Iglisi. Q&euml; kur hapëm dyer&euml;t tona n&euml; Durr&euml;s n&euml; 2002, e kemi ndërtuar k&euml;t&euml; punishte mbi durim, precizion dhe kujdes t&euml; v&euml;rtet&euml; p&euml;r &ccedil;do klient q&euml; na viziton.</p>
-          <p>Ne nuk zgjidhim vetëm problemet. Jemi krenar&euml; p&euml;r pun&euml;n ton&euml; dhe e garantojm&euml; at&euml;. K&euml;shtu shpjegohet pse kaq shum&euml; familje Durr&euml;siane kan&euml; besuar tek ne p&euml;r mbi dy dekada &mdash; dhe jemi ende k&euml;tu, ende m&euml;sojm&euml;, ende p&euml;rmirësohemi.</p>
-          <p><strong>Iglisi Watch &mdash; Biznes familjar nga 2002.</strong></p>
+    <section class="py-24 about-family-section" aria-labelledby="family-heading" data-animate>
+      <div class="story-split-outer">
+        <div class="story-split story-split--reverse">
+          <div class="story-img">
+            <picture>
+              <source srcset="https://watch.al/4.raw.githubusercontent.com.webp" type="image/webp">
+              <img src="https://watch.al/4.raw.githubusercontent.com.jpg"
+                   alt="Br&euml;nd&euml;sia e punishtes Iglisi Watch &mdash; Durr&euml;s"
+                   loading="lazy" decoding="async" width="600" height="560">
+            </picture>
+          </div>
+          <div class="story-copy">
+            <span class="workshop-subheading-rule" aria-hidden="true"></span>
+            <h2 id="family-heading" class="story-heading">Familja <span class="gold-display">Jon&euml;</span></h2>
+            <p>Pas &ccedil;do ore t&euml; riparuar dhe &ccedil;do &ccedil;el&euml;si t&euml; kopjuar qëndrojn&euml; t&euml; njëjtat duar &mdash; familja Iglisi. Q&euml; kur hapëm dyer&euml;t tona n&euml; Durr&euml;s n&euml; 2002, e kemi ndërtuar k&euml;t&euml; punishte mbi durim, precizion dhe kujdes t&euml; v&euml;rtet&euml; p&euml;r &ccedil;do klient q&euml; na viziton.</p>
+            <p>Ne nuk zgjidhim vetëm problemet. Jemi krenar&euml; p&euml;r pun&euml;n ton&euml; dhe e garantojm&euml; at&euml;. K&euml;shtu shpjegohet pse kaq shum&euml; familje Durr&euml;siane kan&euml; besuar tek ne p&euml;r mbi dy dekada &mdash; dhe jemi ende k&euml;tu, ende m&euml;sojm&euml;, ende p&euml;rmirësohemi.</p>
+            <p><strong>Iglisi Watch &mdash; Biznes familjar nga 2002.</strong></p>
+          </div>
         </div>
       </div>
     </section>
@@ -388,24 +397,32 @@
     <section class="py-24 bg-white" aria-labelledby="process-heading" data-animate>
       <div class="max-w-4xl mx-auto px-6">
         <h2 id="process-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Procesi <span class="gold-display">Yn&euml;</span></h2>
-        <div class="space-y-8 process-steps">
-          <div class="timeline-item" data-animate data-animate-delay="0s">
-            <div class="timeline-icon"><i class="fas fa-search" aria-hidden="true"></i></div>
-            <div>
+        <div class="process-list">
+          <div class="process-step" data-animate data-animate-delay="0s">
+            <div class="process-track">
+              <div class="process-circle"><i class="fas fa-search" aria-hidden="true"></i></div>
+              <div class="process-connector"></div>
+            </div>
+            <div class="process-body">
               <h3 class="text-2xl font-bold mb-2">1. Diagnostikimi</h3>
               <p class="text-gray-600">Inspektojm&euml; or&euml;n ose &ccedil;el&euml;sin me mjete profesionale p&euml;r t&euml; identifikuar nevojën e sakt&euml;.</p>
             </div>
           </div>
-          <div class="timeline-item" data-animate data-animate-delay="0.1s">
-            <div class="timeline-icon"><i class="fas fa-tools" aria-hidden="true"></i></div>
-            <div>
+          <div class="process-step" data-animate data-animate-delay="0.1s">
+            <div class="process-track">
+              <div class="process-circle"><i class="fas fa-tools" aria-hidden="true"></i></div>
+              <div class="process-connector"></div>
+            </div>
+            <div class="process-body">
               <h3 class="text-2xl font-bold mb-2">2. Puna Precize</h3>
               <p class="text-gray-600">Duke p&euml;rdorur makineri t&euml; specializuara, kryejm&euml; riparimin ose kopjimin me sakt&euml;si mikronike.</p>
             </div>
           </div>
-          <div class="timeline-item" data-animate data-animate-delay="0.2s">
-            <div class="timeline-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
-            <div>
+          <div class="process-step" data-animate data-animate-delay="0.2s">
+            <div class="process-track">
+              <div class="process-circle"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
+            </div>
+            <div class="process-body">
               <h3 class="text-2xl font-bold mb-2">3. Kontrolli i Cil&euml;sis&euml;</h3>
               <p class="text-gray-600">&Ccedil;do pjes&euml; testohet t&euml;r&euml;sisht para se t&rsquo;ju kthehet.</p>
             </div>

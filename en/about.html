@@ -96,20 +96,34 @@
       .reviews-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem}
       .reviews-carousel-wrap{display:none!important}
     }
-    /* ── Meet the Family ── */
-    .about-family-section{background:#f5f0e8;padding:5rem 1.5rem}
-    .family-split{display:flex;flex-direction:column;gap:2.5rem;align-items:center;max-width:64rem;margin:0 auto}
-    .family-photo{width:100%}
-    .family-photo img{border-radius:1.5rem;box-shadow:0 20px 40px rgba(0,0,0,.12);width:100%;height:360px;object-fit:cover}
-    .family-text h2{font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 1.25rem;line-height:1.2}
-    .family-text p{color:#3d3830;font-size:1.05rem;line-height:1.75;margin:0 0 1rem}
-    .family-text p:last-child{margin:0}
+    /* ── Story sections (unified Workshop + Family layout) ── */
+    .about-family-section{background:#f5f0e8}
+    .story-split-outer{max-width:1080px;margin:0 auto;padding:0 1.5rem}
+    .story-split{display:flex;flex-direction:column;gap:2.5rem;align-items:center}
+    .story-img{width:100%}
+    .story-img img,.story-img picture>img{width:100%;height:340px;object-fit:cover;border-radius:1.5rem;box-shadow:0 20px 40px rgba(0,0,0,.12);display:block}
+    .story-heading{font-size:clamp(2rem,4.5vw,3rem);margin:0 0 .65rem;line-height:1.15}
+    .story-lead{font-size:1.05rem;font-weight:700;color:#0d1b3e;margin:0 0 1.25rem}
+    .story-copy p{color:#3d3830;font-size:1.05rem;line-height:1.75;margin:0 0 1rem}
+    .story-copy p:last-child{margin:0}
     @media(min-width:768px){
-      .family-split{flex-direction:row;gap:3.5rem}
-      .family-photo{flex:0 0 42%;max-width:420px}
-      .family-photo img{height:420px}
-      .family-text{flex:1}
+      .story-split{flex-direction:row;gap:4rem;align-items:center}
+      .story-split--reverse{flex-direction:row-reverse}
+      .story-img{flex:0 0 44%;max-width:44%}
+      .story-img img,.story-img picture>img{height:440px}
+      .story-copy{flex:1}
     }
+    @media(max-width:767px){
+      .story-img img,.story-img picture>img{height:260px}
+    }
+    /* ── Process: connected icon column ── */
+    .process-list{display:flex;flex-direction:column}
+    .process-step{display:flex;gap:1.75rem;align-items:stretch}
+    .process-track{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:3.5rem}
+    .process-circle{width:3.5rem;height:3.5rem;background:#b4945c;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5rem;flex-shrink:0;box-shadow:0 10px 15px -3px rgba(180,148,92,.2),0 0 0 5px rgba(180,148,92,.12)}
+    .process-connector{flex:1;width:2px;background:rgba(139,105,20,.25);margin:4px auto;min-height:2rem}
+    .process-body{padding:.375rem 0 2.5rem;flex:1}
+    .process-step:last-child .process-body{padding-bottom:0}
     /* ── Trust banner ── */
     .trust-banner-section{background:#0d1b3e;padding:4rem 1.5rem;text-align:center}
     .trust-banner-section p{color:#fff;font-size:clamp(1.1rem,2.5vw,1.4rem);font-weight:600;max-width:680px;margin:0 auto 1.75rem;line-height:1.5;font-family:'Cormorant Garamond',serif}
@@ -121,10 +135,8 @@
       .mb-16{margin-bottom:2rem!important}
       .gap-12{gap:1.5rem!important}
       .space-y-8>*+*{margin-top:1.25rem!important}
-      .about-family-section{padding:2.5rem 1.5rem!important}
       .about-timeline-strip{padding:1.75rem 1.5rem}
       .trust-banner-section{padding:3rem 1.5rem}
-      .family-photo img{height:260px}
     }
   </style>
   <script type="application/ld+json">
@@ -280,49 +292,46 @@
 
     <!-- WORKSHOP -->
     <section class="py-24" style="background:#faf8f4" aria-labelledby="workshop-heading" data-animate>
-      <div class="max-w-6xl mx-auto px-6">
-        <h2 id="workshop-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Our <span class="gold-display">Workshop</span></h2>
-        <div class="flex flex-col md:flex-row gap-12 items-center">
-          <div class="md:w-1/3">
+      <div class="story-split-outer">
+        <div class="story-split">
+          <div class="story-img">
             <picture>
               <source srcset="https://watch.al/1.raw.githubusercontent.com.webp?v=2" type="image/webp">
               <img src="https://watch.al/1.raw.githubusercontent.com.jpg?v=2"
                    alt="Watch repair workbench at Iglisi Watch workshop in Durrës"
-                   class="rounded-2xl shadow-xl border border-gray-200" loading="lazy" decoding="async"
-                   width="600" height="560" style="min-height:380px;object-fit:cover;width:100%;display:block"
-                   sizes="(max-width: 768px) calc(100vw - 3rem), 33vw">
+                   loading="lazy" decoding="async" width="600" height="560">
             </picture>
           </div>
-          <div class="md:w-2/3">
+          <div class="story-copy">
             <span class="workshop-subheading-rule" aria-hidden="true"></span>
-            <p class="text-2xl font-bold mb-4">Where Precision Meets Passion</p>
-            <p class="text-gray-600 text-lg leading-relaxed mb-6">
-              Step into our family workshop &mdash; a space filled with the hum of machinery, the gleam of polished tools, and over twenty years of dedication. Every surface tells the story of watches brought back to life and keys crafted with care. Here, your timepiece and your security are in the hands of people who truly care.
-            </p>
-            <p class="text-gray-600 text-lg leading-relaxed">
-              The same hands that repair your watch are the ones that select, inspect and service every pre-owned watch we list for sale. When we say a watch has been checked, we mean it.
-            </p>
+            <h2 id="workshop-heading" class="story-heading">Our <span class="gold-display">Workshop</span></h2>
+            <p class="story-lead">Where Precision Meets Passion</p>
+            <p>Step into our family workshop &mdash; a space filled with the hum of machinery, the gleam of polished tools, and over twenty years of dedication. Every surface tells the story of watches brought back to life and keys crafted with care. Here, your timepiece and your security are in the hands of people who truly care.</p>
+            <p>The same hands that repair your watch are the ones that select, inspect and service every pre-owned watch we list for sale. When we say a watch has been checked, we mean it.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- MEET THE FAMILY -->
-    <section class="about-family-section" aria-labelledby="family-heading" data-animate>
-      <div class="family-split">
-        <div class="family-photo">
-          <picture>
-            <source srcset="https://watch.al/4.raw.githubusercontent.com.webp" type="image/webp">
-            <img src="https://watch.al/4.raw.githubusercontent.com.jpg"
-                 alt="Inside the Iglisi Watch workshop — Durrës, Albania"
-                 loading="lazy" decoding="async" width="600" height="560">
-          </picture>
-        </div>
-        <div class="family-text">
-          <h2 id="family-heading">Meet the <span class="gold-display">Family</span></h2>
-          <p>Behind every watch we repair and every key we cut is the same pair of hands &mdash; the Iglisi family. Since opening our doors in Durrës in 2002, we have built this workshop on patience, precision, and genuine care for every customer who walks through our door.</p>
-          <p>We don&rsquo;t just fix things. We take pride in our work, and we stand behind every repair we carry out. That&rsquo;s why so many Durrës families have trusted us for over two decades &mdash; and why we&rsquo;re still here, still learning, still improving.</p>
-          <p><strong>Iglisi Watch &mdash; Family-owned since 2002.</strong></p>
+    <section class="py-24 about-family-section" aria-labelledby="family-heading" data-animate>
+      <div class="story-split-outer">
+        <div class="story-split story-split--reverse">
+          <div class="story-img">
+            <picture>
+              <source srcset="https://watch.al/4.raw.githubusercontent.com.webp" type="image/webp">
+              <img src="https://watch.al/4.raw.githubusercontent.com.jpg"
+                   alt="Inside the Iglisi Watch workshop — Durrës, Albania"
+                   loading="lazy" decoding="async" width="600" height="560">
+            </picture>
+          </div>
+          <div class="story-copy">
+            <span class="workshop-subheading-rule" aria-hidden="true"></span>
+            <h2 id="family-heading" class="story-heading">Meet the <span class="gold-display">Family</span></h2>
+            <p>Behind every watch we repair and every key we cut is the same pair of hands &mdash; the Iglisi family. Since opening our doors in Durrës in 2002, we have built this workshop on patience, precision, and genuine care for every customer who walks through our door.</p>
+            <p>We don&rsquo;t just fix things. We take pride in our work, and we stand behind every repair we carry out. That&rsquo;s why so many Durrës families have trusted us for over two decades &mdash; and why we&rsquo;re still here, still learning, still improving.</p>
+            <p><strong>Iglisi Watch &mdash; Family-owned since 2002.</strong></p>
+          </div>
         </div>
       </div>
     </section>
@@ -388,24 +397,32 @@
     <section class="py-24 bg-white" aria-labelledby="process-heading" data-animate>
       <div class="max-w-4xl mx-auto px-6">
         <h2 id="process-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Our <span class="gold-display">Process</span></h2>
-        <div class="space-y-8 process-steps">
-          <div class="timeline-item" data-animate data-animate-delay="0s">
-            <div class="timeline-icon"><i class="fas fa-search" aria-hidden="true"></i></div>
-            <div>
+        <div class="process-list">
+          <div class="process-step" data-animate data-animate-delay="0s">
+            <div class="process-track">
+              <div class="process-circle"><i class="fas fa-search" aria-hidden="true"></i></div>
+              <div class="process-connector"></div>
+            </div>
+            <div class="process-body">
               <h3 class="text-2xl font-bold mb-2">1. Diagnosis</h3>
               <p class="text-gray-600">We inspect your watch or key with professional instruments to identify exactly what&rsquo;s needed.</p>
             </div>
           </div>
-          <div class="timeline-item" data-animate data-animate-delay="0.1s">
-            <div class="timeline-icon"><i class="fas fa-tools" aria-hidden="true"></i></div>
-            <div>
+          <div class="process-step" data-animate data-animate-delay="0.1s">
+            <div class="process-track">
+              <div class="process-circle"><i class="fas fa-tools" aria-hidden="true"></i></div>
+              <div class="process-connector"></div>
+            </div>
+            <div class="process-body">
               <h3 class="text-2xl font-bold mb-2">2. Precision Work</h3>
               <p class="text-gray-600">Using specialist tools and machinery, we carry out the repair or key cut to micron accuracy.</p>
             </div>
           </div>
-          <div class="timeline-item" data-animate data-animate-delay="0.2s">
-            <div class="timeline-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
-            <div>
+          <div class="process-step" data-animate data-animate-delay="0.2s">
+            <div class="process-track">
+              <div class="process-circle"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
+            </div>
+            <div class="process-body">
               <h3 class="text-2xl font-bold mb-2">3. Quality Check</h3>
               <p class="text-gray-600">Every piece is thoroughly tested before it&rsquo;s handed back to you.</p>
             </div>
