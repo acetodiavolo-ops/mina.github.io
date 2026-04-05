@@ -83,18 +83,18 @@
     {
       "id": "watch-6",
       "featured": true,
-      "brand": "Brand",
-      "model": "Model Name",
-      "reference": "Ref. XXX",
-      "year": 2017,
-      "condition": "Very Good",
-      "price": 0,
+      "brand": "Hislon",
+      "model": "Classic Queen",
+      "reference": "QL113G-09SS",
+      "year": 2024,
+      "condition": "New",
+      "price": 149,
       "currency": "EUR",
-      "image": "",
+      "image": "/images/watches/hislon-ql113g-09ss.jpg",
       "sold": false,
-      "description_en": "Description in English.",
-      "description_it": "Descrizione in italiano.",
-      "description_sq": "Përshkrim në shqip."
+      "description_en": "The Classic Queen in stainless steel with a mother-of-pearl dial, crystal indices, sapphire crystal, blue hands, and a date window. Understated elegance for every day.",
+      "description_it": "La Classic Queen in acciaio inossidabile con quadrante madreperla, indici con cristalli, cristallo zaffiro, lancette blu e finestrella data. Eleganza sobria per ogni giorno.",
+      "description_sq": "Classic Queen në çelik inox me cadran sedef, tregues me kristale, xham safiri, akrepë blu dhe dritare date. Elegancë e thjeshtë për çdo ditë."
     }
   ]
 }
