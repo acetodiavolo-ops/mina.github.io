@@ -29,7 +29,7 @@
   <link rel="preload" href="/webfonts/cormorant-garamond.woff2?v=2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/webfonts/fa-solid-900.woff2?v=2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/webfonts/fa-brands-400.woff2?v=2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/shared.css?v=37">
+  <link rel="stylesheet" href="/shared.css?v=38">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
     {"@type":"ListItem","position":1,"name":"Home","item":"https://watch.al/en/"},
@@ -82,7 +82,7 @@
   <nav class="nav-drawer" id="navDrawer" aria-label="Site navigation">
     <div class="nav-drawer-inner">
       <a href="/en/" class="nav-drawer-link">Home</a>
-    <a href="/en/shop/" class="nav-drawer-link">Shop</a>
+      <a href="/en/shop/" class="nav-drawer-link">Shop</a>
       <a href="/en/services.html" class="nav-drawer-link">Services</a>
       <a href="/en/about.html" class="nav-drawer-link">About Us</a>
       <a href="/en/blog/" class="nav-drawer-link">Blog</a>
@@ -102,29 +102,29 @@
     <div class="max-w-3xl mx-auto px-6">
       <p class="kicker"><i class="fas fa-hand-holding-heart" aria-hidden="true"></i>&ensp;Our Story</p>
       <h1>About Iglisi Watch</h1>
-      <p>Family-owned since 2002. Expert watch repair, key cutting, and curated pre-owned watches — all at the heart of Durrës, Albania.</p>
+      <p>Family-owned since 2002. Expert watch repair, key cutting, and curated pre-owned watches &mdash; all at the heart of Durrës, Albania.</p>
     </div>
   </div>
 
   <main id="main-content">
 
-    <!-- ABOUT CARDS + STATS -->
-    <section class="about-section">
+    <!-- ABOUT CARDS -->
+    <section class="about-section" data-animate>
       <div class="about-cards">
 
         <div class="about-card" data-animate>
           <div class="about-card-icon"><i class="fas fa-gem" aria-hidden="true"></i></div>
           <div class="about-card-body">
             <h2>Two Decades of Craft</h2>
-            <p>Since 2002, Iglisi Watch has been Durrës&rsquo;s trusted destination for watch battery replacement, movement repair, precision key cutting — and now a curated selection of pre-owned watches, each serviced in our own workshop.</p>
+            <p>Since 2002, Iglisi Watch has been Durrës&rsquo;s trusted destination for watch battery replacement, movement repair, precision key cutting &mdash; and now a curated selection of pre-owned watches, each serviced in our own workshop.</p>
           </div>
         </div>
 
         <div class="about-card" data-animate>
           <div class="about-card-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
           <div class="about-card-body">
-            <h2>Find Us</h2>
-            <p>Rruga Aleksander Goga, Durrës 2001, Albania.<br>Open Monday to Saturday, 08:30&ndash;20:30.<br>Walk-ins always welcome &mdash; no appointment needed.</p>
+            <h2>Walk-ins Welcome</h2>
+            <p>Rruga Aleksander Goga, Durrës 2001, Albania.<br>Open Monday to Saturday, 08:30&ndash;20:30.<br>No appointment needed &mdash; just walk in.</p>
             <a href="tel:+355676360510" class="btn-primary inline-flex items-center gap-2" style="width:fit-content"><i class="fas fa-phone-alt" aria-hidden="true"></i> +355 67 636 0510</a>
           </div>
         </div>
@@ -141,17 +141,48 @@
         </div>
 
       </div>
+    </section>
 
+    <!-- STATS -->
+    <section class="about-stats-section" data-animate>
       <div class="stat-row" style="max-width:700px;margin-left:auto;margin-right:auto">
         <div class="stat-box"><strong>2002</strong><span>Founded</span></div>
         <div class="stat-box"><strong>5.0★</strong><span>Google Rating</span></div>
         <div class="stat-box"><strong>&lt;2 min</strong><span>Battery swap</span></div>
-        <div class="stat-box"><strong>6 days</strong><span>Mon – Sat</span></div>
+        <div class="stat-box"><strong>6 days</strong><span>Mon &ndash; Sat</span></div>
+      </div>
+    </section>
+
+    <!-- TIMELINE STRIP -->
+    <section class="about-timeline-strip" aria-label="Our history" data-animate>
+      <div class="timeline-strip-inner">
+        <div class="timeline-strip-track">
+          <div class="ts-item">
+            <div class="ts-dot"></div>
+            <div class="ts-year">2002</div>
+            <div class="ts-label">Shop founded in Durrës</div>
+          </div>
+          <div class="ts-item">
+            <div class="ts-dot"></div>
+            <div class="ts-year">~2010</div>
+            <div class="ts-label">Expanded to key cutting</div>
+          </div>
+          <div class="ts-item">
+            <div class="ts-dot"></div>
+            <div class="ts-year">2020</div>
+            <div class="ts-label">500,000+ keys milestone</div>
+          </div>
+          <div class="ts-item">
+            <div class="ts-dot"></div>
+            <div class="ts-year">2026</div>
+            <div class="ts-label">Pre-owned watches launched</div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- WORKSHOP -->
-    <section class="py-24 bg-white" aria-labelledby="workshop-heading" data-animate>
+    <section class="py-24" style="background:#faf8f4" aria-labelledby="workshop-heading" data-animate>
       <div class="max-w-6xl mx-auto px-6">
         <h2 id="workshop-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Our <span class="gold-display">Workshop</span></h2>
         <div class="flex flex-col md:flex-row gap-12 items-center">
@@ -165,9 +196,10 @@
             </picture>
           </div>
           <div class="md:w-2/3">
+            <span class="workshop-subheading-rule" aria-hidden="true"></span>
             <p class="text-2xl font-bold mb-4">Where Precision Meets Passion</p>
             <p class="text-gray-600 text-lg leading-relaxed mb-6">
-              Step into our family workshop — a space filled with the hum of machinery, the gleam of polished tools, and over twenty years of dedication. Every surface tells the story of watches brought back to life and keys crafted with care. Here, your timepiece and your security are in the hands of people who truly care.
+              Step into our family workshop &mdash; a space filled with the hum of machinery, the gleam of polished tools, and over twenty years of dedication. Every surface tells the story of watches brought back to life and keys crafted with care. Here, your timepiece and your security are in the hands of people who truly care.
             </p>
             <p class="text-gray-600 text-lg leading-relaxed">
               The same hands that repair your watch are the ones that select, inspect and service every pre-owned watch we list for sale. When we say a watch has been checked, we mean it.
@@ -177,10 +209,31 @@
       </div>
     </section>
 
+    <!-- MEET THE FAMILY -->
+    <section class="about-family-section" aria-labelledby="family-heading" data-animate>
+      <div class="family-split">
+        <div class="family-photo">
+          <picture>
+            <source srcset="https://watch.al/1.raw.githubusercontent.com.webp?v=2" type="image/webp">
+            <img src="https://watch.al/1.raw.githubusercontent.com.jpg?v=2"
+                 alt="The Iglisi family workshop — two decades of watchmaking in Durrës"
+                 loading="lazy" decoding="async" width="600" height="560">
+          </picture>
+        </div>
+        <div class="family-text">
+          <h2 id="family-heading">Meet the <span class="gold-display">Family</span></h2>
+          <p>Behind every watch we repair and every key we cut is the same pair of hands &mdash; the Iglisi family. Since opening our doors in Durrës in 2002, we have built this workshop on patience, precision, and genuine care for every customer who walks through our door.</p>
+          <p>We don&rsquo;t just fix things. We take pride in our work, and we stand behind every repair we carry out. That&rsquo;s why so many Durrës families have trusted us for over two decades &mdash; and why we&rsquo;re still here, still learning, still improving.</p>
+          <p><strong>Iglisi Watch &mdash; Family-owned since 2002.</strong></p>
+        </div>
+      </div>
+    </section>
+
     <!-- KEY CUTTING -->
-    <section class="py-16 bg-gray-50" aria-labelledby="keys-heading" data-animate>
+    <section class="py-24 bg-white" aria-labelledby="keys-heading" data-animate>
       <div class="max-w-5xl mx-auto px-6">
-        <h2 id="keys-heading" class="text-4xl md:text-5xl text-center mb-12 section-title">Key <span class="gold-display">Cutting</span></h2>
+        <h2 id="keys-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Key <span class="gold-display">Cutting</span></h2>
+        <p class="section-intro-para">With over 700,000 keys cut since 2002, key copying is one of our most-requested services. Walk in without an appointment &mdash; most copies are ready in minutes while you wait.</p>
         <div class="grid md:grid-cols-3 gap-8">
           <div class="service-card text-center">
             <i class="fas fa-key text-4xl gold mb-4" aria-hidden="true"></i>
@@ -190,26 +243,26 @@
           <div class="service-card text-center">
             <i class="fas fa-bolt text-4xl gold mb-4" aria-hidden="true"></i>
             <h3 class="text-xl font-bold mb-3">Done While You Wait</h3>
-            <p class="text-gray-600">Most key copies are ready in minutes. No appointment needed — walk in and walk out with your new key.</p>
+            <p class="text-gray-600">Most key copies are ready in minutes. No appointment needed &mdash; walk in and walk out with your new key.</p>
           </div>
           <div class="service-card text-center">
             <i class="fas fa-shield-alt text-4xl gold mb-4" aria-hidden="true"></i>
             <h3 class="text-xl font-bold mb-3">700,000+ Keys Copied</h3>
-            <p class="text-gray-600">Over two decades of key cutting experience. We don&rsquo;t copy car keys, but nearly everything else — yes.</p>
+            <p class="text-gray-600">Over two decades of key cutting experience. We don&rsquo;t copy car keys, but nearly everything else &mdash; yes.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- EQUIPMENT -->
-    <section class="py-24 bg-white" aria-labelledby="equipment-heading" data-animate>
+    <section class="py-24" style="background:#f5f0e8" aria-labelledby="equipment-heading" data-animate>
       <div class="max-w-7xl mx-auto px-6">
         <h2 id="equipment-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Our <span class="gold-display">Equipment</span></h2>
         <div class="grid md:grid-cols-3 gap-8">
           <div class="equipment-card text-center">
             <i class="fas fa-cog text-4xl gold mb-4" aria-hidden="true"></i>
             <h3 class="text-2xl font-bold mb-3">Precision Key Cutting</h3>
-            <p class="text-gray-600">Professional machines for standard, security, and dimple keys — accurate to the millimetre.</p>
+            <p class="text-gray-600">Professional machines for standard, security, and dimple keys &mdash; accurate to the millimetre.</p>
           </div>
           <div class="equipment-card text-center">
             <i class="fas fa-microscope text-4xl gold mb-4" aria-hidden="true"></i>
@@ -225,11 +278,19 @@
       </div>
     </section>
 
+    <!-- TRUST BANNER -->
+    <section class="trust-banner-section" aria-label="Social proof">
+      <p>Over 700,000 keys cut. Watches repaired for thousands of families across Durrës since 2002.</p>
+      <a href="https://api.whatsapp.com/send?phone=355676360510" target="_blank" rel="noopener noreferrer" class="trust-banner-cta">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i> Book via WhatsApp
+      </a>
+    </section>
+
     <!-- PROCESS -->
-    <section class="py-24 bg-gray-50" aria-labelledby="process-heading" data-animate>
+    <section class="py-24 bg-white" aria-labelledby="process-heading" data-animate>
       <div class="max-w-4xl mx-auto px-6">
         <h2 id="process-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Our <span class="gold-display">Process</span></h2>
-        <div class="space-y-8">
+        <div class="space-y-8 process-steps">
           <div class="timeline-item" data-animate data-animate-delay="0s">
             <div class="timeline-icon"><i class="fas fa-search" aria-hidden="true"></i></div>
             <div>
@@ -256,10 +317,10 @@
     </section>
 
     <!-- GALLERY -->
-    <section class="py-24 bg-white" aria-labelledby="gallery-heading" data-animate>
+    <section class="py-24 section-gallery-navy" aria-labelledby="gallery-heading" data-animate>
       <div class="max-w-7xl mx-auto px-6">
         <h2 id="gallery-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Our Workshop <span class="gold-display">in Real Life</span></h2>
-        <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">Every image is a real moment, unedited — this is what we do, every day.</p>
+        <p class="text-lg text-center max-w-3xl mx-auto mb-12" style="color:rgba(255,255,255,.72)">Every image is a real moment, unedited &mdash; this is what we do, every day.</p>
         <div class="gallery-grid" role="list">
           <div role="listitem"><picture><source srcset="https://watch.al/0.raw.githubusercontent.com.webp" type="image/webp"><img class="gallery-thumb" loading="lazy" decoding="async" src="https://watch.al/0.raw.githubusercontent.com.jpg" alt="Iglisi Watch shop sign in Durrës, Albania" width="600" height="280" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"></picture></div>
           <div role="listitem"><picture><source srcset="https://watch.al/1.raw.githubusercontent.com.webp?v=2" type="image/webp"><img class="gallery-thumb" loading="lazy" decoding="async" src="https://watch.al/1.raw.githubusercontent.com.jpg?v=2" alt="Watch repair workbench at Iglisi Watch" width="600" height="280" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"></picture></div>
@@ -272,7 +333,7 @@
     </section>
 
     <!-- REVIEWS -->
-    <section id="reviews" class="py-24 bg-gray-50" aria-labelledby="reviews-heading" data-animate>
+    <section id="reviews" class="py-24 bg-white" aria-labelledby="reviews-heading" data-animate>
       <div class="max-w-5xl mx-auto px-6">
         <h2 id="reviews-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">What Our <span class="gold-display">Customers Say</span></h2>
         <div class="carousel-container relative" data-carousel="main" aria-roledescription="carousel" role="region" aria-label="Customer reviews">

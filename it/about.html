@@ -29,7 +29,7 @@
   <link rel="preload" href="/webfonts/cormorant-garamond.woff2?v=2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/webfonts/fa-solid-900.woff2?v=2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/webfonts/fa-brands-400.woff2?v=2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/shared.css?v=37">
+  <link rel="stylesheet" href="/shared.css?v=38">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
     {"@type":"ListItem","position":1,"name":"Home","item":"https://watch.al/it/"},
@@ -82,7 +82,7 @@
   <nav class="nav-drawer" id="navDrawer" aria-label="Navigazione sito">
     <div class="nav-drawer-inner">
       <a href="/it/" class="nav-drawer-link">Home</a>
-    <a href="/it/shop/" class="nav-drawer-link">Shop</a>
+      <a href="/it/shop/" class="nav-drawer-link">Shop</a>
       <a href="/it/services.html" class="nav-drawer-link">Servizi</a>
       <a href="/it/about.html" class="nav-drawer-link">Chi Siamo</a>
       <a href="/it/blog/" class="nav-drawer-link">Blog</a>
@@ -102,29 +102,29 @@
     <div class="max-w-3xl mx-auto px-6">
       <p class="kicker"><i class="fas fa-hand-holding-heart" aria-hidden="true"></i>&ensp;La Nostra Storia</p>
       <h1>Chi Siamo &mdash; Iglisi Watch</h1>
-      <p>A conduzione familiare dal 2002. Riparazione orologi di precisione, taglio chiavi e una selezione di orologi usati — nel cuore di Durazzo, Albania.</p>
+      <p>A conduzione familiare dal 2002. Riparazione orologi di precisione, taglio chiavi e una selezione di orologi usati &mdash; nel cuore di Durazzo, Albania.</p>
     </div>
   </div>
 
   <main id="main-content">
 
-    <!-- ABOUT CARDS + STATS -->
-    <section class="about-section">
+    <!-- ABOUT CARDS -->
+    <section class="about-section" data-animate>
       <div class="about-cards">
 
         <div class="about-card" data-animate>
           <div class="about-card-icon"><i class="fas fa-gem" aria-hidden="true"></i></div>
           <div class="about-card-body">
             <h2>Due Decenni di Arte</h2>
-            <p>Dal 2002, Iglisi Watch &egrave; la destinazione di fiducia di Durazzo per la sostituzione batterie, la riparazione del movimento, il taglio chiavi di precisione — e ora una selezione curata di orologi usati, ognuno revisionato nella nostra officina.</p>
+            <p>Dal 2002, Iglisi Watch &egrave; la destinazione di fiducia di Durazzo per la sostituzione batterie, la riparazione del movimento, il taglio chiavi di precisione &mdash; e ora una selezione curata di orologi usati, ognuno revisionato nella nostra officina.</p>
           </div>
         </div>
 
         <div class="about-card" data-animate>
           <div class="about-card-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
           <div class="about-card-body">
-            <h2>Trovaci</h2>
-            <p>Rruga Aleksander Goga, Durazzo 2001, Albania.<br>Aperto dal luned&igrave; al sabato, 08:30&ndash;20:30.<br>Sempre benvenuti senza appuntamento.</p>
+            <h2>Benvenuti Senza Appuntamento</h2>
+            <p>Rruga Aleksander Goga, Durazzo 2001, Albania.<br>Aperto dal luned&igrave; al sabato, 08:30&ndash;20:30.<br>Nessun appuntamento necessario &mdash; entrate liberamente.</p>
             <a href="tel:+355676360510" class="btn-primary inline-flex items-center gap-2" style="width:fit-content"><i class="fas fa-phone-alt" aria-hidden="true"></i> +355 67 636 0510</a>
           </div>
         </div>
@@ -141,7 +141,10 @@
         </div>
 
       </div>
+    </section>
 
+    <!-- STATS -->
+    <section class="about-stats-section" data-animate>
       <div class="stat-row" style="max-width:700px;margin-left:auto;margin-right:auto">
         <div class="stat-box"><strong>2002</strong><span>Fondato</span></div>
         <div class="stat-box"><strong>5.0★</strong><span>Rating Google</span></div>
@@ -150,8 +153,36 @@
       </div>
     </section>
 
+    <!-- TIMELINE STRIP -->
+    <section class="about-timeline-strip" aria-label="La nostra storia" data-animate>
+      <div class="timeline-strip-inner">
+        <div class="timeline-strip-track">
+          <div class="ts-item">
+            <div class="ts-dot"></div>
+            <div class="ts-year">2002</div>
+            <div class="ts-label">Negozio fondato a Durazzo</div>
+          </div>
+          <div class="ts-item">
+            <div class="ts-dot"></div>
+            <div class="ts-year">~2010</div>
+            <div class="ts-label">Espanso al taglio chiavi</div>
+          </div>
+          <div class="ts-item">
+            <div class="ts-dot"></div>
+            <div class="ts-year">2020</div>
+            <div class="ts-label">500.000+ chiavi tagliate</div>
+          </div>
+          <div class="ts-item">
+            <div class="ts-dot"></div>
+            <div class="ts-year">2026</div>
+            <div class="ts-label">Lanciata raccolta orologi usati</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- WORKSHOP -->
-    <section class="py-24 bg-white" aria-labelledby="workshop-heading" data-animate>
+    <section class="py-24" style="background:#faf8f4" aria-labelledby="workshop-heading" data-animate>
       <div class="max-w-6xl mx-auto px-6">
         <h2 id="workshop-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Il Nostro <span class="gold-display">Laboratorio</span></h2>
         <div class="flex flex-col md:flex-row gap-12 items-center">
@@ -165,9 +196,10 @@
             </picture>
           </div>
           <div class="md:w-2/3">
+            <span class="workshop-subheading-rule" aria-hidden="true"></span>
             <p class="text-2xl font-bold mb-4">Dove la Precisione Incontra la Passione</p>
             <p class="text-gray-600 text-lg leading-relaxed mb-6">
-              Entrate nel nostro laboratorio di famiglia — uno spazio pieno del ronzio dei macchinari, del luccichio degli attrezzi lucidati e di oltre vent&rsquo;anni di dedizione. Ogni superficie racconta una storia di orologi riportati in vita e chiavi realizzate con cura. Qui, il vostro tempo e la vostra sicurezza sono affidati a mani che si prendono cura davvero.
+              Entrate nel nostro laboratorio di famiglia &mdash; uno spazio pieno del ronzio dei macchinari, del luccichio degli attrezzi lucidati e di oltre vent&rsquo;anni di dedizione. Ogni superficie racconta una storia di orologi riportati in vita e chiavi realizzate con cura. Qui, il vostro tempo e la vostra sicurezza sono affidati a mani che si prendono cura davvero.
             </p>
             <p class="text-gray-600 text-lg leading-relaxed">
               Le stesse mani che riparano il vostro orologio sono quelle che selezionano, ispezionano e revisionano ogni orologio usato che mettiamo in vendita. Quando diciamo che un orologio &egrave; stato verificato, lo intendiamo davvero.
@@ -177,10 +209,31 @@
       </div>
     </section>
 
+    <!-- MEET THE FAMILY -->
+    <section class="about-family-section" aria-labelledby="family-heading" data-animate>
+      <div class="family-split">
+        <div class="family-photo">
+          <picture>
+            <source srcset="https://watch.al/1.raw.githubusercontent.com.webp?v=2" type="image/webp">
+            <img src="https://watch.al/1.raw.githubusercontent.com.jpg?v=2"
+                 alt="La famiglia Iglisi al lavoro nel laboratorio di Durazzo"
+                 loading="lazy" decoding="async" width="600" height="560">
+          </picture>
+        </div>
+        <div class="family-text">
+          <h2 id="family-heading">La Nostra <span class="gold-display">Famiglia</span></h2>
+          <p>Dietro ogni orologio riparato e ogni chiave tagliata ci sono le stesse mani &mdash; la famiglia Iglisi. Da quando abbiamo aperto le porte a Durazzo nel 2002, abbiamo costruito questa officina su pazienza, precisione e cura genuina per ogni cliente che varca la nostra soglia.</p>
+          <p>Non risolviamo solo i problemi. Siamo orgogliosi del nostro lavoro e ne siamo responsabili. &Egrave; per questo che tante famiglie di Durazzo si fidano di noi da oltre vent&rsquo;anni &mdash; e siamo ancora qui, ancora imparando, ancora migliorando.</p>
+          <p><strong>Iglisi Watch &mdash; A conduzione familiare dal 2002.</strong></p>
+        </div>
+      </div>
+    </section>
+
     <!-- KEY CUTTING -->
-    <section class="py-16 bg-gray-50" aria-labelledby="keys-heading" data-animate>
+    <section class="py-24 bg-white" aria-labelledby="keys-heading" data-animate>
       <div class="max-w-5xl mx-auto px-6">
-        <h2 id="keys-heading" class="text-4xl md:text-5xl text-center mb-12 section-title">Duplicazione <span class="gold-display">Chiavi</span></h2>
+        <h2 id="keys-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Duplicazione <span class="gold-display">Chiavi</span></h2>
+        <p class="section-intro-para">Con oltre 700.000 chiavi tagliate dal 2002, la duplicazione chiavi &egrave; uno dei nostri servizi pi&ugrave; richiesti. Entrate senza appuntamento &mdash; la maggior parte delle copie &egrave; pronta in pochi minuti mentre aspettate.</p>
         <div class="grid md:grid-cols-3 gap-8">
           <div class="service-card text-center">
             <i class="fas fa-key text-4xl gold mb-4" aria-hidden="true"></i>
@@ -190,7 +243,7 @@
           <div class="service-card text-center">
             <i class="fas fa-bolt text-4xl gold mb-4" aria-hidden="true"></i>
             <h3 class="text-xl font-bold mb-3">Pronta in Pochi Minuti</h3>
-            <p class="text-gray-600">La maggior parte delle copie chiave &egrave; pronta in pochi minuti. Nessun appuntamento necessario — entra e usci con la tua nuova chiave.</p>
+            <p class="text-gray-600">La maggior parte delle copie chiave &egrave; pronta in pochi minuti. Nessun appuntamento necessario &mdash; entra e usci con la tua nuova chiave.</p>
           </div>
           <div class="service-card text-center">
             <i class="fas fa-shield-alt text-4xl gold mb-4" aria-hidden="true"></i>
@@ -202,14 +255,14 @@
     </section>
 
     <!-- EQUIPMENT -->
-    <section class="py-24 bg-white" aria-labelledby="equipment-heading" data-animate>
+    <section class="py-24" style="background:#f5f0e8" aria-labelledby="equipment-heading" data-animate>
       <div class="max-w-7xl mx-auto px-6">
         <h2 id="equipment-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Le Nostre <span class="gold-display">Attrezzature</span></h2>
         <div class="grid md:grid-cols-3 gap-8">
           <div class="equipment-card text-center">
             <i class="fas fa-cog text-4xl gold mb-4" aria-hidden="true"></i>
             <h3 class="text-2xl font-bold mb-3">Taglio Chiavi di Precisione</h3>
-            <p class="text-gray-600">Macchine professionali per chiavi standard, di sicurezza e dimple — precise al millimetro.</p>
+            <p class="text-gray-600">Macchine professionali per chiavi standard, di sicurezza e dimple &mdash; precise al millimetro.</p>
           </div>
           <div class="equipment-card text-center">
             <i class="fas fa-microscope text-4xl gold mb-4" aria-hidden="true"></i>
@@ -225,11 +278,19 @@
       </div>
     </section>
 
+    <!-- TRUST BANNER -->
+    <section class="trust-banner-section" aria-label="Fiducia dei clienti">
+      <p>Oltre 700.000 chiavi tagliate. Orologi riparati per migliaia di famiglie a Durazzo dal 2002.</p>
+      <a href="https://api.whatsapp.com/send?phone=355676360510" target="_blank" rel="noopener noreferrer" class="trust-banner-cta">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i> Prenota su WhatsApp
+      </a>
+    </section>
+
     <!-- PROCESS -->
-    <section class="py-24 bg-gray-50" aria-labelledby="process-heading" data-animate>
+    <section class="py-24 bg-white" aria-labelledby="process-heading" data-animate>
       <div class="max-w-4xl mx-auto px-6">
         <h2 id="process-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Il Nostro <span class="gold-display">Processo</span></h2>
-        <div class="space-y-8">
+        <div class="space-y-8 process-steps">
           <div class="timeline-item" data-animate data-animate-delay="0s">
             <div class="timeline-icon"><i class="fas fa-search" aria-hidden="true"></i></div>
             <div>
@@ -256,10 +317,10 @@
     </section>
 
     <!-- GALLERY -->
-    <section class="py-24 bg-white" aria-labelledby="gallery-heading" data-animate>
+    <section class="py-24 section-gallery-navy" aria-labelledby="gallery-heading" data-animate>
       <div class="max-w-7xl mx-auto px-6">
         <h2 id="gallery-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Il Laboratorio <span class="gold-display">nella Realt&agrave;</span></h2>
-        <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">Ogni immagine &egrave; un momento reale, non modificato — questo &egrave; ci&ograve; che facciamo ogni giorno.</p>
+        <p class="text-lg text-center max-w-3xl mx-auto mb-12" style="color:rgba(255,255,255,.72)">Ogni immagine &egrave; un momento reale, non modificato &mdash; questo &egrave; ci&ograve; che facciamo ogni giorno.</p>
         <div class="gallery-grid" role="list">
           <div role="listitem"><picture><source srcset="https://watch.al/0.raw.githubusercontent.com.webp" type="image/webp"><img class="gallery-thumb" loading="lazy" decoding="async" src="https://watch.al/0.raw.githubusercontent.com.jpg" alt="Insegna del negozio Iglisi a Durazzo, Albania" width="600" height="280" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"></picture></div>
           <div role="listitem"><picture><source srcset="https://watch.al/1.raw.githubusercontent.com.webp?v=2" type="image/webp"><img class="gallery-thumb" loading="lazy" decoding="async" src="https://watch.al/1.raw.githubusercontent.com.jpg?v=2" alt="Banco da lavoro per riparazione orologi a Durazzo" width="600" height="280" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"></picture></div>
@@ -272,7 +333,7 @@
     </section>
 
     <!-- REVIEWS -->
-    <section id="reviews" class="py-24 bg-gray-50" aria-labelledby="reviews-heading" data-animate>
+    <section id="reviews" class="py-24 bg-white" aria-labelledby="reviews-heading" data-animate>
       <div class="max-w-5xl mx-auto px-6">
         <h2 id="reviews-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Cosa Dicono i <span class="gold-display">Nostri Clienti</span></h2>
         <div class="carousel-container relative" data-carousel="main" aria-roledescription="carousel" role="region" aria-label="Recensioni dei clienti">

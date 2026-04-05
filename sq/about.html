@@ -29,7 +29,7 @@
   <link rel="preload" href="/webfonts/cormorant-garamond.woff2?v=2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/webfonts/fa-solid-900.woff2?v=2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/webfonts/fa-brands-400.woff2?v=2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/shared.css?v=37">
+  <link rel="stylesheet" href="/shared.css?v=38">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
     {"@type":"ListItem","position":1,"name":"Kreu","item":"https://watch.al/sq/"},
@@ -108,8 +108,8 @@
 
   <main id="main-content">
 
-    <!-- ABOUT CARDS + STATS -->
-    <section class="about-section">
+    <!-- ABOUT CARDS -->
+    <section class="about-section" data-animate>
       <div class="about-cards">
 
         <div class="about-card" data-animate>
@@ -123,8 +123,8 @@
         <div class="about-card" data-animate>
           <div class="about-card-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
           <div class="about-card-body">
-            <h2>Na Gjeni</h2>
-            <p>Rruga Aleksander Goga, Durr&euml;s 2001, Shqip&euml;ri.<br>Hapur nga e h&euml;na n&euml; t&euml; shtun&euml;, 08:30&ndash;20:30.<br>Mir&euml; se vini pa takim &mdash; nuk nevojitet rezervim.</p>
+            <h2>Mir&euml; se Vini Pa Takim</h2>
+            <p>Rruga Aleksander Goga, Durr&euml;s 2001, Shqip&euml;ri.<br>Hapur nga e h&euml;na n&euml; t&euml; shtun&euml;, 08:30&ndash;20:30.<br>Nuk nevojitet rezervim &mdash; hyni lir&euml;sht.</p>
             <a href="tel:+355676360510" class="btn-primary inline-flex items-center gap-2" style="width:fit-content"><i class="fas fa-phone-alt" aria-hidden="true"></i> +355 67 636 0510</a>
           </div>
         </div>
@@ -141,7 +141,10 @@
         </div>
 
       </div>
+    </section>
 
+    <!-- STATS -->
+    <section class="about-stats-section" data-animate>
       <div class="stat-row" style="max-width:700px;margin-left:auto;margin-right:auto">
         <div class="stat-box"><strong>2002</strong><span>Themeluar</span></div>
         <div class="stat-box"><strong>5.0★</strong><span>Vler&euml;sim Google</span></div>
@@ -150,8 +153,36 @@
       </div>
     </section>
 
+    <!-- TIMELINE STRIP -->
+    <section class="about-timeline-strip" aria-label="Historia jon&euml;" data-animate>
+      <div class="timeline-strip-inner">
+        <div class="timeline-strip-track">
+          <div class="ts-item">
+            <div class="ts-dot"></div>
+            <div class="ts-year">2002</div>
+            <div class="ts-label">Dyq&euml;ani u hap n&euml; Durr&euml;s</div>
+          </div>
+          <div class="ts-item">
+            <div class="ts-dot"></div>
+            <div class="ts-year">~2010</div>
+            <div class="ts-label">U zgjerua me kopjim &ccedil;el&euml;sash</div>
+          </div>
+          <div class="ts-item">
+            <div class="ts-dot"></div>
+            <div class="ts-year">2020</div>
+            <div class="ts-label">500,000+ &ccedil;el&euml;sa t&euml; kopjuar</div>
+          </div>
+          <div class="ts-item">
+            <div class="ts-dot"></div>
+            <div class="ts-year">2026</div>
+            <div class="ts-label">Koleksion orash t&euml; p&euml;rdorura</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- WORKSHOP -->
-    <section class="py-24 bg-white" aria-labelledby="workshop-heading" data-animate>
+    <section class="py-24" style="background:#faf8f4" aria-labelledby="workshop-heading" data-animate>
       <div class="max-w-6xl mx-auto px-6">
         <h2 id="workshop-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Punishtja <span class="gold-display">Jon&euml;</span></h2>
         <div class="flex flex-col md:flex-row gap-12 items-center">
@@ -165,27 +196,49 @@
             </picture>
           </div>
           <div class="md:w-2/3">
+            <span class="workshop-subheading-rule" aria-hidden="true"></span>
             <p class="text-2xl font-bold mb-4">Ku Precisioni Takon Pasionin</p>
             <p class="text-gray-600 text-lg leading-relaxed mb-6">
-              Hyni n&euml; punishten ton&euml; familjare &mdash; nj&euml; hap&euml;sir&euml; e mbushur me zhurmën e makinerive, shk&euml;lqimin e mjeteve t&euml; l&euml;muara dhe mbi njëzet vjet p&euml;rkushtim. &Ccedil;do sip&euml;rfaqe tregon nj&euml; histori or&euml;sh t&euml; ringjallura dhe &ccedil;el&euml;sash t&euml; punuar. K&euml;tu, koha dhe siguria juaj i besohen duarve q&euml; kujdesen v&euml;rtet.
+              Hyni n&euml; punishten ton&euml; familjare &mdash; nj&euml; hap&euml;sir&euml; e mbushur me zhurm&euml;n e makinerive, shk&euml;lqimin e mjeteve t&euml; l&euml;muara dhe mbi njëzet vjet p&euml;rkushtim. &Ccedil;do sip&euml;rfaqe tregon nj&euml; histori or&euml;sh t&euml; ringjallura dhe &ccedil;el&euml;sash t&euml; punuar me kujdes. K&euml;tu, koha dhe siguria juaj i besohen duarve q&euml; kujdesen v&euml;rtet.
             </p>
             <p class="text-gray-600 text-lg leading-relaxed">
-              T&euml; njëjtat duar q&euml; riparojn&euml; or&euml;n tuaj jan&euml; ato q&euml; zgjedhin, inspektojn&euml; dhe sh&euml;rbejn&euml; &ccedil;do or&euml; t&euml; p&euml;rdorur q&euml; listojm&euml; p&euml;r shitje. Kur themi se nj&euml; or&euml; &euml;sht&euml; kontrolluar, e kuptojm&euml; seri&ouml;zisht.
+              T&euml; njëjtat duar q&euml; riparojn&euml; or&euml;n tuaj jan&euml; ato q&euml; zgjedhin, inspektojn&euml; dhe sh&euml;rbejn&euml; &ccedil;do or&euml; t&euml; p&euml;rdorur q&euml; listojm&euml; p&euml;r shitje. Kur themi se nj&euml; or&euml; &euml;sht&euml; kontrolluar, e kuptojm&euml; seriozisht.
             </p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- MEET THE FAMILY -->
+    <section class="about-family-section" aria-labelledby="family-heading" data-animate>
+      <div class="family-split">
+        <div class="family-photo">
+          <picture>
+            <source srcset="https://watch.al/1.raw.githubusercontent.com.webp?v=2" type="image/webp">
+            <img src="https://watch.al/1.raw.githubusercontent.com.jpg?v=2"
+                 alt="Familja Iglisi n&euml; punishte &mdash; dy dekada zejtarie n&euml; Durr&euml;s"
+                 loading="lazy" decoding="async" width="600" height="560">
+          </picture>
+        </div>
+        <div class="family-text">
+          <h2 id="family-heading">Familja <span class="gold-display">Jon&euml;</span></h2>
+          <p>Pas &ccedil;do ore t&euml; riparuar dhe &ccedil;do &ccedil;el&euml;si t&euml; kopjuar qëndrojn&euml; t&euml; njëjtat duar &mdash; familja Iglisi. Q&euml; kur hapëm dyer&euml;t tona n&euml; Durr&euml;s n&euml; 2002, e kemi ndërtuar k&euml;t&euml; punishte mbi durim, precizion dhe kujdes t&euml; v&euml;rtet&euml; p&euml;r &ccedil;do klient q&euml; na viziton.</p>
+          <p>Ne nuk zgjidhim vetëm problemet. Jemi krenar&euml; p&euml;r pun&euml;n ton&euml; dhe e garantojm&euml; at&euml;. K&euml;shtu shpjegohet pse kaq shum&euml; familje Durr&euml;siane kan&euml; besuar tek ne p&euml;r mbi dy dekada &mdash; dhe jemi ende k&euml;tu, ende m&euml;sojm&euml;, ende p&euml;rmirësohemi.</p>
+          <p><strong>Iglisi Watch &mdash; Biznes familjar nga 2002.</strong></p>
+        </div>
+      </div>
+    </section>
+
     <!-- KEY CUTTING -->
-    <section class="py-16 bg-gray-50" aria-labelledby="keys-heading" data-animate>
+    <section class="py-24 bg-white" aria-labelledby="keys-heading" data-animate>
       <div class="max-w-5xl mx-auto px-6">
-        <h2 id="keys-heading" class="text-4xl md:text-5xl text-center mb-12 section-title">Kopjimi i <span class="gold-display">&Ccedil;el&euml;save</span></h2>
+        <h2 id="keys-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Kopjimi i <span class="gold-display">&Ccedil;el&euml;save</span></h2>
+        <p class="section-intro-para">Me mbi 700,000 &ccedil;el&euml;sa t&euml; kopjuar nga 2002, kopjimi i &ccedil;el&euml;save &euml;sht&euml; nj&euml; nga sh&euml;rbimet tona m&euml; t&euml; k&euml;rkuara. Hyni pa rezervim &mdash; shumica e kopjeve jan&euml; gati n&euml; disa minuta nd&euml;rsa prisni.</p>
         <div class="grid md:grid-cols-3 gap-8">
           <div class="service-card text-center">
             <i class="fas fa-key text-4xl gold mb-4" aria-hidden="true"></i>
             <h3 class="text-xl font-bold mb-3">&Ccedil;el&euml;sa Standard dhe Sigurie</h3>
-            <p class="text-gray-600">Presin &ccedil;el&euml;sa standard shtëpie, zyre dhe &ccedil;el&euml;sa sigurie me makineri profesionale t&euml; precizionit.</p>
+            <p class="text-gray-600">Presim &ccedil;el&euml;sa standard shtëpie, zyre dhe &ccedil;el&euml;sa sigurie me makineri profesionale t&euml; precizionit.</p>
           </div>
           <div class="service-card text-center">
             <i class="fas fa-bolt text-4xl gold mb-4" aria-hidden="true"></i>
@@ -194,7 +247,7 @@
           </div>
           <div class="service-card text-center">
             <i class="fas fa-shield-alt text-4xl gold mb-4" aria-hidden="true"></i>
-            <h3 class="text-xl font-bold mb-3">700.000+ &Ccedil;el&euml;sa t&euml; Kopjuar</h3>
+            <h3 class="text-xl font-bold mb-3">700,000+ &Ccedil;el&euml;sa t&euml; Kopjuar</h3>
             <p class="text-gray-600">M&euml; shuemë se njëzet vjet p&euml;rvoj&euml; n&euml; kopjimin e &ccedil;el&euml;save. Nuk kopjojm&euml; &ccedil;el&euml;sa makine, por pothuajse gjithçka tjetër &mdash; po.</p>
           </div>
         </div>
@@ -202,14 +255,14 @@
     </section>
 
     <!-- EQUIPMENT -->
-    <section class="py-24 bg-white" aria-labelledby="equipment-heading" data-animate>
+    <section class="py-24" style="background:#f5f0e8" aria-labelledby="equipment-heading" data-animate>
       <div class="max-w-7xl mx-auto px-6">
         <h2 id="equipment-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Pajisjet <span class="gold-display">Tona</span></h2>
         <div class="grid md:grid-cols-3 gap-8">
           <div class="equipment-card text-center">
             <i class="fas fa-cog text-4xl gold mb-4" aria-hidden="true"></i>
             <h3 class="text-2xl font-bold mb-3">Prerje Precize e &Ccedil;el&euml;save</h3>
-            <p class="text-gray-600">Makineri profesionale p&euml;r &ccedil;el&euml;sa standard, sigurie dhe dimple &mdash; saktësi n&euml; milimetër.</p>
+            <p class="text-gray-600">Makineri profesionale p&euml;r &ccedil;el&euml;sa standard, sigurie dhe dimple &mdash; sakt&euml;si n&euml; milim&euml;t&euml;r.</p>
           </div>
           <div class="equipment-card text-center">
             <i class="fas fa-microscope text-4xl gold mb-4" aria-hidden="true"></i>
@@ -218,30 +271,38 @@
           </div>
           <div class="equipment-card text-center">
             <i class="fas fa-tachometer-alt text-4xl gold mb-4" aria-hidden="true"></i>
-            <h3 class="text-2xl font-bold mb-3">Matës t&euml; Precizionit</h3>
-            <p class="text-gray-600">Timegrapher t&euml; avancuar p&euml;r rregullimin e or&euml;ve mekanike me saktësi ekzakte.</p>
+            <h3 class="text-2xl font-bold mb-3">Mat&euml;s t&euml; Precizionit</h3>
+            <p class="text-gray-600">Timegrapher t&euml; avancuar p&euml;r rregullimin e or&euml;ve mekanike me sakt&euml;si ekzakte.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- TRUST BANNER -->
+    <section class="trust-banner-section" aria-label="Besimi i klientëve">
+      <p>Mbi 700,000 &ccedil;el&euml;sa t&euml; kopjuar. Or&euml; t&euml; riparuara p&euml;r mijëra familje n&euml; Durr&euml;s q&euml; nga 2002.</p>
+      <a href="https://api.whatsapp.com/send?phone=355676360510" target="_blank" rel="noopener noreferrer" class="trust-banner-cta">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i> Rezervo me WhatsApp
+      </a>
+    </section>
+
     <!-- PROCESS -->
-    <section class="py-24 bg-gray-50" aria-labelledby="process-heading" data-animate>
+    <section class="py-24 bg-white" aria-labelledby="process-heading" data-animate>
       <div class="max-w-4xl mx-auto px-6">
-        <h2 id="process-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Procesi <span class="gold-display">Ynë</span></h2>
-        <div class="space-y-8">
+        <h2 id="process-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Procesi <span class="gold-display">Yn&euml;</span></h2>
+        <div class="space-y-8 process-steps">
           <div class="timeline-item" data-animate data-animate-delay="0s">
             <div class="timeline-icon"><i class="fas fa-search" aria-hidden="true"></i></div>
             <div>
               <h3 class="text-2xl font-bold mb-2">1. Diagnostikimi</h3>
-              <p class="text-gray-600">Inspektojm&euml; or&euml;n ose &ccedil;el&euml;sin me mjete profesionale p&euml;r t&euml; identifikuar nevojën e saktë.</p>
+              <p class="text-gray-600">Inspektojm&euml; or&euml;n ose &ccedil;el&euml;sin me mjete profesionale p&euml;r t&euml; identifikuar nevojën e sakt&euml;.</p>
             </div>
           </div>
           <div class="timeline-item" data-animate data-animate-delay="0.1s">
             <div class="timeline-icon"><i class="fas fa-tools" aria-hidden="true"></i></div>
             <div>
               <h3 class="text-2xl font-bold mb-2">2. Puna Precize</h3>
-              <p class="text-gray-600">Duke p&euml;rdorur makineri t&euml; specializuara, kryejm&euml; riparimin ose kopjimin me saktësi mikronike.</p>
+              <p class="text-gray-600">Duke p&euml;rdorur makineri t&euml; specializuara, kryejm&euml; riparimin ose kopjimin me sakt&euml;si mikronike.</p>
             </div>
           </div>
           <div class="timeline-item" data-animate data-animate-delay="0.2s">
@@ -256,10 +317,10 @@
     </section>
 
     <!-- GALLERY -->
-    <section class="py-24 bg-white" aria-labelledby="gallery-heading" data-animate>
+    <section class="py-24 section-gallery-navy" aria-labelledby="gallery-heading" data-animate>
       <div class="max-w-7xl mx-auto px-6">
         <h2 id="gallery-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Punishtja Jon&euml; <span class="gold-display">n&euml; Realitet</span></h2>
-        <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">Çdo foto &euml;sht&euml; nj&euml; moment i v&euml;rtet&euml;, i paprekur &mdash; k&euml;shtu duket puna jon&euml; çdo dit&euml;.</p>
+        <p class="text-lg text-center max-w-3xl mx-auto mb-12" style="color:rgba(255,255,255,.72)">&Ccedil;do foto &euml;sht&euml; nj&euml; moment i v&euml;rtet&euml;, i paprekur &mdash; k&euml;shtu duket puna jon&euml; &ccedil;do dit&euml;.</p>
         <div class="gallery-grid" role="list">
           <div role="listitem"><picture><source srcset="https://watch.al/0.raw.githubusercontent.com.webp" type="image/webp"><img class="gallery-thumb" loading="lazy" decoding="async" src="https://watch.al/0.raw.githubusercontent.com.jpg" alt="Tabela e dyq&euml;anit Iglisi n&euml; Durr&euml;s" width="600" height="280" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"></picture></div>
           <div role="listitem"><picture><source srcset="https://watch.al/1.raw.githubusercontent.com.webp?v=2" type="image/webp"><img class="gallery-thumb" loading="lazy" decoding="async" src="https://watch.al/1.raw.githubusercontent.com.jpg?v=2" alt="Banka e pun&euml;s p&euml;r riparim orash" width="600" height="280" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"></picture></div>
@@ -272,7 +333,7 @@
     </section>
 
     <!-- REVIEWS -->
-    <section id="reviews" class="py-24 bg-gray-50" aria-labelledby="reviews-heading" data-animate>
+    <section id="reviews" class="py-24 bg-white" aria-labelledby="reviews-heading" data-animate>
       <div class="max-w-5xl mx-auto px-6">
         <h2 id="reviews-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">&Ccedil;far&euml; <span class="gold-display">Thon&euml; Klient&euml;t</span></h2>
         <div class="carousel-container relative" data-carousel="main" aria-roledescription="carousel" role="region" aria-label="Komentet e klient&euml;ve">
