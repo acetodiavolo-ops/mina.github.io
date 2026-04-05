@@ -628,26 +628,26 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
 }
 .watch-card-img {
   position: relative;
-  background: #f7f5f1;
-  aspect-ratio: 4/5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: #fff;
+  aspect-ratio: 1/1;
+  border-bottom: 1px solid #ede8df;
   overflow: hidden;
 }
 .watch-card-img img {
+  position: absolute;
+  inset: 0;
   width: 100%; height: 100%;
   object-fit: contain;
-  padding: 1rem;
-  display: block;
+  padding: 1.5rem;
 }
 .watch-img-placeholder {
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%; height: 100%;
   color: var(--accent-gold);
-  opacity: .35;
+  opacity: .2;
   font-size: 3.5rem;
 }
 .watch-badge {
@@ -1145,7 +1145,7 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
           </article>
 
         </div>
-        <div class="text-center mt-16 pb-4">
+        <div class="text-center" style="margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid #e8e2d9;">
           <a href="/sq/shop/" class="btn-primary" style="font-size:1rem;padding:.85rem 2.5rem">
             <i class="fas fa-store" aria-hidden="true" style="margin-right:.5rem"></i>Shiko të Gjitha Orët
           </a>
