@@ -19,18 +19,18 @@
     {
       "id": "watch-2",
       "featured": true,
-      "brand": "Brand",
-      "model": "Model Name",
-      "reference": "Ref. XXX",
-      "year": 2019,
-      "condition": "Excellent",
-      "price": 0,
+      "brand": "Hislon",
+      "model": "Classic Queen",
+      "reference": "QL145T-09SG",
+      "year": 2024,
+      "condition": "New",
+      "price": 189,
       "currency": "EUR",
-      "image": "",
+      "image": "/images/watches/hislon-ql145t-09sg.jpg",
       "sold": false,
-      "description_en": "Description in English.",
-      "description_it": "Descrizione in italiano.",
-      "description_sq": "Përshkrim në shqip."
+      "description_en": "A refined ladies' watch with a rose gold-tone case and bracelet. Slim profile, elegant dial, and reliable quartz movement — effortless everyday style.",
+      "description_it": "Orologio da donna raffinato con cassa e bracciale in oro rosa. Profilo sottile, quadrante elegante e movimento al quarzo affidabile.",
+      "description_sq": "Orë elegante për femra me kasë dhe byzylyk në ngjyrë ari rozë. Profil i hollë, cadran elegant dhe lëvizje kuarci e besueshme."
     },
     {
       "id": "watch-3",
