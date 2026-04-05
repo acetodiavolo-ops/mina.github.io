@@ -67,6 +67,12 @@
     .b-card:hover .b-card-link i{transform:translateX(3px)}
     @media(max-width:960px){.b-grid3{grid-template-columns:1fr 1fr}.b-feat{grid-template-columns:1fr;padding:2rem}.b-feat-num{display:none}}
     @media(max-width:640px){.b-row2,.b-grid3{grid-template-columns:1fr}}
+    .blog-search-wrap{position:relative;max-width:440px;margin:0 auto 1.75rem}
+    .blog-search-icon{position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:rgba(180,148,92,.7);font-size:.95rem;pointer-events:none}
+    .blog-search-input{width:100%;padding:.7rem 1rem .7rem 2.6rem;background:rgba(255,255,255,.08);border:1.5px solid rgba(180,148,92,.3);border-radius:2rem;color:#fff;font-size:.9rem;outline:none;transition:border-color .2s,background .2s;box-sizing:border-box}
+    .blog-search-input::placeholder{color:rgba(255,255,255,.38)}
+    .blog-search-input:focus{border-color:rgba(180,148,92,.7);background:rgba(255,255,255,.12)}
+    .blog-search-input::-webkit-search-cancel-button{cursor:pointer;filter:invert(1)opacity(.5)}
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
@@ -163,6 +169,10 @@
 
   <div class="page-hero">
     <div class="max-w-3xl mx-auto px-6">
+      <div class="blog-search-wrap" role="search">
+        <i class="fas fa-search blog-search-icon" aria-hidden="true"></i>
+        <input id="blog-search" type="search" class="blog-search-input" placeholder="Cerca articoli&hellip;" autocomplete="off" data-empty="Nessun articolo trovato." aria-label="Cerca articoli">
+      </div>
       <p class="kicker"><i class="fas fa-tools" aria-hidden="true"></i>&ensp;Consigli &amp; Guide</p>
       <h1>Blog Orologi</h1>
       <p>Consigli esperti sulla manutenzione degli orologi, cura della batteria e quando affidarsi a un professionista &mdash; dal nostro laboratorio a Durres.</p>
@@ -463,5 +473,34 @@
 
   <script src="/shared.js?v=20" defer></script>
   <script src="/cookie.js" defer></script>
+  <script>
+  (function(){
+    var q=document.getElementById('blog-search');
+    if(!q)return;
+    function run(){
+      var term=q.value.trim().toLowerCase();
+      var feat=document.querySelector('.b-feat');
+      if(feat){
+        var ft=((feat.querySelector('.b-feat-title')||{}).textContent||'')+' '+((feat.querySelector('.b-feat-desc')||{}).textContent||'');
+        feat.style.display=!term||ft.toLowerCase().includes(term)?'':'none';
+      }
+      document.querySelectorAll('.b-card').forEach(function(c){
+        var t=((c.querySelector('.b-card-title')||{}).textContent||'')+' '+((c.querySelector('.b-card-desc')||{}).textContent||'');
+        c.style.display=!term||t.toLowerCase().includes(term)?'':'none';
+      });
+      document.querySelectorAll('.b-row2,.b-grid3').forEach(function(w){
+        var vis=[].slice.call(w.querySelectorAll('.b-card')).some(function(c){return c.style.display!=='none';});
+        w.style.display=vis?'':'none';
+        var p=w.previousElementSibling;
+        if(p&&p.classList.contains('b-label'))p.style.display=vis?'':'none';
+      });
+      var any=(feat&&feat.style.display!=='none')||[].slice.call(document.querySelectorAll('.b-card')).some(function(c){return c.style.display!=='none';});
+      var nr=document.getElementById('blog-no-results');
+      if(!nr){nr=document.createElement('p');nr.id='blog-no-results';nr.style.cssText='text-align:center;color:#999;padding:3rem 0;display:none;font-size:.95rem';nr.textContent=q.dataset.empty||'Nessun articolo trovato.';document.querySelector('.blog-wrap').appendChild(nr);}
+      nr.style.display=term&&!any?'':'none';
+    }
+    q.addEventListener('input',run);
+  })();
+  </script>
 </body>
 </html>
