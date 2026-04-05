@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#b4945c">
 
   <!-- PRIMARY SEO -->
-  <title>Riparazione Orologi &amp; Duplicazione Chiavi a Durazzo | Iglisi Watch — Dal 2002</title>
-  <meta name="description" content="Laboratorio artigianale di fiducia a Durazzo dal 2002. Riparazione orologi al quarzo e duplicazione chiavi eseguita sul momento. Batteria sostituita in meno di 2 minuti — senza appuntamento. 5 stelle Google. Aperto Lun–Sab 8:30–20:30.">
+  <title>Riparazione Orologi &amp; Orologi Usati a Durazzo | Iglisi Watch</title>
+  <meta name="description" content="Riparazione orologi e orologi usati selezionati a Durazzo dal 2002. Batteria in meno di 2 minuti, senza appuntamento. Ogni orologio revisionato nella nostra officina prima della vendita.">
   <meta name="keywords" content="riparazione orologi durazzo, duplicazione chiavi durazzo, iglisi, orologiaio durazzo, chiavi durazzo albania, sostituzione batteria orologio durazzo">
   <meta name="author" content="Iglisi Watch">
   <meta name="robots" content="index, follow">
@@ -19,8 +19,8 @@
   <meta name="ICBM" content="41.3201564, 19.4453564">
 
   <!-- OPEN GRAPH -->
-  <meta property="og:title" content="Iglisi Watch — Riparazione Orologi &amp; Duplicazione Chiavi Durazzo">
-  <meta property="og:description" content="Azienda familiare dal 2002. Batteria in meno di 2 minuti. 5 stelle Google. Entrate senza prenotazione!">
+  <meta property="og:title" content="Iglisi Watch — Riparazione Orologi &amp; Orologi Usati, Durazzo">
+  <meta property="og:description" content="Azienda familiare dal 2002. Riparazioni rapide e orologi usati selezionati, revisionati nella nostra officina.">
   <meta property="og:image" content="https://watch.al/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -32,8 +32,8 @@
 
   <!-- TWITTER CARD -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Iglisi Watch — Riparazione Orologi &amp; Duplicazione Chiavi Durazzo">
-  <meta name="twitter:description" content="Azienda familiare dal 2002. Batteria in meno di 2 minuti. Entrate senza prenotazione!">
+  <meta name="twitter:title" content="Iglisi Watch — Riparazione Orologi &amp; Orologi Usati">
+  <meta name="twitter:description" content="Azienda familiare dal 2002. Riparazioni rapide e orologi usati revisionati in officina.">
   <meta name="twitter:image" content="https://watch.al/og-image.png">
 
   <!-- CANONICAL & HREFLANG -->
@@ -121,6 +121,8 @@
 .fa-chevron-down::before    { content: "\f078"; }
 .fa-chevron-left::before    { content: "\f053"; }
 .fa-chevron-right::before   { content: "\f054"; }
+.fa-store::before           { content: "\f54e"; }
+.fa-tag::before             { content: "\f02b"; }
 .fa-google::before          { content: "\f1a0"; }
 .fa-facebook-f::before      { content: "\f39e"; }
 .fa-instagram::before       { content: "\f16d"; }
@@ -600,6 +602,163 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
   .promise-card:active .dual-gear i { color: var(--accent-gold); }
 }
 
+/* ── WATCH GRID & CARDS ──────────────────────────────────────────────────── */
+.watch-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+@media (max-width: 1024px) {
+  .watch-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .watch-grid { grid-template-columns: 1fr; }
+}
+.watch-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.watch-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px -8px rgba(180,148,92,.22);
+}
+.watch-card-img {
+  position: relative;
+  background: #f3f0ea;
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.watch-card-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.watch-img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; height: 100%;
+  color: var(--accent-gold);
+  opacity: .35;
+  font-size: 3.5rem;
+}
+.watch-badge {
+  position: absolute;
+  top: .75rem; right: .75rem;
+  background: var(--btn-start);
+  color: #fff;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  padding: .28rem .7rem;
+  border-radius: 9999px;
+}
+.watch-badge.sold { background: #555; }
+.watch-card-body {
+  padding: 1.4rem 1.5rem 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.watch-brand {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accent-gold-accessible);
+  margin-bottom: .2rem;
+}
+.watch-model {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--btn-start);
+  line-height: 1.2;
+  margin-bottom: .35rem;
+}
+.watch-ref {
+  font-size: .8rem;
+  color: #888;
+  margin-bottom: .75rem;
+}
+.watch-desc {
+  font-size: .88rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 1.1rem;
+}
+.watch-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  border-top: 1px solid var(--border-light);
+  padding-top: 1rem;
+  flex-wrap: wrap;
+}
+.watch-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--btn-start);
+}
+.watch-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  background: #25d366;
+  color: #fff;
+  font-size: .82rem;
+  font-weight: 700;
+  padding: .5rem 1.1rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background var(--transition-base), transform .15s;
+  white-space: nowrap;
+}
+.watch-cta:hover { background: #1ebe5d; transform: scale(1.04); }
+
+/* ── MINI REVIEW STRIP ───────────────────────────────────────────────────── */
+.mini-review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+@media (max-width: 768px) {
+  .mini-review-grid { grid-template-columns: 1fr; }
+}
+.mini-review-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-card);
+  padding: 1.75rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,.05);
+  position: relative;
+  overflow: hidden;
+}
+.mini-review-card::before {
+  content: '\201C';
+  position: absolute;
+  top: -20px; left: 10px;
+  font-size: 10rem;
+  font-family: serif;
+  color: var(--accent-gold);
+  opacity: .08;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
   </style>
 
   <!-- STRUCTURED DATA -->
@@ -746,6 +905,7 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
 <nav class="nav-drawer" id="navDrawer" aria-label="Navigazione">
   <div class="nav-drawer-inner">
     <a href="/it/" class="nav-drawer-link">Home</a>
+    <a href="/it/shop/" class="nav-drawer-link">Shop</a>
     <a href="/it/services.html" class="nav-drawer-link">Servizi</a>
     <a href="/it/about.html" class="nav-drawer-link">Chi Siamo</a>
     <a href="/it/blog/" class="nav-drawer-link">Blog</a>
@@ -761,15 +921,14 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
         <span class="gold-display uppercase tracking-widest text-sm font-semibold">Durazzo &middot; Laboratorio Artigiano &middot; Est. 2002</span>
         <div class="hero-kicker-line" aria-hidden="true"></div>
         <h1 id="hero-heading" class="text-5xl md:text-6xl font-bold mt-4 mb-6 leading-tight hero-title">
-          Riparazione Orologi &amp; <span class="gold-display">Duplicazione Chiavi</span> a Durazzo
+          Riparazione Orologi &amp; <span class="gold-display">Orologi Usati</span> a Durazzo
         </h1>
         <p class="text-xl text-gray-200 max-w-3xl mx-auto mb-8">
-          Laboratorio artigianale a Durazzo dal 2002. Orologi al quarzo e qualsiasi tipo di chiave
-          lavorati mentre aspetti. Batteria sostituita <strong class="gold-display">in meno di 2 minuti</strong> — senza appuntamento.
+          Laboratorio artigianale a Durazzo dal 2002. Riparazioni eseguite mentre aspetti — e una selezione curata di orologi usati, ognuno ispezionato e revisionato nella nostra officina prima della vendita.
         </p>
         <div class="flex flex-wrap gap-4 justify-center">
-          <a href="#contact" class="btn-primary">Visita il Laboratorio</a>
-          <a href="/it/services.html" class="btn-secondary">Scopri i Servizi</a>
+          <a href="#watches" class="btn-primary"><i class="fas fa-store" aria-hidden="true" style="margin-right:.4rem"></i>Sfoglia gli Orologi</a>
+          <a href="#contact" class="btn-secondary">Visita il Laboratorio</a>
         </div>
         <div class="hero-trust-strip">
           <a href="https://search.google.com/local/reviews?placeid=ChIJU3JyAljB0RMRdoAB2vYR5oo" target="_blank" rel="noopener noreferrer" class="hero-trust-pill"><span class="pill-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>&nbsp;Recensioni Google</a>
@@ -863,33 +1022,6 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
         </div>
       </div>
     </section>
-    <!-- WORKSHOP -->
-    <section class="py-24 bg-gray-50" aria-labelledby="workshop-heading" data-animate>
-      <div class="max-w-6xl mx-auto px-6">
-        <h2 id="workshop-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Il <span class="gold-display">Laboratorio dell'Artigiano</span></h2>
-        <div class="flex flex-col md:flex-row gap-12 items-center">
-          <div class="md:w-1/3">
-            <picture>
-              <source srcset="https://watch.al/1.raw.githubusercontent.com.webp?v=2" type="image/webp">
-              <img src="https://watch.al/1.raw.githubusercontent.com.jpg?v=2"
-                   alt="Banco da lavoro per riparazione orologi nel laboratorio Iglisi a Durazzo"
-                   class="rounded-2xl shadow-xl border border-gray-200" loading="lazy" decoding="async"
-                   width="600" height="560"
-                   sizes="(max-width: 768px) calc(100vw - 3rem), 33vw">
-            </picture>
-          </div>
-          <div class="md:w-2/3">
-            <p class="text-2xl font-bold mb-4">Dove la Precisione Incontra la Passione</p>
-            <p class="text-gray-600 text-lg leading-relaxed">
-              Entrate nel nostro laboratorio di famiglia – uno spazio pieno del ronzio dei
-              macchinari, del luccichio degli attrezzi lucidati e di oltre vent'anni di dedizione.
-              Ogni superficie racconta una storia di orologi riportati in vita e chiavi realizzate.
-              Qui, il vostro tempo e la vostra sicurezza sono affidati a mani che si prendono cura davvero.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
     <!-- SERVICES CTA -->
     <section class="py-16 bg-white" aria-label="Servizi" data-animate>
       <div class="max-w-3xl mx-auto px-6 text-center">
@@ -900,117 +1032,147 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
         </a>
       </div>
     </section>
-    <!-- EQUIPMENT -->
-    <section class="py-24 bg-gray-50" aria-labelledby="equipment-heading" data-animate>
+    <!-- FEATURED WATCHES -->
+    <section id="watches" class="py-24 bg-gray-50" aria-labelledby="watches-heading" data-animate>
       <div class="max-w-7xl mx-auto px-6">
-        <h2 id="equipment-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Le Nostre <span class="gold-display">Attrezzature</span></h2>
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="equipment-card text-center">
-            <i class="fas fa-cog text-4xl gold mb-4" aria-hidden="true"></i>
-            <h3 class="text-2xl font-bold mb-3">Taglio Chiavi di Precisione</h3>
-            <p class="text-gray-600">Macchine professionali per chiavi standard, di sicurezza e dimple.</p>
-          </div>
-          <div class="equipment-card text-center">
-            <i class="fas fa-microscope text-4xl gold mb-4" aria-hidden="true"></i>
-            <h3 class="text-2xl font-bold mb-3">Microscopi per Ispezione</h3>
-            <p class="text-gray-600">Microscopi digitali ad alto ingrandimento per una diagnostica dettagliata degli orologi.</p>
-          </div>
-          <div class="equipment-card text-center">
-            <i class="fas fa-tachometer-alt text-4xl gold mb-4" aria-hidden="true"></i>
-            <h3 class="text-2xl font-bold mb-3">Misuratori di Precisione</h3>
-            <p class="text-gray-600">Timegrapher avanzati per regolare gli orologi meccanici con precisione assoluta.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- PROCESS -->
-    <section class="py-24 bg-white" aria-labelledby="process-heading" data-animate>
-      <div class="max-w-4xl mx-auto px-6">
-        <h2 id="process-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Il Nostro <span class="gold-display">Processo</span></h2>
-        <div class="space-y-8">
-          <div class="timeline-item" data-animate data-animate-delay="0s">
-            <div class="timeline-icon"><i class="fas fa-search" aria-hidden="true"></i></div>
-            <div>
-              <h3 class="text-2xl font-bold mb-2">1. Diagnosi</h3>
-              <p class="text-gray-600">Ispezioniamo il vostro orologio o chiave con strumenti professionali per identificare l'esigenza esatta.</p>
+        <p class="text-center text-sm font-semibold tracking-widest uppercase gold mb-3">Orologi in Vendita</p>
+        <h2 id="watches-heading" class="text-4xl md:text-5xl text-center mb-4 section-title">Orologi in <span class="gold-display">Primo Piano</span></h2>
+        <p class="text-center text-gray-500 text-lg mb-14 max-w-2xl mx-auto">Ogni orologio è selezionato personalmente, ispezionato e revisionato nella nostra officina prima della vendita. Una valutazione onesta delle condizioni per ogni pezzo.</p>
+        <div class="watch-grid">
+
+          <article class="watch-card">
+            <div class="watch-card-img">
+              <div class="watch-img-placeholder"><i class="fas fa-clock" aria-hidden="true"></i></div>
+              <span class="watch-badge">Eccellente</span>
             </div>
-          </div>
-          <div class="timeline-item" data-animate data-animate-delay="0.1s">
-            <div class="timeline-icon"><i class="fas fa-tools" aria-hidden="true"></i></div>
-            <div>
-              <h3 class="text-2xl font-bold mb-2">2. Lavoro di Precisione</h3>
-              <p class="text-gray-600">Utilizzando macchinari specializzati, eseguiamo la riparazione o la duplicazione con precisione al micron.</p>
-            </div>
-          </div>
-          <div class="timeline-item" data-animate data-animate-delay="0.2s">
-            <div class="timeline-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
-            <div>
-              <h3 class="text-2xl font-bold mb-2">3. Controllo Qualità</h3>
-              <p class="text-gray-600">Ogni pezzo viene testato accuratamente prima di essere restituito al cliente.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- GALLERY -->
-    <section class="py-24 bg-gray-50" aria-labelledby="gallery-heading" data-animate>
-      <div class="max-w-7xl mx-auto px-6">
-        <h2 id="gallery-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Il Laboratorio <span class="gold-display">nella Realtà</span></h2>
-        <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">Entrate nel nostro laboratorio di famiglia – ogni immagine è un momento reale, non modificato.</p>
-        <div class="gallery-grid" role="list">
-          <div role="listitem"><picture><source srcset="https://watch.al/0.raw.githubusercontent.com.webp" type="image/webp"><img class="gallery-thumb" loading="lazy" decoding="async" src="https://watch.al/0.raw.githubusercontent.com.jpg" alt="Insegna del negozio Iglisi a Durazzo, Albania" width="600" height="280" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"></picture></div>
-          <div role="listitem"><picture><source srcset="https://watch.al/1.raw.githubusercontent.com.webp?v=2" type="image/webp"><img class="gallery-thumb" loading="lazy" decoding="async" src="https://watch.al/1.raw.githubusercontent.com.jpg?v=2" alt="Banco da lavoro per riparazione orologi a Durazzo" width="600" height="280" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"></picture></div>
-          <div role="listitem"><picture><source srcset="https://watch.al/2.raw.githubusercontent.com.webp" type="image/webp"><img class="gallery-thumb" loading="lazy" decoding="async" src="https://watch.al/2.raw.githubusercontent.com.jpg" alt="Macchine per duplicazione chiavi a Durazzo" width="600" height="280" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"></picture></div>
-          <div role="listitem"><picture><source srcset="https://watch.al/3.raw.githubusercontent.com.webp" type="image/webp"><img class="gallery-thumb" loading="lazy" decoding="async" src="https://watch.al/3.raw.githubusercontent.com.jpg" alt="Attrezzature per riparazione orologi" width="600" height="280" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"></picture></div>
-          <div role="listitem"><picture><source srcset="https://watch.al/4.raw.githubusercontent.com.webp" type="image/webp"><img class="gallery-thumb" loading="lazy" decoding="async" src="https://watch.al/4.raw.githubusercontent.com.jpg" alt="Interno del laboratorio Iglisi a Durazzo" width="600" height="280" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"></picture></div>
-          <div role="listitem"><picture><source srcset="https://watch.al/5.raw.githubusercontent.com.webp" type="image/webp"><img class="gallery-thumb" loading="lazy" decoding="async" src="https://watch.al/5.raw.githubusercontent.com.jpg" alt="Esposizione di chiavi nel laboratorio Iglisi" width="600" height="280" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"></picture></div>
-        </div>
-      </div>
-    </section>
-    <!-- REVIEWS CAROUSEL -->
-    <section class="py-24 bg-white" aria-labelledby="reviews-heading" data-animate>
-      <div class="max-w-5xl mx-auto px-6">
-        <h2 id="reviews-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Cosa Dicono i <span class="gold-display">Nostri Clienti</span></h2>
-        <div class="carousel-container relative" data-carousel="main" aria-roledescription="carousel" role="region" aria-label="Recensioni dei clienti">
-          <div id="carousel-live-main" class="carousel-live" aria-live="polite" aria-atomic="true"></div>
-          <div id="carousel-track-main" class="carousel-track">
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Recensione 1 di 4">
-              <div class="review-card">
-                <div class="flex items-center mb-4 star-large"><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><span class="ml-2 text-gray-500 text-sm" aria-hidden="true">5.0</span></div>
-                <p class="text-gray-700 text-lg italic mb-6">"Lo raccomanderei a tutti coloro che vivono a Durazzo. Apprezzo davvero il lavoro e la professionalità che dimostra. 10/10"</p>
-                <p class="font-bold gold">– Feta Dosti</p>
+            <div class="watch-card-body">
+              <p class="watch-brand">Marca</p>
+              <h3 class="watch-model">Nome Modello</h3>
+              <p class="watch-ref">Rif. XXX &middot; Anno</p>
+              <p class="watch-desc">Aggiungi qui la descrizione dell'orologio. Menziona scatola, documenti, storia manutenzione.</p>
+              <div class="watch-card-footer">
+                <p class="watch-price">€0.000</p>
+                <a href="https://api.whatsapp.com/send?phone=355676360510&text=Salve%2C%20sono%20interessato%20all%27orologio%20sul%20vostro%20sito." target="_blank" rel="noopener noreferrer" class="watch-cta" aria-label="Richiedi informazioni su questo orologio via WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i> Richiedi Info</a>
               </div>
             </div>
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Recensione 2 di 4">
-              <div class="review-card">
-                <div class="flex items-center mb-4 star-large"><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><span class="ml-2 text-gray-500 text-sm" aria-hidden="true">5.0</span></div>
-                <p class="text-gray-700 text-lg italic mb-6">"Ho portato il mio orologio per la riparazione e l'ha sistemato perfettamente. Veloce, affidabile e davvero esperto. Molto soddisfatto."</p>
-                <p class="font-bold gold">– Kristian Pando</p>
+          </article>
+
+          <article class="watch-card">
+            <div class="watch-card-img">
+              <div class="watch-img-placeholder"><i class="fas fa-clock" aria-hidden="true"></i></div>
+              <span class="watch-badge">Eccellente</span>
+            </div>
+            <div class="watch-card-body">
+              <p class="watch-brand">Marca</p>
+              <h3 class="watch-model">Nome Modello</h3>
+              <p class="watch-ref">Rif. XXX &middot; Anno</p>
+              <p class="watch-desc">Aggiungi qui la descrizione dell'orologio.</p>
+              <div class="watch-card-footer">
+                <p class="watch-price">€0.000</p>
+                <a href="https://api.whatsapp.com/send?phone=355676360510&text=Salve%2C%20sono%20interessato%20all%27orologio%20sul%20vostro%20sito." target="_blank" rel="noopener noreferrer" class="watch-cta" aria-label="Richiedi informazioni su questo orologio via WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i> Richiedi Info</a>
               </div>
             </div>
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Recensione 3 di 4">
-              <div class="review-card">
-                <div class="flex items-center mb-4 star-large"><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><span class="ml-2 text-gray-500 text-sm" aria-hidden="true">5.0</span></div>
-                <p class="text-gray-700 text-lg italic mb-6">"Ho mandato il mio orologio per farlo riparare. Me lo hanno restituito in un giorno. Lavoro fantastico."</p>
-                <p class="font-bold gold">– Deni Tabaku</p>
+          </article>
+
+          <article class="watch-card">
+            <div class="watch-card-img">
+              <div class="watch-img-placeholder"><i class="fas fa-clock" aria-hidden="true"></i></div>
+              <span class="watch-badge">Ottimo</span>
+            </div>
+            <div class="watch-card-body">
+              <p class="watch-brand">Marca</p>
+              <h3 class="watch-model">Nome Modello</h3>
+              <p class="watch-ref">Rif. XXX &middot; Anno</p>
+              <p class="watch-desc">Aggiungi qui la descrizione dell'orologio.</p>
+              <div class="watch-card-footer">
+                <p class="watch-price">€0.000</p>
+                <a href="https://api.whatsapp.com/send?phone=355676360510&text=Salve%2C%20sono%20interessato%20all%27orologio%20sul%20vostro%20sito." target="_blank" rel="noopener noreferrer" class="watch-cta" aria-label="Richiedi informazioni su questo orologio via WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i> Richiedi Info</a>
               </div>
             </div>
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Recensione 4 di 4">
-              <div class="review-card">
-                <div class="flex items-center mb-4 star-large"><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><span class="ml-2 text-gray-500 text-sm" aria-hidden="true">5.0</span></div>
-                <p class="text-gray-700 text-lg italic mb-6">"Ho avuto un'esperienza molto positiva con questo servizio. La riparazione è stata eseguita con cura e nei tempi concordati. La comunicazione è stata chiara durante tutto il processo. Lo consiglierei a chiunque cerchi riparazione orologi a Durazzo."</p>
-                <p class="font-bold gold">– Elis Xhaferaj</p>
+          </article>
+
+          <article class="watch-card">
+            <div class="watch-card-img">
+              <div class="watch-img-placeholder"><i class="fas fa-clock" aria-hidden="true"></i></div>
+              <span class="watch-badge">Buono</span>
+            </div>
+            <div class="watch-card-body">
+              <p class="watch-brand">Marca</p>
+              <h3 class="watch-model">Nome Modello</h3>
+              <p class="watch-ref">Rif. XXX &middot; Anno</p>
+              <p class="watch-desc">Aggiungi qui la descrizione dell'orologio.</p>
+              <div class="watch-card-footer">
+                <p class="watch-price">€0.000</p>
+                <a href="https://api.whatsapp.com/send?phone=355676360510&text=Salve%2C%20sono%20interessato%20all%27orologio%20sul%20vostro%20sito." target="_blank" rel="noopener noreferrer" class="watch-cta" aria-label="Richiedi informazioni su questo orologio via WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i> Richiedi Info</a>
               </div>
             </div>
-          </div>
-          <button type="button" class="carousel-btn prev" data-action="carousel-prev" data-carousel-id="main" aria-label="Recensione precedente"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
-          <button type="button" class="carousel-btn next" data-action="carousel-next" data-carousel-id="main" aria-label="Recensione successiva"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
-          <div id="carousel-dots-main" class="carousel-dots" role="group" aria-label="Navigazione recensioni"></div>
+          </article>
+
+          <article class="watch-card">
+            <div class="watch-card-img">
+              <div class="watch-img-placeholder"><i class="fas fa-clock" aria-hidden="true"></i></div>
+              <span class="watch-badge">Eccellente</span>
+            </div>
+            <div class="watch-card-body">
+              <p class="watch-brand">Marca</p>
+              <h3 class="watch-model">Nome Modello</h3>
+              <p class="watch-ref">Rif. XXX &middot; Anno</p>
+              <p class="watch-desc">Aggiungi qui la descrizione dell'orologio.</p>
+              <div class="watch-card-footer">
+                <p class="watch-price">€0.000</p>
+                <a href="https://api.whatsapp.com/send?phone=355676360510&text=Salve%2C%20sono%20interessato%20all%27orologio%20sul%20vostro%20sito." target="_blank" rel="noopener noreferrer" class="watch-cta" aria-label="Richiedi informazioni su questo orologio via WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i> Richiedi Info</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="watch-card">
+            <div class="watch-card-img">
+              <div class="watch-img-placeholder"><i class="fas fa-clock" aria-hidden="true"></i></div>
+              <span class="watch-badge">Ottimo</span>
+            </div>
+            <div class="watch-card-body">
+              <p class="watch-brand">Marca</p>
+              <h3 class="watch-model">Nome Modello</h3>
+              <p class="watch-ref">Rif. XXX &middot; Anno</p>
+              <p class="watch-desc">Aggiungi qui la descrizione dell'orologio.</p>
+              <div class="watch-card-footer">
+                <p class="watch-price">€0.000</p>
+                <a href="https://api.whatsapp.com/send?phone=355676360510&text=Salve%2C%20sono%20interessato%20all%27orologio%20sul%20vostro%20sito." target="_blank" rel="noopener noreferrer" class="watch-cta" aria-label="Richiedi informazioni su questo orologio via WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i> Richiedi Info</a>
+              </div>
+            </div>
+          </article>
+
         </div>
-        <div class="text-center mt-8">
-          <a href="https://search.google.com/local/reviews?placeid=ChIJU3JyAljB0RMRdoAB2vYR5oo" target="_blank" rel="noopener noreferrer" class="btn-primary">
-            <i class="fab fa-google mr-2" aria-hidden="true"></i>Lascia una Recensione su Google
+        <div class="text-center mt-14">
+          <a href="/it/shop/" class="btn-primary" style="font-size:1rem;padding:.85rem 2.5rem">
+            <i class="fas fa-store" aria-hidden="true" style="margin-right:.5rem"></i>Vedi Tutti gli Orologi
           </a>
+        </div>
+      </div>
+    </section>
+    <!-- MINI REVIEWS -->
+    <section class="py-20 bg-white" aria-label="Recensioni clienti" data-animate>
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="text-center mb-10">
+          <span class="text-2xl gold" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p class="text-gray-500 text-sm mt-1">5.0 &middot; 87+ recensioni Google</p>
+        </div>
+        <div class="mini-review-grid">
+          <div class="mini-review-card">
+            <p class="text-gray-700 italic">&ldquo;Lo raccomanderei a tutti coloro che vivono a Durazzo. Apprezzo davvero il lavoro e la professionalit&agrave; che dimostra. 10/10&rdquo;</p>
+            <p class="font-bold gold text-sm mt-4">&mdash; Feta Dosti</p>
+          </div>
+          <div class="mini-review-card">
+            <p class="text-gray-700 italic">&ldquo;Ho portato il mio orologio per la riparazione e l&rsquo;ha sistemato perfettamente. Veloce, affidabile e davvero esperto. Molto soddisfatto.&rdquo;</p>
+            <p class="font-bold gold text-sm mt-4">&mdash; Kristian Pando</p>
+          </div>
+          <div class="mini-review-card">
+            <p class="text-gray-700 italic">&ldquo;Ho mandato il mio orologio per farlo riparare. Me lo hanno restituito in un giorno. Lavoro fantastico.&rdquo;</p>
+            <p class="font-bold gold text-sm mt-4">&mdash; Deni Tabaku</p>
+          </div>
+        </div>
+        <div class="text-center mt-10">
+          <a href="/it/about.html#reviews" class="btn-secondary">Leggi Tutte le Recensioni &rarr;</a>
         </div>
       </div>
     </section>
