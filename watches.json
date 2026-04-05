@@ -67,18 +67,18 @@
     {
       "id": "watch-5",
       "featured": true,
-      "brand": "Brand",
-      "model": "Model Name",
-      "reference": "Ref. XXX",
-      "year": 2022,
-      "condition": "Excellent",
-      "price": 0,
+      "brand": "Hislon",
+      "model": "Classic Queen",
+      "reference": "QL113G-09SG",
+      "year": 2024,
+      "condition": "New",
+      "price": 169,
       "currency": "EUR",
-      "image": "",
+      "image": "/images/watches/hislon-ql113g-09sg.jpg",
       "sold": false,
-      "description_en": "Description in English.",
-      "description_it": "Descrizione in italiano.",
-      "description_sq": "Përshkrim në shqip."
+      "description_en": "A ladies' classic in full gold-tone steel with a mother-of-pearl dial set with crystal indices, sapphire crystal, blue hands, and a date window. Timeless femininity.",
+      "description_it": "Orologio da donna classico in acciaio dorato con quadrante madreperla, indici con cristalli, cristallo zaffiro, lancette blu e finestrella data. Femminilità senza tempo.",
+      "description_sq": "Orë klasike për femra në çelik të artë me cadran sedef, tregues me kristale, xham safiri, akrepë blu dhe dritare date. Femërorësi pa kohë."
     },
     {
       "id": "watch-6",
