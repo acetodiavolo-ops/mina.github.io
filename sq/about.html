@@ -75,20 +75,26 @@
     /* ── Key cutting intro ── */
     .section-intro-para{color:#3d3830;font-size:1.05rem;line-height:1.75;max-width:640px;margin:0 auto 2.5rem;text-align:center}
     /* ── Timeline strip ── */
-    .about-timeline-strip{background:#fff;padding:2.25rem 1.5rem;border-top:1px solid #e8e0d5;border-bottom:1px solid #e8e0d5}
+    .about-timeline-strip{background:#fff;padding:2rem 1.5rem 2.5rem;border-top:1px solid #e8e0d5;border-bottom:1px solid #e8e0d5}
     .timeline-strip-inner{max-width:860px;margin:0 auto}
     .timeline-strip-track{display:flex;align-items:flex-start;justify-content:space-between;position:relative}
-    .timeline-strip-track::before{content:'';position:absolute;top:10px;left:11px;right:11px;height:2px;background:#8B6914;opacity:.35;z-index:0}
-    .ts-item{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:1;flex:1;padding:0 .5rem}
-    .ts-dot{width:22px;height:22px;border-radius:50%;background:#8B6914;margin-bottom:.6rem;box-shadow:0 0 0 5px rgba(139,105,20,.14);flex-shrink:0}
-    .ts-year{font-size:.95rem;font-weight:800;color:#0d1b3e;font-family:'Cormorant Garamond',serif;line-height:1;margin-bottom:.3rem}
-    .ts-label{font-size:.7rem;color:#3d3830;line-height:1.45;max-width:95px}
+    .timeline-strip-track::before{content:'';position:absolute;top:10px;left:11px;right:11px;height:1px;background:#8B6914;opacity:.4;z-index:0}
+    .ts-item{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:1;flex:1;padding:0 .75rem}
+    .ts-dot{width:20px;height:20px;border-radius:50%;background:#fff;border:3px solid #8B6914;margin-bottom:.65rem;box-shadow:0 0 0 4px rgba(139,105,20,.12);flex-shrink:0}
+    .ts-year{font-size:.875rem;font-weight:800;color:#0d1b3e;font-family:'Cormorant Garamond',serif;line-height:1;margin-bottom:.3rem}
+    .ts-label{font-size:.8125rem;color:#3d3830;line-height:1.45;max-width:110px}
     @media(max-width:600px){
       .timeline-strip-track{flex-direction:column;gap:1.25rem}
       .timeline-strip-track::before{display:none}
       .ts-item{flex-direction:row;text-align:left;gap:.875rem;padding:0}
       .ts-dot{flex-shrink:0;margin-bottom:0}
       .ts-label{max-width:none}
+    }
+    /* ── Reviews 2-col desktop grid ── */
+    .reviews-grid{display:none}
+    @media(min-width:768px){
+      .reviews-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem}
+      .reviews-carousel-wrap{display:none!important}
     }
     /* ── Meet the Family ── */
     .about-family-section{background:#f5f0e8;padding:5rem 1.5rem}
@@ -283,7 +289,8 @@
               <img src="https://watch.al/1.raw.githubusercontent.com.jpg?v=2"
                    alt="Banka e pun&euml;s p&euml;r riparim orash n&euml; punishten Iglisi"
                    class="rounded-2xl shadow-xl border border-gray-200" loading="lazy" decoding="async"
-                   width="600" height="560" sizes="(max-width: 768px) calc(100vw - 3rem), 33vw">
+                   width="600" height="560" style="min-height:380px;object-fit:cover;width:100%;display:block"
+                   sizes="(max-width: 768px) calc(100vw - 3rem), 33vw">
             </picture>
           </div>
           <div class="md:w-2/3">
@@ -305,9 +312,9 @@
       <div class="family-split">
         <div class="family-photo">
           <picture>
-            <source srcset="https://watch.al/1.raw.githubusercontent.com.webp?v=2" type="image/webp">
-            <img src="https://watch.al/1.raw.githubusercontent.com.jpg?v=2"
-                 alt="Familja Iglisi n&euml; punishte &mdash; dy dekada zejtarie n&euml; Durr&euml;s"
+            <source srcset="https://watch.al/4.raw.githubusercontent.com.webp" type="image/webp">
+            <img src="https://watch.al/4.raw.githubusercontent.com.jpg"
+                 alt="Br&euml;nd&euml;sia e punishtes Iglisi Watch &mdash; Durr&euml;s"
                  loading="lazy" decoding="async" width="600" height="560">
           </picture>
         </div>
@@ -426,7 +433,34 @@
     <!-- REVIEWS -->
     <section id="reviews" class="py-24 bg-white" aria-labelledby="reviews-heading" data-animate>
       <div class="max-w-5xl mx-auto px-6">
-        <h2 id="reviews-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">&Ccedil;far&euml; <span class="gold-display">Thon&euml; Klient&euml;t</span></h2>
+        <h2 id="reviews-heading" class="text-4xl md:text-5xl text-center section-title" style="margin-bottom:2rem">&Ccedil;far&euml; <span class="gold-display">Thon&euml; Klient&euml;t</span></h2>
+
+        <!-- Desktop: rrjet&euml; statike 2×2 -->
+        <div class="reviews-grid" aria-label="Komentet e klient&euml;ve">
+          <div class="review-card">
+            <div class="flex items-center mb-4 star-large"><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><span class="ml-2 text-gray-500 text-sm">5.0</span></div>
+            <p class="text-gray-700 text-lg italic mb-6">&ldquo;Do ta rekomandoja tek t&euml; gjith&euml; q&euml; jetojn&euml; n&euml; Durr&euml;s. Vler&euml;soj shum&euml; pun&euml;n dhe profesionalizmin q&euml; tregon. 10/10&rdquo;</p>
+            <p class="font-bold gold">&mdash; Feta Dosti</p>
+          </div>
+          <div class="review-card">
+            <div class="flex items-center mb-4 star-large"><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><span class="ml-2 text-gray-500 text-sm">5.0</span></div>
+            <p class="text-gray-700 text-lg italic mb-6">&ldquo;&Ccedil;ova or&euml;n time p&euml;r riparim dhe e rregulloi perfeksionisht. I shpejt&euml;, i besuesh&euml;m dhe v&euml;rtet i zoti. Shum&euml; i k&euml;naqur.&rdquo;</p>
+            <p class="font-bold gold">&mdash; Kristian Pando</p>
+          </div>
+          <div class="review-card">
+            <div class="flex items-center mb-4 star-large"><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><span class="ml-2 text-gray-500 text-sm">5.0</span></div>
+            <p class="text-gray-700 text-lg italic mb-6">&ldquo;D&euml;rgova or&euml;n time p&euml;r ta riparuar. E mora pas nj&euml; dite. Pun&euml; e mahnitshme.&rdquo;</p>
+            <p class="font-bold gold">&mdash; Deni Tabaku</p>
+          </div>
+          <div class="review-card">
+            <div class="flex items-center mb-4 star-large"><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><i class="fas fa-star gold" aria-hidden="true"></i><span class="ml-2 text-gray-500 text-sm">5.0</span></div>
+            <p class="text-gray-700 text-lg italic mb-6">&ldquo;Pata nj&euml; p&euml;rvoj&euml; shum&euml; t&euml; mir&euml; me k&euml;t&euml; sh&euml;rbim. Riparimi u b&euml; me kujdes dhe brenda afatit t&euml; caktuar. Komunikimi ishte i qart&euml; gjat&euml; gjith&euml; procesit. Do ta rekomandoja tek kushdo q&euml; k&euml;rkon riparim orash n&euml; Durr&euml;s.&rdquo;</p>
+            <p class="font-bold gold">&mdash; Elis Xhaferaj</p>
+          </div>
+        </div>
+
+        <!-- Mobile: karusel -->
+        <div class="reviews-carousel-wrap">
         <div class="carousel-container relative" data-carousel="main" aria-roledescription="carousel" role="region" aria-label="Komentet e klient&euml;ve">
           <div id="carousel-live-main" class="carousel-live" aria-live="polite" aria-atomic="true"></div>
           <div id="carousel-track-main" class="carousel-track">
@@ -463,6 +497,7 @@
           <button type="button" class="carousel-btn next" data-action="carousel-next" data-carousel-id="main" aria-label="Komenti tjet&euml;r"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
           <div id="carousel-dots-main" class="carousel-dots" role="group" aria-label="Navigimi i komenteve"></div>
         </div>
+        </div><!-- /reviews-carousel-wrap -->
         <div class="text-center mt-8">
           <a href="https://search.google.com/local/reviews?placeid=ChIJU3JyAljB0RMRdoAB2vYR5oo" target="_blank" rel="noopener noreferrer" class="btn-primary">
             <i class="fab fa-google mr-2" aria-hidden="true"></i>L&euml;ni nj&euml; Koment n&euml; Google
