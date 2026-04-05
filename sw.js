@@ -1,10 +1,10 @@
 'use strict';
 
-var CACHE = 'iglisi-v56';
+var CACHE = 'iglisi-v57';
 
 var PRECACHE = [
   '/offline.html',
-  '/shared.css?v=37',
+  '/shared.css?v=38',
   '/shared.js?v=20',
   '/cookie.js',
   '/webfonts/inter.woff2?v=2',
