@@ -35,18 +35,18 @@
     {
       "id": "watch-3",
       "featured": true,
-      "brand": "Brand",
-      "model": "Model Name",
-      "reference": "Ref. XXX",
-      "year": 2021,
-      "condition": "Very Good",
-      "price": 0,
+      "brand": "Hislon",
+      "model": "Classic",
+      "reference": "CL213G-02SG",
+      "year": 2024,
+      "condition": "New",
+      "price": 189,
       "currency": "EUR",
-      "image": "",
+      "image": "/images/watches/hislon-cl213g-02sg.jpg",
       "sold": false,
-      "description_en": "Description in English.",
-      "description_it": "Descrizione in italiano.",
-      "description_sq": "Përshkrim në shqip."
+      "description_en": "The Classic in full gold-tone stainless steel. Fluted bezel, horizontal-stripe silver dial, gold-tone hands and indices, sapphire crystal, and date window.",
+      "description_it": "Il Classic in acciaio inossidabile total gold. Lunetta zigrinata, quadrante argentato a righe, lancette e indici dorati, cristallo zaffiro e finestrella data.",
+      "description_sq": "Classic-u në çelik inox total gold. Bezel i gdhendur, cadran argjendi me vija, tregues dhe akrepë të artë, xham safiri dhe dritare date."
     },
     {
       "id": "watch-4",
