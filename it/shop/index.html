@@ -294,7 +294,7 @@ img{display:block;max-width:100%;height:auto}
     btn.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
     document.getElementById('footerYear').textContent = new Date().getFullYear();
 
-    fetch('/watches.json')
+    fetch('/watches.json?v=2')
       .then(function(r){ return r.json(); })
       .then(function(data){ renderWatches(data.watches, 'all'); })
       .catch(function(){ document.getElementById('shopGrid').innerHTML = '<p class="no-watches">Impossibile caricare gli orologi. Riprova più tardi.</p>'; });
@@ -303,7 +303,7 @@ img{display:block;max-width:100%;height:auto}
       chip.addEventListener('click', function(){
         document.querySelectorAll('.filter-chip').forEach(function(c){ c.classList.remove('active'); });
         chip.classList.add('active');
-        fetch('/watches.json')
+        fetch('/watches.json?v=2')
           .then(function(r){ return r.json(); })
           .then(function(data){ renderWatches(data.watches, chip.dataset.filter); });
       });

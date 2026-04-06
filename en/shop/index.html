@@ -383,7 +383,7 @@ img{display:block;max-width:100%;height:auto}
     document.getElementById('footerYear').textContent = new Date().getFullYear();
 
     // Load watches
-    fetch('/watches.json')
+    fetch('/watches.json?v=2')
       .then(function(r){ return r.json(); })
       .then(function(data){ renderWatches(data.watches, 'all'); })
       .catch(function(){ document.getElementById('shopGrid').innerHTML = '<p class="no-watches">Unable to load watches. Please try again later.</p>'; });
@@ -396,7 +396,7 @@ img{display:block;max-width:100%;height:auto}
         chip.classList.add('active');
         chip.setAttribute('aria-pressed','true');
         currentFilter = chip.dataset.filter;
-        fetch('/watches.json')
+        fetch('/watches.json?v=2')
           .then(function(r){ return r.json(); })
           .then(function(data){ renderWatches(data.watches, currentFilter); });
       });
