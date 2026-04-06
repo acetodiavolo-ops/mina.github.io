@@ -168,6 +168,11 @@ img{display:block;max-width:100%;height:auto}
 .shop-hero p{color:rgba(255,255,255,.78);font-size:1.05rem;max-width:42rem;margin:0 auto}
 .shop-controls{max-width:80rem;margin:0 auto;padding:1.75rem 1.5rem;display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between}
 .shop-filter-group{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+.shop-search-wrap{position:relative;flex:1;max-width:280px}
+.shop-search-wrap i{position:absolute;left:.75rem;top:50%;transform:translateY(-50%);color:#aaa;font-size:.8rem;pointer-events:none}
+.shop-search{width:100%;padding:.4rem .85rem .4rem 2.1rem;border:1.5px solid var(--border-light);border-radius:9999px;font-size:.85rem;outline:none;background:#fff;color:var(--text-primary);transition:border-color .2s}
+.shop-search:focus{border-color:var(--accent-gold)}
+@media(max-width:600px){.shop-search-wrap{max-width:100%}}
 .filter-chip{display:inline-flex;align-items:center;gap:.35rem;padding:.38rem .85rem;border-radius:9999px;border:1.5px solid var(--border-light);font-size:.8rem;font-weight:600;cursor:pointer;background:#fff;color:var(--text-secondary);transition:background .2s,border-color .2s,color .2s}
 .filter-chip:hover{border-color:var(--accent-gold);color:var(--accent-gold-accessible)}
 .filter-chip.active{background:var(--btn-start);border-color:var(--btn-start);color:#fff}
@@ -284,6 +289,10 @@ img{display:block;max-width:100%;height:auto}
       <div class="shop-filter-group" role="group" aria-label="Filtra per tipo">
         <button class="filter-chip active" data-filter="all">Tutti</button>
         <button class="filter-chip" data-filter="New">Nuovo</button>
+      </div>
+      <div class="shop-search-wrap">
+        <i class="fas fa-search" aria-hidden="true"></i>
+        <input type="search" id="shopSearch" class="shop-search" placeholder="Cerca orologi…" aria-label="Cerca orologi">
       </div>
       <p class="shop-count" id="shopCount" aria-live="polite"></p>
     </div>
@@ -440,20 +449,36 @@ img{display:block;max-width:100%;height:auto}
       {"id":"watch-6","brand":"Hislon","model":"Women Classic Queen","reference":"QL113-09SS","year":2024,"condition":"New","price":149,"currency":"EUR","image":"/images/watches/hislon-ql113g-09ss.jpg?v=3","sold":false,"description_it":"La Women Classic Queen in acciaio inossidabile con quadrante madreperla, indici con cristalli, cristallo zaffiro, lancette blu e finestrella data. Eleganza sobria per ogni giorno."}
     ];
 
-    renderWatches(WATCHES, 'all');
+    var currentFilter = 'all';
+    var currentSearch = '';
+    renderWatches(WATCHES, 'all', '');
 
     document.querySelectorAll('.filter-chip').forEach(function(chip){
       chip.addEventListener('click', function(){
         document.querySelectorAll('.filter-chip').forEach(function(c){ c.classList.remove('active'); });
         chip.classList.add('active');
-        renderWatches(WATCHES, chip.dataset.filter);
+        currentFilter = chip.dataset.filter;
+        renderWatches(WATCHES, currentFilter, currentSearch);
       });
     });
 
+    var searchInput = document.getElementById('shopSearch');
+    if(searchInput){
+      searchInput.addEventListener('input', function(){
+        currentSearch = this.value.trim().toLowerCase();
+        renderWatches(WATCHES, currentFilter, currentSearch);
+      });
+    }
+
     var condMap = {'Excellent':'Eccellente','Very Good':'Ottimo','Good':'Buono'};
 
-    function renderWatches(watches, filter){
+    function renderWatches(watches, filter, search){
       var filtered = filter === 'all' ? watches : watches.filter(function(w){ return w.condition === filter; });
+      if(search){
+        filtered = filtered.filter(function(w){
+          return (w.model + ' ' + w.brand + ' ' + w.reference).toLowerCase().includes(search);
+        });
+      }
       document.getElementById('shopCount').textContent = filtered.length + ' orologio/i disponibil' + (filtered.length === 1 ? 'e' : 'i');
       if(!filtered.length){
         document.getElementById('shopGrid').innerHTML = '<p class="no-watches">Nessun orologio corrisponde a questo filtro al momento. Torna presto!</p>';
