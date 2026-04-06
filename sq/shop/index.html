@@ -292,18 +292,23 @@ img{display:block;max-width:100%;height:auto}
     btn.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
     document.getElementById('footerYear').textContent = new Date().getFullYear();
 
-    fetch('/watches.json?v=2')
-      .then(function(r){ return r.json(); })
-      .then(function(data){ renderWatches(data.watches, 'all'); })
-      .catch(function(){ document.getElementById('shopGrid').innerHTML = '<p class="no-watches">Nuk mund të ngarkohen orët. Ju lutemi provoni përsëri.</p>'; });
+    // Inline watch data — no fetch needed
+    var WATCHES = [
+      {"id":"watch-1","brand":"Hislon","model":"Classic","reference":"CL213S-02SS","year":2024,"condition":"New","price":199,"currency":"EUR","image":"/images/watches/hislon-cl213s-02ss.jpg","sold":false,"description_sq":"Elegancë e thjeshtë në çelik inox. Bezel i gdhendur, cadran argjendi me vija horizontale, xham safiri dhe dritare date. Orë e besueshme për çdo ditë."},
+      {"id":"watch-2","brand":"Hislon","model":"Classic Queen","reference":"QL145T-09SG","year":2024,"condition":"New","price":189,"currency":"EUR","image":"/images/watches/hislon-ql145t-09sg.jpg","sold":false,"description_sq":"Orë elegante për femra me kasë dhe byzylyk në ngjyrë ari rozë. Profil i hollë, cadran elegant dhe lëvizje kuarci e besueshme."},
+      {"id":"watch-3","brand":"Hislon","model":"Classic","reference":"CL213G-02SG","year":2024,"condition":"New","price":189,"currency":"EUR","image":"/images/watches/hislon-cl213g-02sg.jpg","sold":false,"description_sq":"Classic-u në çelik inox total gold. Bezel i gdhendur, cadran argjendi me vija, tregues dhe akrepë të artë, xham safiri dhe dritare date."},
+      {"id":"watch-4","brand":"Hislon","model":"Masterwork","reference":"MS201S-04SS","year":2024,"condition":"New","price":184,"currency":"USD","image":"/images/watches/hislon-ms201s-04ss.jpg","sold":false,"description_sq":"Kronograf sport me cadran të zi, xham safiri dhe byzylyk çeliku. Tre nën-cadranë, detaje të kuqe dhe dritare date — precizion me karakter."},
+      {"id":"watch-5","brand":"Hislon","model":"Classic Queen","reference":"QL113G-09SG","year":2024,"condition":"New","price":169,"currency":"EUR","image":"/images/watches/hislon-ql113g-09sg.jpg","sold":false,"description_sq":"Orë klasike për femra në çelik të artë me cadran sedef, tregues me kristale, xham safiri, akrepë blu dhe dritare date. Femërorësi pa kohë."},
+      {"id":"watch-6","brand":"Hislon","model":"Women Classic Queen","reference":"QL113-09SS","year":2024,"condition":"New","price":149,"currency":"EUR","image":"/images/watches/hislon-ql113g-09ss.jpg?v=3","sold":false,"description_sq":"Women Classic Queen në çelik inox me cadran sedef, tregues me kristale, xham safiri, akrepë blu dhe dritare date. Elegancë e thjeshtë për çdo ditë."}
+    ];
+
+    renderWatches(WATCHES, 'all');
 
     document.querySelectorAll('.filter-chip').forEach(function(chip){
       chip.addEventListener('click', function(){
         document.querySelectorAll('.filter-chip').forEach(function(c){ c.classList.remove('active'); });
         chip.classList.add('active');
-        fetch('/watches.json?v=2')
-          .then(function(r){ return r.json(); })
-          .then(function(data){ renderWatches(data.watches, chip.dataset.filter); });
+        renderWatches(WATCHES, chip.dataset.filter);
       });
     });
 

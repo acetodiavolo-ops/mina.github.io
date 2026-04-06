@@ -382,13 +382,18 @@ img{display:block;max-width:100%;height:auto}
     // Footer year
     document.getElementById('footerYear').textContent = new Date().getFullYear();
 
-    // Load watches
-    fetch('/watches.json?v=2')
-      .then(function(r){ return r.json(); })
-      .then(function(data){ renderWatches(data.watches, 'all'); })
-      .catch(function(){ document.getElementById('shopGrid').innerHTML = '<p class="no-watches">Unable to load watches. Please try again later.</p>'; });
+    // Inline watch data — no fetch needed
+    var WATCHES = [
+      {"id":"watch-1","brand":"Hislon","model":"Classic","reference":"CL213S-02SS","year":2024,"condition":"New","price":199,"currency":"EUR","image":"/images/watches/hislon-cl213s-02ss.jpg","sold":false,"description_en":"Clean, understated elegance in stainless steel. Fluted bezel, horizontal-stripe silver dial, sapphire crystal, and date window. A reliable everyday dress watch."},
+      {"id":"watch-2","brand":"Hislon","model":"Classic Queen","reference":"QL145T-09SG","year":2024,"condition":"New","price":189,"currency":"EUR","image":"/images/watches/hislon-ql145t-09sg.jpg","sold":false,"description_en":"A refined ladies' watch with a rose gold-tone case and bracelet. Slim profile, elegant dial, and reliable quartz movement — effortless everyday style."},
+      {"id":"watch-3","brand":"Hislon","model":"Classic","reference":"CL213G-02SG","year":2024,"condition":"New","price":189,"currency":"EUR","image":"/images/watches/hislon-cl213g-02sg.jpg","sold":false,"description_en":"The Classic in full gold-tone stainless steel. Fluted bezel, horizontal-stripe silver dial, gold-tone hands and indices, sapphire crystal, and date window."},
+      {"id":"watch-4","brand":"Hislon","model":"Masterwork","reference":"MS201S-04SS","year":2024,"condition":"New","price":184,"currency":"USD","image":"/images/watches/hislon-ms201s-04ss.jpg","sold":false,"description_en":"A bold sport-chic chronograph with a jet-black dial, sapphire crystal, and stainless steel bracelet. Three subdials, red accent details, and a date window — precision with attitude."},
+      {"id":"watch-5","brand":"Hislon","model":"Classic Queen","reference":"QL113G-09SG","year":2024,"condition":"New","price":169,"currency":"EUR","image":"/images/watches/hislon-ql113g-09sg.jpg","sold":false,"description_en":"A ladies' classic in full gold-tone steel with a mother-of-pearl dial set with crystal indices, sapphire crystal, blue hands, and a date window. Timeless femininity."},
+      {"id":"watch-6","brand":"Hislon","model":"Women Classic Queen","reference":"QL113-09SS","year":2024,"condition":"New","price":149,"currency":"EUR","image":"/images/watches/hislon-ql113g-09ss.jpg?v=3","sold":false,"description_en":"The Women Classic Queen in stainless steel with a mother-of-pearl dial, crystal indices, sapphire crystal, blue hands, and a date window. Understated elegance for every day."}
+    ];
 
     var currentFilter = 'all';
+    renderWatches(WATCHES, 'all');
 
     document.querySelectorAll('.filter-chip').forEach(function(chip){
       chip.addEventListener('click', function(){
@@ -396,9 +401,7 @@ img{display:block;max-width:100%;height:auto}
         chip.classList.add('active');
         chip.setAttribute('aria-pressed','true');
         currentFilter = chip.dataset.filter;
-        fetch('/watches.json?v=2')
-          .then(function(r){ return r.json(); })
-          .then(function(data){ renderWatches(data.watches, currentFilter); });
+        renderWatches(WATCHES, currentFilter);
       });
     });
 
