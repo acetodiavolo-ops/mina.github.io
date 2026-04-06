@@ -123,6 +123,7 @@
 .fa-store::before { content:"\f54e"; }
 .fa-chevron-up::before { content:"\f077"; }
 .fa-bolt::before { content:"\f0e7"; }
+.fa-search::before { content:"\f002"; }
 .fa-google::before { content:"\f1a0"; }
 .fa-facebook-f::before { content:"\f39e"; }
 .fa-instagram::before { content:"\f16d"; }
@@ -189,12 +190,12 @@ img{display:block;max-width:100%;height:auto}
 .watch-card-body{padding:1.4rem 1.5rem 1.25rem;flex:1;display:flex;flex-direction:column}
 .watch-brand{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-gold-accessible);margin-bottom:.2rem}
 .watch-model{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:800;color:var(--btn-start);line-height:1.2;margin-bottom:.35rem}
-.watch-ref{font-size:.8rem;color:#888;margin-bottom:.75rem}
+.watch-ref{font-size:.8rem;color:#6b6b6b;margin-bottom:.75rem}
 .watch-desc{font-size:.88rem;color:var(--text-secondary);line-height:1.65;flex:1;margin-bottom:1.1rem}
 .watch-card-footer{display:flex;align-items:center;justify-content:space-between;gap:.75rem;border-top:1px solid var(--border-light);padding-top:1rem;flex-wrap:wrap}
 .watch-price{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:800;color:var(--btn-start)}
-.watch-cta{display:inline-flex;align-items:center;gap:.4rem;background:#25d366;color:#fff;font-size:.82rem;font-weight:700;padding:.5rem 1.1rem;border-radius:9999px;text-decoration:none;transition:background var(--transition-base),transform .15s;white-space:nowrap}
-.watch-cta:hover{background:#1ebe5d;transform:scale(1.04)}
+.watch-cta{display:inline-flex;align-items:center;gap:.4rem;background:#1a7a3f;color:#fff;font-size:.82rem;font-weight:700;padding:.5rem 1.1rem;border-radius:9999px;text-decoration:none;transition:background var(--transition-base),transform .15s;white-space:nowrap}
+.watch-cta:hover{background:#156630;transform:scale(1.04)}
 .no-watches{text-align:center;padding:4rem 1rem;color:#888;font-size:1.05rem}
 .footer{background:var(--footer-bg);color:var(--footer-text);padding:3rem 1.5rem}
 .footer-inner{max-width:80rem;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
@@ -298,12 +299,12 @@ img{display:block;max-width:100%;height:auto}
     <div class="shop-grid" id="shopGrid" aria-label="Orët e disponueshme">
       <article class="watch-card">
         <div class="watch-card-img">
-          <img src="/images/watches/hislon-cl213s-02ss.jpg" alt="Hislon Classic CL213S-02SS" loading="lazy">
+          <img src="/images/watches/hislon-cl213s-02ss.jpg" alt="Hislon Classic CL213S-02SS" loading="eager" fetchpriority="high">
           <span class="watch-badge">E Re</span>
         </div>
         <div class="watch-card-body">
           <p class="watch-brand">Hislon</p>
-          <h3 class="watch-model">Classic</h3>
+          <h2 class="watch-model">Classic</h2>
           <p class="watch-ref">Ref. CL213S-02SS &middot; 2024</p>
           <p class="watch-desc">Elegancë e thjeshtë në çelik inox. Bezel i gdhendur, cadran argjendi me vija horizontale, xham safiri dhe dritare date.</p>
           <div class="watch-card-footer">
@@ -319,7 +320,7 @@ img{display:block;max-width:100%;height:auto}
         </div>
         <div class="watch-card-body">
           <p class="watch-brand">Hislon</p>
-          <h3 class="watch-model">Classic Queen</h3>
+          <h2 class="watch-model">Classic Queen</h2>
           <p class="watch-ref">Ref. QL145T-09SG &middot; 2024</p>
           <p class="watch-desc">Orë elegante për femra me kasë dhe byzylyk në ngjyrë ari rozë. Profil i hollë, cadran elegant dhe lëvizje kuarci e besueshme.</p>
           <div class="watch-card-footer">
@@ -335,7 +336,7 @@ img{display:block;max-width:100%;height:auto}
         </div>
         <div class="watch-card-body">
           <p class="watch-brand">Hislon</p>
-          <h3 class="watch-model">Classic</h3>
+          <h2 class="watch-model">Classic</h2>
           <p class="watch-ref">Ref. CL213G-02SG &middot; 2024</p>
           <p class="watch-desc">Classic-u në çelik inox total gold. Bezel i gdhendur, cadran argjendi me vija, tregues dhe akrepë të artë, xham safiri dhe dritare date.</p>
           <div class="watch-card-footer">
@@ -351,7 +352,7 @@ img{display:block;max-width:100%;height:auto}
         </div>
         <div class="watch-card-body">
           <p class="watch-brand">Hislon</p>
-          <h3 class="watch-model">Masterwork</h3>
+          <h2 class="watch-model">Masterwork</h2>
           <p class="watch-ref">Ref. MS201S-04SS &middot; 2024</p>
           <p class="watch-desc">Kronograf sport me cadran të zi, xham safiri dhe byzylyk çeliku. Tre nën-cadranë, detaje të kuqe dhe dritare date.</p>
           <div class="watch-card-footer">
@@ -367,7 +368,7 @@ img{display:block;max-width:100%;height:auto}
         </div>
         <div class="watch-card-body">
           <p class="watch-brand">Hislon</p>
-          <h3 class="watch-model">Classic Queen</h3>
+          <h2 class="watch-model">Classic Queen</h2>
           <p class="watch-ref">Ref. QL113G-09SG &middot; 2024</p>
           <p class="watch-desc">Orë klasike për femra në çelik të artë me cadran sedef, tregues me kristale, xham safiri, akrepë blu dhe dritare date.</p>
           <div class="watch-card-footer">
@@ -383,7 +384,7 @@ img{display:block;max-width:100%;height:auto}
         </div>
         <div class="watch-card-body">
           <p class="watch-brand">Hislon</p>
-          <h3 class="watch-model">Women Classic Queen</h3>
+          <h2 class="watch-model">Women Classic Queen</h2>
           <p class="watch-ref">Ref. QL113-09SS &middot; 2024</p>
           <p class="watch-desc">Women Classic Queen në çelik inox me cadran sedef, tregues me kristale, xham safiri, akrepë blu dhe dritare date. Elegancë e thjeshtë për çdo ditë.</p>
           <div class="watch-card-footer">
@@ -430,94 +431,6 @@ img{display:block;max-width:100%;height:auto}
     </div>
   </footer>
 
-  <script>
-  (function(){
-    var btn = document.getElementById('backToTop');
-    window.addEventListener('scroll', function(){ btn.classList.toggle('visible', window.scrollY > 300); }, {passive:true});
-    btn.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
-    document.getElementById('footerYear').textContent = new Date().getFullYear();
-
-    // Inline watch data — no fetch needed
-    var WATCHES = [
-      {"id":"watch-1","brand":"Hislon","model":"Classic","reference":"CL213S-02SS","year":2024,"condition":"New","price":199,"currency":"EUR","image":"/images/watches/hislon-cl213s-02ss.jpg","sold":false,"description_sq":"Elegancë e thjeshtë në çelik inox. Bezel i gdhendur, cadran argjendi me vija horizontale, xham safiri dhe dritare date. Orë e besueshme për çdo ditë."},
-      {"id":"watch-2","brand":"Hislon","model":"Classic Queen","reference":"QL145T-09SG","year":2024,"condition":"New","price":189,"currency":"EUR","image":"/images/watches/hislon-ql145t-09sg.jpg","sold":false,"description_sq":"Orë elegante për femra me kasë dhe byzylyk në ngjyrë ari rozë. Profil i hollë, cadran elegant dhe lëvizje kuarci e besueshme."},
-      {"id":"watch-3","brand":"Hislon","model":"Classic","reference":"CL213G-02SG","year":2024,"condition":"New","price":189,"currency":"EUR","image":"/images/watches/hislon-cl213g-02sg.jpg","sold":false,"description_sq":"Classic-u në çelik inox total gold. Bezel i gdhendur, cadran argjendi me vija, tregues dhe akrepë të artë, xham safiri dhe dritare date."},
-      {"id":"watch-4","brand":"Hislon","model":"Masterwork","reference":"MS201S-04SS","year":2024,"condition":"New","price":184,"currency":"USD","image":"/images/watches/hislon-ms201s-04ss.jpg","sold":false,"description_sq":"Kronograf sport me cadran të zi, xham safiri dhe byzylyk çeliku. Tre nën-cadranë, detaje të kuqe dhe dritare date — precizion me karakter."},
-      {"id":"watch-5","brand":"Hislon","model":"Classic Queen","reference":"QL113G-09SG","year":2024,"condition":"New","price":169,"currency":"EUR","image":"/images/watches/hislon-ql113g-09sg.jpg","sold":false,"description_sq":"Orë klasike për femra në çelik të artë me cadran sedef, tregues me kristale, xham safiri, akrepë blu dhe dritare date. Femërorësi pa kohë."},
-      {"id":"watch-6","brand":"Hislon","model":"Women Classic Queen","reference":"QL113-09SS","year":2024,"condition":"New","price":149,"currency":"EUR","image":"/images/watches/hislon-ql113g-09ss.jpg?v=3","sold":false,"description_sq":"Women Classic Queen në çelik inox me cadran sedef, tregues me kristale, xham safiri, akrepë blu dhe dritare date. Elegancë e thjeshtë për çdo ditë."}
-    ];
-
-    var currentFilter = 'all';
-    var currentSearch = '';
-    renderWatches(WATCHES, 'all', '');
-
-    document.querySelectorAll('.filter-chip').forEach(function(chip){
-      chip.addEventListener('click', function(){
-        document.querySelectorAll('.filter-chip').forEach(function(c){ c.classList.remove('active'); });
-        chip.classList.add('active');
-        currentFilter = chip.dataset.filter;
-        renderWatches(WATCHES, currentFilter, currentSearch);
-      });
-    });
-
-    var searchInput = document.getElementById('shopSearch');
-    if(searchInput){
-      searchInput.addEventListener('input', function(){
-        currentSearch = this.value.trim().toLowerCase();
-        renderWatches(WATCHES, currentFilter, currentSearch);
-      });
-    }
-
-    var condMap = {'Excellent':'Shkëlqyer','Very Good':'Shumë Mirë','Good':'Mirë'};
-
-    function renderWatches(watches, filter, search){
-      var filtered = filter === 'all' ? watches : watches.filter(function(w){ return w.condition === filter; });
-      if(search){
-        filtered = filtered.filter(function(w){
-          return (w.model + ' ' + w.brand + ' ' + w.reference).toLowerCase().includes(search);
-        });
-      }
-      document.getElementById('shopCount').textContent = filtered.length + ' orë e disponueshme';
-      if(!filtered.length){
-        document.getElementById('shopGrid').innerHTML = '<p class="no-watches">Asnjë orë nuk përputhet me këtë filtër tani. Kthehuni së shpejti!</p>';
-        return;
-      }
-      document.getElementById('shopGrid').innerHTML = filtered.map(watchCard).join('');
-    }
-
-    function fmt(price, currency){
-      if(!price) return 'Çmimi me kërkesë';
-      return (currency === 'EUR' ? '€' : currency) + Number(price).toLocaleString('sq-AL');
-    }
-
-    function waMsg(w){
-      var msg = 'Pershendetje, jam i interesuar per oren ' + w.brand + ' ' + w.model + ' (Ref. ' + w.reference + ') ne faqen tuaj.';
-      return 'https://api.whatsapp.com/send?phone=355676360510&text=' + encodeURIComponent(msg);
-    }
-
-    function watchCard(w){
-      var imgHtml = w.image
-        ? '<img src="' + w.image + '" alt="' + w.brand + ' ' + w.model + '" loading="lazy">'
-        : '<div class="watch-img-placeholder"><i class="fas fa-clock" aria-hidden="true"></i></div>';
-      var soldOverlay = w.sold ? '<div class="sold-overlay">Shitur</div>' : '';
-      var cond = condMap[w.condition] || w.condition;
-      var ctaHtml = w.sold
-        ? '<span style="font-size:.82rem;color:#888">Shitur</span>'
-        : '<a href="' + waMsg(w) + '" target="_blank" rel="noopener noreferrer" class="watch-cta"><i class="fab fa-whatsapp" aria-hidden="true"></i> Pyesni</a>';
-      return '<article class="watch-card' + (w.sold?' sold-card':'') + '">'
-        + '<div class="watch-card-img">' + imgHtml + soldOverlay
-        + '<span class="watch-badge">' + cond + '</span></div>'
-        + '<div class="watch-card-body">'
-        + '<p class="watch-brand">' + w.brand + '</p>'
-        + '<h3 class="watch-model">' + w.model + '</h3>'
-        + '<p class="watch-ref">Ref. ' + w.reference + ' &middot; ' + w.year + '</p>'
-        + '<p class="watch-desc">' + (w.description_sq || '') + '</p>'
-        + '<div class="watch-card-footer">'
-        + '<p class="watch-price">' + fmt(w.price, w.currency) + '</p>'
-        + ctaHtml
-        + '</div></div></article>';
-    }
-  })();
-  </script>
+  <script src="shop.js"></script>
 </body>
 </html>
