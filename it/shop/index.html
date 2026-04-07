@@ -1106,11 +1106,14 @@ img{display:block;max-width:100%;height:auto}
 
 
   <script>
-document.addEventListener("DOMContentLoaded",function(){
-    var btn = document.getElementById('backToTop');
-    window.addEventListener('scroll', function(){ btn.classList.toggle('visible', window.scrollY > 300); }, {passive:true});
-    btn.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
-    document.getElementById('footerYear').textContent = new Date().getFullYear();
+(function(){
+    var btt = document.getElementById('backToTop');
+    if(btt){
+      window.addEventListener('scroll', function(){ btt.classList.toggle('visible', window.scrollY > 300); }, {passive:true});
+      btt.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+    }
+    var fy = document.getElementById('footerYear');
+    if(fy) fy.textContent = new Date().getFullYear();
 
     // Inline watch data — no fetch needed
     var WATCHES = [
@@ -1223,7 +1226,7 @@ document.addEventListener("DOMContentLoaded",function(){
         + ctaHtml
         + '</div></div></article>';
     }
-  });
-  </script>
+  })();
+    </script>
 </body>
 </html>
