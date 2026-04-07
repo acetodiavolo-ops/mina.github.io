@@ -592,6 +592,7 @@ img{display:block;max-width:100%;height:auto}
 .watch-price{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:800;color:var(--btn-start)}
 .watch-cta{display:inline-flex;align-items:center;gap:.4rem;background:#1a7a3f;color:#fff;font-size:.82rem;font-weight:700;padding:.5rem 1.1rem;border-radius:9999px;text-decoration:none;transition:background var(--transition-base),transform .15s;white-space:nowrap}
 .watch-cta:hover{background:#156630;transform:scale(1.04)}
+.watch-ig-link{display:inline-flex;align-items:center;gap:.3rem;font-size:.75rem;font-weight:600;color:#b4945c;text-decoration:none;white-space:nowrap;transition:opacity .2s}.watch-ig-link:hover{opacity:.75}
 .no-watches{text-align:center;padding:4rem 1rem;color:#888;font-size:1.05rem}
 
 /* ── FOOTER ─────────────────────────────────────────────────────────────── */
@@ -1296,7 +1297,7 @@ document.addEventListener("DOMContentLoaded",function(){
       var filtered = filter === 'all' ? watches : watches.filter(function(w){ return w.condition === filter; });
       if(search){
         filtered = filtered.filter(function(w){
-          return (w.model + ' ' + w.brand + ' ' + w.reference).toLowerCase().includes(search);
+          return (w.model + ' ' + w.brand + ' ' + w.reference + ' ' + (w['description_en']||'')).toLowerCase().includes(search);
         });
       }
       var count = document.getElementById('shopCount');
@@ -1337,6 +1338,7 @@ document.addEventListener("DOMContentLoaded",function(){
         + '<p class="watch-desc">' + (w.description_en || '') + '</p>'
         + '<div class="watch-card-footer">'
         + '<p class="watch-price">' + fmt(w.price, w.currency) + '</p>'
+        + '<a href="https://instagram.com/iglisiwatch" target="_blank" rel="noopener noreferrer" class="watch-ig-link" aria-label="See on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i> See on Instagram</a>'
         + ctaHtml
         + '</div></div></article>';
     }

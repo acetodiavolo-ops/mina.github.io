@@ -470,6 +470,7 @@ img{display:block;max-width:100%;height:auto}
 .watch-price{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:800;color:var(--btn-start)}
 .watch-cta{display:inline-flex;align-items:center;gap:.4rem;background:#1a7a3f;color:#fff;font-size:.82rem;font-weight:700;padding:.5rem 1.1rem;border-radius:9999px;text-decoration:none;transition:background var(--transition-base),transform .15s;white-space:nowrap}
 .watch-cta:hover{background:#156630;transform:scale(1.04)}
+.watch-ig-link{display:inline-flex;align-items:center;gap:.3rem;font-size:.75rem;font-weight:600;color:#b4945c;text-decoration:none;white-space:nowrap;transition:opacity .2s}.watch-ig-link:hover{opacity:.75}
 .no-watches{text-align:center;padding:4rem 1rem;color:#888;font-size:1.05rem}
 .footer{background:var(--footer-bg);color:var(--footer-text);padding:3rem 1.5rem}
 .footer-inner{max-width:80rem;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
@@ -1167,7 +1168,7 @@ document.addEventListener("DOMContentLoaded",function(){
       var filtered = filter === 'all' ? watches : watches.filter(function(w){ return w.condition === filter; });
       if(search){
         filtered = filtered.filter(function(w){
-          return (w.model + ' ' + w.brand + ' ' + w.reference).toLowerCase().includes(search);
+          return (w.model + ' ' + w.brand + ' ' + w.reference + ' ' + (w['description_it']||'')).toLowerCase().includes(search);
         });
       }
       document.getElementById('shopCount').textContent = filtered.length + ' orologio/i disponibil' + (filtered.length === 1 ? 'e' : 'i');
@@ -1207,6 +1208,7 @@ document.addEventListener("DOMContentLoaded",function(){
         + '<p class="watch-desc">' + (w.description_it || '') + '</p>'
         + '<div class="watch-card-footer">'
         + '<p class="watch-price">' + fmt(w.price, w.currency) + '</p>'
+        + '<a href="https://instagram.com/iglisiwatch" target="_blank" rel="noopener noreferrer" class="watch-ig-link" aria-label="Vedi su Instagram"><i class="fab fa-instagram" aria-hidden="true"></i> Vedi su Instagram</a>'
         + ctaHtml
         + '</div></div></article>';
     }
