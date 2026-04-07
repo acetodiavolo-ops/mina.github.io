@@ -1,10 +1,10 @@
 'use strict';
 
-var CACHE = 'iglisi-v57';
+var CACHE = 'iglisi-v58';
 
 var PRECACHE = [
   '/offline.html',
-  '/shared.css?v=37',
+  '/shared.css?v=40',
   '/shared.js?v=20',
   '/cookie.js',
   '/webfonts/inter.woff2?v=2',
@@ -18,7 +18,6 @@ var PRECACHE = [
 self.addEventListener('install', function(e) {
   e.waitUntil(
     caches.open(CACHE).then(function(c) {
-      /* Cache each item individually so one failure can't break the whole install */
       return Promise.all(
         PRECACHE.map(function(url) {
           return c.add(url).catch(function() {});
@@ -41,33 +40,41 @@ self.addEventListener('activate', function(e) {
 self.addEventListener('fetch', function(e) {
   if (e.request.method !== 'GET') return;
 
-  /* Skip cross-origin requests that aren't our preloaded assets */
   var url = e.request.url;
   var isOurs = url.startsWith(self.location.origin) || url.startsWith('https://watch.al/');
   if (!isOurs) return;
 
   var isNav = e.request.mode === 'navigate';
 
-  if (isNav) {
-    /* Navigation: always network — never cache HTML so deploys take effect immediately */
+  /* Images and fonts: cache-first (content never changes, only new files added) */
+  var isStatic = /\.(woff2?|ttf|eot|png|webp|jpg|jpeg|gif|svg|ico)(\?|$)/i.test(url);
+
+  if (isStatic && !isNav) {
     e.respondWith(
-      fetch(e.request).catch(function() {
-        return caches.match('/offline.html');
+      caches.match(e.request).then(function(cached) {
+        return cached || fetch(e.request).then(function(response) {
+          if (response && response.status === 200) {
+            var clone = response.clone();
+            caches.open(CACHE).then(function(c) { c.put(e.request, clone); }).catch(function() {});
+          }
+          return response;
+        });
       })
     );
     return;
   }
 
-  /* Assets: cache-first, fetch only if missing — no fallback for CSS so the
-     browser handles the error natively rather than receiving a blank stylesheet */
+  /* HTML, JS, CSS: network-first — always serve latest, cache as fallback */
   e.respondWith(
-    caches.match(e.request).then(function(cached) {
-      return cached || fetch(e.request).then(function(response) {
-        if (response && response.status === 200 && response.type !== 'error') {
-          var clone = response.clone();
-          caches.open(CACHE).then(function(c) { c.put(e.request, clone); }).catch(function() {});
-        }
-        return response;
+    fetch(e.request).then(function(response) {
+      if (!isNav && response && response.status === 200) {
+        var clone = response.clone();
+        caches.open(CACHE).then(function(c) { c.put(e.request, clone); }).catch(function() {});
+      }
+      return response;
+    }).catch(function() {
+      return caches.match(e.request).then(function(cached) {
+        return cached || caches.match('/offline.html');
       });
     })
   );
