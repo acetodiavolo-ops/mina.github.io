@@ -1,24 +1,8 @@
 /*
-  # Prevent clickjacking — allow same origin only
   X-Frame-Options: SAMEORIGIN
-
-  # Prevent MIME-type sniffing
   X-Content-Type-Options: nosniff
-
-  # Referrer policy — send origin on cross-origin, full URL on same-origin
   Referrer-Policy: strict-origin-when-cross-origin
-
-  # HSTS — force HTTPS, include subdomains, eligible for preload list
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-
-  # Cross-Origin Opener Policy — isolate top-level window from cross-origin popups
-  Cross-Origin-Opener-Policy: same-origin
-
-  # Content Security Policy
-  # - unsafe-inline needed for inline <script> and <style> blocks throughout the site
-  # - connect.facebook.net for Facebook Pixel
-  # - www.google.com/maps for the embedded map on homepage
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://connect.facebook.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://www.facebook.com https://connect.facebook.net; font-src 'self'; frame-src https://www.google.com; frame-ancestors 'self'; object-src 'none'; base-uri 'self'
-
-  # Restrict browser features not needed on this site
+  Cross-Origin-Opener-Policy: same-origin-allow-popups
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://connect.facebook.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://www.facebook.com https://connect.facebook.net; font-src 'self'; frame-src https://www.google.com https://www.facebook.com; frame-ancestors 'self'; object-src 'none'; base-uri 'self'
