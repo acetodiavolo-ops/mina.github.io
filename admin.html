@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — Iglisi Watch</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    *, ::before, ::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f5; color: #222; min-height: 100vh; }
+    .site-header { background: #06153b; color: #fff; padding: 1rem 1.5rem; display: flex; align-items: center; gap: 1rem; }
+    .site-header h1 { font-size: 1.15rem; font-weight: 700; }
+    .site-header span { font-size: .8rem; color: rgba(255,255,255,.5); }
+    .container { max-width: 640px; margin: 2.5rem auto; padding: 0 1rem 4rem; }
+
+    /* ── GATE ── */
+    #gate { background: #fff; border-radius: 12px; padding: 2.5rem 2rem; box-shadow: 0 2px 16px rgba(0,0,0,.08); }
+    #gate h2 { font-size: 1.25rem; margin-bottom: 1.25rem; }
+    #gate input[type="password"] { width: 100%; padding: .6rem .9rem; border: 1.5px solid #ddd; border-radius: 8px; font-size: 1rem; margin-bottom: .75rem; outline: none; transition: border-color .2s; }
+    #gate input[type="password"]:focus { border-color: #b4945c; }
+    #gate-error { color: #c0392b; font-size: .875rem; margin-bottom: .75rem; min-height: 1.2em; }
+    #gate button { background: #06153b; color: #fff; border: none; padding: .65rem 1.5rem; border-radius: 8px; font-size: .95rem; font-weight: 600; cursor: pointer; width: 100%; transition: opacity .2s; }
+    #gate button:hover { opacity: .88; }
+
+    /* ── PANEL ── */
+    #panel { display: none; }
+    .panel-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+    .panel-header h2 { font-size: 1.3rem; }
+    #logout-btn { background: none; border: 1.5px solid #ccc; color: #555; padding: .3rem .9rem; border-radius: 6px; font-size: .82rem; cursor: pointer; transition: background .2s, color .2s; }
+    #logout-btn:hover { background: #eee; }
+
+    .card { background: #fff; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 16px rgba(0,0,0,.07); margin-bottom: 2rem; }
+    .card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 1.5rem; padding-bottom: .6rem; border-bottom: 1px solid #eee; }
+    .form-group { margin-bottom: 1.1rem; }
+    label { display: block; font-size: .82rem; font-weight: 600; color: #444; margin-bottom: .3rem; }
+    input[type="text"], input[type="number"], select, textarea {
+      width: 100%; padding: .55rem .85rem; border: 1.5px solid #ddd; border-radius: 8px;
+      font-size: .92rem; outline: none; transition: border-color .2s; font-family: inherit;
+    }
+    input:focus, select:focus, textarea:focus { border-color: #b4945c; }
+    .form-hint { font-size: .78rem; color: #888; margin-top: .3rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .checkbox-row { display: flex; align-items: center; gap: .5rem; }
+    .checkbox-row input[type="checkbox"] { width: auto; accent-color: #b4945c; transform: scale(1.2); }
+    .checkbox-row label { margin: 0; font-size: .92rem; font-weight: 400; color: #333; }
+    #add-btn { background: #b4945c; color: #fff; border: none; padding: .7rem 2rem; border-radius: 8px; font-size: .95rem; font-weight: 700; cursor: pointer; width: 100%; margin-top: .5rem; transition: opacity .2s, transform .1s; }
+    #add-btn:hover { opacity: .9; transform: translateY(-1px); }
+
+    /* ── OUTPUT ── */
+    #output-section { display: none; }
+    .output-instruction { background: #fff8e8; border: 1.5px solid #e8d5a0; border-radius: 8px; padding: 1rem 1.1rem; font-size: .875rem; color: #5a4a20; margin-bottom: 1rem; line-height: 1.55; }
+    #json-output { width: 100%; height: 260px; font-family: 'Courier New', monospace; font-size: .8rem; border: 1.5px solid #ddd; border-radius: 8px; padding: .75rem; resize: vertical; }
+    #copy-btn { margin-top: .65rem; background: #06153b; color: #fff; border: none; padding: .55rem 1.4rem; border-radius: 8px; font-size: .88rem; font-weight: 600; cursor: pointer; transition: opacity .2s; }
+    #copy-btn:hover { opacity: .85; }
+    .success-note { display: none; font-size: .82rem; color: #1a7a3f; margin-top: .5rem; font-weight: 600; }
+
+    @media(max-width:480px){ .form-row { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>Iglisi Watch — Admin</h1>
+  <span>Internal use only</span>
+</header>
+
+<div class="container">
+
+  <!-- PASSWORD GATE -->
+  <div id="gate">
+    <h2>Sign in</h2>
+    <div id="gate-error"></div>
+    <input type="password" id="pw-input" placeholder="Password" autocomplete="current-password">
+    <button type="button" id="login-btn">Enter</button>
+  </div>
+
+  <!-- ADMIN PANEL -->
+  <div id="panel">
+    <div class="panel-header">
+      <h2>Add a New Watch</h2>
+      <button type="button" id="logout-btn">Sign out</button>
+    </div>
+
+    <div class="card">
+      <h3>Watch Details</h3>
+      <form id="watch-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-brand">Brand <span style="color:#c0392b">*</span></label>
+            <input type="text" id="f-brand" list="brand-list" placeholder="e.g. Hislon" required>
+            <datalist id="brand-list">
+              <option value="Hislon">
+              <option value="Navimarine">
+            </datalist>
+          </div>
+          <div class="form-group">
+            <label for="f-model">Model <span style="color:#c0392b">*</span></label>
+            <input type="text" id="f-model" placeholder="e.g. Classic" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-reference">Reference / SKU <span style="color:#c0392b">*</span></label>
+            <input type="text" id="f-reference" placeholder="e.g. CL213S-02SS" required>
+          </div>
+          <div class="form-group">
+            <label for="f-year">Year</label>
+            <input type="number" id="f-year" value="2025" min="2000" max="2100">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-price">Price <span style="color:#c0392b">*</span></label>
+            <input type="number" id="f-price" placeholder="e.g. 149" min="0" required>
+          </div>
+          <div class="form-group">
+            <label for="f-currency">Currency</label>
+            <select id="f-currency">
+              <option value="EUR" selected>EUR (€)</option>
+              <option value="USD">USD ($)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="f-condition">Condition</label>
+          <select id="f-condition">
+            <option value="New" selected>New</option>
+            <option value="Pre-owned">Pre-owned</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="f-image">Image filename <span style="color:#c0392b">*</span></label>
+          <input type="text" id="f-image" placeholder="e.g. hislon-cl213s-02ss.jpg" required>
+          <p class="form-hint">Upload the image to <code>/images/watches/</code> first via Netlify or GitHub, then enter the filename here.</p>
+        </div>
+
+        <div class="form-group">
+          <label for="f-desc-en">Description (English) <span style="color:#c0392b">*</span></label>
+          <textarea id="f-desc-en" rows="3" placeholder="Describe the watch in English…" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="f-desc-it">Description (Italian)</label>
+          <textarea id="f-desc-it" rows="3" placeholder="Descrizione in italiano…"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="f-desc-sq">Description (Albanian)</label>
+          <textarea id="f-desc-sq" rows="3" placeholder="Përshkrim në shqip…"></textarea>
+        </div>
+
+        <div class="form-group">
+          <div class="checkbox-row">
+            <input type="checkbox" id="f-sold">
+            <label for="f-sold">Mark as Sold</label>
+          </div>
+        </div>
+
+        <button type="submit" id="add-btn">Add Watch to JSON</button>
+      </form>
+    </div>
+
+    <!-- OUTPUT -->
+    <div id="output-section" class="card">
+      <h3>Updated watches.json</h3>
+      <div class="output-instruction">
+        Copy everything below and paste it into <strong>watches.json</strong> in your GitHub repo, then commit.
+        The new watch will appear on the site automatically.
+      </div>
+      <textarea id="json-output" readonly spellcheck="false"></textarea>
+      <br>
+      <button type="button" id="copy-btn">Copy to clipboard</button>
+      <p class="success-note" id="copy-success">Copied ✓</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var CORRECT_PW = 'IglisiAdmin2024';
+
+  // Gate
+  var gateEl = document.getElementById('gate');
+  var panelEl = document.getElementById('panel');
+  var pwInput = document.getElementById('pw-input');
+  var gateError = document.getElementById('gate-error');
+
+  function tryLogin(){
+    if(pwInput.value === CORRECT_PW){
+      gateEl.style.display = 'none';
+      panelEl.style.display = 'block';
+    } else {
+      gateError.textContent = 'Incorrect password. Try again.';
+      pwInput.value = '';
+      pwInput.focus();
+    }
+  }
+
+  document.getElementById('login-btn').addEventListener('click', tryLogin);
+  pwInput.addEventListener('keydown', function(e){ if(e.key === 'Enter') tryLogin(); });
+
+  document.getElementById('logout-btn').addEventListener('click', function(){
+    panelEl.style.display = 'none';
+    gateEl.style.display = 'block';
+    pwInput.value = '';
+    gateError.textContent = '';
+  });
+
+  // Form submit
+  document.getElementById('watch-form').addEventListener('submit', function(e){
+    e.preventDefault();
+
+    var brand     = document.getElementById('f-brand').value.trim();
+    var model     = document.getElementById('f-model').value.trim();
+    var reference = document.getElementById('f-reference').value.trim();
+    var year      = parseInt(document.getElementById('f-year').value, 10) || 2025;
+    var price     = parseFloat(document.getElementById('f-price').value) || 0;
+    var currency  = document.getElementById('f-currency').value;
+    var condition = document.getElementById('f-condition').value;
+    var imageFile = document.getElementById('f-image').value.trim();
+    var descEn    = document.getElementById('f-desc-en').value.trim();
+    var descIt    = document.getElementById('f-desc-it').value.trim();
+    var descSq    = document.getElementById('f-desc-sq').value.trim();
+    var sold      = document.getElementById('f-sold').checked;
+
+    if(!brand || !model || !reference || !price || !imageFile || !descEn){
+      alert('Please fill in all required fields (marked with *).');
+      return;
+    }
+
+    // Normalise image path
+    var imagePath = imageFile.startsWith('/images/') ? imageFile : '/images/watches/' + imageFile.replace(/^\//, '');
+
+    fetch('/watches.json')
+      .then(function(r){ return r.json(); })
+      .then(function(arr){
+        var newWatch = {
+          "id": "watch-" + (arr.length + 1),
+          "brand": brand,
+          "model": model,
+          "reference": reference,
+          "year": year,
+          "condition": condition,
+          "price": price,
+          "currency": currency,
+          "image": imagePath,
+          "sold": sold,
+          "description_en": descEn
+        };
+        if(descIt) newWatch.description_it = descIt;
+        if(descSq) newWatch.description_sq = descSq;
+
+        arr.push(newWatch);
+        var jsonStr = JSON.stringify(arr, null, 2);
+
+        var outputSection = document.getElementById('output-section');
+        var jsonOutput = document.getElementById('json-output');
+        outputSection.style.display = 'block';
+        jsonOutput.value = jsonStr;
+        jsonOutput.select();
+        outputSection.scrollIntoView({behavior:'smooth', block:'start'});
+
+        // Reset form
+        document.getElementById('watch-form').reset();
+        document.getElementById('f-year').value = '2025';
+        document.getElementById('f-currency').value = 'EUR';
+        document.getElementById('f-condition').value = 'New';
+      })
+      .catch(function(err){
+        alert('Could not load watches.json: ' + err.message + '\n\nMake sure the file exists at the site root.');
+      });
+  });
+
+  // Copy to clipboard
+  document.getElementById('copy-btn').addEventListener('click', function(){
+    var ta = document.getElementById('json-output');
+    ta.select();
+    var successNote = document.getElementById('copy-success');
+    var copyBtn = document.getElementById('copy-btn');
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(ta.value).then(function(){
+        copyBtn.textContent = 'Copied ✓';
+        successNote.style.display = 'block';
+        setTimeout(function(){ copyBtn.textContent = 'Copy to clipboard'; successNote.style.display = 'none'; }, 2000);
+      });
+    } else {
+      document.execCommand('copy');
+      copyBtn.textContent = 'Copied ✓';
+      successNote.style.display = 'block';
+      setTimeout(function(){ copyBtn.textContent = 'Copy to clipboard'; successNote.style.display = 'none'; }, 2000);
+    }
+  });
+})();
+</script>
+</body>
+</html>
