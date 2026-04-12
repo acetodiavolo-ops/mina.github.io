@@ -11,9 +11,9 @@
     .site-header { background: #06153b; color: #fff; padding: 1rem 1.5rem; display: flex; align-items: center; gap: 1rem; }
     .site-header h1 { font-size: 1.15rem; font-weight: 700; }
     .site-header span { font-size: .8rem; color: rgba(255,255,255,.5); }
-    .container { max-width: 640px; margin: 2.5rem auto; padding: 0 1rem 4rem; }
+    .container { max-width: 660px; margin: 2.5rem auto; padding: 0 1rem 4rem; }
 
-    /* ── GATE ── */
+    /* GATE */
     #gate { background: #fff; border-radius: 12px; padding: 2.5rem 2rem; box-shadow: 0 2px 16px rgba(0,0,0,.08); }
     #gate h2 { font-size: 1.25rem; margin-bottom: 1.25rem; }
     #gate input[type="password"] { width: 100%; padding: .6rem .9rem; border: 1.5px solid #ddd; border-radius: 8px; font-size: 1rem; margin-bottom: .75rem; outline: none; transition: border-color .2s; }
@@ -22,39 +22,75 @@
     #gate button { background: #06153b; color: #fff; border: none; padding: .65rem 1.5rem; border-radius: 8px; font-size: .95rem; font-weight: 600; cursor: pointer; width: 100%; transition: opacity .2s; }
     #gate button:hover { opacity: .88; }
 
-    /* ── PANEL ── */
+    /* PANEL */
     #panel { display: none; }
     .panel-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
     .panel-header h2 { font-size: 1.3rem; }
-    #logout-btn { background: none; border: 1.5px solid #ccc; color: #555; padding: .3rem .9rem; border-radius: 6px; font-size: .82rem; cursor: pointer; transition: background .2s, color .2s; }
+    #logout-btn { background: none; border: 1.5px solid #ccc; color: #555; padding: .3rem .9rem; border-radius: 6px; font-size: .82rem; cursor: pointer; transition: background .2s; }
     #logout-btn:hover { background: #eee; }
 
-    .card { background: #fff; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 16px rgba(0,0,0,.07); margin-bottom: 2rem; }
-    .card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 1.5rem; padding-bottom: .6rem; border-bottom: 1px solid #eee; }
+    .card { background: #fff; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 16px rgba(0,0,0,.07); margin-bottom: 1.5rem; }
+    .card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; padding-bottom: .6rem; border-bottom: 1px solid #eee; }
+
     .form-group { margin-bottom: 1.1rem; }
     label { display: block; font-size: .82rem; font-weight: 600; color: #444; margin-bottom: .3rem; }
-    input[type="text"], input[type="number"], select, textarea {
+    input[type="text"], input[type="number"], input[type="password"], select, textarea {
       width: 100%; padding: .55rem .85rem; border: 1.5px solid #ddd; border-radius: 8px;
       font-size: .92rem; outline: none; transition: border-color .2s; font-family: inherit;
     }
     input:focus, select:focus, textarea:focus { border-color: #b4945c; }
-    .form-hint { font-size: .78rem; color: #888; margin-top: .3rem; }
+    .form-hint { font-size: .78rem; color: #888; margin-top: .35rem; line-height: 1.45; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     .checkbox-row { display: flex; align-items: center; gap: .5rem; }
     .checkbox-row input[type="checkbox"] { width: auto; accent-color: #b4945c; transform: scale(1.2); }
     .checkbox-row label { margin: 0; font-size: .92rem; font-weight: 400; color: #333; }
-    #add-btn { background: #b4945c; color: #fff; border: none; padding: .7rem 2rem; border-radius: 8px; font-size: .95rem; font-weight: 700; cursor: pointer; width: 100%; margin-top: .5rem; transition: opacity .2s, transform .1s; }
-    #add-btn:hover { opacity: .9; transform: translateY(-1px); }
 
-    /* ── OUTPUT ── */
+    /* GITHUB TOKEN CARD */
+    .token-card { background: #f0f6ff; border: 1.5px solid #c5d8f5; }
+    .token-card h3 { color: #1a3a6b; border-bottom-color: #c5d8f5; }
+    .token-status { font-size: .82rem; margin-top: .4rem; font-weight: 600; }
+    .token-status.ok { color: #1a7a3f; }
+    .token-status.err { color: #c0392b; }
+    #token-toggle { background: none; border: none; color: #b4945c; font-size: .78rem; cursor: pointer; padding: 0; font-weight: 600; text-decoration: underline; }
+
+    /* IMAGE UPLOAD */
+    .image-upload-area { border: 2px dashed #ddd; border-radius: 10px; padding: 1.5rem; text-align: center; cursor: pointer; transition: border-color .2s, background .2s; position: relative; }
+    .image-upload-area:hover, .image-upload-area.drag-over { border-color: #b4945c; background: #fffaf4; }
+    .image-upload-area input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
+    .image-upload-area .upload-icon { font-size: 2rem; margin-bottom: .5rem; }
+    .image-upload-area p { font-size: .88rem; color: #666; }
+    .image-upload-area strong { color: #b4945c; }
+    #image-preview-wrap { display: none; margin-top: 1rem; text-align: center; }
+    #image-preview { max-width: 200px; max-height: 200px; border-radius: 8px; border: 1px solid #eee; object-fit: cover; }
+    #image-name-display { font-size: .8rem; color: #666; margin-top: .4rem; }
+    #change-image-btn { background: none; border: none; color: #b4945c; font-size: .8rem; cursor: pointer; text-decoration: underline; margin-top: .25rem; }
+
+    /* SUBMIT */
+    #add-btn { background: #b4945c; color: #fff; border: none; padding: .75rem 2rem; border-radius: 8px; font-size: .95rem; font-weight: 700; cursor: pointer; width: 100%; margin-top: .5rem; transition: opacity .2s, transform .1s; }
+    #add-btn:hover:not(:disabled) { opacity: .9; transform: translateY(-1px); }
+    #add-btn:disabled { opacity: .55; cursor: not-allowed; transform: none; }
+
+    /* STATUS */
+    #submit-status { margin-top: 1rem; border-radius: 8px; padding: .8rem 1rem; font-size: .88rem; display: none; line-height: 1.5; }
+    #submit-status.info { background: #eef4ff; color: #1a3a6b; border: 1px solid #c5d8f5; }
+    #submit-status.success { background: #eafaf1; color: #1a6b3f; border: 1px solid #a8dfbe; }
+    #submit-status.error { background: #fdf0ef; color: #8b1a1a; border: 1px solid #f5c5c0; }
+    .progress-step { display: flex; align-items: center; gap: .5rem; margin: .25rem 0; }
+    .step-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .step-dot.pending { background: #ccc; }
+    .step-dot.active { background: #b4945c; animation: pulse 1s infinite; }
+    .step-dot.done { background: #1a7a3f; }
+    .step-dot.fail { background: #c0392b; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+    /* FALLBACK OUTPUT */
     #output-section { display: none; }
     .output-instruction { background: #fff8e8; border: 1.5px solid #e8d5a0; border-radius: 8px; padding: 1rem 1.1rem; font-size: .875rem; color: #5a4a20; margin-bottom: 1rem; line-height: 1.55; }
-    #json-output { width: 100%; height: 260px; font-family: 'Courier New', monospace; font-size: .8rem; border: 1.5px solid #ddd; border-radius: 8px; padding: .75rem; resize: vertical; }
+    #json-output { width: 100%; height: 240px; font-family: 'Courier New', monospace; font-size: .78rem; border: 1.5px solid #ddd; border-radius: 8px; padding: .75rem; resize: vertical; }
     #copy-btn { margin-top: .65rem; background: #06153b; color: #fff; border: none; padding: .55rem 1.4rem; border-radius: 8px; font-size: .88rem; font-weight: 600; cursor: pointer; transition: opacity .2s; }
     #copy-btn:hover { opacity: .85; }
-    .success-note { display: none; font-size: .82rem; color: #1a7a3f; margin-top: .5rem; font-weight: 600; }
 
-    @media(max-width:480px){ .form-row { grid-template-columns: 1fr; } }
+    @media(max-width:520px){ .form-row { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -81,9 +117,25 @@
       <button type="button" id="logout-btn">Sign out</button>
     </div>
 
+    <!-- GITHUB TOKEN -->
+    <div class="card token-card">
+      <h3>GitHub Connection</h3>
+      <p class="form-hint" style="margin-bottom:.75rem">Enter your GitHub token to publish directly — image and watch data will be committed automatically. <a href="https://github.com/settings/tokens/new?scopes=repo&description=IglisiAdmin" target="_blank" rel="noopener" style="color:#b4945c">Generate token</a> (needs <strong>repo</strong> scope).</p>
+      <div class="form-group" style="margin-bottom:.5rem">
+        <div style="display:flex;gap:.5rem;align-items:center">
+          <input type="password" id="gh-token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" style="font-family:monospace;font-size:.85rem">
+          <button type="button" id="token-toggle">show</button>
+        </div>
+        <div class="token-status" id="token-status"></div>
+      </div>
+      <p class="form-hint">No token? Leave blank — you'll get a JSON to paste into GitHub manually.</p>
+    </div>
+
+    <!-- WATCH FORM -->
     <div class="card">
       <h3>Watch Details</h3>
       <form id="watch-form" novalidate>
+
         <div class="form-row">
           <div class="form-group">
             <label for="f-brand">Brand <span style="color:#c0392b">*</span></label>
@@ -91,6 +143,16 @@
             <datalist id="brand-list">
               <option value="Hislon">
               <option value="Navimarine">
+              <option value="Belonni">
+              <option value="Citizen Quartz">
+              <option value="Casio">
+              <option value="Romanson">
+              <option value="Starking">
+              <option value="Bigotti">
+              <option value="Daniel Klein">
+              <option value="Daniel Klein Premium">
+              <option value="Q&amp;Q">
+              <option value="Calvin Klein">
             </datalist>
           </div>
           <div class="form-group">
@@ -101,8 +163,8 @@
 
         <div class="form-row">
           <div class="form-group">
-            <label for="f-reference">Reference / SKU <span style="color:#c0392b">*</span></label>
-            <input type="text" id="f-reference" placeholder="e.g. CL213S-02SS" required>
+            <label for="f-reference">Reference / SKU <span style="color:#999;font-weight:400">(optional)</span></label>
+            <input type="text" id="f-reference" placeholder="e.g. CL213S-02SS">
           </div>
           <div class="form-group">
             <label for="f-year">Year</label>
@@ -116,26 +178,29 @@
             <input type="number" id="f-price" placeholder="e.g. 149" min="0" required>
           </div>
           <div class="form-group">
-            <label for="f-currency">Currency</label>
-            <select id="f-currency">
-              <option value="EUR" selected>EUR (€)</option>
-              <option value="USD">USD ($)</option>
+            <label for="f-condition">Condition</label>
+            <select id="f-condition">
+              <option value="New" selected>New</option>
+              <option value="Pre-owned">Pre-owned</option>
             </select>
           </div>
         </div>
 
+        <!-- IMAGE UPLOAD -->
         <div class="form-group">
-          <label for="f-condition">Condition</label>
-          <select id="f-condition">
-            <option value="New" selected>New</option>
-            <option value="Pre-owned">Pre-owned</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="f-image">Image filename <span style="color:#c0392b">*</span></label>
-          <input type="text" id="f-image" placeholder="e.g. hislon-cl213s-02ss.jpg" required>
-          <p class="form-hint">Upload the image to <code>/images/watches/</code> first via Netlify or GitHub, then enter the filename here.</p>
+          <label>Watch Photo <span style="color:#c0392b">*</span></label>
+          <div class="image-upload-area" id="upload-area">
+            <input type="file" id="f-image-file" accept="image/*">
+            <div class="upload-icon">📷</div>
+            <p><strong>Click to choose a photo</strong> or drag &amp; drop</p>
+            <p style="font-size:.75rem;color:#aaa;margin-top:.25rem">JPG, PNG or WebP — max 5 MB</p>
+          </div>
+          <div id="image-preview-wrap">
+            <img id="image-preview" src="" alt="Preview">
+            <div id="image-name-display"></div>
+            <button type="button" id="change-image-btn">Change photo</button>
+          </div>
+          <p class="form-hint" id="image-hint" style="margin-top:.5rem">Filename will be auto-generated from Brand + Model.</p>
         </div>
 
         <div class="form-group">
@@ -144,13 +209,13 @@
         </div>
 
         <div class="form-group">
-          <label for="f-desc-it">Description (Italian)</label>
-          <textarea id="f-desc-it" rows="3" placeholder="Descrizione in italiano…"></textarea>
+          <label for="f-desc-it">Description (Italian) <span style="color:#999;font-weight:400">(optional)</span></label>
+          <textarea id="f-desc-it" rows="2" placeholder="Descrizione in italiano…"></textarea>
         </div>
 
         <div class="form-group">
-          <label for="f-desc-sq">Description (Albanian)</label>
-          <textarea id="f-desc-sq" rows="3" placeholder="Përshkrim në shqip…"></textarea>
+          <label for="f-desc-sq">Description (Albanian) <span style="color:#999;font-weight:400">(optional)</span></label>
+          <textarea id="f-desc-sq" rows="2" placeholder="Përshkrim në shqip…"></textarea>
         </div>
 
         <div class="form-group">
@@ -160,21 +225,24 @@
           </div>
         </div>
 
-        <button type="submit" id="add-btn">Add Watch to JSON</button>
+        <button type="submit" id="add-btn">Publish Watch</button>
+
+        <!-- PROGRESS / STATUS -->
+        <div id="submit-status"></div>
       </form>
     </div>
 
-    <!-- OUTPUT -->
+    <!-- FALLBACK: manual JSON output (shown if no token) -->
     <div id="output-section" class="card">
-      <h3>Updated watches.json</h3>
+      <h3>Updated watches.json — paste into GitHub</h3>
       <div class="output-instruction">
-        Copy everything below and paste it into <strong>watches.json</strong> in your GitHub repo, then commit.
-        The new watch will appear on the site automatically.
+        No GitHub token was provided. Copy the JSON below and paste it into <strong>watches.json</strong> in your GitHub repo, then commit.<br>
+        <strong>Also upload the image</strong> to <code>/images/watches/</code> in the repo.
       </div>
       <textarea id="json-output" readonly spellcheck="false"></textarea>
       <br>
       <button type="button" id="copy-btn">Copy to clipboard</button>
-      <p class="success-note" id="copy-success">Copied ✓</p>
+      <p style="display:none;font-size:.82rem;color:#1a7a3f;margin-top:.5rem;font-weight:600" id="copy-success">Copied ✓</p>
     </div>
   </div>
 
@@ -183,11 +251,17 @@
 <script>
 (function(){
   var CORRECT_PW = 'IglisiAdmin2024';
+  var REPO = 'acetodiavolo-ops/mina.github.io';
+  var GH_API = 'https://api.github.com/repos/' + REPO + '/contents/';
 
-  // Gate
-  var gateEl = document.getElementById('gate');
-  var panelEl = document.getElementById('panel');
-  var pwInput = document.getElementById('pw-input');
+  var imageFile = null;   // File object
+  var imageB64  = null;   // base64 string (no prefix)
+  var imagePath = null;   // final path in repo e.g. images/watches/foo.jpg
+
+  // ── Gate ────────────────────────────────────────────────────────────────────
+  var gateEl    = document.getElementById('gate');
+  var panelEl   = document.getElementById('panel');
+  var pwInput   = document.getElementById('pw-input');
   var gateError = document.getElementById('gate-error');
 
   function tryLogin(){
@@ -200,101 +274,272 @@
       pwInput.focus();
     }
   }
-
   document.getElementById('login-btn').addEventListener('click', tryLogin);
-  pwInput.addEventListener('keydown', function(e){ if(e.key === 'Enter') tryLogin(); });
-
+  pwInput.addEventListener('keydown', function(e){ if(e.key==='Enter') tryLogin(); });
   document.getElementById('logout-btn').addEventListener('click', function(){
     panelEl.style.display = 'none';
     gateEl.style.display = 'block';
     pwInput.value = '';
     gateError.textContent = '';
+    resetForm();
   });
 
-  // Form submit
+  // ── GitHub token toggle ──────────────────────────────────────────────────────
+  var ghTokenEl = document.getElementById('gh-token');
+  document.getElementById('token-toggle').addEventListener('click', function(){
+    var isHidden = ghTokenEl.type === 'password';
+    ghTokenEl.type = isHidden ? 'text' : 'password';
+    this.textContent = isHidden ? 'hide' : 'show';
+  });
+
+  // ── Image file picker ────────────────────────────────────────────────────────
+  var fileInput    = document.getElementById('f-image-file');
+  var uploadArea   = document.getElementById('upload-area');
+  var previewWrap  = document.getElementById('image-preview-wrap');
+  var previewImg   = document.getElementById('image-preview');
+  var nameDisplay  = document.getElementById('image-name-display');
+  var changeBtn    = document.getElementById('change-image-btn');
+
+  fileInput.addEventListener('change', function(){
+    if(this.files && this.files[0]) handleFile(this.files[0]);
+  });
+  uploadArea.addEventListener('dragover', function(e){ e.preventDefault(); this.classList.add('drag-over'); });
+  uploadArea.addEventListener('dragleave', function(){ this.classList.remove('drag-over'); });
+  uploadArea.addEventListener('drop', function(e){
+    e.preventDefault(); this.classList.remove('drag-over');
+    if(e.dataTransfer.files && e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+  });
+  changeBtn.addEventListener('click', function(){
+    imageFile = null; imageB64 = null; imagePath = null;
+    fileInput.value = '';
+    previewWrap.style.display = 'none';
+    uploadArea.style.display = 'block';
+  });
+
+  function handleFile(file){
+    if(file.size > 5*1024*1024){ alert('Image is too large. Max 5 MB.'); return; }
+    imageFile = file;
+    var reader = new FileReader();
+    reader.onload = function(ev){
+      var dataUrl = ev.target.result;
+      imageB64 = dataUrl.split(',')[1]; // strip data:...;base64,
+      previewImg.src = dataUrl;
+      var ext = file.name.split('.').pop().toLowerCase() || 'jpg';
+      var generatedName = generateFilename(ext);
+      imagePath = 'images/watches/' + generatedName;
+      nameDisplay.textContent = generatedName;
+      uploadArea.style.display = 'none';
+      previewWrap.style.display = 'block';
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function generateFilename(ext){
+    var brand = (document.getElementById('f-brand').value.trim() || 'watch').toLowerCase()
+      .replace(/[^a-z0-9]+/g,'-').replace(/-+$/,'');
+    var model = (document.getElementById('f-model').value.trim() || '').toLowerCase()
+      .replace(/[^a-z0-9]+/g,'-').replace(/-+$/,'');
+    var ref   = (document.getElementById('f-reference').value.trim() || '').toLowerCase()
+      .replace(/[^a-z0-9]+/g,'-').replace(/-+$/,'');
+    var parts = [brand, model, ref].filter(Boolean);
+    return parts.join('-') + '.' + ext;
+  }
+
+  // Regenerate filename when brand/model/ref change (if image already picked)
+  ['f-brand','f-model','f-reference'].forEach(function(id){
+    document.getElementById(id).addEventListener('input', function(){
+      if(!imageFile) return;
+      var ext = imageFile.name.split('.').pop().toLowerCase() || 'jpg';
+      var generatedName = generateFilename(ext);
+      imagePath = 'images/watches/' + generatedName;
+      nameDisplay.textContent = generatedName;
+    });
+  });
+
+  // ── Form submit ──────────────────────────────────────────────────────────────
   document.getElementById('watch-form').addEventListener('submit', function(e){
     e.preventDefault();
 
     var brand     = document.getElementById('f-brand').value.trim();
     var model     = document.getElementById('f-model').value.trim();
     var reference = document.getElementById('f-reference').value.trim();
-    var year      = parseInt(document.getElementById('f-year').value, 10) || 2025;
+    var year      = parseInt(document.getElementById('f-year').value,10) || 2025;
     var price     = parseFloat(document.getElementById('f-price').value) || 0;
-    var currency  = document.getElementById('f-currency').value;
     var condition = document.getElementById('f-condition').value;
-    var imageFile = document.getElementById('f-image').value.trim();
     var descEn    = document.getElementById('f-desc-en').value.trim();
     var descIt    = document.getElementById('f-desc-it').value.trim();
     var descSq    = document.getElementById('f-desc-sq').value.trim();
     var sold      = document.getElementById('f-sold').checked;
+    var token     = document.getElementById('gh-token').value.trim();
 
-    if(!brand || !model || !reference || !price || !imageFile || !descEn){
-      alert('Please fill in all required fields (marked with *).');
+    if(!brand || !model || !price || !descEn){
+      alert('Please fill in Brand, Model, Price and English Description (marked *).');
+      return;
+    }
+    if(!imageFile || !imageB64){
+      alert('Please select a watch photo.');
       return;
     }
 
-    // Normalise image path
-    var imagePath = imageFile.startsWith('/images/') ? imageFile : '/images/watches/' + imageFile.replace(/^\//, '');
+    var addBtn = document.getElementById('add-btn');
+    addBtn.disabled = true;
 
+    if(token){
+      publishViaGitHub(token, {brand,model,reference,year,price,condition,descEn,descIt,descSq,sold}, function(){
+        addBtn.disabled = false;
+      });
+    } else {
+      publishManually({brand,model,reference,year,price,condition,descEn,descIt,descSq,sold}, function(){
+        addBtn.disabled = false;
+      });
+    }
+  });
+
+  // ── GitHub publish flow ──────────────────────────────────────────────────────
+  function publishViaGitHub(token, data, done){
+    var statusEl = document.getElementById('submit-status');
+    statusEl.style.display = 'block';
+    statusEl.className = 'info';
+
+    function step(id, state, text){
+      var el = document.getElementById('step-'+id);
+      if(!el) return;
+      el.querySelector('.step-dot').className = 'step-dot '+state;
+      el.querySelector('span').textContent = text;
+    }
+
+    statusEl.innerHTML =
+      '<div class="progress-step" id="step-img"><span class="step-dot pending"></span><span>Uploading image…</span></div>' +
+      '<div class="progress-step" id="step-json"><span class="step-dot pending"></span><span>Updating watches.json…</span></div>' +
+      '<div class="progress-step" id="step-done"><span class="step-dot pending"></span><span>Waiting…</span></div>';
+
+    step('img','active','Uploading image…');
+
+    // 1. Upload image
+    ghPut(token, imagePath, imageB64, 'Add watch image: '+imagePath, null)
+      .then(function(){
+        step('img','done','Image uploaded ✓');
+        step('json','active','Updating watches.json…');
+        // 2. Fetch current watches.json
+        return ghGet(token, 'watches.json');
+      })
+      .then(function(res){
+        var currentArr = JSON.parse(atob(res.content.replace(/\n/g,'')));
+        var newWatch = buildWatch(currentArr, data);
+        currentArr.push(newWatch);
+        var newContent = btoa(unescape(encodeURIComponent(JSON.stringify(currentArr, null, 2))));
+        return ghPut(token, 'watches.json', newContent, 'Add watch: '+data.brand+' '+data.model, res.sha);
+      })
+      .then(function(){
+        step('json','done','watches.json updated ✓');
+        step('done','done','All done — watch is live!');
+        statusEl.className = 'success';
+        resetForm();
+        done();
+      })
+      .catch(function(err){
+        statusEl.className = 'error';
+        statusEl.innerHTML = '<strong>Error:</strong> ' + err.message + '<br><small>Check your GitHub token has repo scope and try again.</small>';
+        done();
+      });
+  }
+
+  function ghGet(token, path){
+    return fetch(GH_API + path, {
+      headers: { Authorization: 'token '+token, Accept: 'application/vnd.github.v3+json' }
+    }).then(function(r){
+      if(!r.ok) throw new Error('GitHub GET failed: '+r.status+' '+r.statusText);
+      return r.json();
+    });
+  }
+
+  function ghPut(token, path, contentB64, message, sha){
+    var body = { message: message, content: contentB64 };
+    if(sha) body.sha = sha;
+    return fetch(GH_API + path, {
+      method: 'PUT',
+      headers: { Authorization: 'token '+token, Accept: 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    }).then(function(r){
+      if(!r.ok) return r.text().then(function(t){ throw new Error('GitHub PUT failed ('+r.status+'): '+t); });
+      return r.json();
+    });
+  }
+
+  // ── Manual fallback (no token) ───────────────────────────────────────────────
+  function publishManually(data, done){
     fetch('/watches.json')
       .then(function(r){ return r.json(); })
       .then(function(arr){
-        var newWatch = {
-          "id": "watch-" + (arr.length + 1),
-          "brand": brand,
-          "model": model,
-          "reference": reference,
-          "year": year,
-          "condition": condition,
-          "price": price,
-          "currency": currency,
-          "image": imagePath,
-          "sold": sold,
-          "description_en": descEn
-        };
-        if(descIt) newWatch.description_it = descIt;
-        if(descSq) newWatch.description_sq = descSq;
-
+        var newWatch = buildWatch(arr, data);
         arr.push(newWatch);
         var jsonStr = JSON.stringify(arr, null, 2);
+        document.getElementById('output-section').style.display = 'block';
+        document.getElementById('json-output').value = jsonStr;
+        document.getElementById('output-section').scrollIntoView({behavior:'smooth', block:'start'});
 
-        var outputSection = document.getElementById('output-section');
-        var jsonOutput = document.getElementById('json-output');
-        outputSection.style.display = 'block';
-        jsonOutput.value = jsonStr;
-        jsonOutput.select();
-        outputSection.scrollIntoView({behavior:'smooth', block:'start'});
-
-        // Reset form
-        document.getElementById('watch-form').reset();
-        document.getElementById('f-year').value = '2025';
-        document.getElementById('f-currency').value = 'EUR';
-        document.getElementById('f-condition').value = 'New';
+        var statusEl = document.getElementById('submit-status');
+        statusEl.style.display = 'block';
+        statusEl.className = 'info';
+        statusEl.innerHTML = '<strong>No token provided.</strong> Copy the JSON below and paste it into watches.json on GitHub. Also upload <code>'+imagePath+'</code> to <code>/images/watches/</code>.';
+        resetForm();
+        done();
       })
       .catch(function(err){
-        alert('Could not load watches.json: ' + err.message + '\n\nMake sure the file exists at the site root.');
+        alert('Could not load watches.json: '+err.message);
+        done();
       });
-  });
+  }
 
-  // Copy to clipboard
+  // ── Build watch object ───────────────────────────────────────────────────────
+  function buildWatch(arr, data){
+    var w = {
+      id: 'watch-'+(arr.length+1),
+      brand: data.brand,
+      model: data.model,
+      year: data.year,
+      condition: data.condition,
+      price: data.price,
+      currency: 'EUR',
+      image: '/'+imagePath,
+      sold: data.sold,
+      description_en: data.descEn
+    };
+    if(data.reference) w.reference = data.reference;
+    if(data.descIt)    w.description_it = data.descIt;
+    if(data.descSq)    w.description_sq = data.descSq;
+    return w;
+  }
+
+  // ── Reset ────────────────────────────────────────────────────────────────────
+  function resetForm(){
+    document.getElementById('watch-form').reset();
+    document.getElementById('f-year').value = '2025';
+    document.getElementById('f-condition').value = 'New';
+    imageFile = null; imageB64 = null; imagePath = null;
+    document.getElementById('image-preview-wrap').style.display = 'none';
+    document.getElementById('upload-area').style.display = 'block';
+    document.getElementById('f-image-file').value = '';
+  }
+
+  // ── Copy button ──────────────────────────────────────────────────────────────
   document.getElementById('copy-btn').addEventListener('click', function(){
     var ta = document.getElementById('json-output');
     ta.select();
-    var successNote = document.getElementById('copy-success');
-    var copyBtn = document.getElementById('copy-btn');
+    var btn = document.getElementById('copy-btn');
+    var note = document.getElementById('copy-success');
     if(navigator.clipboard && navigator.clipboard.writeText){
       navigator.clipboard.writeText(ta.value).then(function(){
-        copyBtn.textContent = 'Copied ✓';
-        successNote.style.display = 'block';
-        setTimeout(function(){ copyBtn.textContent = 'Copy to clipboard'; successNote.style.display = 'none'; }, 2000);
+        btn.textContent = 'Copied ✓'; note.style.display = 'block';
+        setTimeout(function(){ btn.textContent = 'Copy to clipboard'; note.style.display = 'none'; }, 2000);
       });
     } else {
       document.execCommand('copy');
-      copyBtn.textContent = 'Copied ✓';
-      successNote.style.display = 'block';
-      setTimeout(function(){ copyBtn.textContent = 'Copy to clipboard'; successNote.style.display = 'none'; }, 2000);
+      btn.textContent = 'Copied ✓'; note.style.display = 'block';
+      setTimeout(function(){ btn.textContent = 'Copy to clipboard'; note.style.display = 'none'; }, 2000);
     }
   });
+
 })();
 </script>
 </body>
