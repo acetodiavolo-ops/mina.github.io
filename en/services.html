@@ -164,6 +164,33 @@
     .svp-stat-label{font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45)}
     @media(max-width:960px){.svp-shop-inner{grid-template-columns:1fr}.svp-shop{padding:2rem}}
     @media(max-width:640px){.svp-shop{padding:1.75rem 1.25rem}}
+    /* Valuation section */
+    .val-section{background:#fff;border-radius:1.5rem;padding:2.75rem 3rem;box-shadow:0 2px 20px rgba(0,0,0,.06)}
+    .val-top{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+    .val-kicker{display:inline-flex;align-items:center;gap:.4rem;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-gold);margin-bottom:.65rem}
+    .val-title{font-size:1.65rem;font-weight:800;color:var(--text-primary);line-height:1.2;margin-bottom:.75rem}
+    .val-desc{font-size:.88rem;color:var(--text-secondary);line-height:1.65;margin-bottom:1.25rem}
+    .val-points{list-style:none;padding:0;margin:0 0 1.25rem;display:flex;flex-direction:column;gap:.45rem}
+    .val-points li{font-size:.83rem;color:var(--text-secondary);display:flex;align-items:center;gap:.6rem}
+    .val-points li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent-gold);flex-shrink:0;opacity:.75}
+    .val-form{display:flex;flex-direction:column;gap:.85rem}
+    .val-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+    .val-field{display:flex;flex-direction:column;gap:.3rem}
+    .val-field label{font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--text-secondary)}
+    .val-field input,.val-field select,.val-field textarea{font-size:.875rem;color:var(--text-primary);background:var(--bg-soft);border:1px solid var(--border-light);border-radius:.6rem;padding:.65rem .9rem;outline:none;font-family:inherit;transition:border-color .15s;width:100%;appearance:none;-webkit-appearance:none}
+    .val-field input:focus,.val-field select:focus,.val-field textarea:focus{border-color:var(--accent-gold);background:#fff}
+    .val-field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23b4945c' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .9rem center;padding-right:2.25rem;cursor:pointer}
+    .val-field textarea{resize:none;height:76px;line-height:1.55}
+    .val-divider{height:1px;background:var(--border-light);margin:.25rem 0}
+    .val-submit{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:#18110a;color:#fff;font-weight:800;font-size:.88rem;padding:.85rem 1.75rem;border-radius:2rem;border:none;cursor:pointer;width:100%;letter-spacing:.02em;transition:background .2s,transform .15s;font-family:inherit}
+    .val-submit:hover{background:#2c1d0d;transform:translateY(-1px)}
+    .val-note{font-size:.73rem;color:#aaa;text-align:center;line-height:1.5;margin:0}
+    .val-success{display:none;flex-direction:column;align-items:center;text-align:center;padding:1.5rem 1rem;gap:.5rem}
+    .val-success-icon{width:48px;height:48px;border-radius:50%;background:rgba(180,148,92,.12);display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:var(--accent-gold);margin-bottom:.25rem}
+    .val-success h3{font-size:1.1rem;font-weight:800;color:var(--text-primary)}
+    .val-success p{font-size:.84rem;color:var(--text-secondary);line-height:1.6}
+    @media(max-width:800px){.val-top{grid-template-columns:1fr;gap:2rem}.val-section{padding:2rem 1.75rem}}
+    @media(max-width:480px){.val-row{grid-template-columns:1fr}.val-section{padding:1.75rem 1.25rem}}
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
@@ -450,6 +477,80 @@
         </div>
       </div>
 
+      <!-- Watch Valuation -->
+      <section id="watch-valuation" data-animate>
+        <div class="svp-process-hd">
+          <p style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-gold);margin:0 0 .4rem">Free Service</p>
+          <h2>Get Your Watch Valued</h2>
+          <p>Bring it in or describe it below &mdash; we&rsquo;ll give you an honest, no-obligation valuation.</p>
+        </div>
+        <div class="val-section">
+          <div class="val-top">
+            <div>
+              <div class="val-kicker"><i class="fas fa-gem" aria-hidden="true"></i> Free &middot; No Obligation</div>
+              <h3 class="val-title">Wondering what your watch is worth?</h3>
+              <p class="val-desc">Whether you&rsquo;re thinking of selling, insuring, or simply curious &mdash; we provide honest, expert valuations with no pressure and no fees.</p>
+              <ul class="val-points">
+                <li>All brands and conditions considered</li>
+                <li>Vintage, modern, luxury &amp; everyday</li>
+                <li>Results usually within 24 hours</li>
+                <li>Walk in, or fill in the form below</li>
+              </ul>
+            </div>
+            <div>
+              <form id="valForm" method="POST" action="?valued=1" class="val-form" novalidate>
+                <input type="hidden" name="access_key" value="b8cb1417-7408-4af4-a7da-9c2a163735fc">
+                <input type="hidden" name="subject" value="Watch Valuation Request">
+                <input type="hidden" name="from_name" value="Iglisi Watch Website">
+                <div class="val-row">
+                  <div class="val-field">
+                    <label for="val-name">Your Name</label>
+                    <input id="val-name" name="name" type="text" placeholder="e.g. John Smith" required>
+                  </div>
+                  <div class="val-field">
+                    <label for="val-phone">Phone / WhatsApp</label>
+                    <input id="val-phone" name="phone" type="tel" placeholder="+355 ...">
+                  </div>
+                </div>
+                <div class="val-row">
+                  <div class="val-field">
+                    <label for="val-brand">Watch Brand</label>
+                    <input id="val-brand" name="brand" type="text" placeholder="e.g. Rolex, Seiko, Tissot" required>
+                  </div>
+                  <div class="val-field">
+                    <label for="val-model">Model / Reference</label>
+                    <input id="val-model" name="model" type="text" placeholder="e.g. Submariner, 5606A">
+                  </div>
+                </div>
+                <div class="val-field">
+                  <label for="val-condition">Condition</label>
+                  <select id="val-condition" name="condition">
+                    <option value="">Select condition</option>
+                    <option>Mint / Unworn</option>
+                    <option>Excellent</option>
+                    <option>Good &mdash; minor wear</option>
+                    <option>Fair &mdash; visible wear</option>
+                    <option>Poor / For parts</option>
+                  </select>
+                </div>
+                <div class="val-field">
+                  <label for="val-notes">Additional Notes</label>
+                  <textarea id="val-notes" name="notes" placeholder="Box &amp; papers? Service history? Any damage?"></textarea>
+                </div>
+                <div class="val-divider"></div>
+                <button type="submit" class="val-submit"><i class="fas fa-gem" aria-hidden="true"></i> Request Free Valuation</button>
+                <p class="val-note">We respond within 24 hours &mdash; usually much faster.</p>
+              </form>
+              <div id="valSuccess" class="val-success">
+                <div class="val-success-icon"><i class="fas fa-check" aria-hidden="true"></i></div>
+                <h3>Request Received</h3>
+                <p>Thank you! We&rsquo;ll be in touch within 24 hours with your valuation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- How it works -->
       <div class="svp-process" data-animate>
         <div class="svp-process-hd">
@@ -619,6 +720,7 @@
   </footer>
 
   <script src="/shared.js?v=20" defer></script>
+  <script src="/valuation.js" defer></script>
 
 </body>
 </html>
