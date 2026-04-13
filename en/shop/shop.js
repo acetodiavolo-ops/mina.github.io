@@ -3,7 +3,7 @@
   var currentSearch = '';
   var currentSort   = 'default';
 
-  fetch('/watches.json')
+  fetch('/watches.json?v=2')
     .then(function(r){ return r.json(); })
     .then(function(WATCHES){
       renderWatches(WATCHES);

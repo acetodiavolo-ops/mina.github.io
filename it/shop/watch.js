@@ -15,7 +15,7 @@
     return;
   }
 
-  fetch('/watches.json')
+  fetch('/watches.json?v=2')
     .then(function(r){ return r.json(); })
     .then(function(watches){
       var w = watches.find(function(x){ return x.id === watchId; });
