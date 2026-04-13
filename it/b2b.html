@@ -192,9 +192,11 @@
 
           <div class="b2b-form-card" id="b2b-form-wrap">
             <h2>Invia la Tua Richiesta</h2>
-            <form name="b2b-it" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/it/b2b.html?success=1" id="b2b-form" novalidate>
-              <input type="hidden" name="form-name" value="b2b-it">
-              <p hidden><label>Non compilare questo campo: <input name="bot-field"></label></p>
+            <form action="https://api.web3forms.com/submit" method="POST" id="b2b-form" novalidate>
+              <input type="hidden" name="access_key" value="b8cb1417-7408-4af4-a7da-9c2a163735fc">
+              <input type="hidden" name="subject" value="Nuova Richiesta B2B — Iglisi Watch">
+              <input type="hidden" name="redirect" value="https://watch.al/it/b2b.html?success=1">
+              <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
 
               <div class="form-row">
                 <div class="form-group">
