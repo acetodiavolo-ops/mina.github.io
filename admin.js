@@ -227,7 +227,7 @@
 
   // ── Manual fallback (no token) ───────────────────────────────────────────────
   function publishManually(data, done){
-    fetch('https://raw.githubusercontent.com/acetodiavolo-ops/mina.github.io/main/watches.json')
+    fetch('https://raw.githubusercontent.com/acetodiavolo-ops/mina.github.io/main/watches.json?v=2')
       .then(function(r){ return r.json(); })
       .then(function(arr){
         var newWatch = buildWatch(arr, data);
