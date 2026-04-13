@@ -111,18 +111,7 @@ input[type=checkbox]#nav-toggle{position:absolute;width:0;height:0;opacity:0;poi
   </style>
   <link rel="stylesheet" href="/shared.css?v=40">
   <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '818615647986085');
-  fbq('track', 'PageView');
-  </script>
+  <script src="/pixel.js"></script>
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=818615647986085&ev=PageView&noscript=1"
   /></noscript>
@@ -130,7 +119,7 @@ input[type=checkbox]#nav-toggle{position:absolute;width:0;height:0;opacity:0;poi
 </head>
 <body class="lang-sq">
 
-<a href="https://api.whatsapp.com/send?phone=355676360510" class="whatsapp-float" target="_blank" rel="noopener noreferrer" onclick="fbq('track','Contact')" aria-label="Na shkruani në WhatsApp">
+<a href="https://api.whatsapp.com/send?phone=355676360510" class="whatsapp-float" target="_blank" rel="noopener noreferrer" data-fb-contact="1" aria-label="Na shkruani në WhatsApp">
   <i class="fab fa-whatsapp" aria-hidden="true"></i>
 </a>
 <button class="back-to-top" id="backToTop" aria-label="Kthehu lart">
@@ -155,7 +144,7 @@ input[type=checkbox]#nav-toggle{position:absolute;width:0;height:0;opacity:0;poi
         <p>Biznes familjar &middot; Që nga 2002</p>
       </div>
       <div style="display:flex;align-items:center;gap:.75rem;margin-left:auto">
-        <a href="https://api.whatsapp.com/send?phone=355676360510" target="_blank" rel="noopener noreferrer" class="btn-primary" onclick="fbq('track','Contact')" style="font-size:.875rem;padding:.6rem 1.4rem"><i class="fab fa-whatsapp" aria-hidden="true"></i><span>Rezervo WhatsApp</span></a>
+        <a href="https://api.whatsapp.com/send?phone=355676360510" target="_blank" rel="noopener noreferrer" class="btn-primary" data-fb-contact="1" style="font-size:.875rem;padding:.6rem 1.4rem"><i class="fab fa-whatsapp" aria-hidden="true"></i><span>Rezervo WhatsApp</span></a>
         <a href="/en/shop/" class="lang-toggle" aria-label="Ndrysho gjuhën">
           <i class="fas fa-globe" aria-hidden="true"></i>
           <span>SQ</span>
@@ -215,124 +204,6 @@ input[type=checkbox]#nav-toggle{position:absolute;width:0;height:0;opacity:0;poi
   </div>
 </footer>
 
-<script>
-(function(){
-  var btt = document.getElementById('backToTop');
-  window.addEventListener('scroll', function(){ btt.classList.toggle('visible', window.scrollY > 300); }, {passive:true});
-  btt.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
-  document.getElementById('footerYear').textContent = new Date().getFullYear();
-
-  var params = new URLSearchParams(window.location.search);
-  var watchId = params.get('id');
-
-  if(!watchId){
-    showError('Asnjë orë e specifikuar.', 'Kthehuni në dyqan për të shfletuar të gjitha orët e disponueshme.');
-    return;
-  }
-
-  fetch('/watches.json')
-    .then(function(r){ return r.json(); })
-    .then(function(watches){
-      var w = watches.find(function(x){ return x.id === watchId; });
-      if(!w){ showError('Ora nuk u gjet.', 'Kjo orë mund të jetë shitur ose hequr. Shfletoni dyqanin për ato që janë të disponueshme.'); return; }
-      render(w);
-    })
-    .catch(function(){ showError('Nuk mund të ngarkohej ora.', 'Ju lutemi rifreskoni ose kthehuni në dyqan.'); });
-
-  function fmt(price, currency){
-    if(!price) return 'Çmimi me kërkesë';
-    return (currency === 'EUR' ? '\u20ac' : currency) + Number(price).toLocaleString('sq-AL');
-  }
-
-  function waMsg(w){
-    var msg = 'Pershendetje, jam i interesuar per oren ' + w.brand + ' ' + w.model + ' (Ref. ' + w.reference + ') — mund te me konfirmoni nese eshte ende e disponueshme?';
-    return 'https://api.whatsapp.com/send?phone=355676360510&text=' + encodeURIComponent(msg);
-  }
-
-  function render(w){
-    var desc = w.description_sq || w.description_en || '';
-    var title = w.brand + ' ' + w.model + ' — Iglisi Watch';
-    var metaDesc = desc + ' E disponueshme tek Iglisi Watch, Durrës, Shqipëri.';
-    var imgUrl = w.image ? 'https://watch.al' + w.image : 'https://watch.al/og-image.png';
-    var pageUrl = 'https://watch.al/sq/shop/watch.html?id=' + w.id;
-    var enUrl = 'https://watch.al/en/shop/watch.html?id=' + w.id;
-
-    document.getElementById('page-title').textContent = title;
-    document.getElementById('page-desc').setAttribute('content', metaDesc);
-    document.getElementById('og-title').setAttribute('content', title);
-    document.getElementById('og-desc').setAttribute('content', metaDesc);
-    document.getElementById('og-image').setAttribute('content', imgUrl);
-    document.getElementById('og-url').setAttribute('content', pageUrl);
-    document.getElementById('canonical').setAttribute('href', pageUrl);
-    document.getElementById('hreflang-en').setAttribute('href', enUrl);
-    document.getElementById('hreflang-sq').setAttribute('href', pageUrl);
-    document.getElementById('hreflang-xd').setAttribute('href', enUrl);
-
-    // Update lang switcher to EN equivalent
-    document.querySelector('.lang-toggle').href = '/en/shop/watch.html?id=' + w.id;
-
-    var ld = {
-      '@context': 'https://schema.org',
-      '@type': 'Product',
-      'name': w.brand + ' ' + w.model,
-      'sku': w.reference,
-      'brand': {'@type': 'Brand', 'name': w.brand},
-      'description': desc,
-      'image': imgUrl,
-      'offers': {
-        '@type': 'Offer',
-        'priceCurrency': w.currency,
-        'price': String(w.price),
-        'availability': w.sold ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock',
-        'itemCondition': 'https://schema.org/NewCondition',
-        'seller': {'@type': 'Organization', 'name': 'Iglisi Watch'},
-        'url': pageUrl
-      }
-    };
-    document.getElementById('ld-json').textContent = JSON.stringify(ld);
-
-    var imgHtml = w.image ? '<img src="' + w.image + '" alt="' + w.brand + ' ' + w.model + '" fetchpriority="high">' : '';
-    var condLabel = w.sold ? 'Shitur' : (w.condition === 'New' ? 'E Re' : w.condition);
-
-    var ctaBlock = w.sold
-      ? '<p style="font-size:1rem;color:#888;font-weight:600">Kjo orë është shitur.</p>'
-      : '<div class="watch-cta-wrap">'
-        + '<a href="' + waMsg(w) + '" target="_blank" rel="noopener noreferrer" class="watch-cta-main" onclick="fbq(\'track\',\'Contact\')" aria-label="Pyesni via WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i> Pyesni në WhatsApp</a>'
-        + '<a href="https://instagram.com/iglisiwatch" target="_blank" rel="noopener noreferrer" class="watch-ig" aria-label="Shikoni Instagram-in tonë"><i class="fab fa-instagram" aria-hidden="true"></i> Instagram</a>'
-        + '</div>';
-
-    document.getElementById('watch-content').className = 'watch-page';
-    document.getElementById('watch-content').innerHTML =
-      '<div class="watch-img-wrap">'
-        + imgHtml
-        + '<span class="watch-badge-pg">' + condLabel + '</span>'
-      + '</div>'
-      + '<div class="watch-info">'
-        + '<a href="/sq/shop/" class="back-link"><i class="fas fa-arrow-left" aria-hidden="true"></i> Kthehu në dyqan</a>'
-        + '<div>'
-          + '<p class="watch-brand-pg">' + w.brand + '</p>'
-          + '<h1 class="watch-title-pg">' + w.model + '</h1>'
-          + '<p class="watch-ref-pg">Ref. ' + w.reference + ' &middot; ' + w.year + '</p>'
-        + '</div>'
-        + '<p class="watch-price-pg">' + fmt(w.price, w.currency) + '</p>'
-        + '<p class="watch-desc-pg">' + desc + '</p>'
-        + ctaBlock
-        + '<div class="trust-row">'
-          + '<span class="trust-item"><i class="fas fa-shield-alt" aria-hidden="true"></i> Garanci 1 vit</span>'
-          + '<span class="trust-item"><i class="fas fa-star" aria-hidden="true"></i> E re &amp; origjinale</span>'
-          + '<span class="trust-item"><i class="fas fa-clock" aria-hidden="true"></i> E Hënë–E Shtunë 8:30–20:30</span>'
-        + '</div>'
-      + '</div>';
-  }
-
-  function showError(heading, body){
-    document.getElementById('watch-content').className = 'error-state';
-    document.getElementById('watch-content').innerHTML =
-      '<h2>' + heading + '</h2>'
-      + '<p>' + body + '</p>'
-      + '<a href="/sq/shop/" style="display:inline-block;margin-top:1.5rem;background:#06153b;color:#fff;padding:.7rem 1.8rem;border-radius:9999px;font-weight:700;text-decoration:none">Shfletoni Dyqanin</a>';
-  }
-})();
-</script>
+<script src="watch.js" defer></script>
 </body>
 </html>

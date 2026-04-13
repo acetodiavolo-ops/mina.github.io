@@ -113,18 +113,7 @@
   }
   </script>
   <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '818615647986085');
-  fbq('track', 'PageView');
-  </script>
+  <script src="/pixel.js"></script>
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=818615647986085&ev=PageView&noscript=1"
   /></noscript>
@@ -539,34 +528,6 @@
 
   <script src="/shared.js?v=20" defer></script>
   <script src="/cookie.js" defer></script>
-  <script>
-  (function(){
-    var q=document.getElementById('blog-search');
-    if(!q)return;
-    function run(){
-      var term=q.value.trim().toLowerCase();
-      var feat=document.querySelector('.b-feat');
-      if(feat){
-        var ft=((feat.querySelector('.b-feat-title')||{}).textContent||'')+' '+((feat.querySelector('.b-feat-desc')||{}).textContent||'');
-        feat.style.display=!term||ft.toLowerCase().includes(term)?'':'none';
-      }
-      document.querySelectorAll('.b-card').forEach(function(c){
-        var t=((c.querySelector('.b-card-title')||{}).textContent||'')+' '+((c.querySelector('.b-card-desc')||{}).textContent||'');
-        c.style.display=!term||t.toLowerCase().includes(term)?'':'none';
-      });
-      document.querySelectorAll('.b-row2,.b-grid3').forEach(function(w){
-        var vis=[].slice.call(w.querySelectorAll('.b-card')).some(function(c){return c.style.display!=='none';});
-        w.style.display=vis?'':'none';
-        var p=w.previousElementSibling;
-        if(p&&p.classList.contains('b-label'))p.style.display=vis?'':'none';
-      });
-      var any=(feat&&feat.style.display!=='none')||[].slice.call(document.querySelectorAll('.b-card')).some(function(c){return c.style.display!=='none';});
-      var nr=document.getElementById('blog-no-results');
-      if(!nr){nr=document.createElement('p');nr.id='blog-no-results';nr.style.cssText='text-align:center;color:#999;padding:3rem 0;display:none;font-size:.95rem';nr.textContent=q.dataset.empty||'No articles found.';document.querySelector('.blog-wrap').appendChild(nr);}
-      nr.style.display=term&&!any?'':'none';
-    }
-    q.addEventListener('input',run);
-  })();
-  </script>
+  <script src="/blog-search.js" defer></script>
 </body>
 </html>

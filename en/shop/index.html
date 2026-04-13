@@ -637,18 +637,7 @@ img{display:block;max-width:100%;height:auto}
   </script>
   <link rel="stylesheet" href="/shared.css?v=40">
   <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '818615647986085');
-  fbq('track', 'PageView');
-  </script>
+  <script src="/pixel.js"></script>
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=818615647986085&ev=PageView&noscript=1"
   /></noscript>
@@ -656,7 +645,7 @@ img{display:block;max-width:100%;height:auto}
 </head>
 <body class="lang-en">
 
-  <a href="https://api.whatsapp.com/send?phone=355676360510" class="whatsapp-float" target="_blank" rel="noopener noreferrer" onclick="fbq('track','Contact')" aria-label="Message us on WhatsApp">
+  <a href="https://api.whatsapp.com/send?phone=355676360510" class="whatsapp-float" target="_blank" rel="noopener noreferrer" data-fb-contact="1" aria-label="Message us on WhatsApp">
     <i class="fab fa-whatsapp" aria-hidden="true"></i>
   </a>
   <button class="back-to-top" id="backToTop" aria-label="Back to top">
@@ -690,7 +679,7 @@ img{display:block;max-width:100%;height:auto}
             <i class="fas fa-phone-alt text-xl gold" aria-hidden="true"></i>
             <span class="font-medium hidden lg:inline">+355 67 636 0510</span>
           </a>
-          <a href="https://api.whatsapp.com/send?phone=355676360510" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm px-4 py-2" onclick="fbq('track','Contact')" style="display:inline-flex;align-items:center;gap:.4rem"><i class="fab fa-whatsapp" aria-hidden="true"></i><span class="header-wa-label">Book via WhatsApp</span></a>
+          <a href="https://api.whatsapp.com/send?phone=355676360510" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm px-4 py-2" data-fb-contact="1" style="display:inline-flex;align-items:center;gap:.4rem"><i class="fab fa-whatsapp" aria-hidden="true"></i><span class="header-wa-label">Book via WhatsApp</span></a>
           <a href="https://search.google.com/local/reviews?placeid=ChIJU3JyAljB0RMRdoAB2vYR5oo" target="_blank" rel="noopener noreferrer" class="review-badge" aria-label="Iglisi on Google, 5 stars">
             <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
             <span>5.0 &middot; Excellent</span>
@@ -1249,106 +1238,6 @@ img{display:block;max-width:100%;height:auto}
   </footer>
 
 
-  <script>
-(function(){
-    // Back to top
-    var btt = document.getElementById('backToTop');
-    if(btt){
-      window.addEventListener('scroll', function(){ btt.classList.toggle('visible', window.scrollY > 300); }, {passive:true});
-      btt.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
-    }
-    // Footer year
-    var fy = document.getElementById('footerYear');
-    if(fy) fy.textContent = new Date().getFullYear();
-
-    var currentFilter = 'all';
-    var currentSearch = '';
-
-    fetch('/watches.json')
-      .then(function(r){ return r.json(); })
-      .then(function(WATCHES){
-        renderWatches(WATCHES, 'all', '');
-
-        document.querySelectorAll('.filter-chip').forEach(function(chip){
-          chip.addEventListener('click', function(){
-            document.querySelectorAll('.filter-chip').forEach(function(c){ c.classList.remove('active'); c.removeAttribute('aria-pressed'); });
-            chip.classList.add('active');
-            chip.setAttribute('aria-pressed','true');
-            currentFilter = chip.dataset.filter;
-            renderWatches(WATCHES, currentFilter, currentSearch);
-          });
-        });
-
-        var searchInput = document.getElementById('shopSearch');
-        if(searchInput){
-          searchInput.addEventListener('input', function(){
-            currentSearch = this.value.trim().toLowerCase();
-            renderWatches(WATCHES, currentFilter, currentSearch);
-          });
-        }
-      })
-      .catch(function(){
-        document.getElementById('shopCount').textContent = 'Could not load watches. Please refresh.';
-      });
-
-    function renderWatches(watches, filter, search){
-      var filtered = filter === 'all' ? watches : watches.filter(function(w){ return w.condition === filter; });
-      if(search){
-        filtered = filtered.filter(function(w){
-          return (w.model + ' ' + w.brand + ' ' + w.reference + ' ' + (w['description_en']||'')).toLowerCase().includes(search);
-        });
-      }
-      var count = document.getElementById('shopCount');
-      var grid = document.getElementById('shopGrid');
-      count.textContent = filtered.length + ' watch' + (filtered.length !== 1 ? 'es' : '') + ' available';
-      if(!filtered.length){
-        grid.innerHTML = '<p class="no-watches">No watches match this filter right now. Check back soon!</p>';
-        return;
-      }
-      if(search){
-        filtered.sort(function(a,b){
-          var s = search.toLowerCase();
-          var aScore = (a.brand.toLowerCase().startsWith(s)?2:0) + (a.model.toLowerCase().startsWith(s)?1:0);
-          var bScore = (b.brand.toLowerCase().startsWith(s)?2:0) + (b.model.toLowerCase().startsWith(s)?1:0);
-          return bScore - aScore;
-        });
-      }
-      grid.innerHTML = filtered.map(function(w){ return watchCard(w); }).join('');
-    }
-
-    function fmt(price, currency){
-      if(!price) return 'Price on request';
-      return (currency === 'EUR' ? '€' : currency) + Number(price).toLocaleString('en-EU');
-    }
-
-    function waMsg(w){
-      var msg = 'Hi, I'm interested in the ' + w.brand + ' ' + w.model + ' (Ref. ' + w.reference + ') listed on your website.';
-      return 'https://api.whatsapp.com/send?phone=355676360510&text=' + encodeURIComponent(msg);
-    }
-
-    function watchCard(w){
-      var imgHtml = w.image
-        ? '<a href="/en/shop/watch.html?id=' + w.id + '" aria-label="' + w.brand + ' ' + w.model + '"><img src="' + w.image + '" alt="' + w.brand + ' ' + w.model + '" loading="lazy"></a>'
-        : '<div class="watch-img-placeholder"><i class="fas fa-clock" aria-hidden="true"></i></div>';
-      var soldOverlay = w.sold ? '<div class="sold-overlay">Sold</div>' : '';
-      var ctaHtml = w.sold
-        ? '<span style="font-size:.82rem;color:#888">Sold</span>'
-        : '<a href="' + waMsg(w) + '" target="_blank" rel="noopener noreferrer" class="watch-cta" onclick="fbq('track','Contact')" aria-label="Enquire about ' + w.brand + ' ' + w.model + ' via WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i> Enquire</a>';
-      return '<article class="watch-card' + (w.sold?' sold-card':'') + '">'
-        + '<div class="watch-card-img">' + imgHtml + soldOverlay
-        + '<span class="watch-badge">' + w.condition + '</span></div>'
-        + '<div class="watch-card-body">'
-        + '<p class="watch-brand">' + w.brand + '</p>'
-        + '<h2 class="watch-model">' + w.model + '</h2>'
-        + '<p class="watch-ref">Ref. ' + w.reference + ' &middot; ' + w.year + '</p>'
-        + '<p class="watch-desc">' + (w.description_en || '') + '</p>'
-        + '<div class="watch-card-footer">'
-        + '<p class="watch-price">' + fmt(w.price, w.currency) + '</p>'
-        + '<a href="https://instagram.com/iglisiwatch" target="_blank" rel="noopener noreferrer" class="watch-ig-link" aria-label="See on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>'
-        + ctaHtml
-        + '</div></div></article>';
-    }
-  })();
-    </script>
+  <script src="shop.js" defer></script>
 </body>
 </html>
