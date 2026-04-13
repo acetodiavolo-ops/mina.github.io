@@ -260,7 +260,7 @@ button{text-transform:none;-webkit-appearance:button;background-color:transparen
 .cta-card .btn-gold{background:linear-gradient(145deg,var(--accent-gold),#8a6a34);color:#fff;padding:.85rem 1.75rem;border-radius:9999px;font-weight:600;font-size:.95rem;text-decoration:none;display:inline-block;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 12px rgba(180,148,92,.4)}
 .cta-card .btn-gold:hover{transform:scale(1.05) translateY(-2px);box-shadow:0 10px 20px rgba(180,148,92,.5)}
 .cta-card .btn-outline{border:2px solid rgba(255,255,255,.5);color:#fff;padding:.85rem 1.75rem;border-radius:9999px;font-weight:600;font-size:.95rem;text-decoration:none;display:inline-block;transition:background .2s,border-color .2s}
-.cta-card .btn-outline:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.cta-card .btn-outline:hover{background:rgba(180,148,92,.18);border-color:var(--accent-gold);color:var(--accent-gold)}
 @media (max-width:480px){.cta-card .cta-actions a{width:100%;text-align:center}}
 /* â”€â”€ HERO ENHANCEMENTS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .hero-kicker-line{width:3rem;height:2px;background:var(--accent-gold);border-radius:1px;margin:.625rem auto 0}
