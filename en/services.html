@@ -151,6 +151,19 @@
       .svp-wrap{padding:1.5rem 1rem 3rem;gap:1.75rem}
       .svp-cta{padding:2rem 1.5rem}
     }
+
+    /* Watches for sale */
+    .svp-shop{background:linear-gradient(135deg,#18110a 0%,#2c1d0d 60%,#1a1208 100%);border-radius:1.5rem;padding:2.5rem 3rem;color:#fff;position:relative;overflow:hidden;box-shadow:0 6px 40px rgba(0,0,0,.22)}
+    .svp-shop::after{content:'';position:absolute;inset:0;border-radius:1.5rem;border:1px solid rgba(180,148,92,.18);pointer-events:none}
+    .svp-shop-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center}
+    .svp-shop h2{font-size:1.75rem;font-weight:800;color:#fff;margin:0 0 .75rem}
+    .svp-shop p{font-size:.9rem;color:rgba(255,255,255,.63);line-height:1.65;margin:0 0 1.1rem;max-width:52ch}
+    .svp-shop-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;min-width:210px}
+    .svp-stat{background:rgba(255,255,255,.06);border:1px solid rgba(180,148,92,.15);border-radius:.9rem;padding:1rem .75rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:.25rem}
+    .svp-stat-num{font-size:1.6rem;font-weight:900;color:var(--accent-gold);font-family:'Cormorant Garamond',serif;line-height:1}
+    .svp-stat-label{font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+    @media(max-width:960px){.svp-shop-inner{grid-template-columns:1fr}.svp-shop{padding:2rem}}
+    @media(max-width:640px){.svp-shop{padding:1.75rem 1.25rem}}
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
@@ -405,6 +418,38 @@
 
       </div>
 
+      <!-- Watches for sale -->
+      <div class="svp-shop" data-animate>
+        <div class="svp-shop-inner">
+          <div>
+            <div class="svp-feat-cat"><i class="fas fa-store" aria-hidden="true"></i>&ensp;Also in our shop</div>
+            <h2>New Watches &mdash; From &euro;55</h2>
+            <p>We don&rsquo;t just repair watches &mdash; we sell them. Browse our in-store collection of brand-new Hislon and Navimarine timepieces. Every watch carries a 1-year guarantee and can be tried on before you buy. No pressure, no appointment &mdash; come in and browse.</p>
+            <ul class="svp-feat-list">
+              <li>Hislon &amp; Navimarine &mdash; full range always in stock</li>
+              <li>1-year guarantee included with every purchase</li>
+              <li>Prices from &euro;55 &mdash; no markup, no pressure</li>
+              <li>Try before you buy, leave with it the same day</li>
+            </ul>
+            <a href="/en/shop/" class="svp-feat-badge" style="text-decoration:none;display:inline-flex"><i class="fas fa-arrow-right" aria-hidden="true"></i>&ensp;Browse the shop</a>
+          </div>
+          <div class="svp-shop-stats">
+            <div class="svp-stat">
+              <span class="svp-stat-num">29+</span>
+              <span class="svp-stat-label">In stock</span>
+            </div>
+            <div class="svp-stat">
+              <span class="svp-stat-num">&euro;55</span>
+              <span class="svp-stat-label">From</span>
+            </div>
+            <div class="svp-stat">
+              <span class="svp-stat-num">1yr</span>
+              <span class="svp-stat-label">Guarantee</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- How it works -->
       <div class="svp-process" data-animate>
         <div class="svp-process-hd">
@@ -471,6 +516,14 @@
             </div>
             <i class="fas fa-chevron-right svp-read-arr" aria-hidden="true"></i>
           </a>
+          <a href="/en/blog/hislon-vs-navimarine.html" class="svp-read">
+            <div class="svp-read-icon" aria-hidden="true"><i class="fas fa-balance-scale"></i></div>
+            <div class="svp-read-body">
+              <div class="svp-read-title">Hislon vs Navimarine &mdash; Which Should You Buy?</div>
+              <div class="svp-read-sub">A side-by-side comparison from our shop floor</div>
+            </div>
+            <i class="fas fa-chevron-right svp-read-arr" aria-hidden="true"></i>
+          </a>
         </div>
       </div>
 
@@ -523,10 +576,13 @@
       <div class="svp-cta" data-animate>
         <div class="svp-cta-inner">
           <h2>Ready? Just Walk In.</h2>
-          <p>No appointment, no waiting for a slot. We&rsquo;re at our workshop in Durrës six days a week.</p>
+          <p>Come in for a repair, browse our watches, or both &mdash; no appointment needed, six days a week in Durrës.</p>
           <div class="svp-cta-btns">
             <a href="https://api.whatsapp.com/send?phone=355676360510" target="_blank" rel="noopener noreferrer" class="svp-cta-a">
               <i class="fab fa-whatsapp" aria-hidden="true"></i> Message Us on WhatsApp
+            </a>
+            <a href="/en/shop/" class="svp-cta-b">
+              <i class="fas fa-shopping-bag" aria-hidden="true"></i> Browse Watches
             </a>
             <a href="tel:+355676360510" class="svp-cta-b">
               <i class="fas fa-phone-alt" aria-hidden="true"></i> +355 67 636 0510
