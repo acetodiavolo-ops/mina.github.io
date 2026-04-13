@@ -1,6 +1,6 @@
 (function(){
   // Password is stored as SHA-256 hash — never compare plaintext in source
-  var PW_HASH = '3a5de3ad12cf3b61b9e85c351821fbed0c0562801e5bf01fcd04b005de675d0b';
+  var PW_HASH = 'e7b2b52f1b9d39adddf8fd2834458ad862aecf4bbca24d7248af4fd1e8f8a7aa';
   var REPO = 'acetodiavolo-ops/mina.github.io';
   var GH_API = 'https://api.github.com/repos/' + REPO + '/contents/';
 
