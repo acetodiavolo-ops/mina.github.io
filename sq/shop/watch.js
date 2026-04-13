@@ -15,7 +15,7 @@
     return;
   }
 
-  fetch('/watches.json?v=2')
+  fetch('https://cdn.jsdelivr.net/gh/acetodiavolo-ops/mina.github.io@main/watches.json')
     .then(function(r){ return r.json(); })
     .then(function(watches){
       var w = watches.find(function(x){ return x.id === watchId; });
