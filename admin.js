@@ -1,5 +1,6 @@
 (function(){
-  var CORRECT_PW = 'IglisiAdmin2024';
+  // Password is stored as SHA-256 hash — never compare plaintext in source
+  var PW_HASH = '3a5de3ad12cf3b61b9e85c351821fbed0c0562801e5bf01fcd04b005de675d0b';
   var REPO = 'acetodiavolo-ops/mina.github.io';
   var GH_API = 'https://api.github.com/repos/' + REPO + '/contents/';
 
@@ -13,15 +14,24 @@
   var pwInput   = document.getElementById('pw-input');
   var gateError = document.getElementById('gate-error');
 
+  function sha256hex(str){
+    var buf = new TextEncoder().encode(str);
+    return crypto.subtle.digest('SHA-256', buf).then(function(hash){
+      return Array.from(new Uint8Array(hash)).map(function(b){ return b.toString(16).padStart(2,'0'); }).join('');
+    });
+  }
+
   function tryLogin(){
-    if(pwInput.value === CORRECT_PW){
-      gateEl.style.display = 'none';
-      panelEl.style.display = 'block';
-    } else {
-      gateError.textContent = 'Incorrect password. Try again.';
-      pwInput.value = '';
-      pwInput.focus();
-    }
+    sha256hex(pwInput.value).then(function(hash){
+      if(hash === PW_HASH){
+        gateEl.style.display = 'none';
+        panelEl.style.display = 'block';
+      } else {
+        gateError.textContent = 'Incorrect password. Try again.';
+        pwInput.value = '';
+        pwInput.focus();
+      }
+    });
   }
   document.getElementById('login-btn').addEventListener('click', tryLogin);
   pwInput.addEventListener('keydown', function(e){ if(e.key==='Enter') tryLogin(); });

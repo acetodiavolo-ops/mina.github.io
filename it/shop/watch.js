@@ -1,4 +1,12 @@
 (function(){
+  var btt = document.getElementById('backToTop');
+  if(btt){
+    window.addEventListener('scroll', function(){ btt.classList.toggle('show', window.scrollY > 400); }, {passive:true});
+    btt.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+  }
+  var fy = document.getElementById('footerYear');
+  if(fy) fy.textContent = new Date().getFullYear();
+
   var params = new URLSearchParams(window.location.search);
   var watchId = params.get('id');
 
@@ -62,7 +70,7 @@
         'priceCurrency': w.currency,
         'price': String(w.price),
         'availability': w.sold ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock',
-        'itemCondition': 'https://schema.org/NewCondition',
+        'itemCondition': w.condition === 'Pre-owned' ? 'https://schema.org/UsedCondition' : 'https://schema.org/NewCondition',
         'seller': {'@type': 'Organization', 'name': 'Iglisi Watch'},
         'url': pageUrl
       }

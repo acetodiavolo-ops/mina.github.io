@@ -1,7 +1,7 @@
 (function(){
   var btt = document.getElementById('backToTop');
   if(btt){
-    window.addEventListener('scroll', function(){ btt.classList.toggle('visible', window.scrollY > 300); }, {passive:true});
+    window.addEventListener('scroll', function(){ btt.classList.toggle('show', window.scrollY > 400); }, {passive:true});
     btt.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
   }
   var fy = document.getElementById('footerYear');
@@ -48,8 +48,10 @@
     document.getElementById('og-image').setAttribute('content', imgUrl);
     document.getElementById('og-url').setAttribute('content', pageUrl);
     document.getElementById('canonical').setAttribute('href', pageUrl);
+    var itUrl = 'https://watch.al/it/shop/watch.html?id=' + w.id;
     document.getElementById('hreflang-en').setAttribute('href', pageUrl);
     document.getElementById('hreflang-sq').setAttribute('href', sqUrl);
+    document.getElementById('hreflang-it').setAttribute('href', itUrl);
     document.getElementById('hreflang-xd').setAttribute('href', pageUrl);
 
     var lt = document.querySelector('.lang-toggle');
@@ -68,7 +70,7 @@
         'priceCurrency': w.currency,
         'price': String(w.price),
         'availability': w.sold ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock',
-        'itemCondition': 'https://schema.org/NewCondition',
+        'itemCondition': w.condition === 'Pre-owned' ? 'https://schema.org/UsedCondition' : 'https://schema.org/NewCondition',
         'seller': {'@type': 'Organization', 'name': 'Iglisi Watch'},
         'url': pageUrl
       }
