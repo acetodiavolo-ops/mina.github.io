@@ -1,12 +1,13 @@
 (function(){
-  var condMap = {'New':'I ri','Pre-owned':'I përdorur'};
+  var condMap = {'New':'I ri','Pre-owned':'I p\u00ebrdorur'};
   var currentFilter = 'all';
   var currentSearch = '';
+  var currentSort   = 'default';
 
   fetch('/watches.json')
     .then(function(r){ return r.json(); })
     .then(function(WATCHES){
-      renderWatches(WATCHES, 'all', '');
+      renderWatches(WATCHES);
 
       document.querySelectorAll('.filter-chip').forEach(function(chip){
         chip.addEventListener('click', function(){
@@ -14,43 +15,59 @@
           chip.classList.add('active');
           chip.setAttribute('aria-pressed','true');
           currentFilter = chip.dataset.filter;
-          renderWatches(WATCHES, currentFilter, currentSearch);
+          renderWatches(WATCHES);
         });
       });
 
       var searchInput = document.getElementById('shopSearch');
       if(searchInput){
-        searchInput.addEventListener('input', function(){
-          currentSearch = this.value.trim().toLowerCase();
-          renderWatches(WATCHES, currentFilter, currentSearch);
-        });
+        function onSearch(){ currentSearch = searchInput.value.trim().toLowerCase(); renderWatches(WATCHES); }
+        searchInput.addEventListener('input', onSearch);
+        searchInput.addEventListener('search', onSearch);
+      }
+
+      var sortEl = document.getElementById('shopSort');
+      if(sortEl){
+        sortEl.addEventListener('change', function(){ currentSort = this.value; renderWatches(WATCHES); });
       }
     })
     .catch(function(){
-      document.getElementById('shopCount').textContent = 'Nuk mund t\u00eb ngarkoje or\u00ebt. Rifreskoni faqen.';
+      document.getElementById('shopGrid').innerHTML = '<p class="no-watches">Nuk mund t\u00eb ngarkoje or\u00ebt. Rifreskoni faqen.</p>';
     });
 
-  function renderWatches(watches, filter, search){
-    var filtered = filter === 'all' ? watches : watches.filter(function(w){ return w.condition === filter; });
-    if(search){
+  function renderWatches(watches){
+    var filtered = currentFilter === 'all' ? watches.slice() : watches.filter(function(w){ return w.condition === currentFilter; });
+
+    if(currentSearch){
+      var s = currentSearch;
       filtered = filtered.filter(function(w){
-        return (w.model + ' ' + w.brand + ' ' + (w.reference||'') + ' ' + (w['description_sq']||'')).toLowerCase().includes(search);
+        return (w.model+' '+w.brand+' '+(w.reference||'')+' '+(w.description_sq||'')).toLowerCase().includes(s);
       });
     }
-    document.getElementById('shopCount').textContent = filtered.length + ' or\u00eb e disponueshme';
-    if(!filtered.length){
-      document.getElementById('shopGrid').innerHTML = '<p class="no-watches">Asnj\u00eb or\u00eb nuk p\u00ebrputhet me k\u00ebt\u00eb filtro tani. Kthehuni s\u00eb shpejti!</p>';
-      return;
-    }
-    if(search){
+
+    if(currentSearch && currentSort === 'default'){
+      var s = currentSearch;
       filtered.sort(function(a,b){
-        var s = search.toLowerCase();
-        var aScore = (a.brand.toLowerCase().startsWith(s)?2:0) + (a.model.toLowerCase().startsWith(s)?1:0);
-        var bScore = (b.brand.toLowerCase().startsWith(s)?2:0) + (b.model.toLowerCase().startsWith(s)?1:0);
+        var aScore = (a.brand.toLowerCase().startsWith(s)?2:0)+(a.model.toLowerCase().startsWith(s)?1:0);
+        var bScore = (b.brand.toLowerCase().startsWith(s)?2:0)+(b.model.toLowerCase().startsWith(s)?1:0);
         return bScore - aScore;
       });
+    } else if(currentSort === 'price-asc'){
+      filtered.sort(function(a,b){ return (a.price||0)-(b.price||0); });
+    } else if(currentSort === 'price-desc'){
+      filtered.sort(function(a,b){ return (b.price||0)-(a.price||0); });
+    } else if(currentSort === 'brand'){
+      filtered.sort(function(a,b){ return (a.brand+a.model).localeCompare(b.brand+b.model); });
     }
-    document.getElementById('shopGrid').innerHTML = filtered.map(watchCard).join('');
+
+    var count = document.getElementById('shopCount');
+    var grid  = document.getElementById('shopGrid');
+    count.textContent = filtered.length + ' or\u00eb e disponueshme';
+    if(!filtered.length){
+      grid.innerHTML = '<p class="no-watches">Asnj\u00eb or\u00eb nuk p\u00ebrputhet me k\u00ebt\u00eb filtro tani. Kthehuni s\u00eb shpejti!</p>';
+      return;
+    }
+    grid.innerHTML = filtered.map(function(w){ return watchCard(w); }).join('');
   }
 
   function fmt(price, currency){
@@ -64,11 +81,11 @@
   }
 
   function watchCard(w){
+    var cond = condMap[w.condition] || w.condition;
     var imgHtml = w.image
       ? '<a href="/sq/shop/watch.html?id=' + w.id + '" aria-label="' + w.brand + ' ' + w.model + '"><img src="' + w.image + '" alt="' + w.brand + ' ' + w.model + '" loading="lazy"></a>'
       : '<div class="watch-img-placeholder"><i class="fas fa-clock" aria-hidden="true"></i></div>';
     var soldOverlay = w.sold ? '<div class="sold-overlay">Shitur</div>' : '';
-    var cond = condMap[w.condition] || w.condition;
     var ctaHtml = w.sold
       ? '<span style="font-size:.82rem;color:#888">Shitur</span>'
       : '<a href="' + waMsg(w) + '" target="_blank" rel="noopener noreferrer" class="watch-cta" data-fb-contact="1" aria-label="Pyesni per ' + w.brand + ' ' + w.model + ' ne WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i> Pyesni</a>';

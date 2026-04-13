@@ -1,11 +1,12 @@
 (function(){
   var currentFilter = 'all';
   var currentSearch = '';
+  var currentSort   = 'default';
 
   fetch('/watches.json')
     .then(function(r){ return r.json(); })
     .then(function(WATCHES){
-      renderWatches(WATCHES, 'all', '');
+      renderWatches(WATCHES);
 
       document.querySelectorAll('.filter-chip').forEach(function(chip){
         chip.addEventListener('click', function(){
@@ -13,43 +14,58 @@
           chip.classList.add('active');
           chip.setAttribute('aria-pressed','true');
           currentFilter = chip.dataset.filter;
-          renderWatches(WATCHES, currentFilter, currentSearch);
+          renderWatches(WATCHES);
         });
       });
 
       var searchInput = document.getElementById('shopSearch');
       if(searchInput){
-        searchInput.addEventListener('input', function(){
-          currentSearch = this.value.trim().toLowerCase();
-          renderWatches(WATCHES, currentFilter, currentSearch);
-        });
+        function onSearch(){ currentSearch = searchInput.value.trim().toLowerCase(); renderWatches(WATCHES); }
+        searchInput.addEventListener('input', onSearch);
+        searchInput.addEventListener('search', onSearch);
+      }
+
+      var sortEl = document.getElementById('shopSort');
+      if(sortEl){
+        sortEl.addEventListener('change', function(){ currentSort = this.value; renderWatches(WATCHES); });
       }
     })
     .catch(function(){
-      document.getElementById('shopCount').textContent = 'Could not load watches. Please refresh.';
+      document.getElementById('shopGrid').innerHTML = '<p class="no-watches">Could not load watches. Please refresh.</p>';
     });
 
-  function renderWatches(watches, filter, search){
-    var filtered = filter === 'all' ? watches : watches.filter(function(w){ return w.condition === filter; });
-    if(search){
+  function renderWatches(watches){
+    var filtered = currentFilter === 'all' ? watches.slice() : watches.filter(function(w){ return w.condition === currentFilter; });
+
+    if(currentSearch){
+      var s = currentSearch;
       filtered = filtered.filter(function(w){
-        return (w.model + ' ' + w.brand + ' ' + (w.reference||'') + ' ' + (w['description_en']||'')).toLowerCase().includes(search);
+        return (w.model+' '+w.brand+' '+(w.reference||'')+' '+(w.description_en||'')).toLowerCase().includes(s);
       });
     }
+
+    // Sort
+    if(currentSearch && currentSort === 'default'){
+      var s = currentSearch;
+      filtered.sort(function(a,b){
+        var aScore = (a.brand.toLowerCase().startsWith(s)?2:0)+(a.model.toLowerCase().startsWith(s)?1:0);
+        var bScore = (b.brand.toLowerCase().startsWith(s)?2:0)+(b.model.toLowerCase().startsWith(s)?1:0);
+        return bScore - aScore;
+      });
+    } else if(currentSort === 'price-asc'){
+      filtered.sort(function(a,b){ return (a.price||0)-(b.price||0); });
+    } else if(currentSort === 'price-desc'){
+      filtered.sort(function(a,b){ return (b.price||0)-(a.price||0); });
+    } else if(currentSort === 'brand'){
+      filtered.sort(function(a,b){ return (a.brand+a.model).localeCompare(b.brand+b.model); });
+    }
+
     var count = document.getElementById('shopCount');
-    var grid = document.getElementById('shopGrid');
+    var grid  = document.getElementById('shopGrid');
     count.textContent = filtered.length + ' watch' + (filtered.length !== 1 ? 'es' : '') + ' available';
     if(!filtered.length){
       grid.innerHTML = '<p class="no-watches">No watches match this filter right now. Check back soon!</p>';
       return;
-    }
-    if(search){
-      filtered.sort(function(a,b){
-        var s = search.toLowerCase();
-        var aScore = (a.brand.toLowerCase().startsWith(s)?2:0) + (a.model.toLowerCase().startsWith(s)?1:0);
-        var bScore = (b.brand.toLowerCase().startsWith(s)?2:0) + (b.model.toLowerCase().startsWith(s)?1:0);
-        return bScore - aScore;
-      });
     }
     grid.innerHTML = filtered.map(function(w){ return watchCard(w); }).join('');
   }
