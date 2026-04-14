@@ -59,15 +59,13 @@
   /* ── Check stored preference ───────────────────────────────────────────── */
   var stored = localStorage.getItem(STORAGE_KEY);
   if(stored === 'granted'){
-    /* Delay for returning visitors — push FB scripts past TTI so they
-       don't block the main thread during the TBT measurement window.
-       requestIdleCallback fires when the browser has nothing urgent to do.
+    /* Hard 5-second delay for returning visitors.
+       requestIdleCallback fired at ~3-4s on throttled mobile, still inside
+       the TBT measurement window. A fixed 5s setTimeout guarantees the
+       138KB of Facebook scripts load and run AFTER TTI on any device.
+       On real (fast) phones this is imperceptible for conversion tracking.
        New visitors who click Accept (below) still fire immediately. */
-    if('requestIdleCallback' in window){
-      requestIdleCallback(loadPixel, {timeout: 4000});
-    } else {
-      setTimeout(loadPixel, 3500);
-    }
+    setTimeout(loadPixel, 5000);
     return;
   }
   if(stored === 'denied'){ return; }
