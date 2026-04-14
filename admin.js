@@ -8,6 +8,54 @@
   var imageB64  = null;   // base64 string (no prefix)
   var imagePath = null;   // final path in repo e.g. images/watches/foo.jpg
 
+  var sessionPassword = ''; // set on successful login, used to encrypt/decrypt token
+
+  // ── Crypto helpers ───────────────────────────────────────────────────────────
+  function deriveKey(password, salt){
+    return crypto.subtle.importKey(
+      'raw', new TextEncoder().encode(password), 'PBKDF2', false, ['deriveKey']
+    ).then(function(keyMaterial){
+      return crypto.subtle.deriveKey(
+        { name: 'PBKDF2', salt: salt, iterations: 100000, hash: 'SHA-256' },
+        keyMaterial,
+        { name: 'AES-GCM', length: 256 },
+        false,
+        ['encrypt', 'decrypt']
+      );
+    });
+  }
+
+  function encryptToken(token, password){
+    var salt = crypto.getRandomValues(new Uint8Array(16));
+    var iv   = crypto.getRandomValues(new Uint8Array(12));
+    return deriveKey(password, salt).then(function(key){
+      return crypto.subtle.encrypt(
+        { name: 'AES-GCM', iv: iv },
+        key,
+        new TextEncoder().encode(token)
+      ).then(function(ciphertext){
+        return JSON.stringify({
+          salt: btoa(String.fromCharCode.apply(null, salt)),
+          iv:   btoa(String.fromCharCode.apply(null, iv)),
+          data: btoa(String.fromCharCode.apply(null, new Uint8Array(ciphertext)))
+        });
+      });
+    });
+  }
+
+  function decryptToken(storedJson, password){
+    var stored = JSON.parse(storedJson);
+    var salt = new Uint8Array(atob(stored.salt).split('').map(function(c){ return c.charCodeAt(0); }));
+    var iv   = new Uint8Array(atob(stored.iv).split('').map(function(c){ return c.charCodeAt(0); }));
+    var data = new Uint8Array(atob(stored.data).split('').map(function(c){ return c.charCodeAt(0); }));
+    return deriveKey(password, salt).then(function(key){
+      return crypto.subtle.decrypt({ name: 'AES-GCM', iv: iv }, key, data)
+        .then(function(plaintext){
+          return new TextDecoder().decode(plaintext);
+        });
+    });
+  }
+
   // ── Gate ────────────────────────────────────────────────────────────────────
   var gateEl    = document.getElementById('gate');
   var panelEl   = document.getElementById('panel');
@@ -22,8 +70,10 @@
   }
 
   function tryLogin(){
-    sha256hex(pwInput.value).then(function(hash){
+    var pw = pwInput.value;
+    sha256hex(pw).then(function(hash){
       if(hash === PW_HASH){
+        sessionPassword = pw;
         gateEl.style.display = 'none';
         panelEl.style.display = 'block';
         loadSavedToken();
@@ -36,16 +86,38 @@
   }
 
   function loadSavedToken(){
-    var saved = localStorage.getItem('iglisi_gh_token');
-    if(saved){
-      document.getElementById('gh-token').value = saved;
-      document.getElementById('token-connected-wrap').style.display = 'block';
-      document.getElementById('token-setup-wrap').style.display = 'none';
-    }
+    var enc = localStorage.getItem('iglisi_gh_token_enc');
+    if(!enc) return;
+
+    decryptToken(enc, sessionPassword)
+      .then(function(token){
+        // Validate token is still alive before showing connected state
+        return ghValidateToken(token).then(function(valid){
+          if(valid){
+            document.getElementById('gh-token').value = token;
+            document.getElementById('token-connected-wrap').style.display = 'block';
+            document.getElementById('token-setup-wrap').style.display = 'none';
+          } else {
+            localStorage.removeItem('iglisi_gh_token_enc');
+            var note = document.getElementById('token-expired-note');
+            if(note) note.style.display = 'block';
+          }
+        });
+      })
+      .catch(function(){
+        // Decryption failed (wrong password or corrupted) — clear it
+        localStorage.removeItem('iglisi_gh_token_enc');
+      });
+  }
+
+  function ghValidateToken(token){
+    return fetch('https://api.github.com/user', {
+      headers: { Authorization: 'token ' + token, Accept: 'application/vnd.github.v3+json' }
+    }).then(function(r){ return r.ok; }).catch(function(){ return false; });
   }
 
   document.getElementById('token-change-btn').addEventListener('click', function(){
-    localStorage.removeItem('iglisi_gh_token');
+    localStorage.removeItem('iglisi_gh_token_enc');
     document.getElementById('gh-token').value = '';
     document.getElementById('gh-token-visible').value = '';
     document.getElementById('token-connected-wrap').style.display = 'none';
@@ -58,6 +130,7 @@
     gateEl.style.display = 'block';
     pwInput.value = '';
     gateError.textContent = '';
+    sessionPassword = '';
     resetForm();
   });
 
@@ -216,7 +289,12 @@
         step('json','done','watches.json updated \u2713');
         step('done','done','All done \u2014 watch is live!');
         statusEl.className = 'success';
-        localStorage.setItem('iglisi_gh_token', token);
+        // Encrypt and save token for next session
+        if(sessionPassword){
+          encryptToken(token, sessionPassword).then(function(enc){
+            localStorage.setItem('iglisi_gh_token_enc', enc);
+          });
+        }
         // Show connected state for next time
         document.getElementById('token-connected-wrap').style.display = 'block';
         document.getElementById('token-setup-wrap').style.display = 'none';
@@ -250,31 +328,6 @@
       if(!r.ok) return r.text().then(function(t){ throw new Error('GitHub PUT failed ('+r.status+'): '+t); });
       return r.json();
     });
-  }
-
-  // ── Manual fallback (no token) ───────────────────────────────────────────────
-  function publishManually(data, done){
-    fetch('https://raw.githubusercontent.com/acetodiavolo-ops/mina.github.io/main/watches.json?v=2')
-      .then(function(r){ return r.json(); })
-      .then(function(arr){
-        var newWatch = buildWatch(arr, data);
-        arr.push(newWatch);
-        var jsonStr = JSON.stringify(arr, null, 2);
-        document.getElementById('output-section').style.display = 'block';
-        document.getElementById('json-output').value = jsonStr;
-        document.getElementById('output-section').scrollIntoView({behavior:'smooth', block:'start'});
-
-        var statusEl = document.getElementById('submit-status');
-        statusEl.style.display = 'block';
-        statusEl.className = 'info';
-        statusEl.innerHTML = '<strong>No token provided.</strong> Copy the JSON below and paste it into watches.json on GitHub. Also upload <code>'+imagePath+'</code> to <code>/images/watches/</code>.';
-        resetForm();
-        done();
-      })
-      .catch(function(err){
-        alert('Could not load watches.json: '+err.message);
-        done();
-      });
   }
 
   // ── Build watch object ───────────────────────────────────────────────────────
