@@ -58,8 +58,19 @@
 
   /* ── Check stored preference ───────────────────────────────────────────── */
   var stored = localStorage.getItem(STORAGE_KEY);
-  if(stored === 'granted'){ loadPixel(); return; }
-  if(stored === 'denied'){              return; }
+  if(stored === 'granted'){
+    /* Delay for returning visitors — push FB scripts past TTI so they
+       don't block the main thread during the TBT measurement window.
+       requestIdleCallback fires when the browser has nothing urgent to do.
+       New visitors who click Accept (below) still fire immediately. */
+    if('requestIdleCallback' in window){
+      requestIdleCallback(loadPixel, {timeout: 4000});
+    } else {
+      setTimeout(loadPixel, 3500);
+    }
+    return;
+  }
+  if(stored === 'denied'){ return; }
 
   /* ── Build banner ──────────────────────────────────────────────────────── */
   var banner = document.createElement('div');
