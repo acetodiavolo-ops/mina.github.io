@@ -115,6 +115,8 @@ input[type=checkbox]#nav-toggle{position:absolute;width:0;height:0;opacity:0;poi
 .error-state{text-align:center;padding:5rem 1rem;color:#888}
 .error-state h2{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--btn-start);margin-bottom:1rem}
 .loading-state{text-align:center;padding:5rem 1rem;color:#aaa;font-size:1rem}
+/* Mobile header: icon-only WA button so logo has room */
+@media(max-width:768px){.wa-hdr-label{display:none}.btn-primary.wa-hdr{padding:.5rem .75rem;min-width:2.6rem;justify-content:center}}
   </style>
   <link rel="stylesheet" href="/shared.css?v=41">
   <!-- Meta Pixel Code -->
@@ -153,7 +155,7 @@ input[type=checkbox]#nav-toggle{position:absolute;width:0;height:0;opacity:0;poi
         <a href="tel:+355676360510" style="display:none" class="md-flex" aria-label="Call us">
           <i class="fas fa-phone-alt gold" aria-hidden="true"></i>
         </a>
-        <a href="https://api.whatsapp.com/send?phone=355676360510" target="_blank" rel="noopener noreferrer" class="btn-primary" data-fb-contact="1" style="font-size:.875rem;padding:.6rem 1.4rem"><i class="fab fa-whatsapp" aria-hidden="true"></i><span>Book via WhatsApp</span></a>
+        <a href="https://api.whatsapp.com/send?phone=355676360510" target="_blank" rel="noopener noreferrer" class="btn-primary wa-hdr" data-fb-contact="1" style="font-size:.875rem;padding:.6rem 1.4rem"><i class="fab fa-whatsapp" aria-hidden="true"></i><span class="wa-hdr-label">Book via WhatsApp</span></a>
         <a href="/it/shop/watch.html" class="lang-toggle" aria-label="Switch language">
           <i class="fas fa-globe" aria-hidden="true"></i>
           <span>EN</span>
