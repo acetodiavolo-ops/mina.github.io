@@ -26,6 +26,7 @@
       if(hash === PW_HASH){
         gateEl.style.display = 'none';
         panelEl.style.display = 'block';
+        loadSavedToken();
       } else {
         gateError.textContent = 'Incorrect password. Try again.';
         pwInput.value = '';
@@ -33,6 +34,23 @@
       }
     });
   }
+
+  function loadSavedToken(){
+    var saved = localStorage.getItem('iglisi_gh_token');
+    if(saved){
+      document.getElementById('gh-token').value = saved;
+      document.getElementById('token-connected-wrap').style.display = 'block';
+      document.getElementById('token-setup-wrap').style.display = 'none';
+    }
+  }
+
+  document.getElementById('token-change-btn').addEventListener('click', function(){
+    localStorage.removeItem('iglisi_gh_token');
+    document.getElementById('gh-token').value = '';
+    document.getElementById('gh-token-visible').value = '';
+    document.getElementById('token-connected-wrap').style.display = 'none';
+    document.getElementById('token-setup-wrap').style.display = 'block';
+  });
   document.getElementById('login-btn').addEventListener('click', tryLogin);
   pwInput.addEventListener('keydown', function(e){ if(e.key==='Enter') tryLogin(); });
   document.getElementById('logout-btn').addEventListener('click', function(){
@@ -44,10 +62,13 @@
   });
 
   // ── GitHub token toggle ──────────────────────────────────────────────────────
-  var ghTokenEl = document.getElementById('gh-token');
+  var ghTokenVisible = document.getElementById('gh-token-visible');
+  var ghTokenEl      = document.getElementById('gh-token'); // hidden field holding actual value
+  // Keep hidden field in sync with visible input
+  ghTokenVisible.addEventListener('input', function(){ ghTokenEl.value = this.value.trim(); });
   document.getElementById('token-toggle').addEventListener('click', function(){
-    var isHidden = ghTokenEl.type === 'password';
-    ghTokenEl.type = isHidden ? 'text' : 'password';
+    var isHidden = ghTokenVisible.type === 'password';
+    ghTokenVisible.type = isHidden ? 'text' : 'password';
     this.textContent = isHidden ? 'hide' : 'show';
   });
 
@@ -132,11 +153,11 @@
     var token     = document.getElementById('gh-token').value.trim();
 
     if(!brand || !model || !price || !descEn){
-      alert('Please fill in Brand, Model, Price and English Description (marked *).');
+      alert('Please fill in Brand, Model name, Price and Description (marked *).');
       return;
     }
     if(!imageFile || !imageB64){
-      alert('Please select a watch photo.');
+      alert('Please select a photo of the watch.');
       return;
     }
 
@@ -148,9 +169,11 @@
         addBtn.disabled = false;
       });
     } else {
-      publishManually({brand:brand,model:model,reference:reference,year:year,price:price,condition:condition,descEn:descEn,descIt:descIt,descSq:descSq,sold:sold}, function(){
-        addBtn.disabled = false;
-      });
+      var statusEl = document.getElementById('submit-status');
+      statusEl.style.display = 'block';
+      statusEl.className = 'error';
+      statusEl.textContent = 'Not connected to GitHub. Please contact your admin to set up the connection.';
+      addBtn.disabled = false;
     }
   });
 
@@ -193,6 +216,10 @@
         step('json','done','watches.json updated \u2713');
         step('done','done','All done \u2014 watch is live!');
         statusEl.className = 'success';
+        localStorage.setItem('iglisi_gh_token', token);
+        // Show connected state for next time
+        document.getElementById('token-connected-wrap').style.display = 'block';
+        document.getElementById('token-setup-wrap').style.display = 'none';
         resetForm();
         done();
       })

@@ -53,6 +53,14 @@
     .token-status.ok { color: #1a7a3f; }
     .token-status.err { color: #c0392b; }
     #token-toggle { background: none; border: none; color: #b4945c; font-size: .78rem; cursor: pointer; padding: 0; font-weight: 600; text-decoration: underline; }
+    .token-connected { background: #eafaf1; border: 1.5px solid #a8dfbe; border-radius: 10px; padding: .75rem 1rem; display: flex; align-items: center; justify-content: space-between; }
+    .token-connected span { font-size: .88rem; font-weight: 600; color: #1a6b3f; }
+    .token-connected button { background: none; border: none; font-size: .78rem; color: #888; cursor: pointer; text-decoration: underline; }
+    /* Collapsible extra descriptions */
+    details.extra-langs summary { font-size: .82rem; font-weight: 600; color: #b4945c; cursor: pointer; padding: .4rem 0; list-style: none; display: flex; align-items: center; gap: .35rem; }
+    details.extra-langs summary::before { content: '+'; font-size: 1rem; line-height: 1; }
+    details.extra-langs[open] summary::before { content: '−'; }
+    details.extra-langs summary::-webkit-details-marker { display: none; }
 
     /* IMAGE UPLOAD */
     .image-upload-area { border: 2px dashed #ddd; border-radius: 10px; padding: 1.5rem; text-align: center; cursor: pointer; transition: border-color .2s, background .2s; position: relative; }
@@ -119,17 +127,28 @@
     </div>
 
     <!-- GITHUB TOKEN -->
-    <div class="card token-card">
+    <div class="card token-card" id="token-card">
       <h3>GitHub Connection</h3>
-      <p class="form-hint" style="margin-bottom:.75rem">Enter your GitHub token to publish directly — image and watch data will be committed automatically. <a href="https://github.com/settings/tokens/new?scopes=repo&description=IglisiAdmin" target="_blank" rel="noopener" style="color:#b4945c">Generate token</a> (needs <strong>repo</strong> scope).</p>
-      <div class="form-group" style="margin-bottom:.5rem">
-        <div style="display:flex;gap:.5rem;align-items:center">
-          <input type="password" id="gh-token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" style="font-family:monospace;font-size:.85rem">
-          <button type="button" id="token-toggle">show</button>
+      <!-- Connected state (shown when token is saved) -->
+      <div id="token-connected-wrap" style="display:none">
+        <div class="token-connected">
+          <span>✓ Connected — watches publish automatically</span>
+          <button type="button" id="token-change-btn">Change</button>
         </div>
-        <div class="token-status" id="token-status"></div>
+        <input type="hidden" id="gh-token">
       </div>
-      <p class="form-hint">No token? Leave blank — you'll get a JSON to paste into GitHub manually.</p>
+      <!-- Setup state (shown when no saved token) -->
+      <div id="token-setup-wrap">
+        <p class="form-hint" style="margin-bottom:.75rem">Paste the GitHub token below. Once saved, you won't need to enter it again.</p>
+        <div class="form-group" style="margin-bottom:.5rem">
+          <div style="display:flex;gap:.5rem;align-items:center">
+            <input type="password" id="gh-token-visible" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" style="font-family:monospace;font-size:.85rem">
+            <button type="button" id="token-toggle">show</button>
+          </div>
+          <div class="token-status" id="token-status"></div>
+        </div>
+        <p class="form-hint" style="color:#c0392b">No token? The watch cannot be published automatically — contact your admin.</p>
+      </div>
     </div>
 
     <!-- WATCH FORM -->
@@ -164,7 +183,7 @@
 
         <div class="form-row">
           <div class="form-group">
-            <label for="f-reference">Reference / SKU <span style="color:#999;font-weight:400">(optional)</span></label>
+            <label for="f-reference">Model Code <span style="color:#999;font-weight:400">(optional)</span></label>
             <input type="text" id="f-reference" placeholder="e.g. CL213S-02SS">
           </div>
           <div class="form-group">
@@ -205,19 +224,23 @@
         </div>
 
         <div class="form-group">
-          <label for="f-desc-en">Description (English) <span style="color:#c0392b">*</span></label>
-          <textarea id="f-desc-en" rows="3" placeholder="Describe the watch in English…" required></textarea>
+          <label for="f-desc-en">Description <span style="color:#c0392b">*</span></label>
+          <textarea id="f-desc-en" rows="3" placeholder="Describe the watch…" required></textarea>
         </div>
 
-        <div class="form-group">
-          <label for="f-desc-it">Description (Italian) <span style="color:#999;font-weight:400">(optional)</span></label>
-          <textarea id="f-desc-it" rows="2" placeholder="Descrizione in italiano…"></textarea>
-        </div>
-
-        <div class="form-group">
-          <label for="f-desc-sq">Description (Albanian) <span style="color:#999;font-weight:400">(optional)</span></label>
-          <textarea id="f-desc-sq" rows="2" placeholder="Përshkrim në shqip…"></textarea>
-        </div>
+        <details class="extra-langs" style="margin-bottom:1.1rem">
+          <summary>Add Italian &amp; Albanian descriptions (optional)</summary>
+          <div style="padding-top:.85rem;display:flex;flex-direction:column;gap:.85rem">
+            <div class="form-group" style="margin:0">
+              <label for="f-desc-it">Italian description</label>
+              <textarea id="f-desc-it" rows="2" placeholder="Descrizione in italiano…"></textarea>
+            </div>
+            <div class="form-group" style="margin:0">
+              <label for="f-desc-sq">Albanian description</label>
+              <textarea id="f-desc-sq" rows="2" placeholder="Përshkrim në shqip…"></textarea>
+            </div>
+          </div>
+        </details>
 
         <div class="form-group">
           <div class="checkbox-row">
@@ -226,16 +249,16 @@
           </div>
         </div>
 
-        <button type="submit" id="add-btn">Publish Watch</button>
+        <button type="submit" id="add-btn">Add Watch to Shop</button>
 
         <!-- PROGRESS / STATUS -->
         <div id="submit-status"></div>
       </form>
     </div>
 
-    <!-- FALLBACK: manual JSON output (shown if no token) -->
-    <div id="output-section" class="card">
-      <h3>Updated watches.json — paste into GitHub</h3>
+    <!-- FALLBACK: manual JSON output (shown if no token) — hidden from normal view -->
+    <div id="output-section" class="card" style="display:none">
+      <h3>Technical fallback — JSON</h3>
       <div class="output-instruction">
         No GitHub token was provided. Copy the JSON below and paste it into <strong>watches.json</strong> in your GitHub repo, then commit.<br>
         <strong>Also upload the image</strong> to <code>/images/watches/</code> in the repo.
