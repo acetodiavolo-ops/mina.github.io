@@ -767,13 +767,7 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
 .clock-section{background:#06153b;padding:2rem 1.5rem 1.75rem;display:flex;flex-direction:column;align-items:center;gap:1.5rem;border-bottom:1px solid rgba(180,148,92,.18)}
 .clock-inner{display:flex;flex-direction:column;align-items:center;gap:1.5rem;max-width:860px;width:100%}
 @media(min-width:768px){.clock-inner{flex-direction:row;justify-content:center;gap:3rem}}
-.clock-face-wrap{position:relative;width:140px;height:140px;flex-shrink:0}
-.clock-face{width:140px;height:140px;border-radius:50%;border:2px solid rgba(180,148,92,.45);background:radial-gradient(circle at 40% 35%,#0e2060,#06153b);position:relative;box-shadow:0 0 0 5px rgba(180,148,92,.1),inset 0 0 24px rgba(0,0,0,.45)}
-.clock-center-dot{width:7px;height:7px;border-radius:50%;background:#b4945c;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10;box-shadow:0 0 4px rgba(180,148,92,.6)}
-.clock-hand{position:absolute;bottom:50%;left:50%;transform-origin:bottom center;border-radius:3px}
-.clock-hour{width:3px;height:38px;margin-left:-1.5px;background:#e8e2d0}
-.clock-minute{width:2px;height:52px;margin-left:-1px;background:#c8bfa8}
-.clock-second{width:1.5px;height:55px;margin-left:-.75px;background:#b4945c}
+.clock-face-wrap{flex-shrink:0}
 .clock-cities{display:flex;gap:.65rem;flex-wrap:wrap;justify-content:center}
 .clock-city{background:rgba(255,255,255,.05);border:1px solid rgba(180,148,92,.18);border-radius:.55rem;padding:.55rem .9rem;text-align:center;min-width:78px}
 .clock-city-name{font-size:.6rem;color:rgba(180,148,92,.75);letter-spacing:.09em;text-transform:uppercase;margin-bottom:.2rem}
@@ -1006,16 +1000,9 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
     <!-- LIVE CLOCK -->
     <section class="clock-section" aria-label="Orario in tempo reale">
       <div class="clock-inner">
-        <div class="clock-face-wrap">
-          <div class="clock-face" id="iglClockFace">
-            <div class="clock-center-dot"></div>
-            <div class="clock-hand clock-hour"   id="iglClockH"></div>
-            <div class="clock-hand clock-minute" id="iglClockM"></div>
-            <div class="clock-hand clock-second" id="iglClockS"></div>
-          </div>
-        </div>
+        <div id="iglClockWrap"></div>
         <div class="clock-cities" id="iglCities"></div>
-        <button class="clock-tick-btn" id="iglTickBtn" onclick="iglToggleTick()">
+        <button class="clock-tick-btn" id="iglTickBtn">
           <div class="clock-tick-dot" id="iglTickDot"></div>
           <span id="iglTickLabel">Suono tic-tac</span>
         </button>
