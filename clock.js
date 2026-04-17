@@ -33,7 +33,7 @@
 
   /* ── Build clock SVG ── */
   var svg=el('svg',{viewBox:'0 0 220 220',width:'200',height:'200',
-    style:'display:block;overflow:visible'});
+    style:'display:block;width:200px;height:200px'});
 
   /* Cream fill */
   svg.appendChild(el('circle',{cx:CX,cy:CY,r:108,fill:'#f5f0e8'}));
