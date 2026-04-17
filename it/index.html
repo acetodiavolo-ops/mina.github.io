@@ -762,7 +762,28 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
   user-select: none;
 }
 
-  </style>
+  
+/* ── LIVE CLOCK ───────────────────────────────────────────── */
+.clock-section{background:#06153b;padding:2rem 1.5rem 1.75rem;display:flex;flex-direction:column;align-items:center;gap:1.5rem;border-bottom:1px solid rgba(180,148,92,.18)}
+.clock-inner{display:flex;flex-direction:column;align-items:center;gap:1.5rem;max-width:860px;width:100%}
+@media(min-width:768px){.clock-inner{flex-direction:row;justify-content:center;gap:3rem}}
+.clock-face-wrap{position:relative;width:140px;height:140px;flex-shrink:0}
+.clock-face{width:140px;height:140px;border-radius:50%;border:2px solid rgba(180,148,92,.45);background:radial-gradient(circle at 40% 35%,#0e2060,#06153b);position:relative;box-shadow:0 0 0 5px rgba(180,148,92,.1),inset 0 0 24px rgba(0,0,0,.45)}
+.clock-center-dot{width:7px;height:7px;border-radius:50%;background:#b4945c;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10;box-shadow:0 0 4px rgba(180,148,92,.6)}
+.clock-hand{position:absolute;bottom:50%;left:50%;transform-origin:bottom center;border-radius:3px}
+.clock-hour{width:3px;height:38px;margin-left:-1.5px;background:#e8e2d0}
+.clock-minute{width:2px;height:52px;margin-left:-1px;background:#c8bfa8}
+.clock-second{width:1.5px;height:55px;margin-left:-.75px;background:#b4945c}
+.clock-cities{display:flex;gap:.65rem;flex-wrap:wrap;justify-content:center}
+.clock-city{background:rgba(255,255,255,.05);border:1px solid rgba(180,148,92,.18);border-radius:.55rem;padding:.55rem .9rem;text-align:center;min-width:78px}
+.clock-city-name{font-size:.6rem;color:rgba(180,148,92,.75);letter-spacing:.09em;text-transform:uppercase;margin-bottom:.2rem}
+.clock-city-time{font-size:.95rem;font-weight:600;color:#fff;letter-spacing:.02em;font-variant-numeric:tabular-nums}
+.clock-city-date{font-size:.58rem;color:rgba(255,255,255,.35);margin-top:.12rem}
+.clock-tick-btn{display:flex;align-items:center;gap:.45rem;background:none;border:1px solid rgba(255,255,255,.12);border-radius:.45rem;padding:.35rem .8rem;cursor:pointer;font-size:.68rem;color:rgba(255,255,255,.4);transition:border-color .2s,color .2s;font-family:inherit}
+.clock-tick-btn:hover{border-color:rgba(180,148,92,.35);color:rgba(255,255,255,.65)}
+.clock-tick-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.18);transition:background .2s;flex-shrink:0}
+.clock-tick-dot.on{background:#b4945c;box-shadow:0 0 5px rgba(180,148,92,.5)}
+</style>
 
   <!-- STRUCTURED DATA -->
   <script type="application/ld+json">
@@ -981,99 +1002,22 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
         </div>
       </div>
     </section>
-    <!-- PROMISE -->
-    <section class="pt-16 pb-8 bg-white/70" aria-label="Le nostre promesse" data-animate>
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 promise-grid">
-          <div class="promise-card">
-            <i class="fas fa-bolt promise-icon" aria-hidden="true"></i>
-            <h2 class="font-bold text-lg">Servizio Veloce</h2>
-            <p class="text-gray-500 text-sm">Batteria in meno di 2 min</p>
-          </div>
-          <div class="promise-card">
-            <span class="dual-gear promise-icon" aria-hidden="true"><i class="fas fa-cog"></i><i class="fas fa-cog"></i></span>
-            <h2 class="font-bold text-lg">Artigianato Esperto</h2>
-            <p class="text-gray-500 text-sm">Oltre 20 anni di esperienza</p>
-          </div>
-          <div class="promise-card">
-            <i class="fas fa-euro-sign promise-icon" aria-hidden="true"></i>
-            <h2 class="font-bold text-lg">Prezzi Onesti</h2>
-            <p class="text-gray-500 text-sm">Nessun costo nascosto</p>
-          </div>
-          <div class="promise-card">
-            <i class="fas fa-gem promise-icon" aria-hidden="true"></i>
-            <h2 class="font-bold text-lg">Lavoro Garantito</h2>
-            <p class="text-gray-500 text-sm">Qualità affidabile</p>
+    <!-- LIVE CLOCK -->
+    <section class="clock-section" aria-label="Orario in tempo reale">
+      <div class="clock-inner">
+        <div class="clock-face-wrap">
+          <div class="clock-face" id="iglClockFace">
+            <div class="clock-center-dot"></div>
+            <div class="clock-hand clock-hour"   id="iglClockH"></div>
+            <div class="clock-hand clock-minute" id="iglClockM"></div>
+            <div class="clock-hand clock-second" id="iglClockS"></div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- TRUST BADGES -->
-    <section class="pb-16 pt-8 bg-white/70" aria-label="I nostri numeri" data-animate data-animate-delay="0.1s">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 promise-grid">
-          <div class="trust-badge">
-            <i class="fas fa-calendar-alt text-3xl gold mb-2" aria-hidden="true"></i>
-            <p class="font-bold text-xl">Dal 2009</p>
-            <p class="text-gray-500 text-sm"><span data-years-since="2002"></span> anni di esperienza</p>
-          </div>
-          <div class="trust-badge">
-            <i class="fas fa-clock text-3xl gold mb-2" aria-hidden="true"></i>
-            <p class="font-bold text-xl counter" data-target="350000" data-suffix="K+">350K+</p>
-            <p class="text-gray-500 text-sm">Orologi riparati</p>
-          </div>
-          <div class="trust-badge">
-            <i class="fas fa-key text-3xl gold mb-2" aria-hidden="true"></i>
-            <p class="font-bold text-xl counter" data-target="700000" data-suffix="K+">700K+</p>
-            <p class="text-gray-500 text-sm">Chiavi duplicate</p>
-          </div>
-          <div class="trust-badge">
-            <i class="fas fa-smile text-3xl gold mb-2" aria-hidden="true"></i>
-            <p class="font-bold text-xl counter" data-target="15000" data-suffix="K+">15K+</p>
-            <p class="text-gray-500 text-sm">Clienti soddisfatti</p>
-          </div>
-        </div>
-        <div class="mt-6 pt-16 text-center">
-          <span class="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full border border-[#b4945c] shadow-sm">
-            <i class="fas fa-star gold" aria-hidden="true"></i>
-            <span class="text-gray-800">Oltre <strong data-years-since="2002"></strong> Anni di Esperienza</span>
-          </span>
-        </div>
-      </div>
-    </section>
-    <!-- WHY CHOOSE US -->
-    <section class="py-24 bg-white" aria-labelledby="why-heading" data-animate>
-      <div class="max-w-7xl mx-auto px-6">
-        <h2 id="why-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">
-          Perché <span class="gold-display">Sceglierci</span>
-        </h2>
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="service-card">
-            <i class="fas fa-gem text-4xl gold mb-6" aria-hidden="true"></i>
-            <h3 class="text-2xl font-bold mb-3">Competenze Affinate</h3>
-            <p class="text-gray-600">Artigianato familiare con oltre 20 anni di esperienza. Ogni orologio e ogni chiave riceve attenzione personale da veri maestri del mestiere.</p>
-          </div>
-          <div class="service-card">
-            <i class="fas fa-microscope text-4xl gold mb-6" aria-hidden="true"></i>
-            <h3 class="text-2xl font-bold mb-3">Attrezzature di Precisione</h3>
-            <p class="text-gray-600">Macchinari professionali per il taglio delle chiavi e la diagnostica degli orologi – precisione al micron.</p>
-          </div>
-          <div class="service-card">
-            <i class="fas fa-hand-holding-heart text-4xl gold mb-6" aria-hidden="true"></i>
-            <h3 class="text-2xl font-bold mb-3">Attenzione Personale</h3>
-            <p class="text-gray-600">Trattiamo i vostri oggetti come fossero nostri. La maggior parte delle riparazioni vengono eseguite mentre aspettate.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- SERVICES CTA -->
-    <section class="py-16 bg-white" aria-label="Servizi" data-animate>
-      <div class="max-w-3xl mx-auto px-6 text-center">
-        <h2 class="text-4xl md:text-5xl mb-6 section-title">I Nostri <span class="gold-display">Servizi</span></h2>
-        <p class="text-gray-600 text-lg mb-8">Sostituzione batteria in meno di 2 minuti, riparazione orologi, cambio cinturino e copia chiavi — tutto mentre aspetti. Accettiamo senza appuntamento.</p>
-        <a href="/it/services.html" class="btn-primary inline-flex items-center gap-2">
-          <i class="fas fa-tools" aria-hidden="true"></i> Vedi Tutti i Servizi
-        </a>
+        <div class="clock-cities" id="iglCities"></div>
+        <button class="clock-tick-btn" id="iglTickBtn" onclick="iglToggleTick()">
+          <div class="clock-tick-dot" id="iglTickDot"></div>
+          <span id="iglTickLabel">Suono tic-tac</span>
+        </button>
       </div>
     </section>
     <!-- FEATURED WATCHES -->
@@ -1202,6 +1146,101 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
             Vedi Tutti gli Orologi
           </a>
         </div>
+      </div>
+    </section>
+    <!-- PROMISE -->
+    <section class="pt-16 pb-8 bg-white/70" aria-label="Le nostre promesse" data-animate>
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 promise-grid">
+          <div class="promise-card">
+            <i class="fas fa-bolt promise-icon" aria-hidden="true"></i>
+            <h2 class="font-bold text-lg">Servizio Veloce</h2>
+            <p class="text-gray-500 text-sm">Batteria in meno di 2 min</p>
+          </div>
+          <div class="promise-card">
+            <span class="dual-gear promise-icon" aria-hidden="true"><i class="fas fa-cog"></i><i class="fas fa-cog"></i></span>
+            <h2 class="font-bold text-lg">Artigianato Esperto</h2>
+            <p class="text-gray-500 text-sm">Oltre 20 anni di esperienza</p>
+          </div>
+          <div class="promise-card">
+            <i class="fas fa-euro-sign promise-icon" aria-hidden="true"></i>
+            <h2 class="font-bold text-lg">Prezzi Onesti</h2>
+            <p class="text-gray-500 text-sm">Nessun costo nascosto</p>
+          </div>
+          <div class="promise-card">
+            <i class="fas fa-gem promise-icon" aria-hidden="true"></i>
+            <h2 class="font-bold text-lg">Lavoro Garantito</h2>
+            <p class="text-gray-500 text-sm">Qualità affidabile</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- TRUST BADGES -->
+    <section class="pb-16 pt-8 bg-white/70" aria-label="I nostri numeri" data-animate data-animate-delay="0.1s">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 promise-grid">
+          <div class="trust-badge">
+            <i class="fas fa-calendar-alt text-3xl gold mb-2" aria-hidden="true"></i>
+            <p class="font-bold text-xl">Dal 2009</p>
+            <p class="text-gray-500 text-sm"><span data-years-since="2002"></span> anni di esperienza</p>
+          </div>
+          <div class="trust-badge">
+            <i class="fas fa-clock text-3xl gold mb-2" aria-hidden="true"></i>
+            <p class="font-bold text-xl counter" data-target="350000" data-suffix="K+">350K+</p>
+            <p class="text-gray-500 text-sm">Orologi riparati</p>
+          </div>
+          <div class="trust-badge">
+            <i class="fas fa-key text-3xl gold mb-2" aria-hidden="true"></i>
+            <p class="font-bold text-xl counter" data-target="700000" data-suffix="K+">700K+</p>
+            <p class="text-gray-500 text-sm">Chiavi duplicate</p>
+          </div>
+          <div class="trust-badge">
+            <i class="fas fa-smile text-3xl gold mb-2" aria-hidden="true"></i>
+            <p class="font-bold text-xl counter" data-target="15000" data-suffix="K+">15K+</p>
+            <p class="text-gray-500 text-sm">Clienti soddisfatti</p>
+          </div>
+        </div>
+        <div class="mt-6 pt-16 text-center">
+          <span class="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full border border-[#b4945c] shadow-sm">
+            <i class="fas fa-star gold" aria-hidden="true"></i>
+            <span class="text-gray-800">Oltre <strong data-years-since="2002"></strong> Anni di Esperienza</span>
+          </span>
+        </div>
+      </div>
+    </section>
+    <!-- WHY CHOOSE US -->
+    <section class="py-24 bg-white" aria-labelledby="why-heading" data-animate>
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 id="why-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">
+          Perché <span class="gold-display">Sceglierci</span>
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="service-card">
+            <i class="fas fa-gem text-4xl gold mb-6" aria-hidden="true"></i>
+            <h3 class="text-2xl font-bold mb-3">Competenze Affinate</h3>
+            <p class="text-gray-600">Artigianato familiare con oltre 20 anni di esperienza. Ogni orologio e ogni chiave riceve attenzione personale da veri maestri del mestiere.</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-microscope text-4xl gold mb-6" aria-hidden="true"></i>
+            <h3 class="text-2xl font-bold mb-3">Attrezzature di Precisione</h3>
+            <p class="text-gray-600">Macchinari professionali per il taglio delle chiavi e la diagnostica degli orologi – precisione al micron.</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-hand-holding-heart text-4xl gold mb-6" aria-hidden="true"></i>
+            <h3 class="text-2xl font-bold mb-3">Attenzione Personale</h3>
+            <p class="text-gray-600">Trattiamo i vostri oggetti come fossero nostri. La maggior parte delle riparazioni vengono eseguite mentre aspettate.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SERVICES CTA -->
+    <section class="py-16 bg-white" aria-label="Servizi" data-animate>
+      <div class="max-w-3xl mx-auto px-6 text-center">
+        <h2 class="text-4xl md:text-5xl mb-6 section-title">I Nostri <span class="gold-display">Servizi</span></h2>
+        <p class="text-gray-600 text-lg mb-8">Sostituzione batteria in meno di 2 minuti, riparazione orologi, cambio cinturino e copia chiavi — tutto mentre aspetti. Accettiamo senza appuntamento.</p>
+        <a href="/it/services.html" class="btn-primary inline-flex items-center gap-2">
+          <i class="fas fa-tools" aria-hidden="true"></i> Vedi Tutti i Servizi
+        </a>
       </div>
     </section>
     <!-- MINI REVIEWS -->
@@ -1350,5 +1389,49 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
 
   <script src="/shared.js?v=20" defer></script>
 
+  <script>
+  /* Iglisi Live Clock */
+  (function(){
+    var CITIES=[{n:'Durres',tz:'Europe/Tirane'},{n:'London',tz:'Europe/London'},{n:'Rome',tz:'Europe/Rome'},{n:'New York',tz:'America/New_York'}];
+    var face=document.getElementById('iglClockFace');
+    if(!face)return;
+    for(var i=0;i<60;i++){
+      var major=i%5===0,ang=i/60*360,rad=(ang-90)*Math.PI/180,r=63,cx=70,cy=70;
+      var x=cx+Math.cos(rad)*r,y=cy+Math.sin(rad)*r;
+      var tk=document.createElement('div');
+      tk.style.cssText='position:absolute;width:'+(major?2:1)+'px;height:'+(major?10:5)+'px;background:'+(major?'rgba(180,148,92,.65)':'rgba(255,255,255,.2)')+';left:'+x+'px;bottom:'+(140-y)+'px;transform-origin:bottom center;transform:rotate('+ang+'deg);margin-left:-1px';
+      face.appendChild(tk);
+    }
+    var row=document.getElementById('iglCities');
+    CITIES.forEach(function(c,i){
+      var card=document.createElement('div');card.className='clock-city';
+      card.innerHTML='<div class="clock-city-name">'+c.n+'</div><div class="clock-city-time" id="ict'+i+'">--:--:--</div><div class="clock-city-date" id="icd'+i+'"></div>';
+      row.appendChild(card);
+    });
+    function update(){
+      var now=new Date();
+      var s=now.getSeconds()+now.getMilliseconds()/1000,m=now.getMinutes()+s/60,h=(now.getHours()%12)+m/60;
+      document.getElementById('iglClockS').style.transform='rotate('+(s*6)+'deg)';
+      document.getElementById('iglClockM').style.transform='rotate('+(m*6)+'deg)';
+      document.getElementById('iglClockH').style.transform='rotate('+(h*30)+'deg)';
+      CITIES.forEach(function(c,i){
+        try{
+          document.getElementById('ict'+i).textContent=now.toLocaleTimeString('it-IT',{timeZone:c.tz,hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
+          document.getElementById('icd'+i).textContent=now.toLocaleDateString('it-IT',{timeZone:c.tz,weekday:'short',month:'short',day:'numeric'});
+        }catch(e){}
+      });
+    }
+    update();setInterval(update,1000);
+    var actx=null,ticking=false,tto=null,tiv=null;
+    function playTick(){if(!actx)return;var sr=actx.sampleRate,buf=actx.createBuffer(1,Math.floor(sr*.04),sr),d=buf.getChannelData(0);for(var i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*Math.exp(-i/(sr*.008));var src=actx.createBufferSource(),g=actx.createGain();g.gain.value=0.14;src.buffer=buf;src.connect(g);g.connect(actx.destination);src.start();}
+    window.iglToggleTick=function(){
+      ticking=!ticking;
+      document.getElementById('iglTickDot').className='clock-tick-dot'+(ticking?' on':'');
+      document.getElementById('iglTickLabel').textContent=ticking?'Attivo':'Suono tic-tac';
+      if(ticking){if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();if(actx.state==='suspended')actx.resume();var ms=1000-new Date().getMilliseconds();tto=setTimeout(function(){if(!ticking)return;playTick();tiv=setInterval(function(){if(ticking)playTick();},1000);},ms);}
+      else{clearTimeout(tto);clearInterval(tiv);}
+    };
+  })();
+  </script>
 </body>
 </html>
