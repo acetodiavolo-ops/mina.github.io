@@ -306,54 +306,106 @@
       svg.setAttribute('viewBox','0 0 '+opts.size+' '+opts.size);
       svg.setAttribute('style','display:block;overflow:visible');
       var jewel=opts.dark?'#0d1b3e':'#ffffff';
-      var spokeR=r-14;
+      var spokeR=r-13;
 
-      svg.appendChild(svgEl('circle',{cx:cx,cy:cy,r:r,fill:'none',stroke:opts.color,'stroke-width':'1.5'}));
-      svg.appendChild(svgEl('circle',{cx:cx,cy:cy,r:r-7,fill:'none',stroke:opts.color,'stroke-width':'0.5',opacity:'0.22'}));
+      /* Outer bezel ring */
+      svg.appendChild(svgEl('circle',{cx:cx,cy:cy,r:r,fill:'none',stroke:opts.color,'stroke-width':'2'}));
+      /* Chapter track band */
+      svg.appendChild(svgEl('circle',{cx:cx,cy:cy,r:r-4,fill:'none',stroke:opts.color,'stroke-width':'0.4',opacity:'0.25'}));
+      /* Inner guide ring */
+      svg.appendChild(svgEl('circle',{cx:cx,cy:cy,r:r-8,fill:'none',stroke:opts.color,'stroke-width':'0.5',opacity:'0.18'}));
 
+      /* Major ticks at 0°/90°/180°/270° */
       var majTicks=[0,90,180,270];
       for(var m=0;m<majTicks.length;m++){
         var rad=(majTicks[m]-90)*Math.PI/180;
         svg.appendChild(svgEl('line',{
           x1:cx+(r-1)*Math.cos(rad),y1:cy+(r-1)*Math.sin(rad),
-          x2:cx+(r-9)*Math.cos(rad),y2:cy+(r-9)*Math.sin(rad),
+          x2:cx+(r-10)*Math.cos(rad),y2:cy+(r-10)*Math.sin(rad),
           stroke:opts.color,'stroke-width':'2','stroke-linecap':'round'
         }));
       }
+      /* Mid ticks at 45°/135°/225°/315° */
+      var midTicks=[45,135,225,315];
+      for(var mi=0;mi<midTicks.length;mi++){
+        var radMi=(midTicks[mi]-90)*Math.PI/180;
+        svg.appendChild(svgEl('line',{
+          x1:cx+(r-1)*Math.cos(radMi),y1:cy+(r-1)*Math.sin(radMi),
+          x2:cx+(r-6)*Math.cos(radMi),y2:cy+(r-6)*Math.sin(radMi),
+          stroke:opts.color,'stroke-width':'1','stroke-linecap':'round',opacity:'0.5'
+        }));
+      }
+      /* Minor ticks */
       var minTicks=[30,60,120,150,210,240,300,330];
       for(var n=0;n<minTicks.length;n++){
         var rad2=(minTicks[n]-90)*Math.PI/180;
         svg.appendChild(svgEl('line',{
           x1:cx+(r-1)*Math.cos(rad2),y1:cy+(r-1)*Math.sin(rad2),
           x2:cx+(r-5)*Math.cos(rad2),y2:cy+(r-5)*Math.sin(rad2),
-          stroke:opts.color,'stroke-width':'0.75',opacity:'0.45','stroke-linecap':'round'
+          stroke:opts.color,'stroke-width':'0.75',opacity:'0.35','stroke-linecap':'round'
         }));
       }
 
+      /* Timing screws (cross-head) at 45°/135°/225°/315° on the bezel */
+      var screwPos=[45,135,225,315];
+      for(var sc=0;sc<screwPos.length;sc++){
+        var scRad=(screwPos[sc]-90)*Math.PI/180;
+        var sx=cx+(r-0.5)*Math.cos(scRad), sy=cy+(r-0.5)*Math.sin(scRad);
+        var sl=1.6, perpScRad=scRad+Math.PI/2;
+        svg.appendChild(svgEl('circle',{cx:sx.toFixed(2),cy:sy.toFixed(2),r:'2.8',fill:jewel,stroke:opts.color,'stroke-width':'0.8'}));
+        svg.appendChild(svgEl('line',{
+          x1:(sx+sl*Math.cos(scRad)).toFixed(2),y1:(sy+sl*Math.sin(scRad)).toFixed(2),
+          x2:(sx-sl*Math.cos(scRad)).toFixed(2),y2:(sy-sl*Math.sin(scRad)).toFixed(2),
+          stroke:opts.color,'stroke-width':'0.6'
+        }));
+        svg.appendChild(svgEl('line',{
+          x1:(sx+sl*Math.cos(perpScRad)).toFixed(2),y1:(sy+sl*Math.sin(perpScRad)).toFixed(2),
+          x2:(sx-sl*Math.cos(perpScRad)).toFixed(2),y2:(sy-sl*Math.sin(perpScRad)).toFixed(2),
+          stroke:opts.color,'stroke-width':'0.6'
+        }));
+      }
+
+      /* Hairspring: Archimedean spiral in the centre, drawn under the rotating wheel
+         so it peeks through the gaps between spokes as the wheel oscillates. */
+      var spPts=80, turns=2.5, rIn=8, rOut=21;
+      var spPath='';
+      for(var sp=0;sp<=spPts;sp++){
+        var t=sp/spPts;
+        var ang=t*turns*Math.PI*2-Math.PI/2;
+        var rr=rIn+(rOut-rIn)*t;
+        spPath+=(sp===0?'M':'L')+(cx+rr*Math.cos(ang)).toFixed(2)+','+(cy+rr*Math.sin(ang)).toFixed(2);
+      }
+      svg.appendChild(svgEl('path',{d:spPath,fill:'none',stroke:opts.color,'stroke-width':'0.5',opacity:'0.28'}));
+
+      /* Rotating wheel group */
       var g=document.createElementNS(ns,'g');
+
+      /* Tapered spokes: polygon wide at the hub, narrow at the jewel */
       var spokes=[0,90,180,270];
       for(var s=0;s<spokes.length;s++){
         var sRad=(spokes[s]-90)*Math.PI/180;
-        g.appendChild(svgEl('line',{
-          x1:cx,y1:cy,x2:cx+spokeR*Math.cos(sRad),y2:cy+spokeR*Math.sin(sRad),
-          stroke:opts.color,'stroke-width':'2.5','stroke-linecap':'round'
-        }));
+        var perpRad=sRad+Math.PI/2;
+        var tx=cx+spokeR*Math.cos(sRad), ty=cy+spokeR*Math.sin(sRad);
+        var w0=2.2, w1=0.7;
+        var pts=[
+          (cx+w0*Math.cos(perpRad)).toFixed(2)+','+(cy+w0*Math.sin(perpRad)).toFixed(2),
+          (tx+w1*Math.cos(perpRad)).toFixed(2)+','+(ty+w1*Math.sin(perpRad)).toFixed(2),
+          (tx-w1*Math.cos(perpRad)).toFixed(2)+','+(ty-w1*Math.sin(perpRad)).toFixed(2),
+          (cx-w0*Math.cos(perpRad)).toFixed(2)+','+(cy-w0*Math.sin(perpRad)).toFixed(2)
+        ].join(' ');
+        g.appendChild(svgEl('polygon',{points:pts,fill:opts.color,opacity:'0.9'}));
+        /* Jewel at spoke tip (smaller and more refined) */
+        g.appendChild(svgEl('circle',{cx:tx.toFixed(2),cy:ty.toFixed(2),r:'4',fill:jewel,stroke:opts.color,'stroke-width':'1.2'}));
+        g.appendChild(svgEl('circle',{cx:tx.toFixed(2),cy:ty.toFixed(2),r:'1.5',fill:opts.color,opacity:'0.7'}));
       }
-      for(var j=0;j<spokes.length;j++){
-        var jRad=(spokes[j]-90)*Math.PI/180;
-        var jx=cx+spokeR*Math.cos(jRad),jy=cy+spokeR*Math.sin(jRad);
-        g.appendChild(svgEl('circle',{cx:jx,cy:jy,r:5.5,fill:jewel,stroke:opts.color,'stroke-width':'1.5'}));
-        g.appendChild(svgEl('circle',{cx:jx,cy:jy,r:2,fill:opts.color,opacity:'0.7'}));
-      }
-      g.appendChild(svgEl('circle',{cx:cx,cy:cy,r:8,fill:jewel,stroke:opts.color,'stroke-width':'1.5'}));
-      g.appendChild(svgEl('circle',{cx:cx,cy:cy,r:3.5,fill:opts.color}));
-      g.appendChild(svgEl('circle',{cx:cx,cy:cy,r:1.2,fill:jewel}));
+
+      /* Centre hub — 4 concentric elements for a proper pivot look */
+      g.appendChild(svgEl('circle',{cx:cx,cy:cy,r:'6.5',fill:jewel,stroke:opts.color,'stroke-width':'1.5'}));
+      g.appendChild(svgEl('circle',{cx:cx,cy:cy,r:'4',fill:'none',stroke:opts.color,'stroke-width':'0.5',opacity:'0.5'}));
+      g.appendChild(svgEl('circle',{cx:cx,cy:cy,r:'2.8',fill:opts.color}));
+      g.appendChild(svgEl('circle',{cx:cx,cy:cy,r:'1',fill:jewel}));
       svg.appendChild(g);
 
-      svg.appendChild(svgEl('path',{
-        d:'M '+cx+' '+(cy-8)+' Q '+(cx+6)+' '+(cy-18)+' '+cx+' '+(cy-26),
-        fill:'none',stroke:opts.color,'stroke-width':'0.6',opacity:'0.3'
-      }));
       return {svg:svg,wheel:g};
     }
 
