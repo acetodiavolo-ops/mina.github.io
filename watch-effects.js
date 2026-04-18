@@ -13,30 +13,100 @@
      CONCEPT 1: WATCHMAKER'S LOUPE
   ============================================================ */
   function Loupe(sectionSel,cardSel,options){
-    var opts={size:110,zoom:2.5};
+    var opts={size:148,zoom:3};
     if(options){if(options.size)opts.size=options.size;if(options.zoom)opts.zoom=options.zoom;}
     var section=document.querySelector(sectionSel);
     if(!section)return;
     section.style.position='relative';
 
+    var half=opts.size/2;
+
+    /* Loupe shell — background-image/size/position drives the actual zoom.
+       No canvas means no CORS taint issues with same-origin images. */
     var loupe=document.createElement('div');
     loupe.className='iw-loupe';
-    loupe.style.cssText='position:absolute;width:'+opts.size+'px;height:'+opts.size+'px;border-radius:50%;border:2px solid #b8953f;pointer-events:none;display:none;transform:translate(-50%,-50%);z-index:100;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06),0 4px 24px rgba(0,0,0,.35)';
+    loupe.style.cssText=[
+      'position:absolute',
+      'width:'+opts.size+'px',
+      'height:'+opts.size+'px',
+      'border-radius:50%',
+      'pointer-events:none',
+      'display:none',
+      'transform:translate(-50%,-50%)',
+      'z-index:100',
+      'overflow:hidden',
+      'background-repeat:no-repeat',
+      /* Gold ring + outer glow */
+      'box-shadow:0 0 0 2.5px #b8953f,0 0 0 4px rgba(184,149,63,0.25),0 8px 36px rgba(0,0,0,0.45)',
+      'will-change:left,top,background-position'
+    ].join(';');
 
-    var canvas=document.createElement('canvas');
-    var dpr=Math.min(window.devicePixelRatio||1,2);
-    canvas.width=opts.size*dpr; canvas.height=opts.size*dpr;
-    canvas.style.cssText='position:absolute;inset:0;width:100%;height:100%;border-radius:50%';
-    var ctx=canvas.getContext('2d');
-    ctx.scale(dpr,dpr);
+    /* Glass glare — two radial gradients stacked: top-left highlight + bottom-right counter-glow */
+    var glare=document.createElement('div');
+    glare.style.cssText=[
+      'position:absolute',
+      'inset:0',
+      'border-radius:50%',
+      'pointer-events:none',
+      'z-index:2',
+      'background:radial-gradient(ellipse 52% 42% at 33% 28%,rgba(255,255,255,0.26) 0%,rgba(255,255,255,0) 68%),'+
+                 'radial-gradient(ellipse 40% 35% at 68% 72%,rgba(255,255,255,0.07) 0%,rgba(255,255,255,0) 65%)',
+      'box-shadow:inset 0 0 22px rgba(0,0,0,0.28)'
+    ].join(';');
 
+    /* Fine inner rim — gives the lens barrel depth */
     var rim=document.createElement('div');
-    rim.style.cssText='position:absolute;inset:0;border-radius:50%;border:1px solid rgba(184,149,63,.35);z-index:2;pointer-events:none';
+    rim.style.cssText=[
+      'position:absolute',
+      'inset:0',
+      'border-radius:50%',
+      'border:1px solid rgba(184,149,63,0.4)',
+      'pointer-events:none',
+      'z-index:3'
+    ].join(';');
 
-    loupe.appendChild(canvas); loupe.appendChild(rim); section.appendChild(loupe);
+    /* Tiny gold reticle dot at center */
+    var dot=document.createElement('div');
+    dot.style.cssText=[
+      'position:absolute',
+      'left:50%',
+      'top:50%',
+      'width:5px',
+      'height:5px',
+      'border-radius:50%',
+      'background:rgba(184,149,63,0.7)',
+      'transform:translate(-50%,-50%)',
+      'pointer-events:none',
+      'z-index:4'
+    ].join(';');
+
+    loupe.appendChild(glare);
+    loupe.appendChild(rim);
+    loupe.appendChild(dot);
+    section.appendChild(loupe);
 
     var activeImg=null;
-    var half=opts.size/2;
+    var mx=0, my=0, rafId=null;
+
+    function render(){
+      rafId=null;
+      if(!activeImg||!activeImg.complete||!activeImg.naturalWidth)return;
+      var sRect=section.getBoundingClientRect();
+      var imgRect=activeImg.getBoundingClientRect();
+      /* Position loupe over cursor */
+      loupe.style.left=(mx-sRect.left)+'px';
+      loupe.style.top=(my-sRect.top)+'px';
+      /* Compute zoomed background */
+      var relX=Math.max(0,Math.min(1,(mx-imgRect.left)/imgRect.width));
+      var relY=Math.max(0,Math.min(1,(my-imgRect.top)/imgRect.height));
+      var bgW=imgRect.width*opts.zoom;
+      var bgH=imgRect.height*opts.zoom;
+      var posX=-(relX*bgW-half);
+      var posY=-(relY*bgH-half);
+      loupe.style.backgroundImage='url("'+activeImg.src+'")';
+      loupe.style.backgroundSize=bgW+'px '+bgH+'px';
+      loupe.style.backgroundPosition=posX+'px '+posY+'px';
+    }
 
     var cards=section.querySelectorAll(cardSel);
     for(var c=0;c<cards.length;c++){
@@ -50,27 +120,11 @@
           loupe.style.display='none';
           card.style.cursor='';
           activeImg=null;
+          if(rafId){cancelAnimationFrame(rafId);rafId=null;}
         });
         card.addEventListener('mousemove',function(e){
-          var sRect=section.getBoundingClientRect();
-          loupe.style.left=(e.clientX-sRect.left)+'px';
-          loupe.style.top=(e.clientY-sRect.top)+'px';
-          if(!activeImg||!activeImg.complete||!activeImg.naturalWidth)return;
-          var imgRect=activeImg.getBoundingClientRect();
-          var relX=Math.max(0,Math.min(1,(e.clientX-imgRect.left)/imgRect.width));
-          var relY=Math.max(0,Math.min(1,(e.clientY-imgRect.top)/imgRect.height));
-          var nat={w:activeImg.naturalWidth,h:activeImg.naturalHeight};
-          var srcW=nat.w/opts.zoom, srcH=nat.h/opts.zoom;
-          var srcX=Math.max(0,Math.min(nat.w-srcW,relX*nat.w-srcW/2));
-          var srcY=Math.max(0,Math.min(nat.h-srcH,relY*nat.h-srcH/2));
-          ctx.clearRect(0,0,opts.size,opts.size);
-          ctx.save();
-          ctx.beginPath(); ctx.arc(half,half,half,0,Math.PI*2); ctx.clip();
-          ctx.drawImage(activeImg,srcX,srcY,srcW,srcH,0,0,opts.size,opts.size);
-          var vig=ctx.createRadialGradient(half,half,half*.5,half,half,half);
-          vig.addColorStop(0,'rgba(0,0,0,0)'); vig.addColorStop(1,'rgba(0,0,0,.20)');
-          ctx.fillStyle=vig; ctx.beginPath(); ctx.arc(half,half,half,0,Math.PI*2); ctx.fill();
-          ctx.restore();
+          mx=e.clientX; my=e.clientY;
+          if(!rafId) rafId=requestAnimationFrame(render);
         });
       }(cards[c]));
     }
