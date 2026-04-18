@@ -80,59 +80,76 @@
      CONCEPT 2: ESCAPEMENT TICK-IN
   ============================================================ */
   function TickIn(){
-    var audioCtx   = null;
-    /* audioReady is set via the statechange event AND the resume() Promise —
-       NOT by polling .state directly.  resume() is async; .state may still
-       read 'suspended' for several ms after resume() is called, which caused
-       tick() to bail out every time (the race-condition bug). */
-    var audioReady = false;
+    /* Use <audio> elements instead of Web Audio API.
+       Web Audio requires AudioContext.resume() which is async and
+       unreliable on iOS Safari — the context state lags behind the
+       Promise resolution, causing every tick() guard to bail early.
+       <audio> elements unlock once in a gesture and play freely after. */
 
-    function onStateChange(){
-      audioReady = !!(audioCtx && audioCtx.state === 'running');
-    }
-
-    function unlockAudio(){
-      if(!audioCtx){
-        try{
-          audioCtx = new(window.AudioContext||window.webkitAudioContext)();
-          /* statechange fires when the async resume() eventually completes. */
-          audioCtx.addEventListener('statechange', onStateChange);
-        }catch(e){ return; }
+    /* Build a 35 ms tick sound as a WAV data-URL at runtime.
+       22050 Hz mono 16-bit PCM — shaped noise burst, sounds like a watch tick. */
+    function buildTickURL(){
+      var SR=22050, N=Math.floor(SR*0.035);
+      var ab=new ArrayBuffer(44+N*2), v=new DataView(ab);
+      var wb=function(o,x){v.setUint32(o,x,false);};
+      var wl=function(o,x){v.setUint32(o,x,true);};
+      var ws=function(o,x){v.setUint16(o,x,true);};
+      /* RIFF/WAVE header */
+      wb(0,0x52494646); wl(4,36+N*2); wb(8,0x57415645);
+      wb(12,0x666d7420); wl(16,16); ws(20,1); ws(22,1);
+      wl(24,SR); wl(28,SR*2); ws(32,2); ws(34,16);
+      wb(36,0x64617461); wl(40,N*2);
+      /* PCM samples: white noise with cubic decay envelope */
+      for(var i=0;i<N;i++){
+        var env=Math.pow(1-i/N,3)*0.55;
+        v.setInt16(44+i*2,(Math.random()*2-1)*env*32767|0,true);
       }
-      /* Already running — just make sure the flag is set and return. */
-      if(audioCtx.state === 'running'){ audioReady = true; return; }
-      /* Silent 1-sample buffer — older iOS needs real audio playback,
-         not just resume(), to activate the context. */
-      try{
-        var buf = audioCtx.createBuffer(1,1,audioCtx.sampleRate);
-        var src = audioCtx.createBufferSource();
-        src.buffer = buf; src.connect(audioCtx.destination); src.start(0);
-      }catch(e){}
-      /* .then() sets the flag once the Promise resolves (async path).
-         onStateChange() covers the synchronous path on Chrome Android. */
-      audioCtx.resume().then(onStateChange).catch(function(){});
+      var u8=new Uint8Array(ab), bin='';
+      for(var j=0;j<u8.length;j++) bin+=String.fromCharCode(u8[j]);
+      return 'data:audio/wav;base64,'+btoa(bin);
     }
 
-    /* touchend catches swipe-to-scroll gestures that touchstart may miss
-       on some iOS versions when the page is in the middle of a scroll. */
-    document.addEventListener('touchstart', unlockAudio, {passive:true});
-    document.addEventListener('touchend',   unlockAudio, {passive:true});
-    document.addEventListener('click',      unlockAudio);
+    var TICK_URL = null;
+    var pool     = [];   /* 3-element pool prevents rapid ticks from cutting each other off */
+    var poolIdx  = 0;
+    var unlocked = false;
+
+    function setup(){
+      if(pool.length) return;
+      try{
+        TICK_URL = buildTickURL();
+        for(var i=0;i<3;i++){
+          var a=new Audio(TICK_URL);
+          a.volume=0.28;
+          a.load();
+          pool.push(a);
+        }
+      }catch(e){ pool=[]; }
+    }
+
+    function unlock(){
+      setup();
+      if(unlocked || !pool.length) return;
+      var a=pool[0];
+      a.play().then(function(){ a.pause(); a.currentTime=0; unlocked=true; })
+       .catch(function(){
+         /* Strict autoplay policy: try muted first, then unmute */
+         a.muted=true;
+         a.play().then(function(){
+           a.muted=false; a.pause(); a.currentTime=0; unlocked=true;
+         }).catch(function(){});
+       });
+    }
+
+    document.addEventListener('touchstart', unlock, {passive:true});
+    document.addEventListener('touchend',   unlock, {passive:true});
+    document.addEventListener('click',      unlock);
 
     function tick(){
-      if(!audioReady || !audioCtx) return;
-      try{
-        /* +0.005 s offset: avoids a WebKit edge-case where scheduling at
-           exactly currentTime=0 produces silence on first context use. */
-        var t = audioCtx.currentTime + 0.005;
-        var osc = audioCtx.createOscillator(), gain = audioCtx.createGain();
-        osc.connect(gain); gain.connect(audioCtx.destination);
-        osc.type = 'square';
-        osc.frequency.setValueAtTime(1050+Math.random()*200, t);
-        gain.gain.setValueAtTime(0.032, t);
-        gain.gain.exponentialRampToValueAtTime(0.001, t+0.038);
-        osc.start(t); osc.stop(t+0.045);
-      }catch(e){}
+      if(!unlocked || !pool.length) return;
+      var a=pool[poolIdx % pool.length];
+      poolIdx++;
+      try{ a.currentTime=0; a.play().catch(function(){}); }catch(e){}
     }
     function wrapChars(el){
       (function walk(node){
