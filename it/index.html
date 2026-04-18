@@ -1363,6 +1363,34 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
             <p class="font-bold gold text-sm mt-4">&mdash; Deni Tabaku</p>
           </div>
         </div>
+
+        <!-- CONFESSION BOOTH -->
+        <style>.iw-confession{margin:3rem auto 0;max-width:780px;font-family:inherit}.iw-confession__header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;flex-wrap:wrap;gap:8px}.iw-confession__heading{font-family:Georgia,'Times New Roman',serif;font-size:18px;font-weight:400;color:#0d1b3e;letter-spacing:.01em}.iw-confession__heading em{color:#b8953f;font-style:italic}.iw-confession__live{display:flex;align-items:center;gap:6px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;color:#aaa;letter-spacing:.06em}.iw-confession__live-dot{width:6px;height:6px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 0 rgba(74,222,128,.4);animation:iw-pulse 2s ease infinite}@keyframes iw-pulse{0%{box-shadow:0 0 0 0 rgba(74,222,128,.4)}60%{box-shadow:0 0 0 6px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}.iw-confession__feed{background:#f4f0e8;border:.5px solid #e0d8c4;border-radius:14px 14px 0 0;height:240px;overflow:hidden;position:relative;padding:1.25rem 1.5rem;display:flex;flex-direction:column;gap:0}.iw-confession__feed::before,.iw-confession__feed::after{content:'';position:absolute;left:0;right:0;height:48px;pointer-events:none;z-index:2}.iw-confession__feed::before{top:0;background:linear-gradient(#f4f0e8,transparent);border-radius:14px 14px 0 0}.iw-confession__feed::after{bottom:0;background:linear-gradient(transparent,#f4f0e8)}.iw-confession__scroll{display:flex;flex-direction:column;gap:14px;overflow:hidden;position:relative;z-index:1}.iw-confession__item{display:flex;flex-direction:column;gap:3px;flex-shrink:0;opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease}.iw-confession__item.iw-visible{opacity:1;transform:translateY(0)}.iw-confession__item.iw-new{background:rgba(184,149,63,.06);border-left:2px solid #b8953f;padding-left:10px;border-radius:0 6px 6px 0}.iw-confession__text{font-family:Georgia,serif;font-size:13.5px;line-height:1.6;color:#333;font-style:italic}.iw-confession__meta{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:10px;color:#b8953f;letter-spacing:.06em;display:flex;align-items:center;gap:6px}.iw-confession__meta::before{content:'';display:inline-block;width:16px;height:.5px;background:#b8953f;opacity:.5}.iw-confession__bar{background:#0d1b3e;border:.5px solid #1e3060;border-top:none;border-radius:0 0 14px 14px;padding:1rem 1.25rem;display:flex;flex-direction:column;gap:10px}.iw-confession__prompt{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(184,149,63,.5)}.iw-confession__input-row{display:flex;gap:8px;align-items:flex-end}.iw-confession__input-wrap{flex:1;position:relative}.iw-confession__input{width:100%;background:rgba(255,255,255,.05);border:.5px solid rgba(184,149,63,.25);border-radius:8px;padding:10px 44px 10px 14px;color:#e8d9b0;font-family:Georgia,serif;font-size:14px;line-height:1.4;outline:none;resize:none;transition:border-color .2s;min-height:42px;max-height:100px}.iw-confession__input::placeholder{color:rgba(255,255,255,.2);font-style:italic}.iw-confession__input:focus{border-color:rgba(184,149,63,.6)}.iw-confession__count{position:absolute;right:10px;bottom:10px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:9px;color:rgba(255,255,255,.2);letter-spacing:.04em;pointer-events:none}.iw-confession__count.iw-near-limit{color:rgba(184,149,63,.6)}.iw-confession__submit{background:rgba(184,149,63,.15);border:.5px solid #b8953f;color:#b8953f;border-radius:8px;padding:10px 18px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:.08em;cursor:pointer;transition:background .2s,color .2s;white-space:nowrap;align-self:flex-end;height:42px}.iw-confession__submit:hover{background:rgba(184,149,63,.28);color:#e8d9b0}.iw-confession__submit:disabled{opacity:.4;cursor:default}.iw-confession__footer-note{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:10px;color:rgba(255,255,255,.18);text-align:center;letter-spacing:.04em}.iw-confession__submit.iw-cooldown{animation:iw-cooldown-shimmer 1.5s ease infinite}@keyframes iw-cooldown-shimmer{0%,100%{opacity:.4}50%{opacity:.6}}@media(max-width:520px){.iw-confession__feed{height:200px}.iw-confession__text{font-size:13px}}</style>
+        <div class="iw-confession" id="iwConfession" role="region" aria-label="Confessioni sull&rsquo;orologio">
+          <div class="iw-confession__header">
+            <h3 class="iw-confession__heading">Cosa <em>confessate</em> sul vostro orologio?</h3>
+            <div class="iw-confession__live" aria-live="polite">
+              <div class="iw-confession__live-dot" aria-hidden="true"></div>
+              Anonimo &middot; Nessun nome salvato
+            </div>
+          </div>
+          <div class="iw-confession__feed" role="log" aria-label="Confessioni recenti">
+            <div class="iw-confession__scroll" id="iwConfessionScroll"></div>
+          </div>
+          <div class="iw-confession__bar">
+            <div class="iw-confession__prompt">La tua confessione</div>
+            <div class="iw-confession__input-row">
+              <div class="iw-confession__input-wrap">
+                <textarea class="iw-confession__input" id="iwConfessionInput" maxlength="120" rows="1" placeholder="La mia era in un cassetto dal&hellip;" aria-label="Scrivi la tua confessione"></textarea>
+                <div class="iw-confession__count" id="iwConfessionCount">120</div>
+              </div>
+              <button class="iw-confession__submit" id="iwConfessionSubmit" aria-label="Invia confessione">Confessa &rarr;</button>
+            </div>
+            <div class="iw-confession__footer-note">Anonimo &middot; La tua confessione può essere vista da altri visitatori &middot; Nessun account richiesto</div>
+          </div>
+        </div>
+        <!-- /CONFESSION BOOTH -->
+
         <div style="margin-top:2.5rem;border-top:1px solid #e8e2d9;display:flex;align-items:center;justify-content:center;padding:3rem 0;">
           <a href="/it/about.html#reviews" class="btn-secondary">Leggi Tutte le Recensioni &rarr;</a>
         </div>
@@ -1489,6 +1517,7 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
   <script src="/watch-effects.js" defer></script>
   <script src="/watch-effects-init.js" defer></script>
   <script src="/shared.js?v=20" defer></script>
+  <script src="/confession.js" defer></script>
   <link rel="stylesheet" href="/shared.css?v=41">
 </body>
 </html>
