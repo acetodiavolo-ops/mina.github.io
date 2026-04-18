@@ -777,6 +777,10 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
 .clock-tick-btn:hover{border-color:rgba(180,148,92,.35);color:rgba(255,255,255,.65)}
 .clock-tick-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.18);transition:background .2s;flex-shrink:0}
 .clock-tick-dot.on{background:#b4945c;box-shadow:0 0 5px rgba(180,148,92,.5)}
+/* watch-effects */
+.iw-char{display:inline;opacity:0;transition:opacity .06s ease}
+.iw-char[data-space]{opacity:1}
+[data-balance-wheel]{display:inline-block;line-height:0}
 </style>
 
   <!-- STRUCTURED DATA -->
@@ -898,7 +902,6 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
   <!-- Meta Pixel Code -->
   <script src="/tt-policy.js" defer></script>
   <script src="/pixel.js" defer></script>
-  <link rel="stylesheet" href="/watch-effects.css">
   <script src="/clock.js?v=3" defer></script>
   <!-- End Meta Pixel Code -->
 </head>

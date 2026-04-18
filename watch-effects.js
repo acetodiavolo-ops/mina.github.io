@@ -86,7 +86,7 @@
       return audioCtx;
     }
     function tick(ctx){
-      if(!ctx)return;
+      if(!ctx||ctx.state!=='running')return;
       try{
         var osc=ctx.createOscillator(),gain=ctx.createGain();
         osc.connect(gain); gain.connect(ctx.destination);
