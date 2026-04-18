@@ -80,46 +80,58 @@
      CONCEPT 2: ESCAPEMENT TICK-IN
   ============================================================ */
   function TickIn(){
-    var audioCtx=null;
+    var audioCtx   = null;
+    /* audioReady is set via the statechange event AND the resume() Promise —
+       NOT by polling .state directly.  resume() is async; .state may still
+       read 'suspended' for several ms after resume() is called, which caused
+       tick() to bail out every time (the race-condition bug). */
+    var audioReady = false;
 
-    /* Called directly from a user gesture (touchstart / click).
-       Creates the AudioContext inside the gesture — the only approach
-       that reliably unlocks it on iOS Safari. No capture:true so iOS
-       correctly treats this as a user-initiated interaction. */
-    function unlockAudio(){
-      if(!audioCtx){
-        try{ audioCtx=new(window.AudioContext||window.webkitAudioContext)(); }catch(e){ return; }
-      }
-      if(audioCtx.state==='running')return;
-      /* Silent 1-sample buffer — older iOS needs actual audio playback,
-         not just resume(), to activate the context. */
-      try{
-        var buf=audioCtx.createBuffer(1,1,audioCtx.sampleRate);
-        var src=audioCtx.createBufferSource();
-        src.buffer=buf; src.connect(audioCtx.destination); src.start(0);
-        audioCtx.resume();
-      }catch(e){}
+    function onStateChange(){
+      audioReady = !!(audioCtx && audioCtx.state === 'running');
     }
 
-    /* Register immediately so the very first touch unlocks the context
-       regardless of whether any animation has started yet. */
-    document.addEventListener('touchstart',unlockAudio,{passive:true});
-    document.addEventListener('click',     unlockAudio);
-
-    /* tick() reads audioCtx from the closure directly — avoids the stale-
-       captured-null problem where animate() captures ctx=null at start time
-       and never sees the context that unlockAudio() creates later. */
-    function tick(){
-      if(!audioCtx||audioCtx.state!=='running')return;
+    function unlockAudio(){
+      if(!audioCtx){
+        try{
+          audioCtx = new(window.AudioContext||window.webkitAudioContext)();
+          /* statechange fires when the async resume() eventually completes. */
+          audioCtx.addEventListener('statechange', onStateChange);
+        }catch(e){ return; }
+      }
+      /* Already running — just make sure the flag is set and return. */
+      if(audioCtx.state === 'running'){ audioReady = true; return; }
+      /* Silent 1-sample buffer — older iOS needs real audio playback,
+         not just resume(), to activate the context. */
       try{
-        var t=audioCtx.currentTime;
-        var osc=audioCtx.createOscillator(),gain=audioCtx.createGain();
+        var buf = audioCtx.createBuffer(1,1,audioCtx.sampleRate);
+        var src = audioCtx.createBufferSource();
+        src.buffer = buf; src.connect(audioCtx.destination); src.start(0);
+      }catch(e){}
+      /* .then() sets the flag once the Promise resolves (async path).
+         onStateChange() covers the synchronous path on Chrome Android. */
+      audioCtx.resume().then(onStateChange).catch(function(){});
+    }
+
+    /* touchend catches swipe-to-scroll gestures that touchstart may miss
+       on some iOS versions when the page is in the middle of a scroll. */
+    document.addEventListener('touchstart', unlockAudio, {passive:true});
+    document.addEventListener('touchend',   unlockAudio, {passive:true});
+    document.addEventListener('click',      unlockAudio);
+
+    function tick(){
+      if(!audioReady || !audioCtx) return;
+      try{
+        /* +0.005 s offset: avoids a WebKit edge-case where scheduling at
+           exactly currentTime=0 produces silence on first context use. */
+        var t = audioCtx.currentTime + 0.005;
+        var osc = audioCtx.createOscillator(), gain = audioCtx.createGain();
         osc.connect(gain); gain.connect(audioCtx.destination);
-        osc.type='square';
-        osc.frequency.setValueAtTime(1050+Math.random()*200,t);
-        gain.gain.setValueAtTime(0.032,t);
-        gain.gain.exponentialRampToValueAtTime(0.001,t+0.038);
-        osc.start(t); osc.stop(t+0.04);
+        osc.type = 'square';
+        osc.frequency.setValueAtTime(1050+Math.random()*200, t);
+        gain.gain.setValueAtTime(0.032, t);
+        gain.gain.exponentialRampToValueAtTime(0.001, t+0.038);
+        osc.start(t); osc.stop(t+0.045);
       }catch(e){}
     }
     function wrapChars(el){
