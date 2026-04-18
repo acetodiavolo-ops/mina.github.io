@@ -82,11 +82,24 @@
   function TickIn(){
     var audioCtx=null;
     function getAudio(){
-      if(!audioCtx){try{audioCtx=new(window.AudioContext||window.webkitAudioContext)();}catch(e){}}
+      if(!audioCtx){
+        try{
+          audioCtx=new(window.AudioContext||window.webkitAudioContext)();
+          // One-time gesture listener to unlock AudioContext on mobile
+          function unlock(){
+            if(audioCtx&&audioCtx.state==='suspended')audioCtx.resume();
+          }
+          document.addEventListener('touchstart',unlock,{once:true,passive:true,capture:true});
+          document.addEventListener('click',unlock,{once:true,capture:true});
+        }catch(e){}
+      }
       return audioCtx;
     }
     function tick(ctx){
-      if(!ctx||ctx.state!=='running')return;
+      if(!ctx)return;
+      // Resume suspended context (Chrome Android scroll, etc.)
+      if(ctx.state==='suspended'){ctx.resume();return;}
+      if(ctx.state!=='running')return;
       try{
         var osc=ctx.createOscillator(),gain=ctx.createGain();
         osc.connect(gain); gain.connect(ctx.destination);
@@ -131,6 +144,9 @@
     return {
       init:function(){
         var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+        // Pre-create AudioContext and attach unlock listener immediately so
+        // the first user gesture on mobile unlocks it before animation fires
+        if(!reduced)getAudio();
         var elements=document.querySelectorAll('[data-tick-in]');
         if(!elements.length||!window.IntersectionObserver)return;
         var observer=new IntersectionObserver(function(entries){
