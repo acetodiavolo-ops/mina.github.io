@@ -1435,6 +1435,28 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
     <section id="contact" class="py-24 bg-gray-50" aria-labelledby="contact-heading" data-animate>
       <div class="max-w-6xl mx-auto px-6">
         <h2 id="contact-heading" data-tick-in class="text-4xl md:text-5xl text-center mb-16 section-title"><span class="gold-display">Contattaci</span></h2>
+        <style>.iw-timer{display:flex;flex-direction:column;align-items:center;gap:1rem;margin:0 auto 2.5rem;max-width:340px}.iw-timer__eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:#8b7355;opacity:.8}.iw-timer__elapsed{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:2rem;font-weight:300;letter-spacing:.05em;color:#1a1a1a;min-width:5ch;text-align:center}.iw-timer__label{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#8b7355;opacity:.6}.iw-timer__face{position:relative;width:120px;height:120px}.iw-timer__face svg{width:120px;height:120px}.iw-timer__ring{position:absolute;inset:0;pointer-events:none}.iw-timer__msg{min-height:1.4em;font-size:.8rem;font-style:italic;color:#6b5d4a;text-align:center;opacity:0;transition:opacity .5s ease;max-width:280px}.iw-timer__msg.iw-timer--visible{opacity:1}.iw-timer__ring.iw-timer--chimed{animation:iw-ring-pulse .8s ease-out forwards}@keyframes iw-ring-pulse{0%{opacity:0;transform:scale(1)}50%{opacity:.4;transform:scale(1.12)}100%{opacity:0;transform:scale(1.24)}}</style>
+        <div class="iw-timer" role="region" aria-label="Tempo trascorso su questa pagina">
+          <div class="iw-timer__eyebrow">Sei qui da</div>
+          <div class="iw-timer__elapsed" id="iwTimerElapsed" aria-live="off">00:00</div>
+          <div class="iw-timer__label">su questa pagina</div>
+          <div class="iw-timer__face" aria-hidden="true">
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="60" cy="60" r="54" fill="none" stroke="rgba(184,149,63,0.15)" stroke-width="1"/>
+              <g id="iwTimerTicks"></g>
+              <text x="60" y="38" text-anchor="middle" fill="rgba(184,149,63,0.35)" font-size="6" font-family="serif" letter-spacing="2">SEI QUI DA</text>
+              <line id="iwTimerHour" x1="60" y1="60" x2="60" y2="34" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+              <line id="iwTimerMin" x1="60" y1="60" x2="60" y2="26" stroke="#1a1a1a" stroke-width="1.8" stroke-linecap="round"/>
+              <line id="iwTimerSec" x1="60" y1="60" x2="60" y2="22" stroke="#b8953f" stroke-width="0.9" stroke-linecap="round"/>
+              <line id="iwTimerSecTail" x1="60" y1="60" x2="60" y2="68" stroke="#b8953f" stroke-width="0.9" stroke-linecap="round"/>
+              <circle cx="60" cy="60" r="2.2" fill="#b8953f"/>
+            </svg>
+            <svg class="iw-timer__ring" id="iwTimerRing" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="60" cy="60" r="54" fill="none" stroke="#b8953f" stroke-width="1.2" stroke-opacity="0"/>
+            </svg>
+          </div>
+          <div class="iw-timer__msg" id="iwTimerMsg" role="status" aria-live="polite"></div>
+        </div>
         <div class="grid md:grid-cols-2 gap-12 items-start">
           <div>
             <h3 class="text-2xl font-bold mb-6">Visita il nostro laboratorio</h3>
@@ -1518,6 +1540,7 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
   <script src="/watch-effects-init.js" defer></script>
   <script src="/shared.js?v=20" defer></script>
   <script src="/confession.js" defer></script>
+  <script src="/timer.js" defer></script>
   <link rel="stylesheet" href="/shared.css?v=41">
 </body>
 </html>
