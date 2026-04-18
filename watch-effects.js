@@ -81,33 +81,44 @@
   ============================================================ */
   function TickIn(){
     var audioCtx=null;
+    /* Play a 1-sample silent buffer — required by iOS Safari to actually
+       activate the AudioContext; resume() alone is not always enough.
+       Only does work when the context is not already running. */
+    function silentUnlock(){
+      if(!audioCtx||audioCtx.state==='running')return;
+      try{
+        var buf=audioCtx.createBuffer(1,1,audioCtx.sampleRate);
+        var src=audioCtx.createBufferSource();
+        src.buffer=buf; src.connect(audioCtx.destination); src.start(0);
+      }catch(e){}
+      audioCtx.resume().catch(function(){});
+    }
     function getAudio(){
       if(!audioCtx){
         try{
           audioCtx=new(window.AudioContext||window.webkitAudioContext)();
-          // One-time gesture listener to unlock AudioContext on mobile
-          function unlock(){
-            if(audioCtx&&audioCtx.state==='suspended')audioCtx.resume();
-          }
-          document.addEventListener('touchstart',unlock,{once:true,passive:true,capture:true});
-          document.addEventListener('click',unlock,{once:true,capture:true});
+          /* Keep listeners active (no once:true) so re-suspension after a
+             phone call or tab switch is recovered on the next user gesture. */
+          document.addEventListener('touchstart',silentUnlock,{passive:true,capture:true});
+          document.addEventListener('touchend',  silentUnlock,{passive:true,capture:true});
+          document.addEventListener('click',     silentUnlock,{capture:true});
         }catch(e){}
       }
       return audioCtx;
     }
     function tick(ctx){
-      if(!ctx)return;
-      // Resume suspended context (Chrome Android scroll, etc.)
-      if(ctx.state==='suspended'){ctx.resume();return;}
-      if(ctx.state!=='running')return;
+      /* Only play when the context is confirmed running.
+         Never call resume() from a setTimeout — iOS ignores it. */
+      if(!ctx||ctx.state!=='running')return;
       try{
+        var t=ctx.currentTime;
         var osc=ctx.createOscillator(),gain=ctx.createGain();
         osc.connect(gain); gain.connect(ctx.destination);
         osc.type='square';
-        osc.frequency.setValueAtTime(1050+Math.random()*200,ctx.currentTime);
-        gain.gain.setValueAtTime(0.032,ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.038);
-        osc.start(ctx.currentTime); osc.stop(ctx.currentTime+0.04);
+        osc.frequency.setValueAtTime(1050+Math.random()*200,t);
+        gain.gain.setValueAtTime(0.032,t);
+        gain.gain.exponentialRampToValueAtTime(0.001,t+0.038);
+        osc.start(t); osc.stop(t+0.04);
       }catch(e){}
     }
     function wrapChars(el){
