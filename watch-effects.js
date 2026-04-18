@@ -109,7 +109,6 @@
       return 'data:audio/wav;base64,'+btoa(bin);
     }
 
-    var TICK_URL = null;
     var pool     = [];   /* 3-element pool prevents rapid ticks from cutting each other off */
     var poolIdx  = 0;
     var unlocked = false;
@@ -117,9 +116,9 @@
     function setup(){
       if(pool.length) return;
       try{
-        TICK_URL = buildTickURL();
+        var url=buildTickURL();
         for(var i=0;i<3;i++){
-          var a=new Audio(TICK_URL);
+          var a=new Audio(url);
           a.volume=0.28;
           a.load();
           pool.push(a);
@@ -307,7 +306,6 @@
       svg.setAttribute('viewBox','0 0 '+opts.size+' '+opts.size);
       svg.setAttribute('style','display:block;overflow:visible');
       var jewel=opts.dark?'#0d1b3e':'#ffffff';
-      var face =opts.dark?'#1a2d5a':'#f8f5ef';
       var spokeR=r-14;
 
       svg.appendChild(svgEl('circle',{cx:cx,cy:cy,r:r,fill:'none',stroke:opts.color,'stroke-width':'1.5'}));
