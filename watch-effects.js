@@ -81,39 +81,40 @@
   ============================================================ */
   function TickIn(){
     var audioCtx=null;
-    /* Play a 1-sample silent buffer — required by iOS Safari to actually
-       activate the AudioContext; resume() alone is not always enough.
-       Only does work when the context is not already running. */
-    function silentUnlock(){
-      if(!audioCtx||audioCtx.state==='running')return;
+
+    /* Called directly from a user gesture (touchstart / click).
+       Creates the AudioContext inside the gesture — the only approach
+       that reliably unlocks it on iOS Safari. No capture:true so iOS
+       correctly treats this as a user-initiated interaction. */
+    function unlockAudio(){
+      if(!audioCtx){
+        try{ audioCtx=new(window.AudioContext||window.webkitAudioContext)(); }catch(e){ return; }
+      }
+      if(audioCtx.state==='running')return;
+      /* Silent 1-sample buffer — older iOS needs actual audio playback,
+         not just resume(), to activate the context. */
       try{
         var buf=audioCtx.createBuffer(1,1,audioCtx.sampleRate);
         var src=audioCtx.createBufferSource();
         src.buffer=buf; src.connect(audioCtx.destination); src.start(0);
+        audioCtx.resume();
       }catch(e){}
-      audioCtx.resume().catch(function(){});
     }
-    function getAudio(){
-      if(!audioCtx){
-        try{
-          audioCtx=new(window.AudioContext||window.webkitAudioContext)();
-          /* Keep listeners active (no once:true) so re-suspension after a
-             phone call or tab switch is recovered on the next user gesture. */
-          document.addEventListener('touchstart',silentUnlock,{passive:true,capture:true});
-          document.addEventListener('touchend',  silentUnlock,{passive:true,capture:true});
-          document.addEventListener('click',     silentUnlock,{capture:true});
-        }catch(e){}
-      }
-      return audioCtx;
-    }
-    function tick(ctx){
-      /* Only play when the context is confirmed running.
-         Never call resume() from a setTimeout — iOS ignores it. */
-      if(!ctx||ctx.state!=='running')return;
+
+    /* Register immediately so the very first touch unlocks the context
+       regardless of whether any animation has started yet. */
+    document.addEventListener('touchstart',unlockAudio,{passive:true});
+    document.addEventListener('click',     unlockAudio);
+
+    /* tick() reads audioCtx from the closure directly — avoids the stale-
+       captured-null problem where animate() captures ctx=null at start time
+       and never sees the context that unlockAudio() creates later. */
+    function tick(){
+      if(!audioCtx||audioCtx.state!=='running')return;
       try{
-        var t=ctx.currentTime;
-        var osc=ctx.createOscillator(),gain=ctx.createGain();
-        osc.connect(gain); gain.connect(ctx.destination);
+        var t=audioCtx.currentTime;
+        var osc=audioCtx.createOscillator(),gain=audioCtx.createGain();
+        osc.connect(gain); gain.connect(audioCtx.destination);
         osc.type='square';
         osc.frequency.setValueAtTime(1050+Math.random()*200,t);
         gain.gain.setValueAtTime(0.032,t);
@@ -142,11 +143,11 @@
       return Array.prototype.slice.call(el.querySelectorAll('.iw-char:not([data-space])'));
     }
     function animate(chars,speed,delay,withSound){
-      var i=0,ctx=withSound?getAudio():null;
+      var i=0;
       setTimeout(function step(){
         if(i>=chars.length)return;
         chars[i].style.opacity='1';
-        if(withSound)tick(ctx);
+        if(withSound)tick();
         i++;
         var next=speed+(Math.random()*speed*.4-speed*.2);
         setTimeout(step,Math.max(18,next));
@@ -155,9 +156,6 @@
     return {
       init:function(){
         var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-        // Pre-create AudioContext and attach unlock listener immediately so
-        // the first user gesture on mobile unlocks it before animation fires
-        if(!reduced)getAudio();
         var elements=document.querySelectorAll('[data-tick-in]');
         if(!elements.length||!window.IntersectionObserver)return;
         var observer=new IntersectionObserver(function(entries){
