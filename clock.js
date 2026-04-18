@@ -2,7 +2,7 @@
   'use strict';
 
   var CX=110, CY=110;
-  var TZ=['Europe/Tirane','Europe/London','Europe/Rome','Asia/Tokyo','America/New_York'];
+  var TZ=['Europe/Tirane','Europe/London','Europe/Rome','Asia/Tokyo','America/New_York','Europe/Paris'];
 
   function init(){
     var lang=/\/it\//.test(location.pathname)?'it':/\/sq\//.test(location.pathname)?'sq':'en';
