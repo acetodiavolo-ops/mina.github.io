@@ -1,0 +1,21 @@
+/*!
+ * Iglisi Watch — Interactive Effects  v1.0
+ * watch-effects.css
+ */
+
+/* ── Escapement Tick-In ─────────────────────────────────────────────────── */
+/* Each character is wrapped in .iw-char by JS and revealed one at a time    */
+.iw-char {
+  display: inline;
+  opacity: 0;
+  transition: opacity 0.06s ease;
+}
+.iw-char[data-space] {
+  opacity: 1; /* spaces never hidden */
+}
+
+/* ── Balance Wheel container ────────────────────────────────────────────── */
+[data-balance-wheel] {
+  display: inline-block;
+  line-height: 0; /* collapse whitespace below SVG */
+}

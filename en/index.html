@@ -971,6 +971,7 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
   <!-- Meta Pixel Code -->
   <script src="/tt-policy.js" defer></script>
   <script src="/pixel.js" defer></script>
+  <link rel="stylesheet" href="/watch-effects.css">
   <script src="/clock.js?v=3" defer></script>
   <!-- End Meta Pixel Code -->
 </head>
@@ -1237,7 +1238,7 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
     <section id="watches" class="py-24 bg-gray-50" aria-labelledby="watches-heading" data-animate>
       <div class="max-w-7xl mx-auto px-6">
         <p class="text-center text-sm font-semibold tracking-widest uppercase gold mb-3">Watches for Sale</p>
-        <h2 id="watches-heading" class="text-4xl md:text-5xl text-center mb-4 section-title">Featured <span class="gold-display">Timepieces</span></h2>
+        <h2 id="watches-heading" data-tick-in class="text-4xl md:text-5xl text-center mb-4 section-title">Featured <span class="gold-display">Timepieces</span></h2>
         <p class="text-center text-gray-500 text-lg mb-4 max-w-2xl mx-auto">Each watch is brand new and personally sourced. Browse our current selection and enquire directly via WhatsApp.</p>
         <p class="text-center text-xs text-gray-400 mb-14 max-w-2xl mx-auto italic">All watches are brand new and unused, purchased from authorised dealers. Iglisi Watch is an independent reseller and is not affiliated with or endorsed by the watch brands listed.</p>
         <div class="watch-grid">
@@ -1417,17 +1418,20 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
           </div>
         </div>
         <div class="mt-6 pt-16 text-center">
-          <span class="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full border border-[#b4945c] shadow-sm">
-            <i class="fas fa-star gold" aria-hidden="true"></i>
-            <span class="text-gray-800">Over <strong data-years-since="2002"></strong> Years of Experience</span>
-          </span>
+          <div data-balance-wheel aria-hidden="true" style="display:inline-block;margin-bottom:1.25rem"></div>
+          <div>
+            <span class="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full border border-[#b4945c] shadow-sm">
+              <i class="fas fa-star gold" aria-hidden="true"></i>
+              <span class="text-gray-800">Over <strong data-years-since="2002"></strong> Years of Experience</span>
+            </span>
+          </div>
         </div>
       </div>
     </section>
     <!-- WHY CHOOSE US -->
     <section class="py-24 bg-white" aria-labelledby="why-heading" data-animate>
       <div class="max-w-7xl mx-auto px-6">
-        <h2 id="why-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Why <span class="gold-display">Choose Us</span></h2>
+        <h2 id="why-heading" data-tick-in class="text-4xl md:text-5xl text-center mb-16 section-title">Why <span class="gold-display">Choose Us</span></h2>
         <div class="grid md:grid-cols-3 gap-8">
           <div class="service-card">
             <i class="fas fa-gem text-4xl gold mb-6" aria-hidden="true"></i>
@@ -1521,7 +1525,7 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
     <!-- CONTACT -->
     <section id="contact" class="py-24 bg-gray-50" aria-labelledby="contact-heading" data-animate>
       <div class="max-w-6xl mx-auto px-6">
-        <h2 id="contact-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Get In <span class="gold-display">Touch</span></h2>
+        <h2 id="contact-heading" data-tick-in class="text-4xl md:text-5xl text-center mb-16 section-title">Get In <span class="gold-display">Touch</span></h2>
         <div class="grid md:grid-cols-2 gap-12 items-start">
           <div>
             <h3 class="text-2xl font-bold mb-6">Visit our workshop</h3>
@@ -1602,6 +1606,8 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
     </div>
   </footer>
 
+  <script src="/watch-effects.js" defer></script>
+  <script src="/watch-effects-init.js" defer></script>
   <script src="/shared.js?v=20" defer></script>
   <script src="/cookie.js" defer></script>
 </body>

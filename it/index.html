@@ -899,6 +899,7 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
   <!-- Meta Pixel Code -->
   <script src="/tt-policy.js" defer></script>
   <script src="/pixel.js" defer></script>
+  <link rel="stylesheet" href="/watch-effects.css">
   <script src="/clock.js?v=3" defer></script>
   <!-- End Meta Pixel Code -->
 </head>
@@ -1115,7 +1116,7 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
     <section id="watches" class="py-24 bg-gray-50" aria-labelledby="watches-heading" data-animate>
       <div class="max-w-7xl mx-auto px-6">
         <p class="text-center text-sm font-semibold tracking-widest uppercase gold mb-3">Orologi in Vendita</p>
-        <h2 id="watches-heading" class="text-4xl md:text-5xl text-center mb-4 section-title">Orologi in <span class="gold-display">Primo Piano</span></h2>
+        <h2 id="watches-heading" data-tick-in class="text-4xl md:text-5xl text-center mb-4 section-title">Orologi in <span class="gold-display">Primo Piano</span></h2>
         <p class="text-center text-gray-500 text-lg mb-4 max-w-2xl mx-auto">Ogni orologio è nuovo e selezionato personalmente. Sfoglia la nostra selezione attuale e contattaci direttamente via WhatsApp.</p>
         <p class="text-center text-xs text-gray-400 mb-14 max-w-2xl mx-auto italic">Tutti gli orologi sono nuovi e mai usati, acquistati da rivenditori autorizzati. Iglisi Watch è un rivenditore indipendente e non è affiliato né sponsorizzato dai marchi elencati.</p>
         <div class="watch-grid">
@@ -1292,17 +1293,20 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
           </div>
         </div>
         <div class="mt-6 pt-16 text-center">
-          <span class="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full border border-[#b4945c] shadow-sm">
-            <i class="fas fa-star gold" aria-hidden="true"></i>
-            <span class="text-gray-800">Oltre <strong data-years-since="2002"></strong> Anni di Esperienza</span>
-          </span>
+          <div data-balance-wheel aria-hidden="true" style="display:inline-block;margin-bottom:1.25rem"></div>
+          <div>
+            <span class="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full border border-[#b4945c] shadow-sm">
+              <i class="fas fa-star gold" aria-hidden="true"></i>
+              <span class="text-gray-800">Oltre <strong data-years-since="2002"></strong> Anni di Esperienza</span>
+            </span>
+          </div>
         </div>
       </div>
     </section>
     <!-- WHY CHOOSE US -->
     <section class="py-24 bg-white" aria-labelledby="why-heading" data-animate>
       <div class="max-w-7xl mx-auto px-6">
-        <h2 id="why-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">
+        <h2 id="why-heading" data-tick-in class="text-4xl md:text-5xl text-center mb-16 section-title">
           Perché <span class="gold-display">Sceglierci</span>
         </h2>
         <div class="grid md:grid-cols-3 gap-8">
@@ -1398,7 +1402,7 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
     <!-- CONTACT -->
     <section id="contact" class="py-24 bg-gray-50" aria-labelledby="contact-heading" data-animate>
       <div class="max-w-6xl mx-auto px-6">
-        <h2 id="contact-heading" class="text-4xl md:text-5xl text-center mb-16 section-title"><span class="gold-display">Contattaci</span></h2>
+        <h2 id="contact-heading" data-tick-in class="text-4xl md:text-5xl text-center mb-16 section-title"><span class="gold-display">Contattaci</span></h2>
         <div class="grid md:grid-cols-2 gap-12 items-start">
           <div>
             <h3 class="text-2xl font-bold mb-6">Visita il nostro laboratorio</h3>
@@ -1478,6 +1482,8 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
     </div>
   </footer>
 
+  <script src="/watch-effects.js" defer></script>
+  <script src="/watch-effects-init.js" defer></script>
   <script src="/shared.js?v=20" defer></script>
 </body>
 </html>
