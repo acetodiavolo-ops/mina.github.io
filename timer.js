@@ -65,20 +65,32 @@
   ---------------------------------------------------------- */
   var audioCtx = null;
 
-  function getAudio() {
-    if (!audioCtx) {
-      try { audioCtx = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) {}
-    }
-    if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
-    return audioCtx;
+  /* Play a 1-sample silent buffer — iOS Safari requires this to truly
+     activate the AudioContext; resume() alone is not always enough.
+     Only acts when the context is not already running. */
+  function silentUnlock() {
+    if (!audioCtx || audioCtx.state === 'running') return;
+    try {
+      var buf = audioCtx.createBuffer(1, 1, audioCtx.sampleRate);
+      var src = audioCtx.createBufferSource();
+      src.buffer = buf; src.connect(audioCtx.destination); src.start(0);
+    } catch (e) {}
+    audioCtx.resume().catch(function () {});
   }
 
-  function unlockAudio() {
-    getAudio();
+  function getAudio() {
+    if (!audioCtx) {
+      try {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        /* Permanent gesture listeners — no once:true so the context can be
+           re-unlocked after a phone call or tab switch suspends it again. */
+        document.addEventListener('touchstart', silentUnlock, { passive: true, capture: true });
+        document.addEventListener('touchend',   silentUnlock, { passive: true, capture: true });
+        document.addEventListener('click',      silentUnlock, { capture: true });
+      } catch (e) {}
+    }
+    return audioCtx;
   }
-  document.addEventListener('click',      unlockAudio, { once: true, passive: true });
-  document.addEventListener('scroll',     unlockAudio, { once: true, passive: true });
-  document.addEventListener('touchstart', unlockAudio, { once: true, passive: true });
 
   /* ----------------------------------------------------------
      CHIME SYNTHESIS — warm bell tone
@@ -87,7 +99,9 @@
 
   function playChime(n) {
     var ctx = getAudio();
-    if (!ctx) return;
+    /* Only play when the context is confirmed running — never try to use
+       oscillators on a suspended context (iOS ignores them silently). */
+    if (!ctx || ctx.state !== 'running') return;
 
     for (var i = 0; i < n; i++) {
       (function (delay, freq) {
@@ -148,8 +162,8 @@
     }, 300);
 
     elRing.classList.remove('iw-timer--chimed');
-    void elRing.offsetWidth; /* restart animation */
-    elRing.classList.add('iw-timer--chimed');
+    /* Use setTimeout instead of offsetWidth read to avoid a forced reflow. */
+    setTimeout(function () { elRing.classList.add('iw-timer--chimed'); }, 20);
   }
 
   /* ----------------------------------------------------------
