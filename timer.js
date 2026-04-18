@@ -46,11 +46,11 @@
   for (var i = 0; i < 60; i++) {
     var major = (i % 5 === 0);
     var rad   = (i * 6 - 90) * Math.PI / 180;
-    var r1    = major ? 40 : 43;
-    var x1 = 60 + r1 * Math.cos(rad);
+    var r1    = major ? 23 : 27;
+    var x1 = 45 + r1 * Math.cos(rad);
     var y1 = 60 + r1 * Math.sin(rad);
-    var x2 = 60 + 46 * Math.cos(rad);
-    var y2 = 60 + 46 * Math.sin(rad);
+    var x2 = 45 + 30 * Math.cos(rad);
+    var y2 = 60 + 30 * Math.sin(rad);
     var ln = document.createElementNS(ns, 'line');
     ln.setAttribute('x1', x1.toFixed(2)); ln.setAttribute('y1', y1.toFixed(2));
     ln.setAttribute('x2', x2.toFixed(2)); ln.setAttribute('y2', y2.toFixed(2));
@@ -146,7 +146,7 @@
      HAND ROTATION
   ---------------------------------------------------------- */
   function setRot(el, deg) {
-    el.setAttribute('transform', 'rotate(' + deg.toFixed(3) + ',60,60)');
+    el.setAttribute('transform', 'rotate(' + deg.toFixed(3) + ',45,60)');
   }
 
   /* ----------------------------------------------------------
