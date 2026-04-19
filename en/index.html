@@ -672,14 +672,26 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
   display: flex;
   flex-direction: column;
   transition: transform var(--transition-base), box-shadow var(--transition-base);
+  position: relative;
 }
+.watch-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 20%; right: 20%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #b4945c 40%, #b4945c 60%, transparent);
+  opacity: 0;
+  transition: opacity .3s ease;
+  z-index: 1;
+}
+.watch-card:hover::before { opacity: 1; }
 .watch-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 36px -8px rgba(180,148,92,.22);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px -8px rgba(180,148,92,.28), 0 4px 16px rgba(0,0,0,.08);
 }
 .watch-card-img {
   position: relative;
-  background: #fff;
+  background: #faf8f4;
   aspect-ratio: 1/1;
   border-bottom: 1px solid #ede8df;
   overflow: hidden;
@@ -690,7 +702,9 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
   width: 100%; height: 100%;
   object-fit: contain;
   padding: 1.5rem;
+  transition: transform .45s ease;
 }
+.watch-card:hover .watch-card-img img { transform: scale(1.07); }
 .watch-img-placeholder {
   position: absolute;
   inset: 0;
@@ -704,7 +718,7 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
 .watch-badge {
   position: absolute;
   top: .75rem; right: .75rem;
-  background: var(--btn-start);
+  background: linear-gradient(135deg, #c4a96a, #b4945c);
   color: #fff;
   font-size: .7rem;
   font-weight: 700;
@@ -712,6 +726,7 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
   text-transform: uppercase;
   padding: .28rem .7rem;
   border-radius: 9999px;
+  box-shadow: 0 2px 8px rgba(180,148,92,.35);
 }
 .watch-badge.sold { background: #555; }
 .watch-card-body {
@@ -820,10 +835,11 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
 .clock-face-wrap{flex-shrink:0}
 #iglClockWrap{width:200px;height:200px;flex-shrink:0}
 .clock-cities{display:flex;gap:.65rem;flex-wrap:wrap;justify-content:center}
-.clock-city{background:rgba(255,255,255,.05);border:1px solid rgba(180,148,92,.18);border-radius:.55rem;padding:.55rem .9rem;text-align:center;min-width:78px}
-.clock-city-name{font-size:.6rem;color:#b4945c;letter-spacing:.09em;text-transform:uppercase;margin-bottom:.2rem}
-.clock-city-time{font-size:.95rem;font-weight:600;color:#fff;letter-spacing:.02em;font-variant-numeric:tabular-nums}
-.clock-city-date{font-size:.58rem;color:rgba(255,255,255,.62);margin-top:.12rem}
+.clock-city{background:rgba(255,255,255,.08);border:1px solid rgba(180,148,92,.3);border-radius:.7rem;padding:.75rem 1.1rem;text-align:center;min-width:88px;position:relative;overflow:hidden}
+.clock-city::before{content:'';position:absolute;top:0;left:15%;right:15%;height:1.5px;background:linear-gradient(90deg,transparent,rgba(180,148,92,.6) 50%,transparent)}
+.clock-city-name{font-size:.6rem;color:#b4945c;letter-spacing:.09em;text-transform:uppercase;margin-bottom:.3rem}
+.clock-city-time{font-size:1rem;font-weight:600;color:#fff;letter-spacing:.02em;font-variant-numeric:tabular-nums}
+.clock-city-date{font-size:.58rem;color:rgba(255,255,255,.55);margin-top:.15rem}
 .clock-tick-btn{display:flex;align-items:center;gap:.45rem;background:none;border:1px solid rgba(255,255,255,.12);border-radius:.45rem;padding:.35rem .8rem;cursor:pointer;font-size:.68rem;color:rgba(255,255,255,.65);transition:border-color .2s,color .2s;font-family:inherit}
 .clock-tick-btn:hover{border-color:rgba(180,148,92,.45);color:rgba(255,255,255,.88)}
 .clock-tick-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.18);transition:background .2s;flex-shrink:0}
@@ -1563,7 +1579,7 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
     <section id="contact" class="py-24 bg-gray-50" aria-labelledby="contact-heading" data-animate>
       <div class="max-w-6xl mx-auto px-6">
         <h2 id="contact-heading" data-tick-in class="text-4xl md:text-5xl text-center mb-16 section-title">Get In <span class="gold-display">Touch</span></h2>
-        <style>.iw-timer{display:grid;grid-template-columns:1fr 100px;align-items:center;gap:2rem;margin:2rem auto 3rem;max-width:520px;padding:2.5rem 2rem 2.5rem 2.5rem;background:#faf7f2;border:.5px solid #e0d8c4;border-radius:20px;box-shadow:0 2px 24px rgba(13,27,62,.06);position:relative}.iw-timer::before{content:'';position:absolute;top:0;left:20%;right:20%;height:2px;background:linear-gradient(90deg,transparent,#b8953f 35%,#b8953f 65%,transparent)}.iw-timer__info{display:flex;flex-direction:column;gap:.6rem}.iw-timer__eyebrow{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#b8953f}.iw-timer__elapsed{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:2.5rem;font-weight:200;letter-spacing:.08em;color:#0d1b3e;min-width:5ch}.iw-timer__label{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#8b7355;opacity:.65;margin-top:-.2rem}.iw-timer__face{position:relative;width:90px;height:120px}.iw-timer__face svg{width:90px;height:120px}.iw-timer__ring{position:absolute;inset:0;pointer-events:none}.iw-timer__msg{min-height:1.4em;font-size:.75rem;font-style:italic;color:#6b5d4a;opacity:0;transition:opacity .5s ease}.iw-timer__msg.iw-timer--visible{opacity:1}.iw-timer__ring.iw-timer--chimed{animation:iw-ring-pulse .8s ease-out forwards}@keyframes iw-ring-pulse{0%{opacity:0;transform:scale(1)}50%{opacity:.4;transform:scale(1.12)}100%{opacity:0;transform:scale(1.24)}}</style>
+        <style>.iw-timer{display:grid;grid-template-columns:1fr 100px;align-items:center;gap:2rem;margin:2rem auto 3rem;max-width:520px;padding:2.5rem 2rem 2.5rem 2.5rem;background:#faf7f2;border:.5px solid #e0d8c4;border-radius:20px;box-shadow:0 2px 24px rgba(13,27,62,.06);position:relative}.iw-timer::before{content:'';position:absolute;top:0;left:20%;right:20%;height:2px;background:linear-gradient(90deg,transparent,#b8953f 35%,#b8953f 65%,transparent)}.iw-timer__info{display:flex;flex-direction:column;gap:.6rem}.iw-timer__eyebrow{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#b8953f}.iw-timer__elapsed{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:2.5rem;font-weight:200;letter-spacing:.08em;color:#0d1b3e;min-width:5ch}.iw-timer__label{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#8b7355;opacity:.65;margin-top:-.2rem}.iw-timer__face{position:relative;width:90px;height:120px}.iw-timer__face svg{width:90px;height:120px}.iw-timer__ring{position:absolute;inset:0;pointer-events:none}.iw-timer__msg{min-height:1.4em;font-size:.75rem;font-style:italic;color:#6b5d4a;opacity:0;transition:opacity .5s ease}.iw-timer__msg.iw-timer--visible{opacity:1}.iw-timer__ring.iw-timer--chimed{animation:iw-ring-pulse .8s ease-out forwards}@keyframes iw-ring-pulse{0%{opacity:0;transform:scale(1)}50%{opacity:.4;transform:scale(1.12)}100%{opacity:0;transform:scale(1.24)}}@media(max-width:500px){.iw-timer{grid-template-columns:1fr;justify-items:center;padding:2rem 1.5rem 2rem}.iw-timer__info{align-items:center;text-align:center}.iw-timer__elapsed{text-align:center}}</style>
         <div class="iw-timer" role="region" aria-label="Time spent on this page">
           <div class="iw-timer__info">
             <div class="iw-timer__eyebrow">You&#8217;ve been here for</div>
