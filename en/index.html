@@ -1589,12 +1589,46 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
           </div>
           <div class="iw-timer__face" aria-hidden="true">
             <svg viewBox="0 0 90 120" xmlns="http://www.w3.org/2000/svg">
-              <defs><clipPath id="iwDialClip"><rect x="10" y="10" width="70" height="100" rx="2"/></clipPath></defs>
+              <defs>
+                <clipPath id="iwDialClip"><rect x="10" y="10" width="70" height="100" rx="2"/></clipPath>
+                <linearGradient id="iwCaseG" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%"   stop-color="#8a6820"/>
+                  <stop offset="8%"   stop-color="#e6d48a"/>
+                  <stop offset="28%"  stop-color="#c9a84c"/>
+                  <stop offset="50%"  stop-color="#e8daa0"/>
+                  <stop offset="72%"  stop-color="#c9a84c"/>
+                  <stop offset="92%"  stop-color="#e6d48a"/>
+                  <stop offset="100%" stop-color="#8a6820"/>
+                </linearGradient>
+                <radialGradient id="iwDialG" cx="38%" cy="32%" r="70%" fx="38%" fy="32%">
+                  <stop offset="0%"   stop-color="#ffffff"/>
+                  <stop offset="40%"  stop-color="#faf7f2"/>
+                  <stop offset="100%" stop-color="#e8dfd0"/>
+                </radialGradient>
+                <linearGradient id="iwGlareG" x1="0%" y1="0%" x2="60%" y2="100%">
+                  <stop offset="0%"   stop-color="rgba(255,255,255,0.40)"/>
+                  <stop offset="55%"  stop-color="rgba(255,255,255,0.05)"/>
+                  <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+                </linearGradient>
+              </defs>
 
-              <rect x="4" y="5" width="82" height="110" rx="3" fill="#ede6d6" stroke="#b8953f" stroke-width="1.5"/>
-              <rect x="6" y="7" width="78" height="106" rx="2" fill="none" stroke="rgba(255,240,200,0.4)" stroke-width="0.8"/>
-              <rect x="10" y="10" width="70" height="100" rx="2" fill="#faf7f2"/>
-              <rect x="12" y="12" width="66" height="96" rx="1.5" fill="none" stroke="rgba(184,149,63,0.18)" stroke-width="0.5"/>
+              <!-- Winding crown -->
+              <rect x="83" y="56" width="7" height="8" rx="1.5" fill="url(#iwCaseG)" stroke="#7a5e1c" stroke-width="0.6"/>
+              <line x1="85" y1="58.5" x2="85" y2="61.5" stroke="rgba(255,240,180,0.5)" stroke-width="0.7"/>
+              <line x1="87" y1="58.5" x2="87" y2="61.5" stroke="rgba(0,0,0,0.15)" stroke-width="0.7"/>
+
+              <!-- Case body with metallic gradient -->
+              <rect x="4" y="5" width="82" height="110" rx="3" fill="url(#iwCaseG)"/>
+              <!-- Outer edge shadow -->
+              <rect x="4" y="5" width="82" height="110" rx="3" fill="none" stroke="rgba(0,0,0,0.28)" stroke-width="1"/>
+              <!-- Inner bevel highlight -->
+              <rect x="5.5" y="6.5" width="79" height="107" rx="2.5" fill="none" stroke="rgba(255,245,200,0.55)" stroke-width="0.7"/>
+
+              <!-- Dial -->
+              <rect x="10" y="10" width="70" height="100" rx="2" fill="url(#iwDialG)"/>
+              <!-- Chapter ring -->
+              <rect x="12" y="12" width="66" height="96" rx="1.5" fill="none" stroke="rgba(184,149,63,0.28)" stroke-width="0.6"/>
+
               <g id="iwTimerTicks" clip-path="url(#iwDialClip)"></g>
               <line id="iwTimerHour" x1="45" y1="60" x2="45" y2="39" stroke="#1a1a1a" stroke-width="2.8" stroke-linecap="round"/>
               <line id="iwTimerMin" x1="45" y1="60" x2="45" y2="31" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
@@ -1602,6 +1636,9 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
               <line id="iwTimerSecTail" x1="45" y1="60" x2="45" y2="69" stroke="#b8953f" stroke-width="0.9" stroke-linecap="round"/>
               <circle cx="45" cy="60" r="2.5" fill="#b8953f"/>
               <circle cx="45" cy="60" r="1" fill="#faf7f2"/>
+
+              <!-- Crystal glare -->
+              <rect x="10" y="10" width="70" height="100" rx="2" fill="url(#iwGlareG)" pointer-events="none"/>
             </svg>
             <svg class="iw-timer__ring" id="iwTimerRing" viewBox="0 0 90 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <rect x="4" y="5" width="82" height="110" rx="10" fill="none" stroke="#b8953f" stroke-width="1.5" stroke-opacity="0"/>
