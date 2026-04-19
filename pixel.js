@@ -47,6 +47,7 @@
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)
     }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('dataProcessingOptions', ['LDU'], 0, 0);
     fbq('init','818615647986085');
     fbq('track','PageView');
     /* Fire Contact event on any WhatsApp CTA click */
