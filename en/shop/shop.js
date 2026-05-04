@@ -94,7 +94,7 @@
       + '<div class="watch-card-body">'
       + '<p class="watch-brand">' + w.brand + '</p>'
       + '<h2 class="watch-model">' + w.model + '</h2>'
-      + '<p class="watch-ref">Ref. ' + (w.reference||'\u2014') + ' &middot; ' + w.year + '</p>'
+      + '<p class="watch-ref">Ref. ' + (w.reference||'\u2014') + '</p>'
       + '<p class="watch-desc">' + (w.description_en || '') + '</p>'
       + '<div class="watch-card-footer">'
       + '<p class="watch-price">' + fmt(w.price, w.currency) + '</p>'

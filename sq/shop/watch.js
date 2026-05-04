@@ -96,7 +96,7 @@
         + '<div>'
           + '<p class="watch-brand-pg">' + w.brand + '</p>'
           + '<h1 class="watch-title-pg">' + w.model + '</h1>'
-          + '<p class="watch-ref-pg">Ref. ' + (w.reference||'\u2014') + ' &middot; ' + w.year + '</p>'
+          + '<p class="watch-ref-pg">Ref. ' + (w.reference||'\u2014') + '</p>'
         + '</div>'
         + '<p class="watch-price-pg">' + fmt(w.price, w.currency) + '</p>'
         + '<p class="watch-desc-pg">' + (w.description_sq || w.description_en || '') + '</p>'
