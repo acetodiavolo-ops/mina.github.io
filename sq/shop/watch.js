@@ -24,9 +24,14 @@
     })
     .catch(function(){ showError('Nuk mund t\u00eb ngarkohet e dhena e or\u00ebs.', 'Ju lutem rifreskoni ose kthehuni n\u00eb dyqan.'); });
 
+  var EUR_TO_LEK = 97;
   function fmt(price, currency){
     if(!price) return '\u00c7mimi me k\u00ebrkese';
     return (currency === 'EUR' ? '\u20ac' : currency) + Number(price).toLocaleString('sq-AL');
+  }
+  function lekPrice(price, currency){
+    if(!price || currency !== 'EUR') return 0;
+    return Math.round(price * EUR_TO_LEK / 100) * 100;
   }
 
   function waMsg(w){
@@ -69,6 +74,10 @@
         '@type': 'Offer',
         'priceCurrency': w.currency,
         'price': String(w.price),
+        'priceSpecification': [
+          {'@type': 'PriceSpecification', 'price': String(w.price), 'priceCurrency': w.currency},
+          {'@type': 'PriceSpecification', 'price': String(lekPrice(w.price, w.currency)), 'priceCurrency': 'ALL'}
+        ],
         'availability': w.sold ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock',
         'itemCondition': w.condition === 'Pre-owned' ? 'https://schema.org/UsedCondition' : 'https://schema.org/NewCondition',
         'seller': {'@type': 'Organization', 'name': 'Iglisi Watch'},
@@ -98,10 +107,11 @@
           + '<h1 class="watch-title-pg">' + w.model + '</h1>'
           + '<p class="watch-ref-pg">Ref. ' + (w.reference||'\u2014') + '</p>'
         + '</div>'
-        + '<p class="watch-price-pg">' + fmt(w.price, w.currency) + '</p>'
+        + '<p class="watch-price-pg">' + fmt(w.price, w.currency) + (lekPrice(w.price,w.currency) ? '<span style="font-size:1.1rem;color:#888;font-weight:500;margin-left:.5rem">· ' + lekPrice(w.price,w.currency).toLocaleString() + ' L</span>' : '') + '</p>'
         + '<p class="watch-desc-pg">' + (w.description_sq || w.description_en || '') + '</p>'
         + ctaBlock
         + '<div class="trust-row">'
+          + '<span class="trust-item" style="color:#1a7a3f;font-weight:600"><i class="fas fa-money-bill" aria-hidden="true" style="color:#1a7a3f"></i> Para n\u00eb dor\u00ebzim</span>'
           + '<span class="trust-item"><i class="fas fa-shield-alt" aria-hidden="true"></i> Garanci 1 vit</span>'
           + '<span class="trust-item"><i class="fas fa-star" aria-hidden="true"></i> E re &amp; origjinale</span>'
           + '<span class="trust-item"><i class="fas fa-clock" aria-hidden="true"></i> H\u00ebn\u2013Sht 8:30\u201320:30</span>'

@@ -70,9 +70,14 @@
     grid.innerHTML = filtered.map(function(w){ return watchCard(w); }).join('');
   }
 
+  var EUR_TO_LEK = 97;
   function fmt(price, currency){
     if(!price) return 'Prezzo su richiesta';
     return (currency === 'EUR' ? '\u20ac' : currency) + Number(price).toLocaleString('it-IT');
+  }
+  function fmtLek(price, currency){
+    if(!price || currency !== 'EUR') return '';
+    return '<span style="font-size:.78rem;color:#888;font-weight:400"> \u00b7 ' + (Math.round(price * EUR_TO_LEK / 100) * 100).toLocaleString() + ' L</span>';
   }
 
   function waMsg(w){
@@ -98,7 +103,7 @@
       + '<p class="watch-ref">Rif. ' + (w.reference||'\u2014') + '</p>'
       + '<p class="watch-desc">' + (w.description_it || w.description_en || '') + '</p>'
       + '<div class="watch-card-footer">'
-      + '<p class="watch-price">' + fmt(w.price, w.currency) + '</p>'
+      + '<p class="watch-price">' + fmt(w.price, w.currency) + fmtLek(w.price, w.currency) + '</p>'
       + '<a href="https://instagram.com/iglisiwatch" target="_blank" rel="noopener noreferrer" class="watch-ig-link" aria-label="Vedi su Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>'
       + ctaHtml
       + '</div></div></article>';
