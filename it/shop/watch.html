@@ -79,16 +79,15 @@ img{display:block;max-width:100%;height:auto}
 
 /* NAV DRAWER */
 input[type=checkbox]#nav-toggle{position:absolute;width:0;height:0;opacity:0;pointer-events:none}
-.hamburger-btn{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem;border-radius:.5rem;transition:background .2s}
-.hamburger-btn:hover{background:rgba(255,255,255,.1)}
-.bar{width:22px;height:2px;background:#fff;border-radius:2px;transition:transform .3s,opacity .3s}
-.nav-drawer{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:40;display:none}
+.site-header-wrap{position:sticky;top:0;z-index:50}
+.hamburger-btn{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.45);border-radius:8px;cursor:pointer;padding:8px;flex-shrink:0}
+.hamburger-btn .bar{display:block;width:20px;height:2px;background:#fff;border-radius:1px;transition:transform .25s,opacity .25s}
+.nav-drawer{display:none;background:rgba(6,21,59,.98);border-top:2px solid rgba(180,148,92,.18);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nav-drawer.open{display:block}
 #nav-toggle:checked~.nav-drawer{display:block!important}
-.nav-drawer-inner{position:absolute;left:0;top:0;bottom:0;width:min(280px,85vw);background:var(--header-bg);padding:5rem 1.5rem 2rem;display:flex;flex-direction:column;gap:.25rem;transform:translateX(-100%);transition:transform .3s}
-#nav-toggle:checked~.nav-drawer .nav-drawer-inner{transform:translateX(0)}
-.nav-drawer-link{color:rgba(255,255,255,.85);font-size:1.05rem;font-weight:500;padding:.75rem .5rem;border-bottom:1px solid rgba(255,255,255,.08);text-decoration:none;transition:color .2s}
-.nav-drawer-link:hover{color:var(--accent-gold)}
-.nav-drawer-phone{color:var(--accent-gold)!important;font-weight:700}
+#nav-toggle:checked~header .bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
+#nav-toggle:checked~header .bar:nth-child(2){opacity:0}
+#nav-toggle:checked~header .bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 /* WATCH PAGE */
 .watch-page{max-width:80rem;margin:0 auto;padding:2.5rem 1.5rem 5rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
