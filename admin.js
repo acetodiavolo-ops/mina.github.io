@@ -10,6 +10,18 @@
 
   var sessionPassword = ''; // set on successful login, used to encrypt/decrypt token
 
+  var EUR_TO_LEK = 97;
+  document.getElementById('f-price').addEventListener('input', function(){
+    var price = parseFloat(this.value);
+    var preview = document.getElementById('lek-preview');
+    if(price > 0){
+      preview.textContent = '≈ ' + (Math.round(price * EUR_TO_LEK / 100) * 100).toLocaleString() + ' L (Albanian Lek)';
+      preview.style.display = 'block';
+    } else {
+      preview.style.display = 'none';
+    }
+  });
+
   // ── Crypto helpers ───────────────────────────────────────────────────────────
   function deriveKey(password, salt){
     return crypto.subtle.importKey(
