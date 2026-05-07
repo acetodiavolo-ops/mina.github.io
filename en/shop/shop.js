@@ -87,7 +87,7 @@
 
   function watchCard(w){
     var imgHtml = w.image
-      ? '<a href="/en/shop/watch.html?id=' + w.id + '" aria-label="' + w.brand + ' ' + w.model + '"><img src="' + w.image + '" alt="' + w.brand + ' ' + w.model + '" loading="lazy"></a>'
+      ? '<a href="/en/shop/watch.html?id=' + w.id + '" aria-label="' + w.brand + ' ' + w.model + (w.brand === 'Hislon' ? ' Swiss Watch' : '') + '"><img src="' + w.image + '" alt="' + w.brand + ' ' + w.model + (w.brand === 'Hislon' ? ' Swiss Watch' : '') + '" loading="lazy"></a>'
       : '<div class="watch-img-placeholder"><i class="fas fa-clock" aria-hidden="true"></i></div>';
     var soldOverlay = w.sold ? '<div class="sold-overlay">Sold</div>' : '';
     var ctaHtml = w.sold
@@ -97,7 +97,7 @@
       + '<div class="watch-card-img">' + imgHtml + soldOverlay
       + '<span class="watch-badge">' + w.condition + '</span></div>'
       + '<div class="watch-card-body">'
-      + '<p class="watch-brand">' + w.brand + '</p>'
+      + '<p class="watch-brand">' + w.brand + (w.brand === 'Hislon' ? '<span style="font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:#8a9abf;font-weight:500;margin-left:.4rem;vertical-align:middle">Swiss</span>' : '') + '</p>'
       + '<h2 class="watch-model">' + w.model + '</h2>'
       + '<p class="watch-ref">Ref. ' + (w.reference||'\u2014') + '</p>'
       + '<p class="watch-desc">' + (w.description_en || '') + '</p>'

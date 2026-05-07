@@ -40,8 +40,8 @@
   }
 
   function render(w){
-    var title = w.brand + ' ' + w.model + ' \u2014 Iglisi Watch';
-    var desc = (w.description_it || w.description_en || '') + ' Disponibile da Iglisi Watch, Durazzo, Albania.';
+    var title = w.brand + ' ' + w.model + (w.brand === 'Hislon' ? ' Swiss Watch' : '') + ' \u2014 Iglisi Watch';
+    var desc = (w.brand === 'Hislon' ? 'Orologio svizzero Hislon. ' : '') + (w.description_it || w.description_en || '') + ' Disponibile da Iglisi Watch, Durazzo, Albania.';
     var imgUrl = w.image ? 'https://watch.al' + w.image : 'https://watch.al/og-image.png';
     var pageUrl = 'https://watch.al/it/shop/watch.html?id=' + w.id;
     var enUrl  = 'https://watch.al/en/shop/watch.html?id=' + w.id;
@@ -65,9 +65,10 @@
     var ld = {
       '@context': 'https://schema.org',
       '@type': 'Product',
-      'name': w.brand + ' ' + w.model,
+      'name': w.brand + ' ' + w.model + (w.brand === 'Hislon' ? ' Swiss Watch' : ''),
       'sku': w.reference || '',
       'brand': {'@type': 'Brand', 'name': w.brand},
+      'countryOfOrigin': w.brand === 'Hislon' ? {'@type': 'Country', 'name': 'Switzerland'} : undefined,
       'description': w.description_it || w.description_en || '',
       'image': imgUrl,
       'offers': {
@@ -86,7 +87,7 @@
     };
     document.getElementById('ld-json').textContent = JSON.stringify(ld);
 
-    var imgHtml = w.image ? '<img src="' + w.image + '" alt="' + w.brand + ' ' + w.model + '" fetchpriority="high">' : '';
+    var imgHtml = w.image ? '<img src="' + w.image + '" alt="' + w.brand + ' ' + w.model + (w.brand === 'Hislon' ? ' Swiss Watch' : '') + '" fetchpriority="high">' : '';
     var condIt = w.condition === 'New' ? 'Nuovo' : 'Usato';
     var ctaBlock = w.sold
       ? '<p style="font-size:1rem;color:#888;font-weight:600">Questo orologio \u00e8 stato venduto.</p>'
@@ -105,6 +106,7 @@
         + '<a href="/it/shop/" class="back-link"><i class="fas fa-arrow-left" aria-hidden="true"></i> Torna al negozio</a>'
         + '<div>'
           + '<p class="watch-brand-pg">' + w.brand + '</p>'
+          + (w.brand === 'Hislon' ? '<p style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#8a9abf;font-weight:600;margin:.0rem 0 .3rem">Marchio Svizzero</p>' : '')
           + '<h1 class="watch-title-pg">' + w.model + '</h1>'
           + '<p class="watch-ref-pg">Rif. ' + (w.reference||'\u2014') + '</p>'
         + '</div>'

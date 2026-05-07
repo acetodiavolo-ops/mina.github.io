@@ -40,8 +40,8 @@
   }
 
   function render(w){
-    var title = w.brand + ' ' + w.model + ' \u2014 Iglisi Watch';
-    var desc = (w.description_en || '') + ' Available at Iglisi Watch, Durr\u00ebs, Albania.';
+    var title = w.brand + ' ' + w.model + (w.brand === 'Hislon' ? ' Swiss Watch' : '') + ' \u2014 Iglisi Watch';
+    var desc = (w.brand === 'Hislon' ? 'Swiss watch by Hislon. ' : '') + (w.description_en || '') + ' Available at Iglisi Watch, Durr\u00ebs, Albania.';
     var imgUrl = w.image ? 'https://watch.al' + w.image : 'https://watch.al/og-image.png';
     var pageUrl = 'https://watch.al/en/shop/watch.html?id=' + w.id;
     var sqUrl = 'https://watch.al/sq/shop/watch.html?id=' + w.id;
@@ -65,9 +65,10 @@
     var ld = {
       '@context': 'https://schema.org',
       '@type': 'Product',
-      'name': w.brand + ' ' + w.model,
+      'name': w.brand + ' ' + w.model + (w.brand === 'Hislon' ? ' Swiss Watch' : ''),
       'sku': w.reference || '',
       'brand': {'@type': 'Brand', 'name': w.brand},
+      'countryOfOrigin': w.brand === 'Hislon' ? {'@type': 'Country', 'name': 'Switzerland'} : undefined,
       'description': w.description_en || '',
       'image': imgUrl,
       'offers': {
@@ -86,7 +87,7 @@
     };
     document.getElementById('ld-json').textContent = JSON.stringify(ld);
 
-    var imgHtml = w.image ? '<img src="' + w.image + '" alt="' + w.brand + ' ' + w.model + '" fetchpriority="high">' : '';
+    var imgHtml = w.image ? '<img src="' + w.image + '" alt="' + w.brand + ' ' + w.model + (w.brand === 'Hislon' ? ' Swiss Watch' : '') + '" fetchpriority="high">' : '';
     var ctaBlock = w.sold
       ? '<p style="font-size:1rem;color:#888;font-weight:600">This watch has been sold.</p>'
       : '<div class="watch-cta-wrap">'
@@ -104,6 +105,7 @@
         + '<a href="/en/shop/" class="back-link"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to shop</a>'
         + '<div>'
           + '<p class="watch-brand-pg">' + w.brand + '</p>'
+          + (w.brand === 'Hislon' ? '<p style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#8a9abf;font-weight:600;margin:.0rem 0 .3rem">Swiss Brand</p>' : '')
           + '<h1 class="watch-title-pg">' + w.model + '</h1>'
           + '<p class="watch-ref-pg">Ref. ' + (w.reference||'\u2014') + '</p>'
         + '</div>'
