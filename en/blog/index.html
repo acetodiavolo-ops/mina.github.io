@@ -32,8 +32,8 @@
   <link rel="apple-touch-icon" href="https://watch.al/favicon.png">
   <link rel="preload" href="/webfonts/inter.woff2?v=2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/webfonts/cormorant-garamond.woff2?v=2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/webfonts/fa-solid-900.woff2?v=2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/webfonts/fa-brands-400.woff2?v=2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/webfonts/fa-solid-900.woff2?v=4" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/webfonts/fa-brands-400.woff2?v=3" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/shared.css?v=41">
   <style>
     /* === Magazine Blog Layout === */
@@ -81,6 +81,12 @@
     .blog-search-input::placeholder{color:rgba(255,255,255,.38)}
     .blog-search-input:focus{border-color:rgba(180,148,92,.7);background:rgba(255,255,255,.12)}
     .blog-search-input::-webkit-search-cancel-button{cursor:pointer;filter:invert(1)opacity(.5)}
+    /* Category filter */
+    .blog-cats{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;max-width:700px;margin:0 auto 1.75rem}
+    .b-cat-btn{display:inline-flex;align-items:center;gap:.35rem;padding:.45rem 1.05rem;border-radius:2rem;border:1.5px solid rgba(180,148,92,.28);background:rgba(255,255,255,.06);color:rgba(255,255,255,.62);font-size:.75rem;font-weight:600;letter-spacing:.05em;cursor:pointer;transition:all .18s;white-space:nowrap;line-height:1;font-family:inherit}
+    .b-cat-btn:hover{border-color:rgba(180,148,92,.6);background:rgba(180,148,92,.12);color:#fff}
+    .b-cat-btn[aria-pressed="true"]{background:var(--accent-gold);border-color:var(--accent-gold);color:#18110a}
+    #blog-empty{display:none;text-align:center;padding:3rem 1rem;color:var(--text-secondary);font-size:.95rem}
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
@@ -187,6 +193,14 @@
       <div class="blog-search-wrap" role="search">
         <i class="fas fa-search blog-search-icon" aria-hidden="true"></i>
         <input id="blog-search" type="search" class="blog-search-input" placeholder="Search articles&hellip;" autocomplete="off" data-empty="No articles found." aria-label="Search articles">
+      </div>
+      <div class="blog-cats" role="group" aria-label="Filter by category">
+        <button class="b-cat-btn" data-filter="all" aria-pressed="true">All</button>
+        <button class="b-cat-btn" data-filter="care" aria-pressed="false"><i class="fas fa-shield-alt" aria-hidden="true"></i> Watch Care</button>
+        <button class="b-cat-btn" data-filter="knowledge" aria-pressed="false"><i class="fas fa-search" aria-hidden="true"></i> Watch Knowledge</button>
+        <button class="b-cat-btn" data-filter="buying" aria-pressed="false"><i class="fas fa-tag" aria-hidden="true"></i> Buying Guides</button>
+        <button class="b-cat-btn" data-filter="gifts" aria-pressed="false"><i class="fas fa-gem" aria-hidden="true"></i> Gift Guides</button>
+        <button class="b-cat-btn" data-filter="keys" aria-pressed="false"><i class="fas fa-key" aria-hidden="true"></i> Key Services</button>
       </div>
       <p class="kicker"><i class="fas fa-tools" aria-hidden="true"></i>&ensp;Tips &amp; Guides</p>
       <h1>Watch Care Blog</h1>
@@ -664,6 +678,7 @@
 
         </div>
 
+        <p id="blog-empty" aria-live="polite">No articles found. Try a different search or category.</p>
       </div>
     </section>
   </main>
