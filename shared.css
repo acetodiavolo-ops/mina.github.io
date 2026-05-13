@@ -224,6 +224,16 @@ button{text-transform:none;-webkit-appearance:button;background-color:transparen
 .article-container a:hover{color:var(--accent-gold)}
 .article-container a.btn-gold,.article-container a.btn-outline{color:#fff;text-decoration:none}
 .article-container a.btn-outline:hover{color:var(--accent-gold)}
+/* ── ARTICLE NAV REDESIGN ───────────────────────────────────────────────── */
+.article-nav{gap:.875rem;border-top:none;margin:2.5rem 0 0}
+.article-nav a{background:var(--btn-start);border-radius:1rem;border:1px solid rgba(180,148,92,.2);text-decoration:none;color:rgba(255,255,255,.85);transition:border-color .22s,box-shadow .22s,transform .22s;padding:1.4rem 1.6rem}
+.article-nav a:hover{background:var(--btn-start);border-color:var(--accent-gold);box-shadow:0 8px 28px rgba(0,0,0,.28);transform:translateY(-3px)}
+.article-nav a i{font-size:.95rem;width:2.4rem;height:2.4rem;border-radius:50%;background:rgba(180,148,92,.14);display:flex;align-items:center;justify-content:center;transition:background .22s;flex-shrink:0}
+.article-nav a:hover i{background:rgba(180,148,92,.28);transform:none}
+.article-nav-prev{border-right:none}
+.article-nav-label{font-size:.65rem;letter-spacing:.12em;color:var(--accent-gold);margin-bottom:.35rem}
+.article-nav-title{font-size:.88rem;color:rgba(255,255,255,.78)}
+@media(max-width:600px){.article-nav-prev{border-bottom:none}}
 .article-container strong{color:var(--text-primary)}
 .article-container table{width:100%;border-collapse:collapse;margin:1rem 0 1.5rem;font-size:.93rem}
 .article-container th{background:var(--btn-start);color:#fff;padding:.6rem 1rem;text-align:left;font-family:'Inter',sans-serif;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
