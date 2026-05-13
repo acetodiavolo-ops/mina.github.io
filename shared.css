@@ -222,6 +222,8 @@ button{text-transform:none;-webkit-appearance:button;background-color:transparen
 .article-container li{margin-bottom:.5rem}
 .article-container a{color:var(--accent-gold-accessible);text-decoration:underline;text-underline-offset:2px}
 .article-container a:hover{color:var(--accent-gold)}
+.article-container a.btn-gold,.article-container a.btn-outline{color:#fff;text-decoration:none}
+.article-container a.btn-outline:hover{color:var(--accent-gold)}
 .article-container strong{color:var(--text-primary)}
 .article-container table{width:100%;border-collapse:collapse;margin:1rem 0 1.5rem;font-size:.93rem}
 .article-container th{background:var(--btn-start);color:#fff;padding:.6rem 1rem;text-align:left;font-family:'Inter',sans-serif;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
