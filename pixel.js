@@ -71,6 +71,20 @@
   }
   if(stored === 'denied'){ return; }
 
+  /* Also honour consent recorded by cookie.js (key: 'iglisi_consent') */
+  var ck; try{ ck = JSON.parse(localStorage.getItem('iglisi_consent')); }catch(e){}
+  if(ck && ck.analytics === true){ setTimeout(loadPixel, 5000); return; }
+  if(ck && ck.analytics === false){ return; }
+
+  /* If cookie.js is managing consent on this page (#cookie-banner present),
+     skip building our own banner — wait for cookie.js to fire the event. */
+  if(document.getElementById('cookie-banner')){
+    document.addEventListener('iglisi:consent', function(e){
+      if(e.detail && e.detail.analytics === true) loadPixel();
+    }, { once: true });
+    return;
+  }
+
   /* ── Build banner ──────────────────────────────────────────────────────── */
   var banner = document.createElement('div');
   banner.id = 'iglisi-consent';

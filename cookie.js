@@ -9,6 +9,7 @@
   }
   function saveConsent(prefs) {
     try { localStorage.setItem(KEY, JSON.stringify({ v: VER, ts: Date.now(), analytics: prefs.analytics })); } catch (e) {}
+    try { document.dispatchEvent(new CustomEvent('iglisi:consent', { detail: prefs })); } catch (e) {}
   }
   function el(id) { return document.getElementById(id); }
 
