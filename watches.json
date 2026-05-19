@@ -431,5 +431,20 @@
     "description_en": "Gold-tone analog watch with champagne dial, gold hands and \"CITIZEN QUARTZ\" lettering.",
     "description_it": "Orologio analogico in tono oro con quadrante champagne, lancette dorate e scritte \"CITIZEN QUARTZ\".",
     "description_sq": "Orë analoge të artë me cadran shampanjë, duar të arta dhe mbishkrime \"CITIZEN QUARTZ\"."
+  },
+  {
+    "id": "casio-mtp-vd01",
+    "brand": "Casio",
+    "model": "MTP-VD01",
+    "reference": "MTP-VD01D-1EVUDF",
+    "year": 2025,
+    "condition": "New",
+    "price": 52,
+    "currency": "EUR",
+    "image": "/images/watches/casio-mtp-vd01.jpg",
+    "sold": false,
+    "description_en": "Bold stainless steel sports-dress watch by Casio. Black dial with luminous baton indices, date window at 3 o'clock, 50m water resistance, and reliable Japanese quartz movement. Sharp enough for the office, tough enough for everyday wear.",
+    "description_it": "Orologio Casio in acciaio inossidabile dal carattere sportivo ed elegante. Quadrante nero con indici a bastone luminosi, finestrella data alle 3, resistenza all'acqua 50m e preciso movimento al quarzo giapponese. Adatto all'ufficio come all'uso quotidiano.",
+    "description_sq": "Orë sportive-elegante Casio në çelik inox. Cadran i zi me indikatorë bastun luminozë, fenestrë date në pozicionin 3, rezistencë ndaj ujit 50m dhe lëvizje kuarci japoneze e besueshme. Elegante për zyrën, e qëndrueshme për çdo ditë."
   }
 ]
