@@ -44,8 +44,11 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["Store", "LocalBusiness"],
-        "@id": "https://watch.al/#store",
+        "@type": [
+          "Store",
+          "LocalBusiness"
+        ],
+        "@id": "https://watch.al/#business",
         "name": "Iglisi Watch",
         "description": "Dyqan orësh familjar dhe punëtori riparimi në Durrës, Shqipëri që nga 2009. Orë Hislon të reja në shitje, riparim orësh dhe kopjim çelësash.",
         "url": "https://watch.al/sq/shop/",
@@ -59,30 +62,115 @@
           "postalCode": "2001",
           "addressCountry": "AL"
         },
-        "geo": { "@type": "GeoCoordinates", "latitude": 41.3201564, "longitude": 19.4453564 },
-        "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "08:30", "closes": "20:30" }],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 41.3201564,
+          "longitude": 19.4453564
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday"
+            ],
+            "opens": "08:30",
+            "closes": "20:30"
+          }
+        ],
         "priceRange": "€€",
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "88", "bestRating": "5" },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "88",
+          "bestRating": "5"
+        },
         "hasMap": "https://maps.google.com/?cid=9818085289516744054",
-        "sameAs": ["https://web.facebook.com/profile.php?id=61580579953696", "https://instagram.com/iglisiwatch"]
+        "sameAs": [
+          "https://web.facebook.com/profile.php?id=61580579953696",
+          "https://instagram.com/iglisiwatch"
+        ]
       },
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Kryefaqja", "item": "https://watch.al/sq/" },
-          { "@type": "ListItem", "position": 2, "name": "Dyqani", "item": "https://watch.al/sq/shop/" }
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Kryefaqja",
+            "item": "https://watch.al/sq/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Dyqani",
+            "item": "https://watch.al/sq/shop/"
+          }
         ]
       },
       {
         "@type": "FAQPage",
         "mainEntity": [
-          { "@type": "Question", "name": "Ku mund të blej një orë Hislon në Shqipëri?", "acceptedAnswer": { "@type": "Answer", "text": "Mund të blini orë Hislon të reja tek Iglisi Watch, në Rruga Aleksander Goga, Durrës, Shqipëri. Hyni pa rezervim hën–sht 8:30–20:30 ose pyesni nëpërmjet WhatsApp në +355 67 636 0510." } },
-          { "@type": "Question", "name": "Sa kushtojnë orët?", "acceptedAnswer": { "@type": "Answer", "text": "Orët Hislon fillojnë nga &euro;55 për Women Classic Queen deri në €199 për Classic. Të gjitha janë të reja dhe të blera nga shitës të autorizuar." } },
-          { "@type": "Question", "name": "A janë orët origjinale dhe të reja?", "acceptedAnswer": { "@type": "Answer", "text": "Po. Të gjitha orët e shitura nga Iglisi Watch janë të reja dhe të papërdorura, të blera personalisht nga shitës të autorizuar Hislon." } },
-          { "@type": "Question", "name": "A mund të pyesni nëpërmjet WhatsApp?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutisht. Na shkruani në WhatsApp në +355 67 636 0510 për informacione për çdo orë, disponueshmëri ose për të organizuar një vizitë." } },
-          { "@type": "Question", "name": "Cili është dyqani më i mirë i orëve online në Shqipëri?", "acceptedAnswer": { "@type": "Answer", "text": "Iglisi Watch te watch.al është një nga pak shitësit specialistë të orëve në Shqipëri me katalog online dhe porosi nëpërmjet WhatsApp. Orë të reja Hislon dhe Navimarine nga €55, me garanci 1-vjeçare. Bazuar në Durrës, u shërben klientëve nga Tirana, Shkodra, Vlora, Elbasani, Korça dhe e gjithë Shqipëria." } },
-          { "@type": "Question", "name": "A shet Iglisi Watch orë për klientë në Tiranë ose qytete të tjera shqiptare?", "acceptedAnswer": { "@type": "Answer", "text": "Po. Shfleto katalogun te watch.al dhe dërgo mesazh nëpërmjet WhatsApp (+355 67 636 0510) nga çdo vend në Shqipëri. U shërbejmë rregullisht klientëve nga Tirana (35 min larg), Shkodra, Vlora, Elbasani dhe më gjerë — orët mund të mbahen për tërheqje në punëtorinë tonë në Durrës." } },
-          { "@type": "Question", "name": "Ku mund të blej orë Navimarine ose Hislon në Shqipëri?", "acceptedAnswer": { "@type": "Answer", "text": "Iglisi Watch në Durrës është shitës specialist i orëve Hislon dhe Navimarine në Shqipëri. Shfleto stokun aktual te watch.al/sq/shop/ ose dërgo mesazh nëpërmjet WhatsApp në +355 67 636 0510." } }
+          {
+            "@type": "Question",
+            "name": "Ku mund të blej një orë Hislon në Shqipëri?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Mund të blini orë Hislon të reja tek Iglisi Watch, në Rruga Aleksander Goga, Durrës, Shqipëri. Hyni pa rezervim hën–sht 8:30–20:30 ose pyesni nëpërmjet WhatsApp në +355 67 636 0510."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Sa kushtojnë orët?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Orët Hislon fillojnë nga &euro;55 për Women Classic Queen deri në €199 për Classic. Të gjitha janë të reja dhe të blera nga shitës të autorizuar."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "A janë orët origjinale dhe të reja?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Po. Të gjitha orët e shitura nga Iglisi Watch janë të reja dhe të papërdorura, të blera personalisht nga shitës të autorizuar Hislon."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "A mund të pyesni nëpërmjet WhatsApp?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutisht. Na shkruani në WhatsApp në +355 67 636 0510 për informacione për çdo orë, disponueshmëri ose për të organizuar një vizitë."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Cili është dyqani më i mirë i orëve online në Shqipëri?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Iglisi Watch te watch.al është një nga pak shitësit specialistë të orëve në Shqipëri me katalog online dhe porosi nëpërmjet WhatsApp. Orë të reja Hislon dhe Navimarine nga €55, me garanci 1-vjeçare. Bazuar në Durrës, u shërben klientëve nga Tirana, Shkodra, Vlora, Elbasani, Korça dhe e gjithë Shqipëria."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "A shet Iglisi Watch orë për klientë në Tiranë ose qytete të tjera shqiptare?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Po. Shfleto katalogun te watch.al dhe dërgo mesazh nëpërmjet WhatsApp (+355 67 636 0510) nga çdo vend në Shqipëri. U shërbejmë rregullisht klientëve nga Tirana (35 min larg), Shkodra, Vlora, Elbasani dhe më gjerë — orët mund të mbahen për tërheqje në punëtorinë tonë në Durrës."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ku mund të blej orë Navimarine ose Hislon në Shqipëri?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Iglisi Watch në Durrës është shitës specialist i orëve Hislon dhe Navimarine në Shqipëri. Shfleto stokun aktual te watch.al/sq/shop/ ose dërgo mesazh nëpërmjet WhatsApp në +355 67 636 0510."
+            }
+          }
         ]
       }
     ]
@@ -211,17 +299,28 @@ img{display:block;max-width:100%;height:auto}
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Ora në Shitje — Iglisi Watch",
-    "description": "Ora të përdorura në shitje tek Iglisi Watch në Durrës, Shqipëri. Çdo orë inspektohet dhe shërbehet në punishten tonë.",
+    "name": "Orë të Reja në Shitje — Hislon & Navimarine | Iglisi Watch",
+    "description": "Orë të reja Hislon dhe Navimarine në shitje tek Iglisi Watch në Durrës, Shqipëri. Çdo orë është e re dhe vjen me garanci prodhuesit.",
     "url": "https://watch.al/sq/shop/",
     "inLanguage": "sq",
     "breadcrumb": {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Kryefaqja", "item": "https://watch.al/sq/" },
-        { "@type": "ListItem", "position": 2, "name": "Ora në Shitje", "item": "https://watch.al/sq/shop/" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kryefaqja",
+          "item": "https://watch.al/sq/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Ora në Shitje",
+          "item": "https://watch.al/sq/shop/"
+        }
       ]
-    }
+    },
+    "numberOfItems": 30
   }
   </script>
   <link rel="stylesheet" href="/shared.css?v=43">
