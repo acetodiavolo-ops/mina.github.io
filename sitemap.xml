@@ -1713,4 +1713,14 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/dhurate-ore-durres-sot.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-gift-durres-same-day.html"/>
   </url>
+
+  <!-- ── BLOG: CASIO VS CITIZEN ───────────────────────────────────────── -->
+  <url>
+    <loc>https://watch.al/en/blog/casio-vs-citizen.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/casio-vs-citizen.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/casio-vs-citizen.html"/>
+  </url>
 </urlset>
