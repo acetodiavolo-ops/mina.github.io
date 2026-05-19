@@ -87,7 +87,7 @@
     };
     document.getElementById('ld-json').textContent = JSON.stringify(ld);
 
-    var imgHtml = w.image ? '<img src="' + w.image + '" alt="' + w.brand + ' ' + w.model + (w.brand === 'Hislon' ? ' Swiss Watch' : '') + '" fetchpriority="high">' : '';
+    var imgHtml = w.image ? '<picture><source srcset="' + w.image.replace(/\.jpe?g$/i, '.webp') + '" type="image/webp"><img src="' + w.image + '" alt="' + w.brand + ' ' + w.model + (w.brand === 'Hislon' ? ' Swiss Watch' : '') + '" fetchpriority="high"></picture>' : '';
     var condIt = w.condition === 'New' ? 'Nuovo' : 'Usato';
     var ctaBlock = w.sold
       ? '<p style="font-size:1rem;color:#888;font-weight:600">Questo orologio \u00e8 stato venduto.</p>'

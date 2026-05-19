@@ -87,7 +87,7 @@
 
   function watchCard(w){
     var imgHtml = w.image
-      ? '<a href="/en/shop/watch.html?id=' + w.id + '" aria-label="' + w.brand + ' ' + w.model + (w.brand === 'Hislon' ? ' Swiss Watch' : '') + '"><img src="' + w.image + '" alt="' + w.brand + ' ' + w.model + (w.brand === 'Hislon' ? ' Swiss Watch' : '') + '" loading="lazy"></a>'
+      ? '<a href="/en/shop/watch.html?id=' + w.id + '" aria-label="' + w.brand + ' ' + w.model + (w.brand === 'Hislon' ? ' Swiss Watch' : '') + '"><picture><source srcset="' + w.image.replace(/\.jpe?g$/i, '.webp') + '" type="image/webp"><img src="' + w.image + '" alt="' + w.brand + ' ' + w.model + (w.brand === 'Hislon' ? ' Swiss Watch' : '') + '" loading="lazy"></picture></a>'
       : '<div class="watch-img-placeholder"><i class="fas fa-clock" aria-hidden="true"></i></div>';
     var soldOverlay = w.sold ? '<div class="sold-overlay">Sold</div>' : '';
     var ctaHtml = w.sold
