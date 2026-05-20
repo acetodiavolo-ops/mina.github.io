@@ -86,6 +86,16 @@
       }
     };
     document.getElementById('ld-json').textContent = JSON.stringify(ld);
+    var bc = {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      'itemListElement': [
+        {'@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://watch.al/it/'},
+        {'@type': 'ListItem', 'position': 2, 'name': 'Orologi in Vendita', 'item': 'https://watch.al/it/shop/'},
+        {'@type': 'ListItem', 'position': 3, 'name': w.brand + ' ' + w.model, 'item': pageUrl}
+      ]
+    };
+    document.getElementById('ld-breadcrumb').textContent = JSON.stringify(bc);
 
     var imgHtml = w.image ? '<picture><source srcset="' + w.image.replace(/\.jpe?g$/i, '.webp') + '" type="image/webp"><img src="' + w.image + '" alt="' + w.brand + ' ' + w.model + (w.brand === 'Hislon' ? ' Swiss Watch' : '') + '" fetchpriority="high"></picture>' : '';
     var condIt = w.condition === 'New' ? 'Nuovo' : 'Usato';
