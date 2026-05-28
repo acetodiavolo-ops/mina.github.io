@@ -15,14 +15,10 @@
     return;
   }
 
-  fetch('https://raw.githubusercontent.com/acetodiavolo-ops/mina.github.io/main/watches.json?v=2')
-    .then(function(r){ return r.json(); })
-    .then(function(watches){
-      var w = watches.find(function(x){ return x.id === watchId; });
-      if(!w){ showError('Ora nuk u gjet.', 'Kjo or\u00eb mund t\u00eb jet\u00eb shitur ose hequr. Shfletoni dyqanin p\u00ebr ato t\u00eb disponueshme.'); return; }
-      render(w);
-    })
-    .catch(function(){ showError('Nuk mund t\u00eb ngarkohet e dhena e or\u00ebs.', 'Ju lutem rifreskoni ose kthehuni n\u00eb dyqan.'); });
+  if(!window.WATCHES_DATA){ showError('Nuk mund t\u00eb ngarkohet e dhena e or\u00ebs.', 'Ju lutem rifreskoni ose kthehuni n\u00eb dyqan.'); return; }
+  var w = window.WATCHES_DATA.find(function(x){ return x.id === watchId; });
+  if(!w){ showError('Ora nuk u gjet.', 'Kjo or\u00eb mund t\u00eb jet\u00eb shitur ose hequr. Shfletoni dyqanin p\u00ebr ato t\u00eb disponueshme.'); return; }
+  render(w);
 
   var EUR_TO_LEK = 97;
   function fmt(price, currency){

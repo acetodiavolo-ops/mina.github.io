@@ -15,14 +15,10 @@
     return;
   }
 
-  fetch('https://raw.githubusercontent.com/acetodiavolo-ops/mina.github.io/main/watches.json?v=2')
-    .then(function(r){ return r.json(); })
-    .then(function(watches){
-      var w = watches.find(function(x){ return x.id === watchId; });
-      if(!w){ showError('Orologio non trovato.', 'Questo orologio potrebbe essere stato venduto o rimosso. Sfoglia il negozio per vedere i disponibili.'); return; }
-      render(w);
-    })
-    .catch(function(){ showError("Impossibile caricare i dati dell'orologio.", 'Ricarica la pagina o torna al negozio.'); });
+  if(!window.WATCHES_DATA){ showError("Impossibile caricare i dati dell'orologio.", 'Ricarica la pagina o torna al negozio.'); return; }
+  var w = window.WATCHES_DATA.find(function(x){ return x.id === watchId; });
+  if(!w){ showError('Orologio non trovato.', 'Questo orologio potrebbe essere stato venduto o rimosso. Sfoglia il negozio per vedere i disponibili.'); return; }
+  render(w);
 
   var EUR_TO_LEK = 97;
   function fmt(price, currency){

@@ -15,14 +15,10 @@
     return;
   }
 
-  fetch('https://raw.githubusercontent.com/acetodiavolo-ops/mina.github.io/main/watches.json?v=2')
-    .then(function(r){ return r.json(); })
-    .then(function(watches){
-      var w = watches.find(function(x){ return x.id === watchId; });
-      if(!w){ showError('Watch not found.', "This watch may have been sold or removed. Browse the shop for what's available."); return; }
-      render(w);
-    })
-    .catch(function(){ showError('Could not load watch data.', 'Please refresh or return to the shop.'); });
+  if(!window.WATCHES_DATA){ showError('Could not load watch data.', 'Please refresh or return to the shop.'); return; }
+  var w = window.WATCHES_DATA.find(function(x){ return x.id === watchId; });
+  if(!w){ showError('Watch not found.', "This watch may have been sold or removed. Browse the shop for what's available."); return; }
+  render(w);
 
   var EUR_TO_LEK = 97;
   function fmt(price, currency){
