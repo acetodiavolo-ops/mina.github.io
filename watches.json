@@ -446,5 +446,34 @@
     "description_en": "Bold stainless steel sports-dress watch by Casio. Black dial with luminous baton indices, date window at 3 o'clock, 50m water resistance, and reliable Japanese quartz movement. Sharp enough for the office, tough enough for everyday wear.",
     "description_it": "Orologio Casio in acciaio inossidabile dal carattere sportivo ed elegante. Quadrante nero con indici a bastone luminosi, finestrella data alle 3, resistenza all'acqua 50m e preciso movimento al quarzo giapponese. Adatto all'ufficio come all'uso quotidiano.",
     "description_sq": "Orë sportive-elegante Casio në çelik inox. Cadran i zi me indikatorë bastun luminozë, fenestrë date në pozicionin 3, rezistencë ndaj ujit 50m dhe lëvizje kuarci japoneze e besueshme. Elegante për zyrën, e qëndrueshme për çdo ditë."
+  },
+  {
+    "id": "bigotti-bg1-10154-1",
+    "brand": "Bigotti",
+    "model": "BG1.10154.1",
+    "reference": "BG1.10154.1",
+    "year": 2025,
+    "condition": "New",
+    "price": 84,
+    "currency": "EUR",
+    "image": "/images/watches/bigotti-bg1-10154-1.webp",
+    "sold": false,
+    "description_en": "Bigotti BG1.10154.1 — stainless steel multi-function watch with a white dial, day-date display, and multiple subdials. Clean baton indices, three-pusher chronograph case, and brushed steel bracelet. A sharp, functional timepiece at an excellent price.",
+    "description_it": "Bigotti BG1.10154.1 — orologio multifunzione in acciaio inossidabile con quadrante bianco, display giorno-data e più contatori. Indici a bastone puliti, cassa con tre pulsanti e bracciale in acciaio spazzolato. Un orologio preciso e funzionale a un ottimo prezzo.",
+    "description_sq": "Bigotti BG1.10154.1 — orë multifunksionale çeliku inox me ciferblat të bardhë, tregues dite-date dhe nën-cadranë të shumtë. Indikatorë bastun të pastër, kuti me tre butona dhe byzylyk çeliku të brushuar. Orë precize dhe funksionale me çmim të shkëlqyer."
+  },
+  {
+    "id": "navimarine-steel-5atm-blue",
+    "brand": "Navimarine",
+    "model": "Steel 5ATM Blue",
+    "year": 2025,
+    "condition": "New",
+    "price": 75,
+    "currency": "EUR",
+    "image": "/images/watches/navimarine-steel-5atm-blue.webp",
+    "sold": false,
+    "description_en": "Navimarine Steel 5ATM — classic stainless steel watch with a deep blue sunburst dial and Roman numeral hour markers. Date display at 3 o'clock, 5 ATM water resistance, and a solid brushed steel bracelet. A confident, elegant everyday watch.",
+    "description_it": "Navimarine Steel 5ATM — orologio classico in acciaio inossidabile con quadrante blu sunburst e numeri romani. Data alle 3, resistenza all'acqua 5 ATM e bracciale in acciaio spazzolato solido. Un orologio quotidiano elegante e deciso.",
+    "description_sq": "Navimarine Steel 5ATM — orë klasike çeliku inox me ciferblat blu sunburst dhe tregues numrash romakë. Datë në pozicionin 3, rezistencë ndaj ujit 5 ATM dhe byzylyk çeliku solid të brushuar. Orë e përditshme elegante dhe e sigurt."
   }
 ]
