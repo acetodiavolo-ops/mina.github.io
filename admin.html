@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://connect.facebook.net https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://www.facebook.com https://connect.facebook.net https://api.country.is https://api.github.com https://raw.githubusercontent.com https://api.web3forms.com; font-src 'self'; frame-src https://www.google.com https://www.facebook.com; object-src 'none'; base-uri 'self'; require-trusted-types-for 'script'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin — Iglisi Watch</title>
+  <title>Admin - Iglisi Watch</title>
   <meta name="robots" content="noindex, nofollow">
   <style>
     *, ::before, ::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -105,7 +105,7 @@
 <body>
 
 <header class="site-header">
-  <h1>Iglisi Watch — Admin</h1>
+  <h1>Iglisi Watch - Admin</h1>
   <span>Internal use only</span>
 </header>
 
@@ -132,7 +132,7 @@
       <!-- Connected state (shown when token is saved) -->
       <div id="token-connected-wrap" style="display:none">
         <div class="token-connected">
-          <span>✓ Connected — watches publish automatically</span>
+          <span>✓ Connected - watches publish automatically</span>
           <button type="button" id="token-change-btn">Change</button>
         </div>
         <input type="hidden" id="gh-token">
@@ -148,7 +148,7 @@
           </div>
           <div class="token-status" id="token-status"></div>
         </div>
-        <p class="form-hint" style="color:#c0392b">No token? The watch cannot be published automatically — contact your admin.</p>
+        <p class="form-hint" style="color:#c0392b">No token? The watch cannot be published automatically - contact your admin.</p>
       </div>
     </div>
 
@@ -215,7 +215,7 @@
             <input type="file" id="f-image-file" accept="image/*">
             <div class="upload-icon">📷</div>
             <p><strong>Click to choose a photo</strong> or drag &amp; drop</p>
-            <p style="font-size:.75rem;color:#aaa;margin-top:.25rem">JPG, PNG or WebP — max 5 MB</p>
+            <p style="font-size:.75rem;color:#aaa;margin-top:.25rem">JPG, PNG or WebP - max 5 MB</p>
           </div>
           <div id="image-preview-wrap">
             <img id="image-preview" src="" alt="Preview">
@@ -258,9 +258,9 @@
       </form>
     </div>
 
-    <!-- FALLBACK: manual JSON output (shown if no token) — hidden from normal view -->
+    <!-- FALLBACK: manual JSON output (shown if no token) - hidden from normal view -->
     <div id="output-section" class="card" style="display:none">
-      <h3>Technical fallback — JSON</h3>
+      <h3>Technical fallback - JSON</h3>
       <div class="output-instruction">
         No GitHub token was provided. Copy the JSON below and paste it into <strong>watches.json</strong> in your GitHub repo, then commit.<br>
         <strong>Also upload the image</strong> to <code>/images/watches/</code> in the repo.
