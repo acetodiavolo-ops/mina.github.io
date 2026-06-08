@@ -94,12 +94,34 @@
           "latitude": 41.3201564,
           "longitude": 19.4453564
         },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday"
+            ],
+            "opens": "08:30",
+            "closes": "20:30"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Sunday"],
+            "opens": "00:00",
+            "closes": "00:00"
+          }
+        ],
+        "areaServed": [{ "@type": "City", "name": "Durrës" }, { "@type": "City", "name": "Tirana" }, { "@type": "Country", "name": "Albania" }],
         "@id": "https://watch.al/#business",
         "email": "iglisi@watch.al",
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "5.0",
-          "reviewCount": "88",
+          "reviewCount": "109",
           "bestRating": "5",
           "worstRating": "1"
         },

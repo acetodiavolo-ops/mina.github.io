@@ -1,4 +1,5 @@
 User-agent: *
-Disallow:
+Disallow: /admin.html
+Disallow: /offline.html
 
 Sitemap: https://watch.al/sitemap.xml

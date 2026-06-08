@@ -412,7 +412,7 @@ address a:hover, #contact a:not(.btn-primary):not(.btn-secondary):hover { color:
 span.inline-flex > span { color: #2a2a2a; }
 span.inline-flex > span > strong { color: #2a2a2a; }
 /* Blog preview */
-.blog-card { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: var(--radius-card); overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.05); transition: transform var(--transition-base), box-shadow var(--transition-base); display: flex; flex-direction: column; }
+.blog-card { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: var(--radius-card); overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.05); transition: transform var(--transition-base), box-shadow var(--transition-base); display: flex; flex-direction: column; position: relative; }
 .blog-card:hover { transform: translateY(-5px); box-shadow: 0 16px 32px -8px rgba(0,0,0,0.12); }
 .blog-card-accent { height: 4px; background: linear-gradient(90deg, var(--accent-gold), var(--accent-teal)); }
 .blog-card-body { padding: 1.75rem; flex: 1; display: flex; flex-direction: column; }
@@ -424,6 +424,7 @@ span.inline-flex > span > strong { color: #2a2a2a; }
 .blog-card-meta i { color: var(--accent-gold); }
 .blog-card-read { display: inline-flex; align-items: center; gap: .35rem; color: var(--accent-gold-accessible); font-size: .85rem; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; margin-top: .25rem; }
 .blog-card-read:hover { color: var(--accent-gold); }
+.blog-card-num { position: absolute; top: .6rem; right: 1.1rem; font-size: 5rem; font-weight: 900; font-family: 'Cormorant Garamond', serif; color: rgba(180,148,92,.07); line-height: 1; pointer-events: none; user-select: none; }
 /* Icon circle centering - overrides .fas display:inline-block with higher specificity */
 i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justify-content:center}
 
@@ -835,13 +836,20 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
         ],
         "opens": "08:30",
         "closes": "20:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Sunday"],
+        "opens": "00:00",
+        "closes": "00:00"
       }
     ],
     "priceRange": "$",
+    "areaServed": [{ "@type": "City", "name": "Durrës" }, { "@type": "City", "name": "Tirana" }, { "@type": "Country", "name": "Albania" }],
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5.0",
-      "reviewCount": "88",
+      "reviewCount": "109",
       "bestRating": "5"
     },
     "sameAs": [
@@ -2251,7 +2259,53 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
         </div>
       </div>
     </section>
-    <!-- FAQ -->
+    <!-- Blog preview -->
+    <section class="py-24 bg-white" aria-labelledby="blog-preview-heading" data-animate>
+      <div class="max-w-6xl mx-auto px-6">
+        <p class="text-center text-sm font-semibold tracking-widest uppercase gold mb-3">Udhëzues &amp; Njohuri</p>
+        <h2 id="blog-preview-heading" data-tick-in class="text-4xl md:text-5xl text-center mb-3 section-title">Nga <span class="gold-display">Blogu</span></h2>
+        <p class="text-center text-gray-500 text-lg mb-14 max-w-2xl mx-auto">K&euml;shilla p&euml;r kujdesin e or&euml;ve, udhëzues blerjeje dhe njohuri mbi riparimin nga pun&euml;toria jon&euml; n&euml; Durr&euml;s.</p>
+        <div class="grid md:grid-cols-3 gap-8 mb-10">
+          <article class="blog-card">
+            <div class="blog-card-accent"></div>
+            <span class="blog-card-num" aria-hidden="true">01</span>
+            <div class="blog-card-body">
+              <span class="blog-card-category"><i class="fas fa-battery-three-quarters" aria-hidden="true"></i> Riparim</span>
+              <a href="/sq/blog/zevdendosja-baterise-ores-durres.html" class="blog-card-title">Z&euml;vend&euml;sim Baterie s&euml; Or&euml;s n&euml; Durr&euml;s</a>
+              <p class="blog-card-excerpt">Nuk k&euml;rkohet takim &mdash; gati n&euml; 10&ndash;15 minuta nd&euml;rkoh&euml; q&euml; prisni, me garanci p&euml;r &ccedil;do bateri t&euml; instaluar.</p>
+              <div class="blog-card-meta"><span><i class="fas fa-clock" aria-hidden="true"></i> 4 min lexim</span></div>
+              <a href="/sq/blog/zevdendosja-baterise-ores-durres.html" class="blog-card-read">Lexo artikullin <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-card-accent"></div>
+            <span class="blog-card-num" aria-hidden="true">02</span>
+            <div class="blog-card-body">
+              <span class="blog-card-category"><i class="fas fa-tint" aria-hidden="true"></i> Udh&euml;zues</span>
+              <a href="/sq/blog/rezistenca-ujes-ores.html" class="blog-card-title">Rezistenca ndaj Ujit e Or&euml;ve: Kuptoni ATM</a>
+              <p class="blog-card-excerpt">Shumica keqinterpretojn&euml; klasifikimet e or&euml;s ndaj ujit dhe e d&euml;mtojn&euml;. Ja &ccedil;far&euml; lejojn&euml; realisht 3, 5 dhe 10 ATM.</p>
+              <div class="blog-card-meta"><span><i class="fas fa-clock" aria-hidden="true"></i> 6 min lexim</span></div>
+              <a href="/sq/blog/rezistenca-ujes-ores.html" class="blog-card-read">Lexo artikullin <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-card-accent"></div>
+            <span class="blog-card-num" aria-hidden="true">03</span>
+            <div class="blog-card-body">
+              <span class="blog-card-category"><i class="fas fa-cogs" aria-hidden="true"></i> Edukim</span>
+              <a href="/sq/blog/levizje-zvicerane-vs-japoneze.html" class="blog-card-title">L&euml;vizjet Zvicerane vs Japoneze t&euml; Krahasuar</a>
+              <p class="blog-card-excerpt">&ldquo;Swiss Made&rdquo; mbart pesh&euml; t&euml; caktuar. Po ashtu edhe l&euml;vizja Seiko. Ja &ccedil;far&euml; garantojn&euml; realisht ato etiketa.</p>
+              <div class="blog-card-meta"><span><i class="fas fa-clock" aria-hidden="true"></i> 6 min lexim</span></div>
+              <a href="/sq/blog/levizje-zvicerane-vs-japoneze.html" class="blog-card-read">Lexo artikullin <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+        </div>
+        <div class="text-center">
+          <a href="/sq/blog/" class="btn-primary">Shiko t&euml; gjitha artikujt <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+        <!-- FAQ -->
     <section class="py-24 bg-gray-50" aria-labelledby="faq-heading" data-animate>
       <div class="max-w-5xl mx-auto px-6">
         <h2 id="faq-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Pyetjet <span class="gold-display">e Shpeshta</span></h2>

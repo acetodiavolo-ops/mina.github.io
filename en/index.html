@@ -467,7 +467,7 @@ span.inline-flex > span > strong { color: #2a2a2a; }
 .cookie-toggle-always { font-size: 0.72rem; color: #888; font-style: italic; flex-shrink: 0; }
 .cookie-modal-footer { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid #eaeaea; }
 /* Blog preview */
-.blog-card { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: var(--radius-card); overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.05); transition: transform var(--transition-base), box-shadow var(--transition-base); display: flex; flex-direction: column; }
+.blog-card { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: var(--radius-card); overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.05); transition: transform var(--transition-base), box-shadow var(--transition-base); display: flex; flex-direction: column; position: relative; }
 .blog-card:hover { transform: translateY(-5px); box-shadow: 0 16px 32px -8px rgba(0,0,0,0.12); }
 .blog-card-accent { height: 4px; background: linear-gradient(90deg, var(--accent-gold), var(--accent-teal)); }
 .blog-card-body { padding: 1.75rem; flex: 1; display: flex; flex-direction: column; }
@@ -479,6 +479,7 @@ span.inline-flex > span > strong { color: #2a2a2a; }
 .blog-card-meta i { color: var(--accent-gold); }
 .blog-card-read { display: inline-flex; align-items: center; gap: .35rem; color: var(--accent-gold-accessible); font-size: .85rem; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; margin-top: .25rem; }
 .blog-card-read:hover { color: var(--accent-gold); }
+.blog-card-num { position: absolute; top: .6rem; right: 1.1rem; font-size: 5rem; font-weight: 900; font-family: 'Cormorant Garamond', serif; color: rgba(180,148,92,.07); line-height: 1; pointer-events: none; user-select: none; }
 /* Icon circle centering - overrides .fas display:inline-block with higher specificity */
 i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justify-content:center}
 
@@ -893,13 +894,20 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
         ],
         "opens": "08:30",
         "closes": "20:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Sunday"],
+        "opens": "00:00",
+        "closes": "00:00"
       }
     ],
     "priceRange": "$",
+    "areaServed": [{ "@type": "City", "name": "Durrës" }, { "@type": "City", "name": "Tirana" }, { "@type": "Country", "name": "Albania" }],
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5.0",
-      "reviewCount": "88",
+      "reviewCount": "109",
       "bestRating": "5"
     },
     "sameAs": [
@@ -2380,7 +2388,53 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
         </div>
       </div>
     </section>
-    <!-- FAQ -->
+    <!-- Blog preview -->
+    <section class="py-24 bg-white" aria-labelledby="blog-preview-heading" data-animate>
+      <div class="max-w-6xl mx-auto px-6">
+        <p class="text-center text-sm font-semibold tracking-widest uppercase gold mb-3">Watch Guides &amp; Insights</p>
+        <h2 id="blog-preview-heading" data-tick-in class="text-4xl md:text-5xl text-center mb-3 section-title">From the <span class="gold-display">Blog</span></h2>
+        <p class="text-center text-gray-500 text-lg mb-14 max-w-2xl mx-auto">Watch care tips, buying guides and repair insights from our workshop in Durr&euml;s.</p>
+        <div class="grid md:grid-cols-3 gap-8 mb-10">
+          <article class="blog-card">
+            <div class="blog-card-accent"></div>
+            <span class="blog-card-num" aria-hidden="true">01</span>
+            <div class="blog-card-body">
+              <span class="blog-card-category"><i class="fas fa-battery-three-quarters" aria-hidden="true"></i> Repair</span>
+              <a href="/en/blog/watch-battery-replacement-durres.html" class="blog-card-title">Watch Battery Replacement in Durr&euml;s</a>
+              <p class="blog-card-excerpt">No appointment needed &mdash; finished in 10&ndash;15 minutes while you wait, with a sealed guarantee on every battery.</p>
+              <div class="blog-card-meta"><span><i class="fas fa-clock" aria-hidden="true"></i> 4 min read</span></div>
+              <a href="/en/blog/watch-battery-replacement-durres.html" class="blog-card-read">Read article <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-card-accent"></div>
+            <span class="blog-card-num" aria-hidden="true">02</span>
+            <div class="blog-card-body">
+              <span class="blog-card-category"><i class="fas fa-tint" aria-hidden="true"></i> Guide</span>
+              <a href="/en/blog/watch-water-resistance.html" class="blog-card-title">Watch Water Resistance: ATM, BAR &amp; What They Mean</a>
+              <p class="blog-card-excerpt">Most people misread their watch&rsquo;s water rating &mdash; and end up ruining it. Here&rsquo;s what 3, 5 and 10 ATM actually allow.</p>
+              <div class="blog-card-meta"><span><i class="fas fa-clock" aria-hidden="true"></i> 6 min read</span></div>
+              <a href="/en/blog/watch-water-resistance.html" class="blog-card-read">Read article <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-card-accent"></div>
+            <span class="blog-card-num" aria-hidden="true">03</span>
+            <div class="blog-card-body">
+              <span class="blog-card-category"><i class="fas fa-cogs" aria-hidden="true"></i> Education</span>
+              <a href="/en/blog/swiss-vs-japanese-movements.html" class="blog-card-title">Swiss vs Japanese Watch Movements Compared</a>
+              <p class="blog-card-excerpt">Swiss Made and Japanese movements represent different watchmaking philosophies. Here&rsquo;s what those labels actually guarantee.</p>
+              <div class="blog-card-meta"><span><i class="fas fa-clock" aria-hidden="true"></i> 6 min read</span></div>
+              <a href="/en/blog/swiss-vs-japanese-movements.html" class="blog-card-read">Read article <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+        </div>
+        <div class="text-center">
+          <a href="/en/blog/" class="btn-primary">View all articles <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+        <!-- FAQ -->
     <section class="py-24 bg-gray-50" aria-labelledby="faq-heading" data-animate>
       <div class="max-w-5xl mx-auto px-6">
         <h2 id="faq-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Frequently Asked <span class="gold-display">Questions</span></h2>
