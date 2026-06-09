@@ -152,7 +152,7 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;width:100%;
 .fa-gift::before{content:"\f06b"}
 .fa-exclamation-circle::before{content:"\f06a"}
 .fa-wrench::before{content:"\f0ad"}
-.fa-arrow-left::before{content:"\f060"}
+.fa-arrow-left::before{content:"\f060"}.fa-filter::before{content:"0b0"}.fa-money-bill::before{content:"0d6"}.fa-store::before{content:"54e"}.fa-watch::before{content:"55e"}
 
 /* ── RESETS ──────────────────────────────────────────────────────────────── */
 *,::before,::after{box-sizing:border-box;border-width:0;border-style:solid}
