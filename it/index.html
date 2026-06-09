@@ -103,7 +103,6 @@ iframe { border: 0; }
 .hidden { display: none; }
 .site-header-wrap{position:sticky;top:0;z-index:50}
 .nav-drawer{display:none;background:rgba(6,21,59,.98);border-top:2px solid rgba(180,148,92,.18);box-shadow:0 8px 24px rgba(0,0,0,.3)}
-.nav-drawer.open{display:block}
 #nav-toggle:checked~.nav-drawer{display:block!important}
 #nav-toggle:checked~header .bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
 #nav-toggle:checked~header .bar:nth-child(2){opacity:0}
@@ -326,12 +325,6 @@ details.faq-item[open] .faq-question>i:last-child{transform:rotate(180deg)}
 @media (max-width: 640px) { .whatsapp-float { width: 55px; height: 55px; font-size: 28px; bottom: 70px; right: 20px; } }
 @media (max-width: 640px) { .back-to-top { bottom: 130px; right: 20px; width: 45px; height: 45px; font-size: 22px; } }
 @media (max-width: 768px) { .call-bar { display: block; } body { padding-bottom: 40px; } }
-.map-wrapper { position: relative; width: 100%; height: 20rem; border-radius: 1rem; border: 1px solid var(--border-light); overflow: hidden; background: #f3f4f6; cursor: pointer; }
-.map-wrapper iframe { width: 100%; height: 100%; border: 0; display: block; }
-.map-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; background: #f3f4f6; z-index: 2; transition: opacity 0.3s ease; }
-.map-placeholder i { font-size: 3rem; color: var(--accent-gold); }
-.map-placeholder p { color: var(--text-secondary); font-size: 0.9rem; margin: 0; }
-.map-placeholder.hidden { opacity: 0; pointer-events: none; }
 .footer { background: var(--footer-bg); color: var(--footer-text); }
 .footer nav a { text-decoration: underline; text-underline-offset: 3px; }
 .footer nav a:hover { color: var(--accent-gold); }
@@ -2426,8 +2419,8 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
       <p class="text-xs text-gray-300 mt-2">Azienda familiare · Artigianato di precisione · Dal 2009</p>
       <p class="text-xs text-gray-300 mt-1">Seguici su Instagram <a href="https://instagram.com/iglisiwatch" target="_blank" rel="noopener noreferrer" class="gold hover:underline">@iglisiwatch</a></p>
       <nav aria-label="Seleziona la lingua" class="mt-4 flex justify-center gap-4 text-sm">
-        <a href="/en/" class="hover:text-[#b4945c] transition" style="text-decoration:underline">EN</a>
-        <a href="/sq/" class="hover:text-[#b4945c] transition" style="text-decoration:underline">SQ</a>
+        <a href="/en/" class="hover:text-[#b4945c] transition">EN</a>
+        <a href="/sq/" class="hover:text-[#b4945c] transition">SQ</a>
         <span aria-current="page" class="gold font-semibold">IT</span>
       </nav>
       <nav aria-label="Legale" class="mt-4 flex justify-center flex-wrap text-xs" style="color:#999;gap:0.4rem 1.25rem">
