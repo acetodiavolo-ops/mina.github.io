@@ -140,10 +140,10 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;width:100%;
 /* The gradient-border mask technique is only visible on hover-capable devices.
    On touch screens it never fires, so skip the expensive compositing entirely. */
 @media(hover:none){
-  .service-card::before,.equipment-card::before,.review-cta-card::before{display:none}
+  .service-card::before,.equipment-card::before{display:none}
 }
 
-/* ── FONT AWESOME ────────────────────────────────────────────────────────── */
+.related-articles{margin:2.5rem 0 1.5rem;padding:1.5rem;background:var(--bg-soft);border-radius:1rem;border:1px solid var(--border-light)}.related-articles h2{font-size:1.05rem;margin-bottom:.75rem;color:var(--text-primary)}.related-articles ul{display:flex;flex-direction:column;gap:.4rem}.related-articles li{list-style:disc;margin-left:1.25rem}.related-articles a{color:var(--accent-teal);text-decoration:underline;text-underline-offset:3px;font-size:.93rem}.related-articles a:hover{color:var(--accent-gold)}/* ── FONT AWESOME ────────────────────────────────────────────────────────── */
 @font-face{font-family:'Font Awesome 6 Free';font-style:normal;font-weight:900;font-display:block;src:url('/webfonts/fa-solid-900.woff2?v=4') format('woff2')}
 @font-face{font-family:'Font Awesome 6 Brands';font-style:normal;font-weight:400;font-display:block;src:url('/webfonts/fa-brands-400.woff2?v=4') format('woff2')}
 .fas,.fa-solid{font-family:'Font Awesome 6 Free';font-weight:900;font-style:normal;text-rendering:auto;line-height:1;-webkit-font-smoothing:antialiased;display:inline-block}
@@ -337,27 +337,10 @@ i.promise-icon,i.faq-icon{display:inline-flex;align-items:center;justify-content
 
 /* ── SUBPAGE ICON ANIMATIONS ─────────────────────────────────────────────── */
 @keyframes svc-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
-@keyframes svc-spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+100%{transform:rotate(360deg)}}
 @keyframes svc-bounce{0%,100%{transform:translateY(0)}45%{transform:translateY(-5px)}65%{transform:translateY(-2px)}}
 @keyframes svc-wiggle{0%,100%{transform:rotate(0deg)}25%{transform:rotate(-12deg)}75%{transform:rotate(12deg)}}
-.svc-card:nth-child(1):hover .svc-icon i,.svc-card:nth-child(1):active .svc-icon i{animation:svc-pulse .55s ease}
-.svc-card:nth-child(2):hover .svc-icon i,.svc-card:nth-child(2):active .svc-icon i{animation:svc-spin .6s linear}
-.svc-card:nth-child(3):hover .svc-icon i,.svc-card:nth-child(3):active .svc-icon i{animation:svc-bounce .55s ease}
-.svc-card:nth-child(4):hover .svc-icon i,.svc-card:nth-child(4):active .svc-icon i{animation:svc-wiggle .5s ease}
-.about-card:hover .about-card-icon i,.about-card:active .about-card-icon i{animation:svc-pulse .55s ease}
-/* ── HEADER CROWDING FIX ─────────────────────────────────────────────────── */
-@media(max-width:1200px){.solid-header .review-badge{display:none}}
-@media(max-width:900px){.solid-header a[href^="tel"]{display:none!important}}
 
-/* ── MOBILE TOUCH ACTIVATION — card lift & icon colour on tap ────────────── */
-/* On iOS/Android :active fires on touch, enabling the same feedback as :hover */
-.service-card:active,.equipment-card:active{border-color:transparent;box-shadow:0 8px 24px rgba(0,0,0,.08)}
-.service-card:active i,.equipment-card:active i{transform:scale(1.1);color:var(--accent-gold)}
-.promise-card:active{border-color:var(--accent-gold);transform:translateY(-5px)!important;box-shadow:0 10px 20px -5px rgba(180,148,92,.3)}
-.promise-card:active i{color:var(--accent-gold);transform:scale(1.1)}
-.trust-badge:active{border-color:var(--accent-gold);transform:translateY(-5px);box-shadow:0 10px 20px -5px rgba(180,148,92,.3)}
-.trust-badge:active i{color:var(--accent-gold);transform:scale(1.1)}
-.svc-card:active{box-shadow:0 8px 28px rgba(0,0,0,.1);transform:translateY(-3px)}
 .about-card:active{box-shadow:0 6px 24px rgba(0,0,0,.09)}
 /* iOS requires at least one touchstart listener for :active to fire on divs — added via shared.js body listener */
 
@@ -497,21 +480,21 @@ input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px soli
 
 /* ── MEET THE FAMILY ── */
 .about-family-section{background:#f5f0e8;padding:5rem 1.5rem}
-.family-split{display:flex;flex-direction:column;gap:2.5rem;align-items:center;max-width:64rem;margin:0 auto}
-.family-photo{width:100%}
-.family-photo img{border-radius:1.5rem;box-shadow:0 20px 40px rgba(0,0,0,.12);width:100%;height:360px;object-fit:cover}
-.family-text h2{font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 1.25rem;line-height:1.2}
-.family-text p{color:#3d3830;font-size:1.05rem;line-height:1.75;margin:0 0 1rem}
-.family-text p:last-child{margin:0}
+
+
+
+
+
+
 @media(min-width:768px){
-  .family-split{flex-direction:row;gap:3.5rem}
-  .family-photo{flex:0 0 42%;max-width:420px}
-  .family-photo img{height:420px}
-  .family-text{flex:1}
+  
+  
+  
+  
 }
 @media(max-width:768px){
   .about-family-section{padding:3rem 1.5rem}
-  .family-photo img{height:260px}
+  
 }
 
 /* ── TRUST BANNER ── */
