@@ -143,6 +143,7 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;width:100%;
   .service-card::before,.equipment-card::before{display:none}
 }
 
+.article-cta{margin:2rem 0 1rem;padding:1rem 1.25rem;background:rgba(180,148,92,.08);border-left:3px solid var(--accent-gold);border-radius:0 .6rem .6rem 0;font-size:.875rem;color:var(--text-secondary);line-height:1.6}.article-cta a{color:var(--accent-gold);font-weight:700;text-decoration:underline;text-underline-offset:3px}.article-cta a:hover{color:var(--accent-teal)}
 .related-articles{margin:2.5rem 0 1.5rem;padding:1.5rem;background:var(--bg-soft);border-radius:1rem;border:1px solid var(--border-light)}.related-articles h2{font-size:1.05rem;margin-bottom:.75rem;color:var(--text-primary)}.related-articles ul{display:flex;flex-direction:column;gap:.4rem}.related-articles li{list-style:disc;margin-left:1.25rem}.related-articles a{color:var(--accent-teal);text-decoration:underline;text-underline-offset:3px;font-size:.93rem}.related-articles a:hover{color:var(--accent-gold)}/* ── FONT AWESOME ────────────────────────────────────────────────────────── */
 @font-face{font-family:'Font Awesome 6 Free';font-style:normal;font-weight:900;font-display:block;src:url('/webfonts/fa-solid-900.woff2?v=4') format('woff2')}
 @font-face{font-family:'Font Awesome 6 Brands';font-style:normal;font-weight:400;font-display:block;src:url('/webfonts/fa-brands-400.woff2?v=4') format('woff2')}
