@@ -67,6 +67,14 @@
       'countryOfOrigin': w.brand === 'Hislon' ? {'@type': 'Country', 'name': 'Switzerland'} : undefined,
       'description': w.description_en || '',
       'image': imgUrl,
+      'hasMerchantReturnPolicy': {
+        '@type': 'MerchantReturnPolicy',
+        'applicableCountry': 'AL',
+        'returnPolicyCategory': 'https://schema.org/MerchantReturnFiniteReturnWindow',
+        'merchantReturnDays': 30,
+        'returnMethod': 'https://schema.org/ReturnInStore',
+        'returnFees': 'https://schema.org/FreeReturn'
+      },
       'offers': {
         '@type': 'Offer',
         'priceCurrency': w.currency,
@@ -78,7 +86,17 @@
         'availability': w.sold ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock',
         'itemCondition': w.condition === 'Pre-owned' ? 'https://schema.org/UsedCondition' : 'https://schema.org/NewCondition',
         'seller': {'@type': 'Organization', 'name': 'Iglisi Watch'},
-        'url': pageUrl
+        'url': pageUrl,
+        'shippingDetails': {
+          '@type': 'OfferShippingDetails',
+          'shippingRate': {'@type': 'MonetaryAmount', 'value': '0', 'currency': 'EUR'},
+          'shippingDestination': {'@type': 'DefinedRegion', 'addressCountry': 'AL'},
+          'deliveryTime': {
+            '@type': 'ShippingDeliveryTime',
+            'handlingTime': {'@type': 'QuantitativeValue', 'minValue': 0, 'maxValue': 1, 'unitCode': 'DAY'},
+            'transitTime': {'@type': 'QuantitativeValue', 'minValue': 3, 'maxValue': 7, 'unitCode': 'DAY'}
+          }
+        }
       }
     };
     document.getElementById('ld-json').textContent = JSON.stringify(ld);
