@@ -5,7 +5,7 @@
   <!-- ── HOME PAGES ─────────────────────────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/"/>
@@ -15,7 +15,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/"/>
@@ -25,7 +25,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/"/>
@@ -37,7 +37,7 @@
   <!-- ── SERVICES PAGES ─────────────────────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/services.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/services.html"/>
@@ -47,7 +47,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/services.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/services.html"/>
@@ -57,7 +57,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/services.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/services.html"/>
@@ -69,7 +69,7 @@
   <!-- ── ABOUT PAGES ────────────────────────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/about.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/about.html"/>
@@ -79,7 +79,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/about.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/about.html"/>
@@ -89,7 +89,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/about.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/about.html"/>
@@ -101,7 +101,7 @@
   <!-- ── SHOP PAGES ───────────────────────────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/shop/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/"/>
@@ -111,7 +111,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/"/>
@@ -121,7 +121,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/"/>
@@ -131,7 +131,7 @@
   </url>
   <url>
     <loc>https://watch.al/en/shop/watch.html</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html"/>
@@ -141,7 +141,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html"/>
@@ -151,7 +151,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html"/>
@@ -163,7 +163,7 @@
   <!-- ── B2B / PARTNERS PAGES ─────────────────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/b2b.html</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/b2b.html"/>
@@ -173,7 +173,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/b2b.html</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/b2b.html"/>
@@ -183,7 +183,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/b2b.html</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/b2b.html"/>
@@ -195,7 +195,7 @@
   <!-- ── BLOG INDEX PAGES ───────────────────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/"/>
@@ -205,7 +205,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/"/>
@@ -215,7 +215,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/"/>
@@ -227,7 +227,7 @@
   <!-- ── BLOG: WATCH BATTERY GUIDE ──────────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/watch-battery-guide.html</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-battery-guide.html"/>
@@ -237,7 +237,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/guide-bateria-ores.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-battery-guide.html"/>
@@ -247,7 +247,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/guida-batteria-orologio.html</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-battery-guide.html"/>
@@ -259,7 +259,7 @@
   <!-- ── BLOG: WATCH SERVICE SIGNS ──────────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/watch-service-signs.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-service-signs.html"/>
@@ -269,7 +269,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/shenjat-riparimit-ores.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-service-signs.html"/>
@@ -279,7 +279,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/segni-revisione-orologio.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-service-signs.html"/>
@@ -291,7 +291,7 @@
   <!-- ── BLOG: WATCH STRAP CARE ─────────────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/watch-strap-care.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-strap-care.html"/>
@@ -301,7 +301,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/kujdesi-brezit-ores.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-strap-care.html"/>
@@ -311,7 +311,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/cura-cinturino-orologio.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-strap-care.html"/>
@@ -323,7 +323,7 @@
   <!-- ── BLOG: KEY DUPLICATION GUIDE ───────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/key-duplication-guide.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/key-duplication-guide.html"/>
@@ -333,7 +333,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/guide-kopjim-celesi.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/key-duplication-guide.html"/>
@@ -343,7 +343,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/guida-duplicato-chiavi.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/key-duplication-guide.html"/>
@@ -355,7 +355,7 @@
   <!-- ── BLOG: WATCH WATER RESISTANCE ──────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/watch-water-resistance.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-water-resistance.html"/>
@@ -365,7 +365,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/rezistenca-ujes-ores.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-water-resistance.html"/>
@@ -375,7 +375,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/impermeabilita-orologio.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-water-resistance.html"/>
@@ -387,7 +387,7 @@
   <!-- ── BLOG: WATCH STORAGE GUIDE ────────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/watch-storage-guide.html</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-storage-guide.html"/>
@@ -397,7 +397,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/guide-ruajtjes-ores.html</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-storage-guide.html"/>
@@ -407,7 +407,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/guida-conservazione-orologio.html</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-storage-guide.html"/>
@@ -419,7 +419,7 @@
   <!-- ── BLOG: MECHANICAL VS QUARTZ ────────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/mechanical-vs-quartz.html</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/mechanical-vs-quartz.html"/>
@@ -429,7 +429,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/mekanik-vs-kuarc.html</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/mechanical-vs-quartz.html"/>
@@ -439,7 +439,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/meccanico-vs-quarzo.html</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/mechanical-vs-quartz.html"/>
@@ -451,7 +451,7 @@
   <!-- ── BLOG: WATCH CRYSTAL GUIDE ─────────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/watch-crystal-guide.html</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-crystal-guide.html"/>
@@ -461,7 +461,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/guide-xhamit-ores.html</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-crystal-guide.html"/>
@@ -471,7 +471,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/guida-cristallo-orologio.html</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-crystal-guide.html"/>
@@ -483,7 +483,7 @@
   <!-- ── BLOG: WATCH CLEANING GUIDE ────────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/watch-cleaning-guide.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-cleaning-guide.html"/>
@@ -493,7 +493,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/guide-pastrimit-ores.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-cleaning-guide.html"/>
@@ -503,7 +503,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/guida-pulizia-orologio.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-cleaning-guide.html"/>
@@ -515,7 +515,7 @@
   <!-- ── BLOG: WATCH WINDING GUIDE ─────────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/watch-winding-guide.html</loc>
-    <lastmod>2026-03-29</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-winding-guide.html"/>
@@ -525,7 +525,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/guida-carica-orologio.html</loc>
-    <lastmod>2026-03-29</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-winding-guide.html"/>
@@ -535,7 +535,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/guide-mbushjes-ores.html</loc>
-    <lastmod>2026-03-29</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-winding-guide.html"/>
@@ -547,7 +547,7 @@
   <!-- ── BLOG: SPOT FAKE WATCH ─────────────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/spot-fake-watch.html</loc>
-    <lastmod>2026-03-29</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/spot-fake-watch.html"/>
@@ -557,7 +557,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/riconoscere-orologio-falso.html</loc>
-    <lastmod>2026-03-29</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/spot-fake-watch.html"/>
@@ -567,7 +567,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/si-dalloj-oren-falsifikuar.html</loc>
-    <lastmod>2026-03-29</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/spot-fake-watch.html"/>
@@ -579,7 +579,7 @@
   <!-- ── BLOG: WATCH OCCASION GUIDE ───────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/watch-occasion-guide.html</loc>
-    <lastmod>2026-03-29</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-occasion-guide.html"/>
@@ -589,7 +589,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/guida-occasioni-orologio.html</loc>
-    <lastmod>2026-03-29</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-occasion-guide.html"/>
@@ -599,7 +599,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/guide-rasteve-ores.html</loc>
-    <lastmod>2026-03-29</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-occasion-guide.html"/>
@@ -609,12 +609,10 @@
   </url>
 
 
-  <!-- ── LEGAL PAGES ──────────────────────────────────────────────────────── -->
-
   <!-- ── BLOG: BEST WATCHES UNDER 200 ALBANIA ─────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/best-watches-under-200-albania.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/best-watches-under-200-albania.html"/>
@@ -624,7 +622,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/ore-me-te-mira-nen-200-shqiperi.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/best-watches-under-200-albania.html"/>
@@ -634,7 +632,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/migliori-orologi-sotto-200-albania.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/best-watches-under-200-albania.html"/>
@@ -646,7 +644,7 @@
   <!-- ── BLOG: HISLON VS NAVIMARINE ───────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/hislon-vs-navimarine.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/hislon-vs-navimarine.html"/>
@@ -656,7 +654,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/hislon-vs-navimarine.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/hislon-vs-navimarine.html"/>
@@ -666,7 +664,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/hislon-vs-navimarine.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/hislon-vs-navimarine.html"/>
@@ -678,7 +676,7 @@
   <!-- ── BLOG: LUMINOUS DIALS EXPLAINED ───────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/luminous-dials-explained.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/luminous-dials-explained.html"/>
@@ -688,7 +686,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/lumja-ciferblati.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/luminous-dials-explained.html"/>
@@ -698,7 +696,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/quadranti-luminosi-spiegati.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/luminous-dials-explained.html"/>
@@ -710,7 +708,7 @@
   <!-- ── BLOG: QUARTZ CRISIS ───────────────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/quartz-crisis.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/quartz-crisis.html"/>
@@ -720,7 +718,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/kriza-kuarci.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/quartz-crisis.html"/>
@@ -730,7 +728,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/crisi-al-quarzo.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/quartz-crisis.html"/>
@@ -742,7 +740,7 @@
   <!-- ── BLOG: SWISS VS JAPANESE MOVEMENTS ────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/swiss-vs-japanese-movements.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/swiss-vs-japanese-movements.html"/>
@@ -752,7 +750,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/levizje-zvicerane-vs-japoneze.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/swiss-vs-japanese-movements.html"/>
@@ -762,7 +760,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/movimenti-svizzeri-vs-giapponesi.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/swiss-vs-japanese-movements.html"/>
@@ -774,7 +772,7 @@
   <!-- ── BLOG: WATCH CASE SIZES ───────────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/watch-case-sizes.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-case-sizes.html"/>
@@ -784,7 +782,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/permasat-ores.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-case-sizes.html"/>
@@ -794,7 +792,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/dimensioni-cassa-orologio.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-case-sizes.html"/>
@@ -806,7 +804,7 @@
   <!-- ── BLOG: WATCH CROWN EXPLAINED ─────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/watch-crown-explained.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-crown-explained.html"/>
@@ -816,7 +814,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/kurora-ores.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-crown-explained.html"/>
@@ -826,7 +824,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/corona-orologio-spiegata.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-crown-explained.html"/>
@@ -838,7 +836,7 @@
   <!-- ── BLOG: WATCH MAGNETISATION ────────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/watch-magnetisation.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-magnetisation.html"/>
@@ -848,7 +846,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/magnetizimi-ores.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-magnetisation.html"/>
@@ -858,7 +856,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/magnetizzazione-orologio.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-magnetisation.html"/>
@@ -870,7 +868,7 @@
   <!-- ── BLOG: WATCH POWER RESERVE ────────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/watch-power-reserve.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-power-reserve.html"/>
@@ -880,7 +878,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/rezerva-energjise.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-power-reserve.html"/>
@@ -890,7 +888,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/riserva-di-carica-orologio.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-power-reserve.html"/>
@@ -902,7 +900,7 @@
   <!-- ── BLOG: WATCH REPAIR TOOLS ─────────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/watch-repair-tools.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-repair-tools.html"/>
@@ -912,7 +910,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/mjetet-riparimit.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-repair-tools.html"/>
@@ -922,7 +920,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/strumenti-riparazione-orologio.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-repair-tools.html"/>
@@ -934,7 +932,7 @@
   <!-- ── BLOG: WHERE TO BUY WATCH DURRES ──────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/where-to-buy-watch-durres.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/where-to-buy-watch-durres.html"/>
@@ -944,7 +942,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/ku-te-blesh-ore-durres.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/where-to-buy-watch-durres.html"/>
@@ -954,7 +952,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/dove-comprare-orologio-durazzo.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/where-to-buy-watch-durres.html"/>
@@ -966,7 +964,7 @@
   <!-- ── BLOG: WHERE TO BUY WATCH TIRANA ──────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/where-to-buy-watch-tirana.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/where-to-buy-watch-tirana.html"/>
@@ -976,7 +974,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/ku-te-blesh-ore-tirane.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/where-to-buy-watch-tirana.html"/>
@@ -986,7 +984,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/dove-comprare-orologio-tirana.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/where-to-buy-watch-tirana.html"/>
@@ -998,7 +996,7 @@
   <!-- ── BLOG: BUYING SECOND HAND WATCH ───────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/buying-second-hand-watch.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/buying-second-hand-watch.html"/>
@@ -1008,7 +1006,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/blerja-ores-dore-te-dyte.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/buying-second-hand-watch.html"/>
@@ -1018,7 +1016,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/comprare-orologio-usato.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/buying-second-hand-watch.html"/>
@@ -1029,7 +1027,7 @@
 
   <url>
     <loc>https://watch.al/en/blog/buy-watch-instagram-albania.html</loc>
-    <lastmod>2026-04-18</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/buy-watch-instagram-albania.html"/>
@@ -1039,7 +1037,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/blej-ore-instagram-shqiperi.html</loc>
-    <lastmod>2026-04-18</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/buy-watch-instagram-albania.html"/>
@@ -1049,7 +1047,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/comprare-orologio-instagram-albania.html</loc>
-    <lastmod>2026-04-18</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/buy-watch-instagram-albania.html"/>
@@ -1060,7 +1058,7 @@
 
   <url>
     <loc>https://watch.al/en/blog/best-budget-watches-durres-under-100.html</loc>
-    <lastmod>2026-04-18</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/best-budget-watches-durres-under-100.html"/>
@@ -1070,7 +1068,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/ore-me-te-mira-nen-100-durres.html</loc>
-    <lastmod>2026-04-18</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/best-budget-watches-durres-under-100.html"/>
@@ -1080,7 +1078,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/migliori-orologi-economici-durazzo-100.html</loc>
-    <lastmod>2026-04-18</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/best-budget-watches-durres-under-100.html"/>
@@ -1094,7 +1092,7 @@
   <!-- best-watch-gifts-men-albania -->
   <url>
     <loc>https://watch.al/en/blog/best-watch-gifts-men-albania.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/best-watch-gifts-men-albania.html"/>
@@ -1104,7 +1102,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/regalo-orologio-uomo-albania.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/best-watch-gifts-men-albania.html"/>
@@ -1114,7 +1112,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/dhurata-ore-burra-shqiperi.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/best-watch-gifts-men-albania.html"/>
@@ -1126,7 +1124,7 @@
   <!-- best-watch-gifts-women-albania -->
   <url>
     <loc>https://watch.al/en/blog/best-watch-gifts-women-albania.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/best-watch-gifts-women-albania.html"/>
@@ -1136,7 +1134,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/regalo-orologio-donna-albania.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/best-watch-gifts-women-albania.html"/>
@@ -1146,7 +1144,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/dhurata-ore-gra-shqiperi.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/best-watch-gifts-women-albania.html"/>
@@ -1158,7 +1156,7 @@
   <!-- watch-wedding-gift-albania -->
   <url>
     <loc>https://watch.al/en/blog/watch-wedding-gift-albania.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-wedding-gift-albania.html"/>
@@ -1168,7 +1166,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/orologio-regalo-matrimonio-albania.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-wedding-gift-albania.html"/>
@@ -1178,7 +1176,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/ore-dhurate-dasme-shqiperi.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-wedding-gift-albania.html"/>
@@ -1190,7 +1188,7 @@
   <!-- graduation-watch-ideas -->
   <url>
     <loc>https://watch.al/en/blog/graduation-watch-ideas.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/graduation-watch-ideas.html"/>
@@ -1200,7 +1198,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/idee-orologio-laurea.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/graduation-watch-ideas.html"/>
@@ -1210,7 +1208,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/idete-ore-diplomim.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/graduation-watch-ideas.html"/>
@@ -1222,7 +1220,7 @@
   <!-- hislon-classic-review -->
   <url>
     <loc>https://watch.al/en/blog/hislon-classic-review.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/hislon-classic-review.html"/>
@@ -1232,7 +1230,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/recensione-hislon-classic.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/hislon-classic-review.html"/>
@@ -1242,7 +1240,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/recensim-hislon-classic.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/hislon-classic-review.html"/>
@@ -1254,7 +1252,7 @@
   <!-- which-navimarine-to-buy -->
   <url>
     <loc>https://watch.al/en/blog/which-navimarine-to-buy.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/which-navimarine-to-buy.html"/>
@@ -1264,7 +1262,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/quale-navimarine-comprare.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/which-navimarine-to-buy.html"/>
@@ -1274,7 +1272,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/cilin-navimarine-te-blesh.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/which-navimarine-to-buy.html"/>
@@ -1286,7 +1284,7 @@
   <!-- first-watch-teenager -->
   <url>
     <loc>https://watch.al/en/blog/first-watch-teenager.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/first-watch-teenager.html"/>
@@ -1296,7 +1294,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/primo-orologio-adolescente.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/first-watch-teenager.html"/>
@@ -1306,7 +1304,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/ora-e-pare-adoleshent.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/first-watch-teenager.html"/>
@@ -1318,7 +1316,7 @@
   <!-- what-watch-service-includes -->
   <url>
     <loc>https://watch.al/en/blog/what-watch-service-includes.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/what-watch-service-includes.html"/>
@@ -1328,7 +1326,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/revisione-orologio-cosa-include.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/what-watch-service-includes.html"/>
@@ -1338,7 +1336,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/sherbimi-ores-cfare-perfshine.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/what-watch-service-includes.html"/>
@@ -1350,7 +1348,7 @@
   <!-- watch-repair-durres -->
   <url>
     <loc>https://watch.al/en/blog/watch-repair-durres.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-repair-durres.html"/>
@@ -1360,7 +1358,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/riparazione-orologi-durazzo.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-repair-durres.html"/>
@@ -1370,7 +1368,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/riparim-orash-durres.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-repair-durres.html"/>
@@ -1382,7 +1380,7 @@
   <!-- buy-watch-without-trying-on -->
   <url>
     <loc>https://watch.al/en/blog/buy-watch-without-trying-on.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/buy-watch-without-trying-on.html"/>
@@ -1392,7 +1390,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/comprare-orologio-senza-provare.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/buy-watch-without-trying-on.html"/>
@@ -1402,7 +1400,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/blej-ore-pa-e-provuar.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/buy-watch-without-trying-on.html"/>
@@ -1414,7 +1412,7 @@
   <!-- watch-warranty-guide -->
   <url>
     <loc>https://watch.al/en/blog/watch-warranty-guide.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-warranty-guide.html"/>
@@ -1424,7 +1422,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/garanzia-orologio-nuovo.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-warranty-guide.html"/>
@@ -1434,7 +1432,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/garancia-ore-te-reja.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-warranty-guide.html"/>
@@ -1445,7 +1443,7 @@
 
   <url>
     <loc>https://watch.al/en/blog/watch-battery-replacement-durres.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-battery-replacement-durres.html"/>
@@ -1455,7 +1453,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/sostituzione-batteria-orologio-durazzo.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-battery-replacement-durres.html"/>
@@ -1465,7 +1463,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/zevdendosja-baterise-ores-durres.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-battery-replacement-durres.html"/>
@@ -1475,7 +1473,7 @@
   </url>
   <url>
     <loc>https://watch.al/en/blog/watch-strap-replacement-durres.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-strap-replacement-durres.html"/>
@@ -1485,7 +1483,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/sostituzione-cinturino-orologio-durazzo.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-strap-replacement-durres.html"/>
@@ -1495,7 +1493,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/zevdendosja-brezit-ores-durres.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-strap-replacement-durres.html"/>
@@ -1505,7 +1503,7 @@
   </url>
   <url>
     <loc>https://watch.al/en/blog/watch-crystal-replacement-durres.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-crystal-replacement-durres.html"/>
@@ -1515,7 +1513,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/sostituzione-cristallo-orologio-durazzo.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-crystal-replacement-durres.html"/>
@@ -1525,7 +1523,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/zevdendosja-xhamit-ores-durres.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-crystal-replacement-durres.html"/>
@@ -1535,7 +1533,7 @@
   </url>
   <url>
     <loc>https://watch.al/en/blog/repair-or-buy-new-watch-durres.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/repair-or-buy-new-watch-durres.html"/>
@@ -1545,7 +1543,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/riparare-o-comprare-orologio-nuovo-durazzo.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/repair-or-buy-new-watch-durres.html"/>
@@ -1555,7 +1553,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/riparoj-apo-blej-ore-te-re.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/repair-or-buy-new-watch-durres.html"/>
@@ -1565,7 +1563,7 @@
   </url>
   <url>
     <loc>https://watch.al/en/blog/watch-gift-durres-same-day.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-gift-durres-same-day.html"/>
@@ -1575,7 +1573,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/regalo-orologio-durazzo-stesso-giorno.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-gift-durres-same-day.html"/>
@@ -1585,7 +1583,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/dhurate-ore-durres-sot.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-gift-durres-same-day.html"/>
@@ -1597,7 +1595,7 @@
   <!-- ── BLOG: CASIO VS CITIZEN ───────────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/casio-vs-citizen.html</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/casio-vs-citizen.html"/>
@@ -1607,7 +1605,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/casio-vs-citizen.html</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/casio-vs-citizen.html"/>
@@ -1617,7 +1615,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/casio-vs-citizen.html</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/casio-vs-citizen.html"/>
@@ -1627,7 +1625,7 @@
   </url>
   <url>
     <loc>https://watch.al/en/blog/seiko-vs-citizen-vs-casio.html</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/seiko-vs-citizen-vs-casio.html"/>
@@ -1637,7 +1635,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/seiko-vs-citizen-vs-casio.html</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/seiko-vs-citizen-vs-casio.html"/>
@@ -1647,7 +1645,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/seiko-vs-citizen-vs-casio.html</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/seiko-vs-citizen-vs-casio.html"/>
@@ -1657,7 +1655,7 @@
   </url>
   <url>
     <loc>https://watch.al/en/blog/watch-battery-size-guide.html</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-battery-size-guide.html"/>
@@ -1667,7 +1665,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/watch-battery-size-guide.html</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-battery-size-guide.html"/>
@@ -1677,7 +1675,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/watch-battery-size-guide.html</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-battery-size-guide.html"/>
@@ -1688,7 +1686,7 @@
   <!-- it/blog/revisione-orologio-durazzo.html — IT only article -->
   <url>
     <loc>https://watch.al/it/blog/revisione-orologio-durazzo.html</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/revisione-orologio-durazzo.html"/>
@@ -1698,7 +1696,7 @@
   <!-- sq/blog/bli-ore-shqiperi.html — SQ only article -->
   <url>
     <loc>https://watch.al/sq/blog/bli-ore-shqiperi.html</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/bli-ore-shqiperi.html"/>
@@ -1710,7 +1708,7 @@
   <!-- Hislon Classic -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=watch-1</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-1"/>
@@ -1720,7 +1718,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=watch-1</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-1"/>
@@ -1730,7 +1728,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=watch-1</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-1"/>
@@ -1741,7 +1739,7 @@
   <!-- Hislon Classic Queen -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=watch-2</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-2"/>
@@ -1751,7 +1749,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=watch-2</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-2"/>
@@ -1761,7 +1759,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=watch-2</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-2"/>
@@ -1772,7 +1770,7 @@
   <!-- Hislon Classic -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=watch-3</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-3"/>
@@ -1782,7 +1780,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=watch-3</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-3"/>
@@ -1792,7 +1790,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=watch-3</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-3"/>
@@ -1803,7 +1801,7 @@
   <!-- Hislon Masterwork -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=watch-4</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-4"/>
@@ -1813,7 +1811,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=watch-4</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-4"/>
@@ -1823,7 +1821,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=watch-4</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-4"/>
@@ -1834,7 +1832,7 @@
   <!-- Hislon Classic Queen -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=watch-5</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-5"/>
@@ -1844,7 +1842,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=watch-5</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-5"/>
@@ -1854,7 +1852,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=watch-5</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-5"/>
@@ -1865,7 +1863,7 @@
   <!-- Hislon Women Classic Queen -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=watch-6</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-6"/>
@@ -1875,7 +1873,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=watch-6</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-6"/>
@@ -1885,7 +1883,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=watch-6</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-6"/>
@@ -1896,7 +1894,7 @@
   <!-- Navimarine NM268-06 -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=watch-7</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-7"/>
@@ -1906,7 +1904,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=watch-7</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-7"/>
@@ -1916,7 +1914,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=watch-7</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-7"/>
@@ -1927,7 +1925,7 @@
   <!-- Hislon Classic -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=watch-8</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-8"/>
@@ -1937,7 +1935,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=watch-8</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-8"/>
@@ -1947,7 +1945,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=watch-8</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-8"/>
@@ -1958,7 +1956,7 @@
   <!-- Navimarine NMM1011 -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=watch-9</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-9"/>
@@ -1968,7 +1966,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=watch-9</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-9"/>
@@ -1978,7 +1976,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=watch-9</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-9"/>
@@ -1989,7 +1987,7 @@
   <!-- Navimarine NM232-04 -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=watch-10</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-10"/>
@@ -1999,7 +1997,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=watch-10</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-10"/>
@@ -2009,7 +2007,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=watch-10</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-10"/>
@@ -2020,7 +2018,7 @@
   <!-- Navimarine NAVI 009-COL 6 -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=watch-11</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-11"/>
@@ -2030,7 +2028,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=watch-11</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-11"/>
@@ -2040,7 +2038,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=watch-11</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-11"/>
@@ -2051,7 +2049,7 @@
   <!-- Navimarine NVM141-A1 -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=watch-12</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-12"/>
@@ -2061,7 +2059,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=watch-12</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-12"/>
@@ -2071,7 +2069,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=watch-12</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-12"/>
@@ -2082,7 +2080,7 @@
   <!-- Navimarine NM181-03 -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=watch-13</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-13"/>
@@ -2092,7 +2090,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=watch-13</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-13"/>
@@ -2102,7 +2100,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=watch-13</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-13"/>
@@ -2113,7 +2111,7 @@
   <!-- Navimarine NT0029-2 -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=watch-14</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-14"/>
@@ -2123,7 +2121,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=watch-14</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-14"/>
@@ -2133,7 +2131,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=watch-14</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-14"/>
@@ -2144,7 +2142,7 @@
   <!-- Navimarine NM282-04 -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=watch-15</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-15"/>
@@ -2154,7 +2152,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=watch-15</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-15"/>
@@ -2164,7 +2162,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=watch-15</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-15"/>
@@ -2175,7 +2173,7 @@
   <!-- Navimarine NVM112-B4 -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=watch-16</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-16"/>
@@ -2185,7 +2183,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=watch-16</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-16"/>
@@ -2195,7 +2193,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=watch-16</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-16"/>
@@ -2206,7 +2204,7 @@
   <!-- Navimarine NAVI 009-COL 1 -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=watch-17</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-17"/>
@@ -2216,7 +2214,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=watch-17</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-17"/>
@@ -2226,7 +2224,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=watch-17</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-17"/>
@@ -2237,7 +2235,7 @@
   <!-- Navimarine NM001101-color06 -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=watch-18</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-18"/>
@@ -2247,7 +2245,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=watch-18</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-18"/>
@@ -2257,7 +2255,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=watch-18</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-18"/>
@@ -2268,7 +2266,7 @@
   <!-- Navimarine NT0031-1 -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=watch-19</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-19"/>
@@ -2278,7 +2276,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=watch-19</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-19"/>
@@ -2288,7 +2286,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=watch-19</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-19"/>
@@ -2299,7 +2297,7 @@
   <!-- Navimarine NM001404-Color04 -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=watch-20</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-20"/>
@@ -2309,7 +2307,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=watch-20</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-20"/>
@@ -2319,7 +2317,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=watch-20</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-20"/>
@@ -2330,7 +2328,7 @@
   <!-- Navimarine 001808-color02 -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=watch-21</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-21"/>
@@ -2340,7 +2338,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=watch-21</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-21"/>
@@ -2350,7 +2348,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=watch-21</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-21"/>
@@ -2361,7 +2359,7 @@
   <!-- Navimarine NM229-06 -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=watch-22</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-22"/>
@@ -2371,7 +2369,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=watch-22</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-22"/>
@@ -2381,7 +2379,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=watch-22</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-22"/>
@@ -2392,7 +2390,7 @@
   <!-- Navimarine NVM180-A2 -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=watch-23</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-23"/>
@@ -2402,7 +2400,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=watch-23</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-23"/>
@@ -2412,7 +2410,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=watch-23</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-23"/>
@@ -2423,7 +2421,7 @@
   <!-- Navimarine NM001101-Color02 -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=watch-24</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-24"/>
@@ -2433,7 +2431,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=watch-24</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-24"/>
@@ -2443,7 +2441,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=watch-24</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-24"/>
@@ -2454,7 +2452,7 @@
   <!-- Navimarine NMM1013 -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=watch-25</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-25"/>
@@ -2464,7 +2462,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=watch-25</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-25"/>
@@ -2474,7 +2472,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=watch-25</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-25"/>
@@ -2485,7 +2483,7 @@
   <!-- Navimarine NM182-01 -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=watch-26</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-26"/>
@@ -2495,7 +2493,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=watch-26</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-26"/>
@@ -2505,7 +2503,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=watch-26</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-26"/>
@@ -2516,7 +2514,7 @@
   <!-- Navimarine NT0021-1 -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=watch-27</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-27"/>
@@ -2526,7 +2524,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=watch-27</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-27"/>
@@ -2536,7 +2534,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=watch-27</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-27"/>
@@ -2547,7 +2545,7 @@
   <!-- Navimarine NM001404-Color01 -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=watch-28</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-28"/>
@@ -2557,7 +2555,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=watch-28</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-28"/>
@@ -2567,7 +2565,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=watch-28</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-28"/>
@@ -2578,7 +2576,7 @@
   <!-- Citizen Quartz Citizen Gold Quartz Watch -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=watch-29</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-29"/>
@@ -2588,7 +2586,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=watch-29</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-29"/>
@@ -2598,7 +2596,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=watch-29</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=watch-29"/>
@@ -2609,7 +2607,7 @@
   <!-- Casio MTP-VD01 -->
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=casio-mtp-vd01</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=casio-mtp-vd01"/>
@@ -2619,7 +2617,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=casio-mtp-vd01</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=casio-mtp-vd01"/>
@@ -2630,7 +2628,7 @@
 
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=bigotti-bg1-10154-1</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=bigotti-bg1-10154-1"/>
@@ -2640,7 +2638,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=bigotti-bg1-10154-1</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=bigotti-bg1-10154-1"/>
@@ -2650,7 +2648,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=bigotti-bg1-10154-1</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=bigotti-bg1-10154-1"/>
@@ -2660,7 +2658,7 @@
   </url>
   <url>
     <loc>https://watch.al/en/shop/watch.html?id=navimarine-steel-5atm-blue</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=navimarine-steel-5atm-blue"/>
@@ -2670,7 +2668,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch.html?id=navimarine-steel-5atm-blue</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=navimarine-steel-5atm-blue"/>
@@ -2680,7 +2678,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=navimarine-steel-5atm-blue</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=navimarine-steel-5atm-blue"/>
@@ -2690,7 +2688,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch.html?id=casio-mtp-vd01</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch.html?id=casio-mtp-vd01"/>
