@@ -204,7 +204,10 @@
   <link rel="preload" href="/webfonts/fa-solid-900.woff2?v=4" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/webfonts/fa-brands-400.woff2?v=4" as="font" type="font/woff2" crossorigin>
 
-  <style>
+  <style>.solid-header{background:rgba(6,21,59,.98);border-bottom:2px solid rgba(180,148,92,.4);position:sticky;top:0;z-index:50;padding:0}
+.nav-drawer{display:none}
+#nav-toggle:checked~.nav-drawer{display:block!important}
+
 @font-face { font-family:'Inter Fallback'; src:local('Arial'),local('Helvetica Neue'),local('sans-serif'); size-adjust:107%; ascent-override:90%; descent-override:22%; line-gap-override:0%; }
 @font-face { font-family:'Inter'; font-style:normal; font-weight:100 900; font-display:swap; src:url('/webfonts/inter.woff2?v=2') format('woff2'); }
 @font-face { font-family:'Cormorant Garamond Fallback'; src:local('Georgia'),local('Times New Roman'),local('serif'); size-adjust:112%; ascent-override:86%; descent-override:22%; line-gap-override:0%; }

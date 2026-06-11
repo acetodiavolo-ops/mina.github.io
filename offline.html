@@ -11,7 +11,10 @@
   <link rel="icon" type="image/webp" href="https://watch.al/favicon.webp?v=2">
   <link rel="icon" type="image/png" href="https://watch.al/favicon.png">
   <link rel="manifest" href="/manifest.json">
-  <style>
+  <style>.solid-header{background:rgba(6,21,59,.98);border-bottom:2px solid rgba(180,148,92,.4);position:sticky;top:0;z-index:50;padding:0}
+.nav-drawer{display:none}
+#nav-toggle:checked~.nav-drawer{display:block!important}
+
     :root{--accent-gold:#b4945c;--btn-start:#06153b;--text-primary:#2a2a2a;--text-secondary:#4a4a4a}
     *,::before,::after{box-sizing:border-box}
     body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Inter',sans-serif;background:var(--btn-start);color:#fff;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem}

@@ -46,7 +46,10 @@
   <link rel="preload" href="/webfonts/fa-brands-400.woff2?v=4" as="font" type="font/woff2" crossorigin>
 
   <link rel="stylesheet" href="/shared.css?v=47">
-  <style>
+  <style>.solid-header{background:rgba(6,21,59,.98);border-bottom:2px solid rgba(180,148,92,.4);position:sticky;top:0;z-index:50;padding:0}
+.nav-drawer{display:none}
+#nav-toggle:checked~.nav-drawer{display:block!important}
+
     .decision-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin:1.5rem 0}
     @media(max-width:600px){.decision-grid{grid-template-columns:1fr}}
     .decision-card{padding:1.25rem;border-radius:.875rem;border:1px solid var(--border-light)}
