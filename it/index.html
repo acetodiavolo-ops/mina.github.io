@@ -60,6 +60,62 @@
   <link rel="preload" href="/webfonts/fa-solid-900.woff2?v=4" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/webfonts/fa-brands-400.woff2?v=4" as="font" type="font/woff2" crossorigin>
   <style>
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url('/webfonts/fa-solid-900.woff2?v=4') format('woff2');
+}
+@font-face {
+  font-family: 'Font Awesome 6 Brands';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url('/webfonts/fa-brands-400.woff2?v=4') format('woff2');
+}
+.fas, .fa-solid {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+}
+.fab, .fa-brands {
+  font-family: 'Font Awesome 6 Brands';
+  font-weight: 400;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+}
+.fa-whatsapp::before        { content: "\f232"; }
+.fa-phone-alt::before       { content: "\f879"; }
+.fa-globe::before           { content: "\f0ac"; }
+.fa-bolt::before            { content: "\f0e7"; }
+.fa-cogs::before            { content: "\f085"; }
+.fa-euro-sign::before       { content: "\f153"; }
+.fa-check-circle::before    { content: "\f058"; }
+.fa-check::before           { content: "\f00c"; }
+.fa-calendar-alt::before    { content: "\f073"; }
+.fa-clock::before           { content: "\f017"; }
+.fa-key::before             { content: "\f084"; }
+.fa-smile::before           { content: "\f118"; }
+.fa-star::before            { content: "\f005"; }
+.fa-gem::before             { content: "\f3a5"; }
+.fa-microscope::before      { content: "\f610"; }
+.fa-hand-holding-heart::before { content: "\f4be"; }
+.fa-battery-three-quarters::before { content: "\f241"; }
+.fa-hourglass-half::before  { content: "\f252"; }
+.fa-shield-alt::before      { content: "\f3ed"; }
+.fa-cog::before             { content: "\f013"; }
+.fa-tachometer-alt::before  { content: "\f3fd"; }
+
 .btn-primary{display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:.45rem!important}
 @font-face {
   font-family: 'Inter';
@@ -729,7 +785,7 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
 [data-balance-wheel]{display:inline-block;line-height:0}
 </style>
   <link rel="preconnect" href="https://www.google.com" crossorigin>
-  <link rel="stylesheet" href="/shared.css?v=48">
+  <link rel="stylesheet" href="/shared.css?v=49">
 
   <!-- STRUCTURED DATA -->
   <script type="application/ld+json">
