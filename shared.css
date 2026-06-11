@@ -338,9 +338,11 @@ i.promise-icon,i.faq-icon{display:inline-flex;align-items:center;justify-content
 
 /* ── SUBPAGE ICON ANIMATIONS ─────────────────────────────────────────────── */
 @keyframes svc-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
-100%{transform:rotate(360deg)}}
 @keyframes svc-bounce{0%,100%{transform:translateY(0)}45%{transform:translateY(-5px)}65%{transform:translateY(-2px)}}
 @keyframes svc-wiggle{0%,100%{transform:rotate(0deg)}25%{transform:rotate(-12deg)}75%{transform:rotate(12deg)}}
+/* ── HEADER CROWDING FIX ─────────────────────────────────────────────────── */
+@media(max-width:1200px){.solid-header .review-badge{display:none}}
+@media(max-width:900px){.solid-header a[href^="tel"]{display:none!important}}
 
 .about-card:active{box-shadow:0 6px 24px rgba(0,0,0,.09)}
 /* iOS requires at least one touchstart listener for :active to fire on divs — added via shared.js body listener */
