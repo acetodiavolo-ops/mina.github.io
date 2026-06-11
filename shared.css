@@ -338,6 +338,7 @@ i.promise-icon,i.faq-icon{display:inline-flex;align-items:center;justify-content
 
 /* ── SUBPAGE ICON ANIMATIONS ─────────────────────────────────────────────── */
 @keyframes svc-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+@keyframes svc-spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
 @keyframes svc-bounce{0%,100%{transform:translateY(0)}45%{transform:translateY(-5px)}65%{transform:translateY(-2px)}}
 @keyframes svc-wiggle{0%,100%{transform:rotate(0deg)}25%{transform:rotate(-12deg)}75%{transform:rotate(12deg)}}
 /* ── HEADER CROWDING FIX ─────────────────────────────────────────────────── */
