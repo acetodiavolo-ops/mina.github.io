@@ -157,7 +157,21 @@
       .about-timeline-strip{padding:1.75rem 1.5rem}
       .trust-banner-section{padding:3rem 1.5rem}
     }
-  </style>
+  .page-hero{position:relative;overflow:hidden}
+.hero-watch-deco{position:absolute;right:4%;bottom:0;width:clamp(120px,20vw,220px);opacity:.18;transform:rotate(-14deg);filter:drop-shadow(0 6px 20px rgba(180,148,92,.35));pointer-events:none;user-select:none}
+@media(max-width:480px){.hero-watch-deco{display:none}}
+.stat-box i{font-size:1.2rem;margin-bottom:.3rem;display:block;opacity:.8}
+.story-img{position:relative}
+.story-badge{position:absolute;bottom:1.25rem;right:1.25rem;background:rgba(6,21,59,.8);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(180,148,92,.45);border-radius:.875rem;padding:.625rem 1rem;text-align:center;min-width:90px}
+.story-badge-num{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.75rem;font-weight:700;color:#b4945c;line-height:1}
+.story-badge-label{display:block;font-size:.72rem;letter-spacing:.07em;color:rgba(255,255,255,.75);margin-top:.2rem;text-transform:uppercase}
+.gallery-item-wrap{position:relative;border-radius:1.5rem;overflow:hidden;display:block}
+.gallery-item-wrap .gallery-thumb{border-radius:0;transition:transform .35s ease}
+.gallery-item-wrap:hover .gallery-thumb{transform:scale(1.04)}
+.gallery-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(3,9,23,.82));color:#fff;padding:.625rem 1rem .875rem;font-size:.82rem;line-height:1.4;transform:translateY(100%);transition:transform .3s ease;font-weight:500}
+.gallery-item-wrap:hover .gallery-caption{transform:translateY(0)}
+@media(hover:none){.gallery-caption{transform:translateY(0)}}
+</style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
     {"@type":"ListItem","position":1,"name":"Kreu","item":"https://watch.al/sq/"},
@@ -298,6 +312,7 @@
       <h1>Rreth Iglisi Watch</h1>
       <p>Biznes familjar nga 2009. Riparim or&euml;sh, kopjim &ccedil;el&euml;sash dhe ora t&euml; p&euml;rdorura t&euml; zgjedhura me kujdes - n&euml; zemr&euml;n e Durr&euml;sit, Shqip&euml;ri.</p>
     </div>
+    <img src="../images/watches/hislon-cl213g-02sg-nobg.webp" alt="" aria-hidden="true" class="hero-watch-deco" width="220" height="220" loading="eager" decoding="async">
   </div>
 
   <main id="main-content">
@@ -340,9 +355,9 @@
     <!-- STATS -->
     <section class="about-stats-section" data-animate>
       <div class="stat-row" style="max-width:900px;margin-left:auto;margin-right:auto">
-        <div class="stat-box"><strong>2009</strong><span>Themeluar</span></div>
-        <div class="stat-box"><strong>5.0★</strong><span>Vler&euml;sim Google</span></div>
-        <div class="stat-box"><strong>&lt;2 min</strong><span>Nd&euml;rrimi bateris&euml;</span></div>
+        <div class="stat-box"><i class="fas fa-gem gold" aria-hidden="true"></i><strong>2009</strong><span>Themeluar</span></div>
+        <div class="stat-box"><i class="fas fa-star gold" aria-hidden="true"></i><strong>5.0★</strong><span>Vler&euml;sim Google</span></div>
+        <div class="stat-box"><i class="fas fa-bolt gold" aria-hidden="true"></i><strong>&lt;2 min</strong><span>Nd&euml;rrimi bateris&euml;</span></div>
         <div class="stat-box"><strong>6 dit&euml;</strong><span>H&euml;n &ndash; Sht</span></div>
       </div>
     </section>
@@ -386,6 +401,10 @@
                    alt="Banka e pun&euml;s p&euml;r riparim orash n&euml; punishten Iglisi"
                    loading="lazy" decoding="async" width="600" height="560">
             </picture>
+            <div class="story-badge" aria-hidden="true">
+              <span class="story-badge-num">15+</span>
+              <span class="story-badge-label">Years of Expertise</span>
+            </div>
           </div>
           <div class="story-copy">
             <span class="workshop-subheading-rule" aria-hidden="true"></span>
@@ -409,6 +428,10 @@
                    alt="Br&euml;nd&euml;sia e punishtes Iglisi Watch - Durr&euml;s"
                    loading="lazy" decoding="async" width="600" height="560">
             </picture>
+            <div class="story-badge" aria-hidden="true">
+              <span class="story-badge-num">5.0 ★</span>
+              <span class="story-badge-label">Google Rating</span>
+            </div>
           </div>
           <div class="story-copy">
             <span class="workshop-subheading-rule" aria-hidden="true"></span>
@@ -522,12 +545,12 @@
         <h2 id="gallery-heading" class="text-4xl md:text-5xl text-center mb-16 section-title">Punishtja Jon&euml; <span class="gold-display">n&euml; Realitet</span></h2>
         <p class="text-lg text-center max-w-3xl mx-auto mb-12" style="color:rgba(255,255,255,.72)">&Ccedil;do foto &euml;sht&euml; nj&euml; moment i v&euml;rtet&euml;, i paprekur - k&euml;shtu duket puna jon&euml; &ccedil;do dit&euml;.</p>
         <div class="gallery-grid" role="list">
-          <div role="listitem"><picture><source srcset="https://watch.al/0.raw.githubusercontent.com.webp" type="image/webp"><img class="gallery-thumb" loading="lazy" decoding="async" src="https://watch.al/0.raw.githubusercontent.com.jpg" alt="Tabela e dyq&euml;anit Iglisi n&euml; Durr&euml;s" width="600" height="280" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"></picture></div>
-          <div role="listitem"><picture><source srcset="https://watch.al/1.raw.githubusercontent.com.webp?v=2" type="image/webp"><img class="gallery-thumb" loading="lazy" decoding="async" src="https://watch.al/1.raw.githubusercontent.com.jpg?v=2" alt="Banka e pun&euml;s p&euml;r riparim orash" width="600" height="280" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"></picture></div>
-          <div role="listitem"><picture><source srcset="https://watch.al/2.raw.githubusercontent.com.webp" type="image/webp"><img class="gallery-thumb" loading="lazy" decoding="async" src="https://watch.al/2.raw.githubusercontent.com.jpg" alt="Makineri p&euml;r kopje &ccedil;el&euml;sash" width="600" height="280" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"></picture></div>
-          <div role="listitem"><picture><source srcset="https://watch.al/3.raw.githubusercontent.com.webp" type="image/webp"><img class="gallery-thumb" loading="lazy" decoding="async" src="https://watch.al/3.raw.githubusercontent.com.jpg" alt="Pajisje p&euml;r riparim orash" width="600" height="280" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"></picture></div>
-          <div role="listitem"><picture><source srcset="https://watch.al/4.raw.githubusercontent.com.webp" type="image/webp"><img class="gallery-thumb" loading="lazy" decoding="async" src="https://watch.al/4.raw.githubusercontent.com.jpg" alt="Br&euml;nd&euml;sia e punishtes Iglisi" width="600" height="280" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"></picture></div>
-          <div role="listitem"><picture><source srcset="https://watch.al/5.raw.githubusercontent.com.webp" type="image/webp"><img class="gallery-thumb" loading="lazy" decoding="async" src="https://watch.al/5.raw.githubusercontent.com.jpg" alt="&Ccedil;el&euml;sa t&euml; ndrysh&euml;m n&euml; punishte" width="600" height="280" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"></picture></div>
+          <div role="listitem"><div class="gallery-item-wrap"><picture><source srcset="https://watch.al/0.raw.githubusercontent.com.webp" type="image/webp"><img class="gallery-thumb" loading="lazy" decoding="async" src="https://watch.al/0.raw.githubusercontent.com.jpg" alt="Tabela e dyq&euml;anit Iglisi n&euml; Durr&euml;s" width="600" height="280" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"></picture><div class="gallery-caption" aria-hidden="true">Tabela e dyq&euml;anit Iglisi n&euml; Durr&euml;s</div></div></div>
+          <div role="listitem"><div class="gallery-item-wrap"><picture><source srcset="https://watch.al/1.raw.githubusercontent.com.webp?v=2" type="image/webp"><img class="gallery-thumb" loading="lazy" decoding="async" src="https://watch.al/1.raw.githubusercontent.com.jpg?v=2" alt="Banka e pun&euml;s p&euml;r riparim orash" width="600" height="280" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"></picture><div class="gallery-caption" aria-hidden="true">Banka e pun&euml;s p&euml;r riparim orash</div></div></div>
+          <div role="listitem"><div class="gallery-item-wrap"><picture><source srcset="https://watch.al/2.raw.githubusercontent.com.webp" type="image/webp"><img class="gallery-thumb" loading="lazy" decoding="async" src="https://watch.al/2.raw.githubusercontent.com.jpg" alt="Makineri p&euml;r kopje &ccedil;el&euml;sash" width="600" height="280" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"></picture><div class="gallery-caption" aria-hidden="true">Makineri p&euml;r kopje &ccedil;el&euml;sash</div></div></div>
+          <div role="listitem"><div class="gallery-item-wrap"><picture><source srcset="https://watch.al/3.raw.githubusercontent.com.webp" type="image/webp"><img class="gallery-thumb" loading="lazy" decoding="async" src="https://watch.al/3.raw.githubusercontent.com.jpg" alt="Pajisje p&euml;r riparim orash" width="600" height="280" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"></picture><div class="gallery-caption" aria-hidden="true">Pajisje p&euml;r riparim orash</div></div></div>
+          <div role="listitem"><div class="gallery-item-wrap"><picture><source srcset="https://watch.al/4.raw.githubusercontent.com.webp" type="image/webp"><img class="gallery-thumb" loading="lazy" decoding="async" src="https://watch.al/4.raw.githubusercontent.com.jpg" alt="Br&euml;nd&euml;sia e punishtes Iglisi" width="600" height="280" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"></picture><div class="gallery-caption" aria-hidden="true">Br&euml;nd&euml;sia e punishtes Iglisi</div></div></div>
+          <div role="listitem"><div class="gallery-item-wrap"><picture><source srcset="https://watch.al/5.raw.githubusercontent.com.webp" type="image/webp"><img class="gallery-thumb" loading="lazy" decoding="async" src="https://watch.al/5.raw.githubusercontent.com.jpg" alt="&Ccedil;el&euml;sa t&euml; ndrysh&euml;m n&euml; punishte" width="600" height="280" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"></picture><div class="gallery-caption" aria-hidden="true">&Ccedil;el&euml;sa t&euml; ndrysh&euml;m n&euml; punishte</div></div></div>
         </div>
       </div>
     </section>
