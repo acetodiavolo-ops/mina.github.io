@@ -171,6 +171,23 @@
 .gallery-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(3,9,23,.82));color:#fff;padding:.625rem 1rem .875rem;font-size:.82rem;line-height:1.4;transform:translateY(100%);transition:transform .3s ease;font-weight:500}
 .gallery-item-wrap:hover .gallery-caption{transform:translateY(0)}
 @media(hover:none){.gallery-caption{transform:translateY(0)}}
+
+    /* ── Design polish additions ── */
+    .about-stats-section{background:#f5f0e8!important}
+    .about-card{border-top:3px solid #b4945c!important}
+    .equipment-card{border-radius:1.5rem;padding:2rem 1.5rem;transition:transform .22s ease,box-shadow .22s ease}
+    .equipment-card:hover{transform:translateY(-4px);box-shadow:0 16px 28px -8px rgba(0,0,0,.1)}
+    .equipment-card i{transition:transform .22s ease}
+    .equipment-card:hover i{transform:scale(1.18)}
+    .ts-dot{transition:box-shadow .22s ease}
+    .ts-item:hover .ts-dot{box-shadow:0 0 0 7px rgba(139,105,20,.22),0 0 0 4px rgba(139,105,20,.12)}
+    @media(max-width:600px){
+      .ts-item:not(:last-child){padding-bottom:1rem}
+      .ts-item:not(:last-child)::after{content:'';position:absolute;left:9px;top:20px;width:2px;height:calc(100% + .25rem);background:#8B6914;opacity:.3;z-index:0}
+    }
+    .story-badge{min-width:108px;padding:.75rem 1.25rem}
+    .story-badge-num{font-size:2rem}
+    .process-body p,.process-body li{font-size:1rem}
 </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
@@ -496,9 +513,14 @@
     <!-- TRUST BANNER -->
     <section class="trust-banner-section" aria-label="Besimi i klientëve">
       <p>Mbi 700,000 &ccedil;el&euml;sa t&euml; kopjuar. Or&euml; t&euml; riparuara p&euml;r mijëra familje n&euml; Durr&euml;s q&euml; nga 2009.</p>
-      <a href="https://api.whatsapp.com/send?phone=355676360510" target="_blank" rel="noopener noreferrer" class="trust-banner-cta">
-        <i class="fab fa-whatsapp" aria-hidden="true"></i> Rezervo me WhatsApp
-      </a>
+      <div style="display:flex;flex-wrap:wrap;gap:.875rem;justify-content:center;align-items:center">
+        <a href="https://api.whatsapp.com/send?phone=355676360510" target="_blank" rel="noopener noreferrer" class="trust-banner-cta">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i> Rezervo me WhatsApp
+        </a>
+        <a href="https://search.google.com/local/reviews?placeid=ChIJU3JyAljB0RMRdoAB2vYR5oo" target="_blank" rel="noopener noreferrer" class="trust-banner-cta" style="border-color:rgba(180,148,92,.55)">
+          <i class="fas fa-star" aria-hidden="true"></i> Lexo Vler&euml;simet
+        </a>
+      </div>
     </section>
 
     <!-- PROCESS -->
