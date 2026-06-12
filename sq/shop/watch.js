@@ -9,6 +9,7 @@
 
   var params = new URLSearchParams(window.location.search);
   var watchId = params.get('id');
+  if(!watchId){var _m=window.location.pathname.match(/\/(watch-\d+)\.html$/);if(_m)watchId=_m[1];}
 
   if(!watchId){
     showError('Nuk \u00ebsht\u00eb specifikuar asnji\u00eb or\u00eb.', 'Kthehuni n\u00eb dyqan p\u00ebr t\u00eb shfletuar t\u00eb gjitha or\u00ebt.');
@@ -39,8 +40,8 @@
     var title = w.brand + ' ' + w.model + (w.brand === 'Hislon' ? ' Swiss Watch' : '') + ' \u2014 Iglisi Watch';
     var desc = (w.brand === 'Hislon' ? 'Or\u00eb zvicerane Hislon. ' : '') + (w.description_sq || w.description_en || '') + ' E disponueshme tek Iglisi Watch, Durr\u00ebs, Shqip\u00ebri.';
     var imgUrl = w.image ? 'https://watch.al' + w.image : 'https://watch.al/og-image.png';
-    var pageUrl = 'https://watch.al/sq/shop/watch.html?id=' + w.id;
-    var enUrl = 'https://watch.al/en/shop/watch.html?id=' + w.id;
+    var pageUrl = 'https://watch.al/sq/shop/' + w.id + '.html';
+    var enUrl = 'https://watch.al/en/shop/' + w.id + '.html';
 
     document.getElementById('page-title').textContent = title;
     document.getElementById('page-desc').setAttribute('content', desc);
@@ -49,14 +50,14 @@
     document.getElementById('og-image').setAttribute('content', imgUrl);
     document.getElementById('og-url').setAttribute('content', pageUrl);
     document.getElementById('canonical').setAttribute('href', pageUrl);
-    var itUrl = 'https://watch.al/it/shop/watch.html?id=' + w.id;
+    var itUrl = 'https://watch.al/it/shop/' + w.id + '.html';
     document.getElementById('hreflang-sq').setAttribute('href', pageUrl);
     document.getElementById('hreflang-en').setAttribute('href', enUrl);
     document.getElementById('hreflang-it').setAttribute('href', itUrl);
     document.getElementById('hreflang-xd').setAttribute('href', enUrl);
 
     var lt = document.querySelector('.lang-toggle');
-    if(lt) lt.href = '/it/shop/watch.html?id=' + w.id;
+    if(lt) lt.href = '/it/shop/' + w.id + '.html';
 
     var ld = {
       '@context': 'https://schema.org',

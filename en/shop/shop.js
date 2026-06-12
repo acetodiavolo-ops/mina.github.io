@@ -72,12 +72,12 @@
   }
 
   function injectItemListSchema(watches, lang) {
-    var base = 'https://watch.al/' + lang + '/shop/watch.html?id=';
+    var base = 'https://watch.al/' + lang + '/shop/';
     var items = watches.filter(function(w){ return !w.sold; }).map(function(w, i){
       return {
         '@type': 'ListItem',
         'position': i + 1,
-        'url': base + w.id,
+        'url': base + w.id + '.html',
         'item': {
           '@type': 'Product',
           'name': w.brand + ' ' + w.model + (w.brand === 'Hislon' ? ' Swiss Watch' : ''),
@@ -91,7 +91,7 @@
             'availability': 'https://schema.org/InStock',
             'itemCondition': 'https://schema.org/NewCondition',
             'seller': {'@type': 'Organization', 'name': 'Iglisi Watch'},
-            'url': base + w.id
+            'url': base + w.id + '.html'
           }
         }
       };
@@ -125,7 +125,7 @@
 
   function watchCard(w){
     var imgHtml = w.image
-      ? '<a href="/en/shop/watch.html?id=' + w.id + '" aria-label="' + w.brand + ' ' + w.model + (w.brand === 'Hislon' ? ' Swiss Watch' : '') + '"><picture><source srcset="' + w.image.replace(/\.jpe?g$/i, '.webp') + '" type="image/webp"><img src="' + w.image + '" alt="' + w.brand + ' ' + w.model + (w.brand === 'Hislon' ? ' Swiss Watch' : '') + '" loading="lazy"></picture></a>'
+      ? '<a href="/en/shop/' + w.id + '.html" aria-label="' + w.brand + ' ' + w.model + (w.brand === 'Hislon' ? ' Swiss Watch' : '') + '"><picture><source srcset="' + w.image.replace(/\.jpe?g$/i, '.webp') + '" type="image/webp"><img src="' + w.image + '" alt="' + w.brand + ' ' + w.model + (w.brand === 'Hislon' ? ' Swiss Watch' : '') + '" loading="lazy"></picture></a>'
       : '<div class="watch-img-placeholder"><i class="fas fa-clock" aria-hidden="true"></i></div>';
     var soldOverlay = w.sold ? '<div class="sold-overlay">Sold</div>' : '';
     var ctaHtml = w.sold
