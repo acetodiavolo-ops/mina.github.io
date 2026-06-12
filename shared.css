@@ -321,6 +321,7 @@ a.btn-gold{color:#fff;text-decoration:none}
 .nav-drawer-link{display:block;color:rgba(255,255,255,.82);text-decoration:none;font-weight:500;font-size:.95rem;padding:.7rem 0;border-bottom:1px solid rgba(255,255,255,.07);transition:color .2s,padding-left .2s}
 .nav-drawer-link:last-child{border-bottom:none}
 .nav-drawer-link:hover{color:var(--accent-gold);padding-left:.4rem}
+.nav-drawer-link[aria-current="page"]{color:#b4945c;border-left:3px solid #b4945c;padding-left:calc(1.25rem - 3px);background:rgba(180,148,92,.08)}
 .nav-drawer-phone{color:var(--accent-gold)!important;font-weight:600;letter-spacing:.02em}
 
 /* ── PAGE HERO (About / Services / Blog index) ──────────────────────────── */
