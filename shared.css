@@ -536,3 +536,4 @@ input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px soli
 .related-articles{margin:2.5rem 0 1.5rem;padding:1.5rem;background:var(--bg-soft);border-radius:var(--radius-card);border:1px solid var(--border-light)}
 .blog-nudge-btn{display:inline-block;padding:.7rem 2rem;border:1.5px solid var(--accent-gold);color:var(--accent-gold);border-radius:var(--radius-card);font-size:.9rem;font-weight:600;letter-spacing:.04em;text-decoration:none;transition:background var(--transition-base),color var(--transition-base)}
 .blog-nudge-btn:hover{background:var(--accent-gold);color:#0a0f1a}
+@media(max-width:768px){.blog-nudge-btn{display:block;width:100%;text-align:center;box-sizing:border-box}}
