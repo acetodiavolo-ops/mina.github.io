@@ -537,5 +537,5 @@ input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px soli
 .blog-nudge-btn{display:inline-block;padding:.7rem 2rem;border:1.5px solid var(--accent-gold);color:var(--accent-gold);border-radius:var(--radius-card);font-size:.9rem;font-weight:600;letter-spacing:.04em;text-decoration:none;transition:background var(--transition-base),color var(--transition-base)}
 .blog-nudge-btn:hover{background:var(--accent-gold);color:#0a0f1a}
 @media(max-width:768px){.blog-nudge-btn{display:block;width:100%;text-align:center;box-sizing:border-box}}
-.was-price{text-decoration:line-through;color:#999;font-size:.82rem;font-weight:400;margin-right:.25rem}
-.discount-badge{display:inline-block;background:#c0392b;color:#fff;font-size:.65rem;font-weight:700;padding:.12rem .45rem;border-radius:9999px;letter-spacing:.03em;vertical-align:middle;margin-left:.3rem}
+.sale-badge{position:absolute;top:.75rem;left:.75rem;background:#c0392b;color:#fff;font-size:.65rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.28rem .7rem;border-radius:9999px}
+.was-price-line{font-size:.75rem;color:#999;font-weight:400;font-family:'Inter','Inter Fallback',sans-serif;margin-top:.15rem;line-height:1}

@@ -135,18 +135,19 @@
       : '<a href="' + waMsg(w) + '" target="_blank" rel="noopener noreferrer" class="watch-cta" data-fb-contact="1" aria-label="Richiedi info su ' + w.brand + ' ' + w.model + ' via WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i> Richiedi</a>';
     return '<article class="watch-card' + (w.sold?' sold-card':'') + '">'
       + '<div class="watch-card-img">' + imgHtml + soldOverlay
-      + '<span class="watch-badge">' + cond + '</span></div>'
+      + '<span class="watch-badge">' + cond + '</span>'
+      + (w.originalPrice ? '<span class="sale-badge">−10%</span>' : '')
+      + '</div>'
       + '<div class="watch-card-body">'
       + '<p class="watch-brand">' + w.brand + (w.brand === 'Hislon' ? '<span style="font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:#8a9abf;font-weight:500;margin-left:.4rem;vertical-align:middle">Swiss</span>' : '') + '</p>'
       + '<h2 class="watch-model">' + w.model + '</h2>'
       + '<p class="watch-ref">Rif. ' + (w.reference||'\u2014') + '</p>'
       + '<p class="watch-desc">' + (w.description_it || w.description_en || '') + '</p>'
       + '<div class="watch-card-footer">'
-      + '<p class="watch-price">'
-      + (w.originalPrice ? '<span class="was-price">' + (w.currency==='EUR'?'€':w.currency) + w.originalPrice + '</span>' : '')
-      + fmt(w.price, w.currency) + fmtLek(w.price, w.currency)
-      + (w.originalPrice ? '<span class="discount-badge">−10%</span>' : '')
-      + '</p>'
+      + '<div>'
+      + '<p class="watch-price">' + fmt(w.price, w.currency) + fmtLek(w.price, w.currency) + '</p>'
+      + (w.originalPrice ? '<p class="was-price-line">Was ' + (w.currency==='EUR'?'€':w.currency) + w.originalPrice + '</p>' : '')
+      + '</div>'
       + '<a href="https://instagram.com/iglisiwatch" target="_blank" rel="noopener noreferrer" class="watch-ig-link" aria-label="Vedi su Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>'
       + ctaHtml
       + '</div></div></article>';
