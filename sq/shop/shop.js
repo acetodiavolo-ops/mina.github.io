@@ -142,7 +142,11 @@
       + '<p class="watch-ref">Ref. ' + (w.reference||'\u2014') + '</p>'
       + '<p class="watch-desc">' + (w.description_sq || '') + '</p>'
       + '<div class="watch-card-footer">'
-      + '<p class="watch-price">' + fmt(w.price, w.currency) + fmtLek(w.price, w.currency) + '</p>'
+      + '<p class="watch-price">'
+      + (w.originalPrice ? '<span class="was-price">' + (w.currency==='EUR'?'\u20ac':w.currency) + w.originalPrice + '</span>' : '')
+      + fmt(w.price, w.currency) + fmtLek(w.price, w.currency)
+      + (w.originalPrice ? '<span class="discount-badge">\u221210%</span>' : '')
+      + '</p>'
       + '<a href="https://instagram.com/iglisiwatch" target="_blank" rel="noopener noreferrer" class="watch-ig-link" aria-label="Shiko n\u00eb Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>'
       + ctaHtml
       + '</div></div></article>';

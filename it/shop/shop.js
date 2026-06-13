@@ -142,7 +142,11 @@
       + '<p class="watch-ref">Rif. ' + (w.reference||'\u2014') + '</p>'
       + '<p class="watch-desc">' + (w.description_it || w.description_en || '') + '</p>'
       + '<div class="watch-card-footer">'
-      + '<p class="watch-price">' + fmt(w.price, w.currency) + fmtLek(w.price, w.currency) + '</p>'
+      + '<p class="watch-price">'
+      + (w.originalPrice ? '<span class="was-price">' + (w.currency==='EUR'?'€':w.currency) + w.originalPrice + '</span>' : '')
+      + fmt(w.price, w.currency) + fmtLek(w.price, w.currency)
+      + (w.originalPrice ? '<span class="discount-badge">−10%</span>' : '')
+      + '</p>'
       + '<a href="https://instagram.com/iglisiwatch" target="_blank" rel="noopener noreferrer" class="watch-ig-link" aria-label="Vedi su Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>'
       + ctaHtml
       + '</div></div></article>';
