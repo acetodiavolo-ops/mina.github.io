@@ -37,7 +37,7 @@
   }
 
   function render(w){
-    var title = w.brand + ' ' + w.model + (w.brand === 'Hislon' ? ' Swiss Watch' : '') + ' \u2014 Iglisi Watch';
+    var title = w.brand + ' ' + w.model + (w.reference ? ' ' + w.reference : '') + (w.price ? ' \u2014 \u20ac' + w.price : '') + ' | Iglisi Watch';
     var desc = (w.brand === 'Hislon' ? 'Or\u00eb zvicerane Hislon. ' : '') + (w.description_sq || w.description_en || '') + ' E disponueshme tek Iglisi Watch, Durr\u00ebs, Shqip\u00ebri.';
     var imgUrl = w.image ? 'https://watch.al' + w.image : 'https://watch.al/og-image.png';
     var pageUrl = 'https://watch.al/sq/shop/' + w.id + '.html';
