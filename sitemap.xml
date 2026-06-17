@@ -37,7 +37,7 @@
   <!-- ── SERVICES PAGES ─────────────────────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/services.html</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/services.html"/>
@@ -47,7 +47,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/services.html</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/services.html"/>
@@ -57,7 +57,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/services.html</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/services.html"/>
@@ -101,7 +101,7 @@
   <!-- ── SHOP PAGES ───────────────────────────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/shop/</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/"/>
@@ -111,7 +111,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/shop/</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/"/>
@@ -121,7 +121,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/shop/</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/"/>
@@ -1653,6 +1653,37 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/watch-battery-size-guide.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-battery-size-guide.html"/>
   </url>
+  <url>
+    <loc>https://watch.al/en/blog/watch-types-guide.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-types-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/guida-tipi-di-orologi.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/llojet-e-oreve-udhezues.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-types-guide.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/it/blog/guida-tipi-di-orologi.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-types-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/guida-tipi-di-orologi.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/llojet-e-oreve-udhezues.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-types-guide.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/sq/blog/llojet-e-oreve-udhezues.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-types-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/guida-tipi-di-orologi.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/llojet-e-oreve-udhezues.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-types-guide.html"/>
+  </url>
+
   <!-- it/blog/revisione-orologio-durazzo.html — IT only article -->
   <url>
     <loc>https://watch.al/it/blog/revisione-orologio-durazzo.html</loc>
