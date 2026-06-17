@@ -9,7 +9,7 @@
 
   var params = new URLSearchParams(window.location.search);
   var watchId = params.get('id');
-  if(!watchId){var _m=window.location.pathname.match(/\/(watch-\d+)\.html$/);if(_m)watchId=_m[1];}
+  if(!watchId){var _m=window.location.pathname.match(/\/([^\/]+)\.html$/);if(_m&&_m[1]!==\'index\'&&_m[1]!==\'watch\')watchId=_m[1];}
 
   if(!watchId){
     showError('Nuk \u00ebsht\u00eb specifikuar asnji\u00eb or\u00eb.', 'Kthehuni n\u00eb dyqan p\u00ebr t\u00eb shfletuar t\u00eb gjitha or\u00ebt.');
