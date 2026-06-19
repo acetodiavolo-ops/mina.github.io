@@ -2917,5 +2917,16 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/nxehtesia-lageshti-ores.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-heat-humidity-damage.html"/>
   </url>
+  <!-- ── BLOG: COMPLICATIONS EXPLAINED ────────────────────────────────── -->
+  <url>
+    <loc>https://watch.al/en/blog/watch-complications-explained.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-complications-explained.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/complicazioni-orologio.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/komplikime-ores.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-complications-explained.html"/>
+  </url>
 
 </urlset>
