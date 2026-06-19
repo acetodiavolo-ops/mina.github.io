@@ -2802,4 +2802,56 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/services/strap-replacement.html"/>
   </url>
 
+  <!-- ── IT SERVICE LANDING PAGES ──────────────────────────────────────── -->
+  <url>
+    <loc>https://watch.al/it/services/sostituzione-batteria.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/services/battery-replacement.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/services/sostituzione-batteria.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/services/nderrimi-baterise.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/services/battery-replacement.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/it/services/riparazione-orologio.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/services/watch-repair.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/services/riparazione-orologio.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/services/riparim-orash.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/services/watch-repair.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/it/services/duplicazione-chiavi.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/services/key-cutting.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/services/duplicazione-chiavi.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/services/prerje-celesash.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/services/key-cutting.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/it/services/sostituzione-vetro.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/services/crystal-replacement.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/services/sostituzione-vetro.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/services/nderrimi-xhamit.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/services/crystal-replacement.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/it/services/sostituzione-cinturino.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/services/strap-replacement.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/services/sostituzione-cinturino.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/services/nderrimi-rripit.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/services/strap-replacement.html"/>
+  </url>
+
 </urlset>
