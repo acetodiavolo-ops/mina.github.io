@@ -251,6 +251,19 @@
         "@type": "Offer",
         "priceSpecification": {
           "@type": "PriceSpecification",
+          "minPrice": "10",
+          "priceCurrency": "EUR"
+        },
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Zëvendësim Kristali Orësh",
+          "description": "Zëvendësim xhami mineral, safir dhe akrilik. Diagnostikim falas, riparim i njëjtën ditë për shumicën e orëve."
+        }
+      },
+      {
+        "@type": "Offer",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
           "minPrice": "5",
           "priceCurrency": "EUR"
         },
@@ -555,8 +568,26 @@
 
         <div class="svp-card" data-animate data-animate-delay=".1s">
           <div class="svp-card-top">
-            <div class="svp-card-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+            <div class="svp-card-icon"><i class="fas fa-gem" aria-hidden="true"></i></div>
             <span class="svp-card-num" aria-hidden="true">03</span>
+          </div>
+          <h2 class="svp-card-title">Zëvendësim Kristali</h2>
+          <p class="svp-card-desc">Xhami i thyer ose i gërvishtur e prish pamjen e çdo ore. Zëvendësojmë kristale minerale, safir dhe akrilike — diagnostikim falas, gati i njëjtën ditë për shumicën.</p>
+          <ul class="svp-card-list" aria-label="Përfshihet në këtë shërbim">
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Kristale minerale, safir dhe akrilike</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Të gjitha markat dhe madhësitë</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Montim i njëjtën ditë për shumicën</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Test rezistence ndaj ujit pas montimit</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Diagnostikim dhe vlerësim falas</li>
+          </ul>
+          <span class="svp-card-badge"><i class="fas fa-gem" aria-hidden="true"></i>&ensp;Mineral &amp; Safir</span>
+          <a href="/sq/services/nderrimi-xhamit.html" class="svp-card-badge" style="text-decoration:none;margin-top:.5rem"><i class="fas fa-arrow-right" aria-hidden="true"></i>&ensp;Shiko detajet</a>
+        </div>
+
+        <div class="svp-card" data-animate data-animate-delay=".2s">
+          <div class="svp-card-top">
+            <div class="svp-card-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+            <span class="svp-card-num" aria-hidden="true">04</span>
           </div>
           <h2 class="svp-card-title">Montim Rripe dhe Kurore</h2>
           <p class="svp-card-desc">Pjes&euml;t q&euml; p&euml;sos&euml;n m&euml; shum&euml; nga p&euml;rdorimi p&euml;r dit&euml;. Montojm&euml;, z&euml;vend&euml;sojm&euml; dhe lustrojm&euml; q&euml; ora juaj t&euml; duket dhe t&euml; ndihet si&ccedil; duhet.</p>
@@ -571,10 +602,10 @@
           <a href="/sq/services/nderrimi-rripit.html" class="svp-card-badge" style="text-decoration:none;margin-top:.5rem"><i class="fas fa-arrow-right" aria-hidden="true"></i>&ensp;Shiko detajet</a>
         </div>
 
-        <div class="svp-card" data-animate data-animate-delay=".2s">
+        <div class="svp-card" data-animate data-animate-delay=".3s">
           <div class="svp-card-top">
             <div class="svp-card-icon"><i class="fas fa-key" aria-hidden="true"></i></div>
-            <span class="svp-card-num" aria-hidden="true">04</span>
+            <span class="svp-card-num" aria-hidden="true">05</span>
           </div>
           <h2 class="svp-card-title">Kopjim &Ccedil;el&euml;sash</h2>
           <p class="svp-card-desc">Kopje me precizion nd&euml;rsa prisni. Sillni &ccedil;elësin origjinal dhe kopja &euml;sht&euml; gati brenda minutave. Nuk k&euml;rkohet rezervim.</p>
@@ -590,61 +621,6 @@
         </div>
 
       </div>
-
-      
-      <!-- Rezervo nje Sherbim -->
-      <section id="book" data-animate>
-        <div class="svp-process-hd">
-          <p style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-gold);margin:0 0 .4rem">Konfirmim via WhatsApp</p>
-          <h2>Rezervo një Shërbim</h2>
-          <p>Plotëso formularin dhe do të konfirmojmë vendin tuaj — zakonisht brenda një ore.</p>
-        </div>
-        <div class="val-section">
-          <div class="val-top">
-            <div>
-              <div class="val-kicker"><i class="fab fa-whatsapp" aria-hidden="true"></i> Konfirmim i Shpejtë</div>
-              <h3 class="val-title">Rezervo vendin tënd paraprakisht</h3>
-              <p class="val-desc">Vizitat pa rezervim janë gjithmonë të mirëpritura, por rezervimi paraprak garanton vendin tuaj — veçanërisht për riparime që marrin më shumë kohë. Konfirmojmë çdo rezervim via WhatsApp, zakonisht brenda një ore.</p>
-              <ul class="val-points"><li>Ndërrimi i baterisë &amp; prerja e çelësit: ndërsa pret</li><li>Ndërrimi i rripit &amp; zëvendësimi i kristaleve: i njëjtë ditë</li><li>Riparim orë: 1–3 ditë</li><li>Hën–Sht 08:30–20:30, mbyllur të dielën</li></ul>
-            </div>
-            <div>
-              <form id="bookForm" class="val-form" novalidate>
-                <div class="val-field">
-                  <label for="bk-service">Shërbimi *</label>
-                  <select id="bk-service" required><option value="">Zgjidh një shërbim</option><option>Zëvendësim Baterie</option><option>Ndërrimi i Rripit / Byzylykut</option><option>Riparim Orë (Kuarc ose Mekanik)</option><option>Zëvendësim Kristali</option><option>Prerje Çelësi</option></select>
-                </div>
-                <div class="val-row">
-                  <div class="val-field">
-                    <label for="bk-name">Emri / Mbiemri *</label>
-                    <input id="bk-name" type="text" placeholder="p.sh. Artan Hoxha" required>
-                  </div>
-                  <div class="val-field">
-                    <label for="bk-phone">Telefon / WhatsApp *</label>
-                    <input id="bk-phone" type="tel" placeholder="+355 …" required>
-                  </div>
-                </div>
-                <div class="val-row">
-                  <div class="val-field">
-                    <label for="bk-date">Data e Preferuar</label>
-                    <input id="bk-date" type="date">
-                  </div>
-                  <div class="val-field">
-                    <label for="bk-time">Ora e Preferuar</label>
-                    <select id="bk-time"><option value="">Çdo orë</option><option>08:30–10:00</option><option>10:00–12:00</option><option>12:00–14:00</option><option>14:00–16:00</option><option>16:00–18:00</option><option>18:00–20:30</option></select>
-                  </div>
-                </div>
-                <div class="val-field">
-                  <label for="bk-notes">Marka e orës &amp; shënime shtesë</label>
-                  <textarea id="bk-notes" placeholder="p.sh. Seiko SKX007 — ka ngadaluar që muajin e kaluar…"></textarea>
-                </div>
-                <div class="val-divider"></div>
-                <button type="submit" class="val-submit" style="background:var(--accent-gold);color:#18110a"><i class="fab fa-whatsapp" aria-hidden="true"></i> Dërgo Kërkesen e Rezervimit</button>
-                <p class="val-note">Hap WhatsApp me të dhënat tuaja të parapërgatituara. Përgigjemi brenda një ore.</p>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
 
       
       <!-- Rezervo nje Sherbim -->
