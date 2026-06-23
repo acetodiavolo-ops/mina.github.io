@@ -3107,4 +3107,36 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-strap-lug-width-guide.html"/>
   </url>
 
+  <!-- ── BLOG: WATCH BEZEL TYPES EXPLAINED ────────────────────────────── -->
+  <url>
+    <loc>https://watch.al/en/blog/watch-bezel-types-explained.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-bezel-types-explained.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/tipi-lunetta-orologio.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/llojet-unazave-ores.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-bezel-types-explained.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/it/blog/tipi-lunetta-orologio.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-bezel-types-explained.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/tipi-lunetta-orologio.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/llojet-unazave-ores.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-bezel-types-explained.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/sq/blog/llojet-unazave-ores.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-bezel-types-explained.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/tipi-lunetta-orologio.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/llojet-unazave-ores.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-bezel-types-explained.html"/>
+  </url>
+
 </urlset>
