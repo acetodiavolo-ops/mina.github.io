@@ -394,17 +394,18 @@ window.WATCHES_DATA = [
     "description_sq": "Navimarine NM001404-Color01 elegante me ciferblat të rafinuar dhe mbarim premium. Orë kuarci elegante që kombinon proporcionet klasike me besueshmërinë e përditshme."
   },
   {
-    "id": "watch-29",
-    "brand": "Citizen Quartz",
-    "model": "Citizen Gold Quartz Watch",
+    "id": "citizen-quartz-gn",
+    "brand": "Citizen",
+    "model": "Quartz GN",
+    "reference": "",
     "condition": "New",
     "price": 60,
     "currency": "EUR",
     "image": "/images/watches/citizen-quartz-gold.webp",
     "sold": false,
-    "description_en": "Gold-tone analog watch with champagne dial, gold hands and \"CITIZEN QUARTZ\" lettering.",
-    "description_it": "Orologio analogico in tono oro con quadrante champagne, lancette dorate e scritte \"CITIZEN QUARTZ\".",
-    "description_sq": "Orë analoge të artë me cadran shampanjë, duar të arta dhe mbishkrime \"CITIZEN QUARTZ\"."
+    "description_en": "Citizen Japanese quartz with mineral glass crystal and gold-plated stainless steel case and bracelet. Clean dial, reliable movement, and an elegant golden finish from every angle.",
+    "description_it": "Quarzo giapponese Citizen con vetro minerale e cassa in acciaio inossidabile placcata oro. Quadrante pulito, movimento affidabile e finitura dorata elegante da ogni angolazione.",
+    "description_sq": "Kuarc japonez Citizen me xham mineral dhe kuti çeliku inox me veshje ari. Ciferblat i pastër, lëvizje e besueshme dhe finiturë elegante ari nga çdo kënd."
   },
   {
     "id": "casio-mtp-vd01",
@@ -446,5 +447,47 @@ window.WATCHES_DATA = [
     "description_en": "Navimarine Steel 5ATM - classic stainless steel watch with a deep blue sunburst dial and Roman numeral hour markers. Date display at 3 o'clock, 5 ATM water resistance, and a solid brushed steel bracelet. A confident, elegant everyday watch.",
     "description_it": "Navimarine Steel 5ATM - orologio classico in acciaio inossidabile con quadrante blu sunburst e numeri romani. Data alle 3, resistenza all'acqua 5 ATM e bracciale in acciaio spazzolato solido. Un orologio quotidiano elegante e deciso.",
     "description_sq": "Navimarine Steel 5ATM - orë klasike çeliku inox me ciferblat blu sunburst dhe tregues numrash romakë. Datë në pozicionin 3, rezistencë ndaj ujit 5 ATM dhe byzylyk çeliku solid të brushuar. Orë e përditshme elegante dhe e sigurt."
+  },
+  {
+    "id": "belonni-collection",
+    "brand": "Belonni",
+    "model": "Collection",
+    "reference": "",
+    "condition": "New",
+    "price": 50,
+    "currency": "EUR",
+    "image": "/images/watches/belonni-collection.webp",
+    "sold": false,
+    "description_en": "Belonni Collection all-stainless-steel watch with a clean white dial, Arabic numeral markers, date display at 3, and a fluted coin-edge bezel. 3 ATM water resistant with a five-link Jubilee-style bracelet.",
+    "description_it": "Belonni Collection in acciaio inossidabile con quadrante bianco pulito, indicatori numerici arabi, data alle 3 e ghiera a bordo moneta. Resistente all'acqua 3 ATM con bracciale a cinque maglie stile Jubilee.",
+    "description_sq": "Belonni Collection çelik inox me ciferblat të bardhë, tregues numrash arabë, datë në pozicionin 3 dhe unazë me skaj monedhe. Rezistente ndaj ujit 3 ATM me byzylyk me pesë hallka stil Jubilee."
+  },
+  {
+    "id": "romanson-bh3054gbr",
+    "brand": "Romanson",
+    "model": "BH3054GBR",
+    "reference": "BH3054GBR",
+    "condition": "New",
+    "price": 74,
+    "currency": "EUR",
+    "image": "/images/watches/romanson-bh3054gbr.webp",
+    "sold": false,
+    "description_en": "Romanson Parie Swiss quartz with sapphire crystal glass and full gold-plated case and bracelet. Elegant rectangular case with sunburst dial, dot and bar markers, date display, and Swiss-made precision.",
+    "description_it": "Quarzo svizzero Romanson Parie con vetro in zaffiro e cassa e bracciale interamente placcati oro. Cassa rettangolare elegante con quadrante sunburst, indicatori a punti e barre, data e precisione svizzera.",
+    "description_sq": "Kuarc zviceran Romanson Parie me xham safir dhe kuti dhe byzylyk plotësisht të artë. Kuti drejtkëndëshe elegante me ciferblat sunburst, tregues pikash dhe shiritash, datë dhe precizion zviceran."
+  },
+  {
+    "id": "daniel-klein-blue",
+    "brand": "Daniel Klein",
+    "model": "Blue",
+    "reference": "DK 1.12576.2",
+    "condition": "New",
+    "price": 64,
+    "currency": "EUR",
+    "image": "/images/watches/daniel-klein-blue.webp",
+    "sold": false,
+    "description_en": "Daniel Klein stainless steel watch with a deep blue gradient sunburst dial, coin-edge bezel, and red seconds hand. Date display at 3, applied bar and dot markers, and a solid steel bracelet. A bold everyday watch with a sporty edge.",
+    "description_it": "Orologio Daniel Klein in acciaio inossidabile con quadrante blu sfumato sunburst, ghiera a bordo moneta e lancetta dei secondi rossa. Data alle 3, indicatori applicati a barre e punti e bracciale in acciaio solido. Un orologio quotidiano audace con un tocco sportivo.",
+    "description_sq": "Orë Daniel Klein çelik inox me ciferblat blu gradient sunburst, unazë me skaj monedhe dhe akrep sekondash të kuq. Datë në pozicionin 3, tregues të aplikuar shiritash dhe pikash dhe byzylyk i fortë çeliku. Një orë e guximshme për çdo ditë me karakter sportiv."
   }
 ];
