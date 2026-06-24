@@ -439,6 +439,7 @@ window.WATCHES_DATA = [
     "id": "navimarine-steel-5atm-blue",
     "brand": "Navimarine",
     "model": "Steel 5ATM Blue",
+    "reference": "NT0022-1",
     "condition": "New",
     "price": 75,
     "currency": "EUR",
