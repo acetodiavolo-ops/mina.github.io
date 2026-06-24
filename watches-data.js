@@ -477,6 +477,20 @@ window.WATCHES_DATA = [
     "description_sq": "Kuarc zviceran Romanson Parie me xham safir dhe kuti dhe byzylyk plotësisht të artë. Kuti drejtkëndëshe elegante me ciferblat sunburst, tregues pikash dhe shiritash, datë dhe precizion zviceran."
   },
   {
+    "id": "daniel-klein-premium",
+    "brand": "Daniel Klein",
+    "model": "Premium",
+    "reference": "DK.1.12971-2",
+    "condition": "New",
+    "price": 64,
+    "currency": "EUR",
+    "image": "/images/watches/daniel-klein-premium.webp",
+    "sold": false,
+    "description_en": "Daniel Klein Premium gold-plated watch with a silver sunburst dial, applied gold bar indices, and a fluted coin-edge bezel. Date display at 3, Roman numeral chapter ring, and a three-link gold-tone bracelet. Classic elegance with a bold Datejust-inspired profile.",
+    "description_it": "Orologio Daniel Klein Premium placcato oro con quadrante sunburst argento, indici a barra applicati dorati e ghiera zigrinata a bordo moneta. Data alle 3, anello delle ore con numeri romani e bracciale a tre maglie in color oro. Eleganza classica con un profilo audace ispirato al Datejust.",
+    "description_sq": "Orë Daniel Klein Premium me veshje ari me ciferblat sunburst argjendi, tregues shiritash të aplikuar artë dhe unazë me skaj të gdhendur. Datë në pozicionin 3, unazë orësh me numra romakë dhe byzylyk me tre hallka në ngjyrë ari. Elegancë klasike me profil të guximshëm."
+  },
+  {
     "id": "daniel-klein-mesh",
     "brand": "Daniel Klein",
     "model": "Mesh",
