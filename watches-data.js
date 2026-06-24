@@ -477,6 +477,20 @@ window.WATCHES_DATA = [
     "description_sq": "Kuarc zviceran Romanson Parie me xham safir dhe kuti dhe byzylyk plotësisht të artë. Kuti drejtkëndëshe elegante me ciferblat sunburst, tregues pikash dhe shiritash, datë dhe precizion zviceran."
   },
   {
+    "id": "daniel-klein-premium",
+    "brand": "Daniel Klein",
+    "model": "Premium",
+    "reference": "DK.1.12971-2",
+    "condition": "New",
+    "price": 60,
+    "currency": "EUR",
+    "image": "/images/watches/daniel-klein-premium.webp",
+    "sold": false,
+    "description_en": "Daniel Klein Premium minimalist watch with a clean white dial, applied gold bar indices, and a slim gold-plated case. The woven Milanese mesh bracelet in gold-tone adds a refined finish. Simple, elegant, and effortlessly stylish.",
+    "description_it": "Orologio minimalista Daniel Klein Premium con quadrante bianco pulito, indici a barra applicati dorati e cassa sottile placcata oro. Il bracciale a maglia milanese in color oro aggiunge una finitura raffinata. Semplice, elegante e di stile senza sforzo.",
+    "description_sq": "Orë minimaliste Daniel Klein Premium me ciferblat të bardhë të pastër, tregues shiritash të aplikuar artë dhe kuti të hollë me veshje ari. Byzylyk milanez i endur në ngjyrë ari shton një finiturë elegante. E thjeshtë, elegante dhe me stil."
+  },
+  {
     "id": "daniel-klein-blue",
     "brand": "Daniel Klein",
     "model": "Blue",
