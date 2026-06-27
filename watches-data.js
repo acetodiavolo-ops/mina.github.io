@@ -401,7 +401,7 @@ window.WATCHES_DATA = [
     "condition": "New",
     "price": 60,
     "currency": "EUR",
-    "image": "/images/watches/citizen-quartz-gold.webp",
+    "image": "/images/watches/citizen-quartz-gn.webp",
     "sold": false,
     "description_en": "Citizen Japanese quartz with mineral glass crystal and gold-plated stainless steel case and bracelet. Clean dial, reliable movement, and an elegant golden finish from every angle.",
     "description_it": "Quarzo giapponese Citizen con vetro minerale e cassa in acciaio inossidabile placcata oro. Quadrante pulito, movimento affidabile e finitura dorata elegante da ogni angolazione.",
