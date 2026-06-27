@@ -40,9 +40,9 @@
       var handleMax = document.getElementById('handleMax');
       if(priceWrap && handleMin && handleMax){
         var minVal = PRICE_MIN, maxVal = PRICE_MAX;
-        function pctOf(val){ return (val - PRICE_MIN) / (PRICE_MAX - PRICE_MIN) * 100; }
-        function snapVal(v){ return Math.round(v / 5) * 5; }
-        function applyPricePos(){
+        var pctOf = function(v){ return (v - PRICE_MIN) / (PRICE_MAX - PRICE_MIN) * 100; };
+        var snapVal = function(v){ return Math.round(v / 5) * 5; };
+        var applyPricePos = function(){
           handleMin.style.left = pctOf(minVal) + '%';
           handleMax.style.left = pctOf(maxVal) + '%';
           priceFill.style.left  = pctOf(minVal) + '%';
@@ -54,36 +54,40 @@
           currentMinPrice = minVal;
           currentMaxPrice = maxVal;
           renderWatches(WATCHES);
-        }
-        function startDrag(isMin){
-          return function(e){
-            e.preventDefault();
-            function onMove(ev){
-              ev.preventDefault();
-              var rect = priceWrap.getBoundingClientRect();
-              var clientX = ev.touches ? ev.touches[0].clientX : ev.clientX;
-              var frac = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
-              var val = Math.max(PRICE_MIN, Math.min(PRICE_MAX, snapVal(PRICE_MIN + frac * (PRICE_MAX - PRICE_MIN))));
-              if(isMin) minVal = Math.min(val, maxVal);
-              else maxVal = Math.max(val, minVal);
-              applyPricePos();
-            }
-            function onEnd(){
-              document.removeEventListener('mousemove', onMove);
-              document.removeEventListener('mouseup',   onEnd);
-              document.removeEventListener('touchmove', onMove);
-              document.removeEventListener('touchend',  onEnd);
-            }
-            document.addEventListener('mousemove', onMove);
-            document.addEventListener('mouseup',   onEnd);
-            document.addEventListener('touchmove', onMove, {passive:false});
-            document.addEventListener('touchend',  onEnd);
+        };
+        var onSliderStart = function(e){
+          e.preventDefault();
+          var cx = e.touches ? e.touches[0].clientX : e.clientX;
+          var rect = priceWrap.getBoundingClientRect();
+          var frac = Math.max(0, Math.min(1, (cx - rect.left) / rect.width));
+          var val  = snapVal(PRICE_MIN + frac * (PRICE_MAX - PRICE_MIN));
+          var isMin = Math.abs(val - minVal) <= Math.abs(val - maxVal);
+          if(isMin) minVal = Math.min(val, maxVal);
+          else maxVal = Math.max(val, minVal);
+          applyPricePos();
+          var onMove = function(ev){
+            ev.preventDefault();
+            var rect2 = priceWrap.getBoundingClientRect();
+            var cx2 = ev.touches ? ev.touches[0].clientX : ev.clientX;
+            var f2  = Math.max(0, Math.min(1, (cx2 - rect2.left) / rect2.width));
+            var v2  = snapVal(PRICE_MIN + f2 * (PRICE_MAX - PRICE_MIN));
+            if(isMin) minVal = Math.min(v2, maxVal);
+            else maxVal = Math.max(v2, minVal);
+            applyPricePos();
           };
-        }
-        handleMin.addEventListener('mousedown',  startDrag(true));
-        handleMax.addEventListener('mousedown',  startDrag(false));
-        handleMin.addEventListener('touchstart', startDrag(true),  {passive:false});
-        handleMax.addEventListener('touchstart', startDrag(false), {passive:false});
+          var onEnd = function(){
+            document.removeEventListener('mousemove', onMove);
+            document.removeEventListener('mouseup',   onEnd);
+            document.removeEventListener('touchmove', onMove);
+            document.removeEventListener('touchend',  onEnd);
+          };
+          document.addEventListener('mousemove', onMove);
+          document.addEventListener('mouseup',   onEnd);
+          document.addEventListener('touchmove', onMove, {passive:false});
+          document.addEventListener('touchend',  onEnd);
+        };
+        priceWrap.addEventListener('mousedown',  onSliderStart);
+        priceWrap.addEventListener('touchstart', onSliderStart, {passive:false});
         handleMin.addEventListener('keydown', function(e){
           if(e.key==='ArrowLeft')       minVal = Math.max(PRICE_MIN, minVal-5);
           else if(e.key==='ArrowRight') minVal = Math.min(maxVal, minVal+5);
