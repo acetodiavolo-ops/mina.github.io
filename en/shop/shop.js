@@ -2,6 +2,9 @@
   var currentFilter = 'all';
   var currentSearch = '';
   var currentSort   = 'default';
+  var currentMinPrice = 50;
+  var currentMaxPrice = 200;
+  var PRICE_MIN = 50, PRICE_MAX = 200;
 
   fetch('https://raw.githubusercontent.com/acetodiavolo-ops/mina.github.io/main/watches.json?v=3')
     .then(function(r){ return r.json(); })
@@ -30,6 +33,25 @@
       if(sortEl){
         sortEl.addEventListener('change', function(){ currentSort = this.value; renderWatches(WATCHES); });
       }
+
+      var priceMinEl = document.getElementById('priceMin');
+      var priceMaxEl = document.getElementById('priceMax');
+      if(priceMinEl && priceMaxEl){
+        function onPriceChange(){
+          var vMin = parseInt(priceMinEl.value);
+          var vMax = parseInt(priceMaxEl.value);
+          if(vMin > vMax){ priceMinEl.value = vMax; vMin = vMax; }
+          priceMinEl.style.zIndex = vMin >= PRICE_MAX - 5 ? 5 : 3;
+          currentMinPrice = vMin;
+          currentMaxPrice = vMax;
+          var disp = document.getElementById('priceRangeDisplay');
+          if(disp) disp.textContent = '€' + vMin + ' — €' + vMax;
+          setPriceTrack(vMin, vMax);
+          renderWatches(WATCHES);
+        }
+        priceMinEl.addEventListener('input', onPriceChange);
+        priceMaxEl.addEventListener('input', onPriceChange);
+      }
     })
     .catch(function(){
       document.getElementById('shopGrid').innerHTML = '<p class="no-watches">Could not load watches. Please refresh.</p>';
@@ -44,6 +66,10 @@
         return (w.model+' '+w.brand+' '+(w.reference||'')+' '+(w.description_en||'')).toLowerCase().includes(s);
       });
     }
+
+    filtered = filtered.filter(function(w){
+      return (w.price||0) >= currentMinPrice && (w.price||0) <= currentMaxPrice;
+    });
 
     // Sort
     if(currentSearch && currentSort === 'default'){
@@ -69,6 +95,14 @@
       return;
     }
     grid.innerHTML = filtered.map(function(w){ return watchCard(w); }).join('');
+  }
+
+  function setPriceTrack(min, max){
+    var fill = document.getElementById('priceTrackFill');
+    if(!fill) return;
+    var total = PRICE_MAX - PRICE_MIN;
+    fill.style.left = ((min - PRICE_MIN) / total * 100) + '%';
+    fill.style.width = ((max - min) / total * 100) + '%';
   }
 
   function injectItemListSchema(watches, lang) {

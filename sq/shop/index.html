@@ -302,7 +302,22 @@ img{display:block;max-width:100%;height:auto}
 .skel-card::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 0%,rgba(180,148,92,.2) 50%,transparent 100%);animation:skel-shine 1.4s infinite}
 @keyframes skel-shine{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
 .skel-card::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#f0ece6 55%,#f7f4f0 55%)}
-  </style>
+  
+.price-filter-section{max-width:80rem;margin:0 auto;padding:.25rem 1.5rem 1.25rem}
+.price-filter-header{display:flex;justify-content:space-between;align-items:center;font-size:.82rem;color:var(--text-secondary);font-weight:600;margin-bottom:.6rem}
+#priceRangeDisplay{color:var(--btn-start);font-weight:700}
+.price-slider-wrap{position:relative;height:1.5rem;display:flex;align-items:center}
+.price-track-bg{position:absolute;left:0;right:0;height:4px;background:var(--border-light);border-radius:2px}
+.price-track-fill{position:absolute;height:4px;background:var(--btn-start);border-radius:2px;pointer-events:none;left:0;width:100%}
+.price-range{position:absolute;width:100%;height:1.5rem;background:transparent;-webkit-appearance:none;appearance:none;pointer-events:none;outline:none;margin:0;padding:0}
+#priceMin{z-index:3}
+#priceMax{z-index:4}
+.price-range::-webkit-slider-thumb{-webkit-appearance:none;width:1.15rem;height:1.15rem;border-radius:50%;background:var(--btn-start);border:2px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,.25);cursor:pointer;pointer-events:all}
+.price-range::-webkit-slider-runnable-track{background:transparent;height:4px}
+.price-range::-moz-range-thumb{width:1rem;height:1rem;border-radius:50%;background:var(--btn-start);border:2px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,.25);cursor:pointer;pointer-events:all;border:none}
+.price-range::-moz-range-track{background:transparent;height:4px}
+@media(max-width:600px){.price-filter-section{padding:.25rem .75rem 1rem}}
+</style>
 
   <script type="application/ld+json">
   {
@@ -2355,6 +2370,19 @@ img{display:block;max-width:100%;height:auto}
           <option value="price-desc">Çmimi: nga i larti</option>
           <option value="brand">Marka A–Z</option>
         </select>
+      </div>
+    </div>
+
+    <div class="price-filter-section">
+      <div class="price-filter-header">
+        <span class="price-filter-label">Çmimi</span>
+        <span id="priceRangeDisplay">€50 — €200</span>
+      </div>
+      <div class="price-slider-wrap">
+        <div class="price-track-bg"></div>
+        <div class="price-track-fill" id="priceTrackFill"></div>
+        <input type="range" id="priceMin" class="price-range" min="50" max="200" value="50" step="5" aria-label="Çmimi minimal">
+        <input type="range" id="priceMax" class="price-range" min="50" max="200" value="200" step="5" aria-label="Çmimi maksimal">
       </div>
     </div>
 
