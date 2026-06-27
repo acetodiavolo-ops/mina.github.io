@@ -34,23 +34,69 @@
         sortEl.addEventListener('change', function(){ currentSort = this.value; renderWatches(WATCHES); });
       }
 
-      var priceMinEl = document.getElementById('priceMin');
-      var priceMaxEl = document.getElementById('priceMax');
-      if(priceMinEl && priceMaxEl){
-        function onPriceChange(){
-          var vMin = parseInt(priceMinEl.value);
-          var vMax = parseInt(priceMaxEl.value);
-          if(vMin > vMax){ priceMinEl.value = vMax; vMin = vMax; }
-          priceMinEl.style.zIndex = vMin >= PRICE_MAX - 5 ? 5 : 3;
-          currentMinPrice = vMin;
-          currentMaxPrice = vMax;
+      var priceWrap = document.getElementById('priceSliderWrap');
+      var priceFill = document.getElementById('priceSliderFill');
+      var handleMin = document.getElementById('handleMin');
+      var handleMax = document.getElementById('handleMax');
+      if(priceWrap && handleMin && handleMax){
+        var minVal = PRICE_MIN, maxVal = PRICE_MAX;
+        function pctOf(val){ return (val - PRICE_MIN) / (PRICE_MAX - PRICE_MIN) * 100; }
+        function snapVal(v){ return Math.round(v / 5) * 5; }
+        function applyPricePos(){
+          handleMin.style.left = pctOf(minVal) + '%';
+          handleMax.style.left = pctOf(maxVal) + '%';
+          priceFill.style.left  = pctOf(minVal) + '%';
+          priceFill.style.width = (pctOf(maxVal) - pctOf(minVal)) + '%';
+          handleMin.setAttribute('aria-valuenow', minVal);
+          handleMax.setAttribute('aria-valuenow', maxVal);
           var disp = document.getElementById('priceRangeDisplay');
-          if(disp) disp.textContent = '€' + vMin + ' — €' + vMax;
-          setPriceTrack(vMin, vMax);
+          if(disp) disp.textContent = '€' + minVal + ' — €' + maxVal;
+          currentMinPrice = minVal;
+          currentMaxPrice = maxVal;
           renderWatches(WATCHES);
         }
-        priceMinEl.addEventListener('input', onPriceChange);
-        priceMaxEl.addEventListener('input', onPriceChange);
+        function startDrag(isMin){
+          return function(e){
+            e.preventDefault();
+            function onMove(ev){
+              ev.preventDefault();
+              var rect = priceWrap.getBoundingClientRect();
+              var clientX = ev.touches ? ev.touches[0].clientX : ev.clientX;
+              var frac = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
+              var val = Math.max(PRICE_MIN, Math.min(PRICE_MAX, snapVal(PRICE_MIN + frac * (PRICE_MAX - PRICE_MIN))));
+              if(isMin) minVal = Math.min(val, maxVal);
+              else maxVal = Math.max(val, minVal);
+              applyPricePos();
+            }
+            function onEnd(){
+              document.removeEventListener('mousemove', onMove);
+              document.removeEventListener('mouseup',   onEnd);
+              document.removeEventListener('touchmove', onMove);
+              document.removeEventListener('touchend',  onEnd);
+            }
+            document.addEventListener('mousemove', onMove);
+            document.addEventListener('mouseup',   onEnd);
+            document.addEventListener('touchmove', onMove, {passive:false});
+            document.addEventListener('touchend',  onEnd);
+          };
+        }
+        handleMin.addEventListener('mousedown',  startDrag(true));
+        handleMax.addEventListener('mousedown',  startDrag(false));
+        handleMin.addEventListener('touchstart', startDrag(true),  {passive:false});
+        handleMax.addEventListener('touchstart', startDrag(false), {passive:false});
+        handleMin.addEventListener('keydown', function(e){
+          if(e.key==='ArrowLeft')       minVal = Math.max(PRICE_MIN, minVal-5);
+          else if(e.key==='ArrowRight') minVal = Math.min(maxVal, minVal+5);
+          else return;
+          applyPricePos();
+        });
+        handleMax.addEventListener('keydown', function(e){
+          if(e.key==='ArrowLeft')       maxVal = Math.max(minVal, maxVal-5);
+          else if(e.key==='ArrowRight') maxVal = Math.min(PRICE_MAX, maxVal+5);
+          else return;
+          applyPricePos();
+        });
+        applyPricePos();
       }
     })
     .catch(function(){
@@ -95,14 +141,6 @@
       return;
     }
     grid.innerHTML = filtered.map(function(w){ return watchCard(w); }).join('');
-  }
-
-  function setPriceTrack(min, max){
-    var fill = document.getElementById('priceTrackFill');
-    if(!fill) return;
-    var total = PRICE_MAX - PRICE_MIN;
-    fill.style.left = ((min - PRICE_MIN) / total * 100) + '%';
-    fill.style.width = ((max - min) / total * 100) + '%';
   }
 
   function injectItemListSchema(watches, lang) {

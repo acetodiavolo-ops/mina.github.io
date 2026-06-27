@@ -340,16 +340,22 @@ img{display:block;max-width:100%;height:auto}
 .price-filter-section{max-width:80rem;margin:0 auto;padding:.25rem 1.5rem 1.25rem}
 .price-filter-header{display:flex;justify-content:space-between;align-items:center;font-size:.82rem;color:var(--text-secondary);font-weight:600;margin-bottom:.6rem}
 #priceRangeDisplay{color:var(--btn-start);font-weight:700}
-.price-slider-wrap{position:relative;height:1.5rem;display:flex;align-items:center}
-.price-track-bg{position:absolute;left:0;right:0;height:4px;background:var(--border-light);border-radius:2px}
-.price-track-fill{position:absolute;height:4px;background:var(--btn-start);border-radius:2px;pointer-events:none;left:0;width:100%}
-.price-range{position:absolute;width:100%;height:1.5rem;background:transparent;-webkit-appearance:none;appearance:none;pointer-events:none;outline:none;margin:0;padding:0}
-#priceMin{z-index:3}
-#priceMax{z-index:4}
-.price-range::-webkit-slider-thumb{-webkit-appearance:none;width:1.15rem;height:1.15rem;border-radius:50%;background:var(--btn-start);border:2px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,.25);cursor:pointer;pointer-events:all}
-.price-range::-webkit-slider-runnable-track{background:transparent;height:4px}
-.price-range::-moz-range-thumb{width:1rem;height:1rem;border-radius:50%;background:var(--btn-start);border:2px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,.25);cursor:pointer;pointer-events:all;border:none}
-.price-range::-moz-range-track{background:transparent;height:4px}
+
+
+
+
+
+
+
+
+
+
+.price-slider-wrap{position:relative;height:2.25rem;display:flex;align-items:center;user-select:none}
+.price-slider-track{position:absolute;left:0;right:0;height:5px;background:#e8e3dc;border-radius:3px}
+.price-slider-fill{position:absolute;height:5px;background:var(--btn-start);border-radius:3px}
+.price-handle{position:absolute;width:1.2rem;height:1.2rem;border-radius:50%;background:var(--btn-start);border:2.5px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.28);cursor:grab;transform:translateX(-50%);top:50%;margin-top:-.6rem;z-index:5;touch-action:none;transition:transform .1s,box-shadow .1s}
+.price-handle:hover,.price-handle:focus{box-shadow:0 2px 10px rgba(6,21,59,.4);outline:none}
+.price-handle:active{cursor:grabbing}
 @media(max-width:600px){.price-filter-section{padding:.25rem .75rem 1rem}}
 </style>
 
@@ -2413,11 +2419,11 @@ img{display:block;max-width:100%;height:auto}
         <span class="price-filter-label">Prezzo</span>
         <span id="priceRangeDisplay">€50 — €200</span>
       </div>
-      <div class="price-slider-wrap">
-        <div class="price-track-bg"></div>
-        <div class="price-track-fill" id="priceTrackFill"></div>
-        <input type="range" id="priceMin" class="price-range" min="50" max="200" value="50" step="5" aria-label="Prezzo minimo">
-        <input type="range" id="priceMax" class="price-range" min="50" max="200" value="200" step="5" aria-label="Prezzo massimo">
+      <div class="price-slider-wrap" id="priceSliderWrap">
+        <div class="price-slider-track"></div>
+        <div class="price-slider-fill" id="priceSliderFill"></div>
+        <div class="price-handle" id="handleMin" tabindex="0" role="slider" aria-label="Prezzo minimo" aria-valuemin="50" aria-valuemax="200" aria-valuenow="50"></div>
+        <div class="price-handle" id="handleMax" tabindex="0" role="slider" aria-label="Prezzo massimo" aria-valuemin="50" aria-valuemax="200" aria-valuenow="200"></div>
       </div>
     </div>
 
