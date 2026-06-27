@@ -1,4 +1,4 @@
-(function(){
+﻿(function(){
   var btt = document.getElementById('backToTop');
   if(btt){
     window.addEventListener('scroll', function(){ btt.classList.toggle('show', window.scrollY > 400); }, {passive:true});
@@ -120,6 +120,12 @@
         + '<a href="https://instagram.com/iglisiwatch" target="_blank" rel="noopener noreferrer" class="watch-ig" aria-label="See our Instagram"><i class="fab fa-instagram" aria-hidden="true"></i> Instagram</a>'
         + '</div>';
 
+    if (w.originalPrice && !document.getElementById('pg-sale-style')) {
+      var s = document.createElement('style');
+      s.id = 'pg-sale-style';
+      s.textContent = '.sale-badge{position:absolute;top:1.15rem;left:-2.1rem;width:7.5rem;text-align:center;background:var(--btn-start);color:var(--accent-gold);font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.32rem 0;transform:rotate(-45deg);z-index:3;box-shadow:0 2px 8px rgba(0,0,0,.28)}.was-price-pg{font-size:.9rem;color:#aaa;text-decoration:line-through;margin:.1rem 0 .25rem}';
+      document.head.appendChild(s);
+    }
     document.getElementById('watch-content').className = 'watch-page';
     document.getElementById('watch-content').innerHTML =
       '<div class="watch-img-wrap">'
