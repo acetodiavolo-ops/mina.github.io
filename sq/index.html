@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="sq" dir="ltr">
 <head>
   <meta charset="UTF-8">
@@ -29,6 +29,8 @@
   <meta property="og:url" content="https://watch.al/sq/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="sq_AL">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="it_IT">
   <meta property="og:site_name" content="Iglisi Watch">
 
   <!-- TWITTER CARD -->
@@ -36,6 +38,7 @@
   <meta name="twitter:title" content="Iglisi Watch - Riparim Orash &amp; Orë Meshkujsh dhe Femrash">
   <meta name="twitter:description" content="Biznes familjar që nga 2009. Riparime të shpejta dhe ora të kontrolluara para shitjes.">
   <meta name="twitter:image" content="https://watch.al/og-image.png?v=2">
+  <meta name="twitter:image:alt" content="Iglisi Watch - riparim orësh në Durrës, Shqipëri">
 
   <!-- CANONICAL & HREFLANG -->
   <link rel="canonical" href="https://watch.al/sq/">
@@ -802,7 +805,7 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["Store", "LocalBusiness"],
     "name": "Iglisi Watch",
     "description": "Iglisi Watch është një dyqan orësh dhe punëtori riparimi me menaxhim familjar në Durrës, Shqipëri, i hapur që nga viti 2009. Shitës specialist i orëve Hislon dhe Navimarine - u shërben klientëve në të gjithë Shqipërinë nëpërmjet WhatsApp. Ndërrimi i baterisë, servisimi i orëve mekanike dhe prerja e çelësave.",
     "image": "https://watch.al/og-image.png?v=2",
@@ -837,6 +840,7 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
       }
     ],
     "priceRange": "€€",
+    "hasMap": "https://maps.google.com/?cid=9818085289516744054",
     "areaServed": [{ "@type": "City", "name": "Durrës" }, { "@type": "City", "name": "Tirana" }, { "@type": "Country", "name": "Albania" }],
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -887,6 +891,22 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
         "@type": "Question",
         "name": "Ku mund të blej orë Navimarine në Shqipëri?",
         "acceptedAnswer": { "@type": "Answer", "text": "Iglisi Watch në Rrugën Aleksander Goga në Durrës është shitës specialist i orëve Navimarine në Shqipëri. Shfleto stokun aktual te watch.al ose dërgo mesazh nëpërmjet WhatsApp në +355 67 636 0510." }
+      },{
+        "@type": "Question",
+        "name": "A pranoni klientë pa caktim takimi?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Po, klientët pa caktim takimi janë gjithmonë të mirëpritur. Shumica e riparimeve bëhen në vend, ndërsa ju prisni."}
+      },{
+        "@type": "Question",
+        "name": "Ku ndodhet Iglisi Watch?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Ndodhemi në Rrugën Aleksander Goga, Durrës 2001, Shqipëri. Kërkoni punëtorinë pranë qendrës së qytetit."}
+      },{
+        "@type": "Question",
+        "name": "Si mund të rezervoj një riparim?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Nuk nevojitet caktim takimi — thjesht ejani direkt. Mund të na kontaktoni edhe nëpërmjet WhatsApp në +355 67 636 0510 ose të na telefononi drejtpërdrejt."}
+      },{
+        "@type": "Question",
+        "name": "A dërgon Iglisi Watch orë në Tiranë ose qytete të tjera?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Iglisi Watch pranon porosi dhe kërkesa nëpërmjet WhatsApp nga klientë kudo në Shqipëri - Tiranë, Shkodër, Vlorë, Elbasan, Korçë e më gjerë. Orët mund të tërhiqen nga punëtoria në Durrës ose të merren marrëveshje për dërgim."}
       }
     ]
   }
@@ -2112,22 +2132,22 @@ i.promise-icon,i.faq-icon{display:inline-flex!important;align-items:center;justi
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 promise-grid">
           <div class="promise-card">
             <i class="fas fa-bolt promise-icon" aria-hidden="true"></i>
-            <h2 class="font-bold text-lg">Shërbim i Shpejtë</h2>
+            <h3 class="font-bold text-lg">Shërbim i Shpejtë</h3>
             <p class="text-gray-500 text-sm">Bateria nën 2 min</p>
           </div>
           <div class="promise-card">
             <span class="dual-gear promise-icon" aria-hidden="true"><i class="fas fa-cog"></i><i class="fas fa-cog"></i></span>
-            <h2 class="font-bold text-lg">Mjeshtëri Eksperte</h2>
+            <h3 class="font-bold text-lg">Mjeshtëri Eksperte</h3>
             <p class="text-gray-500 text-sm">Që nga 2009 përvojë</p>
           </div>
           <div class="promise-card">
             <i class="fas fa-euro-sign promise-icon" aria-hidden="true"></i>
-            <h2 class="font-bold text-lg">Çmime të Drejta</h2>
+            <h3 class="font-bold text-lg">Çmime të Drejta</h3>
             <p class="text-gray-500 text-sm">Pa kosto të fshehura</p>
           </div>
           <div class="promise-card">
             <i class="fas fa-gem promise-icon" aria-hidden="true"></i>
-            <h2 class="font-bold text-lg">Punë e Garantuar</h2>
+            <h3 class="font-bold text-lg">Punë e Garantuar</h3>
             <p class="text-gray-500 text-sm">Cilësi e besueshme</p>
           </div>
         </div>
