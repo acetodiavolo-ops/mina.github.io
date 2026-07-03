@@ -394,8 +394,9 @@
   },
   {
     "id": "watch-29",
-    "brand": "Citizen Quartz",
-    "model": "Citizen Gold Quartz Watch",
+    "brand": "Citizen",
+    "model": "Gold Quartz Watch",
+    "reference": "CZ-GQ-001",
     "condition": "New",
     "price": 60,
     "currency": "EUR",
