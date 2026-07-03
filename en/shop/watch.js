@@ -49,6 +49,7 @@
     document.getElementById('og-desc').setAttribute('content', desc);
     document.getElementById('og-image').setAttribute('content', imgUrl);
     document.getElementById('og-url').setAttribute('content', pageUrl);
+    ['twitter:title','twitter:description','twitter:image'].forEach(function(name,i){var val=[title,desc,imgUrl][i];var m=document.querySelector('meta[name="'+name+'"]');if(!m){m=document.createElement('meta');m.setAttribute('name',name);document.head.appendChild(m);}m.setAttribute('content',val);});
     document.getElementById('canonical').setAttribute('href', pageUrl);
     var itUrl = 'https://watch.al/it/shop/' + w.id + '.html';
     document.getElementById('hreflang-en').setAttribute('href', pageUrl);
@@ -137,7 +138,7 @@
         + '<div>'
           + '<p class="watch-brand-pg">' + w.brand + '</p>'
           + (w.brand === 'Hislon' ? '<p style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#8a9abf;font-weight:600;margin:.0rem 0 .3rem">Swiss Brand</p>' : '')
-          + '<h1 class="watch-title-pg">' + w.model + '</h1>'
+          + '<h1 class="watch-title-pg">' + w.brand + ' ' + w.model + '</h1>'
           + '<p class="watch-ref-pg">Ref. ' + (w.reference||'\u2014') + '</p>'
         + '</div>'
         + '<p class="watch-price-pg">' + fmt(w.price, w.currency) + (lekPrice(w.price,w.currency) ? '<span style="font-size:1.1rem;color:#888;font-weight:500;margin-left:.5rem">· ' + lekPrice(w.price,w.currency).toLocaleString() + ' L</span>' : '') + '</p>'
