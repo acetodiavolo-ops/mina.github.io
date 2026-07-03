@@ -66,7 +66,7 @@
       'name': w.brand + ' ' + w.model + (w.brand === 'Hislon' ? ' Swiss Watch' : ''),
       'sku': w.reference || '',
       'brand': {'@type': 'Brand', 'name': w.brand},
-      'countryOfOrigin': w.brand === 'Hislon' ? {'@type': 'Country', 'name': 'Switzerland'} : undefined,
+      'countryOfOrigin': w.brand === 'Hislon' ? {'@type': 'Country', 'name': 'Switzerland'} : w.brand === 'Casio' ? {'@type': 'Country', 'name': 'Japan'} : w.brand === 'Citizen' ? {'@type': 'Country', 'name': 'Japan'} : undefined,
       'description': w.description_en || '',
       'image': imgUrl,
       'hasMerchantReturnPolicy': {
@@ -113,7 +113,7 @@
     };
     document.getElementById('ld-breadcrumb').textContent = JSON.stringify(bc);
 
-    var imgHtml = w.image ? '<picture><source srcset="' + w.image.replace(/\.jpe?g$/i, '.webp') + '" type="image/webp"><img src="' + w.image + '" alt="' + w.brand + ' ' + w.model + (w.brand === 'Hislon' ? ' Swiss Watch' : '') + '" fetchpriority="high"></picture>' : '';
+    var imgHtml = w.image ? '<picture><source srcset="' + w.image.replace(/\.jpe?g$/i, '.webp') + '" type="image/webp"><img src="' + w.image + '" alt="' + w.brand + ' ' + w.model + (w.brand === 'Hislon' ? ' Swiss Watch' : '') + (w.reference ? ' ' + w.reference : '') + '" fetchpriority="high"></picture>' : '';
     var ctaBlock = w.sold
       ? '<p style="font-size:1rem;color:#888;font-weight:600">This watch has been sold.</p>'
       : '<div class="watch-cta-wrap">'
