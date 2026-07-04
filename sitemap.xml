@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <!-- ── HOME PAGES ─────────────────────────────────────────────────────── -->
   <url>
@@ -1716,6 +1717,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-1.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-1.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-1.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/hislon-cl213s-02ss.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch-1.html</loc>
@@ -1726,6 +1730,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-1.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-1.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-1.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/hislon-cl213s-02ss.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch-1.html</loc>
@@ -1736,6 +1743,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-1.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-1.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-1.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/hislon-cl213s-02ss.webp</image:loc>
+    </image:image>
   </url>
   <!-- Hislon Classic Queen -->
   <url>
@@ -1747,6 +1757,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-2.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-2.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-2.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/hislon-ql145t-09sg.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch-2.html</loc>
@@ -1757,6 +1770,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-2.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-2.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-2.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/hislon-ql145t-09sg.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch-2.html</loc>
@@ -1767,6 +1783,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-2.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-2.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-2.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/hislon-ql145t-09sg.webp</image:loc>
+    </image:image>
   </url>
   <!-- Hislon Classic -->
   <url>
@@ -1778,6 +1797,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-3.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-3.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-3.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/hislon-cl213g-02sg.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch-3.html</loc>
@@ -1788,6 +1810,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-3.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-3.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-3.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/hislon-cl213g-02sg.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch-3.html</loc>
@@ -1798,6 +1823,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-3.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-3.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-3.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/hislon-cl213g-02sg.webp</image:loc>
+    </image:image>
   </url>
   <!-- Hislon Masterwork -->
   <url>
@@ -1809,6 +1837,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-4.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-4.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-4.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/hislon-ms201s-04ss.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch-4.html</loc>
@@ -1819,6 +1850,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-4.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-4.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-4.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/hislon-ms201s-04ss.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch-4.html</loc>
@@ -1829,6 +1863,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-4.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-4.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-4.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/hislon-ms201s-04ss.webp</image:loc>
+    </image:image>
   </url>
   <!-- Hislon Classic Queen -->
   <url>
@@ -1840,6 +1877,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-5.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-5.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-5.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/hislon-ql113g-09sg.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch-5.html</loc>
@@ -1850,6 +1890,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-5.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-5.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-5.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/hislon-ql113g-09sg.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch-5.html</loc>
@@ -1860,6 +1903,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-5.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-5.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-5.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/hislon-ql113g-09sg.webp</image:loc>
+    </image:image>
   </url>
   <!-- Hislon Women Classic Queen -->
   <url>
@@ -1871,6 +1917,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-6.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-6.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-6.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/hislon-ql113g-09ss.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch-6.html</loc>
@@ -1881,6 +1930,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-6.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-6.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-6.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/hislon-ql113g-09ss.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch-6.html</loc>
@@ -1891,6 +1943,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-6.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-6.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-6.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/hislon-ql113g-09ss.webp</image:loc>
+    </image:image>
   </url>
   <!-- Navimarine NM268-06 -->
   <url>
@@ -1902,6 +1957,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-7.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-7.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-7.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nm268-06.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch-7.html</loc>
@@ -1912,6 +1970,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-7.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-7.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-7.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nm268-06.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch-7.html</loc>
@@ -1922,6 +1983,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-7.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-7.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-7.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nm268-06.webp</image:loc>
+    </image:image>
   </url>
   <!-- Hislon Classic -->
   <url>
@@ -1933,6 +1997,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-8.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-8.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-8.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/hislon-cl214s-04ss.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch-8.html</loc>
@@ -1943,6 +2010,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-8.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-8.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-8.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/hislon-cl214s-04ss.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch-8.html</loc>
@@ -1953,6 +2023,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-8.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-8.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-8.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/hislon-cl214s-04ss.webp</image:loc>
+    </image:image>
   </url>
   <!-- Navimarine NMM1011 -->
   <url>
@@ -1964,6 +2037,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-9.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-9.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-9.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nmm1011.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch-9.html</loc>
@@ -1974,6 +2050,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-9.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-9.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-9.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nmm1011.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch-9.html</loc>
@@ -1984,6 +2063,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-9.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-9.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-9.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nmm1011.webp</image:loc>
+    </image:image>
   </url>
   <!-- Navimarine NM232-04 -->
   <url>
@@ -1995,6 +2077,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-10.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-10.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-10.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nm232-04.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch-10.html</loc>
@@ -2005,6 +2090,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-10.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-10.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-10.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nm232-04.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch-10.html</loc>
@@ -2015,6 +2103,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-10.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-10.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-10.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nm232-04.webp</image:loc>
+    </image:image>
   </url>
   <!-- Navimarine NAVI 009-COL 6 -->
   <url>
@@ -2026,6 +2117,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-11.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-11.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-11.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-navi-009-col6.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch-11.html</loc>
@@ -2036,6 +2130,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-11.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-11.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-11.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-navi-009-col6.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch-11.html</loc>
@@ -2046,6 +2143,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-11.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-11.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-11.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-navi-009-col6.webp</image:loc>
+    </image:image>
   </url>
   <!-- Navimarine NVM141-A1 -->
   <url>
@@ -2057,6 +2157,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-12.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-12.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-12.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nvm141-a1.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch-12.html</loc>
@@ -2067,6 +2170,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-12.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-12.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-12.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nvm141-a1.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch-12.html</loc>
@@ -2077,6 +2183,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-12.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-12.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-12.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nvm141-a1.webp</image:loc>
+    </image:image>
   </url>
   <!-- Navimarine NM181-03 -->
   <url>
@@ -2088,6 +2197,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-13.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-13.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-13.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nm181-03.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch-13.html</loc>
@@ -2098,6 +2210,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-13.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-13.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-13.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nm181-03.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch-13.html</loc>
@@ -2108,6 +2223,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-13.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-13.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-13.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nm181-03.webp</image:loc>
+    </image:image>
   </url>
   <!-- Navimarine NT0029-2 -->
   <url>
@@ -2119,6 +2237,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-14.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-14.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-14.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nt0029-2.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch-14.html</loc>
@@ -2129,6 +2250,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-14.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-14.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-14.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nt0029-2.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch-14.html</loc>
@@ -2139,6 +2263,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-14.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-14.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-14.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nt0029-2.webp</image:loc>
+    </image:image>
   </url>
   <!-- Navimarine NM282-04 -->
   <url>
@@ -2150,6 +2277,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-15.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-15.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-15.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nm282-04.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch-15.html</loc>
@@ -2160,6 +2290,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-15.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-15.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-15.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nm282-04.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch-15.html</loc>
@@ -2170,6 +2303,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-15.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-15.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-15.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nm282-04.webp</image:loc>
+    </image:image>
   </url>
   <!-- Navimarine NVM112-B4 -->
   <url>
@@ -2181,6 +2317,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-16.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-16.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-16.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nvm112-b4.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch-16.html</loc>
@@ -2191,6 +2330,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-16.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-16.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-16.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nvm112-b4.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch-16.html</loc>
@@ -2201,6 +2343,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-16.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-16.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-16.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nvm112-b4.webp</image:loc>
+    </image:image>
   </url>
   <!-- Navimarine NAVI 009-COL 1 -->
   <url>
@@ -2212,6 +2357,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-17.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-17.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-17.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-navi-009-col1.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch-17.html</loc>
@@ -2222,6 +2370,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-17.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-17.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-17.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-navi-009-col1.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch-17.html</loc>
@@ -2232,6 +2383,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-17.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-17.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-17.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-navi-009-col1.webp</image:loc>
+    </image:image>
   </url>
   <!-- Navimarine NM001101-color06 -->
   <url>
@@ -2243,6 +2397,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-18.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-18.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-18.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nm001101-col06.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch-18.html</loc>
@@ -2253,6 +2410,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-18.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-18.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-18.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nm001101-col06.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch-18.html</loc>
@@ -2263,6 +2423,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-18.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-18.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-18.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nm001101-col06.webp</image:loc>
+    </image:image>
   </url>
   <!-- Navimarine NT0031-1 -->
   <url>
@@ -2274,6 +2437,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-19.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-19.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-19.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nt0031-1.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch-19.html</loc>
@@ -2284,6 +2450,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-19.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-19.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-19.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nt0031-1.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch-19.html</loc>
@@ -2294,6 +2463,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-19.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-19.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-19.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nt0031-1.webp</image:loc>
+    </image:image>
   </url>
   <!-- Navimarine NM001404-Color04 -->
   <url>
@@ -2305,6 +2477,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-20.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-20.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-20.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nm001404-col04-removebg-preview.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch-20.html</loc>
@@ -2315,6 +2490,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-20.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-20.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-20.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nm001404-col04-removebg-preview.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch-20.html</loc>
@@ -2325,6 +2503,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-20.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-20.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-20.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nm001404-col04-removebg-preview.webp</image:loc>
+    </image:image>
   </url>
   <!-- Navimarine 001808-color02 -->
   <url>
@@ -2336,6 +2517,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-21.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-21.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-21.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-001808-col02.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch-21.html</loc>
@@ -2346,6 +2530,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-21.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-21.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-21.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-001808-col02.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch-21.html</loc>
@@ -2356,6 +2543,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-21.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-21.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-21.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-001808-col02.webp</image:loc>
+    </image:image>
   </url>
   <!-- Navimarine NM229-06 -->
   <url>
@@ -2367,6 +2557,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-22.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-22.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-22.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nm229-06.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch-22.html</loc>
@@ -2377,6 +2570,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-22.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-22.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-22.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nm229-06.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch-22.html</loc>
@@ -2387,6 +2583,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-22.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-22.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-22.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nm229-06.webp</image:loc>
+    </image:image>
   </url>
   <!-- Navimarine NVM180-A2 -->
   <url>
@@ -2398,6 +2597,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-23.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-23.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-23.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nvm180-a2.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch-23.html</loc>
@@ -2408,6 +2610,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-23.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-23.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-23.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nvm180-a2.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch-23.html</loc>
@@ -2418,6 +2623,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-23.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-23.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-23.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nvm180-a2.webp</image:loc>
+    </image:image>
   </url>
   <!-- Navimarine NM001101-Color02 -->
   <url>
@@ -2429,6 +2637,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-24.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-24.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-24.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nm001101-col02.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch-24.html</loc>
@@ -2439,6 +2650,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-24.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-24.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-24.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nm001101-col02.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch-24.html</loc>
@@ -2449,6 +2663,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-24.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-24.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-24.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nm001101-col02.webp</image:loc>
+    </image:image>
   </url>
   <!-- Navimarine NMM1013 -->
   <url>
@@ -2460,6 +2677,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-25.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-25.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-25.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nmm1013.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch-25.html</loc>
@@ -2470,6 +2690,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-25.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-25.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-25.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nmm1013.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch-25.html</loc>
@@ -2480,6 +2703,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-25.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-25.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-25.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nmm1013.webp</image:loc>
+    </image:image>
   </url>
   <!-- Navimarine NM182-01 -->
   <url>
@@ -2491,6 +2717,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-26.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-26.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-26.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nm182-01.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch-26.html</loc>
@@ -2501,6 +2730,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-26.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-26.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-26.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nm182-01.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch-26.html</loc>
@@ -2511,6 +2743,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-26.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-26.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-26.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nm182-01.webp</image:loc>
+    </image:image>
   </url>
   <!-- Navimarine NT0021-1 -->
   <url>
@@ -2522,6 +2757,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-27.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-27.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-27.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nt0021-1.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch-27.html</loc>
@@ -2532,6 +2770,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-27.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-27.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-27.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nt0021-1.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch-27.html</loc>
@@ -2542,6 +2783,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-27.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-27.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-27.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-nt0021-1.webp</image:loc>
+    </image:image>
   </url>
   <!-- Navimarine NM001404-Color01 -->
   <url>
@@ -2553,6 +2797,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-28.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-28.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-28.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/NAVIMARINE_NM001404-color01-removebg-preview.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch-28.html</loc>
@@ -2563,6 +2810,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-28.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-28.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-28.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/NAVIMARINE_NM001404-color01-removebg-preview.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch-28.html</loc>
@@ -2573,6 +2823,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-28.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-28.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-28.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/NAVIMARINE_NM001404-color01-removebg-preview.webp</image:loc>
+    </image:image>
   </url>
   <!-- Citizen Quartz Citizen Gold Quartz Watch -->
   <url>
@@ -2584,6 +2837,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-29.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-29.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-29.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/citizen-quartz-gold.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/watch-29.html</loc>
@@ -2594,6 +2850,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-29.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-29.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-29.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/citizen-quartz-gold.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/watch-29.html</loc>
@@ -2604,6 +2863,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-29.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-29.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-29.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/citizen-quartz-gold.webp</image:loc>
+    </image:image>
   </url>
   <!-- Casio MTP-VD01 -->
   <url>
@@ -2615,6 +2877,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/casio-mtp-vd01.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/casio-mtp-vd01.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/casio-mtp-vd01.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/casio-mtp-vd01.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/casio-mtp-vd01.html</loc>
@@ -2625,6 +2890,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/casio-mtp-vd01.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/casio-mtp-vd01.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/casio-mtp-vd01.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/casio-mtp-vd01.webp</image:loc>
+    </image:image>
   </url>
 
   <url>
@@ -2636,6 +2904,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/bigotti-bg1-10154-1.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/bigotti-bg1-10154-1.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/bigotti-bg1-10154-1.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/bigotti-bg1-10154-1.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/bigotti-bg1-10154-1.html</loc>
@@ -2646,6 +2917,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/bigotti-bg1-10154-1.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/bigotti-bg1-10154-1.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/bigotti-bg1-10154-1.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/bigotti-bg1-10154-1.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/bigotti-bg1-10154-1.html</loc>
@@ -2656,6 +2930,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/bigotti-bg1-10154-1.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/bigotti-bg1-10154-1.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/bigotti-bg1-10154-1.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/bigotti-bg1-10154-1.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/en/shop/navimarine-steel-5atm-blue.html</loc>
@@ -2666,6 +2943,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/navimarine-steel-5atm-blue.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/navimarine-steel-5atm-blue.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/navimarine-steel-5atm-blue.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-steel-5atm-blue.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/navimarine-steel-5atm-blue.html</loc>
@@ -2676,6 +2956,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/navimarine-steel-5atm-blue.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/navimarine-steel-5atm-blue.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/navimarine-steel-5atm-blue.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-steel-5atm-blue.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/navimarine-steel-5atm-blue.html</loc>
@@ -2686,6 +2969,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/navimarine-steel-5atm-blue.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/navimarine-steel-5atm-blue.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/navimarine-steel-5atm-blue.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/navimarine-steel-5atm-blue.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/casio-mtp-vd01.html</loc>
@@ -2696,6 +2982,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/casio-mtp-vd01.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/casio-mtp-vd01.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/casio-mtp-vd01.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/casio-mtp-vd01.webp</image:loc>
+    </image:image>
   </url>
 
   <!-- ── SQ SERVICE LANDING PAGES ──────────────────────────────────────── -->
@@ -3180,6 +3469,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/citizen-quartz-gn.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/citizen-quartz-gn.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/citizen-quartz-gn.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/citizen-quartz-gn.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/citizen-quartz-gn.html</loc>
@@ -3190,6 +3482,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/citizen-quartz-gn.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/citizen-quartz-gn.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/citizen-quartz-gn.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/citizen-quartz-gn.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/citizen-quartz-gn.html</loc>
@@ -3200,6 +3495,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/citizen-quartz-gn.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/citizen-quartz-gn.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/citizen-quartz-gn.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/citizen-quartz-gn.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/en/shop/belonni-collection.html</loc>
@@ -3210,6 +3508,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/belonni-collection.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/belonni-collection.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/belonni-collection.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/belonni-collection.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/belonni-collection.html</loc>
@@ -3220,6 +3521,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/belonni-collection.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/belonni-collection.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/belonni-collection.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/belonni-collection.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/belonni-collection.html</loc>
@@ -3230,6 +3534,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/belonni-collection.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/belonni-collection.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/belonni-collection.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/belonni-collection.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/en/shop/romanson-bh3054gbr.html</loc>
@@ -3240,6 +3547,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/romanson-bh3054gbr.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/romanson-bh3054gbr.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/romanson-bh3054gbr.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/romanson-bh3054gbr.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/romanson-bh3054gbr.html</loc>
@@ -3250,6 +3560,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/romanson-bh3054gbr.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/romanson-bh3054gbr.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/romanson-bh3054gbr.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/romanson-bh3054gbr.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/romanson-bh3054gbr.html</loc>
@@ -3260,6 +3573,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/romanson-bh3054gbr.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/romanson-bh3054gbr.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/romanson-bh3054gbr.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/romanson-bh3054gbr.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/en/shop/daniel-klein-premium.html</loc>
@@ -3270,6 +3586,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/daniel-klein-premium.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/daniel-klein-premium.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/daniel-klein-premium.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/daniel-klein-premium.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/daniel-klein-premium.html</loc>
@@ -3280,6 +3599,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/daniel-klein-premium.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/daniel-klein-premium.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/daniel-klein-premium.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/daniel-klein-premium.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/daniel-klein-premium.html</loc>
@@ -3290,6 +3612,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/daniel-klein-premium.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/daniel-klein-premium.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/daniel-klein-premium.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/daniel-klein-premium.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/en/shop/daniel-klein-mesh.html</loc>
@@ -3300,6 +3625,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/daniel-klein-mesh.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/daniel-klein-mesh.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/daniel-klein-mesh.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/daniel-klein-mesh.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/daniel-klein-mesh.html</loc>
@@ -3310,6 +3638,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/daniel-klein-mesh.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/daniel-klein-mesh.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/daniel-klein-mesh.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/daniel-klein-mesh.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/daniel-klein-mesh.html</loc>
@@ -3320,6 +3651,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/daniel-klein-mesh.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/daniel-klein-mesh.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/daniel-klein-mesh.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/daniel-klein-mesh.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/en/shop/daniel-klein-blue.html</loc>
@@ -3330,6 +3664,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/daniel-klein-blue.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/daniel-klein-blue.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/daniel-klein-blue.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/daniel-klein-blue.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/sq/shop/daniel-klein-blue.html</loc>
@@ -3340,6 +3677,9 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/daniel-klein-blue.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/daniel-klein-blue.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/daniel-klein-blue.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/daniel-klein-blue.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://watch.al/it/shop/daniel-klein-blue.html</loc>
@@ -3350,5 +3690,8 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/daniel-klein-blue.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/daniel-klein-blue.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/daniel-klein-blue.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/daniel-klein-blue.webp</image:loc>
+    </image:image>
   </url>
 </urlset>
