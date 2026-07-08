@@ -573,5 +573,33 @@
     "description_en": "Casio stainless steel watch with a striking green sunburst dial, faceted bezel, and integrated steel bracelet. Luminous baton indices, date window at 3, and 50m water resistance, powered by a reliable Japanese quartz movement. A sharp modern-retro everyday watch.",
     "description_it": "Orologio Casio in acciaio inossidabile con quadrante verde sunburst, lunetta sfaccettata e bracciale integrato in acciaio. Indici a bastone luminosi, finestrella data alle 3 e resistenza all'acqua 50m, con affidabile movimento al quarzo giapponese. Un orologio moderno-retrò per ogni giorno.",
     "description_sq": "Orë Casio në çelik inox me ciferblat jeshil sunburst, bezel të fasetuar dhe byzylyk të integruar çeliku. Tregues bastun luminozë, dritare date në pozicionin 3 dhe rezistencë ndaj ujit 50m, me lëvizje kuarci japoneze të besueshme. Një orë moderne-retro për çdo ditë."
+  },
+  {
+    "id": "philippe-lauren-pl2427-1",
+    "brand": "Philippe Lauren",
+    "model": "Silver Chronograph",
+    "reference": "PL2427-1",
+    "condition": "New",
+    "price": 72,
+    "currency": "EUR",
+    "image": "/images/watches/philippe-lauren-pl2427-1.webp",
+    "sold": false,
+    "description_en": "Philippe Lauren men's chronograph with a cushion-shaped stainless steel case, a silver sunburst dial, and three chronograph sub-dials. Date window, applied indices, and a polished steel bracelet — a refined dress chronograph with a distinctive tonneau profile.",
+    "description_it": "Cronografo da uomo Philippe Lauren con cassa in acciaio inossidabile a forma di cuscino, quadrante argento sunburst e tre contatori cronografici. Finestrella data, indici applicati e bracciale in acciaio lucido — un cronografo elegante dal profilo tonneau distintivo.",
+    "description_sq": "Kronograf për burra Philippe Lauren me kasë prej çeliku inox në formë jastëku, ciferblat argjendi sunburst dhe tre nën-ciferblatë kronografi. Dritare date, tregues të aplikuar dhe byzylyk çeliku i lëmuar — një kronograf elegant me profil tonneau dallues."
+  },
+  {
+    "id": "philippe-lauren-pl2435-5",
+    "brand": "Philippe Lauren",
+    "model": "Black Chronograph",
+    "reference": "PL2435-5",
+    "condition": "New",
+    "price": 72,
+    "currency": "EUR",
+    "image": "/images/watches/philippe-lauren-pl2435-5.webp",
+    "sold": false,
+    "description_en": "Philippe Lauren men's chronograph in black ion-plated stainless steel, with a black dial, three chronograph sub-dials, and luminous applied indices. Date window and a matching black steel bracelet — a bold, all-black sport-dress chronograph.",
+    "description_it": "Cronografo da uomo Philippe Lauren in acciaio inossidabile placcato nero, con quadrante nero, tre contatori cronografici e indici applicati luminosi. Finestrella data e bracciale in acciaio nero abbinato — un cronografo sport-elegante total black e deciso.",
+    "description_sq": "Kronograf për burra Philippe Lauren në çelik inox të veshur me jon të zi, me ciferblat të zi, tre nën-ciferblatë kronografi dhe tregues të aplikuar luminozë. Dritare date dhe byzylyk çeliku i zi i përshtatur — një kronograf sportiv-elegant tërësisht i zi dhe i guximshëm."
   }
 ]

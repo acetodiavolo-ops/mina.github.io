@@ -1691,8 +1691,10 @@
     <lastmod>2026-06-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-service-durres.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/revizionim-ore-durres.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/revisione-orologio-durazzo.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-service-durres.html"/>
   </url>
 
   <!-- sq/blog/bli-ore-shqiperi.html — SQ only article -->
@@ -1701,8 +1703,10 @@
     <lastmod>2026-06-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/buy-watches-albania.html"/>
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/bli-ore-shqiperi.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/comprare-orologi-albania.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/buy-watches-albania.html"/>
   </url>
 
 
@@ -3809,6 +3813,124 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/casio-mtp-b145d.html"/>
     <image:image>
       <image:loc>https://watch.al/images/watches/casio-mtp-b145d.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://watch.al/en/blog/watch-service-durres.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-service-durres.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/revizionim-ore-durres.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/revisione-orologio-durazzo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-service-durres.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/sq/blog/revizionim-ore-durres.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-service-durres.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/revizionim-ore-durres.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/revisione-orologio-durazzo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-service-durres.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/en/blog/buy-watches-albania.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/buy-watches-albania.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/bli-ore-shqiperi.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/comprare-orologi-albania.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/buy-watches-albania.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/it/blog/comprare-orologi-albania.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/buy-watches-albania.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/bli-ore-shqiperi.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/comprare-orologi-albania.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/buy-watches-albania.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/en/shop/philippe-lauren-pl2427-1.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/philippe-lauren-pl2427-1.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/philippe-lauren-pl2427-1.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/philippe-lauren-pl2427-1.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/philippe-lauren-pl2427-1.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/philippe-lauren-pl2427-1.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://watch.al/sq/shop/philippe-lauren-pl2427-1.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/philippe-lauren-pl2427-1.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/philippe-lauren-pl2427-1.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/philippe-lauren-pl2427-1.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/philippe-lauren-pl2427-1.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/philippe-lauren-pl2427-1.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://watch.al/it/shop/philippe-lauren-pl2427-1.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/philippe-lauren-pl2427-1.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/philippe-lauren-pl2427-1.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/philippe-lauren-pl2427-1.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/philippe-lauren-pl2427-1.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/philippe-lauren-pl2427-1.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://watch.al/en/shop/philippe-lauren-pl2435-5.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/philippe-lauren-pl2435-5.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/philippe-lauren-pl2435-5.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/philippe-lauren-pl2435-5.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/philippe-lauren-pl2435-5.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/philippe-lauren-pl2435-5.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://watch.al/sq/shop/philippe-lauren-pl2435-5.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/philippe-lauren-pl2435-5.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/philippe-lauren-pl2435-5.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/philippe-lauren-pl2435-5.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/philippe-lauren-pl2435-5.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/philippe-lauren-pl2435-5.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://watch.al/it/shop/philippe-lauren-pl2435-5.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/philippe-lauren-pl2435-5.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/philippe-lauren-pl2435-5.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/philippe-lauren-pl2435-5.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/philippe-lauren-pl2435-5.html"/>
+    <image:image>
+      <image:loc>https://watch.al/images/watches/philippe-lauren-pl2435-5.webp</image:loc>
     </image:image>
   </url>
 </urlset>
