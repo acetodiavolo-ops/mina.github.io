@@ -602,5 +602,19 @@ window.WATCHES_DATA = [
     "description_en": "Philippe Lauren men's chronograph in polished stainless steel with a black dial, three chronograph sub-dials, and luminous applied indices. Date window, a round case, and a solid steel bracelet — a versatile sport-dress chronograph that pairs with anything.",
     "description_it": "Cronografo da uomo Philippe Lauren in acciaio inossidabile lucido con quadrante nero, tre contatori cronografici e indici applicati luminosi. Finestrella data, cassa rotonda e bracciale in acciaio massiccio — un cronografo sport-elegante versatile, abbinabile a tutto.",
     "description_sq": "Kronograf për burra Philippe Lauren në çelik inox të lëmuar me ciferblat të zi, tre nën-ciferblatë kronografi dhe tregues të aplikuar luminozë. Dritare date, kasë rrumbullake dhe byzylyk çeliku i fortë — një kronograf sportiv-elegant i gjithanshëm, që shkon me gjithçka."
+  },
+  {
+    "id": "casio-a159wa",
+    "brand": "Casio",
+    "model": "A159WA",
+    "reference": "A159WA-N1",
+    "condition": "New",
+    "price": 61,
+    "currency": "EUR",
+    "image": "/images/watches/casio-a159wa.webp",
+    "sold": false,
+    "description_en": "The legendary Casio A159WA-N1 retro digital, essentially unchanged since the early 1980s. Stainless steel case and bracelet, black bezel, LCD with alarm, stopwatch, day and date, LED light, and water resistance — an icon of everyday reliability weighing next to nothing.",
+    "description_it": "Il leggendario Casio A159WA-N1 digitale rétro, praticamente immutato dai primi anni '80. Cassa e bracciale in acciaio inossidabile, ghiera nera, LCD con sveglia, cronometro, giorno e data, luce LED e resistenza all'acqua — un'icona di affidabilità quotidiana dal peso piuma.",
+    "description_sq": "Casio A159WA-N1 legjendar dixhital retro, praktikisht i pandryshuar që nga fillimi i viteve '80. Kasë dhe byzylyk çeliku inox, unazë e zezë, LCD me alarm, kronometër, ditë e datë, dritë LED dhe rezistencë ndaj ujit — një ikonë e besueshmërisë së përditshme me peshë pendë."
   }
 ];
