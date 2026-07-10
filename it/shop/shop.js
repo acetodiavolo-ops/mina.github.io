@@ -1,18 +1,21 @@
 (function(){
   var condMap = {'New':'Nuovo','Pre-owned':'Usato'};
   var currentFilter = 'all';
+  var currentBrand  = 'all';
   var currentSearch = '';
+  var BRAND_ALL_LABEL = 'Tutte le marche';
   var currentSort   = 'default';
 
   fetch('https://raw.githubusercontent.com/acetodiavolo-ops/mina.github.io/main/watches.json?v=3')
     .then(function(r){ return r.json(); })
     .then(function(WATCHES){
+      initBrandChips(WATCHES);
       renderWatches(WATCHES);
       injectItemListSchema(WATCHES, 'it');
 
-      document.querySelectorAll('.filter-chip').forEach(function(chip){
+      document.querySelectorAll('.filter-chip:not([data-brand])').forEach(function(chip){
         chip.addEventListener('click', function(){
-          document.querySelectorAll('.filter-chip').forEach(function(c){ c.classList.remove('active'); c.removeAttribute('aria-pressed'); });
+          document.querySelectorAll('.filter-chip:not([data-brand])').forEach(function(c){ c.classList.remove('active'); c.removeAttribute('aria-pressed'); });
           chip.classList.add('active');
           chip.setAttribute('aria-pressed','true');
           currentFilter = chip.dataset.filter;
@@ -36,8 +39,47 @@
       document.getElementById('shopGrid').innerHTML = '<p class="no-watches">Impossibile caricare gli orologi. Ricarica la pagina.</p>';
     });
 
+  function initBrandChips(WATCHES){
+    var wrap = document.getElementById('brandChips');
+    if(!wrap) return;
+    var counts = {};
+    WATCHES.forEach(function(w){ if(w.brand) counts[w.brand] = (counts[w.brand]||0) + 1; });
+    var brands = Object.keys(counts).sort(function(a,b){ return (counts[b]-counts[a]) || a.localeCompare(b); });
+
+    var param = '';
+    try { param = (new URLSearchParams(window.location.search).get('brand') || '').toLowerCase(); } catch(e){}
+    brands.forEach(function(b){ if(b.toLowerCase() === param) currentBrand = b; });
+
+    var html = ['<button class="filter-chip' + (currentBrand==='all' ? ' active" aria-pressed="true' : '') + '" data-brand="all">' + BRAND_ALL_LABEL + '</button>'];
+    brands.forEach(function(b){
+      var esc = b.replace(/"/g, '&quot;');
+      html.push('<button class="filter-chip' + (currentBrand===b ? ' active" aria-pressed="true' : '') + '" data-brand="' + esc + '">' + b + '</button>');
+    });
+    wrap.innerHTML = html.join('');
+
+    wrap.addEventListener('click', function(e){
+      var chip = e.target.closest ? e.target.closest('[data-brand]') : null;
+      if(!chip) return;
+      wrap.querySelectorAll('[data-brand]').forEach(function(c){ c.classList.remove('active'); c.removeAttribute('aria-pressed'); });
+      chip.classList.add('active');
+      chip.setAttribute('aria-pressed','true');
+      currentBrand = chip.dataset.brand;
+      try {
+        var u = new URL(window.location.href);
+        if(currentBrand === 'all') u.searchParams.delete('brand');
+        else u.searchParams.set('brand', currentBrand);
+        history.replaceState(null, '', u.pathname + (u.search || '') + (u.hash || ''));
+      } catch(err){}
+      renderWatches(WATCHES);
+    });
+  }
+
   function renderWatches(watches){
     var filtered = currentFilter === 'all' ? watches.slice() : watches.filter(function(w){ return w.condition === currentFilter; });
+
+    if(currentBrand !== 'all'){
+      filtered = filtered.filter(function(w){ return w.brand === currentBrand; });
+    }
 
     if(currentSearch){
       var s = currentSearch;
