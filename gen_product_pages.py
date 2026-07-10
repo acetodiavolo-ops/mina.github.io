@@ -138,7 +138,8 @@ def replace_watch_content(html: str, new_div: str) -> str:
 def lek(price, currency):
     if not price or currency != "EUR":
         return 0
-    return round(price * LEK_RATE / 100) * 100
+    # half-up to match Math.round in shop/watch.js (Python round() is banker's: 48.5 -> 48)
+    return int(price * LEK_RATE / 100 + 0.5) * 100
 
 
 def build_price_html(price, currency):

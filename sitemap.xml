@@ -2832,45 +2832,6 @@
     </image:image>
   </url>
   <!-- Citizen Quartz Citizen Gold Quartz Watch -->
-  <url>
-    <loc>https://watch.al/en/shop/watch-29.html</loc>
-    <lastmod>2026-06-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch-29.html"/>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-29.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-29.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-29.html"/>
-    <image:image>
-      <image:loc>https://watch.al/images/watches/citizen-quartz-gold.webp</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://watch.al/sq/shop/watch-29.html</loc>
-    <lastmod>2026-06-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch-29.html"/>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-29.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-29.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-29.html"/>
-    <image:image>
-      <image:loc>https://watch.al/images/watches/citizen-quartz-gold.webp</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://watch.al/it/shop/watch-29.html</loc>
-    <lastmod>2026-06-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/shop/watch-29.html"/>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/shop/watch-29.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/shop/watch-29.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/shop/watch-29.html"/>
-    <image:image>
-      <image:loc>https://watch.al/images/watches/citizen-quartz-gold.webp</image:loc>
-    </image:image>
-  </url>
   <!-- Casio MTP-VD01 -->
   <url>
     <loc>https://watch.al/en/shop/casio-mtp-vd01.html</loc>
