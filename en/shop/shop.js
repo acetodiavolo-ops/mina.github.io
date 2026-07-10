@@ -207,6 +207,7 @@
             'priceCurrency': w.currency || 'EUR',
             'price': String(w.price || ''),
             'availability': 'https://schema.org/InStock',
+        'priceValidUntil': '2026-12-31',
             'itemCondition': 'https://schema.org/NewCondition',
             'seller': {'@type': 'Organization', 'name': 'Iglisi Watch'},
             'url': base + w.id + '.html'

@@ -86,6 +86,7 @@
           {'@type': 'PriceSpecification', 'price': String(lekPrice(w.price, w.currency)), 'priceCurrency': 'ALL'}
         ],
         'availability': w.sold ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock',
+        'priceValidUntil': '2026-12-31',
         'itemCondition': w.condition === 'Pre-owned' ? 'https://schema.org/UsedCondition' : 'https://schema.org/NewCondition',
         'seller': {'@type': 'Organization', 'name': 'Iglisi Watch'},
         'url': pageUrl,

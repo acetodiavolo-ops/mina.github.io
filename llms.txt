@@ -1,0 +1,33 @@
+# Iglisi Watch — watch.al
+
+> Family-owned watch shop and repair workshop in Durrës, Albania, open since 2009.
+> We sell brand-new watches from €50 (Hislon, Navimarine, Casio, Citizen, Daniel Klein,
+> Philippe Lauren, Bigotti, Belonni, Romanson, Starking) with a 1-year guarantee, and offer
+> expert watch repair, battery replacement, strap fitting, crystal replacement and key cutting —
+> most services done while you wait, no appointment needed.
+
+The site is trilingual: English (/en/), Albanian (/sq/), Italian (/it/).
+
+## Key pages
+
+- [Shop — all watches](https://watch.al/en/shop/): full catalog with prices in EUR and Lek; filter by brand, price, and search. Orders via WhatsApp with delivery anywhere in Albania.
+- [Services](https://watch.al/en/services.html): watch repair, battery replacement (~2 minutes while you wait), strap replacement, crystal replacement, key cutting.
+- [Blog](https://watch.al/en/blog/): 55+ practical guides on watch care, buying advice and repairs in Albania.
+- [About](https://watch.al/en/about.html): the family workshop, since 2009. 5.0★ Google rating.
+
+## Contact & visit
+
+- Address: Rruga Aleksander Goga, Durrës 2001, Albania
+- Hours: Monday–Saturday 08:30–20:30
+- Phone / WhatsApp: +355 67 636 0510
+- Instagram: https://instagram.com/iglisiwatch
+
+## Albanian (Shqip)
+
+- [Dyqani](https://watch.al/sq/shop/) — orë të reja nga €50 me garanci 1-vjeçare
+- [Shërbimet](https://watch.al/sq/services.html) — riparim orësh, ndërrim baterie, prerje çelësash
+
+## Italiano
+
+- [Negozio](https://watch.al/it/shop/) — orologi nuovi da €50 con garanzia di 1 anno
+- [Servizi](https://watch.al/it/services.html) — riparazione orologi, sostituzione batteria, duplicazione chiavi
