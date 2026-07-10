@@ -12,7 +12,7 @@
   if(!watchId){var _m=window.location.pathname.match(/\/([^\/]+)\.html$/);if(_m&&_m[1]!=='index'&&_m[1]!=='watch')watchId=_m[1];}
 
   if(!watchId){
-    showError('No watch specified.', 'Go back to the shop to browse all available watches.');
+    window.location.replace('/en/shop/');
     return;
   }
 

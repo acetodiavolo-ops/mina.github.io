@@ -12,7 +12,7 @@
   if(!watchId){var _m=window.location.pathname.match(/\/([^\/]+)\.html$/);if(_m&&_m[1]!=='index'&&_m[1]!=='watch')watchId=_m[1];}
 
   if(!watchId){
-    showError('Nessun orologio specificato.', 'Torna al negozio per sfogliare tutti gli orologi disponibili.');
+    window.location.replace('/it/shop/');
     return;
   }
 
