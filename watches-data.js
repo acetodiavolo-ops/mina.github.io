@@ -588,5 +588,19 @@ window.WATCHES_DATA = [
     "description_en": "Philippe Lauren men's chronograph in black ion-plated stainless steel, with a black dial, three chronograph sub-dials, and luminous applied indices. Date window and a matching black steel bracelet — a bold, all-black sport-dress chronograph.",
     "description_it": "Cronografo da uomo Philippe Lauren in acciaio inossidabile placcato nero, con quadrante nero, tre contatori cronografici e indici applicati luminosi. Finestrella data e bracciale in acciaio nero abbinato — un cronografo sport-elegante total black e deciso.",
     "description_sq": "Kronograf për burra Philippe Lauren në çelik inox të veshur me jon të zi, me ciferblat të zi, tre nën-ciferblatë kronografi dhe tregues të aplikuar luminozë. Dritare date dhe byzylyk çeliku i zi i përshtatur — një kronograf sportiv-elegant tërësisht i zi dhe i guximshëm."
+  },
+  {
+    "id": "philippe-lauren-pl2435-2",
+    "brand": "Philippe Lauren",
+    "model": "Steel Chronograph",
+    "reference": "PL2435-2",
+    "condition": "New",
+    "price": 72,
+    "currency": "EUR",
+    "image": "/images/watches/philippe-lauren-pl2435-2.webp",
+    "sold": false,
+    "description_en": "Philippe Lauren men's chronograph in polished stainless steel with a black dial, three chronograph sub-dials, and luminous applied indices. Date window, a round case, and a solid steel bracelet — a versatile sport-dress chronograph that pairs with anything.",
+    "description_it": "Cronografo da uomo Philippe Lauren in acciaio inossidabile lucido con quadrante nero, tre contatori cronografici e indici applicati luminosi. Finestrella data, cassa rotonda e bracciale in acciaio massiccio — un cronografo sport-elegante versatile, abbinabile a tutto.",
+    "description_sq": "Kronograf për burra Philippe Lauren në çelik inox të lëmuar me ciferblat të zi, tre nën-ciferblatë kronografi dhe tregues të aplikuar luminozë. Dritare date, kasë rrumbullake dhe byzylyk çeliku i fortë — një kronograf sportiv-elegant i gjithanshëm, që shkon me gjithçka."
   }
 ];
