@@ -1685,7 +1685,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-types-guide.html"/>
   </url>
 
-  <!-- it/blog/revisione-orologio-durazzo.html — IT only article -->
+  <!-- it/blog/revisione-orologio-durazzo.html - IT only article -->
   <url>
     <loc>https://watch.al/it/blog/revisione-orologio-durazzo.html</loc>
     <lastmod>2026-07-10</lastmod>
@@ -1697,7 +1697,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-service-durres.html"/>
   </url>
 
-  <!-- sq/blog/bli-ore-shqiperi.html — SQ only article -->
+  <!-- sq/blog/bli-ore-shqiperi.html - SQ only article -->
   <url>
     <loc>https://watch.al/sq/blog/bli-ore-shqiperi.html</loc>
     <lastmod>2026-07-10</lastmod>
@@ -4061,5 +4061,35 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/jaeger-lecoultre-historia.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/jaeger-lecoultre-storia.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/jaeger-lecoultre-history.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/en/blog/first-watch-on-the-moon.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/first-watch-on-the-moon.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/ora-e-pare-ne-hene.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/primo-orologio-sulla-luna.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/first-watch-on-the-moon.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/sq/blog/ora-e-pare-ne-hene.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/first-watch-on-the-moon.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/ora-e-pare-ne-hene.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/primo-orologio-sulla-luna.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/first-watch-on-the-moon.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/it/blog/primo-orologio-sulla-luna.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/first-watch-on-the-moon.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/ora-e-pare-ne-hene.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/primo-orologio-sulla-luna.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/first-watch-on-the-moon.html"/>
   </url>
 </urlset>
