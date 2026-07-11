@@ -4182,4 +4182,34 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/patek-philippe-generazioni.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/patek-philippe-generations.html"/>
   </url>
+  <url>
+    <loc>https://watch.al/en/blog/watch-history-stories.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-history-stories.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/oret-qe-bene-histori.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/orologi-che-hanno-fatto-storia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-history-stories.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/sq/blog/oret-qe-bene-histori.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-history-stories.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/oret-qe-bene-histori.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/orologi-che-hanno-fatto-storia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-history-stories.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/it/blog/orologi-che-hanno-fatto-storia.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-history-stories.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/oret-qe-bene-histori.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/orologi-che-hanno-fatto-storia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-history-stories.html"/>
+  </url>
 </urlset>
