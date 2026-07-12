@@ -616,5 +616,33 @@ window.WATCHES_DATA = [
     "description_en": "The legendary Casio A159WA-N1 retro digital, essentially unchanged since the early 1980s. Stainless steel case and bracelet, black bezel, LCD with alarm, stopwatch, day and date, LED light, and water resistance. An icon of everyday reliability weighing next to nothing.",
     "description_it": "Il leggendario Casio A159WA-N1 digitale rétro, praticamente immutato dai primi anni '80. Cassa e bracciale in acciaio inossidabile, ghiera nera, LCD con sveglia, cronometro, giorno e data, luce LED e resistenza all'acqua. Un'icona di affidabilità quotidiana dal peso piuma.",
     "description_sq": "Casio A159WA-N1 legjendar dixhital retro, praktikisht i pandryshuar që nga fillimi i viteve '80. Kasë dhe byzylyk çeliku inox, unazë e zezë, LCD me alarm, kronometër, ditë e datë, dritë LED dhe rezistencë ndaj ujit. Një ikonë e besueshmërisë së përditshme me peshë pendë."
+  },
+  {
+    "id": "casio-w-737hx",
+    "brand": "Casio",
+    "model": "W-737HX",
+    "reference": "W-737HX-1AVDF",
+    "condition": "New",
+    "price": 67,
+    "currency": "EUR",
+    "image": "/images/watches/casio-w-737hx.webp",
+    "sold": false,
+    "description_en": "Bold black resin sport watch by Casio with gold Illuminator accents. Large positive LCD with day, date and seconds, 100m water resistance, LED backlight, alarm, stopwatch and countdown timer, all on a 10-year battery. Tough, legible and built for everyday wear.",
+    "description_it": "Robusto orologio sportivo Casio in resina nera con dettagli dorati Illuminator. Ampio display LCD positivo con giorno, data e secondi, resistenza all'acqua 100m, retroilluminazione LED, sveglia, cronometro e timer con conto alla rovescia, il tutto con batteria a 10 anni. Resistente, leggibile e pronto all'uso quotidiano.",
+    "description_sq": "Orë sportive e fortë Casio në rezinë të zezë me detaje të arta Illuminator. Ekran i madh LCD pozitiv me ditë, datë dhe sekonda, rezistencë ndaj ujit 100m, ndriçim LED, alarm, kronometër dhe timer numërimi mbrapsht, të gjitha me bateri 10-vjeçare. E fortë, e lexueshme dhe e bërë për përdorim të përditshëm."
+  },
+  {
+    "id": "casio-ae-1500wh",
+    "brand": "Casio",
+    "model": "AE-1500WH",
+    "reference": "AE-1500WH-8BVDF",
+    "condition": "New",
+    "price": 67,
+    "currency": "EUR",
+    "image": "/images/watches/casio-ae-1500wh.webp",
+    "sold": false,
+    "description_en": "All-black digital sport watch by Casio with a stealth negative display. Large round resin case, 100m water resistance, LED Illuminator backlight, 5 daily alarms, stopwatch and countdown timer, all on a 10-year battery. A big, easy-to-read everyday watch with a blacked-out look.",
+    "description_it": "Orologio sportivo digitale Casio tutto nero con display negativo dallo stile stealth. Ampia cassa rotonda in resina, resistenza all'acqua 100m, retroilluminazione LED Illuminator, 5 sveglie giornaliere, cronometro e timer con conto alla rovescia, il tutto con batteria a 10 anni. Un orologio quotidiano grande e facile da leggere dal look total black.",
+    "description_sq": "Orë sportive dixhitale Casio krejt e zezë me ekran negativ me pamje stealth. Kasë e madhe rrethore prej rezine, rezistencë ndaj ujit 100m, ndriçim LED Illuminator, 5 alarme ditore, kronometër dhe timer numërimi mbrapsht, të gjitha me bateri 10-vjeçare. Një orë e përditshme e madhe dhe e lehtë për t'u lexuar me pamje krejt të zezë."
   }
 ];
