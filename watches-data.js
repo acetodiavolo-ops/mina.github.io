@@ -644,5 +644,19 @@ window.WATCHES_DATA = [
     "description_en": "All-black digital sport watch by Casio with a stealth negative display. Large round resin case, 100m water resistance, LED Illuminator backlight, 5 daily alarms, stopwatch and countdown timer, all on a 10-year battery. A big, easy-to-read everyday watch with a blacked-out look.",
     "description_it": "Orologio sportivo digitale Casio tutto nero con display negativo dallo stile stealth. Ampia cassa rotonda in resina, resistenza all'acqua 100m, retroilluminazione LED Illuminator, 5 sveglie giornaliere, cronometro e timer con conto alla rovescia, il tutto con batteria a 10 anni. Un orologio quotidiano grande e facile da leggere dal look total black.",
     "description_sq": "Orë sportive dixhitale Casio krejt e zezë me ekran negativ me pamje stealth. Kasë e madhe rrethore prej rezine, rezistencë ndaj ujit 100m, ndriçim LED Illuminator, 5 alarme ditore, kronometër dhe timer numërimi mbrapsht, të gjitha me bateri 10-vjeçare. Një orë e përditshme e madhe dhe e lehtë për t'u lexuar me pamje krejt të zezë."
+  },
+  {
+    "id": "daniel-klein-14173",
+    "brand": "Daniel Klein",
+    "model": "Premium Roman",
+    "reference": "DK.1.14173-1",
+    "condition": "New",
+    "price": 69,
+    "currency": "EUR",
+    "image": "/images/watches/daniel-klein-14173.webp",
+    "sold": false,
+    "description_en": "Elegant Daniel Klein Premium dress watch in polished stainless steel. Cream dial with black Roman numerals, blued hands and a small date window, on a solid five-link steel bracelet. A refined, timeless quartz piece that suits a slimmer wrist and makes an easy gift.",
+    "description_it": "Elegante orologio da abito Daniel Klein Premium in acciaio inossidabile lucido. Quadrante crema con numeri romani neri, lancette azzurrate e piccola finestrella data, su un solido bracciale in acciaio a cinque maglie. Un pezzo al quarzo raffinato e senza tempo, adatto a un polso sottile e ideale come regalo.",
+    "description_sq": "Orë elegante veshjeje Daniel Klein Premium në çelik inoks të lëmuar. Cadran krem me numra romakë të zinj, akrepa të kaltëruar dhe një dritare të vogël date, mbi një byzylyk solid çeliku me pesë hallka. Një copë kuarci e rafinuar dhe pa kohë, e përshtatshme për një dorë më të hollë dhe ideale si dhuratë."
   }
 ];
