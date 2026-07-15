@@ -326,7 +326,7 @@
   <!-- ── BLOG: WATCH WATER RESISTANCE ──────────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/watch-water-resistance.html</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-water-resistance.html"/>
@@ -336,7 +336,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/rezistenca-ujes-ores.html</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-water-resistance.html"/>
@@ -346,7 +346,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/impermeabilita-orologio.html</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-water-resistance.html"/>
@@ -3111,7 +3111,7 @@
   <!-- ── BLOG: HEAT AND HUMIDITY DAMAGE ───────────────────────────────── -->
   <url>
     <loc>https://watch.al/en/blog/watch-heat-humidity-damage.html</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-heat-humidity-damage.html"/>
@@ -3153,7 +3153,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/caldo-umidita-orologio.html</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-heat-humidity-damage.html"/>
@@ -3163,7 +3163,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/nxehtesia-lageshti-ores.html</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-heat-humidity-damage.html"/>
@@ -4367,5 +4367,35 @@
     <image:image>
       <image:loc>https://watch.al/images/watches/daniel-klein-14165.webp</image:loc>
     </image:image>
+  </url>
+  <url>
+    <loc>https://watch.al/en/blog/summer-sea-watch-guide.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/summer-sea-watch-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/orologio-mare-estate.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/ora-per-plazh-e-det.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/summer-sea-watch-guide.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/it/blog/orologio-mare-estate.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/summer-sea-watch-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/orologio-mare-estate.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/ora-per-plazh-e-det.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/summer-sea-watch-guide.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/sq/blog/ora-per-plazh-e-det.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/summer-sea-watch-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/orologio-mare-estate.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/ora-per-plazh-e-det.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/summer-sea-watch-guide.html"/>
   </url>
 </urlset>
