@@ -657,5 +657,19 @@
     "description_en": "Elegant Daniel Klein Premium dress watch in polished stainless steel. Cream dial with black Roman numerals, blued hands and a small date window, on a solid five-link steel bracelet. A refined, timeless quartz piece that suits a slimmer wrist and makes an easy gift.",
     "description_it": "Elegante orologio da abito Daniel Klein Premium in acciaio inossidabile lucido. Quadrante crema con numeri romani neri, lancette azzurrate e piccola finestrella data, su un solido bracciale in acciaio a cinque maglie. Un pezzo al quarzo raffinato e senza tempo, adatto a un polso sottile e ideale come regalo.",
     "description_sq": "Orë elegante veshjeje Daniel Klein Premium në çelik inoks të lëmuar. Cadran krem me numra romakë të zinj, akrepa të kaltëruar dhe një dritare të vogël date, mbi një byzylyk solid çeliku me pesë hallka. Një copë kuarci e rafinuar dhe pa kohë, e përshtatshme për një dorë më të hollë dhe ideale si dhuratë."
+  },
+  {
+    "id": "daniel-klein-14165",
+    "brand": "Daniel Klein",
+    "model": "Premium Gold Tonneau",
+    "reference": "DK.1.14165-2",
+    "condition": "New",
+    "price": 75,
+    "currency": "EUR",
+    "image": "/images/watches/daniel-klein-14165.webp",
+    "sold": false,
+    "description_en": "Elegant Daniel Klein Premium dress watch in gold-tone stainless steel with a tonneau case. Silver dial with a fine wave texture, black Roman numerals and blued hands, framed by a raised inner border, on a matching gold-tone bracelet. A refined quartz piece and a standout gift for her.",
+    "description_it": "Elegante orologio da abito Daniel Klein Premium in acciaio inossidabile color oro con cassa tonneau. Quadrante argentato con fine texture a onde, numeri romani neri e lancette azzurrate, incorniciato da un bordo interno in rilievo, su un bracciale abbinato color oro. Un raffinato pezzo al quarzo, un regalo di grande effetto per lei.",
+    "description_sq": "Orë elegante veshjeje Daniel Klein Premium në çelik inoks ngjyrë ari me kasë tonneau. Cadran argjendi me teksturë të hollë valëzore, numra romakë të zinj dhe akrepa të kaltëruar, të kornizuar nga një buzë e brendshme e ngritur, mbi një byzylyk ngjyrë ari të njëjtë. Një copë kuarci e rafinuar, një dhuratë që lë mbresë për të."
   }
 ]
