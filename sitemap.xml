@@ -1127,7 +1127,7 @@
   <!-- watch-wedding-gift-albania -->
   <url>
     <loc>https://watch.al/en/blog/watch-wedding-gift-albania.html</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-wedding-gift-albania.html"/>
@@ -1137,7 +1137,7 @@
   </url>
   <url>
     <loc>https://watch.al/it/blog/orologio-regalo-matrimonio-albania.html</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-wedding-gift-albania.html"/>
@@ -1147,7 +1147,7 @@
   </url>
   <url>
     <loc>https://watch.al/sq/blog/ore-dhurate-dasme-shqiperi.html</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/watch-wedding-gift-albania.html"/>
@@ -4457,5 +4457,35 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/fasce-prezzo-orologi.html"/>
     <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/sa-kushton-nje-ore-e-mire.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/watch-price-tiers-60-190.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/en/blog/matching-watches-for-couples.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/matching-watches-for-couples.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/orologi-coppia-abbinati.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/ora-per-cifte.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/matching-watches-for-couples.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/it/blog/orologi-coppia-abbinati.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/matching-watches-for-couples.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/orologi-coppia-abbinati.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/ora-per-cifte.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/matching-watches-for-couples.html"/>
+  </url>
+  <url>
+    <loc>https://watch.al/sq/blog/ora-per-cifte.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watch.al/en/blog/matching-watches-for-couples.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://watch.al/it/blog/orologi-coppia-abbinati.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://watch.al/sq/blog/ora-per-cifte.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watch.al/en/blog/matching-watches-for-couples.html"/>
   </url>
 </urlset>
