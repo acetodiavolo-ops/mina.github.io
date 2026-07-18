@@ -671,5 +671,19 @@
     "description_en": "Elegant Daniel Klein Premium dress watch in gold-tone stainless steel with a tonneau case. Silver dial with a fine wave texture, black Roman numerals and blued hands, framed by a raised inner border, on a matching gold-tone bracelet. A refined quartz piece and a standout gift for her.",
     "description_it": "Elegante orologio da abito Daniel Klein Premium in acciaio inossidabile color oro con cassa tonneau. Quadrante argentato con fine texture a onde, numeri romani neri e lancette azzurrate, incorniciato da un bordo interno in rilievo, su un bracciale abbinato color oro. Un raffinato pezzo al quarzo, un regalo di grande effetto per lei.",
     "description_sq": "Orë elegante veshjeje Daniel Klein Premium në çelik inoks ngjyrë ari me kasë tonneau. Cadran argjendi me teksturë të hollë valëzore, numra romakë të zinj dhe akrepa të kaltëruar, të kornizuar nga një buzë e brendshme e ngritur, mbi një byzylyk ngjyrë ari të njëjtë. Një copë kuarci e rafinuar, një dhuratë që lë mbresë për të."
+  },
+  {
+    "id": "daniel-klein-14243",
+    "brand": "Daniel Klein",
+    "model": "Exclusive Chronograph",
+    "reference": "DK.1.14243-3",
+    "condition": "New",
+    "price": 89,
+    "currency": "EUR",
+    "image": "/images/watches/daniel-klein-14243.webp",
+    "sold": false,
+    "description_en": "Daniel Klein Exclusive chronograph in stainless steel with a deep blue sunburst dial and a rotating dive-style bezel. Three subdials, luminous baton indices and hands, a date window, and a solid steel bracelet. A bold sport chronograph on a reliable quartz movement, built to stand out.",
+    "description_it": "Cronografo Daniel Klein Exclusive in acciaio inossidabile con quadrante blu sunburst e ghiera girevole in stile subacqueo. Tre contatori, indici a bastone e lancette luminescenti, finestrella data e solido bracciale in acciaio. Un deciso cronografo sportivo con affidabile movimento al quarzo, fatto per farsi notare.",
+    "description_sq": "Kronograf Daniel Klein Exclusive në çelik inoks me ciferblat blu sunburst dhe lunetë rrotulluese në stil zhytjeje. Tre nën-cadranë, tregues shiritash dhe akrepa ndriçues, dritare date dhe byzylyk solid çeliku. Një kronograf sportiv i guximshëm me lëvizje të besueshme kuarci, i bërë për t'u dalluar."
   }
 ]
