@@ -1,7 +1,7 @@
 (function(){
   // Password is stored as SHA-256 hash — never compare plaintext in source
   var PW_HASH = 'e7b2b52f1b9d39adddf8fd2834458ad862aecf4bbca24d7248af4fd1e8f8a7aa';
-  var REPO = 'acetodiavolo-ops/mina.github.io';
+  var REPO = 'agency-wo/mina.github.io';
   var GH_API = 'https://api.github.com/repos/' + REPO + '/contents/';
 
   var imageFile = null;   // File object

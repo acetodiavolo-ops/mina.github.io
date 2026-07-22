@@ -6,7 +6,7 @@
   var BRAND_ALL_LABEL = 'Tutte le marche';
   var currentSort   = 'default';
 
-  fetch('https://raw.githubusercontent.com/acetodiavolo-ops/mina.github.io/main/watches.json?v=3')
+  fetch('https://raw.githubusercontent.com/agency-wo/mina.github.io/main/watches.json?v=3')
     .then(function(r){ return r.json(); })
     .then(function(WATCHES){
       initBrandChips(WATCHES);
