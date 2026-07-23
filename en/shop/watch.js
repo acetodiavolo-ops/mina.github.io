@@ -16,9 +16,11 @@
     return;
   }
 
-  if(!window.WATCHES_DATA){ showError('Could not load watch data.', 'Please refresh or return to the shop.'); return; }
+  var _pre = document.getElementById('watch-content');
+  var _hasPre = _pre && _pre.className.indexOf('pre-rendered') !== -1;
+  if(!window.WATCHES_DATA){ if(_hasPre) return; showError('Could not load watch data.', 'Please refresh or return to the shop.'); return; }
   var w = window.WATCHES_DATA.find(function(x){ return x.id === watchId; });
-  if(!w){ showError('Watch not found.', "This watch may have been sold or removed. Browse the shop for what's available."); return; }
+  if(!w){ if(_hasPre) return; showError('Watch not found.', "This watch may have been sold or removed. Browse the shop for what's available."); return; }
   render(w);
 
   var EUR_TO_LEK = 97;

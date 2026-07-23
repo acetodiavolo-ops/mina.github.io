@@ -16,9 +16,11 @@
     return;
   }
 
-  if(!window.WATCHES_DATA){ showError('Nuk mund t\u00eb ngarkohet e dhena e or\u00ebs.', 'Ju lutem rifreskoni ose kthehuni n\u00eb dyqan.'); return; }
+  var _pre = document.getElementById('watch-content');
+  var _hasPre = _pre && _pre.className.indexOf('pre-rendered') !== -1;
+  if(!window.WATCHES_DATA){ if(_hasPre) return; showError('Nuk mund t\u00eb ngarkohet e dhena e or\u00ebs.', 'Ju lutem rifreskoni ose kthehuni n\u00eb dyqan.'); return; }
   var w = window.WATCHES_DATA.find(function(x){ return x.id === watchId; });
-  if(!w){ showError('Ora nuk u gjet.', 'Kjo or\u00eb mund t\u00eb jet\u00eb shitur ose hequr. Shfletoni dyqanin p\u00ebr ato t\u00eb disponueshme.'); return; }
+  if(!w){ if(_hasPre) return; showError('Ora nuk u gjet.', 'Kjo or\u00eb mund t\u00eb jet\u00eb shitur ose hequr. Shfletoni dyqanin p\u00ebr ato t\u00eb disponueshme.'); return; }
   render(w);
 
   var EUR_TO_LEK = 97;

@@ -16,9 +16,11 @@
     return;
   }
 
-  if(!window.WATCHES_DATA){ showError("Impossibile caricare i dati dell'orologio.", 'Ricarica la pagina o torna al negozio.'); return; }
+  var _pre = document.getElementById('watch-content');
+  var _hasPre = _pre && _pre.className.indexOf('pre-rendered') !== -1;
+  if(!window.WATCHES_DATA){ if(_hasPre) return; showError("Impossibile caricare i dati dell'orologio.", 'Ricarica la pagina o torna al negozio.'); return; }
   var w = window.WATCHES_DATA.find(function(x){ return x.id === watchId; });
-  if(!w){ showError('Orologio non trovato.', 'Questo orologio potrebbe essere stato venduto o rimosso. Sfoglia il negozio per vedere i disponibili.'); return; }
+  if(!w){ if(_hasPre) return; showError('Orologio non trovato.', 'Questo orologio potrebbe essere stato venduto o rimosso. Sfoglia il negozio per vedere i disponibili.'); return; }
   render(w);
 
   var EUR_TO_LEK = 97;
