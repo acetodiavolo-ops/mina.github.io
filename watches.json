@@ -685,5 +685,19 @@
     "description_en": "Daniel Klein Exclusive chronograph in stainless steel with a deep blue sunburst dial and a rotating dive-style bezel. Three subdials, luminous baton indices and hands, a date window, and a solid steel bracelet. A bold sport chronograph on a reliable quartz movement, built to stand out.",
     "description_it": "Cronografo Daniel Klein Exclusive in acciaio inossidabile con quadrante blu sunburst e ghiera girevole in stile subacqueo. Tre contatori, indici a bastone e lancette luminescenti, finestrella data e solido bracciale in acciaio. Un deciso cronografo sportivo con affidabile movimento al quarzo, fatto per farsi notare.",
     "description_sq": "Kronograf Daniel Klein Exclusive në çelik inoks me ciferblat blu sunburst dhe lunetë rrotulluese në stil zhytjeje. Tre nën-cadranë, tregues shiritash dhe akrepa ndriçues, dritare date dhe byzylyk solid çeliku. Një kronograf sportiv i guximshëm me lëvizje të besueshme kuarci, i bërë për t'u dalluar."
+  },
+  {
+    "id": "philippe-lauren-pl2427-5",
+    "brand": "Philippe Lauren",
+    "model": "Black Square Chronograph",
+    "reference": "PL2427-5",
+    "condition": "New",
+    "price": 69,
+    "currency": "EUR",
+    "image": "/images/watches/philippe-lauren-pl2427-5.webp",
+    "sold": false,
+    "description_en": "Philippe Lauren men's chronograph in black ion-plated stainless steel with a square cushion case. Black dial with three chronograph subdials, silver-tone baton indices and hands, a date window, and a matching black steel bracelet. A sharp, modern all-black chronograph with a distinctive square silhouette.",
+    "description_it": "Cronografo da uomo Philippe Lauren in acciaio inossidabile placcato nero con cassa quadrata a cuscino. Quadrante nero con tre contatori cronografici, indici a bastone e lancette color argento, finestrella data e bracciale in acciaio nero abbinato. Un cronografo total black moderno e deciso, con una silhouette quadrata distintiva.",
+    "description_sq": "Kronograf për burra Philippe Lauren në çelik inoks të veshur me jon të zi, me kasë katrore në formë jastëku. Ciferblat i zi me tre nën-ciferblatë kronografi, tregues shiritash dhe akrepa në ngjyrë argjendi, dritare date dhe byzylyk çeliku i zi i përshtatur. Një kronograf tërësisht i zi, modern dhe i mprehtë, me siluetë katrore dalluese."
   }
 ]
